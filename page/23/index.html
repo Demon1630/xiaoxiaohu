@@ -1,746 +1,1088 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/xiaoxiaohu/img/fluid.png">
+  <link rel="icon" href="/xiaoxiaohu/img/fluid.png">
   
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="https://demon1630.github.io/xiaoxiaohu/page/23/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/xiaoxiaohu/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/xiaoxiaohu/favicon.png">
+<meta name="twitter:card" content="summary_large_image">
   
   
   
-<link rel="stylesheet" href="/xiaoxiaohu/css/style.css">
+  <title>Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/xiaoxiaohu/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/xiaoxiaohu/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/xiaoxiaohu/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"demon1630.github.io","root":"/xiaoxiaohu/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/xiaoxiaohu/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/xiaoxiaohu/js/utils.js" ></script>
+  <script  src="/xiaoxiaohu/js/color-schema.js" ></script>
+  
+
 
   
-    
-<link rel="stylesheet" href="/xiaoxiaohu/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
 <meta name="generator" content="Hexo 8.1.2"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/xiaoxiaohu/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/xiaoxiaohu/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <a class="main-nav-link" href="/xiaoxiaohu/">Home</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
         
-          <a class="main-nav-link" href="/xiaoxiaohu/archives">Archives</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
         
-      </nav>
-      <nav id="sub-nav">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
         
         
-          <a class="nav-icon" href="/xiaoxiaohu/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://demon1630.github.io/xiaoxiaohu"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-wordpress如何破解安装wordfence安全插件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2019/11/30/wordpress%E5%A6%82%E4%BD%95%E7%A0%B4%E8%A7%A3%E5%AE%89%E8%A3%85wordfence%E5%AE%89%E5%85%A8%E6%8F%92%E4%BB%B6/" class="article-date">
-  <time class="dt-published" datetime="2019-11-29T16:00:00.000Z" itemprop="datePublished">2019-11-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/wordpress/">wordpress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2019/11/30/wordpress%E5%A6%82%E4%BD%95%E7%A0%B4%E8%A7%A3%E5%AE%89%E8%A3%85wordfence%E5%AE%89%E5%85%A8%E6%8F%92%E4%BB%B6/">Wordpress如何破解安装Wordfence安全插件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>安全是我们首先要考虑的问题，所以建议大家建站后安装一个安全插件，更好的保护自己的网站免遭攻击，这里介绍一下wordfence这个插件吧</p>
-<p><a target="_blank" rel="noopener" href="https://www.demon1630.cf/wordpress%e5%a6%82%e4%bd%95%e7%a0%b4%e8%a7%a3%e5%ae%89%e8%a3%85wordfence%e5%ae%89%e5%85%a8%e6%8f%92%e4%bb%b6/1575081522-09393e98-01b5-4ed5-9986-911ed35601dc/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1575081522-09393E98-01B5-4ED5-9986-911ED35601DC-1024x715.png"></a></p>
-<p>基本上可以满足我们的需求了，但要想使用全部功能，需要付费订阅，但是吧，作为对技术的追求（穷），我们这里介绍一下如何进行破解，但还是建议能付费尽量付费吧，版权意识还是要有的，下面介绍一下主要步骤吧。</p>
-<h3 id="一-安装wordfence插件"><a href="#一-安装wordfence插件" class="headerlink" title="一 安装wordfence插件"></a>一 安装wordfence插件</h3><p>首先在网站后台把wordfence安装好，如何安装插件这里就不介绍了，自行百度</p>
-<h3 id="二-后台更改文件"><a href="#二-后台更改文件" class="headerlink" title="二 后台更改文件"></a>二 后台更改文件</h3><p>使用FTP或者ssh或宝塔面板，在自己的网站目录下找到</p>
-<p>wp-content&#x2F;plugins&#x2F;wordfence&#x2F;lib&#x2F;wordfenceClass.php这个文件，打开后进行更改</p>
-<p>找到下面这段代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (!WFWAF_SUBDIRECTORY_INSTALL &amp;&amp; $waf = wfWAF::getInstance()) &#123;</span><br></pre></td></tr></table></figure>
-
-<p>然后在这行代码下面的$siteurl &#x3D; wfUtils::wpSiteURL();代码下放，添加上下面这4行代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wfConfig::set(&#x27;isPaid&#x27;, 1);</span><br><span class="line">wfConfig::set(&#x27;keyType&#x27;, wfAPI::KEY_TYPE_PAID_CURRENT);</span><br><span class="line">!!wfConfig::set(&#x27;isPaid&#x27;, 1);</span><br><span class="line">!!wfConfig::set(&#x27;keyType&#x27;, wfAPI::KEY_TYPE_PAID_CURRENT);</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://www.demon1630.cf/wordpress%e5%a6%82%e4%bd%95%e7%a0%b4%e8%a7%a3%e5%ae%89%e8%a3%85wordfence%e5%ae%89%e5%85%a8%e6%8f%92%e4%bb%b6/1575082903-e5a7ffb4-64fb-46be-9aa9-0e65625fd74c/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1575082903-E5A7FFB4-64FB-46BE-9AA9-0E65625FD74C-1024x533.jpeg"></a>效果如图所示，这就破解完成了，相对于其他直接安装破解版插件，这种方法的还是比较安全的，因为上传别人的插件，谁也不知道里面有没有包恶意代码</p>
-<p>这是基于我的wordfence版本为7.4.1，其他版本的没有试过，暂时不知道效果怎么样，然后能支持正版就尽量支持正版吧</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2019/11/30/wordpress%E5%A6%82%E4%BD%95%E7%A0%B4%E8%A7%A3%E5%AE%89%E8%A3%85wordfence%E5%AE%89%E5%85%A8%E6%8F%92%E4%BB%B6/" data-id="cuidJt5_BelMOO0Wf4ggvwGWU" data-title="Wordpress如何破解安装Wordfence安全插件" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-冬日惊醒" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2019/11/30/%E5%86%AC%E6%97%A5%E6%83%8A%E9%86%92/" class="article-date">
-  <time class="dt-published" datetime="2019-11-29T16:00:00.000Z" itemprop="datePublished">2019-11-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E7%94%9F%E6%B4%BB/">生活</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2019/11/30/%E5%86%AC%E6%97%A5%E6%83%8A%E9%86%92/">冬日惊醒</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>早上突然惊醒 :xiaoyan: ，以前自己是不怎么做梦的，但这段时间来自己都睡的不太安稳，可能是最近各种事的原因吧，起来的时候突然想到了自己小时候，那时候自己读小学，冬天，要过年了，不用去学校，前天晚上下着大雪，记得那时候自己真的会晚上下学的时候坐在门口，拿手电筒照着外面，呆呆的看看雪。。。。现在可能是会开始抱怨下雪好冷吧 :kuanghan: ，总还是想保持着那时候的心情。。。那时候可以早上晚晚起来，不用上学，爸妈也在做早饭，在为过年准备着，早上起来第一件事就是去看看外面下了一夜的雪，总是会很兴奋～～那时候也很喜欢过年，因为可以天天在家，而且很轻松，只用想着吃什么，爸妈也天天在家准备着，不用天天出去忙。那时候的天也很冷，外面一片雪白，那时候也总是很开心，没什么追求，但总是可以找点事做（玩）。。。。</p>
-<p>人吧，可能随着越来越大，欲望越来越多，也越来越累，不知路在何方～引用习大大的一句话——永保初心！所以也许这就是为什么人不想长大的原因吧</p>
-<p><a target="_blank" rel="noopener" href="https://www.demon1630.cf/%e5%86%ac%e6%97%a5%e6%83%8a%e9%86%92/1575079259-91264180-30d3-41ca-9489-60df438b8d53/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1575079259-91264180-30D3-41CA-9489-60DF438B8D53-1024x768.jpeg"></a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2019/11/30/%E5%86%AC%E6%97%A5%E6%83%8A%E9%86%92/" data-id="cuidCH-rLiKY2qDBzCWU90acv" data-title="冬日惊醒" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-校园一瞥" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2019/11/30/%E6%A0%A1%E5%9B%AD%E4%B8%80%E7%9E%A5/" class="article-date">
-  <time class="dt-published" datetime="2019-11-29T16:00:00.000Z" itemprop="datePublished">2019-11-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/wordpress/">wordpress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2019/11/30/%E6%A0%A1%E5%9B%AD%E4%B8%80%E7%9E%A5/">校园一瞥</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>以前还是很喜欢去学校图书馆的，特别是冬天的时候，跑到图书馆，吹着空调，拿本书，看看书玩玩手机，很惬意。。。。现在虽然也喜欢，但可能没那种心境了吧 :lei:</p>
-<p><a target="_blank" rel="noopener" href="https://www.demon1630.cf/%e6%a0%a1%e5%9b%ad%e4%b8%80%e7%9e%a5/1575080245-25c90e6a-def1-488d-b073-6b7095d6786b/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1575080245-25C90E6A-DEF1-488D-B073-6B7095D6786B-1024x768.jpeg"></a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2019/11/30/%E6%A0%A1%E5%9B%AD%E4%B8%80%E7%9E%A5/" data-id="cuideBx8gp-ciDpFoN4221N-f" data-title="校园一瞥" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-小诗" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2019/11/25/%E5%B0%8F%E8%AF%97/" class="article-date">
-  <time class="dt-published" datetime="2019-11-24T16:00:00.000Z" itemprop="datePublished">2019-11-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/">日常</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/%E7%94%9F%E6%B4%BB/">生活</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2019/11/25/%E5%B0%8F%E8%AF%97/">小诗</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>偶然看到的一首网上的小诗，很有感觉</p>
-<p>我有一壶酒，</p>
-<p>足以慰风尘。</p>
-<p>尽倾江海里，</p>
-<p>赠饮天下人。</p>
-<p>我有一壶酒，</p>
-<p>足以慰风尘。</p>
-<p>千杯不解饮，</p>
-<p>万杯苦沉沦。</p>
-<p>埋骨厚国土，</p>
-<p>肝胆两昆仑。</p>
-<p>疏狂君莫笑，</p>
-<p>赤子中国人。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2019/11/25/%E5%B0%8F%E8%AF%97/" data-id="cuidXn9VxDIFSnI17GigefoDf" data-title="小诗" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-wordpress使用插件image-watermark为文章图片添加水印" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2019/11/24/wordpress%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6image-watermark%E4%B8%BA%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0/" class="article-date">
-  <time class="dt-published" datetime="2019-11-23T16:00:00.000Z" itemprop="datePublished">2019-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/wordpress/">wordpress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2019/11/24/wordpress%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6image-watermark%E4%B8%BA%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0/">WordPress使用插件Image Watermark为文章图片添加水印</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>有时候我们经常需要在文章中上传图片，但由于有些图片是我们的原创，所以我们不希望别人随便盗用，此时我们就可以在图片上添加水印，但要是一张张图片去添加就会太麻烦了，这里介绍一个插件，叫做：Image Watermark，我们可以到插件里面去搜索安装</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574576130-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B61-1024x400.png"></p>
-<p>水印插件比较多，但这个插件功能比较完善，主要有以下特点</p>
-<ul>
-<li>上传的图片自动加水印</li>
-<li>原有媒体库文件批量添加水印</li>
-<li>特定类型图片添加水印</li>
-<li>水印位置调整、边距偏移</li>
-<li>水印大小、透明度调整</li>
-<li>图片保护</li>
-</ul>
-<p>所以总体来说可以满足我们的需求了，安装完成之后进行设置，配置内容基本上如下所示：</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574576748-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B64-1024x706.png"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574576752-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B63-1024x709.png"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574576756-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B62-1024x448.png"></p>
-<p><a target="_blank" rel="noopener" href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8%e6%8f%92%e4%bb%b6image-watermark%e4%b8%ba%e6%96%87%e7%ab%a0%e5%9b%be%e7%89%87%e6%b7%bb%e5%8a%a0%e6%b0%b4%e5%8d%b0/1574576752-%e6%b0%b4%e5%8d%b0%e6%8f%92%e4%bb%b63/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574576752-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B63-1024x709.png"></a><a target="_blank" rel="noopener" href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8%e6%8f%92%e4%bb%b6image-watermark%e4%b8%ba%e6%96%87%e7%ab%a0%e5%9b%be%e7%89%87%e6%b7%bb%e5%8a%a0%e6%b0%b4%e5%8d%b0/1574576748-%e6%b0%b4%e5%8d%b0%e6%8f%92%e4%bb%b64/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574576748-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B64-1024x706.png"></a>配置完成之后，我们上传图片都会添加上我们的水印，如果想为之前添加的图片添加水印，可以到媒体库中：</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574577043-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B65.png"><a target="_blank" rel="noopener" href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8%e6%8f%92%e4%bb%b6image-watermark%e4%b8%ba%e6%96%87%e7%ab%a0%e5%9b%be%e7%89%87%e6%b7%bb%e5%8a%a0%e6%b0%b4%e5%8d%b0/1574577043-%e6%b0%b4%e5%8d%b0%e6%8f%92%e4%bb%b65/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574577043-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B65.png"></a>照上图所示操作即可为以前上传的图片添加水印</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2019/11/24/wordpress%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6image-watermark%E4%B8%BA%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0/" data-id="cuidDy2EPF-PGkeTCWmT8IhQb" data-title="WordPress使用插件Image Watermark为文章图片添加水印" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" rel="tag">网站建设</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-wordpress使用cloudflare的cdn解析后如何在后台显示用户真实ip" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2019/11/24/wordpress%E4%BD%BF%E7%94%A8cloudflare%E7%9A%84cdn%E8%A7%A3%E6%9E%90%E5%90%8E%E5%A6%82%E4%BD%95%E5%9C%A8%E5%90%8E%E5%8F%B0%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9Eip/" class="article-date">
-  <time class="dt-published" datetime="2019-11-23T16:00:00.000Z" itemprop="datePublished">2019-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/wordpress/">wordpress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2019/11/24/wordpress%E4%BD%BF%E7%94%A8cloudflare%E7%9A%84cdn%E8%A7%A3%E6%9E%90%E5%90%8E%E5%A6%82%E4%BD%95%E5%9C%A8%E5%90%8E%E5%8F%B0%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9Eip/">WordPress使用cloudflare的CDN解析后如何在后台显示用户真实ip</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>在WordPress里安装了统计插件，可以显示访问用户的设备和ip信息等情况，但之前由于使用了cloudflare的CDN，导致显示的用户ip都是cloudflare的ip，没有任何作用，所以为了得到用户的真实ip，我们可以通过添加一小段代码来实现，代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//绕过 CDN 代理IP获取客户真实IP地址</span><br><span class="line">if(isset($_SERVER[&#x27;HTTP_X_FORWARDED_FOR&#x27;]))</span><br><span class="line">&#123;</span><br><span class="line">$list = explode(&#x27;,&#x27;,$_SERVER[&#x27;HTTP_X_FORWARDED_FOR&#x27;]);</span><br><span class="line">$_SERVER[&#x27;REMOTE_ADDR&#x27;] = $list[0];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>将上面这段代码添加到网站根目录的wp-config.php文件开头中php下即可，记住是根目录下的，不是主题下的：</p>
-<p><a target="_blank" rel="noopener" href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8cloudflare%e7%9a%84cdn%e8%a7%a3%e6%9e%90%e5%90%8e%e5%a6%82%e4%bd%95%e5%9c%a8%e5%90%8e%e5%8f%b0%e6%98%be%e7%a4%ba%e7%94%a8%e6%88%b7%e7%9c%9f%e5%ae%9eip/1574577843-%e8%8e%b7%e5%8f%96%e7%9c%9f%e5%ae%9eip/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574577843-%E8%8E%B7%E5%8F%96%E7%9C%9F%E5%AE%9Eip-1024x291.png"></a>添加后效果如下： <a target="_blank" rel="noopener" href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8cloudflare%e7%9a%84cdn%e8%a7%a3%e6%9e%90%e5%90%8e%e5%a6%82%e4%bd%95%e5%9c%a8%e5%90%8e%e5%8f%b0%e6%98%be%e7%a4%ba%e7%94%a8%e6%88%b7%e7%9c%9f%e5%ae%9eip/1574578002-%e6%98%be%e7%a4%ba%e7%9c%9f%e5%ae%9eip2/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574578002-%E6%98%BE%E7%A4%BA%E7%9C%9F%E5%AE%9Eip2.png"></a>此时已经可以把访问用户的真实ip和地址显示出来，起到一定的监控作用，对于恶意访问的ip也可以进行封禁了</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2019/11/24/wordpress%E4%BD%BF%E7%94%A8cloudflare%E7%9A%84cdn%E8%A7%A3%E6%9E%90%E5%90%8E%E5%A6%82%E4%BD%95%E5%9C%A8%E5%90%8E%E5%8F%B0%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9Eip/" data-id="cuidf0-z6mWg1ntf2zPX1QU_S" data-title="WordPress使用cloudflare的CDN解析后如何在后台显示用户真实ip" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" rel="tag">网站建设</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-wordpress管理员一键登入其余用户账号" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2019/11/24/wordpress%E7%AE%A1%E7%90%86%E5%91%98%E4%B8%80%E9%94%AE%E7%99%BB%E5%85%A5%E5%85%B6%E4%BD%99%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7/" class="article-date">
-  <time class="dt-published" datetime="2019-11-23T16:00:00.000Z" itemprop="datePublished">2019-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/wordpress/">wordpress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2019/11/24/wordpress%E7%AE%A1%E7%90%86%E5%91%98%E4%B8%80%E9%94%AE%E7%99%BB%E5%85%A5%E5%85%B6%E4%BD%99%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7/">WordPress管理员一键登入其余用户账号</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>有时候我们可能需要登入到其他用户的账号里去，但即使我们是管理员，我们也不知道其他用户的密码，无法登入，所以这里提供一个一键登入其他用户账户的方法，主要是将如下代码添加到主题的functions.php文件中：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/** </span><br><span class="line">* WordPress 后台管理员免密一键切换其他账号登录 </span><br><span class="line">* https://www.dujin.org/fenxiang/wp/10144.html </span><br><span class="line">*/ </span><br><span class="line">function wpdx_user_switch_action($actions, $user)&#123;</span><br><span class="line">    $capability = (is_multisite())?&#x27;manage_site&#x27;:&#x27;manage_options&#x27;;</span><br><span class="line">    if(current_user_can($capability))&#123;</span><br><span class="line">        $actions[&#x27;login_as&#x27;] = &#x27;&lt;a title=&quot;以此身份登录&quot; href=&quot;&#x27;.wp_nonce_url(&quot;users.php?action=login_as&amp;users=$user-&gt;ID&quot;, &#x27;bulk-users&#x27;).&#x27;&quot;&gt;以此身份登录&lt;/a&gt;&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    return $actions;</span><br><span class="line">&#125;</span><br><span class="line">add_filter(&#x27;user_row_actions&#x27;, &#x27;wpdx_user_switch_action&#x27;, 10, 2);</span><br><span class="line"> </span><br><span class="line">function wpdx_handle_user_switch_action($sendback, $action, $user_ids)&#123;</span><br><span class="line">    if($action == &#x27;login_as&#x27;)&#123;</span><br><span class="line">        wp_set_auth_cookie($user_ids, true);</span><br><span class="line">        wp_set_current_user($user_ids);</span><br><span class="line">    &#125;</span><br><span class="line">    return admin_url();</span><br><span class="line">&#125;</span><br><span class="line">add_filter(&#x27;handle_bulk_actions-users&#x27;,&#x27;wpdx_handle_user_switch_action&#x27;, 10, 3);</span><br></pre></td></tr></table></figure>
-
-<p>即可实现后台管理员一键登入其余用户账号，在后台用户列表里就可以看到：</p>
-<p><a target="_blank" rel="noopener" href="https://www.demon1630.cf/wordpress%e7%ae%a1%e7%90%86%e5%91%98%e4%b8%80%e9%94%ae%e7%99%bb%e5%85%a5%e5%85%b6%e4%bd%99%e7%94%a8%e6%88%b7%e8%b4%a6%e5%8f%b7/1574597103-%e7%ae%a1%e7%90%86%e5%91%98%e7%99%bb%e5%85%a5%e5%85%b6%e4%bb%96%e7%94%a8%e6%88%b7%e8%b4%a6%e6%88%b7/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574597103-%E7%AE%A1%E7%90%86%E5%91%98%E7%99%BB%E5%85%A5%E5%85%B6%E4%BB%96%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7-300x258.png"></a>里面有选项，以此身份登入，点击即可切换到此身份账号</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2019/11/24/wordpress%E7%AE%A1%E7%90%86%E5%91%98%E4%B8%80%E9%94%AE%E7%99%BB%E5%85%A5%E5%85%B6%E4%BD%99%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7/" data-id="cuid7fd9sD5ZT6LiYsSSVUkd0" data-title="WordPress管理员一键登入其余用户账号" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" rel="tag">网站建设</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-使用cloudflare解析域名并隐藏搬瓦工真实ip" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2019/11/23/%E4%BD%BF%E7%94%A8cloudflare%E8%A7%A3%E6%9E%90%E5%9F%9F%E5%90%8D%E5%B9%B6%E9%9A%90%E8%97%8F%E6%90%AC%E7%93%A6%E5%B7%A5%E7%9C%9F%E5%AE%9Eip/" class="article-date">
-  <time class="dt-published" datetime="2019-11-22T16:00:00.000Z" itemprop="datePublished">2019-11-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2019/11/23/%E4%BD%BF%E7%94%A8cloudflare%E8%A7%A3%E6%9E%90%E5%9F%9F%E5%90%8D%E5%B9%B6%E9%9A%90%E8%97%8F%E6%90%AC%E7%93%A6%E5%B7%A5%E7%9C%9F%E5%AE%9Eip/">使用cloudflare解析域名并隐藏搬瓦工真实ip</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>之前有写一篇文章，讲了如何直接使用搬瓦工自带的shadowsocks，详情见<a target="_blank" rel="noopener" href="http://www.demon1630.cn/%E6%9D%BF%E7%93%A6%E5%B7%A5%E5%AE%89%E8%A3%85shadowsocks%E5%8F%8A%E5%85%B6%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF/">瓦工安装shadowsocks及其控制面板</a>， 里面有讲到如果为了简单起见，不愿意搞太过于复杂的话，只是想安心上网，就可以直接使用这个教程里的，省去许多配置麻烦。</p>
-<p>不过随着现在墙越来越高，使用shadowsocks的都经常容易被封IP，特别是对于搬瓦工来说，由于IP被封后免费更换IP服务已经取消了，只能进行付费更换IP，付费更换IP教程在<a target="_blank" rel="noopener" href="http://www.demon1630.cn/%E6%90%AC%E7%93%A6%E5%B7%A5%E6%9B%B4%E6%94%B9ip/">搬瓦工更改ip</a>,这也就导致了使用shadowsocks非常危险，一个不小心就被封，就很难受了，所以这里介绍一种安全上网的方式，使用v2＋cloudflare，通过使用这种方式，就可以实现隐藏自己服务器真实ip，避免IP被封的情况发生。</p>
-<p>首先准备工作：</p>
-<p>一个域名</p>
-<p>因为这是将我们的流量伪装成上网的流量，因此我们首先需要申请一个域名，如何申请免费域名可以看之前的文章<a target="_blank" rel="noopener" href="https://www.demon1630.cf/%e6%90%ac%e7%93%a6%e5%b7%a5%e4%bd%bf%e7%94%a8v2%ef%bc%8bcloudflare%e5%ae%9e%e7%8e%b0ip%e9%9a%90%e8%97%8f%e4%bb%a3%e7%90%86/">免费域名申请</a>，在文章里有讲如何申请免费域名。</p>
-<p>接下来我们需要将域名解析到我们服务器的公网ip上，这里以搬瓦工为例，到<a target="_blank" rel="noopener" href="https://www.cloudflare.com/">cloudflare网站</a>里，注册登入后：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320104525.png"></p>
-<p>如图点击添加域名，将域名添加进去 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320104606.png"></p>
-<p>这里我们选择0美元的就行，然后继续</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320104636.png"></p>
-<p>之后我们可以看到我们添加的域名：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320104708.png"> 在这里添加解析，把我们的域名解析到我们服务器的ip上，那个云朵状的点击一下变成灰色，灰色表示我们不使用cloudflare代理ip，此时我们的域名就是直接解析到我们的ip上了，添加解析成功后，我们还需要到我们之前申请免费域名的网站上把DNS解析服务器修改为cloudflare的：</p>
-<p> </p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320104734.png"></p>
-<p>将上面的两个服务器名称记下来，然后我们到免费域名网站上修改</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320104925.png"></p>
-<p>点击manage domain</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105103.png"></p>
-<p>这里点击nameservers</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105135.png"></p>
-<p>如图将我们cloudflare里的两个服务器名称填入，然后点击change nameservers，然后我们回到cloudflare页面</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105209.png"></p>
-<p>点击done，check nameservers</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105233.png"></p>
-<p>之后页面会跳到这里，我们等待一会，等解析生效，基本上一两分钟就可以了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105310.png"></p>
-<p> </p>
-<p>此时可以看到解析已经生效了，等待一会，我们可以到<a target="_blank" rel="noopener" href="http://ping.chinaz.com/">ip监测网站</a>上查看我们的域名是否解析到了我们的ip上</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105326.png"></p>
-<p>把我们的域名进行ping检测</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105348.png"></p>
-<p>这里我们可以看到响应的ip，此时ip应该就是我们服务器的ip，如果之前在cloudflare里将那朵小云点击为黄色的话此时解析出来的就是cloudflare的ip了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105418.png"></p>
-<p>如图，将小云朵点击一下，显示为穿过云朵，此时表示使用了cloudflare的服务器来隐藏ip了，此时我们再去ip检测网站检查我们的域名，就会发现此时解析出来的ip不再是我们自己的</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105455.png"></p>
-<p>如图，此时显示的ip归属地位cloudflare的，此时也就实现了我们隐藏ip的目的</p>
-<p>至此域名解析已经完成，后面我们需要根据情况来将小黄云点亮或者点击为灰色，就是当我们需要我们的域名解析为我们服务器ip时将小黄云点击为灰色，当我们需要隐藏ip时将小黄云点亮</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2019/11/23/%E4%BD%BF%E7%94%A8cloudflare%E8%A7%A3%E6%9E%90%E5%9F%9F%E5%90%8D%E5%B9%B6%E9%9A%90%E8%97%8F%E6%90%AC%E7%93%A6%E5%B7%A5%E7%9C%9F%E5%AE%9Eip/" data-id="cuidmhbk8V3UME_GBv0lVdjqS" data-title="使用cloudflare解析域名并隐藏搬瓦工真实ip" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/cloudflare/" rel="tag">cloudflare</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" rel="tag">搬瓦工</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-免费域名申请" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2019/11/23/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7/" class="article-date">
-  <time class="dt-published" datetime="2019-11-22T16:00:00.000Z" itemprop="datePublished">2019-11-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2019/11/23/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7/">免费域名申请</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>有时候可能我们需要用到属于我们自己的域名，所以这里讲一下如何申请免费域名，我们可以到免费域名申请网站上申请，网址为：<a target="_blank" rel="noopener" href="https://www.freenom.com/zh/index.html?lang=zh">https://www.freenom.com/zh/index.html?lang=zh</a>，在里面申请的域名可以免费使用一年</p>
-<p> </p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105652.png"></p>
-<p>比如我们输入域名为kongkong，点击check availability，就可以发现后缀为.ml等都是免费可获得的，当然下面也有付费的域名，比如后缀为.com等</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105710.png"></p>
-<p>如果只是为了申请个域名，这里我们可以只申请免费的，点击get it now，然后我们可以去购物车中看到我们刚刚选取的域名：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105729.png"></p>
-<p>里面有免费12个月的选项，我们选择这个，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105754.png"></p>
-<p>点击continue，然后支付就可以了，此时这个域名就属于你了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320105850.png"></p>
-<p>然后我们在首页这里可以看到我们之前购买的域名：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320110036.png"></p>
-<p>此时已经处于激活状态，在这里可以进行管理</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2019/11/23/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7/" data-id="cuidVFmxaua_g9N0XlIFf1JNj" data-title="免费域名申请" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" rel="tag">免费域名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E5%9F%9F%E5%90%8D/" rel="tag">域名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-搬瓦工服务器设置备份" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2019/11/23/%E6%90%AC%E7%93%A6%E5%B7%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E5%A4%87%E4%BB%BD/" class="article-date">
-  <time class="dt-published" datetime="2019-11-22T16:00:00.000Z" itemprop="datePublished">2019-11-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2019/11/23/%E6%90%AC%E7%93%A6%E5%B7%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E5%A4%87%E4%BB%BD/">搬瓦工服务器设置备份</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>搬瓦工在我们配置好之后，由于我们可能后面会做其他更改，但有时候由于操作问题或者什么原因，可能我们导致我们在搬瓦工服务器上的配置失效了，如果要我们从头安装系统，然后重新配置就很麻烦了，所幸搬瓦工给我们提供了系统备份，可以让我们在任意时候恢复到我们备份时状态，有备份了我们就可以随便折腾我们的服务器了而不用怕出现什么严重问题了，所以当我们把搬瓦工配置好之后，就我们所需要的软件什么的都装好且没有问题时，我们进入搬瓦工后台:</p>
-<p><a target="_blank" rel="noopener" href="https://www.demon1630.cf/%e6%90%ac%e7%93%a6%e5%b7%a5%e6%9c%8d%e5%8a%a1%e5%99%a8%e8%ae%be%e7%bd%ae%e5%a4%87%e4%bb%bd/1574523796-%e6%90%ac%e7%93%a6%e5%b7%a5%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%a4%87%e4%bb%bd1/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574523796-%E6%90%AC%E7%93%A6%E5%B7%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A4%87%E4%BB%BD1-1024x506.png"></a>如图所示，在这里可以创建备份文件，搬瓦工可以创建两个永不失效的备份，就是set sticky那里，设置为sticky就是永不失效，其余备份文件有30天的失效时间，restore就是可以把我们的备份文件覆盖上去，同时我们还可以把备份文件下载下来保存</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2019/11/23/%E6%90%AC%E7%93%A6%E5%B7%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E5%A4%87%E4%BB%BD/" data-id="cuidi5YMb-jBKVkQygTBQY3st" data-title="搬瓦工服务器设置备份" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" rel="tag">搬瓦工</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/xiaoxiaohu/page/22/">&laquo; Prev</a><a class="page-number" href="/xiaoxiaohu/">1</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/21/">21</a><a class="page-number" href="/xiaoxiaohu/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/xiaoxiaohu/page/24/">24</a><a class="page-number" href="/xiaoxiaohu/page/25/">25</a><a class="extend next" rel="next" href="/xiaoxiaohu/page/24/">Next &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/ansys/">ansys</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/ansys/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/ansys/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/excel/">excel</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/excel/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/excel/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/kali-linux/">kali-linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/kali-linux/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/kali-linux/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/">labview</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/">python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/tor/">tor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/tor/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/%E6%B1%BD%E8%BD%A6%E7%83%AD%E7%AE%A1%E7%90%86/">汽车热管理</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/">日常</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E7%94%9F%E6%B4%BB/">生活</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/">路由器</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/ac2100/" rel="tag">ac2100</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/angilent34970a/" rel="tag">angilent34970a</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/ansys/" rel="tag">ansys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/bing/" rel="tag">bing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/bitwarden/" rel="tag">bitwarden</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/calibre/" rel="tag">calibre</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/catia/" rel="tag">catia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/chatgpt/" rel="tag">chatgpt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/cloudflare/" rel="tag">cloudflare</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/endnote/" rel="tag">endnote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/endnotes9/" rel="tag">endnotes9</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/excel/" rel="tag">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/floefd/" rel="tag">floefd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/fluent/" rel="tag">fluent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/gps%E5%AE%9A%E4%BD%8D/" rel="tag">gps定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/kali-linux/" rel="tag">kali-linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/kms/" rel="tag">kms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/labview/" rel="tag">labview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" rel="tag">linux子系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/newifi3/" rel="tag">newifi3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/nextcloud/" rel="tag">nextcloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/nps/" rel="tag">nps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/openwrt/" rel="tag">openwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/pid%E6%8E%A7%E5%88%B6/" rel="tag">pid控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" rel="tag">plc模糊逻辑控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/pycharm/" rel="tag">pycharm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/python3/" rel="tag">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/refprop/" rel="tag">refprop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/scr/" rel="tag">scr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/scrcpy/" rel="tag">scrcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/sndcpy/" rel="tag">sndcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/solidworks/" rel="tag">solidworks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/ssr/" rel="tag">ssr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/telegram/" rel="tag">telegram</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/tkinter/" rel="tag">tkinter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/tor/" rel="tag">tor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/traccar/" rel="tag">traccar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/v2ray/" rel="tag">v2ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/vpn/" rel="tag">vpn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/vrv/" rel="tag">vrv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/windows%E6%BF%80%E6%B4%BB/" rel="tag">windows激活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/word/" rel="tag">word</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/wordpress/" rel="tag">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/workbench/" rel="tag">workbench</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/wsl/" rel="tag">wsl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" rel="tag">三线表格</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" rel="tag">个人图书馆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" rel="tag">串口通讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" rel="tag">二维仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BA%91%E7%9B%98/" rel="tag">云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BB%BF%E7%9C%9F/" rel="tag">仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" rel="tag">企业微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%85%8D%E6%B5%81/" rel="tag">免流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" rel="tag">免登录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" rel="tag">免费域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" rel="tag">制冷技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" rel="tag">反爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" rel="tag">固态硬盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9B%BE%E6%A0%87/" rel="tag">图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9F%9F%E5%90%8D/" rel="tag">域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%A3%B0%E9%9F%B3/" rel="tag">声音</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" rel="tag">天翼网关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" rel="tag">安捷伦</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" rel="tag">定时执行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" rel="tag">宝塔面板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/" rel="tag">密码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" rel="tag">微信防撤回</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%BF%85%E5%BA%94/" rel="tag">必应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" rel="tag">手机投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8A%95%E5%B1%8F/" rel="tag">投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8A%A2%E7%A5%A8/" rel="tag">抢票</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" rel="tag">推荐软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" rel="tag">搬瓦工</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" rel="tag">文章采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" rel="tag">新路由3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" rel="tag">旁路由</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" rel="tag">服务器监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B4%9B%E9%9B%AA/" rel="tag">洛雪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" rel="tag">浏览器技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B5%B7%E8%BE%B9/" rel="tag">海边</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温湿度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%B8%E7%8E%A9/" rel="tag">游玩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">热力膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">电子膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" rel="tag">电池热管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%99%BE%E5%BA%A6sign/" rel="tag">百度sign</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%9B%B4%E6%92%AD/" rel="tag">直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" rel="tag">离线下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" rel="tag">私有云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" rel="tag">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" rel="tag">网站监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BE%A4%E6%99%96/" rel="tag">群晖</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" rel="tag">胖鼠采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" rel="tag">自然对流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" rel="tag">蒲公英</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" rel="tag">试验台</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" rel="tag">谷歌云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" rel="tag">谷歌网盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag">路由器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%82%AE%E4%BB%B6/" rel="tag">邮件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%82%AE%E7%AE%B1/" rel="tag">邮箱</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9D%92%E5%B2%9B/" rel="tag">青岛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" rel="tag">静态网页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90/" rel="tag">音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" rel="tag">音乐播放器</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/xiaoxiaohu/tags/ac2100/" style="font-size: 10px;">ac2100</a> <a href="/xiaoxiaohu/tags/angilent34970a/" style="font-size: 10.5px;">angilent34970a</a> <a href="/xiaoxiaohu/tags/ansys/" style="font-size: 12px;">ansys</a> <a href="/xiaoxiaohu/tags/bing/" style="font-size: 10px;">bing</a> <a href="/xiaoxiaohu/tags/bitwarden/" style="font-size: 10px;">bitwarden</a> <a href="/xiaoxiaohu/tags/calibre/" style="font-size: 10px;">calibre</a> <a href="/xiaoxiaohu/tags/catia/" style="font-size: 10px;">catia</a> <a href="/xiaoxiaohu/tags/chatgpt/" style="font-size: 10px;">chatgpt</a> <a href="/xiaoxiaohu/tags/cloudflare/" style="font-size: 11.5px;">cloudflare</a> <a href="/xiaoxiaohu/tags/docker/" style="font-size: 12px;">docker</a> <a href="/xiaoxiaohu/tags/endnote/" style="font-size: 10px;">endnote</a> <a href="/xiaoxiaohu/tags/endnotes9/" style="font-size: 10px;">endnotes9</a> <a href="/xiaoxiaohu/tags/excel/" style="font-size: 16px;">excel</a> <a href="/xiaoxiaohu/tags/floefd/" style="font-size: 10px;">floefd</a> <a href="/xiaoxiaohu/tags/fluent/" style="font-size: 11px;">fluent</a> <a href="/xiaoxiaohu/tags/gps%E5%AE%9A%E4%BD%8D/" style="font-size: 10px;">gps定位</a> <a href="/xiaoxiaohu/tags/kali-linux/" style="font-size: 13px;">kali-linux</a> <a href="/xiaoxiaohu/tags/kms/" style="font-size: 10px;">kms</a> <a href="/xiaoxiaohu/tags/labview/" style="font-size: 19.5px;">labview</a> <a href="/xiaoxiaohu/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">linux子系统</a> <a href="/xiaoxiaohu/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/xiaoxiaohu/tags/nas/" style="font-size: 10.5px;">nas</a> <a href="/xiaoxiaohu/tags/newifi3/" style="font-size: 12.5px;">newifi3</a> <a href="/xiaoxiaohu/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/xiaoxiaohu/tags/nps/" style="font-size: 13px;">nps</a> <a href="/xiaoxiaohu/tags/openwrt/" style="font-size: 12px;">openwrt</a> <a href="/xiaoxiaohu/tags/pid%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">pid控制</a> <a href="/xiaoxiaohu/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">plc模糊逻辑控制</a> <a href="/xiaoxiaohu/tags/pycharm/" style="font-size: 10px;">pycharm</a> <a href="/xiaoxiaohu/tags/python/" style="font-size: 17px;">python</a> <a href="/xiaoxiaohu/tags/python3/" style="font-size: 10.5px;">python3</a> <a href="/xiaoxiaohu/tags/refprop/" style="font-size: 11px;">refprop</a> <a href="/xiaoxiaohu/tags/scr/" style="font-size: 18.5px;">scr</a> <a href="/xiaoxiaohu/tags/scrcpy/" style="font-size: 10.5px;">scrcpy</a> <a href="/xiaoxiaohu/tags/sndcpy/" style="font-size: 10px;">sndcpy</a> <a href="/xiaoxiaohu/tags/solidworks/" style="font-size: 10px;">solidworks</a> <a href="/xiaoxiaohu/tags/ssr/" style="font-size: 10.5px;">ssr</a> <a href="/xiaoxiaohu/tags/telegram/" style="font-size: 11.5px;">telegram</a> <a href="/xiaoxiaohu/tags/tkinter/" style="font-size: 10px;">tkinter</a> <a href="/xiaoxiaohu/tags/tor/" style="font-size: 19.5px;">tor</a> <a href="/xiaoxiaohu/tags/traccar/" style="font-size: 10px;">traccar</a> <a href="/xiaoxiaohu/tags/v2ray/" style="font-size: 12px;">v2ray</a> <a href="/xiaoxiaohu/tags/vpn/" style="font-size: 10.5px;">vpn</a> <a href="/xiaoxiaohu/tags/vrv/" style="font-size: 10px;">vrv</a> <a href="/xiaoxiaohu/tags/windows/" style="font-size: 13.5px;">windows</a> <a href="/xiaoxiaohu/tags/windows%E6%BF%80%E6%B4%BB/" style="font-size: 10px;">windows激活</a> <a href="/xiaoxiaohu/tags/word/" style="font-size: 18px;">word</a> <a href="/xiaoxiaohu/tags/wordpress/" style="font-size: 14px;">wordpress</a> <a href="/xiaoxiaohu/tags/workbench/" style="font-size: 11.5px;">workbench</a> <a href="/xiaoxiaohu/tags/wsl/" style="font-size: 10.5px;">wsl</a> <a href="/xiaoxiaohu/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" style="font-size: 10px;">三线表格</a> <a href="/xiaoxiaohu/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" style="font-size: 10px;">个人图书馆</a> <a href="/xiaoxiaohu/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" style="font-size: 10px;">串口通讯</a> <a href="/xiaoxiaohu/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" style="font-size: 10px;">二维仿真</a> <a href="/xiaoxiaohu/tags/%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">云盘</a> <a href="/xiaoxiaohu/tags/%E4%BB%BF%E7%9C%9F/" style="font-size: 10.5px;">仿真</a> <a href="/xiaoxiaohu/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" style="font-size: 10.5px;">企业微信</a> <a href="/xiaoxiaohu/tags/%E5%85%8D%E6%B5%81/" style="font-size: 10px;">免流</a> <a href="/xiaoxiaohu/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" style="font-size: 10px;">免登录</a> <a href="/xiaoxiaohu/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" style="font-size: 11px;">免费域名</a> <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" style="font-size: 14.5px;">制冷技术</a> <a href="/xiaoxiaohu/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" style="font-size: 10px;">反爬虫</a> <a href="/xiaoxiaohu/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" style="font-size: 10px;">固态硬盘</a> <a href="/xiaoxiaohu/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10.5px;">图床</a> <a href="/xiaoxiaohu/tags/%E5%9B%BE%E6%A0%87/" style="font-size: 13px;">图标</a> <a href="/xiaoxiaohu/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 15.5px;">域名</a> <a href="/xiaoxiaohu/tags/%E5%A3%B0%E9%9F%B3/" style="font-size: 10px;">声音</a> <a href="/xiaoxiaohu/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" style="font-size: 10px;">天翼网关</a> <a href="/xiaoxiaohu/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" style="font-size: 10.5px;">安捷伦</a> <a href="/xiaoxiaohu/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" style="font-size: 10.5px;">定时执行</a> <a href="/xiaoxiaohu/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" style="font-size: 13px;">宝塔面板</a> <a href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/" style="font-size: 17.5px;">密码</a> <a href="/xiaoxiaohu/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" style="font-size: 10px;">微信防撤回</a> <a href="/xiaoxiaohu/tags/%E5%BF%85%E5%BA%94/" style="font-size: 10px;">必应</a> <a href="/xiaoxiaohu/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">手机投屏</a> <a href="/xiaoxiaohu/tags/%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">投屏</a> <a href="/xiaoxiaohu/tags/%E6%8A%A2%E7%A5%A8/" style="font-size: 10px;">抢票</a> <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" style="font-size: 19px;">控制</a> <a href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" style="font-size: 12px;">推荐软件</a> <a href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" style="font-size: 17.5px;">搬瓦工</a> <a href="/xiaoxiaohu/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.5px;">数据库</a> <a href="/xiaoxiaohu/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">文章采集</a> <a href="/xiaoxiaohu/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" style="font-size: 13px;">新路由3</a> <a href="/xiaoxiaohu/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" style="font-size: 10.5px;">旁路由</a> <a href="/xiaoxiaohu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">服务器监控</a> <a href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 19px;">树莓派</a> <a href="/xiaoxiaohu/tags/%E6%B4%9B%E9%9B%AA/" style="font-size: 10px;">洛雪</a> <a href="/xiaoxiaohu/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">浏览器技术</a> <a href="/xiaoxiaohu/tags/%E6%B5%B7%E8%BE%B9/" style="font-size: 10px;">海边</a> <a href="/xiaoxiaohu/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 12px;">温度传感器</a> <a href="/xiaoxiaohu/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 10.5px;">温湿度传感器</a> <a href="/xiaoxiaohu/tags/%E6%B8%B8%E7%8E%A9/" style="font-size: 11px;">游玩</a> <a href="/xiaoxiaohu/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">热力膨胀阀</a> <a href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 16.5px;">生活</a> <a href="/xiaoxiaohu/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">电子膨胀阀</a> <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" style="font-size: 13px;">电池热管理</a> <a href="/xiaoxiaohu/tags/%E7%99%BE%E5%BA%A6sign/" style="font-size: 10px;">百度sign</a> <a href="/xiaoxiaohu/tags/%E7%9B%B4%E6%92%AD/" style="font-size: 10px;">直播</a> <a href="/xiaoxiaohu/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/xiaoxiaohu/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" style="font-size: 12.5px;">离线下载</a> <a href="/xiaoxiaohu/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">私有云盘</a> <a href="/xiaoxiaohu/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10.5px;">缓存</a> <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" style="font-size: 20px;">网站</a> <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" style="font-size: 16px;">网站建设</a> <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">网站监控</a> <a href="/xiaoxiaohu/tags/%E7%BE%A4%E6%99%96/" style="font-size: 10.5px;">群晖</a> <a href="/xiaoxiaohu/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 10px;">翻译</a> <a href="/xiaoxiaohu/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">胖鼠采集</a> <a href="/xiaoxiaohu/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" style="font-size: 10px;">自然对流</a> <a href="/xiaoxiaohu/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" style="font-size: 10px;">蒲公英</a> <a href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/" style="font-size: 15px;">视频</a> <a href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" style="font-size: 12px;">试验台</a> <a href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" style="font-size: 11.5px;">谷歌云盘</a> <a href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" style="font-size: 10.5px;">谷歌网盘</a> <a href="/xiaoxiaohu/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" style="font-size: 15.5px;">路由器</a> <a href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 14px;">软件</a> <a href="/xiaoxiaohu/tags/%E9%82%AE%E4%BB%B6/" style="font-size: 13.5px;">邮件</a> <a href="/xiaoxiaohu/tags/%E9%82%AE%E7%AE%B1/" style="font-size: 11.5px;">邮箱</a> <a href="/xiaoxiaohu/tags/%E9%9D%92%E5%B2%9B/" style="font-size: 10px;">青岛</a> <a href="/xiaoxiaohu/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" style="font-size: 10px;">静态网页</a> <a href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">音乐</a> <a href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" style="font-size: 10.5px;">音乐播放器</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/09/">September 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/xiaoxiaohu/2024/03/05/%E6%B4%9B%E9%9B%AA%E9%9F%B3%E4%B9%90%E5%8A%A9%E6%89%8B%E6%9B%B4%E6%8D%A2%E9%9F%B3%E4%B9%90%E6%BA%90%E5%A4%B4%E5%8F%8A%E5%90%8C%E6%AD%A5%E6%89%8B%E6%9C%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/">洛雪音乐助手更换音乐源头及同步手机客户端</a>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
           </li>
+          
         
-          <li>
-            <a href="/xiaoxiaohu/2023/10/28/%E5%88%A9%E7%94%A8%E5%9C%9F%E8%80%B3%E5%85%B6%E4%BC%98%E6%83%A0%E8%B4%AD%E4%B9%B0google-one/">利用土耳其优惠购买google one</a>
-          </li>
         
-          <li>
-            <a href="/xiaoxiaohu/2023/09/11/%E7%BE%A4%E6%99%96dsm7-0%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%9C%A8esxi-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96-7-0-dsm7-0-1%E6%95%99%E7%A8%8B/">在ESXI 虚拟机上安装群晖 7.0 (DSM7.0.1)教程</a>
-          </li>
-        
-          <li>
-            <a href="/xiaoxiaohu/2023/07/19/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91fiddler%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">【工具】Fiddler使用教程</a>
-          </li>
-        
-          <li>
-            <a href="/xiaoxiaohu/2023/06/03/%E7%BE%A4%E6%99%96%E4%BD%BF%E7%94%A8alist%E6%8C%82%E8%BD%BD%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%E5%88%B0%E6%9C%AC%E5%9C%B0/">群晖使用alist挂载阿里云盘到本地</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
     </div>
   </div>
+</nav>
 
-  
-</aside>
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>Home</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/archives/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>Archives</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/categories/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-category-fill"></i>
+                  <span>Categories</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/tags/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-tags-fill"></i>
+                  <span>Tags</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/about/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-user-fill"></i>
+                  <span>About</span>
+                </div>
+              </a>
+            </div>
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>Search</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="Light"
+               data-label-dark="Dark">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">Dark</span>
+              </div>
+            </a>
+          </div>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
-</footer>
+</div>
 
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/xiaoxiaohu/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
-    <nav id="mobile-nav">
+  </div>
+</div>
+
+
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<h1 style="display: none">Hexo</h1>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2019/11/30/wordpress%E5%A6%82%E4%BD%95%E7%A0%B4%E8%A7%A3%E5%AE%89%E8%A3%85wordfence%E5%AE%89%E5%85%A8%E6%8F%92%E4%BB%B6/" target="_self">
+          Wordpress如何破解安装Wordfence安全插件
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2019/11/30/wordpress%E5%A6%82%E4%BD%95%E7%A0%B4%E8%A7%A3%E5%AE%89%E8%A3%85wordfence%E5%AE%89%E5%85%A8%E6%8F%92%E4%BB%B6/" target="_self">
+        <div>
+          安全是我们首先要考虑的问题，所以建议大家建站后安装一个安全插件，更好的保护自己的网站免遭攻击，这里介绍一下wordfence这个插件吧  基本上可以满足我们的需求了，但要想使用全部功能，需要付费订阅，但是吧，作为对技术的追求（穷），我们这里介绍一下如何进行破解，但还是建议能付费尽量付费吧，版权意识还是要有的，下面介绍一下主要步骤吧。 一 安装wordfence插件首先在网站后台把wordfence
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-30 00:00" pubdate>
+              2019-11-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
   
-    <a href="/xiaoxiaohu/" class="mobile-nav-link">Home</a>
   
-    <a href="/xiaoxiaohu/archives" class="mobile-nav-link">Archives</a>
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/wordpress/" class="category-chain-item">wordpress</a>
   
-</nav>
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">#网站</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2019/11/30/%E5%86%AC%E6%97%A5%E6%83%8A%E9%86%92/" target="_self">
+          冬日惊醒
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2019/11/30/%E5%86%AC%E6%97%A5%E6%83%8A%E9%86%92/" target="_self">
+        <div>
+          早上突然惊醒 :xiaoyan: ，以前自己是不怎么做梦的，但这段时间来自己都睡的不太安稳，可能是最近各种事的原因吧，起来的时候突然想到了自己小时候，那时候自己读小学，冬天，要过年了，不用去学校，前天晚上下着大雪，记得那时候自己真的会晚上下学的时候坐在门口，拿手电筒照着外面，呆呆的看看雪。。。。现在可能是会开始抱怨下雪好冷吧 :kuanghan: ，总还是想保持着那时候的心情。。。那时候可以早上晚
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-30 00:00" pubdate>
+              2019-11-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E7%94%9F%E6%B4%BB/" class="category-chain-item">生活</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/">#生活</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2019/11/30/%E6%A0%A1%E5%9B%AD%E4%B8%80%E7%9E%A5/" target="_self">
+          校园一瞥
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2019/11/30/%E6%A0%A1%E5%9B%AD%E4%B8%80%E7%9E%A5/" target="_self">
+        <div>
+          以前还是很喜欢去学校图书馆的，特别是冬天的时候，跑到图书馆，吹着空调，拿本书，看看书玩玩手机，很惬意。。。。现在虽然也喜欢，但可能没那种心境了吧 :lei:
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-30 00:00" pubdate>
+              2019-11-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/wordpress/" class="category-chain-item">wordpress</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2019/11/25/%E5%B0%8F%E8%AF%97/" target="_self">
+          小诗
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2019/11/25/%E5%B0%8F%E8%AF%97/" target="_self">
+        <div>
+          偶然看到的一首网上的小诗，很有感觉 我有一壶酒， 足以慰风尘。 尽倾江海里， 赠饮天下人。 我有一壶酒， 足以慰风尘。 千杯不解饮， 万杯苦沉沦。 埋骨厚国土， 肝胆两昆仑。 疏狂君莫笑， 赤子中国人。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-25 00:00" pubdate>
+              2019-11-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/" class="category-chain-item">日常</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/%E7%94%9F%E6%B4%BB/" class="category-chain-item">生活</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2019/11/24/wordpress%E4%BD%BF%E7%94%A8cloudflare%E7%9A%84cdn%E8%A7%A3%E6%9E%90%E5%90%8E%E5%A6%82%E4%BD%95%E5%9C%A8%E5%90%8E%E5%8F%B0%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9Eip/" target="_self">
+          WordPress使用cloudflare的CDN解析后如何在后台显示用户真实ip
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2019/11/24/wordpress%E4%BD%BF%E7%94%A8cloudflare%E7%9A%84cdn%E8%A7%A3%E6%9E%90%E5%90%8E%E5%A6%82%E4%BD%95%E5%9C%A8%E5%90%8E%E5%8F%B0%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9Eip/" target="_self">
+        <div>
+          在WordPress里安装了统计插件，可以显示访问用户的设备和ip信息等情况，但之前由于使用了cloudflare的CDN，导致显示的用户ip都是cloudflare的ip，没有任何作用，所以为了得到用户的真实ip，我们可以通过添加一小段代码来实现，代码如下： 123456//绕过 CDN 代理IP获取客户真实IP地址if(isset($_SERVER[&#x27;HTTP_X_FORWARDED
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-24 00:00" pubdate>
+              2019-11-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/wordpress/" class="category-chain-item">wordpress</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">#网站</a>
+            
+              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/">#网站建设</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2019/11/24/wordpress%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6image-watermark%E4%B8%BA%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0/" target="_self">
+          WordPress使用插件Image Watermark为文章图片添加水印
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2019/11/24/wordpress%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6image-watermark%E4%B8%BA%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0/" target="_self">
+        <div>
+          有时候我们经常需要在文章中上传图片，但由于有些图片是我们的原创，所以我们不希望别人随便盗用，此时我们就可以在图片上添加水印，但要是一张张图片去添加就会太麻烦了，这里介绍一个插件，叫做：Image Watermark，我们可以到插件里面去搜索安装  水印插件比较多，但这个插件功能比较完善，主要有以下特点  上传的图片自动加水印 原有媒体库文件批量添加水印 特定类型图片添加水印 水印位置调整、边距偏移
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-24 00:00" pubdate>
+              2019-11-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/wordpress/" class="category-chain-item">wordpress</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">#网站</a>
+            
+              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/">#网站建设</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2019/11/24/wordpress%E7%AE%A1%E7%90%86%E5%91%98%E4%B8%80%E9%94%AE%E7%99%BB%E5%85%A5%E5%85%B6%E4%BD%99%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7/" target="_self">
+          WordPress管理员一键登入其余用户账号
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2019/11/24/wordpress%E7%AE%A1%E7%90%86%E5%91%98%E4%B8%80%E9%94%AE%E7%99%BB%E5%85%A5%E5%85%B6%E4%BD%99%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7/" target="_self">
+        <div>
+          有时候我们可能需要登入到其他用户的账号里去，但即使我们是管理员，我们也不知道其他用户的密码，无法登入，所以这里提供一个一键登入其他用户账户的方法，主要是将如下代码添加到主题的functions.php文件中： 123456789101112131415161718192021/** * WordPress 后台管理员免密一键切换其他账号登录 * https://www.dujin.org/fenx
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-24 00:00" pubdate>
+              2019-11-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/wordpress/" class="category-chain-item">wordpress</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">#网站</a>
+            
+              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/">#网站建设</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2019/11/23/%E4%BD%BF%E7%94%A8cloudflare%E8%A7%A3%E6%9E%90%E5%9F%9F%E5%90%8D%E5%B9%B6%E9%9A%90%E8%97%8F%E6%90%AC%E7%93%A6%E5%B7%A5%E7%9C%9F%E5%AE%9Eip/" target="_self">
+          使用cloudflare解析域名并隐藏搬瓦工真实ip
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2019/11/23/%E4%BD%BF%E7%94%A8cloudflare%E8%A7%A3%E6%9E%90%E5%9F%9F%E5%90%8D%E5%B9%B6%E9%9A%90%E8%97%8F%E6%90%AC%E7%93%A6%E5%B7%A5%E7%9C%9F%E5%AE%9Eip/" target="_self">
+        <div>
+          之前有写一篇文章，讲了如何直接使用搬瓦工自带的shadowsocks，详情见瓦工安装shadowsocks及其控制面板， 里面有讲到如果为了简单起见，不愿意搞太过于复杂的话，只是想安心上网，就可以直接使用这个教程里的，省去许多配置麻烦。 不过随着现在墙越来越高，使用shadowsocks的都经常容易被封IP，特别是对于搬瓦工来说，由于IP被封后免费更换IP服务已经取消了，只能进行付费更换IP，付费
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-23 00:00" pubdate>
+              2019-11-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/" class="category-chain-item">搬瓦工</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/" class="category-chain-item">wordpress</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">#网站</a>
+            
+              <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/">#控制</a>
+            
+              <a href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">#搬瓦工</a>
+            
+              <a href="/xiaoxiaohu/tags/cloudflare/">#cloudflare</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2019/11/23/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7/" target="_self">
+          免费域名申请
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2019/11/23/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7/" target="_self">
+        <div>
+          有时候可能我们需要用到属于我们自己的域名，所以这里讲一下如何申请免费域名，我们可以到免费域名申请网站上申请，网址为：https://www.freenom.com/zh/index.html?lang=zh，在里面申请的域名可以免费使用一年    比如我们输入域名为kongkong，点击check availability，就可以发现后缀为.ml等都是免费可获得的，当然下面也有付费的域名，比如后缀
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-23 00:00" pubdate>
+              2019-11-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/" class="category-chain-item">搬瓦工</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/" class="category-chain-item">wordpress</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">#网站</a>
+            
+              <a href="/xiaoxiaohu/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/">#免费域名</a>
+            
+              <a href="/xiaoxiaohu/tags/%E5%9F%9F%E5%90%8D/">#域名</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2019/11/23/%E6%90%AC%E7%93%A6%E5%B7%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E5%A4%87%E4%BB%BD/" target="_self">
+          搬瓦工服务器设置备份
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2019/11/23/%E6%90%AC%E7%93%A6%E5%B7%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E5%A4%87%E4%BB%BD/" target="_self">
+        <div>
+          搬瓦工在我们配置好之后，由于我们可能后面会做其他更改，但有时候由于操作问题或者什么原因，可能我们导致我们在搬瓦工服务器上的配置失效了，如果要我们从头安装系统，然后重新配置就很麻烦了，所幸搬瓦工给我们提供了系统备份，可以让我们在任意时候恢复到我们备份时状态，有备份了我们就可以随便折腾我们的服务器了而不用怕出现什么严重问题了，所以当我们把搬瓦工配置好之后，就我们所需要的软件什么的都装好且没有问题时，我
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-23 00:00" pubdate>
+              2019-11-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/" class="category-chain-item">搬瓦工</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">#搬瓦工</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/xiaoxiaohu/page/22/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/xiaoxiaohu/">1</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/21/#board">21</a><a class="page-number" href="/xiaoxiaohu/page/22/#board">22</a><span class="page-number current">23</span><a class="page-number" href="/xiaoxiaohu/page/24/#board">24</a><a class="page-number" href="/xiaoxiaohu/page/25/#board">25</a><a class="extend next" rel="next" href="/xiaoxiaohu/page/24/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/xiaoxiaohu/js/jquery-3.6.4.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/xiaoxiaohu/js/events.js" ></script>
+<script  src="/xiaoxiaohu/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
 
 
 
   
-<script src="/xiaoxiaohu/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/xiaoxiaohu/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/xiaoxiaohu/js/script.js"></script>
+  <script  src="/xiaoxiaohu/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/xiaoxiaohu/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>

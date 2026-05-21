@@ -1,862 +1,1161 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/xiaoxiaohu/img/fluid.png">
+  <link rel="icon" href="/xiaoxiaohu/img/fluid.png">
   
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="https://demon1630.github.io/xiaoxiaohu/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/xiaoxiaohu/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/xiaoxiaohu/favicon.png">
+<meta name="twitter:card" content="summary_large_image">
   
   
   
-<link rel="stylesheet" href="/xiaoxiaohu/css/style.css">
+  <title>Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/xiaoxiaohu/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/xiaoxiaohu/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/xiaoxiaohu/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"demon1630.github.io","root":"/xiaoxiaohu/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/xiaoxiaohu/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/xiaoxiaohu/js/utils.js" ></script>
+  <script  src="/xiaoxiaohu/js/color-schema.js" ></script>
+  
+
 
   
-    
-<link rel="stylesheet" href="/xiaoxiaohu/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
 <meta name="generator" content="Hexo 8.1.2"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/xiaoxiaohu/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/xiaoxiaohu/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <a class="main-nav-link" href="/xiaoxiaohu/">Home</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
         
-          <a class="main-nav-link" href="/xiaoxiaohu/archives">Archives</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
         
-      </nav>
-      <nav id="sub-nav">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
         
         
-          <a class="nav-icon" href="/xiaoxiaohu/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://demon1630.github.io/xiaoxiaohu"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-搭建树莓派外网视频监控系统" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2022/06/05/%E6%90%AD%E5%BB%BA%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A4%96%E7%BD%91%E8%A7%86%E9%A2%91%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" class="article-date">
-  <time class="dt-published" datetime="2022-06-04T16:00:00.000Z" itemprop="datePublished">2022-06-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2022/06/05/%E6%90%AD%E5%BB%BA%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A4%96%E7%BD%91%E8%A7%86%E9%A2%91%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/">搭建树莓派外网视频监控系统</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>之前想着买个云台放到家里，然后看到网上有关于树莓派视频监控的，所以就也买了个摄像头来实验试一下</p>
-<p>由于树莓派留有摄像头接口，因此到淘宝上买了个匹配的摄像头，便宜的20元左右，带夜视的会贵一点，大概四五十</p>
-<p>我买的是这款，加个支架才20</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220529111814.png"></p>
-<p>其对应的树莓派接口是这个位置：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220529113810.png"></p>
-<p>直接插上去就好了，不够要看准其方向</p>
-<p>连接上去之后还需要对树莓派进行配置</p>
-<p>打开树莓派配置工具：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config </span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220529120848.png"> 然后选择camera <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220529121006.png"></p>
-<p>激活摄像头功能：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220529121132.png"> 之后重启一下树莓派，然后就可以测试一下拍照了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raspistill -o test.jpg</span><br></pre></td></tr></table></figure>
-
-<p>如果没什么问题，此时拍摄的照片已经存为test.jpg了</p>
-<h2 id="motion"><a href="#motion" class="headerlink" title="motion"></a>motion</h2><p><a target="_blank" rel="noopener" href="https://motion-project.github.io/">motion</a> 是一款开源的支持多种摄像头的监控软件。</p>
-<p>我使用的是 Raspbian ，你如果使用其它的发行版本，使用对应命令进行安装即可。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line">sudo apt-get install motion</span><br></pre></td></tr></table></figure>
-
-<p>motion 有着超多的配置，我们先配置一些必须的，打开 motion 的配置文件 <code>/etc/motion/motion.conf</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/motion/motion.conf</span><br></pre></td></tr></table></figure>
-
-<p>找到里面的这些值进行修改</p>
-<ol>
-<li><code>daemon</code> 的值修改为 <code>on</code>，让 motion 后台运行</li>
-<li><code>rotate</code> 旋转画面，如果需要90°、180°旋转，可以在这里配置</li>
-<li><code>width</code> 和 <code>height</code> 修改画面分辨率（默认为 320*240 像素），我修改成了 <code>1024</code> 和 <code>768</code></li>
-<li><code>framerate</code> 捕获的帧率，我修改为了 <code>30</code></li>
-<li><code>stream_maxrate</code> 修改流的帧率，因为我们需要实时查看，这个默认值是 1，会导致画面非常卡顿，我这里修改成了 <code>30</code></li>
-<li><code>stream_localhost</code> 的值修改为 <code>off</code>，允许通过非 localhost 来查看视频</li>
-</ol>
-<p>为保证隐私，可以开启密码：</p>
-<p>stream_authentication  name:password</p>
-<p>把里面的name和password改为自己需要的即可</p>
-<ul>
-<li>画面分辨率越高越消耗资源</li>
-<li>如果画面非常卡，可以调整 <code>stream_maxrate</code> 和 <code>framerate</code> 找到一个合适你的值</li>
-</ul>
-<p>当 motion 运行以后，可以通过 <code>SIGHUP</code> 信号来重新加载配置文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo killall -SIGHUP motion</span><br></pre></td></tr></table></figure>
-
-<p>启动：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo motion</span><br></pre></td></tr></table></figure>
-
-<p>启动 motion 后，摄像头上红灯会开启，打开另一台电脑或手机上的浏览器，访问 http:&#x2F;&#x2F;树莓派地址:8081&#x2F; 即可查看到画面。 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/86a7a7f5f163aa23682fd741f7d1640.jpg"> 如果开启了密码，输入用户名和密码即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220605150130.png"></p>
-<p>此时已经可以实现在线监控了。</p>
-<p>但目前只能局域网内进行，若要实现外网访问，就可以借助之前讲过的NPS，配置简单方便，不过需要有外网服务器</p>
-<p>参考文章：<a target="_blank" rel="noopener" href="http://www.demon1630.cn/nps%e5%ae%9e%e7%8e%b0%e6%a0%91%e8%8e%93%e6%b4%be%e5%86%85%e7%bd%91%e7%a9%bf%e9%80%8f/">nps实现树莓派内网穿透</a></p>
-<p>将在线监控的8081端口映射到外网服务器上即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220605150941.png"> 此时访问外网服务器加端口即可实现外网访问了，不过外网如果速率等不够的话，可能会有点卡顿，可以调整 <code>stream_maxrate</code> 和 <code>framerate</code> </p>
-<p>找到一个合适的值即可</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2022/06/05/%E6%90%AD%E5%BB%BA%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A4%96%E7%BD%91%E8%A7%86%E9%A2%91%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" data-id="cuidYtmunpfdYdQNtPB33DBQ_" data-title="搭建树莓派外网视频监控系统" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/nps/" rel="tag">nps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/word/" rel="tag">word</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/" rel="tag">密码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag">树莓派</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-使用树莓派定时读取小米温湿度传感器数据并发送" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2022/05/04/%E4%BD%BF%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E8%AF%BB%E5%8F%96%E5%B0%8F%E7%B1%B3%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E9%80%81/" class="article-date">
-  <time class="dt-published" datetime="2022-05-03T16:00:00.000Z" itemprop="datePublished">2022-05-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/python/">python</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/python/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/python/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2022/05/04/%E4%BD%BF%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E8%AF%BB%E5%8F%96%E5%B0%8F%E7%B1%B3%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E9%80%81/">使用树莓派定时读取小米温湿度传感器数据并发送到微信</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>前面有文章讲过可以在线把小米温湿度传感器刷定制固件，同时还会开启其蓝牙广播功能，参考文章：<a target="_blank" rel="noopener" href="http://www.demon1630.cn/%e5%b0%8f%e7%b1%b3%e6%b8%a9%e6%b9%bf%e5%ba%a6%e4%bc%a0%e6%84%9f%e5%99%a8%e5%88%b7%e5%85%a5%e5%ae%9a%e5%88%b6%e5%9b%ba%e4%bb%b6%ef%bc%8c%e5%bc%80%e5%90%af%e8%87%aa%e5%ae%9a%e4%b9%89%e5%8a%9f%e8%83%bd/">小米温湿度传感器刷入定制固件，开启自定义功能</a>。</p>
-<p>因为手头刚好有树莓派，就想着怎么可以利用树莓派采集小米温湿度传感器的广播数据然后发送到手机上，通过蓝牙广播来读取数据不用建立蓝牙连接，更加省电，这样就相当于可以远程监控家里温湿度情况了，而且使用树莓派可以做很多定制，比如温度达到多少进行提醒等等。</p>
-<p>在网上有找到一个项目，可以在树莓派上运行python来读取温湿度传感器的广播数据，项目地址：<a target="_blank" rel="noopener" href="https://github.com/JsBergbau/MiTemperature2">https://github.com/JsBergbau/MiTemperature2</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220504094115.png">使用wget远程下载到树莓派中，然后解压缩得到一个叫MiTemperature2-master的文件夹</p>
-<p>接下来还需要先设置一下小米温湿度传感器的蓝牙广播配置：参照前面文章在电脑上通过这个链接：<a target="_blank" rel="noopener" href="https://pvvx.github.io/ATC_MiThermometer/TelinkMiFlasher.html">https://pvvx.github.io/ATC_MiThermometer&#x2F;TelinkMiFlasher.html</a>连接上小米温湿度传感器</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220504093746.png">然后参考图中所示，将Advertising type设置为ATC441，设置广播时间Advertising interval为2500ms，设置广播功率RF TX Power，可以参考树莓派与传感器距离进行调整，最后点击Send Config进行设置。</p>
-<p>之后进入MiTemperature2-master文件夹中</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220504094433.png"></p>
-<p>里面的LYWSD03MMC.py就是我们接下来要用到的文件，使用教程可以看项目中介绍或者使用命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3  LYWSD03MMC.py -h</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220504094801.png"></p>
-<p>最简单的用法是输入命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3  LYWSD03MMC.py -a</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220504095410.png"> 此时就可以获取到温湿度传感器数据了</p>
-<p>至此已经可以顺利读取数据了，但我想要的是可以定时读取数据并发送到我的微信中，这里就要借用项目进行爆改了</p>
-<p>参考文件LYWSD03MMC.py文件中蓝牙连接及数据解码的内容，同时参考文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_49475727/article/details/115401631">https://blog.csdn.net/m0_49475727&#x2F;article&#x2F;details&#x2F;115401631</a>，然后在再代码中加入发送到微信和telegram的代码，这里参考我之前的文章：<a target="_blank" rel="noopener" href="http://www.demon1630.cn/%e5%bc%83%e7%94%a8server%e9%85%b1%ef%bc%8cpython%e4%bd%bf%e7%94%a8%e4%bc%81%e4%b8%9a%e5%be%ae%e4%bf%a1%e5%b0%8f%e7%a8%8b%e5%ba%8f%e5%8f%91%e9%80%81%e6%b6%88%e6%81%af%e5%88%b0%e5%be%ae%e4%bf%a1/">弃用server酱，python使用企业微信小程序发送消息到微信中</a>和<a target="_blank" rel="noopener" href="http://www.demon1630.cn/python%e4%bd%bf%e7%94%a8telegram%e6%9c%ba%e5%99%a8%e4%ba%ba%e5%8f%91%e9%80%81%e6%b6%88%e6%81%af%e8%bf%9b%e8%a1%8c%e6%8e%a8%e9%80%81/">python使用telegram机器人发送消息进行推送</a></p>
-<p>就可以实现将读取到的数据传输到手机上了，至于定时读取就可以参考文章：<a target="_blank" rel="noopener" href="http://www.demon1630.cn/%e5%ae%9d%e5%a1%94%e9%9d%a2%e6%9d%bf%e8%ae%be%e7%bd%ae%e5%ae%9a%e6%97%b6%e6%89%a7%e8%a1%8cpython%e8%84%9a%e6%9c%ac/">宝塔面板设置定时执行python脚本</a>，这些结合后就实现定时读取温湿度传感器数据然后发送到手机中的目的了，结果如图所示：</p>
-<p>这是微信中的： <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220504100417.png"></p>
-<p>这是telegram中的：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220504100456.png"></p>
-<p>还可以在代码中加入各种其他通知或者警告等功能</p>
-<p>代码放在这里了：<a target="_blank" rel="noopener" href="https://strivefysfxyh.lanzoub.com/iNLkx049756h">https://strivefysfxyh.lanzoub.com/iNLkx049756h</a>下载解压缩，有两个文件，把里面发送微信和telegram的代码参考之前文章进行修改，然后运行读取并发送温湿度传感器数据.py即可</p>
-<p>访问密码：</p>
-<p>[hide reply_to_this&#x3D;”true”]</p>
-<p>8ejg</p>
-<p>[&#x2F;hide]</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220504101444.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2022/05/04/%E4%BD%BF%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E8%AF%BB%E5%8F%96%E5%B0%8F%E7%B1%B3%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E9%80%81/" data-id="cuidZ6E44k9XJjHbm0NfRFnoU" data-title="使用树莓派定时读取小米温湿度传感器数据并发送到微信" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/python3/" rel="tag">python3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/telegram/" rel="tag">telegram</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" rel="tag">企业微信</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" rel="tag">定时执行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" rel="tag">宝塔面板</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/" rel="tag">密码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag">树莓派</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温湿度传感器</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-小米温湿度传感器刷入定制固件，开启自定义功能" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2022/04/19/%E5%B0%8F%E7%B1%B3%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E5%88%B7%E5%85%A5%E5%AE%9A%E5%88%B6%E5%9B%BA%E4%BB%B6%EF%BC%8C%E5%BC%80%E5%90%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%9F%E8%83%BD/" class="article-date">
-  <time class="dt-published" datetime="2022-04-18T16:00:00.000Z" itemprop="datePublished">2022-04-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2022/04/19/%E5%B0%8F%E7%B1%B3%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E5%88%B7%E5%85%A5%E5%AE%9A%E5%88%B6%E5%9B%BA%E4%BB%B6%EF%BC%8C%E5%BC%80%E5%90%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%9F%E8%83%BD/">小米温湿度传感器刷入定制固件，开启自定义功能</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>之前一时兴起买了一个小米的温湿度传感器，一直是用手机连接查看室内温湿度情况，本来一直想看能不能把温湿度传感器上的数据上传到网络上，让我远程也能获取到家里的温湿度，但又没有买小米网关，偶然在网上看到小米温湿度计可以刷入定制固件，所以就试了一下</p>
-<p>首先需要有一个温湿度计，我的是第一款：LYWSD03MMC，其他款的我没试，好像也可以</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220419232501.png"></p>
-<p> </p>
-<p>首先我们电脑先打开这个网址：<a target="_blank" rel="noopener" href="https://pvvx.github.io/ATC_MiThermometer/TelinkMiFlasher.html">https://pvvx.github.io/ATC_MiThermometer&#x2F;TelinkMiFlasher.html</a> </p>
-<p>点击connect，然后就会扫描附件的蓝牙设备，这里我的是已经配对过了，第一次配对名字应该是LYWSD03MMC，就是你的温湿度传感器的型号，我这里因为已经刷入新固件了，所以名称已经变了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220419233128.png"></p>
-<p>连接上后，页面会显示如图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220419233651.png"></p>
-<p>如果是原厂固件,还需要点击一次 Do Acivation按钮，此时网页会变为以上所示的画面。因为我 的设备已经刷入定制固件，所以没有Do Acivation按钮。</p>
-<p>到这个页面后点击Custom Firmware，再点击Start Flashing就可以刷入定制固件到米家温湿度计了。刷写完成后需要重新点击Connect来连接。</p>
-<p>之后可以到下面这个页面定制功能：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220419234110.png"> 例如温度单位，轮换显示日期电量，蓝牙广播间隔，广播功率等都可以直接在网页.上修改,再点击Send Config即可将设置上传到温湿度计中保存。也可以点击Get Config来下载当前设置值，或者使用Set default来恢复默认设置。 为了弥补不能连接米家app的缺陷,网页上的GraphMemo.html链接提供了读取历史数据并绘图的功能。当然你也可以在页面上选择下载所有的温湿度数据到本地保存。</p>
-<p>由于定制固件默认开启了蓝牙广播温湿度数据的功能，耗电量相比原厂固件可能会略微增加。不过比起蓝牙连接的方式，蓝牙广播消耗的电量会更少。 相关项目: <a target="_blank" rel="noopener" href="https://github.com/pvvx/ATC_MiThermometer">https://github.com/pvvx/ATC_MiThermometer</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2022/04/19/%E5%B0%8F%E7%B1%B3%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E5%88%B7%E5%85%A5%E5%AE%9A%E5%88%B6%E5%9B%BA%E4%BB%B6%EF%BC%8C%E5%BC%80%E5%90%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%9F%E8%83%BD/" data-id="cuidUMu5CUr465dQm4qCl9YNH" data-title="小米温湿度传感器刷入定制固件，开启自定义功能" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温湿度传感器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-floefd壳内对流换热仿真" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2022/04/12/floefd%E5%A3%B3%E5%86%85%E5%AF%B9%E6%B5%81%E6%8D%A2%E7%83%AD%E4%BB%BF%E7%9C%9F/" class="article-date">
-  <time class="dt-published" datetime="2022-04-11T16:00:00.000Z" itemprop="datePublished">2022-04-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/ansys/">ansys</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2022/04/12/floefd%E5%A3%B3%E5%86%85%E5%AF%B9%E6%B5%81%E6%8D%A2%E7%83%AD%E4%BB%BF%E7%9C%9F/">floefd壳内对流换热仿真</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>本教程主要讲如何利用floefd进行仿真，软件采用的是floefd for creo，也就是挂载在creo软件内的floefd，软件安装可以到网上找教程</p>
-<p>1. 首先在creo中打开装配体，然后进入floefd界面，由于是仿真内部流动，所以必须保证仿真模型是封闭的，因此先利用floefd界面创建端盖进行封闭</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412091856.png"></p>
-<p>创建好后，会在有缺口处出现封闭盖 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412092513.png"></p>
-<p>按照操作把所有面的口都封闭起来，此时就创建好了封闭体</p>
-<p>2.然后我们检查是否完成封闭 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412092913.png"> 如果没有问题，会出现图中⑤所示，显示模型正常 后续还可以把选项中的改善几何体处理勾选上，来尽量避免出现模型问题 3.之后开始创建向导，进行模型仿真基本配置 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412095304.png"> 把单位设置按如图所示进行 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412095453.png"> 把我们所需要分析的这几个勾选上，由于辐射相对于对流换热量级小很多，所以这里先忽略，重力需要保证方向是向下的，不对的可以进行调整 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412095749.png"> 设置好然后点击下一步 这里流体我们选择空气，然后下一步 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412100202.png"> 默认材质选择不锈钢321 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412100335.png"> 壁面条件默认绝热即可 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412100411.png"> 温度设置为环境温度25℃ <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412100805.png"></p>
-<p>此时向导的基本设置就已经设置完成了</p>
-<p>4.然后开始设置材料 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412101142.png"> 点击进入floefd模型树界面，右键固体材料，选择插入固体材料 然后回到几何模型树，选中对应的几何体，选择相应的材料，命名之后确定 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412101456.png"> 按照类似操作把里面所有需要设置材料参数的都设置好 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412101714.png"> 设置好的会在固体材料列下面显示</p>
-<p>5.设置热源 按如图所示进行插入热源 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412102030.png"></p>
-<p>类似材料设置，到几何模型树中选择热源几何体，设置相应的产热参数，选择最大温度作为监控量 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412102327.png"> 设置好之后在floefd模型树中单击对应选项也可以看到相应设置情况 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412102608.png"></p>
-<p>6.设置边界条件 设置强制入口风扇 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412102946.png"> 设置对应参数，这里注意，选择入口面时需要在几何中选择，避免选错 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412103450.png"></p>
-<p>设置环境压力出口 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412131449.png"> 为了便于选择，可以把原来的外壳先隐藏掉 把所有出入口设置好之后，可以看到，有相应的箭头显示流体流动方向 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412104247.png"></p>
-<p>7.设置监控目标 首先添加全局监控目标，总压、温度等，在目标处右键-插入全局目标 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412104507.png"> <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412104851.png"></p>
-<p>也可单独对某一个固体设置监控，目标右键-插入体积目标-选择对应几何体，自己选择想要监控的参数及几何体 在选择过程中如果出现选择不了对应几何体的话可以切换选择筛选 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412105810.png"></p>
-<p>8.设置网格 全局网格右键-编辑定义 按需求设置即可 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412105950.png"></p>
-<p>9.运行计算 点击上方运行 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412131659.png"> 可以看到已经在计算了 求解完成后可以看到各项已经趋于稳定 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412132036.png"></p>
-<p>到结果下面选择表面图-插入表面图 然后选择所需表面，选择温度参数 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412132412.png"></p>
-<p>由此我们就可以看到固体表面的温度分布情况 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412132610.png"></p>
-<p>同时我们插入迹线图来查看流体情况 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412132925.png"></p>
-<p>还可以插入探测值来查看某一点温度 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220412134030.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2022/04/12/floefd%E5%A3%B3%E5%86%85%E5%AF%B9%E6%B5%81%E6%8D%A2%E7%83%AD%E4%BB%BF%E7%9C%9F/" data-id="cuidcIaU-FbGoW3mGBURmuwvu" data-title="floefd壳内对流换热仿真" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/floefd/" rel="tag">floefd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E4%BB%BF%E7%9C%9F/" rel="tag">仿真</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-小米ac2100最简单刷机教程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2022/03/12/%E5%B0%8F%E7%B1%B3ac2100%E6%9C%80%E7%AE%80%E5%8D%95%E5%88%B7%E6%9C%BA%E6%95%99%E7%A8%8B/" class="article-date">
-  <time class="dt-published" datetime="2022-03-11T16:00:00.000Z" itemprop="datePublished">2022-03-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/">路由器</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2022/03/12/%E5%B0%8F%E7%B1%B3ac2100%E6%9C%80%E7%AE%80%E5%8D%95%E5%88%B7%E6%9C%BA%E6%95%99%E7%A8%8B/">小米AC2100最简单刷机教程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>小米ac2100算是目前比较有性价比的路由器了，刷机之后稳定性和可玩性都大幅提升，但其不支持WiFi6，同时其运行内存只有128Mb，有点小，所以有些固件里的服务如果优化不好的话运行会比较吃力，不过目前一百多的价格算是可以了，从此玩游戏连WiFi再也不用担心突然卡顿了</p>
-<p>首先拿到一个没刷过机的小米ac2100，目前刷机最简单的就是使用小米一款老官方固件，这个固件存在bug，可以让我们绕过其限制开启其后台</p>
-<p>有漏洞固件版本为ac2100 2.0.7.*版本，下载链接为：<a target="_blank" rel="noopener" href="https://strivefysfxyh.lanzoub.com/i2Rpu01dqhcf">https://strivefysfxyh.lanzoub.com/i2Rpu01dqhcf</a></p>
-<p>下载后在小米路由器后台刷入，进行降级</p>
-<p>在后台的常用设置-&gt;系统状态-&gt;手动升级  加载（<strong>降级固件</strong>）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220312224243.png"></p>
-<p>这里前提是你路由器可以联网，先接到其他路由器上去</p>
-<p>刷完后重新加入后台，在网址里可以看到一个stok名字，把stok的内容复制下来</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220312224307.png"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.31.1/cgi-bin/luci/;stok=CCCCCCCCCCC/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=%0A%5B%20-z%20%22%24(dmesg%20%7C%20grep%20ESMT)%22%20%5D%20%26%26%20B%3D%22Toshiba%22%20%7C%7C%20B%3D%22ESMT%22%0Auci%20set%20wireless.%24(uci%20show%20wireless%20%7C%20awk%20-F%20&#x27;.&#x27;%20&#x27;%2Fwl1%2F%20%7Bprint%20%242%7D&#x27;).ssid%3D%22%24B%20%24(dmesg%20%7C%20awk%20&#x27;%2FBad%2F%20%7Bprint%20%245%7D&#x27;)%22%0A%2Fetc%2Finit.d%2Fnetwork%20restart%0A</span><br></pre></td></tr></table></figure>
-
-<p>把里面的ccccccc替换为你路由器后台网址中的stok，然后打开这个网址</p>
-<p>在页面上会反馈一个{“code”:0}的代码</p>
-<p>然后进行坏块检查</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.31.1/cgi-bin/luci/;stok=CCCCCCCCCCC/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=%0Acd%20%2Ftmp%0Acurl%20-o%20B%20-O%20https%3A%2F%2Fbreed.hackpascal.net%2Fr1286%2520%255b2020-10-09%255d%2Fbreed-mt7621-xiaomi-r3g.bin%20-k%20-g%0A%5B%20-z%20%22%24(sha256sum%20B%20%7C%20grep%20242d42eb5f5aaa67ddc9c1baf1acdf58d289e3f792adfdd77b589b9dc71eff85)%22%20%5D%20%7C%7C%20mtd%20-r%20write%20B%20Bootloader%0A</span><br></pre></td></tr></table></figure>
-
-<p>打开后就会把你的wifi名称更改</p>
-<p>路由器开机超过一小时建议先重启。运行代码后，你路由器的2.4g WiFi名称会改名成：比如  “ESMT”，”Toshiba”，”Toshiba 90 768”。 90和768是坏块。 如果ESMT或者Toshiba后面没数字，那恭喜你，没有坏块！！！</p>
-<p><strong>重启的过程中如果路由器在60秒内重启则代表刷BREED成功</strong>(灯会从<strong>蓝</strong>变<strong>橘</strong>，最终变<strong>蓝</strong>进入系统)<strong>。</strong></p>
-<p><strong>成功后拔掉电源，按住reset同时接上电源等10秒即可进入breed。192.168.1.1</strong>    如果没重启，可能是stok过期了。刷新进入后台复制新的stok即可。也有可能下载的BREED损坏，从新运行代码。也有可能没网络。</p>
-<p>刷完后可能无法进入原厂系统，进BREED删变量：normal_firmware_md5</p>
-<p>刷入breed之后就可以随便刷其他固件了</p>
-<p>进入breed后台后，进breed的环境变量编缉菜单，新增字段xiaomi.r3g.bootfw值为2,其目的在于使Breed启动后从kernel1启动</p>
-<p>然后点保存。看下图</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220312224507.png"></p>
-<p>在breed中刷新固件如下所示，勾选固件，然后点击选择文件-上传：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220312224612.png"></p>
-<p>正常来说上传后就会自动识别固件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220312224705.png"></p>
-<p>点击更新即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220312224831.png"></p>
-<p>这里要留意，如果直接刷openwrt可能会出现固件无法识别的情况，这时候需要先刷入一款底层基础固件，然后再通过固件升级的方式刷机</p>
-<p>底层固件下载链接为：<a target="_blank" rel="noopener" href="https://strivefysfxyh.lanzoub.com/iT5td01dsnde">https://strivefysfxyh.lanzoub.com/iT5td01dsnde</a>下载后在breed中刷入即可</p>
-<p>重启完成之后，打开192.168.1.1，进入临时系统，用户名是root，没有密码</p>
-<p>刷好后进入后台，打开这个网址：<a target="_blank" rel="noopener" href="http://192.168.1.1/cgi-bin/luci/admin/system/flash">http://192.168.1.1/cgi-bin/luci/admin/system/flash</a>  对应的菜单是System -&gt; Backup &#x2F; Flash Firmware）</p>
-<p>选择flash image然后选择你想要刷入的openwrt固件即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220312225022.png"></p>
-<p>这里推荐一款pandvan的固件，简单，该有的功能都有：<a target="_blank" rel="noopener" href="https://strivefysfxyh.lanzoub.com/iirAT01drmmb">https://strivefysfxyh.lanzoub.com/iirAT01drmmb</a>     </p>
-<p>默认用户名和密码都是admin</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/1647096915(1).png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2022/03/12/%E5%B0%8F%E7%B1%B3ac2100%E6%9C%80%E7%AE%80%E5%8D%95%E5%88%B7%E6%9C%BA%E6%95%99%E7%A8%8B/" data-id="cuiddTDgX8swaGmaDAgT_2Ibm" data-title="小米AC2100最简单刷机教程" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/ac2100/" rel="tag">ac2100</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/openwrt/" rel="tag">openwrt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/" rel="tag">密码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag">路由器</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-二维管内自然对流仿真" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2022/02/13/%E4%BA%8C%E7%BB%B4%E7%AE%A1%E5%86%85%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81%E4%BB%BF%E7%9C%9F/" class="article-date">
-  <time class="dt-published" datetime="2022-02-12T16:00:00.000Z" itemprop="datePublished">2022-02-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/ansys/">ansys</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2022/02/13/%E4%BA%8C%E7%BB%B4%E7%AE%A1%E5%86%85%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81%E4%BB%BF%E7%9C%9F/">二维管内自然对流仿真</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>要计算的的几何模型如图所示。一个矩形几何，长20 cm，宽2 cm，其中上边温度500 K，下部边温度300 K，两侧边为绝热边界。内部介质为空气，在温度影响下产生自然对流。 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213220004.png"></p>
-<p>使用ICEM绘制如图所示网格 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213223509.png"></p>
-<p>打开fluent，设置单位为cm <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213221512.png"></p>
-<p>检查网格，然后设置重力加速度 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213221611.png"></p>
-<p>打开能量方程 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213221700.png"></p>
-<p>设置realizable k-epsilon湍流模型 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213221830.png"></p>
-<p>修改空气air材质的密度为incompressible-ideal-gas <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213222014.png"></p>
-<p>设置上边界条件为300k <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213222202.png"></p>
-<p>method需进行如图所示设置 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213222347.png"></p>
-<p>进行迭代计算 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213222727.png"></p>
-<p>进行后处理，获得如图所示的温度场云图 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213222843.png"> 速度场云图 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213222933.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2022/02/13/%E4%BA%8C%E7%BB%B4%E7%AE%A1%E5%86%85%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81%E4%BB%BF%E7%9C%9F/" data-id="cuidGPvaw0LUXLNYTQ8L97Tea" data-title="二维管内自然对流仿真" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/ansys/" rel="tag">ansys</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/fluent/" rel="tag">fluent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" rel="tag">自然对流</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-空气流经障碍物仿真" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2022/02/13/%E7%A9%BA%E6%B0%94%E6%B5%81%E7%BB%8F%E9%9A%9C%E7%A2%8D%E7%89%A9%E4%BB%BF%E7%9C%9F/" class="article-date">
-  <time class="dt-published" datetime="2022-02-12T16:00:00.000Z" itemprop="datePublished">2022-02-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/ansys/">ansys</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2022/02/13/%E7%A9%BA%E6%B0%94%E6%B5%81%E7%BB%8F%E9%9A%9C%E7%A2%8D%E7%89%A9%E4%BB%BF%E7%9C%9F/">空气流经障碍物仿真</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>案例描述： 本案例来自于丹麦海事研究所。流动计算域模型如图所示，包含入口、出口及壁面。案例采用 2D 模型计算。计算域流体介质为空气（标准大气压，温度 293K ），来流速度 1.17m&#x2F;s 。雷诺数基于障碍物高度（案例为 40mm ），本案例雷诺数为 3115 ，入口位置湍动能及湍流耗散率分别为 0.024m2&#x2F;s2 及 0.07m2&#x2F;s3 。流动过程为等温、湍流及不可压缩流动。 几何模型如下： <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213155655.png"></p>
-<p>首先建立模型并划分网格 打开workbench，拉入ICEM与fluent <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213155932.png"> 先在ICEM中画出如图所示的二维图形 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213160202.png"> 然后创建如图所示块 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213210151.png"> 之后需先创建parts，设置进出口，然后进行块关联 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213210401.png"> 进行关联操作 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213210442.png"> 初始设置网格大小 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213210624.png"> 初始化网格进行，然后进行预览 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213210823.png"> 然后再对根据网格质量对网格进行调整优化，优化完成后对网格进行生成 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213211008.png"> 生成网格后将网格导出到fluent中 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213211240.png"> 然后可以关闭ICEM，注意在输出网格时候，必须确保二维的就生成2D网格，否则在打开fluent导入网格时会出错 打开fluent后点击display，然后把所有选上，然后可以把网格显示出来 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213212541.png"></p>
-<p>设置单位 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213212721.png"> 将模型单位设置为mm</p>
-<p>检查，确保网格最小尺寸都为正值 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213212846.png"></p>
-<p>由于要考虑重力，所以开启重力选项，设置y方向的重力加速度为-9.81m&#x2F;s2 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213213024.png"></p>
-<p>设置物理模型，采用k-epsilon模型，进行如图所示设置 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213213211.png"></p>
-<p>由于采用空气，所以materials默认即可，默认流体中材料就是air，如果是水或其他材料可以双击fluid进行设置，找到fluent database <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213213548.png"> 然后找到所需的流体，点击copy即可添加到流体材料中 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213213516.png"> 添加进去后到cell zone conditions中更换流体 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213213729.png"> <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213213758.png"></p>
-<p>之后对边界条件进行编辑，选择速度进口 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213213947.png"></p>
-<p>设置参考如图所示 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213214120.png"></p>
-<p>出口设置为outflow <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213214221.png"></p>
-<p>其他的默认即可，然后进行初始化 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213214338.png"></p>
-<p>进行计算，步长设置为500 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213214425.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213214601.png"> 计算提前停止后，此时可以看到值并没有收敛，此时还可以手动修改默认控制值，然后继续计算 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213214735.png"></p>
-<p>重新计算到某一新控制值或者步长计算完成 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213214949.png"></p>
-<p>计算完成后可以进入后处理，查看速度云图 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213215143.png"></p>
-<p>云图如图所示 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213215214.png"></p>
-<p>压力云图如图所示 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220213215256.png"></p>
-<p>到此仿真结束</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2022/02/13/%E7%A9%BA%E6%B0%94%E6%B5%81%E7%BB%8F%E9%9A%9C%E7%A2%8D%E7%89%A9%E4%BB%BF%E7%9C%9F/" data-id="cuidvB_MKeh8agAk8WtNv2eRw" data-title="空气流经障碍物仿真" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/ansys/" rel="tag">ansys</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/fluent/" rel="tag">fluent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/workbench/" rel="tag">workbench</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" rel="tag">二维仿真</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E4%BB%BF%E7%9C%9F/" rel="tag">仿真</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-fluent案例教程：二维混合管模型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2022/02/11/fluent%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B%EF%BC%9A%E4%BA%8C%E7%BB%B4%E6%B7%B7%E5%90%88%E7%AE%A1%E6%A8%A1%E5%9E%8B/" class="article-date">
-  <time class="dt-published" datetime="2022-02-10T16:00:00.000Z" itemprop="datePublished">2022-02-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/ansys/">ansys</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/ansys/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/ansys/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2022/02/11/fluent%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B%EF%BC%9A%E4%BA%8C%E7%BB%B4%E6%B7%B7%E5%90%88%E7%AE%A1%E6%A8%A1%E5%9E%8B/">fluent案例教程：二维混合管模型</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>物理模型如图所示，为二维流道混合模型，冷热水混合后流出，主要涉及到二维模型绘制及网格划分及对应的求解</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211210128.png"></p>
-<p>二维模型可以使用ICEM进行建模及网格划分，因为二维模型一般比较简单，采用DM和SC对于这种二维模型进行网格划分时容易出问题 # 一、模型建立 先打开workbench，将ICEM 拖放到工作窗口中 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211210753.png"> 双击model打开ICEM</p>
-<p>先使用绝对坐标系或者相对坐标创建所有的体征点 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211211617.png"> 创建好之后再用线段连接所有点得到二维模型 最终根据要求创建好如图所示的二维模型 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211212724.png"></p>
-<p>二维模型创建好后需进行网格划分，先创建块，操作如下 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211213459.png"> 此时完成块的初步生成，观察几何模型可以发现，此模型形状近似于T型变形，所以需对生成的块进行切割成T型结构 使用块切割工具进行切割 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211214143.png"> 这里注意，可以把块显示清楚 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211214333.png"> 然后把左下角和右下角的多余块删除获得T型块 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211214548.png"> 之后进行块的关联 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211214719.png"> 要关联的顶点与点（前方为顶点号，后方为点编号）： 33-1， 13-8， 37-4， 42-5， 34-6， 21-7， 43-3， 38-2。 顶点关联完成后把线也关联上去，可以利用如图所示方式查看关联是否正确 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211220150.png"> 之后开始进行网格划分，需要设置网格尺寸，先设定一个总体尺寸 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211220636.png"> 先暂定最大尺寸为2 设定全局网格后，需对块进行更新 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211220919.png"> 此时可以进行网格预览 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211221128.png"> 可以看到网格太宽，需调整全局网格中最大网格尺寸，将全局最大尺寸调整到0.2，然后再看网格质量 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211221608.png"> 网格质量主要看四点： 1、长宽比Aspect ratio最好小于5 2、最小角Min angle最好不小于18° 3、Determinant 3x3x3越接近1越好 4、总体质量Quality越接近1越好</p>
-<p>查看网格质量后，寻找问题网格，进行优化 比如可以如图所示将关联节点进行移动，来增大角度 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211222220.png"></p>
-<p>还可以通过调整单边节点数来调整网格长宽比 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211222953.png"></p>
-<p>同时对于管道网格，还可以调节管道边缘处和中心处网格疏密程度到不一致 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211223352.png"></p>
-<p>调整好网格质量之后还需生成网格，前面都是预览网格 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220211224410.png"> 这时生成的是非结构化网格</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2022/02/11/fluent%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B%EF%BC%9A%E4%BA%8C%E7%BB%B4%E6%B7%B7%E5%90%88%E7%AE%A1%E6%A8%A1%E5%9E%8B/" data-id="cuidoP3a_irQH-8D90Aj9gnIn" data-title="fluent案例教程：二维混合管模型" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/ansys/" rel="tag">ansys</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/fluent/" rel="tag">fluent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/workbench/" rel="tag">workbench</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-catia解决图标过小及工具栏拖拽时显示位置与停留位" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2022/02/08/catia%E8%A7%A3%E5%86%B3%E5%9B%BE%E6%A0%87%E8%BF%87%E5%B0%8F%E5%8F%8A%E5%B7%A5%E5%85%B7%E6%A0%8F%E6%8B%96%E6%8B%BD%E6%97%B6%E6%98%BE%E7%A4%BA%E4%BD%8D%E7%BD%AE%E4%B8%8E%E5%81%9C%E7%95%99%E4%BD%8D/" class="article-date">
-  <time class="dt-published" datetime="2022-02-07T16:00:00.000Z" itemprop="datePublished">2022-02-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2022/02/08/catia%E8%A7%A3%E5%86%B3%E5%9B%BE%E6%A0%87%E8%BF%87%E5%B0%8F%E5%8F%8A%E5%B7%A5%E5%85%B7%E6%A0%8F%E6%8B%96%E6%8B%BD%E6%97%B6%E6%98%BE%E7%A4%BA%E4%BD%8D%E7%BD%AE%E4%B8%8E%E5%81%9C%E7%95%99%E4%BD%8D/">CATIA解决图标过小及工具栏拖拽时显示位置与停留位置不一致问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>在win10系统中，打开catia后，如果显示器分辨率与软件不匹配，就会出现拖拽工具栏时位置与你鼠标位置不一致的情况，如图所示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220208230005.png"></p>
-<p>看起来极不协调也不方便</p>
-<p>解决办法就是右键软件图标，然后选择属性-兼容性-更改高DPI设置</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220208230216.png"></p>
-<p>把里面两个勾选上，再重新打开就不会出现类似问题了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220208230507.png"></p>
-<p> </p>
-<p>更改高DPI后可能会出现图标显示过小的问题，这个可以通过修改图标大小来更改，在工具-自定义-选项</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220208230820.png"></p>
-<p>通过更改图标大小比率就可以更改图标的大小了，调整的合适的大小即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220208230932.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2022/02/08/catia%E8%A7%A3%E5%86%B3%E5%9B%BE%E6%A0%87%E8%BF%87%E5%B0%8F%E5%8F%8A%E5%B7%A5%E5%85%B7%E6%A0%8F%E6%8B%96%E6%8B%BD%E6%97%B6%E6%98%BE%E7%A4%BA%E4%BD%8D%E7%BD%AE%E4%B8%8E%E5%81%9C%E7%95%99%E4%BD%8D/" data-id="cuid-9ZcrtruTs1l2pjis0YqN" data-title="CATIA解决图标过小及工具栏拖拽时显示位置与停留位置不一致问题" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/catia/" rel="tag">catia</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E5%9B%BE%E6%A0%87/" rel="tag">图标</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-使用python设置excel单元格格式为常规、日期、数字" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2021/12/21/%E4%BD%BF%E7%94%A8python%E8%AE%BE%E7%BD%AEexcel%E5%8D%95%E5%85%83%E6%A0%BC%E6%A0%BC%E5%BC%8F%E4%B8%BA%E5%B8%B8%E8%A7%84%E3%80%81%E6%97%A5%E6%9C%9F%E3%80%81%E6%95%B0%E5%AD%97/" class="article-date">
-  <time class="dt-published" datetime="2021-12-20T16:00:00.000Z" itemprop="datePublished">2021-12-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/python/">python</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2021/12/21/%E4%BD%BF%E7%94%A8python%E8%AE%BE%E7%BD%AEexcel%E5%8D%95%E5%85%83%E6%A0%BC%E6%A0%BC%E5%BC%8F%E4%B8%BA%E5%B8%B8%E8%A7%84%E3%80%81%E6%97%A5%E6%9C%9F%E3%80%81%E6%95%B0%E5%AD%97/">使用python设置excel单元格格式为常规、日期、数字</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>使用openpyxl来设置Excel单元格的格式，总结如下：</p>
-<p>一、导入：</p>
-<p>from openpyxl.styles import numbers  或</p>
-<p>import openpyxl</p>
-<p> </p>
-<p>二、使用：</p>
-<p>1、将单元格[2,3]，设置为 “常规” 格式</p>
-<p>work_sheet.cell(row&#x3D;2, column&#x3D;3).number_format &#x3D; ‘General’</p>
-<p>2、将单元格[2,3]，设置为 “纯文本” 格式</p>
-<p>work_sheet.cell(row&#x3D;2, column&#x3D;3).number_format &#x3D; ‘@’</p>
-<p>3、将单元格[2,3]，设置为 “自定义” 格式中的“0”</p>
-<p>work_sheet.cell(row&#x3D;2, column&#x3D;3).number_format &#x3D; ‘0’</p>
-<p>3、将单元格[2,3]，设置为 “自定义” 格式中的“0.000”</p>
-<p>work_sheet.cell(row&#x3D;2, column&#x3D;3).number_format &#x3D; ‘0.000’</p>
-<p> </p>
-<p>三、具体详细：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"># Copyright (c) 2010-2021 openpyxl</span><br><span class="line"></span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line">from openpyxl.descriptors import (</span><br><span class="line">    String,</span><br><span class="line">    Sequence,</span><br><span class="line">    Integer,</span><br><span class="line">)</span><br><span class="line">from openpyxl.descriptors.serialisable import Serialisable</span><br><span class="line"></span><br><span class="line">BUILTIN_FORMATS = &#123;</span><br><span class="line">    0: &#x27;General&#x27;,</span><br><span class="line">    1: &#x27;0&#x27;,</span><br><span class="line">    2: &#x27;0.00&#x27;,</span><br><span class="line">    3: &#x27;#,##0&#x27;,</span><br><span class="line">    4: &#x27;#,##0.00&#x27;,</span><br><span class="line">    5: &#x27;&quot;$&quot;#,##0_);(&quot;$&quot;#,##0)&#x27;,</span><br><span class="line">    6: &#x27;&quot;$&quot;#,##0_);[Red](&quot;$&quot;#,##0)&#x27;,</span><br><span class="line">    7: &#x27;&quot;$&quot;#,##0.00_);(&quot;$&quot;#,##0.00)&#x27;,</span><br><span class="line">    8: &#x27;&quot;$&quot;#,##0.00_);[Red](&quot;$&quot;#,##0.00)&#x27;,</span><br><span class="line">    9: &#x27;0%&#x27;,</span><br><span class="line">    10: &#x27;0.00%&#x27;,</span><br><span class="line">    11: &#x27;0.00E+00&#x27;,</span><br><span class="line">    12: &#x27;# ?/?&#x27;,</span><br><span class="line">    13: &#x27;# ??/??&#x27;,</span><br><span class="line">    14: &#x27;mm-dd-yy&#x27;,</span><br><span class="line">    15: &#x27;d-mmm-yy&#x27;,</span><br><span class="line">    16: &#x27;d-mmm&#x27;,</span><br><span class="line">    17: &#x27;mmm-yy&#x27;,</span><br><span class="line">    18: &#x27;h:mm AM/PM&#x27;,</span><br><span class="line">    19: &#x27;h:mm:ss AM/PM&#x27;,</span><br><span class="line">    20: &#x27;h:mm&#x27;,</span><br><span class="line">    21: &#x27;h:mm:ss&#x27;,</span><br><span class="line">    22: &#x27;m/d/yy h:mm&#x27;,</span><br><span class="line"></span><br><span class="line">    37: &#x27;#,##0_);(#,##0)&#x27;,</span><br><span class="line">    38: &#x27;#,##0_);[Red](#,##0)&#x27;,</span><br><span class="line">    39: &#x27;#,##0.00_);(#,##0.00)&#x27;,</span><br><span class="line">    40: &#x27;#,##0.00_);[Red](#,##0.00)&#x27;,</span><br><span class="line"></span><br><span class="line">    41: r&#x27;_(* #,##0_);_(* \(#,##0\);_(* &quot;-&quot;_);_(@_)&#x27;,</span><br><span class="line">    42: r&#x27;_(&quot;$&quot;* #,##0_);_(&quot;$&quot;* \(#,##0\);_(&quot;$&quot;* &quot;-&quot;_);_(@_)&#x27;,</span><br><span class="line">    43: r&#x27;_(* #,##0.00_);_(* \(#,##0.00\);_(* &quot;-&quot;??_);_(@_)&#x27;,</span><br><span class="line"></span><br><span class="line">    44: r&#x27;_(&quot;$&quot;* #,##0.00_)_(&quot;$&quot;* \(#,##0.00\)_(&quot;$&quot;* &quot;-&quot;??_)_(@_)&#x27;,</span><br><span class="line">    45: &#x27;mm:ss&#x27;,</span><br><span class="line">    46: &#x27;[h]:mm:ss&#x27;,</span><br><span class="line">    47: &#x27;mmss.0&#x27;,</span><br><span class="line">    48: &#x27;##0.0E+0&#x27;,</span><br><span class="line">    49: &#x27;@&#x27;, &#125;</span><br><span class="line"></span><br><span class="line">BUILTIN_FORMATS_MAX_SIZE = 164</span><br><span class="line">BUILTIN_FORMATS_REVERSE = dict(</span><br><span class="line">        [(value, key) for key, value in BUILTIN_FORMATS.items()])</span><br><span class="line"></span><br><span class="line">FORMAT_GENERAL = BUILTIN_FORMATS[0]</span><br><span class="line">FORMAT_TEXT = BUILTIN_FORMATS[49]</span><br><span class="line">FORMAT_NUMBER = BUILTIN_FORMATS[1]</span><br><span class="line">FORMAT_NUMBER_00 = BUILTIN_FORMATS[2]</span><br><span class="line">FORMAT_NUMBER_COMMA_SEPARATED1 = BUILTIN_FORMATS[4]</span><br><span class="line">FORMAT_NUMBER_COMMA_SEPARATED2 = &#x27;#,##0.00_-&#x27;</span><br><span class="line">FORMAT_PERCENTAGE = BUILTIN_FORMATS[9]</span><br><span class="line">FORMAT_PERCENTAGE_00 = BUILTIN_FORMATS[10]</span><br><span class="line">FORMAT_DATE_YYYYMMDD2 = &#x27;yyyy-mm-dd&#x27;</span><br><span class="line">FORMAT_DATE_YYMMDD = &#x27;yy-mm-dd&#x27;</span><br><span class="line">FORMAT_DATE_DDMMYY = &#x27;dd/mm/yy&#x27;</span><br><span class="line">FORMAT_DATE_DMYSLASH = &#x27;d/m/y&#x27;</span><br><span class="line">FORMAT_DATE_DMYMINUS = &#x27;d-m-y&#x27;</span><br><span class="line">FORMAT_DATE_DMMINUS = &#x27;d-m&#x27;</span><br><span class="line">FORMAT_DATE_MYMINUS = &#x27;m-y&#x27;</span><br><span class="line">FORMAT_DATE_XLSX14 = BUILTIN_FORMATS[14]</span><br><span class="line">FORMAT_DATE_XLSX15 = BUILTIN_FORMATS[15]</span><br><span class="line">FORMAT_DATE_XLSX16 = BUILTIN_FORMATS[16]</span><br><span class="line">FORMAT_DATE_XLSX17 = BUILTIN_FORMATS[17]</span><br><span class="line">FORMAT_DATE_XLSX22 = BUILTIN_FORMATS[22]</span><br><span class="line">FORMAT_DATE_DATETIME = &#x27;yyyy-mm-dd h:mm:ss&#x27;</span><br><span class="line">FORMAT_DATE_TIME1 = BUILTIN_FORMATS[18]</span><br><span class="line">FORMAT_DATE_TIME2 = BUILTIN_FORMATS[19]</span><br><span class="line">FORMAT_DATE_TIME3 = BUILTIN_FORMATS[20]</span><br><span class="line">FORMAT_DATE_TIME4 = BUILTIN_FORMATS[21]</span><br><span class="line">FORMAT_DATE_TIME5 = BUILTIN_FORMATS[45]</span><br><span class="line">FORMAT_DATE_TIME6 = BUILTIN_FORMATS[21]</span><br><span class="line">FORMAT_DATE_TIME7 = &#x27;i:s.S&#x27;</span><br><span class="line">FORMAT_DATE_TIME8 = &#x27;h:mm:ss@&#x27;</span><br><span class="line">FORMAT_DATE_TIMEDELTA = &#x27;[hh]:mm:ss&#x27;</span><br><span class="line">FORMAT_DATE_YYMMDDSLASH = &#x27;yy/mm/dd@&#x27;</span><br><span class="line">FORMAT_CURRENCY_USD_SIMPLE = &#x27;&quot;$&quot;#,##0.00_-&#x27;</span><br><span class="line">FORMAT_CURRENCY_USD = &#x27;$#,##0_-&#x27;</span><br><span class="line">FORMAT_CURRENCY_EUR_SIMPLE = &#x27;[$EUR ]#,##0.00_-&#x27;</span><br><span class="line"></span><br><span class="line">COLORS = r&quot;\[(BLACK|BLUE|CYAN|GREEN|MAGENTA|RED|WHITE|YELLOW)\]&quot;</span><br><span class="line">LITERAL_GROUP = r&#x27;&quot;.*?&quot;&#x27; # anything in quotes</span><br><span class="line">LOCALE_GROUP = r&#x27;\[(?!hh?\]|mm?\]|ss?\])[^\]]*\]&#x27; # anything in square brackets, except hours or minutes or seconds</span><br><span class="line">STRIP_RE = re.compile(f&quot;&#123;LITERAL_GROUP&#125;|&#123;LOCALE_GROUP&#125;&quot;)</span><br><span class="line">TIMEDELTA_RE = re.compile(r&#x27;\[hh?\](:mm(:ss(\.0*)?)?)?|\[mm?\](:ss(\.0*)?)?|\[ss?\](\.0*)?&#x27;, re.I)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2021/12/21/%E4%BD%BF%E7%94%A8python%E8%AE%BE%E7%BD%AEexcel%E5%8D%95%E5%85%83%E6%A0%BC%E6%A0%BC%E5%BC%8F%E4%B8%BA%E5%B8%B8%E8%A7%84%E3%80%81%E6%97%A5%E6%9C%9F%E3%80%81%E6%95%B0%E5%AD%97/" data-id="cuidWLyQqObvhRvEBm4LrWAzm" data-title="使用python设置excel单元格格式为常规、日期、数字" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/excel/" rel="tag">excel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/scr/" rel="tag">scr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/tor/" rel="tag">tor</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/xiaoxiaohu/">&laquo; Prev</a><a class="page-number" href="/xiaoxiaohu/">1</a><span class="page-number current">2</span><a class="page-number" href="/xiaoxiaohu/page/3/">3</a><a class="page-number" href="/xiaoxiaohu/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/25/">25</a><a class="extend next" rel="next" href="/xiaoxiaohu/page/3/">Next &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/ansys/">ansys</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/ansys/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/ansys/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/excel/">excel</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/excel/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/excel/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/kali-linux/">kali-linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/kali-linux/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/kali-linux/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/">labview</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/">python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/tor/">tor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/tor/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/%E6%B1%BD%E8%BD%A6%E7%83%AD%E7%AE%A1%E7%90%86/">汽车热管理</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/">日常</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E7%94%9F%E6%B4%BB/">生活</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/">路由器</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/ac2100/" rel="tag">ac2100</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/angilent34970a/" rel="tag">angilent34970a</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/ansys/" rel="tag">ansys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/bing/" rel="tag">bing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/bitwarden/" rel="tag">bitwarden</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/calibre/" rel="tag">calibre</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/catia/" rel="tag">catia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/chatgpt/" rel="tag">chatgpt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/cloudflare/" rel="tag">cloudflare</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/endnote/" rel="tag">endnote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/endnotes9/" rel="tag">endnotes9</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/excel/" rel="tag">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/floefd/" rel="tag">floefd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/fluent/" rel="tag">fluent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/gps%E5%AE%9A%E4%BD%8D/" rel="tag">gps定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/kali-linux/" rel="tag">kali-linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/kms/" rel="tag">kms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/labview/" rel="tag">labview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" rel="tag">linux子系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/newifi3/" rel="tag">newifi3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/nextcloud/" rel="tag">nextcloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/nps/" rel="tag">nps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/openwrt/" rel="tag">openwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/pid%E6%8E%A7%E5%88%B6/" rel="tag">pid控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" rel="tag">plc模糊逻辑控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/pycharm/" rel="tag">pycharm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/python3/" rel="tag">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/refprop/" rel="tag">refprop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/scr/" rel="tag">scr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/scrcpy/" rel="tag">scrcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/sndcpy/" rel="tag">sndcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/solidworks/" rel="tag">solidworks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/ssr/" rel="tag">ssr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/telegram/" rel="tag">telegram</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/tkinter/" rel="tag">tkinter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/tor/" rel="tag">tor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/traccar/" rel="tag">traccar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/v2ray/" rel="tag">v2ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/vpn/" rel="tag">vpn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/vrv/" rel="tag">vrv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/windows%E6%BF%80%E6%B4%BB/" rel="tag">windows激活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/word/" rel="tag">word</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/wordpress/" rel="tag">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/workbench/" rel="tag">workbench</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/wsl/" rel="tag">wsl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" rel="tag">三线表格</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" rel="tag">个人图书馆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" rel="tag">串口通讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" rel="tag">二维仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BA%91%E7%9B%98/" rel="tag">云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BB%BF%E7%9C%9F/" rel="tag">仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" rel="tag">企业微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%85%8D%E6%B5%81/" rel="tag">免流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" rel="tag">免登录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" rel="tag">免费域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" rel="tag">制冷技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" rel="tag">反爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" rel="tag">固态硬盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9B%BE%E6%A0%87/" rel="tag">图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9F%9F%E5%90%8D/" rel="tag">域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%A3%B0%E9%9F%B3/" rel="tag">声音</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" rel="tag">天翼网关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" rel="tag">安捷伦</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" rel="tag">定时执行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" rel="tag">宝塔面板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/" rel="tag">密码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" rel="tag">微信防撤回</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%BF%85%E5%BA%94/" rel="tag">必应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" rel="tag">手机投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8A%95%E5%B1%8F/" rel="tag">投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8A%A2%E7%A5%A8/" rel="tag">抢票</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" rel="tag">推荐软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" rel="tag">搬瓦工</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" rel="tag">文章采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" rel="tag">新路由3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" rel="tag">旁路由</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" rel="tag">服务器监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B4%9B%E9%9B%AA/" rel="tag">洛雪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" rel="tag">浏览器技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B5%B7%E8%BE%B9/" rel="tag">海边</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温湿度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%B8%E7%8E%A9/" rel="tag">游玩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">热力膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">电子膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" rel="tag">电池热管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%99%BE%E5%BA%A6sign/" rel="tag">百度sign</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%9B%B4%E6%92%AD/" rel="tag">直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" rel="tag">离线下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" rel="tag">私有云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" rel="tag">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" rel="tag">网站监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BE%A4%E6%99%96/" rel="tag">群晖</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" rel="tag">胖鼠采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" rel="tag">自然对流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" rel="tag">蒲公英</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" rel="tag">试验台</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" rel="tag">谷歌云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" rel="tag">谷歌网盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag">路由器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%82%AE%E4%BB%B6/" rel="tag">邮件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%82%AE%E7%AE%B1/" rel="tag">邮箱</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9D%92%E5%B2%9B/" rel="tag">青岛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" rel="tag">静态网页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90/" rel="tag">音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" rel="tag">音乐播放器</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/xiaoxiaohu/tags/ac2100/" style="font-size: 10px;">ac2100</a> <a href="/xiaoxiaohu/tags/angilent34970a/" style="font-size: 10.5px;">angilent34970a</a> <a href="/xiaoxiaohu/tags/ansys/" style="font-size: 12px;">ansys</a> <a href="/xiaoxiaohu/tags/bing/" style="font-size: 10px;">bing</a> <a href="/xiaoxiaohu/tags/bitwarden/" style="font-size: 10px;">bitwarden</a> <a href="/xiaoxiaohu/tags/calibre/" style="font-size: 10px;">calibre</a> <a href="/xiaoxiaohu/tags/catia/" style="font-size: 10px;">catia</a> <a href="/xiaoxiaohu/tags/chatgpt/" style="font-size: 10px;">chatgpt</a> <a href="/xiaoxiaohu/tags/cloudflare/" style="font-size: 11.5px;">cloudflare</a> <a href="/xiaoxiaohu/tags/docker/" style="font-size: 12px;">docker</a> <a href="/xiaoxiaohu/tags/endnote/" style="font-size: 10px;">endnote</a> <a href="/xiaoxiaohu/tags/endnotes9/" style="font-size: 10px;">endnotes9</a> <a href="/xiaoxiaohu/tags/excel/" style="font-size: 16px;">excel</a> <a href="/xiaoxiaohu/tags/floefd/" style="font-size: 10px;">floefd</a> <a href="/xiaoxiaohu/tags/fluent/" style="font-size: 11px;">fluent</a> <a href="/xiaoxiaohu/tags/gps%E5%AE%9A%E4%BD%8D/" style="font-size: 10px;">gps定位</a> <a href="/xiaoxiaohu/tags/kali-linux/" style="font-size: 13px;">kali-linux</a> <a href="/xiaoxiaohu/tags/kms/" style="font-size: 10px;">kms</a> <a href="/xiaoxiaohu/tags/labview/" style="font-size: 19.5px;">labview</a> <a href="/xiaoxiaohu/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">linux子系统</a> <a href="/xiaoxiaohu/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/xiaoxiaohu/tags/nas/" style="font-size: 10.5px;">nas</a> <a href="/xiaoxiaohu/tags/newifi3/" style="font-size: 12.5px;">newifi3</a> <a href="/xiaoxiaohu/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/xiaoxiaohu/tags/nps/" style="font-size: 13px;">nps</a> <a href="/xiaoxiaohu/tags/openwrt/" style="font-size: 12px;">openwrt</a> <a href="/xiaoxiaohu/tags/pid%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">pid控制</a> <a href="/xiaoxiaohu/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">plc模糊逻辑控制</a> <a href="/xiaoxiaohu/tags/pycharm/" style="font-size: 10px;">pycharm</a> <a href="/xiaoxiaohu/tags/python/" style="font-size: 17px;">python</a> <a href="/xiaoxiaohu/tags/python3/" style="font-size: 10.5px;">python3</a> <a href="/xiaoxiaohu/tags/refprop/" style="font-size: 11px;">refprop</a> <a href="/xiaoxiaohu/tags/scr/" style="font-size: 18.5px;">scr</a> <a href="/xiaoxiaohu/tags/scrcpy/" style="font-size: 10.5px;">scrcpy</a> <a href="/xiaoxiaohu/tags/sndcpy/" style="font-size: 10px;">sndcpy</a> <a href="/xiaoxiaohu/tags/solidworks/" style="font-size: 10px;">solidworks</a> <a href="/xiaoxiaohu/tags/ssr/" style="font-size: 10.5px;">ssr</a> <a href="/xiaoxiaohu/tags/telegram/" style="font-size: 11.5px;">telegram</a> <a href="/xiaoxiaohu/tags/tkinter/" style="font-size: 10px;">tkinter</a> <a href="/xiaoxiaohu/tags/tor/" style="font-size: 19.5px;">tor</a> <a href="/xiaoxiaohu/tags/traccar/" style="font-size: 10px;">traccar</a> <a href="/xiaoxiaohu/tags/v2ray/" style="font-size: 12px;">v2ray</a> <a href="/xiaoxiaohu/tags/vpn/" style="font-size: 10.5px;">vpn</a> <a href="/xiaoxiaohu/tags/vrv/" style="font-size: 10px;">vrv</a> <a href="/xiaoxiaohu/tags/windows/" style="font-size: 13.5px;">windows</a> <a href="/xiaoxiaohu/tags/windows%E6%BF%80%E6%B4%BB/" style="font-size: 10px;">windows激活</a> <a href="/xiaoxiaohu/tags/word/" style="font-size: 18px;">word</a> <a href="/xiaoxiaohu/tags/wordpress/" style="font-size: 14px;">wordpress</a> <a href="/xiaoxiaohu/tags/workbench/" style="font-size: 11.5px;">workbench</a> <a href="/xiaoxiaohu/tags/wsl/" style="font-size: 10.5px;">wsl</a> <a href="/xiaoxiaohu/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" style="font-size: 10px;">三线表格</a> <a href="/xiaoxiaohu/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" style="font-size: 10px;">个人图书馆</a> <a href="/xiaoxiaohu/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" style="font-size: 10px;">串口通讯</a> <a href="/xiaoxiaohu/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" style="font-size: 10px;">二维仿真</a> <a href="/xiaoxiaohu/tags/%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">云盘</a> <a href="/xiaoxiaohu/tags/%E4%BB%BF%E7%9C%9F/" style="font-size: 10.5px;">仿真</a> <a href="/xiaoxiaohu/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" style="font-size: 10.5px;">企业微信</a> <a href="/xiaoxiaohu/tags/%E5%85%8D%E6%B5%81/" style="font-size: 10px;">免流</a> <a href="/xiaoxiaohu/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" style="font-size: 10px;">免登录</a> <a href="/xiaoxiaohu/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" style="font-size: 11px;">免费域名</a> <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" style="font-size: 14.5px;">制冷技术</a> <a href="/xiaoxiaohu/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" style="font-size: 10px;">反爬虫</a> <a href="/xiaoxiaohu/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" style="font-size: 10px;">固态硬盘</a> <a href="/xiaoxiaohu/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10.5px;">图床</a> <a href="/xiaoxiaohu/tags/%E5%9B%BE%E6%A0%87/" style="font-size: 13px;">图标</a> <a href="/xiaoxiaohu/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 15.5px;">域名</a> <a href="/xiaoxiaohu/tags/%E5%A3%B0%E9%9F%B3/" style="font-size: 10px;">声音</a> <a href="/xiaoxiaohu/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" style="font-size: 10px;">天翼网关</a> <a href="/xiaoxiaohu/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" style="font-size: 10.5px;">安捷伦</a> <a href="/xiaoxiaohu/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" style="font-size: 10.5px;">定时执行</a> <a href="/xiaoxiaohu/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" style="font-size: 13px;">宝塔面板</a> <a href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/" style="font-size: 17.5px;">密码</a> <a href="/xiaoxiaohu/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" style="font-size: 10px;">微信防撤回</a> <a href="/xiaoxiaohu/tags/%E5%BF%85%E5%BA%94/" style="font-size: 10px;">必应</a> <a href="/xiaoxiaohu/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">手机投屏</a> <a href="/xiaoxiaohu/tags/%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">投屏</a> <a href="/xiaoxiaohu/tags/%E6%8A%A2%E7%A5%A8/" style="font-size: 10px;">抢票</a> <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" style="font-size: 19px;">控制</a> <a href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" style="font-size: 12px;">推荐软件</a> <a href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" style="font-size: 17.5px;">搬瓦工</a> <a href="/xiaoxiaohu/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.5px;">数据库</a> <a href="/xiaoxiaohu/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">文章采集</a> <a href="/xiaoxiaohu/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" style="font-size: 13px;">新路由3</a> <a href="/xiaoxiaohu/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" style="font-size: 10.5px;">旁路由</a> <a href="/xiaoxiaohu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">服务器监控</a> <a href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 19px;">树莓派</a> <a href="/xiaoxiaohu/tags/%E6%B4%9B%E9%9B%AA/" style="font-size: 10px;">洛雪</a> <a href="/xiaoxiaohu/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">浏览器技术</a> <a href="/xiaoxiaohu/tags/%E6%B5%B7%E8%BE%B9/" style="font-size: 10px;">海边</a> <a href="/xiaoxiaohu/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 12px;">温度传感器</a> <a href="/xiaoxiaohu/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 10.5px;">温湿度传感器</a> <a href="/xiaoxiaohu/tags/%E6%B8%B8%E7%8E%A9/" style="font-size: 11px;">游玩</a> <a href="/xiaoxiaohu/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">热力膨胀阀</a> <a href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 16.5px;">生活</a> <a href="/xiaoxiaohu/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">电子膨胀阀</a> <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" style="font-size: 13px;">电池热管理</a> <a href="/xiaoxiaohu/tags/%E7%99%BE%E5%BA%A6sign/" style="font-size: 10px;">百度sign</a> <a href="/xiaoxiaohu/tags/%E7%9B%B4%E6%92%AD/" style="font-size: 10px;">直播</a> <a href="/xiaoxiaohu/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/xiaoxiaohu/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" style="font-size: 12.5px;">离线下载</a> <a href="/xiaoxiaohu/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">私有云盘</a> <a href="/xiaoxiaohu/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10.5px;">缓存</a> <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" style="font-size: 20px;">网站</a> <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" style="font-size: 16px;">网站建设</a> <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">网站监控</a> <a href="/xiaoxiaohu/tags/%E7%BE%A4%E6%99%96/" style="font-size: 10.5px;">群晖</a> <a href="/xiaoxiaohu/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 10px;">翻译</a> <a href="/xiaoxiaohu/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">胖鼠采集</a> <a href="/xiaoxiaohu/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" style="font-size: 10px;">自然对流</a> <a href="/xiaoxiaohu/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" style="font-size: 10px;">蒲公英</a> <a href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/" style="font-size: 15px;">视频</a> <a href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" style="font-size: 12px;">试验台</a> <a href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" style="font-size: 11.5px;">谷歌云盘</a> <a href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" style="font-size: 10.5px;">谷歌网盘</a> <a href="/xiaoxiaohu/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" style="font-size: 15.5px;">路由器</a> <a href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 14px;">软件</a> <a href="/xiaoxiaohu/tags/%E9%82%AE%E4%BB%B6/" style="font-size: 13.5px;">邮件</a> <a href="/xiaoxiaohu/tags/%E9%82%AE%E7%AE%B1/" style="font-size: 11.5px;">邮箱</a> <a href="/xiaoxiaohu/tags/%E9%9D%92%E5%B2%9B/" style="font-size: 10px;">青岛</a> <a href="/xiaoxiaohu/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" style="font-size: 10px;">静态网页</a> <a href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">音乐</a> <a href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" style="font-size: 10.5px;">音乐播放器</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/09/">September 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/xiaoxiaohu/2024/03/05/%E6%B4%9B%E9%9B%AA%E9%9F%B3%E4%B9%90%E5%8A%A9%E6%89%8B%E6%9B%B4%E6%8D%A2%E9%9F%B3%E4%B9%90%E6%BA%90%E5%A4%B4%E5%8F%8A%E5%90%8C%E6%AD%A5%E6%89%8B%E6%9C%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/">洛雪音乐助手更换音乐源头及同步手机客户端</a>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
           </li>
+          
         
-          <li>
-            <a href="/xiaoxiaohu/2023/10/28/%E5%88%A9%E7%94%A8%E5%9C%9F%E8%80%B3%E5%85%B6%E4%BC%98%E6%83%A0%E8%B4%AD%E4%B9%B0google-one/">利用土耳其优惠购买google one</a>
-          </li>
         
-          <li>
-            <a href="/xiaoxiaohu/2023/09/11/%E7%BE%A4%E6%99%96dsm7-0%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%9C%A8esxi-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96-7-0-dsm7-0-1%E6%95%99%E7%A8%8B/">在ESXI 虚拟机上安装群晖 7.0 (DSM7.0.1)教程</a>
-          </li>
-        
-          <li>
-            <a href="/xiaoxiaohu/2023/07/19/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91fiddler%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">【工具】Fiddler使用教程</a>
-          </li>
-        
-          <li>
-            <a href="/xiaoxiaohu/2023/06/03/%E7%BE%A4%E6%99%96%E4%BD%BF%E7%94%A8alist%E6%8C%82%E8%BD%BD%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%E5%88%B0%E6%9C%AC%E5%9C%B0/">群晖使用alist挂载阿里云盘到本地</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
     </div>
   </div>
+</nav>
 
-  
-</aside>
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>Home</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/archives/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>Archives</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/categories/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-category-fill"></i>
+                  <span>Categories</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/tags/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-tags-fill"></i>
+                  <span>Tags</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/about/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-user-fill"></i>
+                  <span>About</span>
+                </div>
+              </a>
+            </div>
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>Search</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="Light"
+               data-label-dark="Dark">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">Dark</span>
+              </div>
+            </a>
+          </div>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
-</footer>
+</div>
 
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/xiaoxiaohu/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
-    <nav id="mobile-nav">
+  </div>
+</div>
+
+
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<h1 style="display: none">Hexo</h1>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2022/06/05/%E6%90%AD%E5%BB%BA%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A4%96%E7%BD%91%E8%A7%86%E9%A2%91%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" target="_self">
+          搭建树莓派外网视频监控系统
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2022/06/05/%E6%90%AD%E5%BB%BA%E6%A0%91%E8%8E%93%E6%B4%BE%E5%A4%96%E7%BD%91%E8%A7%86%E9%A2%91%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" target="_self">
+        <div>
+          之前想着买个云台放到家里，然后看到网上有关于树莓派视频监控的，所以就也买了个摄像头来实验试一下 由于树莓派留有摄像头接口，因此到淘宝上买了个匹配的摄像头，便宜的20元左右，带夜视的会贵一点，大概四五十 我买的是这款，加个支架才20  其对应的树莓派接口是这个位置：  直接插上去就好了，不够要看准其方向 连接上去之后还需要对树莓派进行配置 打开树莓派配置工具： 1sudo raspi-config
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-05 00:00" pubdate>
+              2022-06-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
   
-    <a href="/xiaoxiaohu/" class="mobile-nav-link">Home</a>
   
-    <a href="/xiaoxiaohu/archives" class="mobile-nav-link">Archives</a>
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
   
-</nav>
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/">#软件</a>
+            
+              <a href="/xiaoxiaohu/tags/word/">#word</a>
+            
+              <a href="/xiaoxiaohu/tags/python/">#python</a>
+            
+              <a href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/">#密码</a>
+            
+              <a href="/xiaoxiaohu/tags/nps/">#nps</a>
+            
+              <a href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">#树莓派</a>
+            
+              <a href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/">#视频</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2022/05/04/%E4%BD%BF%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E8%AF%BB%E5%8F%96%E5%B0%8F%E7%B1%B3%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E9%80%81/" target="_self">
+          使用树莓派定时读取小米温湿度传感器数据并发送到微信
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2022/05/04/%E4%BD%BF%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E8%AF%BB%E5%8F%96%E5%B0%8F%E7%B1%B3%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E9%80%81/" target="_self">
+        <div>
+          前面有文章讲过可以在线把小米温湿度传感器刷定制固件，同时还会开启其蓝牙广播功能，参考文章：小米温湿度传感器刷入定制固件，开启自定义功能。 因为手头刚好有树莓派，就想着怎么可以利用树莓派采集小米温湿度传感器的广播数据然后发送到手机上，通过蓝牙广播来读取数据不用建立蓝牙连接，更加省电，这样就相当于可以远程监控家里温湿度情况了，而且使用树莓派可以做很多定制，比如温度达到多少进行提醒等等。 在网上有找到一
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-04 00:00" pubdate>
+              2022-05-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/python/" class="category-chain-item">python</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/python/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/python/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/" class="category-chain-item">树莓派</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/python/">#python</a>
+            
+              <a href="/xiaoxiaohu/tags/python3/">#python3</a>
+            
+              <a href="/xiaoxiaohu/tags/telegram/">#telegram</a>
+            
+              <a href="/xiaoxiaohu/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">#宝塔面板</a>
+            
+              <a href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/">#密码</a>
+            
+              <a href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">#树莓派</a>
+            
+              <a href="/xiaoxiaohu/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/">#企业微信</a>
+            
+              <a href="/xiaoxiaohu/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/">#定时执行</a>
+            
+              <a href="/xiaoxiaohu/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/">#温湿度传感器</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2022/04/19/%E5%B0%8F%E7%B1%B3%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E5%88%B7%E5%85%A5%E5%AE%9A%E5%88%B6%E5%9B%BA%E4%BB%B6%EF%BC%8C%E5%BC%80%E5%90%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%9F%E8%83%BD/" target="_self">
+          小米温湿度传感器刷入定制固件，开启自定义功能
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2022/04/19/%E5%B0%8F%E7%B1%B3%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E5%88%B7%E5%85%A5%E5%AE%9A%E5%88%B6%E5%9B%BA%E4%BB%B6%EF%BC%8C%E5%BC%80%E5%90%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%9F%E8%83%BD/" target="_self">
+        <div>
+          之前一时兴起买了一个小米的温湿度传感器，一直是用手机连接查看室内温湿度情况，本来一直想看能不能把温湿度传感器上的数据上传到网络上，让我远程也能获取到家里的温湿度，但又没有买小米网关，偶然在网上看到小米温湿度计可以刷入定制固件，所以就试了一下 首先需要有一个温湿度计，我的是第一款：LYWSD03MMC，其他款的我没试，好像也可以    首先我们电脑先打开这个网址：https://pvvx.githu
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-04-19 00:00" pubdate>
+              2022-04-19
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/">#温湿度传感器</a>
+            
+              <a href="/xiaoxiaohu/tags/%E7%A1%AC%E4%BB%B6/">#硬件</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2022/04/12/floefd%E5%A3%B3%E5%86%85%E5%AF%B9%E6%B5%81%E6%8D%A2%E7%83%AD%E4%BB%BF%E7%9C%9F/" target="_self">
+          floefd壳内对流换热仿真
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2022/04/12/floefd%E5%A3%B3%E5%86%85%E5%AF%B9%E6%B5%81%E6%8D%A2%E7%83%AD%E4%BB%BF%E7%9C%9F/" target="_self">
+        <div>
+          本教程主要讲如何利用floefd进行仿真，软件采用的是floefd for creo，也就是挂载在creo软件内的floefd，软件安装可以到网上找教程 1. 首先在creo中打开装配体，然后进入floefd界面，由于是仿真内部流动，所以必须保证仿真模型是封闭的，因此先利用floefd界面创建端盖进行封闭  创建好后，会在有缺口处出现封闭盖  按照操作把所有面的口都封闭起来，此时就创建好了封闭体
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-04-12 00:00" pubdate>
+              2022-04-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/ansys/" class="category-chain-item">ansys</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/">#软件</a>
+            
+              <a href="/xiaoxiaohu/tags/floefd/">#floefd</a>
+            
+              <a href="/xiaoxiaohu/tags/%E4%BB%BF%E7%9C%9F/">#仿真</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2022/03/12/%E5%B0%8F%E7%B1%B3ac2100%E6%9C%80%E7%AE%80%E5%8D%95%E5%88%B7%E6%9C%BA%E6%95%99%E7%A8%8B/" target="_self">
+          小米AC2100最简单刷机教程
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2022/03/12/%E5%B0%8F%E7%B1%B3ac2100%E6%9C%80%E7%AE%80%E5%8D%95%E5%88%B7%E6%9C%BA%E6%95%99%E7%A8%8B/" target="_self">
+        <div>
+          小米ac2100算是目前比较有性价比的路由器了，刷机之后稳定性和可玩性都大幅提升，但其不支持WiFi6，同时其运行内存只有128Mb，有点小，所以有些固件里的服务如果优化不好的话运行会比较吃力，不过目前一百多的价格算是可以了，从此玩游戏连WiFi再也不用担心突然卡顿了 首先拿到一个没刷过机的小米ac2100，目前刷机最简单的就是使用小米一款老官方固件，这个固件存在bug，可以让我们绕过其限制开启其
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-03-12 00:00" pubdate>
+              2022-03-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/" class="category-chain-item">路由器</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/">#密码</a>
+            
+              <a href="/xiaoxiaohu/tags/openwrt/">#openwrt</a>
+            
+              <a href="/xiaoxiaohu/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">#路由器</a>
+            
+              <a href="/xiaoxiaohu/tags/ac2100/">#ac2100</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2022/02/13/%E4%BA%8C%E7%BB%B4%E7%AE%A1%E5%86%85%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81%E4%BB%BF%E7%9C%9F/" target="_self">
+          二维管内自然对流仿真
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2022/02/13/%E4%BA%8C%E7%BB%B4%E7%AE%A1%E5%86%85%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81%E4%BB%BF%E7%9C%9F/" target="_self">
+        <div>
+          要计算的的几何模型如图所示。一个矩形几何，长20 cm，宽2 cm，其中上边温度500 K，下部边温度300 K，两侧边为绝热边界。内部介质为空气，在温度影响下产生自然对流。  使用ICEM绘制如图所示网格  打开fluent，设置单位为cm  检查网格，然后设置重力加速度  打开能量方程  设置realizable k-epsilon湍流模型  修改空气air材质的密度为incompressib
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-02-13 00:00" pubdate>
+              2022-02-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/ansys/" class="category-chain-item">ansys</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/ansys/">#ansys</a>
+            
+              <a href="/xiaoxiaohu/tags/fluent/">#fluent</a>
+            
+              <a href="/xiaoxiaohu/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/">#自然对流</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2022/02/13/%E7%A9%BA%E6%B0%94%E6%B5%81%E7%BB%8F%E9%9A%9C%E7%A2%8D%E7%89%A9%E4%BB%BF%E7%9C%9F/" target="_self">
+          空气流经障碍物仿真
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2022/02/13/%E7%A9%BA%E6%B0%94%E6%B5%81%E7%BB%8F%E9%9A%9C%E7%A2%8D%E7%89%A9%E4%BB%BF%E7%9C%9F/" target="_self">
+        <div>
+          案例描述： 本案例来自于丹麦海事研究所。流动计算域模型如图所示，包含入口、出口及壁面。案例采用 2D 模型计算。计算域流体介质为空气（标准大气压，温度 293K ），来流速度 1.17m&#x2F;s 。雷诺数基于障碍物高度（案例为 40mm ），本案例雷诺数为 3115 ，入口位置湍动能及湍流耗散率分别为 0.024m2&#x2F;s2 及 0.07m2&#x2F;s3 。流动过程为等温、湍流及
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-02-13 00:00" pubdate>
+              2022-02-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/ansys/" class="category-chain-item">ansys</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/ansys/">#ansys</a>
+            
+              <a href="/xiaoxiaohu/tags/workbench/">#workbench</a>
+            
+              <a href="/xiaoxiaohu/tags/fluent/">#fluent</a>
+            
+              <a href="/xiaoxiaohu/tags/%E4%BB%BF%E7%9C%9F/">#仿真</a>
+            
+              <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/">#控制</a>
+            
+              <a href="/xiaoxiaohu/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/">#二维仿真</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2022/02/11/fluent%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B%EF%BC%9A%E4%BA%8C%E7%BB%B4%E6%B7%B7%E5%90%88%E7%AE%A1%E6%A8%A1%E5%9E%8B/" target="_self">
+          fluent案例教程：二维混合管模型
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2022/02/11/fluent%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B%EF%BC%9A%E4%BA%8C%E7%BB%B4%E6%B7%B7%E5%90%88%E7%AE%A1%E6%A8%A1%E5%9E%8B/" target="_self">
+        <div>
+          物理模型如图所示，为二维流道混合模型，冷热水混合后流出，主要涉及到二维模型绘制及网格划分及对应的求解  二维模型可以使用ICEM进行建模及网格划分，因为二维模型一般比较简单，采用DM和SC对于这种二维模型进行网格划分时容易出问题 # 一、模型建立 先打开workbench，将ICEM 拖放到工作窗口中  双击model打开ICEM 先使用绝对坐标系或者相对坐标创建所有的体征点  创建好之后再用线段
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-02-11 00:00" pubdate>
+              2022-02-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/ansys/" class="category-chain-item">ansys</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/ansys/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/ansys/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="category-chain-item">推荐软件</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/ansys/">#ansys</a>
+            
+              <a href="/xiaoxiaohu/tags/workbench/">#workbench</a>
+            
+              <a href="/xiaoxiaohu/tags/fluent/">#fluent</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2022/02/08/catia%E8%A7%A3%E5%86%B3%E5%9B%BE%E6%A0%87%E8%BF%87%E5%B0%8F%E5%8F%8A%E5%B7%A5%E5%85%B7%E6%A0%8F%E6%8B%96%E6%8B%BD%E6%97%B6%E6%98%BE%E7%A4%BA%E4%BD%8D%E7%BD%AE%E4%B8%8E%E5%81%9C%E7%95%99%E4%BD%8D/" target="_self">
+          CATIA解决图标过小及工具栏拖拽时显示位置与停留位置不一致问题
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2022/02/08/catia%E8%A7%A3%E5%86%B3%E5%9B%BE%E6%A0%87%E8%BF%87%E5%B0%8F%E5%8F%8A%E5%B7%A5%E5%85%B7%E6%A0%8F%E6%8B%96%E6%8B%BD%E6%97%B6%E6%98%BE%E7%A4%BA%E4%BD%8D%E7%BD%AE%E4%B8%8E%E5%81%9C%E7%95%99%E4%BD%8D/" target="_self">
+        <div>
+          在win10系统中，打开catia后，如果显示器分辨率与软件不匹配，就会出现拖拽工具栏时位置与你鼠标位置不一致的情况，如图所示  看起来极不协调也不方便 解决办法就是右键软件图标，然后选择属性-兼容性-更改高DPI设置  把里面两个勾选上，再重新打开就不会出现类似问题了    更改高DPI后可能会出现图标显示过小的问题，这个可以通过修改图标大小来更改，在工具-自定义-选项  通过更改图标大小比率就
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-02-08 00:00" pubdate>
+              2022-02-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="category-chain-item">推荐软件</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/catia/">#catia</a>
+            
+              <a href="/xiaoxiaohu/tags/%E5%9B%BE%E6%A0%87/">#图标</a>
+            
+              <a href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/">#软件</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2021/12/21/%E4%BD%BF%E7%94%A8python%E8%AE%BE%E7%BD%AEexcel%E5%8D%95%E5%85%83%E6%A0%BC%E6%A0%BC%E5%BC%8F%E4%B8%BA%E5%B8%B8%E8%A7%84%E3%80%81%E6%97%A5%E6%9C%9F%E3%80%81%E6%95%B0%E5%AD%97/" target="_self">
+          使用python设置excel单元格格式为常规、日期、数字
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2021/12/21/%E4%BD%BF%E7%94%A8python%E8%AE%BE%E7%BD%AEexcel%E5%8D%95%E5%85%83%E6%A0%BC%E6%A0%BC%E5%BC%8F%E4%B8%BA%E5%B8%B8%E8%A7%84%E3%80%81%E6%97%A5%E6%9C%9F%E3%80%81%E6%95%B0%E5%AD%97/" target="_self">
+        <div>
+          使用openpyxl来设置Excel单元格的格式，总结如下： 一、导入： from openpyxl.styles import numbers  或 import openpyxl   二、使用： 1、将单元格[2,3]，设置为 “常规” 格式 work_sheet.cell(row&#x3D;2, column&#x3D;3).number_format &#x3D; ‘General’ 2、
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-21 00:00" pubdate>
+              2021-12-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/python/" class="category-chain-item">python</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/excel/">#excel</a>
+            
+              <a href="/xiaoxiaohu/tags/tor/">#tor</a>
+            
+              <a href="/xiaoxiaohu/tags/python/">#python</a>
+            
+              <a href="/xiaoxiaohu/tags/scr/">#scr</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/xiaoxiaohu/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/xiaoxiaohu/">1</a><span class="page-number current">2</span><a class="page-number" href="/xiaoxiaohu/page/3/#board">3</a><a class="page-number" href="/xiaoxiaohu/page/4/#board">4</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/25/#board">25</a><a class="extend next" rel="next" href="/xiaoxiaohu/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/xiaoxiaohu/js/jquery-3.6.4.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/xiaoxiaohu/js/events.js" ></script>
+<script  src="/xiaoxiaohu/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
 
 
 
   
-<script src="/xiaoxiaohu/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/xiaoxiaohu/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/xiaoxiaohu/js/script.js"></script>
+  <script  src="/xiaoxiaohu/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/xiaoxiaohu/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>

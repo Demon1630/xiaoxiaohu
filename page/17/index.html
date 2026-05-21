@@ -1,1243 +1,1094 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/xiaoxiaohu/img/fluid.png">
+  <link rel="icon" href="/xiaoxiaohu/img/fluid.png">
   
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="https://demon1630.github.io/xiaoxiaohu/page/17/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/xiaoxiaohu/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/xiaoxiaohu/favicon.png">
+<meta name="twitter:card" content="summary_large_image">
   
   
   
-<link rel="stylesheet" href="/xiaoxiaohu/css/style.css">
+  <title>Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/xiaoxiaohu/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/xiaoxiaohu/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/xiaoxiaohu/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"demon1630.github.io","root":"/xiaoxiaohu/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/xiaoxiaohu/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/xiaoxiaohu/js/utils.js" ></script>
+  <script  src="/xiaoxiaohu/js/color-schema.js" ></script>
+  
+
 
   
-    
-<link rel="stylesheet" href="/xiaoxiaohu/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
 <meta name="generator" content="Hexo 8.1.2"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/xiaoxiaohu/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/xiaoxiaohu/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <a class="main-nav-link" href="/xiaoxiaohu/">Home</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
         
-          <a class="main-nav-link" href="/xiaoxiaohu/archives">Archives</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
         
-      </nav>
-      <nav id="sub-nav">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
         
         
-          <a class="nav-icon" href="/xiaoxiaohu/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://demon1630.github.io/xiaoxiaohu"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-【win】vmware-15-5-虚拟机软件及永久许可证" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/06/01/%E3%80%90win%E3%80%91vmware-15-5-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%B0%B8%E4%B9%85%E8%AE%B8%E5%8F%AF%E8%AF%81/" class="article-date">
-  <time class="dt-published" datetime="2020-05-31T16:00:00.000Z" itemprop="datePublished">2020-06-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/wordpress/">wordpress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/06/01/%E3%80%90win%E3%80%91vmware-15-5-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%B0%B8%E4%B9%85%E8%AE%B8%E5%8F%AF%E8%AF%81/">【win】VMware 15.5 虚拟机软件及永久许可证</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>﻿<img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-92d0869edf7e788fcbc2b8629d6a3376.gif"></p>
-<h1 id="名称-：VMware-15-5"><a href="#名称-：VMware-15-5" class="headerlink" title="[名称]：VMware 15.5"></a>[名称]：VMware 15.5</h1><p>[大小]：489 MB   </p>
-<p>[语言]：简体中文 </p>
-<p>[安装环境]：Win7&#x2F;Win8&#x2F;Win10</p>
-<h1 id="64-32位下载链接-："><a href="#64-32位下载链接-：" class="headerlink" title="[64&#x2F;32位下载链接]："></a>[64&#x2F;32位下载链接]：</h1><h1 id="下载链接-："><a href="#下载链接-：" class="headerlink" title="[下载链接]："></a>[下载链接]：</h1><p>pan.baidu.com&#x2F;s&#x2F;1BPbFLk-10C-Ry2V-i3BpAQ</p>
-<p>[提取码]:4l2f</p>
-<p>VMware15可以在同一台 Windows 或 Linux PC 上同时运行多个操作系统。创建真实的 Linux 和 Windows 虚拟机以及其他桌面、服务器和平板电脑环境（包括可配置的虚拟网络连接和网络条件模拟），用于代码开发、解决方案构建、应用测试、产品演示等。</p>
-<p>1、打开下载文件，双击【VMware-workst atiom-full-15.5.0】进入安装界面。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-dd9165c29e69f5a2faa13d924d3b003e.png"></p>
-<p>2、等待进入 VMware Workstation 的安装。进入VMware安装界面后，点击【下一步】。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-32ab117a6f9378b3a51c9955c686a2bf.png"></p>
-<p>3、如图：再许可协议中，勾选【我接受许可协议中的条款】，再点击【下一步】。  </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-652295f9d6fa34069cbb77c859910218.png"></p>
-<p>4、进入自定义安装界面，点击右上角的【更改】选择软件的安装目录，再点击【下一步】。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-a924994fddf2bf7a4da066880eb1f6fe.png"></p>
-<p>5、如图：取消勾选上方的两个选项，再点击【下一步】。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-e28f45a97d3327b9bc76dcb2578eadcc.png"></p>
-<p>6、进入快捷方式界面，默认点击【下一步】。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-00d31c18f5ccf1dcc28e3e15355fe71b.png"></p>
-<p>7、进入安装准备就绪，点击【安装】。等待 VMware Workstation 安装完成。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-198883d6287063dbb48f2d0ab23a2c6d.png"></p>
-<p>8、安装中</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-4ffa73b514ceb46c1c56e72101845acd.png"></p>
-<p>9、虚拟机安装完成后，如图：点击【许可证】，就进行激活 VMware 虚拟机。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-0442cf2fcb5a204484a6deafae5ee992.png"></p>
-<p>10、VMware 15激活码如下，请选择一项复制到VMware的许可证密钥中，再点击【输入】。</p>
-<p><strong>UY758-0RXEQ-M81WP-8ZM7Z-Y3HDA</strong></p>
-<p><strong>VF750-4MX5Q-488DQ-9WZE9-ZY2D6</strong></p>
-<p><strong>UU54R-FVD91-488PP-7NNGC-ZFAX6</strong></p>
-<p><strong>YC74H-FGF92-081VZ-R5QNG-P6RY4<br>YC34H-6WWDK-085MQ-JYPNX-NZRA2</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-456cf944ce335b8a5b8c7cc9cb5a5dae.png"></p>
-<p>11、虚拟机【VMware Workstation Pro15】安装激活完成，点击【完成】。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-a185630812ef589a831c46f8d9bc410e.png"></p>
-<p>12、安装完成</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-894c73ce13429653b06c365f7183af65.png">  </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-9652304effc54e66409c4a7c975ce2b0.jpeg">  </p>
-<p>欢迎</p>
-<p>关注公众号软件安装师</p>
-<p>免费提供各类软件安装包和安装教程，  </p>
-<p>软件更新和升级；并提供软件安装技术支持，</p>
-<p>人工在线协助服务。</p>
-<p>假如你想让你的朋友像你一样，</p>
-<p>轻松的安装破解版软件，或者得到什么帮助，</p>
-<p>那么请你把这个公众号分享给你的朋友。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/06/01/%E3%80%90win%E3%80%91vmware-15-5-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%B0%B8%E4%B9%85%E8%AE%B8%E5%8F%AF%E8%AF%81/" data-id="cuidAtxDQRps0OFZCxExcOdGU" data-title="【win】VMware 15.5 虚拟机软件及永久许可证" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-免费申请office-e5开发者订阅，附无限续期私人网盘教程-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/06/01/%E5%85%8D%E8%B4%B9%E7%94%B3%E8%AF%B7office-e5%E5%BC%80%E5%8F%91%E8%80%85%E8%AE%A2%E9%98%85%EF%BC%8C%E9%99%84%E6%97%A0%E9%99%90%E7%BB%AD%E6%9C%9F%E7%A7%81%E4%BA%BA%E7%BD%91%E7%9B%98%E6%95%99%E7%A8%8B-2/" class="article-date">
-  <time class="dt-published" datetime="2020-05-31T16:00:00.000Z" itemprop="datePublished">2020-06-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/06/01/%E5%85%8D%E8%B4%B9%E7%94%B3%E8%AF%B7office-e5%E5%BC%80%E5%8F%91%E8%80%85%E8%AE%A2%E9%98%85%EF%BC%8C%E9%99%84%E6%97%A0%E9%99%90%E7%BB%AD%E6%9C%9F%E7%A7%81%E4%BA%BA%E7%BD%91%E7%9B%98%E6%95%99%E7%A8%8B-2/">免费申请office E5开发者订阅，附无限续期+私人网盘教程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>本文永久更新修正地址：<a href="https://link.zhihu.com/?target=https://blog.devyi.com/archives/388">https://blog.devyi.com/archives/388</a></p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><p>Office365开发版E5是为开发人员提供的，是微软的官方活动，申请Office 365开发者计划可以获得为期3个月的免费Office365 E5。 而E5计划就包含了25个用于所有Office 365 应用的许可证。如果嫌正版office365贵的话，这可是你免费获取office的好机会了。</p>
-<p><strong>「提示：请自行准备好上网工具，中途可能会用到。若中途因已登录账号而出现奇怪的问题，可以使用浏览器隐私模式（推荐edge chromium版）</strong></p>
-<p><strong>本教程不保证一定能续期！不保证一定能续期！或者说，只是增大续订可能性。」</strong></p>
-<h2 id="申请账号"><a href="#申请账号" class="headerlink" title="申请账号"></a><strong>申请账号</strong></h2><p><em>若使用电脑浏览器长时间无反应，建议更换手机浏览器或者开热点</em></p>
-<p>1.访问申请链接（链接在文末或评论区给出），点击<code>立即加入</code>开始申请账号</p>
-<p><img src="https://pic3.zhimg.com/v2-c34764ebd92153570bd0a490ece3a536_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-6d8c9f968c58ab1cd817dcfa18bf6f95.jpg"></p>
-<p>2.登录账号</p>
-<p><img src="https://pic4.zhimg.com/v2-6f06aa42431667f523e24b83af18aa9f_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-0689ae3435ef7290c1086cbd833435a6.jpg"></p>
-<p>3.注册Office 365 开发人员。下面两个勾选可以只勾选第一个，减少广告，点击<code>下一步</code>继续</p>
-<p><img src="https://pic2.zhimg.com/v2-8cb2d3c57c22f542eba58a01210dc165_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-5114d756e64f8dce05da8a3b90e9952c.jpg"></p>
-<p>4.随便填一下，点击<code>加入</code></p>
-<p><img src="https://pic4.zhimg.com/v2-e51daf2827925a9073e59cc65220de97_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-92d6bbc4b287a186ec07909d0ea21a27.jpg"></p>
-<p>5.之后的页面中会提示你没有订阅，点击申请一个订阅。在弹出的页面中输入一个你能记得住的用户名和域，然后记住你的”用户名@域.<a href="https://link.zhihu.com/?target=http://onmicrosoft.com">http://onmicrosoft.com</a>“，点继续。</p>
-<p><img src="https://pic3.zhimg.com/v2-22ebe2256bc71ed47a0a9cd7e7686e4a_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-799c2987b520d2e615602ac68daa63cd.jpg"></p>
-<p>6.验证手机号，这一步会调用谷歌的验证系统，准备好上网工具</p>
-<p><img src="https://pic2.zhimg.com/v2-d4ddf2e1aedc6df0311567b8063a5669_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-bf09abfc59a96f44a245ab4ef6a2ecf0.jpg"></p>
-<p>7.现在，我们已经申请好了E5订阅了，并一次性申请了25个用户许可证。如果你只是自己用，现在已经可以使用”用户名@域.<a href="https://link.zhihu.com/?target=http://onmicrosoft.com">http://onmicrosoft.com</a>“和之前设置的密码登录你电脑上的Office了。</p>
-<p><img src="https://pic4.zhimg.com/v2-7c448e8c00883abfdf8cf7e925cb12c3_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-9f3f1a7e685fcc1d43f8ded5fc9bbe95.jpg"></p>
-<h2 id="分配账号与安装365"><a href="#分配账号与安装365" class="headerlink" title="分配账号与安装365"></a><strong>分配账号与安装365</strong></h2><p>之前说过E5订阅有25个用户许可证，我们可以点击<code>转到订阅</code>或者登录 <a href="https://link.zhihu.com/?target=https://www.office.com/?auth=2">https://www.office.com/?auth=2</a> 分配账号给自己的朋友</p>
-<p>这里一定要加上 <code>?auth=2</code> ，否则会进入**「个人版」<strong>office365的登录界面，无法使用这里的</strong>「组织账号」**登录</p>
-<p>点击<code>安装office</code>可以安装office365，默认会安装所有的软件。若有自定义的需求，可以使用office tool plus安装。</p>
-<p><img src="https://pic3.zhimg.com/v2-845aa0f5cabe542d1a98ef646fc20aa6_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-ac3407ce3ed8d1e884307ca24ff04abc.jpg"></p>
-<p>点击下方的<code>管理</code>可以分配账号，进入新页面点击<code>用户</code>——<code>活跃用户</code>——<code>添加用户</code>即可。</p>
-<p><img src="https://pic4.zhimg.com/v2-e9cf42e6599a96f4125cc989bd8e1d77_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-0c628121763ebb074d7ec392b798e566.jpg"></p>
-<h2 id="设置5T网盘容量"><a href="#设置5T网盘容量" class="headerlink" title="设置5T网盘容量"></a><strong>设置5T网盘容量</strong></h2><p>默认onedrive容量是1T，但是可以通过设置更改为5T。 1.点击365主页的onedrive图标，若提示“我们目前还在 OneDrive 上设置文件”可以先跳过本步骤，先完成下面的操作。</p>
-<p>2.打开 <a href="https://link.zhihu.com/?target=https://admin.onedrive.com/?v=StorageSettings">https://admin.onedrive.com/?v=StorageSettings</a> ，也可以在<code>管理中心</code>——<code>所有管理中心</code>——<code>onedrive</code>中找到，更改默认存储为5012GB。</p>
-<p><img src="https://pic2.zhimg.com/v2-bee194f150eefdd27e1982998c9a038d_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-2e1b26be7466064e82cb3f09f7de6619.jpg"></p>
-<h2 id="无限续期-私人网盘"><a href="#无限续期-私人网盘" class="headerlink" title="无限续期+私人网盘"></a><strong>无限续期+私人网盘</strong></h2><p>由于此订阅为开发人员订阅，有效期为90天，需要触发相关api才能自动进行续期。这里推荐搭建OneIndex来触发相关API，经其他大佬测试可以成功续期，还可以搭建自己的网盘，一举两得。</p>
-<p>OneIndex需要有自己的服务器，具体可以参考这篇文章中的**「一、购买服务器、二、购买域名和三、安装宝塔面板」**</p>
-<p><em>0基础小白向博客搭建指南——<a href="https://link.zhihu.com/?target=https://blog.946946.xyz/archives/18">https://blog.946946.xyz/archives/18</a></em></p>
-<p>如果不想购买服务器&#x2F;付钱，可以试试OneDrive_SCF项目 <a href="https://link.zhihu.com/?target=https://github.com/qkqpttgf/OneDrive_SCF">https://github.com/qkqpttgf/OneDrive_SCF</a> ，轶哥猜测同样也可以触发相关API，如果有朋友成功用此方法续期，欢迎反馈！</p>
-<p><strong>**02.05更新：现在有免费12个月的云服务器，具体可看：<a href="https://link.zhihu.com/?target=https://blog.946946.xyz/quick.html">https://blog.946946.xyz/quick.html</a> **</strong></p>
-<h3 id="Oneindex安装"><a href="#Oneindex安装" class="headerlink" title="Oneindex安装"></a><strong>Oneindex安装</strong></h3><p>1.先去Oneindex项目地址：<a href="https://link.zhihu.com/?target=https://github.com/donwa/oneindex">https://github.com/donwa/oneindex</a> 下载</p>
-<p><img src="https://pic4.zhimg.com/v2-1d1a8bf32f08f8d1c51be746d754ba57_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-66878013df779f083ed0213bef7d9258.jpg"></p>
-<p>2.前往宝塔后台，点击<code>网站</code>——<code>添加站点</code>——完成添加</p>
-<p><img src="https://pic3.zhimg.com/v2-00dbd4df39001fe2f8fc1dc3bcea046e_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-b9299e6525b77c81b11eca38355f3f75.jpg"></p>
-<p>3.转到宝塔网站根目录，上传刚刚下载的压缩包并解压在网站根目录，设置好dns解析</p>
-<p>4.打开你的网站，若无问题将打开oneindex安装界面，点击<code>下一步</code></p>
-<p><img src="https://pic3.zhimg.com/v2-299edc43112de5ba6ed23f0772482dd2_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-ab4f38f35d784534978c02d91f7f027b.jpg"></p>
-<p>5.填入<code>client_id</code>和<code>client_secret</code>。注意登录的账户是不是刚刚申请office e5的账号，如果不是请注销重新登录。</p>
-<p><img src="https://pic3.zhimg.com/v2-07e0372a50105fed0be41bc67e772aca_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-f9273a315fb8514ecd23ce23609b9f70.jpg"></p>
-<p>6.确定<code>下一步</code>，同意许可</p>
-<p><img src="https://pic4.zhimg.com/v2-0501c1c19a9443874afb82a740b49edf_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-a68f39c12ccd12ab7e777310d6eeafab.jpg"></p>
-<p>7.提示成功即可，初始密码:oneindex，建议立即修改密码，默认管理页面 <code>你的域名/?/admin</code>。</p>
-<p><img src="https://pic1.zhimg.com/v2-1a15a81d7afaaa09d49009d7ee552fcc_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-852814c1e0e9dac5e5268313eef8c620.jpg"></p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a><strong>小结</strong></h2><p>申请完成要记得多使用oneindex，多触发相关api，使得顺利续期office</p>
-<p>[技术宅小哥哥] 说:你好，E5申请链接是：<a href="https://link.zhihu.com/?target=https://developer.microsoft.com/zh-cn/office/dev-program">https://developer.microsoft.com/zh-cn/office/dev-program</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/06/01/%E5%85%8D%E8%B4%B9%E7%94%B3%E8%AF%B7office-e5%E5%BC%80%E5%8F%91%E8%80%85%E8%AE%A2%E9%98%85%EF%BC%8C%E9%99%84%E6%97%A0%E9%99%90%E7%BB%AD%E6%9C%9F%E7%A7%81%E4%BA%BA%E7%BD%91%E7%9B%98%E6%95%99%E7%A8%8B-2/" data-id="cuidWAJxK4QpqyQ3zY5cW3PMl" data-title="免费申请office E5开发者订阅，附无限续期+私人网盘教程" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/tor/" rel="tag">tor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-14亿人的二八定律-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/05/30/14%E4%BA%BF%E4%BA%BA%E7%9A%84%E4%BA%8C%E5%85%AB%E5%AE%9A%E5%BE%8B-2/" class="article-date">
-  <time class="dt-published" datetime="2020-05-29T16:00:00.000Z" itemprop="datePublished">2020-05-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E7%94%9F%E6%B4%BB/">生活</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/05/30/14%E4%BA%BF%E4%BA%BA%E7%9A%84%E4%BA%8C%E5%85%AB%E5%AE%9A%E5%BE%8B-2/">14亿人的“二八定律 ”</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>引</p>
-<p><strong>“6亿人”后面的真相</strong></p>
-<p>不止有<strong>盛世繁华</strong>，还有<strong>残垣颓瓦</strong>；</p>
-<p>不止有<strong>北上深广的四通八达</strong>，还有<strong>阡陌不通的边缘小镇</strong>；</p>
-<p>不止有<strong>年赚千万的娱乐明星</strong>，还有更多<strong>失业在家的啃老青年</strong>；</p>
-<p>不止有<strong>归不了国的留学生</strong>，还有很多<strong>上不了学的小学生</strong>；</p>
-<p>……</p>
-<p>总理一句大实话，惊醒了无数人。</p>
-<blockquote>
-<p>中国是一个人口众多的发展中国家，我们人均年收入是3万元人民币，但是<strong>有6亿人每个月收入也就1000元</strong>，1000元在一个中等城市可能租房都困难，现在又碰到疫情……</p>
-</blockquote>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-befa463b697de26cdccc7fca1dcca589.jpeg"></p>
-<p>看惯了各种炫富，面对这样的<strong>数据和真相</strong>，一下子回不过神来。</p>
-<p>特别是生活在一二线城市，感觉有点不可思议。</p>
-<p> </p>
-<p>然而现实就是如此扎人，<strong>数据符合科学逻辑</strong>。</p>
-<p>从14亿的总人口看来，如果再进行数据中位数精细化处理，</p>
-<p>就会发现数据后面有一个经常听到的字眼：<strong>二八定律</strong>。</p>
-<p><strong>20%的人掌握世上80%的财富。</strong></p>
-<p> </p>
-<p>读懂二八定律，才能更好的读懂总理这段话的价值。</p>
-<p>1</p>
-<p><strong>什么是“二八定律”？</strong></p>
-<p>1897年，意大利经济学者<strong>帕累托</strong>提出该定律。</p>
-<p>他在研究财富和收益取样中，发现<strong>大部分财富<strong><strong>流向了</strong></strong>少数人手里</strong>，而且在数学上呈现出一种稳定的微妙关系。</p>
-<p>最后，帕累托从大量具体的事实中发现：</p>
-<p><strong>社会上二成人占有八成社会财富。</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b8a25fc816c08a8ed908651b531ebe50.png"></p>
-<p>其实不仅仅是帕累托，古人很早就发现了社会中存在这样的规律：</p>
-<p>权力者会越有权力；</p>
-<p>财富者会越有财富；</p>
-<p>有名的人会越有名；</p>
-<p>美貌者越会被人关注；</p>
-<p>智慧者获得更多智慧；</p>
-<p>国家一旦强起来，会越来越强。</p>
-<p>《圣经》中早就有记载：<strong>强者越强，弱者愈弱</strong>。</p>
-<p>所以二八定律又叫：<strong>马太效应、累积效应、滚雪球效应、规模效应、长尾效应</strong>。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-790f70d90e54a1a0ba47f32b8dd8d038.jpeg"></p>
-<p>长长的尾部揭示大部分人只占据很少的资源</p>
-<p>二比八只是抽象描述，它<strong>并非准确的数学表达</strong>。</p>
-<p>❶相当多的企业组织，<strong>20%员工贡献了80%的价值</strong>；</p>
-<p>❷<strong>小部分国家</strong>控制着地球上的<strong>大部分资源</strong>；</p>
-<p>❸大部分独角兽企业在<strong>核心大城市</strong>；</p>
-<p>❹全球金融资源集中在<strong>纽约、伦敦、香港、新加坡</strong>等少数城市。</p>
-<p>所以，社会科学家和统计学家一直致力于把马太效应<strong>数量化、模型化、几何化</strong>。</p>
-<p>这些模型化尝试都比较粗糙，直到<strong>物理学家巴拉巴西</strong>的出现。</p>
-<p>2</p>
-<p><strong>幂律分布</strong></p>
-<p>统计学上存在各种分布：</p>
-<p>常见的<strong>正态分布、泊松分布、二项式分布</strong>。</p>
-<p>还有一种分布不太为人熟知：<strong>幂律分布（power law）</strong>。</p>
-<p>幂律分布的英文名称是<strong>权力规律</strong>：</p>
-<p><strong>越有力量的一方会在博弈中越来越有力量</strong>。</p>
-<p>以下为正态分布和幂律分布的对比图：</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-90f820d089d97d0509132a00a95d8d60.jpeg"></p>
-<p>以上横坐标表示网络内个体数量，纵坐标表示资源数量；正态分布的资源集中在中间层，而幂律分布的资源集中在头部很小区域，长长的尾部资源很少</p>
-<p>那这张数形图是由哪一些点组成的？为什么会有这样一个数学函数式？</p>
-<p>1999年，美国物理学家<strong>巴拉巴西</strong>通过对<strong>网络结构</strong>的研究，确定幂律分布背后的<strong>无标度网络（Scale Free）</strong>。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0d4fa2146fc88a01a627bf4b773ffb80.png"></p>
-<p>红、黄点是核心节点，绿、紫点是次要节点</p>
-<p>从图中可以看出：</p>
-<p>幂指数分布的形成，因为<strong>人类网络结构非常特殊</strong>，<strong>20%<strong>左右是</strong>网络超级结点</strong>，这些超级结点接入社会的<strong>80%的资源</strong>。</p>
-<p><strong>凡是在无标度网上传播、分布的资源、权力、信息、知识都遵循着幂律（二八）分布。</strong></p>
-<p>以下是无标度网的特点：</p>
-<p>❶<strong>自相似性（数学分形的社会学特点）</strong></p>
-<p>自相似又叫<strong>规模不变性</strong>，<strong>动态增减不影响结构特点</strong>，如圆的大小不影响圆周率π。无论社会网络增大还是缩小，二八分布不会改变，自己与自己保持相似性，与网络的尺度大小无关，所以才叫<strong>scale-free（无标度）</strong>。</p>
-<p>❷<strong>偏好连接</strong></p>
-<p>所谓偏好连接，无论自然事物还是生物行为，都会<strong>偏好中心节点</strong>，如雨滴的形成需要核心处有一个微粒灰尘作为凝结核；星系也需要至少一个核心恒星；生态中一颗大树周围会聚集一批小型生物。其实这是物理的<strong>最小作用量原理、经济的节约原理、博弈论的弱者搭便车原理</strong>的表现。</p>
-<p>❸<strong>两极分化</strong></p>
-<p>中心节点的连接越多，资源也就越集中，于是，<strong>大部分网络节点只能占据20%左右的资源</strong>，在曲线图上形成一个长长的尾部。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-505c77dd8475b61ca833d1e207cb2ec6.png"></p>
-<p>4种基本网络结构</p>
-<p>如果我们将正态分布看成是平民主义，那么<strong>幂律分布就像精英主义</strong>。</p>
-<p>一个崇尚<strong>平等和公正</strong>，一个爱好<strong>自由和效率</strong>。</p>
-<p>一个偏向于<strong>公共治理</strong>，一个更偏向于<strong>市场自组织</strong>。</p>
-<p>到底哪一种选择更好，这应该由历史来回答。</p>
-<p>3</p>
-<p><strong>“中心节点”如何成形？</strong></p>
-<p>我们以上说的宏观社会现象，看到的是一个20%“超级中心”的结点网络。</p>
-<p><strong>每个人单独是零乱的，是无序的</strong>。</p>
-<p>但形成一种<strong>整体</strong>时，它就会形成一种<strong>有序的中心结点</strong>。</p>
-<p>为什么有的人是中心结点，有的人是零散结点呢？</p>
-<p>❶<strong>搭便车（抱大腿效应）</strong></p>
-<p><strong>搭便车式的占便宜是形成无标度网和二八分布的关键。</strong></p>
-<p>新加入社会网络的人，为了自己的利益，首先会选择加入已经占据优势的节点，实现<strong>利益最大化</strong>。</p>
-<p>一旦每个人都想和中心节点相连，就会增加中心节点对其它小节点的吸引，形成<strong>累积效应</strong>，最后形成<strong>强者越强的幂律分布</strong>。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-1b3ae99f4b35b97cecfd71d13ecc5865.jpeg"></p>
-<p>生物中的搭便车</p>
-<p><strong>社会关系网、金融网、互联网社交软件</strong>是最显著的幂律分布，名人、金融中心、微信会聚集大量资源，而且轻易不能取代。</p>
-<p>能够抱住大腿的人，确实也得到了更多的回报。</p>
-<p>很多时候，第一名和第二名的差距很小，但是大部分人仍然会去投资第一名，导致第一名拥有的资源数量远远超过第二名。</p>
-<p><strong>❷乌合之众心理</strong></p>
-<p>从众心理和集体无意识其实也是占便宜的表现。</p>
-<p>跟随大众的选择，即使错了，<strong>错误的成本也会被平均分担</strong>，所谓法不责众。</p>
-<p>当大部分人都说皇帝穿了衣服，跟着说就是最优选择；</p>
-<p>购买东西时，看见已经有很多人购买，至少说明品质有保证，即使品质有问题，打官司时也人多势众。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d2e9c93ae89c84db7203dc85ca4938f1.jpeg"></p>
-<p>大部分人的知识和判断能力都比较差，面临着信息不足和信任问题，<strong>从众对他们而言不是非理性的盲目屈从</strong>，并非全是愚昧，而是<strong>个体利益最大化的理性选择</strong>。</p>
-<p><strong>❸模仿与创新</strong></p>
-<p>不过，一旦某个坚持己见的人创新成功，打开一片天地；</p>
-<p>原先只是轻微地反对的人就会选择观望策略，然后<strong>从观望变成模仿者和山寨者</strong>。</p>
-<p><strong>模仿的成本低，收益却有保障。</strong></p>
-<p>模仿是绝大多数人绝大多数时候的博弈策略，新技术一旦发明出来，传播速度会非常快。</p>
-<p>不想付出代价又想得到好处的<strong>搭便车行为是人的固有本性</strong>。</p>
-<p>这种有意识的行为迫使后来者总是倾向于依附之前的强者，却恰好产生了强者越强的结果。</p>
-<p>举个例子：</p>
-<p>你高中没有毕业，稀里糊涂地跟随自己的表兄来到北京，然后稀里糊涂地找了一份工作，对于你个人来讲，你并无明确目标。<strong>但从宏观上来讲，因为你的加入，北京强化了它的中心结点的力量。</strong></p>
-<p>4</p>
-<p><strong>强者愈强道德吗？</strong></p>
-<p>我们回归到总理所说的数据：</p>
-<p><strong>6亿人每个月收入也就1000元</strong>。</p>
-<p>同一命题就是：</p>
-<p><strong>中国极少数家庭占有极大财富。</strong></p>
-<p>这道德吗？这合理吗？</p>
-<p>社会中的强者定律随处可见：</p>
-<p><strong>几个大公司</strong>占据了<strong>绝大部分市场份额</strong>；</p>
-<p><strong>几个国际金融城市</strong>吸收了<strong>绝大部分国际资本</strong>；</p>
-<p><strong>几个大国操控世界局势</strong>；</p>
-<p><strong>少数富人</strong>占有了<strong>大部分资产</strong>；</p>
-<p>甚至在演艺界也是如此，<strong>少数明星</strong>吸引了<strong>大部分流量</strong>，大量德艺双馨的演员不为人知。</p>
-<p>很多人对此愤愤不平，好像二八分布具有“原罪”：</p>
-<p>它是<strong>资本的阴谋</strong>、<strong>社会的阴谋</strong>、<strong>有钱人的阴谋</strong>。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2f7c511a5cea3f4bcdf19c5663a2ff5f.jpeg"></p>
-<p>事实是，大部分二八定律都是<strong>自发形成</strong>的，是普通人<strong>搭便车、抱大腿、从众、模仿</strong>的结果。因为大家都想和最优秀的节点连接，想从核心节点获得更多的回报，这是<strong>普通人利益最大化的理性人选择</strong>。两者是互利的。</p>
-<p>大型公司的垄断并不一定是坏的，它可能是<strong>消费者自发促成的自然垄断</strong>。</p>
-<p>城市金融中心的成形，因为它提供了<strong>最好的金融服务</strong>，大家都趋之若鹜。</p>
-<p>把<strong>80%的资源</strong>花在能出<strong>关键效益的20%<strong>的方面，这</strong>20%的方面</strong>又能带动其余<strong>80%的发展</strong>。</p>
-<p>所以不能武断认为：<strong>二八定律是不道德的</strong>。</p>
-<p>5</p>
-<p><strong>中国现状是“二八定律吗”？</strong></p>
-<p><strong>二八定律不仅是一种社会规律，也是一种自然规律。</strong></p>
-<p>自然形成的二八定律自不必说，它可能是至善的，应该尊重。</p>
-<p>社会形成的二八定律应该有一个前提条件：它是在<strong>公平公正的环境下</strong>形成。</p>
-<p>而这种公平公正的环境：一是<strong>健全的法制</strong>，二是<strong>契约精神</strong>。</p>
-<p>如果这两个前提不具备，那它很难形成一种健康的“二八定律”。</p>
-<p>1978年改革开放至今，中国整体上走的是一条<strong>市场化的道路</strong>。</p>
-<p>邓小平先生说：让一部分先富起来。</p>
-<p>40多年过去了，从财富上形成二八定律，这是符合设定的。</p>
-<p>然而事实的真相更可怕，北京大学发布的《中国民生发展报告2015》数据显示：</p>
-<p><strong>中国顶端1%的家庭占有全国约三分之一的财产，</strong></p>
-<p><strong>底端25%的家庭拥有的财产总量仅在1%左右。</strong></p>
-<p>这两个1%，正是中国财富状况的真实写照。</p>
-<p>更准确的数据是：</p>
-<p>2019年，中国三家股份制银行公布了各自的年报，在年报中揭示的一大数据告诉了我们：<strong>2%的人群，或许就能占有80%的财富！</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b0d808bd4e9a78011ef39b022f0033b8.png"></p>
-<p>这已经不是二八定律了，这是一个<strong>畸形的网络结构</strong>。</p>
-<p>我们甚至要审视这个环境到底是否公正，是否公平。</p>
-<p>结</p>
-<p><strong>6亿人的命运会改变吗？</strong></p>
-<p>有人说，勇敢的总理说出了<strong>真实的数据</strong>。</p>
-<p>名义上经过统计和平均，人均年收入是3万元人民币，中国已经是<strong>中等收入国家</strong>；</p>
-<p>事实上还有很多人月收入稀薄无比，<strong>1000元可能是很多人的天花板</strong>；</p>
-<p>他们是在统计中<strong>被高收入者硬拽进中等收入</strong>的。</p>
-<p>张家有钱一千万，隔壁九个穷光蛋，平均起来算一算，个个都是张百万。</p>
-<p>不再在浮夸中自我唏嘘，</p>
-<p><strong>如何实现这部分人的跃迁？</strong></p>
-<p>总理忧心忡忡，莫过于此。</p>
-<p>这个14亿人口的国度，<strong>二八定律已经失衡</strong>，</p>
-<p>此时更需要<strong>激发内部流动性</strong>，<strong>优化配置资源</strong>。</p>
-<p>既有<strong>自由与效率</strong>，又有<strong>法制与公平</strong>。</p>
-<p>重新塑造出一个<strong>动态的、健康的二八社会结构</strong>；</p>
-<p>6亿人的命运，将会有更好改变<img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-49fd2137e6568edcf79ad52e8b584f1c.gif"></p>
-<p><strong>本期编辑｜hupe</strong></p>
-<p><strong>本期投稿｜白格尔</strong></p>
-<p> </p>
-<p><strong>延伸阅读</strong></p>
-<p><em>01</em>  <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIyMzU5MDA1Mw==&mid=2247483654&idx=1&sn=0571271123cf2e02ff53083dbf8ef992&chksm=e81aa2ccdf6d2bda46d701b00bcb2256128a25575415f3d8b7c17fa3722a106f298f2e1dcb94&scene=21#wechat_redirect">致敬少数派</a></p>
-<p><em>02</em>  <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIyMzU5MDA1Mw==&mid=2247489730&idx=1&sn=0c2114735434f88344185acef2fdcaa3&chksm=e81abb08df6d321efc1edf4ee92e273ddc6cf8a146e8e2bd2522fdfbb7def5a6f22596f14090&scene=21#wechat_redirect">反思华为，无“根”之痛</a></p>
-<p><em>03</em>  <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIyMzU5MDA1Mw==&mid=2247490078&idx=2&sn=ec0dc85f3df069bbfcd29297e82ba472&chksm=e81ab9d4df6d30c20395ddd5456ebc241b1d3e7399c13f2ad5c5e522e3bf07517d2f22db4c63&scene=21#wechat_redirect">何鸿燊的不败筹码：凯利公式</a></p>
-<p><em>04</em>  <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIyMzU5MDA1Mw==&mid=2247489353&idx=3&sn=bec1d247d6db65eaf42dc205e4f724b9&chksm=e81ab483df6d3d95dc00703af0e3100c2aca71c12437fed70836d20c49d75841e5dd0f0af36c&scene=21#wechat_redirect">为张文宏免疫</a></p>
-<p><em>05</em>  <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIyMzU5MDA1Mw==&mid=2247489325&idx=1&sn=e6ec87e1f41df1a37ba5dd6090682375&chksm=e81ab4e7df6d3df1e4f461faaa75cf99f7a1e8b3479d501908f1f2edf03ccd58f3ce929b9aff&scene=21#wechat_redirect">疫情反思，我要教育12岁孩子“独立思考”了</a></p>
-<p><em>06</em>  <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIyMzU5MDA1Mw==&mid=2247489106&idx=1&sn=d13c1e0c6029ecc837eec5b517ebce6c&chksm=e81ab598df6d3c8e57896ab2e12b7570dbad321db3b8364c942c61147b7ffc206beb9e26f536&scene=21#wechat_redirect">越是在关键时刻，越是要独立思考</a></p>
-<p><em>07</em>  <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIyMzU5MDA1Mw==&mid=2247489236&idx=2&sn=8462aa4681daffb9ed05ba4add406504&chksm=e81ab51edf6d3c08d305ab991c713458c4923fd748c23154de1d405bc2ce47bb3f188456ed6c&scene=21#wechat_redirect">骗子密码：幸存者偏差</a></p>
-<p><em>08</em>  <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIyMzU5MDA1Mw==&mid=2247488897&idx=1&sn=d6ad5926af5807759e2c3dd3cf5d0b38&chksm=e81ab64bdf6d3f5de76df2c6909e1bc92344710677a93167898dda4c350d9a6cf8a74219af5c&scene=21#wechat_redirect">在科学界，有这样一份日历</a></p>
-<p><em>09</em>  <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIyMzU5MDA1Mw==&mid=2247489420&idx=2&sn=baeaa3dc2f1456dc7e70177103973506&chksm=e81ab446df6d3d508bc5831d66d60a75e7a8e0fa8d31f3457451a0aed167ea18d59d206cd7b2&scene=21#wechat_redirect">尊重常识，就是最大的常识</a></p>
-<p><em>10</em>  <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIyMzU5MDA1Mw==&mid=2247488482&idx=3&sn=5e7d2ffbdf6140d82026e135076e4410&chksm=e81ab028df6d393e98f90ba6fd4bb177a78c73bb4318b1dd3997bc0292581cfa75194d5a660a&scene=21#wechat_redirect">中美贸易战中的“香港支点”</a></p>
-<p> </p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-253f738722a2be621528b3600fcc1fc0.jpeg"></p>
-<p><a target="_blank" rel="noopener" href="http://www.quantumschool.cn/user/get_com_series/9f46f115/1"><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-efb20beafbc6373d57305130755f9fed.jpeg"></a></p>
-<p> </p>
-<p><strong>▼ 订阅Q&amp;A</strong></p>
-<p><strong>Q：</strong>《99天，打开理性思考之门》课程适合怎样的人群阅读？</p>
-<p>**A：**没有年龄限制，适合重视理性思维培养，希望能独立思考的人群。</p>
-<p>**Q：**课程的授课方式怎样？</p>
-<p>**A：**本课程为电子文本形式，是由27本必修课原著的精简版+30本选修课原著的精简版组成。可入群讨论学习。</p>
-<p>**Q：**购买课程后是否可赠送朋友？</p>
-<p>A：购买后，您可选择自己阅读或赠送朋友。</p>
-<p><strong>*如果遇到问题，长按识别下方的二维码，添加课程助手可进行咨询。</strong></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-92c8bfba034512a7826cf34caad3475b.jpeg"></p>
-<p>点击 <strong>阅读原文</strong></p>
-<p>开启99天理性之路</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/05/30/14%E4%BA%BF%E4%BA%BA%E7%9A%84%E4%BA%8C%E5%85%AB%E5%AE%9A%E5%BE%8B-2/" data-id="cuid7q0G5f4G35GkevctCexnN" data-title="14亿人的“二八定律 ”" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-windows平台下使用-rclone-挂载-onedrive-为本地硬盘" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/05/30/windows%E5%B9%B3%E5%8F%B0%E4%B8%8B%E4%BD%BF%E7%94%A8-rclone-%E6%8C%82%E8%BD%BD-onedrive-%E4%B8%BA%E6%9C%AC%E5%9C%B0%E7%A1%AC%E7%9B%98/" class="article-date">
-  <time class="dt-published" datetime="2020-05-29T16:00:00.000Z" itemprop="datePublished">2020-05-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/wordpress/">wordpress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/05/30/windows%E5%B9%B3%E5%8F%B0%E4%B8%8B%E4%BD%BF%E7%94%A8-rclone-%E6%8C%82%E8%BD%BD-onedrive-%E4%B8%BA%E6%9C%AC%E5%9C%B0%E7%A1%AC%E7%9B%98/">Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Windows平台下使用-Rclone-挂载-OneDrive-为本地硬盘"><a href="#Windows平台下使用-Rclone-挂载-OneDrive-为本地硬盘" class="headerlink" title="Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘"></a><strong>Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘</strong></h2><p>Rclone (rsync for cloud storage) 是一个命令行程序,用于同步文件和目录，支持常见的 Amazon Drive 、Google Drive 、OneDrive 、Dropbox 等云存储。本文将演示在 Windows 平台下将 OneDrive 挂载为本地硬盘，并使用跨平台的 Rclone GUI 连接到云盘。</p>
-<h3 id="1、rclone下载地址"><a href="#1、rclone下载地址" class="headerlink" title="1、rclone下载地址"></a><strong>1、rclone下载地址</strong></h3><p>首先下载适用于 Windows 的 rclone</p>
-<p>官网下载：</p>
-<p><a href="https://link.zhihu.com/?target=https://rclone.org/downloads/">Rclone downloads​rclone.org</a></p>
-<p>GitHub下载：</p>
-<p><a href="https://link.zhihu.com/?target=https://github.com/ncw/rclone">rclone&#x2F;rclone​github.com<img src="https://pic1.zhimg.com/v2-e599c51cc6f849b4e388c7ecd933407c_ipico.jpg" alt="图标"></a></p>
-<p>在<a href="https://link.zhihu.com/?target=https://rclone.org/downloads/">rclone官网</a>中，Windows 平台下选择下载 AMD64 - 64 Bit</p>
-<p><img src="https://pic3.zhimg.com/v2-dba90fa9447c3ce0c59cd628b099f89a_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-22e1b72fe82dfffdc5d221bb0f0a6b58.jpg"></p>
-<p>或者在<a href="https://link.zhihu.com/?target=https://github.com/rclone/rclone/releases">github</a>下载。</p>
-<p><img src="https://pic3.zhimg.com/v2-6fe076f9b3c1b74e59bafcc454b2457e_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-8c4825f70542066015be7737dda1bdf8.jpg"></p>
-<p>下载后解压到一个英文路径中。</p>
-<p><img src="https://pic2.zhimg.com/v2-2c598f613124fd234541d5b64bd5cd35_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-04d40757d4b168d70858f84849a08ddd.jpg"></p>
-<p>另外在Windows平台使用rclone还需要另一个依赖工具<code>winfsp</code>，下载地址：</p>
-<p><a href="https://link.zhihu.com/?target=http://www.secfs.net/winfsp/download/">http://www.secfs.net/winfsp/download/​www.secfs.net</a></p>
-<p>下载后一路安装即可。</p>
-<p><img src="https://pic1.zhimg.com/v2-185ca574a84e6ddab1639bc10788db20_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-b4dc85f0a6572d13c3f954c5544be9fd.jpg"></p>
-<h3 id="2、为rclone配置环境变量"><a href="#2、为rclone配置环境变量" class="headerlink" title="2、为rclone配置环境变量"></a><strong>2、为rclone配置环境变量</strong></h3><ol>
-<li>在电脑桌面右键点击“此电脑”的“属性”选项</li>
-<li>选择“高级系统设置”选项</li>
-<li>在系统变量中找到path，添加刚才解压后的路径</li>
-</ol>
-<p><img src="https://pic4.zhimg.com/v2-3f0af66bf0619eaa28ffc968c41548f7_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-29bd9142bc90087e871fb3ad7b8530fb.jpg"></p>
-<h3 id="3、检查rclone是否配置成功"><a href="#3、检查rclone是否配置成功" class="headerlink" title="3、检查rclone是否配置成功"></a><strong>3、检查rclone是否配置成功</strong></h3><p>按<code>win</code>+<code>X</code>，然后按<code>A</code> 打开 <code>powershell</code> ，当然也可以去打开 <code>cmd</code> ，输入<code>rclone --version</code>，如果出现下面的输出则安装成功，否则检查上面步骤的环境变量是否配置正确。</p>
-<p><img src="https://pic1.zhimg.com/v2-c8592fd9860d57cd2b88c60ecb932f6c_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-023eb5a7237c2e412ca3f1f4abd14eb7.jpg"></p>
-<h3 id="4、开始配置rclone"><a href="#4、开始配置rclone" class="headerlink" title="4、开始配置rclone"></a><strong>4、开始配置rclone</strong></h3><p>在终端中依次输入以下命令行，请根据我下的步骤进操作。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line">D:AutoRclone&gt;rclone config                    <span class="comment">// 第一步在终端输入 rclone config </span></span><br><span class="line">Current remotes:</span><br><span class="line">​</span><br><span class="line">Name                 Type</span><br><span class="line">====                 ====</span><br><span class="line">OneDrive             onedrive</span><br><span class="line">​</span><br><span class="line">e) Edit existing remote</span><br><span class="line">n) New remote</span><br><span class="line">d) Delete remote</span><br><span class="line">r) Rename remote</span><br><span class="line">c) Copy remote</span><br><span class="line">s) Set configuration password</span><br><span class="line">q) Quit config</span><br><span class="line">e/n/d/r/c/s/q&gt; n                          <span class="comment">//第二步输入n创建新的配置，                                                                  </span></span><br><span class="line">​</span><br><span class="line">name&gt; OneDrive_local                      <span class="comment">//第三步 输入一个英文名称 ，中间也不要有空格</span></span><br><span class="line">Type of storage to configure.</span><br><span class="line">Enter a string value. Press Enter <span class="keyword">for</span> the <span class="built_in">default</span> (<span class="string">&quot;&quot;</span>).</span><br><span class="line">Choose a number from below, <span class="keyword">or</span> type in your own value</span><br><span class="line"> <span class="number">1</span> / <span class="number">1</span>Fichier</span><br><span class="line">  <span class="string">&quot;fichier&quot;</span></span><br><span class="line"> <span class="number">2</span> / Alias <span class="keyword">for</span> an existing remote</span><br><span class="line">  <span class="string">&quot;alias&quot;</span></span><br><span class="line"> <span class="number">3</span> / Amazon Drive</span><br><span class="line">  <span class="string">&quot;amazon cloud drive&quot;</span></span><br><span class="line"> <span class="number">4</span> / Amazon S3 Compliant Storage <span class="built_in">Provider</span> (AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, etc)</span><br><span class="line">  <span class="string">&quot;s3&quot;</span></span><br><span class="line"> <span class="number">5</span> / Backblaze B2</span><br><span class="line">  <span class="string">&quot;b2&quot;</span></span><br><span class="line"> <span class="number">6</span> / Box</span><br><span class="line">  <span class="string">&quot;box&quot;</span></span><br><span class="line"> <span class="number">7</span> / Cache a remote</span><br><span class="line">  <span class="string">&quot;cache&quot;</span></span><br><span class="line"> <span class="number">8</span> / Citrix Sharefile</span><br><span class="line">  <span class="string">&quot;sharefile&quot;</span></span><br><span class="line"> <span class="number">9</span> / Dropbox</span><br><span class="line">  <span class="string">&quot;dropbox&quot;</span></span><br><span class="line"><span class="number">10</span> / Encrypt/Decrypt a remote</span><br><span class="line">  <span class="string">&quot;crypt&quot;</span></span><br><span class="line"><span class="number">11</span> / FTP Connection</span><br><span class="line">  <span class="string">&quot;ftp&quot;</span></span><br><span class="line"><span class="number">12</span> / Google Cloud <span class="built_in">Storage</span> (<span class="keyword">this</span> is <span class="keyword">not</span> Google Drive)</span><br><span class="line">  <span class="string">&quot;google cloud storage&quot;</span></span><br><span class="line"><span class="number">13</span> / Google Drive</span><br><span class="line">  <span class="string">&quot;drive&quot;</span></span><br><span class="line"><span class="number">14</span> / Google Photos</span><br><span class="line">  <span class="string">&quot;google photos&quot;</span></span><br><span class="line"><span class="number">15</span> / Hubic</span><br><span class="line">  <span class="string">&quot;hubic&quot;</span></span><br><span class="line"><span class="number">16</span> / In memory object storage system.</span><br><span class="line">  <span class="string">&quot;memory&quot;</span></span><br><span class="line"><span class="number">17</span> / JottaCloud</span><br><span class="line">  <span class="string">&quot;jottacloud&quot;</span></span><br><span class="line"><span class="number">18</span> / Koofr</span><br><span class="line">  <span class="string">&quot;koofr&quot;</span></span><br><span class="line"><span class="number">19</span> / Local Disk</span><br><span class="line">  <span class="string">&quot;local&quot;</span></span><br><span class="line"><span class="number">20</span> / Mail.ru Cloud</span><br><span class="line">  <span class="string">&quot;mailru&quot;</span></span><br><span class="line"><span class="number">21</span> / Mega</span><br><span class="line">  <span class="string">&quot;mega&quot;</span></span><br><span class="line"><span class="number">22</span> / Microsoft Azure Blob Storage</span><br><span class="line">  <span class="string">&quot;azureblob&quot;</span></span><br><span class="line"><span class="number">23</span> / Microsoft OneDrive</span><br><span class="line">  <span class="string">&quot;onedrive&quot;</span></span><br><span class="line"><span class="number">24</span> / OpenDrive</span><br><span class="line">  <span class="string">&quot;opendrive&quot;</span></span><br><span class="line"><span class="number">25</span> / Openstack <span class="built_in">Swift</span> (Rackspace Cloud Files, Memset Memstore, OVH)</span><br><span class="line">  <span class="string">&quot;swift&quot;</span></span><br><span class="line"><span class="number">26</span> / Pcloud</span><br><span class="line">  <span class="string">&quot;pcloud&quot;</span></span><br><span class="line"><span class="number">27</span> / Put.io</span><br><span class="line">  <span class="string">&quot;putio&quot;</span></span><br><span class="line"><span class="number">28</span> / QingCloud Object Storage</span><br><span class="line">  <span class="string">&quot;qingstor&quot;</span></span><br><span class="line"><span class="number">29</span> / SSH/SFTP Connection</span><br><span class="line">  <span class="string">&quot;sftp&quot;</span></span><br><span class="line"><span class="number">30</span> / Sugarsync</span><br><span class="line">  <span class="string">&quot;sugarsync&quot;</span></span><br><span class="line"><span class="number">31</span> / Transparently chunk/split large files</span><br><span class="line">  <span class="string">&quot;chunker&quot;</span></span><br><span class="line"><span class="number">32</span> / Union merges the contents of several remotes</span><br><span class="line">  <span class="string">&quot;union&quot;</span></span><br><span class="line"><span class="number">33</span> / Webdav</span><br><span class="line">  <span class="string">&quot;webdav&quot;</span></span><br><span class="line"><span class="number">34</span> / Yandex Disk</span><br><span class="line">  <span class="string">&quot;yandex&quot;</span></span><br><span class="line"><span class="number">35</span> / http Connection</span><br><span class="line">  <span class="string">&quot;http&quot;</span></span><br><span class="line"><span class="number">36</span> / premiumize.me</span><br><span class="line">  <span class="string">&quot;premiumizeme&quot;</span></span><br><span class="line"> Storage&gt; <span class="number">23</span>                             <span class="comment">//第四步 输入要配置的网盘类型 因为我们要配置Microsoft OneDrive 因此输入23</span></span><br><span class="line">** See help <span class="keyword">for</span> onedrive backend at: https:<span class="comment">//rclone.org/onedrive/ **</span></span><br><span class="line">​</span><br><span class="line">Microsoft App Client Id</span><br><span class="line">Leave blank normally.</span><br><span class="line">Enter a string value. Press Enter <span class="keyword">for</span> the <span class="built_in">default</span> (<span class="string">&quot;&quot;</span>).</span><br><span class="line">client_id&gt;                              <span class="comment">//第五步 直接回车</span></span><br><span class="line">Microsoft App Client Secret                                  </span><br><span class="line">Leave blank normally.                                        </span><br><span class="line">Enter a string value. Press Enter <span class="keyword">for</span> the <span class="built_in">default</span> (<span class="string">&quot;&quot;</span>).      </span><br><span class="line">client_secret&gt;                           <span class="comment">//第六步 直接回车                    </span></span><br><span class="line">Edit advanced config? (y/n)                                  </span><br><span class="line">y) Yes </span><br><span class="line">n) <span class="built_in">No</span> (<span class="keyword">default</span>)                                              </span><br><span class="line">y/n&gt; n                                  <span class="comment">//第七步 输入n 不进行高级配置 </span></span><br><span class="line">Remote config                                                </span><br><span class="line">Use <span class="keyword">auto</span> config? </span><br><span class="line"> * Say Y <span class="keyword">if</span> <span class="keyword">not</span> sure </span><br><span class="line"> * Say N <span class="keyword">if</span> you are working on a remote <span class="keyword">or</span> headless machine</span><br><span class="line">y) <span class="built_in">Yes</span> (<span class="keyword">default</span>) </span><br><span class="line">n) No                                                        </span><br><span class="line">y/n&gt; y                                  <span class="comment">//第八步 输入y 使用自动配置授权</span></span><br><span class="line">​</span><br><span class="line"><span class="comment">//输入y后会打开默认浏览器 登录Microsoft账号后 选择 是 即可</span></span><br><span class="line"> If your browser doesn<span class="string">&#x27;t open automatically go to the following link: http://127.0.0.1:53682/auth?state=sUuYaGWtxruA81JiCokJGg</span></span><br><span class="line"><span class="string">Log in and authorize rclone for access</span></span><br><span class="line"><span class="string">Waiting for code...</span></span><br><span class="line"><span class="string">Got code</span></span><br><span class="line"><span class="string">Choose a number from below, or type in an existing value</span></span><br><span class="line"><span class="string"> 1 / OneDrive Personal or Business</span></span><br><span class="line"><span class="string">  &quot;onedrive&quot;</span></span><br><span class="line"><span class="string"> 2 / Root Sharepoint site</span></span><br><span class="line"><span class="string">  &quot;sharepoint&quot;</span></span><br><span class="line"><span class="string"> 3 / Type in driveID</span></span><br><span class="line"><span class="string">  &quot;driveid&quot;</span></span><br><span class="line"><span class="string"> 4 / Type in SiteID</span></span><br><span class="line"><span class="string">  &quot;siteid&quot;</span></span><br><span class="line"><span class="string"> 5 / Search a Sharepoint site</span></span><br><span class="line"><span class="string">  &quot;search&quot;</span></span><br><span class="line"><span class="string">Your choice&gt;1                            //第九步 输入1 因为现在我配置的是 OneDrive Personal or Business 类型的网盘</span></span><br><span class="line"><span class="string">​</span></span><br><span class="line"><span class="string">Found 1 drives, please select the one you want to use:</span></span><br><span class="line"><span class="string">0: OneDrive (business) id=b!qDQvcsZUTU-8eoYyKmtyyP1Jc0D8urZLlkATnfH1nWdJ1kkbrLsvQZLzVUTpeTrc</span></span><br><span class="line"><span class="string">Chose drive to use:&gt; 0              //第十步 输入0</span></span><br><span class="line"><span class="string">Found drive &#x27;</span>root<span class="string">&#x27; of type &#x27;</span>business<span class="string">&#x27;, URL: https://pmjs-my.sharepoint.com/personal/wld_365_w/Documents</span></span><br><span class="line"><span class="string">Is that okay?</span></span><br><span class="line"><span class="string">y) Yes (default)</span></span><br><span class="line"><span class="string">n) No</span></span><br><span class="line"><span class="string">y/n&gt; y                               //第十一步 输入y</span></span><br><span class="line"><span class="string">--------------------</span></span><br><span class="line"><span class="string">[OneDrive_local]</span></span><br><span class="line"><span class="string">type = onedrive</span></span><br><span class="line"><span class="string">token = &#123;&quot;access_token&quot;:&quot;eyJ0eXAiOiV1QiLCJub25jZSI6ImNRYjl5TDNZWE8yczdQd2N2WTlJRkV1ZXp0QVpZZV83QWpPaHZORTU0OTgiLCJhbGciOiJSUzI1NiIsIng1dCI6IkhsQzBSMTJza3hOWjFXUXdtak9GXzZ0X3RERSIsImtpZCI6IkhsQzBSMTJza3hOWjFXUXdtak9GXzZ0X3RERSJ9yJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC84N2VjYmIxYi0wZTdlLTRlMDctOWFiMC00NWIwOTM1OTFjN2EvIiwiaWF0IjoxNTgxMzAxNLCJuYmYiOjE1ODEzMDE2MzAsImV4cCI6MTU4MTMwNTUzMCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFTUUyLzhPQUFBQWc2eURUazJNKzZ5YjVLNEJSN2VUR0lHT3EvSXFPT0dSZzlPWitrREoyaTg9IiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJyY2xvbmUiLCJhcHBpZCI6ImIxNTY2NWQ5LWVkYTYtNDA5Mi04NTM5LTBlZWMzNzZhZmQ1OSIsImFwcGlkYWNyIjoiMSIsImZhbWlseV9uYW1lIjoiV2FuZyIsImdpdmVuX25hbWUiOiJYaWFud2iwiaXBhZGRyIjoiMzkuMTI4LjIwMC4iwibmFtZSI6IldhbmdYaWFud2VuIiwib2lkIjoiZWE4ZjNjZDctN2IxYS00YmQ0LWFiNzItYzM4NDg4NTE5NDdhIiwicGxhdGYiOiIzIiwicHVpZCI6IjEwMDMzRkZGQUVGNEE2RTUiLCJzY3A5YWIwLTQ1YjA5MzU5MWM3YSIsInVuaXF1ZV9uYW1lIjoid29ybGRAbXkzNjUudHciLCJ1cG4iOiJ3b3JsZEBteTM2NS50dyIsInV0aSI6Il85MEZWRXBZcTBTYzckFuVDluQUEiLCJ2ZXIiOiIxLjAiLCJ4bXNfc3QiOnsic3ViIjoidXlWWU96UGF5RVBVWXlSbFlEVEl6QjhUZVBkZnNTMkVHcHczNGNDM2JRTSJ9LCJ4bXNfdGNkdCI6MTUzNDQyOTU0NH0.Ki9vor6NtxXJWsdumYddz8agrzVYXRCXVg0paW7XqDTq8i_vht8GK79F0F7xp3BSKzK5Xgxb0GzwPV9dPTb4IiXM0d17P5pQB3wHLMUbVFvRbLXNwSEtSJGKLttvxL8XfT8e51k4kyyH07CtozVBsF6fmMnhftp9ZbcEVrgnFKdwTE5In83G05V7L8wDCMiKrN0KX9iTKzxT9em5QtVhGZRZJDnNS2pJTQNhiWVatjDB4VHojG2C6J1LtU6YOOOAM2uBil2ovLFhQPy0l299ZJTJeyQCLQGJki9kZgAVI42iGP4mzvVPQAJk5Oad_4nPsT87QVH4NBA&quot;,&quot;token_type&quot;:&quot;Bearer&quot;,&quot;refresh_token&quot;:&quot;OAQABAAAAAABeAFzDwllzTYGDLh_qYbH8falkpBpCm5PZqagAkUNWFik3Mz2ZfDPeowwW9q5mlFoHSqyYNG8FayvZxxZEUGQWUaR520MuJ5i_mj9CNs0NahNOJAtvZOBV459VLMKaNiyK9GJIGvdDe4RkaV472hbq_po8K47yC053BLRIbRji9WfsCkSMj8UP792sNJ0Tm9ptfPmy1aP_TePX8dOWaC9qZN2jDIXJDjWjCvfDesNDWXAm9bpBp1oZmObLR85EKB9Vgsz7ccZIbKEa16Aiqb67xsQICG8AzjMli76nJ6o_EBGI3dQvikLg17kAKtdb9gGnCj7P1Rh6V_NW_SeN1A7mR7RXrjTvW0gd3_4tEQ4_vkjxz9L4Ymoh0NIwCE6Pu8cTLow83JJJPmdYM4LFHXYApm5fgC9CVFg4JYhALkTZ0KI9qtO3Qe16OyySjmtcs8rD3GnGtKQewRbMcVgkA0JpOzKRA53VFx1SB3rRc2rxSDcnVTx_Oja_6KuaUxQjhgi1XaH1Kk_c82iniwdj7EdHCbokk8eewYFyn4tBTL0xW8rwmoPDvvUvMVA7Z8Ph0AB66Ih5evroSEHsv072AyDWSwHfrEMueTeEgP5jA1aBSOXE2DDw3PySehFfbYpsh0AV3qPVP9lAHaGizEbFt9rEKl1R1bcMrEhxF9GjnvB5PChRK_abttEV2YWKWrTaEFJBTP40f96kCXZGMaE4RaUoMI7hKW4cLQrHuV5YCZQ_BQRj7r5PoUyelGPdvnW42lB8MvekksdrJAVnlUTTgVKlbpn9AUuOD2LUZ5A8IheWaLkhLXfUqjPg0UxjTLIAA&quot;,&quot;expiry&quot;:&quot;2020-02-10T11:32:10.852646+08:00&quot;&#125;</span></span><br><span class="line"><span class="string">drive_id = b!qDvcsZUTU8eoYyKmtyyP1Jc0D8urZLlkTnH1nWdJ1kbrLsvQZLzVUTpeTrc</span></span><br><span class="line"><span class="string">drive_type = business</span></span><br><span class="line"><span class="string">--------------------</span></span><br><span class="line"><span class="string">y) Yes this is OK (default)</span></span><br><span class="line"><span class="string">e) Edit this remote</span></span><br><span class="line"><span class="string">d) Delete this remote</span></span><br><span class="line"><span class="string">y/e/d&gt;y                                      //第十二步 输入y</span></span><br><span class="line"><span class="string">​</span></span><br></pre></td></tr></table></figure>
-
-<p>此时，就会出现刚刚配置好的网盘名称了</p>
-<p><img src="https://pic1.zhimg.com/v2-422d8ec8d0f2041097092c7b04847554_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-e3e719641655571b5e47d46be8606de2.jpg"></p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">e) Edit existing remote</span><br><span class="line">n) New remote</span><br><span class="line">d) Delete remote</span><br><span class="line">r) Rename remote</span><br><span class="line">c) Copy remote</span><br><span class="line">s) Set configuration password</span><br><span class="line">q) Quit config</span><br><span class="line">e/n/d/r/c/s/q&gt; q                //最后输入q退出配置即可</span><br></pre></td></tr></table></figure>
-
-<p>在 <code>C:Users你的用户名.configrclone</code>文件夹下就可以看见配置文件 rclone.conf 啦。</p>
-<p><img src="https://pic1.zhimg.com/v2-4263f860072c3db97a3a96c28fb30aa0_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-40666200fd6fdac24d0a962a2a82beca.jpg"></p>
-<h3 id="5、挂载OneDrive为本地硬盘"><a href="#5、挂载OneDrive为本地硬盘" class="headerlink" title="5、挂载OneDrive为本地硬盘"></a><strong>5、挂载OneDrive为本地硬盘</strong></h3><p>此时请使用 <code>git bash</code> 的终端执行以下命令，因为我使用<code>cmd</code> 和 <code>powershell</code> 都出现关闭终端后挂载程序退出、本地挂载的OneDrive退出的现象。 如果你的windows没有安装git ， 请<a href="https://link.zhihu.com/?target=https://www.baidu.com/s?wd=windows%2520%25E5%25AE%2589%25E8%25A3%2585git&ie=utf-8">自行安装</a>。若你使用 <code>cmd</code> 的话 ，<code>cmd</code> 是不能退出的，要保持 <code>cmd</code> 不退出本地硬盘才一直挂载着。</p>
-<p>在 <code>git bash</code> 中输入以下挂载命令：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone mount OneDrive_local:/  Q: --cache-dir E:OneDrive --vfs-cache-mode writes &amp;</span><br></pre></td></tr></table></figure>
-
-<p>其中：</p>
-<p><code>OneDrive_loca</code> 替换为你自己前面设置的名称 。</p>
-<p><code>Q:</code> 替换为你想要挂载后硬盘的盘符名称即可，记得不要和本地的C盘、D盘等重复。</p>
-<p><code>E:OneDrive</code> 为本地缓存目录，可自行设置 。</p>
-<p>出现：<code>The service rclone has been started</code> 则说明挂载成功。</p>
-<p>然后输入 <code>exit</code> 退出终端即可。</p>
-<p><img src="https://pic1.zhimg.com/v2-51fc3c785cb9cd4fa0db4ef98a9358a8_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-9098a167974f6f5c2c7104144efcbe33.jpg"></p>
-<p>然后就可以看见本地多了一个盘，往里面复制文件就是上传，从里面复制文件到其它盘就是下载。</p>
-<p><img src="https://pic2.zhimg.com/v2-616f72130574859638607737e9ce3349_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-6abf207ff714457378102f6a457ce3b5.jpg"></p>
-<h3 id="6、设置开机自启动挂载"><a href="#6、设置开机自启动挂载" class="headerlink" title="6、设置开机自启动挂载"></a><strong>6、设置开机自启动挂载</strong></h3><p>创建一个名称为 <code>startup_rclone.bat</code> 的文件，里面填写上面的挂载命令：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone mount OneDrive_local:/  Q: --cache-dir E:OneDrive --vfs-cache-mode writes &amp;</span><br></pre></td></tr></table></figure>
-
-<p>将这个文件放在<code>C:Users用户名AppDataRoamingMicrosoftWindowsStart MenuProgramsStartup</code> 中</p>
-<p><img src="https://pic2.zhimg.com/v2-8489b2b53a47c3d5e8f2b29cea9aee79_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-3b61168623f994eba9d2990bca36f6ec.jpg"></p>
-<p>重启计算机后就会自动挂设置的云盘了，当然这样做由于调用的是 <code>cmd</code> 因此还是不能关闭运行的 <code>cmd</code>。下面介绍一种利用 Rclone GUI 的进行管理的使用方法。</p>
-<h3 id="7、可视化上传下载-RcloneBrowser"><a href="#7、可视化上传下载-RcloneBrowser" class="headerlink" title="7、可视化上传下载 RcloneBrowser"></a><strong>7、可视化上传下载 RcloneBrowser</strong></h3><p>在 <a href="https://link.zhihu.com/?target=https://github.com/kapitainsky/RcloneBrowser/releases">https://github.com/kapitainsky/RcloneBrowser/releases</a>中下载 [RcloneBrowser]() 。</p>
-<p><img src="https://pic3.zhimg.com/v2-6fe076f9b3c1b74e59bafcc454b2457e_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-8c4825f70542066015be7737dda1bdf8.jpg"></p>
-<p>下载好后进行安装，然后进行配置。配置 <code>rclone.exe</code>的路径还有 <code>rclone.conf</code> 配置文件的路径。</p>
-<p><img src="https://pic4.zhimg.com/v2-0bd8c9c2fb5fb968903575b87a3abe53_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-a45158f8ff27e2ea7902e114bc81a87e.jpg"></p>
-<p><img src="https://pic2.zhimg.com/v2-3b51bca468fdfd8a101783f2e4828839_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-71adb899edb8812c5ffa18998b7aba2c.jpg"></p>
-<p>这是我前面解压rclon的路径以及配置文件的路径</p>
-<p>配置好后就可以看见前面配置的 OneDrive 网盘了 ☁️</p>
-<p><img src="https://pic1.zhimg.com/v2-6b51c3b8598b94608cdb54118134a434_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-2c66326a2f31e11b240f22ea744b9cff.jpg"></p>
-<p>双击打开就可以看见里面的内容了，可以去愉快的上传或者下载了。</p>
-<p><img src="https://pic1.zhimg.com/v2-50daab62a0e34440cff0d033b0146a88_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-e4805128543fa7cad60c49f4ee1602b2.jpg"></p>
-<p>上传的话，选择要上传的文件或文件夹以及云盘的存放路径，再选择 <code>copy</code> 模式，点击 <code>run</code> 即可。下载与之类似。  </p>
-<p><img src="https://pic2.zhimg.com/v2-4a98b960c07d374f4a1fceff4aa3cc09_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-d3840f6632a6728db6b0b61e23f0f0a4.jpg"></p>
-<p>在 <code>Jobs</code>当中还可以查看任务的进度、速度等。</p>
-<p><img src="https://pic3.zhimg.com/v2-b0c731938b53e359933c8f0226a22cd6_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-94ed9da29071d5e6f4c73045f79f66de.jpg"></p>
-<p>另外还可以设置代理，见下图：</p>
-<p><img src="https://pic2.zhimg.com/v2-751d7f6f4b0c4504859999708f480215_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-0eae06781ed54fa1d86dc42b9087b829.jpg"></p>
-<p>这样挂载谷歌云端硬盘就很方便了。</p>
-<p>如果你觉得rclone 太麻烦，还可以试试 <a href="https://link.zhihu.com/?target=http://md.aclickall.com/%2520https://www.raidrive.com/">RaiDrive</a> 挂载，安装后选择相应的网盘登录即可，但我用起来感觉比较卡顿。 不推荐了，2020年3月份收到邮件说挂载 Onedrive 、Google Derive 要收费了，无奈</p>
-<p><img src="https://pic4.zhimg.com/v2-7baedd36b63d94096bbe64f4f5ffab73_b.jpg"></p>
-<p><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/frc-a85fcef8363d563e1cbc27833dac41ba.jpg"></p>
-<p>参考</p>
-<blockquote>
-<p><a href="https://link.zhihu.com/?target=https://rclone.org/docs/">官方文档</a><br><a href="https://link.zhihu.com/?target=http://md.aclickall.com/%255Bhttps://telegra.ph/Windows%25E4%25B8%258B%25E7%2594%25A8rclone%25E6%258C%2582%25E8%25BD%25BDOneDrive%25E4%25B8%25BA%25E6%259C%25AC%25E5%259C%25B0%25E7%25A1%25AC%25E7%259B%2598-01-03%255D(https://telegra.ph/Windows%25E4%25B8%258B%25E7%2594%25A8rclone%25E6%258C%2582%25E8%25BD%25BDOneDrive%25E4%25B8%25BA%25E6%259C%25AC%25E5%259C%25B0%25E7%25A1%25AC%25E7%259B%2598-01-03)">Windows下用rclone挂载OneDrive为本地硬盘</a><br><a href="https://link.zhihu.com/?target=http://piaoyun.cc/1290.html">使用软件rclone在Windows操作系统上挂载OneDrive为本地硬盘的操作方法</a><br><a href="https://link.zhihu.com/?target=https://p3terx.com/archives/rclone-advanced-user-manual-common-command-parameters.html">Rclone 进阶使用教程 - 常用命令参数详解</a></p>
-</blockquote>
-<ul>
-<li><strong>本文作者：</strong> 热夏</li>
-<li><strong>本文首发于：</strong> <a href="https://link.zhihu.com/?target=https://www.lifeee.top/posts/14654.html">热夏的博客</a></li>
-<li><strong>版权声明：</strong> 本博客所有文章除特别声明外，均采用 <a href="https://link.zhihu.com/?target=https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans">BY-NC-SA</a> 许可协议。转载请注明出处！</li>
-</ul>
-<p>文章来源于互联网:<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/139200172">Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/05/30/windows%E5%B9%B3%E5%8F%B0%E4%B8%8B%E4%BD%BF%E7%94%A8-rclone-%E6%8C%82%E8%BD%BD-onedrive-%E4%B8%BA%E6%9C%AC%E5%9C%B0%E7%A1%AC%E7%9B%98/" data-id="cuida0xbrvoHSPI6PUlAGCTyi" data-title="Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-电池热管理工程实践认知-1-风冷式热管理系统" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="article-date">
-  <time class="dt-published" datetime="2020-05-29T16:00:00.000Z" itemprop="datePublished">2020-05-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">电池热管理工程实践认知 (1): 风冷式热管理系统</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></p>
-<p><strong>1、电池热管理技术基本概念</strong></p>
-<p>电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升，这个时候需要及时的散热，要不然就会中暑。当电池处于低温（例如-30℃）条件下的时候，电池无法正常的工作（温度太低，电池内反应物活性受限），车辆也就无法正常行驶，正如我们在瑟瑟寒风里无任何热防护的时候，人的身体感觉寒冷，人的动作就会变慢，这时候需要我们尽快采取取暖措施，要不然身体也会冻伤。</p>
-<p>因此，我们人体在热了或者冷了且自身无法调节时，我们会开空调去做体外调节；如果人体被病毒细菌感染了，人体的免疫系统会产生作用，并升高体温；如果被发现是感染了厉害的病毒，高烧不退、吃退烧药也无法控制体温，就需要更为强力有效的方式进行综合调理、内外兼治。显然人体可以通过种种不同的途径来调节体温，那么电池的“体温”怎么办呢？</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg"></p>
-<p>图0 电池的冷热管理（<a target="_blank" rel="noopener" href="http://dc-ts.com/advanced-battery-thermal-management-system/%EF%BC%89">http://dc-ts.com/advanced-battery-thermal-management-system/）</a></p>
-<p>对电池运行产生的热量进行管控的方法叫做<strong>电池热管理技术</strong>（详细可参见<a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a>）。电池热管理就类似于人体对于体温的调节，如果电池运行产生的热量得不到有效的管理和控制，就会产生电池的热失控问题（<em><strong>我们后面会做专题讨论</strong></em>），这就类似于我们人体被感染了很厉害的病毒。在现阶段，由于动力电池材料技术处于发展瓶颈期，我们无法从根本上消除温度对电池性能和寿命的影响，但是不论是对于铅酸电池、锂离子电池或者是燃料电池，温度对于电池性能和寿命都是一个重要的影响因素，所以我们需要开发电池热管理技术对电池产生的热量进行管理，防止电池在高温或者低温下不能正常工作。希望目前的热管理只是一种过渡方式，后期的电芯不需要做任何热管理——这里大家不用担心失业，至少未来10年内，中国的6G、7G和1nm、0.5nm芯片冷却技术可能需要我们大展身手。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg"></p>
-<p>图1 电池热管理的重要工程实践意义（百度图片）</p>
-<p>温度最直观的影响就是对电池容量的影响，这也是为什么在冬季电动车行驶里程要比其他季节短很多的原因，同样每年的4月到9月都会出现电动车自燃的现象（暴晒条件下，车内温度达到60℃），天气燥热，电动车又给炎热的天气添了一把柴。综合各方面因素，电池热管理技术对于目前的动力电池是不可或缺的一部分，在环境温度较高时需要对电池进行降温，同时在温度较低时对电池进行加热，电池热管理技术相当于给电池加上了一个小型的空调系统。当然，在实际中也需要根据整车的实际运行工况来调整电池热管理系统策略。</p>
-<p> </p>
-<p><strong>2、电池热管理部件组成</strong></p>
-<p>今天我们针对电池热管理技术的实际应用现状做个综述，后续我们再共同对其进行细分和学习。在国内目前能够大批量生产的汽车中实际应用的电池热管理技术可以分为四类：风冷式热管理技术、液冷式电池热管理技术、自然冷却式电池热管理技术和直冷式电池热管理技术（相变冷却技术）。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg"></p>
-<p>图2 电池热管理技术分类（百度图片）</p>
-<p>另外电池包的保温设计（其实笔者感觉有效的保温最难实现，有时候想法和实际操作相差太远，现实条件中可能不允许你做一些保温的措施）和单纯加热的系统也都隶属于电池热管理系统，当然有人提出热扩散防控也属于热管理范畴，我们这里不做定义及探讨，本文主要针对散热系统进行介绍。</p>
-<p> </p>
-<p><strong>3、风冷式电池热管理系统部件构成</strong></p>
-<p>风冷式热管理系统部件包括格栅、温度探头、滤网、进风管、冷风介质、电池包内部风管、出风管、风机，密封条和固定卡扣。一般来说格栅设计在风管的进口处，其作用是为了防止一些较大尺寸的物体进入电池包内部而堵塞风管。在格栅和风管之间还会设计有滤芯和风道，风道的设计一般会根据整车的内部结构和电池包内部结构设计进行调整，在实际的设计中，风道的设计要尽量的光滑和平顺。在风道和车辆部件接触的地方需要设计密封条。风机一般分为轴流分机和离心风机，根据不同的风冷式热管理系统的需求选择不同的风机类型。在选型的过程中一般会将噪音和送风量作为主要的参考因素。离心风机在电池包内部根据使用场景的不同可以分为吹风式和抽离式，最直接的例子就是丰田卡罗拉的两款HEV电池包，一款采用了吹风形式，另外一款采用了抽风形式。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg"></p>
-<p>图3 丰田普锐斯（Prius）使用的风冷式电池热管理系统（谷歌图片）</p>
-<p>当然，很多人可能会对风冷式热管理系统能否有效冷却电池保持怀疑态度，因为有很多这方面的文章提到风冷式系统的不足之处，这里我们简单探讨一下。在国内，针对不同的电池包我们尝试采用不同的冷却系统，对于EV (ElectricVehicle，纯电动汽车)，国内采用较多的热管理系统是液冷系统了，当然也会有一部分厂家尝试采用风冷系统，2016年奇瑞汽车生产的小蚂蚁电动汽车就尝试采用风冷式热管理系统进行散热。对于传统汽车改新能源车来说，采用风冷式热管理系统可以节省一大笔的开发费用，整车的空调系统可以直接按照原来燃油车的系统部件进行设计。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg"></p>
-<p>图4 奇瑞小蚂蚁电动汽车（百度图片）</p>
-<p>而对于HEV(Hybrid Electric Vehicle，混合动力汽车) 目前很多车厂都在争先进行开发，首选的电池热管理系统就是风冷式，比如前面提到的丰田卡罗拉和本田雅阁都是采用风冷式热管理系统。从大数据上看，日系车企很少采用液冷式热管理系统，大多采用的是风冷式，这点和国内的一些车企有些不同，可能是由于日系车企对液冷式系统还有其他的考量，个人感觉不会是因为成本的原因。对于HEV来说采用的电芯和EV的电芯是不同的，HEV在运行过程中动力电池不是唯一的动力来源，大部分情况下电池持续运行时间较短，风冷式热管理系统完全可以满足系统的要求，但是EV的动力完全来自于动力电池，电池长时间持续运行，这样电池就需要散热能力更强的电池热管理系统来保证电池的正常工作。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg"></p>
-<p>图5 丰田卡罗拉油电混合汽车（百度图片）</p>
-<p>风冷系统一般有三种设计，第一种就是单独采用风冷对电池进行散热或者加热；第二种就是仅用来对电池进行散热，对电池系统加热的话一般会另外设计加热膜；第三种就是风冷系统和加热膜结合，当电池需要散热的时候，仅仅启动冷却，当电池需要加热的时候，加热膜和风冷同时启动，此时风冷系统的进口为温度较高的车内气体。丰田卡罗拉的PHEV在两个模组之间设计的有加热膜，加热膜和模组之间的有效接触面积很小，笔者个人觉得加热膜只是为了加热电芯之间的空气，再通过风冷系统对电池包内的空气进行扰动。丰田卡罗拉的PHEV使用的是18650电芯，同时这款电池包的热失控管理设计也十分精巧，有空我们可以再聊聊。</p>
-<p><strong>下面我们通过几个目前已经实现量产的实例来了解风冷式电池热管理技术。</strong></p>
-<p>本田雅阁混动HEV的电池热管理系统中使用的冷却介质来自车内部的空调风，如果车主不使用空调时，进入电池包风管内的就是是车内没通过冷却的风。图示IPU指的就是电池包，我们简单了解一下冷却风是如何在内部流动的，电池包的冷却风从总进口进入电池包内部风道(模组的一侧)，然后再通过电芯之间的间隙，离心风扇和整个模组的另外一侧并没有设计风道，直接依靠离心风扇排出到外部，这样设计不仅仅对电池进行了散热，对电池包内部的发热器件（铜排、BDU）也有一定的散热作用。有兴趣的话大家可以看一下本田的专利，电芯之间设计有一定形状的塑料隔板，隔板不仅仅起到了流通的作用，在一定程度上也起到缓冲（电芯膨胀）的作用。</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png"></p>
-<p>图6 电池包位置视图（百度图片）</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png"></p>
-<p>图7 电池包三维视图（百度图片）</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png"></p>
-<p>图8 电池包内模组实物图（百度图片）</p>
-<p> </p>
-<p>奥迪Q5采用的同样也是风冷散热，但是奥迪在电池包的外部单独给整个电池包系统做了一个蒸发器，专门对电池包内部循环风进行降温，使进入到电池包内部的风控制在合理的范围内，同时奥迪的这款设计比较巧妙，它的冷却系统进风可以切换，拥有引入外部自然风和内部循环风两种功能，可以通过感知电池不同的温度阶段来切换这两种功能。</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png"></p>
-<p>图9 电池包位置视图（百度图片）</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png"></p>
-<p>图10 电池包三维视图及其工作原理（百度图片）</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png"></p>
-<p>图11 电池包内部模组视图（百度图片）</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png"></p>
-<p>图12 电池包内部流体流动轨迹视图（百度图片）</p>
-<p> </p>
-<p>广汽丰田2020年新推出的一款C-HREV采用的也是风冷散热，丰田将2个蒸发器和2个膨胀阀移到了电池包内部，采用这种设计的电池包内部空气、两个离心风机、风道（风道位于电池包2侧）和模组单独形成了一个循环（封闭式风冷系统），这款设计和奥迪Q5设计有类似之处，C-HR电池包的蒸发器位于风机出口的风道内部，电池包内部具有加热功能，在每个大模组（包内有2种模组）的底部都设计的有加热膜（有弹性支撑），这种加热膜材质和国内的差别比较大，这款车的加热速率非常低（可能是出于安全考虑），C-HR这款电池包内部设计有许多值得借鉴的细节（风道比较有特点）。在一定程度上奥迪Q5和C-HR也采用了直冷的散热方式，只是蒸发器没有和电芯直接接触，可以避免过冷的现象出现，它们将风冷和直冷结合在一块，直接给动力电池的冷却介质配置一个蒸发器，这样电池散热效果更佳，但是成本可能会增加不少。</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png"></p>
-<p>图13 电池包三维视图（百度图片）</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png"></p>
-<p>图14 电池包俯视图（百度图片）</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png"></p>
-<p>图15 电池包热管理原理（百度图片）</p>
-<p> </p>
-<p>可见，风冷式电池热管理技术有很广的应用范围，而且应用在商业电动车上也有很好的效果。目前商用电动车还有其他的电池热管理技术，下一期，我们将着重介绍和讨论<strong>液冷式和直冷式电池热管理技术</strong>。</p>
-<p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出，后续如果有兴趣大家可以留言，我们针对热管理的一些子部件进行详细探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行剖解分析，同时以上论述均为个人见解，如有错误之处请不吝赐教，技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p>
-<p><strong>往期精彩回顾</strong></p>
-<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p>
-<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p>
-<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" data-id="cuidgJg_5OeEf7ndZSXDAb51h" data-title="电池热管理工程实践认知 (1): 风冷式热管理系统" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" rel="tag">电池热管理</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-电池热管理工程实践认知-2-液冷及直冷式热管理系" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/" class="article-date">
-  <time class="dt-published" datetime="2020-05-29T16:00:00.000Z" itemprop="datePublished">2020-05-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/">电池热管理工程实践认知 (2): 液冷及直冷式热管理系统</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></strong></p>
-<p> </p>
-<p>人类可以冬天泡澡夏天玩水，电动车的电池可以不？人类可以在夏天用空调，电池也可以有这个享受不？其实呢，不是不可以（泡澡、玩水、吹空调），只要方法得当、方法好。在上一期中，我们简单介绍了电池热管理的基本概念以及相关分类，并着重介绍了风冷式电池热管理技术（<a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483753&idx=1&sn=7c5f099a10bca48a40b6ad96b91f3c91&chksm=9bee6930ac99e0260293a05cf3e7a74fba13e8faf33ecd258788be7c91647815fce72aa7b1ce&scene=21#wechat_redirect">电池热管理工程实践认知 (1): 风冷式热管理系统</a>），这一期我们将介绍和讨论液冷式和直冷式电池热管理技术，带大家一起来看看如何让动力电池组玩水和吹空调，清凉一“夏”。</p>
-<p> </p>
-<p><strong>1、液冷式电池热管理系统部件构成</strong></p>
-<p> </p>
-<p>液冷系统部件包含的部件比较多，它和整车端的空调系统都相关，我们今天单纯的讲电池包内部的部件，一般液冷部件包含：进出口、温度探头、水管、导热垫(导热胶)、液冷板、冷却液、弹性支撑(弹性支撑垫)、隔热垫、固定螺栓、均温板。这些部件我们可以在网上获得他们的信息，我们今天对导热垫(导热胶)、液冷板、弹性支撑垫进行初步了解。</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1452db346633c0d1bfed881ae734b3f-1024x606.png"></p>
-<p>图1 液冷系统工作原理示意图（百度图片）</p>
-<p> </p>
-<p>导热垫（导热胶）位于电池和液冷板之间的中间导热介质，液冷板由于制造加公差问题，冷板的整个散热面不是一个理想的平面，需要导热系数较高的弹性体（有缓冲作用）来填充这部分高度差。在前期的很多液冷电池包设计中，国内大部分采用的都是导热垫，后来慢慢许多公司都采用了导热胶。导热胶从目前的整个电池包的实际测试结果来看，确实散热效果要优于导热垫，导热胶可以很好地填充电芯和冷板之间的缝隙，同时导热胶可以做的很薄，电芯和冷板之间的热阻大大的降低，然而从投入来看，导热胶需要投入价格不菲的导热胶设备，从返修的角度来看，导热胶的清理也是一个难题，返修过程中有可能还会对电芯和冷板造成不可修复的伤害。</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5450176679110d9632015ae839040b19.jpeg"></p>
-<p>图2 导热垫（导热胶）和液冷板（管）示意图（百度图片）</p>
-<p> </p>
-<p>液冷板是散热的主要部件，一般国内使用的液冷板类型有铝挤型材拼焊冷板、铝挤口琴管冷板、冲压冷板，另外市面上也出现了吹胀冷板、铝和塑料集成的冷板。国内为了追求轻量化和成本，一般铝挤口琴管冷板和冲压冷板做的都很薄，强度远远比不上铝挤型材拼焊冷板，当我们使用铝挤口琴管冷板和冲压冷板时，很大程度上都会用到弹性支撑（弹性支撑垫），除非做一些特殊设计，比如捷豹路虎I-PACE的设计，内部冲压板就是和电池包内部的均温板通过导热结构胶和螺栓牢牢的固定在一起。我们在设计弹性支撑（弹性支撑垫）的时候，计算好极限工况下的支撑力（如果使用粘接力较强的导热胶，弹性支撑可能就需要另外计算)，同时也要考虑它的弹性衰减情况（弹性过大也会造成破坏），防止若干年后车辆出现问题。由于需要通冷却液或者热液，液冷系统也存在凝露现象的出现，前期装包或者后期维修需要控制装包的温湿度环境。</p>
-<p> </p>
-<p>下面我们来列举几款实际案例，特斯拉的设计（熔断保护、绝缘、导热、分流、防止热失控等）也很经典，网络上的拆解很多，大家有兴趣可以查下，此处不再展示，后期具体的冷板流道设计和工艺我们有机会再细聊。</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-155128f8395eac28463761ae04c3212e.jpeg"></p>
-<p>图3 特斯拉电池模组中的液冷系统（百度图片）</p>
-<p> </p>
-<p>蔚来汽车ES8目前采用的就是铝挤型材拼焊冷板（后期ES6某款电量的电池包可能会更换水冷板形式），这款设计优点就是抗冲击碰撞性能较好，电池包位于车的底盘，当整车发生碰撞和底盘剐蹭的时候，铝挤型材拼焊冷板可以作为结构强度件对电池包进行很好地保护，但是铝挤型材拼焊冷板重量较重，在一定程度上也影响了整车的巡航里程。ES8水冷板设计均温效果挺不错的，无论从散热还是加热这一块，做的都是比较优秀。这款电池包还有一个优秀设计，就是整个电池包采用了快换设计，包含电快换、水快换和整包快换，这样的设计可以在时间方面让电动车（换电）和燃油车（加油）之间达到一种平衡。</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-448383c4b5afe5846e137622849c6dc8.png"></p>
-<p>图4 电池包三维结构分解图（百度照片）</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-94d97811c6cd90e43646408802d457de.png"></p>
-<p>图5 电池包三维内部视图（百度照片）</p>
-<p> </p>
-<p>捷豹路虎I-PACE电池包是一种典型的干湿分离设计，采用的冲压成型的冷板（内部通过橡胶管联通每个冷板），液冷系统和电池系统分为两个仓，在液冷系统和电池系统之间设计的有一层板，这层板不仅起到了对液冷系统和电池系统上下隔离的效果，另外还起到了均温的效果，前面我们也提到液冷板和均温板之间是依靠导热胶和螺栓固定，电池系统和均温板之间也使用了导热胶，但是有趣的是在均温板上开了一些联通液冷系统和电池系统的孔，这种孔不知道是否具有单向排气或者排湿的作用，如果是双向的，可能没有完全意义做到干湿分离，但是将液冷系统和电池系统分开，已经大大降低了由于冷却液泄露而带来的风险。</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0f173bbeb7b41c87ed21a6ed273aed92.png"></p>
-<p>图6 电池包安装位置（百度照片）</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bc643fcb6c96d0fb6e39f16cfba009ee.jpeg"></p>
-<p>图7 电池包三维视图（百度照片）</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7be8383418c7cd0274bbe828a98ad2bb.png"></p>
-<p>图8 电池包底部视图（百度照片）</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-30e04b548a7586138f75a3484b9f324b.jpeg"></p>
-<p>图9 电池包传热路径（百度照片）</p>
-<p> </p>
-<p>爱驰汽车U5同样采用了干湿分离设计，但是液冷板形式和I-PACE不同，爱驰汽车U5采用的是口琴管冷板，水冷板和下箱体集成化，集流管部分应该做了特殊的分流设计（后续这款液冷设计的专利大家可以学习一下，分流设计在液冷系统里面还是比较关键的），口琴管和均温板之间采用的应该也是导热胶（起到一定的固定作用），关于冷板的支撑设计要么采用固定，要么采用弹性支撑，U5的电池包轻量化做的比较好，同样这款车还有另外一个特点就是“叠加电池包”，用于增加续航里程，大家可以关注一下。</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5736d3af2b84d9891d2ea13107cce450.png"></p>
-<p>图10 电池包安装位置（百度照片）</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eb03eaa5bcef60d22d06320ff5f0b4ee.png"></p>
-<p>图11 电池包局部剖切图（百度照片）</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-6b23f9f2a8d85516ce284902d587769e.png"></p>
-<p>图12 电池包三维视图（百度照片）</p>
-<p> </p>
-<p><strong>2、直冷式电池热管理系统部件构成</strong></p>
-<p> </p>
-<p>直冷技术属于相变冷却的范畴，它主要通过冷却介质的相态变化来吸收或释放热量。直冷技术和汽车空调的原理一致，两者都是通过系统的压缩机将系统内部的制冷剂压缩成高温高压的气体，然后进入冷凝器后被冷凝成常温高压的液态，接着液态介质进入膨胀阀，膨胀后变成低温低压的两相流进入蒸发器，这里的蒸发器，在电池包内部指的就是液冷板，当然直冷式热管理技术所说的冷板和液冷式热管理技术中的冷板在内部流道是有所不同的。两相流在蒸发器内部吸热后完全变成气态，通过膨胀阀回到压缩机内部，完成一个完整的循环，整个过程通过冷却工质的态相变化（气液相变）来吸热或者释放热量。</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0c6948c322dd62ff3e5da3e53ddc66e5.jpeg"></p>
-<p>图13 直冷式电池热管理系统工作原理示意图（百度图片）</p>
-<p> </p>
-<p>直冷系统设计相对复杂，由于制冷剂的气液相变，整个温差比较难控制，同时对整个系统的耐压和气密性要求也是十分高的，同时为了防止后期包内凝露现象的出现，装包的环境可能会也有严格的要求（后期维修不能随意在暴露环境下拆装），我本人目前还没有实际的开发过一款直冷项目的电池包，也没参与拆解过任何单纯直冷的电池包，前面直冷的技术原理已经解释的比较清楚，这里我们对该技术的优缺点和技术难度不做过多的赘述，下面我们列举几个直冷冷却的实际案例照片。</p>
-<p> </p>
-<p>宝马X5热交换器（冷板）分别位于三个二层和三个一层电池模组下方，热交换器（冷板）下方有弹性支撑结构，可以看出BMW电池包冷却和液冷设计比较类似，只是冷却液换成了制冷剂，这种设计要平衡导热性及机械稳定性，防止过冷现象出现（制冷剂冻伤人事件已经屡见不鲜了，这里主要防止对电芯的伤害），此处不详细去介绍了。</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-c4298bd6893e7c7e70fbee64967355bf.png"></p>
-<p>图14 电池包位置视图（百度照片）</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-57eed002107fd14c8dad0dd2043d5d05.jpeg"></p>
-<p>图15 电池包结构分解图（百度照片）</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b3d456dc106da8c8f0ee96e3dfa68d1d.jpeg"></p>
-<p>图16 电池包内部冷板视图（百度照片）</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0fde9deaa048ec4a63ab1561bb655818.jpeg"></p>
-<p>图17 电池包内部局部视图（百度照片）</p>
-<p> </p>
-<p>在2013年宝马I3就已经开始采用直冷散热技术，是采用直冷技术最早的一批新能源汽车，宝马I3近些年也在不停的变动，电池包的容量也从原先的22kWh变为目前的100kWh，目前的设计也可以使用液冷散热，在电池包前段增加2个储液罐。</p>
-<p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0bde361674dfe87a103a5b8270339a66.png"></p>
-<p>图18 电池包位置视图（百度照片）</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-28808145d2080b5374b9326ba436b2a1.jpeg"></p>
-<p>图19 电池包结构分解图（百度照片）</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ab232a9302975d1828fe88b316b598d5.png"></p>
-<p>图20 电池包局部视图（百度照片）</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f69fc2eab00896398a398448cf5106fa.png"></p>
-<p>图21 电池包工质流向（百度照片）</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e60ea8113b579a79edbd91beee6d649.jpeg"></p>
-<p>图22 宝马I3（2018款）三维视图（百度照片）</p>
-<p> </p>
-<p>这是关于电池热管理的三种最常用的技术，另外还有一种叫做“<strong>自然冷却式电池热管理技术</strong>”，很显然自然冷却式技术并没有额外的装置把电池产生的多余热量给交换走，例如BYD在秦、唐、宋、E6、腾势等采用LFP电芯的车型上都采用了自然冷却式技术，但据了解BYD后续在采用三元电芯的车型时将采用液冷式电池热管理技术。</p>
-<p> </p>
-<p>通过本期以及上一期的介绍（<a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483753&idx=1&sn=7c5f099a10bca48a40b6ad96b91f3c91&chksm=9bee6930ac99e0260293a05cf3e7a74fba13e8faf33ecd258788be7c91647815fce72aa7b1ce&scene=21#wechat_redirect">电池热管理工程实践认知 (1): 风冷式热管理系统</a>），我们聊完了电池热管理的四种不同的技术方案，以及根据笔者个人在工作中的一些工程实践经验及体会，希望能为对热管理感兴趣的朋友们提供一点启发，后续我们可以针对动力电池热管理的一些子部件进行一些详细的工程实践探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行更进一步的剖解分析。</p>
-<p> </p>
-<p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出。同时以上论述均为个人见解，如有错误之处请不吝赐教。技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p>
-<p> </p>
-<p><strong>往期精彩回顾</strong></p>
-<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483753&idx=1&sn=7c5f099a10bca48a40b6ad96b91f3c91&chksm=9bee6930ac99e0260293a05cf3e7a74fba13e8faf33ecd258788be7c91647815fce72aa7b1ce&scene=21#wechat_redirect">电池热管理工程实践认知 (1): 风冷式热管理系统</a></p>
-<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p>
-<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p>
-<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/" data-id="cuidDK7JHMBGD-R0wnr2daXj7" data-title="电池热管理工程实践认知 (2): 液冷及直冷式热管理系统" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" rel="tag">制冷技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" rel="tag">电池热管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" rel="tag">试验台</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-7zip-一款高效简单的压缩软件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/05/24/7zip-%E4%B8%80%E6%AC%BE%E9%AB%98%E6%95%88%E7%AE%80%E5%8D%95%E7%9A%84%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B6/" class="article-date">
-  <time class="dt-published" datetime="2020-05-23T16:00:00.000Z" itemprop="datePublished">2020-05-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/05/24/7zip-%E4%B8%80%E6%AC%BE%E9%AB%98%E6%95%88%E7%AE%80%E5%8D%95%E7%9A%84%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B6/">7zip-一款高效简单的压缩软件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>压缩解压缩软件之前一直用360压缩或者好压，但这些软件一点都不老实，经常推荐或者搞点广告啥的，后面发现了一个很好用的软件-7zip</p>
-<p>中文官网：<a target="_blank" rel="noopener" href="https://sparanoid.com/lab/7z/">https://sparanoid.com/lab/7z/</a></p>
-<p>7zip算是压缩软件里我觉得最简单好用的了，做压缩软件就专心于压缩软件，占用小，也不会给你推荐啥的</p>
-<p>到官网下载安装即可，默认安装目录是：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\7-Zip</p>
-<p>到里面找到7-Zip File Manager这个，然后打开就可以打开7zip设置页面，普通压缩也不用配置啥，如果想对压缩进行配置就可以打开这个管理界面：</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/1590302505-7zip-1024x557.png"><a target="_blank" rel="noopener" href="https://www.demon1630.cf/7zip-%e4%b8%80%e6%ac%be%e9%ab%98%e6%95%88%e7%ae%80%e5%8d%95%e7%9a%84%e5%8e%8b%e7%bc%a9%e8%bd%af%e4%bb%b6/1590302505-7zip/"><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/1590302505-7zip-1024x557.png"></a>完成配置就可以进行压缩，很简单好用的压缩软件</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/05/24/7zip-%E4%B8%80%E6%AC%BE%E9%AB%98%E6%95%88%E7%AE%80%E5%8D%95%E7%9A%84%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B6/" data-id="cuidZHzMga5p7D8fqK8DJBKiZ" data-title="7zip-一款高效简单的压缩软件" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" rel="tag">推荐软件</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-everything-windows上的文件搜索软件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/05/24/everything-windows%E4%B8%8A%E7%9A%84%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E8%BD%AF%E4%BB%B6/" class="article-date">
-  <time class="dt-published" datetime="2020-05-23T16:00:00.000Z" itemprop="datePublished">2020-05-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/05/24/everything-windows%E4%B8%8A%E7%9A%84%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E8%BD%AF%E4%BB%B6/">everything-windows上的文件搜索软件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>windows自带的文件搜索软件功能，使用过就知道，这个太慢了，everything作为一款搜索软件，很好用，快速且可以匹配到全电脑上，轻松找到你想要的文件，对于没有很好的文件管理的人来说很重要.</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
-<p>下载安装即可，启动后需要点时间来更新搜索数据库，更新完后搜索起来很快</p>
-<p>使用教程：<a target="_blank" rel="noopener" href="https://www.voidtools.com/zh-cn/support/everything/">https://www.voidtools.com/zh-cn/support/everything/</a></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/1590302982-everything-1024x88.png"><a target="_blank" rel="noopener" href="https://www.demon1630.cf/everything-windows%e4%b8%8a%e7%9a%84%e6%96%87%e4%bb%b6%e6%90%9c%e7%b4%a2%e8%bd%af%e4%bb%b6/1590302982-everything/"><img src="https://www.demon1630.cf/wp-content/uploads/2020/05/1590302982-everything-1024x88.png"></a></p>
-<p>个人谷歌云下载地址：<a target="_blank" rel="noopener" href="https://drive.google.com/open?id=19aS2qPiy26SYtrmVcUSwO_GfqDzKUsCX">https://drive.google.com/open?id=19aS2qPiy26SYtrmVcUSwO_GfqDzKUsCX</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/05/24/everything-windows%E4%B8%8A%E7%9A%84%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E8%BD%AF%E4%BB%B6/" data-id="cuidNNNiqHQ4JS6CNPwh4X60p" data-title="everything-windows上的文件搜索软件" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" rel="tag">推荐软件</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-trafficmonitor-一个开源支持任务栏显示实时网速、cpu及内存的" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/05/24/trafficmonitor-%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E6%94%AF%E6%8C%81%E4%BB%BB%E5%8A%A1%E6%A0%8F%E6%98%BE%E7%A4%BA%E5%AE%9E%E6%97%B6%E7%BD%91%E9%80%9F%E3%80%81cpu%E5%8F%8A%E5%86%85%E5%AD%98%E7%9A%84/" class="article-date">
-  <time class="dt-published" datetime="2020-05-23T16:00:00.000Z" itemprop="datePublished">2020-05-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/05/24/trafficmonitor-%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E6%94%AF%E6%8C%81%E4%BB%BB%E5%8A%A1%E6%A0%8F%E6%98%BE%E7%A4%BA%E5%AE%9E%E6%97%B6%E7%BD%91%E9%80%9F%E3%80%81cpu%E5%8F%8A%E5%86%85%E5%AD%98%E7%9A%84/">TrafficMonitor-一个开源支持任务栏显示实时网速、CPU及内存的监控软件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>之前一直想要有一个显示网速的插件，之前发现一个比较好用的是火绒的一个插件，但为了一个网速插件而去安装火绒有点得不偿失，像360或者腾讯管家就更是。</p>
-<p>后面发现一个GitHub上的项目，这是一个简单的网速监控软件，可以显示实时网速，也可以监控CPU和内存</p>
-<p>很简单实用</p>
-<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/zhongyang219/TrafficMonitor">https://github.com/zhongyang219/TrafficMonitor</a></p>
-<h1 id="TrafficMonitor-简介"><a href="#TrafficMonitor-简介" class="headerlink" title="TrafficMonitor 简介"></a>TrafficMonitor 简介</h1><p>Traffic Monitor是一款用于Windows平台的网速监控悬浮窗软件，可以显示当前网速、CPU及内存利用率，支持嵌入到任务栏显示，支持更换皮肤、历史流量统计等功能。</p>
-<h1 id="相关链接："><a href="#相关链接：" class="headerlink" title="相关链接："></a>相关链接：</h1><p>请点击此处下载TrafficMonitor的最新版本。 备用链接：百度网盘下载 如果遇到问题，请点击此处。</p>
-<p>你也可以点击此处下载TrafficMonitor的预发行构建版本。</p>
-<h1 id="主要特性"><a href="#主要特性" class="headerlink" title="主要特性"></a>主要特性</h1><ul>
-<li>显示当前实现网络传输速率、CPU和内存占用率</li>
-<li>如果电脑有多个网卡，支持自动和手动选择网络连接</li>
-<li>查看网络详细信息</li>
-<li>支持嵌入到任务栏显示</li>
-<li>支持更换皮肤和自定义皮肤</li>
-<li>历史流量统计</li>
-</ul>
-<h1 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h1><p>主悬浮窗： <img src="https://github.com/zhongyang219/TrafficMonitor/raw/master/Screenshots/main1.png"> 右键菜单： <img src="https://github.com/zhongyang219/TrafficMonitor/raw/master/Screenshots/main.png"> 任务栏窗口： <img src="https://github.com/zhongyang219/TrafficMonitor/raw/master/Screenshots/taskbar.PNG"> 多彩皮肤： <img src="https://github.com/zhongyang219/TrafficMonitor/raw/master/Screenshots/skins.PNG"></p>
-<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>程序启动后在窗口点击鼠标右键可以弹出右键菜单，主要功能都集中在这个菜单中。如果需要让它嵌入到任务栏显示，请勾选“显示任务栏窗口”。要显示CPU和内存利用率，请勾选“显示更多信息”。</p>
-<h1 id="自定义皮肤"><a href="#自定义皮肤" class="headerlink" title="自定义皮肤"></a>自定义皮肤</h1><p><img src="https://github.com/zhongyang219/TrafficMonitor/raw/master/Screenshots/selecte_skin.png"> 在主窗口或通知区图标右键菜单上选择“其他功能”——“更换皮肤”可以打开更换皮肤界面。点击此处可以下载更多皮肤。用户还可以根据自己的需要编辑自己的皮肤。 皮肤文件放在程序所在目录的<code>skins</code>目录下，每个皮肤被放到单独的文件夹下，文件夹的名称就是皮肤的名称。 其中<code>background.bmp</code>和<code>background_l.bmp</code>是背景图片，<code>skin.ini</code>是皮肤的配置文件，可以通过<code>skin.ini</code>指定文本颜色、字体、皮肤作者、每个项目的大小和位置等信息。 详细的皮肤制作教程请点击此处。 推荐使用皮肤编辑器来创建或编辑皮肤。</p>
-<h1 id="选项设置"><a href="#选项设置" class="headerlink" title="选项设置"></a>选项设置</h1><p><img src="https://github.com/zhongyang219/TrafficMonitor/raw/master/Screenshots/option.png"> 在右键菜单选择“选项…”可以进入选项设置。在选项设置对话框中，可以单独设置主窗口和任务栏窗口的文本颜色、字体、背景颜色、网速单位、显示的文本等。 在“常规设置”选项卡中，可以设置是否在程序时自动检查更新，以及是否需要在开机是自动运行。可以设置在什么时候需要发出消息通知。</p>
-<p>个人谷歌云备用下载地址：<a target="_blank" rel="noopener" href="https://drive.google.com/open?id=1YEvJnMr4txKMBYPAeRjovRq9dCCyGrVV">https://drive.google.com/open?id=1YEvJnMr4txKMBYPAeRjovRq9dCCyGrVV</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/05/24/trafficmonitor-%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E6%94%AF%E6%8C%81%E4%BB%BB%E5%8A%A1%E6%A0%8F%E6%98%BE%E7%A4%BA%E5%AE%9E%E6%97%B6%E7%BD%91%E9%80%9F%E3%80%81cpu%E5%8F%8A%E5%86%85%E5%AD%98%E7%9A%84/" data-id="cuidxZ5FJIhsjDV0Yw5yE2f6t" data-title="TrafficMonitor-一个开源支持任务栏显示实时网速、CPU及内存的监控软件" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/tor/" rel="tag">tor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" rel="tag">推荐软件</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-福昕高级pdf软件-一款可以编辑pdf与转换pdf的软件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/05/24/%E7%A6%8F%E6%98%95%E9%AB%98%E7%BA%A7pdf%E8%BD%AF%E4%BB%B6-%E4%B8%80%E6%AC%BE%E5%8F%AF%E4%BB%A5%E7%BC%96%E8%BE%91pdf%E4%B8%8E%E8%BD%AC%E6%8D%A2pdf%E7%9A%84%E8%BD%AF%E4%BB%B6/" class="article-date">
-  <time class="dt-published" datetime="2020-05-23T16:00:00.000Z" itemprop="datePublished">2020-05-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/05/24/%E7%A6%8F%E6%98%95%E9%AB%98%E7%BA%A7pdf%E8%BD%AF%E4%BB%B6-%E4%B8%80%E6%AC%BE%E5%8F%AF%E4%BB%A5%E7%BC%96%E8%BE%91pdf%E4%B8%8E%E8%BD%AC%E6%8D%A2pdf%E7%9A%84%E8%BD%AF%E4%BB%B6/">福昕高级PDF软件-一款可以编辑PDF与转换PDF的软件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>PDF转word一直以来都有需求，但像wps或者其他很多软件都有这样的功能，但一般都是收费的，这里可以用word来打开PDF文件，从而实现PDF转word功能，但这里介绍另一个软件，就是福昕高级PDF软件，通过这个软件可以很方便的将PDF转化外word，同时也可以直接对PDF文件进行编辑，当然那种扫描版的就基本上不行，要那种由word转换来的才可以实现</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/1590336787-PDF%E7%BC%96%E8%BE%91-1024x552.png"></p>
-<p> </p>
-<p>个人谷歌云下载：<a target="_blank" rel="noopener" href="https://drive.google.com/open?id=19IjUjSJpWpZZqzoMOPzHTssl7s_ncE6s">https://drive.google.com/open?id=19IjUjSJpWpZZqzoMOPzHTssl7s_ncE6s</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/05/24/%E7%A6%8F%E6%98%95%E9%AB%98%E7%BA%A7pdf%E8%BD%AF%E4%BB%B6-%E4%B8%80%E6%AC%BE%E5%8F%AF%E4%BB%A5%E7%BC%96%E8%BE%91pdf%E4%B8%8E%E8%BD%AC%E6%8D%A2pdf%E7%9A%84%E8%BD%AF%E4%BB%B6/" data-id="cuidaB39MuoISaKc1G4fThQkj" data-title="福昕高级PDF软件-一款可以编辑PDF与转换PDF的软件" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" rel="tag">推荐软件</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/xiaoxiaohu/page/16/">&laquo; Prev</a><a class="page-number" href="/xiaoxiaohu/">1</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/15/">15</a><a class="page-number" href="/xiaoxiaohu/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/xiaoxiaohu/page/18/">18</a><a class="page-number" href="/xiaoxiaohu/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/25/">25</a><a class="extend next" rel="next" href="/xiaoxiaohu/page/18/">Next &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/ansys/">ansys</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/ansys/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/ansys/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/excel/">excel</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/excel/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/excel/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/kali-linux/">kali-linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/kali-linux/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/kali-linux/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/">labview</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/">python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/tor/">tor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/tor/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/%E6%B1%BD%E8%BD%A6%E7%83%AD%E7%AE%A1%E7%90%86/">汽车热管理</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/">日常</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E7%94%9F%E6%B4%BB/">生活</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/">路由器</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/ac2100/" rel="tag">ac2100</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/angilent34970a/" rel="tag">angilent34970a</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/ansys/" rel="tag">ansys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/bing/" rel="tag">bing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/bitwarden/" rel="tag">bitwarden</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/calibre/" rel="tag">calibre</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/catia/" rel="tag">catia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/chatgpt/" rel="tag">chatgpt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/cloudflare/" rel="tag">cloudflare</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/endnote/" rel="tag">endnote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/endnotes9/" rel="tag">endnotes9</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/excel/" rel="tag">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/floefd/" rel="tag">floefd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/fluent/" rel="tag">fluent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/gps%E5%AE%9A%E4%BD%8D/" rel="tag">gps定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/kali-linux/" rel="tag">kali-linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/kms/" rel="tag">kms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/labview/" rel="tag">labview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" rel="tag">linux子系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/newifi3/" rel="tag">newifi3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/nextcloud/" rel="tag">nextcloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/nps/" rel="tag">nps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/openwrt/" rel="tag">openwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/pid%E6%8E%A7%E5%88%B6/" rel="tag">pid控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" rel="tag">plc模糊逻辑控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/pycharm/" rel="tag">pycharm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/python3/" rel="tag">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/refprop/" rel="tag">refprop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/scr/" rel="tag">scr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/scrcpy/" rel="tag">scrcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/sndcpy/" rel="tag">sndcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/solidworks/" rel="tag">solidworks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/ssr/" rel="tag">ssr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/telegram/" rel="tag">telegram</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/tkinter/" rel="tag">tkinter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/tor/" rel="tag">tor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/traccar/" rel="tag">traccar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/v2ray/" rel="tag">v2ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/vpn/" rel="tag">vpn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/vrv/" rel="tag">vrv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/windows%E6%BF%80%E6%B4%BB/" rel="tag">windows激活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/word/" rel="tag">word</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/wordpress/" rel="tag">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/workbench/" rel="tag">workbench</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/wsl/" rel="tag">wsl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" rel="tag">三线表格</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" rel="tag">个人图书馆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" rel="tag">串口通讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" rel="tag">二维仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BA%91%E7%9B%98/" rel="tag">云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BB%BF%E7%9C%9F/" rel="tag">仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" rel="tag">企业微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%85%8D%E6%B5%81/" rel="tag">免流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" rel="tag">免登录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" rel="tag">免费域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" rel="tag">制冷技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" rel="tag">反爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" rel="tag">固态硬盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9B%BE%E6%A0%87/" rel="tag">图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9F%9F%E5%90%8D/" rel="tag">域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%A3%B0%E9%9F%B3/" rel="tag">声音</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" rel="tag">天翼网关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" rel="tag">安捷伦</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" rel="tag">定时执行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" rel="tag">宝塔面板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/" rel="tag">密码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" rel="tag">微信防撤回</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%BF%85%E5%BA%94/" rel="tag">必应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" rel="tag">手机投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8A%95%E5%B1%8F/" rel="tag">投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8A%A2%E7%A5%A8/" rel="tag">抢票</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" rel="tag">推荐软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" rel="tag">搬瓦工</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" rel="tag">文章采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" rel="tag">新路由3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" rel="tag">旁路由</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" rel="tag">服务器监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B4%9B%E9%9B%AA/" rel="tag">洛雪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" rel="tag">浏览器技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B5%B7%E8%BE%B9/" rel="tag">海边</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温湿度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%B8%E7%8E%A9/" rel="tag">游玩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">热力膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">电子膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" rel="tag">电池热管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%99%BE%E5%BA%A6sign/" rel="tag">百度sign</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%9B%B4%E6%92%AD/" rel="tag">直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" rel="tag">离线下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" rel="tag">私有云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" rel="tag">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" rel="tag">网站监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BE%A4%E6%99%96/" rel="tag">群晖</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" rel="tag">胖鼠采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" rel="tag">自然对流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" rel="tag">蒲公英</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" rel="tag">试验台</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" rel="tag">谷歌云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" rel="tag">谷歌网盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag">路由器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%82%AE%E4%BB%B6/" rel="tag">邮件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%82%AE%E7%AE%B1/" rel="tag">邮箱</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9D%92%E5%B2%9B/" rel="tag">青岛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" rel="tag">静态网页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90/" rel="tag">音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" rel="tag">音乐播放器</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/xiaoxiaohu/tags/ac2100/" style="font-size: 10px;">ac2100</a> <a href="/xiaoxiaohu/tags/angilent34970a/" style="font-size: 10.5px;">angilent34970a</a> <a href="/xiaoxiaohu/tags/ansys/" style="font-size: 12px;">ansys</a> <a href="/xiaoxiaohu/tags/bing/" style="font-size: 10px;">bing</a> <a href="/xiaoxiaohu/tags/bitwarden/" style="font-size: 10px;">bitwarden</a> <a href="/xiaoxiaohu/tags/calibre/" style="font-size: 10px;">calibre</a> <a href="/xiaoxiaohu/tags/catia/" style="font-size: 10px;">catia</a> <a href="/xiaoxiaohu/tags/chatgpt/" style="font-size: 10px;">chatgpt</a> <a href="/xiaoxiaohu/tags/cloudflare/" style="font-size: 11.5px;">cloudflare</a> <a href="/xiaoxiaohu/tags/docker/" style="font-size: 12px;">docker</a> <a href="/xiaoxiaohu/tags/endnote/" style="font-size: 10px;">endnote</a> <a href="/xiaoxiaohu/tags/endnotes9/" style="font-size: 10px;">endnotes9</a> <a href="/xiaoxiaohu/tags/excel/" style="font-size: 16px;">excel</a> <a href="/xiaoxiaohu/tags/floefd/" style="font-size: 10px;">floefd</a> <a href="/xiaoxiaohu/tags/fluent/" style="font-size: 11px;">fluent</a> <a href="/xiaoxiaohu/tags/gps%E5%AE%9A%E4%BD%8D/" style="font-size: 10px;">gps定位</a> <a href="/xiaoxiaohu/tags/kali-linux/" style="font-size: 13px;">kali-linux</a> <a href="/xiaoxiaohu/tags/kms/" style="font-size: 10px;">kms</a> <a href="/xiaoxiaohu/tags/labview/" style="font-size: 19.5px;">labview</a> <a href="/xiaoxiaohu/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">linux子系统</a> <a href="/xiaoxiaohu/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/xiaoxiaohu/tags/nas/" style="font-size: 10.5px;">nas</a> <a href="/xiaoxiaohu/tags/newifi3/" style="font-size: 12.5px;">newifi3</a> <a href="/xiaoxiaohu/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/xiaoxiaohu/tags/nps/" style="font-size: 13px;">nps</a> <a href="/xiaoxiaohu/tags/openwrt/" style="font-size: 12px;">openwrt</a> <a href="/xiaoxiaohu/tags/pid%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">pid控制</a> <a href="/xiaoxiaohu/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">plc模糊逻辑控制</a> <a href="/xiaoxiaohu/tags/pycharm/" style="font-size: 10px;">pycharm</a> <a href="/xiaoxiaohu/tags/python/" style="font-size: 17px;">python</a> <a href="/xiaoxiaohu/tags/python3/" style="font-size: 10.5px;">python3</a> <a href="/xiaoxiaohu/tags/refprop/" style="font-size: 11px;">refprop</a> <a href="/xiaoxiaohu/tags/scr/" style="font-size: 18.5px;">scr</a> <a href="/xiaoxiaohu/tags/scrcpy/" style="font-size: 10.5px;">scrcpy</a> <a href="/xiaoxiaohu/tags/sndcpy/" style="font-size: 10px;">sndcpy</a> <a href="/xiaoxiaohu/tags/solidworks/" style="font-size: 10px;">solidworks</a> <a href="/xiaoxiaohu/tags/ssr/" style="font-size: 10.5px;">ssr</a> <a href="/xiaoxiaohu/tags/telegram/" style="font-size: 11.5px;">telegram</a> <a href="/xiaoxiaohu/tags/tkinter/" style="font-size: 10px;">tkinter</a> <a href="/xiaoxiaohu/tags/tor/" style="font-size: 19.5px;">tor</a> <a href="/xiaoxiaohu/tags/traccar/" style="font-size: 10px;">traccar</a> <a href="/xiaoxiaohu/tags/v2ray/" style="font-size: 12px;">v2ray</a> <a href="/xiaoxiaohu/tags/vpn/" style="font-size: 10.5px;">vpn</a> <a href="/xiaoxiaohu/tags/vrv/" style="font-size: 10px;">vrv</a> <a href="/xiaoxiaohu/tags/windows/" style="font-size: 13.5px;">windows</a> <a href="/xiaoxiaohu/tags/windows%E6%BF%80%E6%B4%BB/" style="font-size: 10px;">windows激活</a> <a href="/xiaoxiaohu/tags/word/" style="font-size: 18px;">word</a> <a href="/xiaoxiaohu/tags/wordpress/" style="font-size: 14px;">wordpress</a> <a href="/xiaoxiaohu/tags/workbench/" style="font-size: 11.5px;">workbench</a> <a href="/xiaoxiaohu/tags/wsl/" style="font-size: 10.5px;">wsl</a> <a href="/xiaoxiaohu/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" style="font-size: 10px;">三线表格</a> <a href="/xiaoxiaohu/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" style="font-size: 10px;">个人图书馆</a> <a href="/xiaoxiaohu/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" style="font-size: 10px;">串口通讯</a> <a href="/xiaoxiaohu/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" style="font-size: 10px;">二维仿真</a> <a href="/xiaoxiaohu/tags/%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">云盘</a> <a href="/xiaoxiaohu/tags/%E4%BB%BF%E7%9C%9F/" style="font-size: 10.5px;">仿真</a> <a href="/xiaoxiaohu/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" style="font-size: 10.5px;">企业微信</a> <a href="/xiaoxiaohu/tags/%E5%85%8D%E6%B5%81/" style="font-size: 10px;">免流</a> <a href="/xiaoxiaohu/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" style="font-size: 10px;">免登录</a> <a href="/xiaoxiaohu/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" style="font-size: 11px;">免费域名</a> <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" style="font-size: 14.5px;">制冷技术</a> <a href="/xiaoxiaohu/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" style="font-size: 10px;">反爬虫</a> <a href="/xiaoxiaohu/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" style="font-size: 10px;">固态硬盘</a> <a href="/xiaoxiaohu/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10.5px;">图床</a> <a href="/xiaoxiaohu/tags/%E5%9B%BE%E6%A0%87/" style="font-size: 13px;">图标</a> <a href="/xiaoxiaohu/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 15.5px;">域名</a> <a href="/xiaoxiaohu/tags/%E5%A3%B0%E9%9F%B3/" style="font-size: 10px;">声音</a> <a href="/xiaoxiaohu/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" style="font-size: 10px;">天翼网关</a> <a href="/xiaoxiaohu/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" style="font-size: 10.5px;">安捷伦</a> <a href="/xiaoxiaohu/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" style="font-size: 10.5px;">定时执行</a> <a href="/xiaoxiaohu/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" style="font-size: 13px;">宝塔面板</a> <a href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/" style="font-size: 17.5px;">密码</a> <a href="/xiaoxiaohu/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" style="font-size: 10px;">微信防撤回</a> <a href="/xiaoxiaohu/tags/%E5%BF%85%E5%BA%94/" style="font-size: 10px;">必应</a> <a href="/xiaoxiaohu/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">手机投屏</a> <a href="/xiaoxiaohu/tags/%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">投屏</a> <a href="/xiaoxiaohu/tags/%E6%8A%A2%E7%A5%A8/" style="font-size: 10px;">抢票</a> <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" style="font-size: 19px;">控制</a> <a href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" style="font-size: 12px;">推荐软件</a> <a href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" style="font-size: 17.5px;">搬瓦工</a> <a href="/xiaoxiaohu/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.5px;">数据库</a> <a href="/xiaoxiaohu/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">文章采集</a> <a href="/xiaoxiaohu/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" style="font-size: 13px;">新路由3</a> <a href="/xiaoxiaohu/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" style="font-size: 10.5px;">旁路由</a> <a href="/xiaoxiaohu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">服务器监控</a> <a href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 19px;">树莓派</a> <a href="/xiaoxiaohu/tags/%E6%B4%9B%E9%9B%AA/" style="font-size: 10px;">洛雪</a> <a href="/xiaoxiaohu/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">浏览器技术</a> <a href="/xiaoxiaohu/tags/%E6%B5%B7%E8%BE%B9/" style="font-size: 10px;">海边</a> <a href="/xiaoxiaohu/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 12px;">温度传感器</a> <a href="/xiaoxiaohu/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 10.5px;">温湿度传感器</a> <a href="/xiaoxiaohu/tags/%E6%B8%B8%E7%8E%A9/" style="font-size: 11px;">游玩</a> <a href="/xiaoxiaohu/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">热力膨胀阀</a> <a href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 16.5px;">生活</a> <a href="/xiaoxiaohu/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">电子膨胀阀</a> <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" style="font-size: 13px;">电池热管理</a> <a href="/xiaoxiaohu/tags/%E7%99%BE%E5%BA%A6sign/" style="font-size: 10px;">百度sign</a> <a href="/xiaoxiaohu/tags/%E7%9B%B4%E6%92%AD/" style="font-size: 10px;">直播</a> <a href="/xiaoxiaohu/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/xiaoxiaohu/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" style="font-size: 12.5px;">离线下载</a> <a href="/xiaoxiaohu/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">私有云盘</a> <a href="/xiaoxiaohu/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10.5px;">缓存</a> <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" style="font-size: 20px;">网站</a> <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" style="font-size: 16px;">网站建设</a> <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">网站监控</a> <a href="/xiaoxiaohu/tags/%E7%BE%A4%E6%99%96/" style="font-size: 10.5px;">群晖</a> <a href="/xiaoxiaohu/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 10px;">翻译</a> <a href="/xiaoxiaohu/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">胖鼠采集</a> <a href="/xiaoxiaohu/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" style="font-size: 10px;">自然对流</a> <a href="/xiaoxiaohu/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" style="font-size: 10px;">蒲公英</a> <a href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/" style="font-size: 15px;">视频</a> <a href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" style="font-size: 12px;">试验台</a> <a href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" style="font-size: 11.5px;">谷歌云盘</a> <a href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" style="font-size: 10.5px;">谷歌网盘</a> <a href="/xiaoxiaohu/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" style="font-size: 15.5px;">路由器</a> <a href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 14px;">软件</a> <a href="/xiaoxiaohu/tags/%E9%82%AE%E4%BB%B6/" style="font-size: 13.5px;">邮件</a> <a href="/xiaoxiaohu/tags/%E9%82%AE%E7%AE%B1/" style="font-size: 11.5px;">邮箱</a> <a href="/xiaoxiaohu/tags/%E9%9D%92%E5%B2%9B/" style="font-size: 10px;">青岛</a> <a href="/xiaoxiaohu/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" style="font-size: 10px;">静态网页</a> <a href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">音乐</a> <a href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" style="font-size: 10.5px;">音乐播放器</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/09/">September 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/xiaoxiaohu/2024/03/05/%E6%B4%9B%E9%9B%AA%E9%9F%B3%E4%B9%90%E5%8A%A9%E6%89%8B%E6%9B%B4%E6%8D%A2%E9%9F%B3%E4%B9%90%E6%BA%90%E5%A4%B4%E5%8F%8A%E5%90%8C%E6%AD%A5%E6%89%8B%E6%9C%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/">洛雪音乐助手更换音乐源头及同步手机客户端</a>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
           </li>
+          
         
-          <li>
-            <a href="/xiaoxiaohu/2023/10/28/%E5%88%A9%E7%94%A8%E5%9C%9F%E8%80%B3%E5%85%B6%E4%BC%98%E6%83%A0%E8%B4%AD%E4%B9%B0google-one/">利用土耳其优惠购买google one</a>
-          </li>
         
-          <li>
-            <a href="/xiaoxiaohu/2023/09/11/%E7%BE%A4%E6%99%96dsm7-0%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%9C%A8esxi-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96-7-0-dsm7-0-1%E6%95%99%E7%A8%8B/">在ESXI 虚拟机上安装群晖 7.0 (DSM7.0.1)教程</a>
-          </li>
-        
-          <li>
-            <a href="/xiaoxiaohu/2023/07/19/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91fiddler%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">【工具】Fiddler使用教程</a>
-          </li>
-        
-          <li>
-            <a href="/xiaoxiaohu/2023/06/03/%E7%BE%A4%E6%99%96%E4%BD%BF%E7%94%A8alist%E6%8C%82%E8%BD%BD%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%E5%88%B0%E6%9C%AC%E5%9C%B0/">群晖使用alist挂载阿里云盘到本地</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
     </div>
   </div>
+</nav>
 
-  
-</aside>
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>Home</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/archives/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>Archives</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/categories/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-category-fill"></i>
+                  <span>Categories</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/tags/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-tags-fill"></i>
+                  <span>Tags</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/about/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-user-fill"></i>
+                  <span>About</span>
+                </div>
+              </a>
+            </div>
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>Search</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="Light"
+               data-label-dark="Dark">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">Dark</span>
+              </div>
+            </a>
+          </div>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
-</footer>
+</div>
 
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/xiaoxiaohu/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
-    <nav id="mobile-nav">
+  </div>
+</div>
+
+
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<h1 style="display: none">Hexo</h1>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/06/01/%E3%80%90win%E3%80%91vmware-15-5-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%B0%B8%E4%B9%85%E8%AE%B8%E5%8F%AF%E8%AF%81/" target="_self">
+          【win】VMware 15.5 虚拟机软件及永久许可证
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/06/01/%E3%80%90win%E3%80%91vmware-15-5-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%B0%B8%E4%B9%85%E8%AE%B8%E5%8F%AF%E8%AF%81/" target="_self">
+        <div>
+          [名称]：VMware 15.5[大小]：489 MB    [语言]：简体中文  [安装环境]：Win7&#x2F;Win8&#x2F;Win10 [64&#x2F;32位下载链接]：[下载链接]：pan.baidu.com&#x2F;s&#x2F;1BPbFLk-10C-Ry2V-i3BpAQ [提取码]:4l2f VMware15可以在同一台 Windows 或 Linux PC 上同时
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-06-01 00:00" pubdate>
+              2020-06-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
   
-    <a href="/xiaoxiaohu/" class="mobile-nav-link">Home</a>
   
-    <a href="/xiaoxiaohu/archives" class="mobile-nav-link">Archives</a>
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/wordpress/" class="category-chain-item">wordpress</a>
   
-</nav>
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/06/01/%E5%85%8D%E8%B4%B9%E7%94%B3%E8%AF%B7office-e5%E5%BC%80%E5%8F%91%E8%80%85%E8%AE%A2%E9%98%85%EF%BC%8C%E9%99%84%E6%97%A0%E9%99%90%E7%BB%AD%E6%9C%9F%E7%A7%81%E4%BA%BA%E7%BD%91%E7%9B%98%E6%95%99%E7%A8%8B-2/" target="_self">
+          免费申请office E5开发者订阅，附无限续期+私人网盘教程
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/06/01/%E5%85%8D%E8%B4%B9%E7%94%B3%E8%AF%B7office-e5%E5%BC%80%E5%8F%91%E8%80%85%E8%AE%A2%E9%98%85%EF%BC%8C%E9%99%84%E6%97%A0%E9%99%90%E7%BB%AD%E6%9C%9F%E7%A7%81%E4%BA%BA%E7%BD%91%E7%9B%98%E6%95%99%E7%A8%8B-2/" target="_self">
+        <div>
+          本文永久更新修正地址：https://blog.devyi.com/archives/388  前言Office365开发版E5是为开发人员提供的，是微软的官方活动，申请Office 365开发者计划可以获得为期3个月的免费Office365 E5。 而E5计划就包含了25个用于所有Office 365 应用的许可证。如果嫌正版office365贵的话，这可是你免费获取office的好机会了。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-06-01 00:00" pubdate>
+              2020-06-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/tor/">#tor</a>
+            
+              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">#网站</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/05/30/14%E4%BA%BF%E4%BA%BA%E7%9A%84%E4%BA%8C%E5%85%AB%E5%AE%9A%E5%BE%8B-2/" target="_self">
+          14亿人的“二八定律 ”
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/30/14%E4%BA%BF%E4%BA%BA%E7%9A%84%E4%BA%8C%E5%85%AB%E5%AE%9A%E5%BE%8B-2/" target="_self">
+        <div>
+          引 “6亿人”后面的真相 不止有盛世繁华，还有残垣颓瓦； 不止有北上深广的四通八达，还有阡陌不通的边缘小镇； 不止有年赚千万的娱乐明星，还有更多失业在家的啃老青年； 不止有归不了国的留学生，还有很多上不了学的小学生； …… 总理一句大实话，惊醒了无数人。  中国是一个人口众多的发展中国家，我们人均年收入是3万元人民币，但是有6亿人每个月收入也就1000元，1000元在一个中等城市可能租房都困难，现
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-30 00:00" pubdate>
+              2020-05-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E7%94%9F%E6%B4%BB/" class="category-chain-item">生活</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/">#生活</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/05/30/windows%E5%B9%B3%E5%8F%B0%E4%B8%8B%E4%BD%BF%E7%94%A8-rclone-%E6%8C%82%E8%BD%BD-onedrive-%E4%B8%BA%E6%9C%AC%E5%9C%B0%E7%A1%AC%E7%9B%98/" target="_self">
+          Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/30/windows%E5%B9%B3%E5%8F%B0%E4%B8%8B%E4%BD%BF%E7%94%A8-rclone-%E6%8C%82%E8%BD%BD-onedrive-%E4%B8%BA%E6%9C%AC%E5%9C%B0%E7%A1%AC%E7%9B%98/" target="_self">
+        <div>
+          Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘Rclone (rsync for cloud storage) 是一个命令行程序,用于同步文件和目录，支持常见的 Amazon Drive 、Google Drive 、OneDrive 、Dropbox 等云存储。本文将演示在 Windows 平台下将 OneDrive 挂载为本地硬盘，并使用跨平台的 Rclone GU
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-30 00:00" pubdate>
+              2020-05-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/wordpress/" class="category-chain-item">wordpress</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" target="_self">
+          电池热管理工程实践认知 (1): 风冷式热管理系统
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" target="_self">
+        <div>
+          本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。 1、电池热管理技术基本概念 电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-30 00:00" pubdate>
+              2020-05-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="category-chain-item">制冷技术</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/">#电池热管理</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/" target="_self">
+          电池热管理工程实践认知 (2): 液冷及直冷式热管理系统
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/" target="_self">
+        <div>
+          本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。   人类可以冬天泡澡夏天玩水，电动车的电池可以不？人类可以在夏天用空调，电池也可以有这个享受不？其实呢，不是不可以（泡澡、玩水、吹空调），只要方法得当、方法好。在上一期中，我们简单介绍了电池热管理的基本概念以及相关分类，并着重介绍了风冷式电池热管理技术（电池热管理工程实践认知 (1): 风冷式热管理系统），这一期我们将介绍
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-30 00:00" pubdate>
+              2020-05-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="category-chain-item">制冷技术</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/" class="category-chain-item">试验台架</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/">#试验台</a>
+            
+              <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">#制冷技术</a>
+            
+              <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/">#电池热管理</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/05/24/7zip-%E4%B8%80%E6%AC%BE%E9%AB%98%E6%95%88%E7%AE%80%E5%8D%95%E7%9A%84%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B6/" target="_self">
+          7zip-一款高效简单的压缩软件
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/24/7zip-%E4%B8%80%E6%AC%BE%E9%AB%98%E6%95%88%E7%AE%80%E5%8D%95%E7%9A%84%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B6/" target="_self">
+        <div>
+          压缩解压缩软件之前一直用360压缩或者好压，但这些软件一点都不老实，经常推荐或者搞点广告啥的，后面发现了一个很好用的软件-7zip 中文官网：https://sparanoid.com/lab/7z/ 7zip算是压缩软件里我觉得最简单好用的了，做压缩软件就专心于压缩软件，占用小，也不会给你推荐啥的 到官网下载安装即可，默认安装目录是：C:\ProgramData\Microsoft\Window
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-24 00:00" pubdate>
+              2020-05-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="category-chain-item">推荐软件</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">#推荐软件</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/05/24/everything-windows%E4%B8%8A%E7%9A%84%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E8%BD%AF%E4%BB%B6/" target="_self">
+          everything-windows上的文件搜索软件
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/24/everything-windows%E4%B8%8A%E7%9A%84%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E8%BD%AF%E4%BB%B6/" target="_self">
+        <div>
+          windows自带的文件搜索软件功能，使用过就知道，这个太慢了，everything作为一款搜索软件，很好用，快速且可以匹配到全电脑上，轻松找到你想要的文件，对于没有很好的文件管理的人来说很重要. 官网：https://www.voidtools.com/zh-cn/ 下载安装即可，启动后需要点时间来更新搜索数据库，更新完后搜索起来很快 使用教程：https://www.voidtools.com
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-24 00:00" pubdate>
+              2020-05-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="category-chain-item">推荐软件</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">#推荐软件</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/05/24/trafficmonitor-%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E6%94%AF%E6%8C%81%E4%BB%BB%E5%8A%A1%E6%A0%8F%E6%98%BE%E7%A4%BA%E5%AE%9E%E6%97%B6%E7%BD%91%E9%80%9F%E3%80%81cpu%E5%8F%8A%E5%86%85%E5%AD%98%E7%9A%84/" target="_self">
+          TrafficMonitor-一个开源支持任务栏显示实时网速、CPU及内存的监控软件
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/24/trafficmonitor-%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E6%94%AF%E6%8C%81%E4%BB%BB%E5%8A%A1%E6%A0%8F%E6%98%BE%E7%A4%BA%E5%AE%9E%E6%97%B6%E7%BD%91%E9%80%9F%E3%80%81cpu%E5%8F%8A%E5%86%85%E5%AD%98%E7%9A%84/" target="_self">
+        <div>
+          之前一直想要有一个显示网速的插件，之前发现一个比较好用的是火绒的一个插件，但为了一个网速插件而去安装火绒有点得不偿失，像360或者腾讯管家就更是。 后面发现一个GitHub上的项目，这是一个简单的网速监控软件，可以显示实时网速，也可以监控CPU和内存 很简单实用 项目地址：https://github.com/zhongyang219/TrafficMonitor TrafficMonitor 简
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-24 00:00" pubdate>
+              2020-05-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="category-chain-item">推荐软件</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/tor/">#tor</a>
+            
+              <a href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">#推荐软件</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/05/24/%E7%A6%8F%E6%98%95%E9%AB%98%E7%BA%A7pdf%E8%BD%AF%E4%BB%B6-%E4%B8%80%E6%AC%BE%E5%8F%AF%E4%BB%A5%E7%BC%96%E8%BE%91pdf%E4%B8%8E%E8%BD%AC%E6%8D%A2pdf%E7%9A%84%E8%BD%AF%E4%BB%B6/" target="_self">
+          福昕高级PDF软件-一款可以编辑PDF与转换PDF的软件
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/24/%E7%A6%8F%E6%98%95%E9%AB%98%E7%BA%A7pdf%E8%BD%AF%E4%BB%B6-%E4%B8%80%E6%AC%BE%E5%8F%AF%E4%BB%A5%E7%BC%96%E8%BE%91pdf%E4%B8%8E%E8%BD%AC%E6%8D%A2pdf%E7%9A%84%E8%BD%AF%E4%BB%B6/" target="_self">
+        <div>
+          PDF转word一直以来都有需求，但像wps或者其他很多软件都有这样的功能，但一般都是收费的，这里可以用word来打开PDF文件，从而实现PDF转word功能，但这里介绍另一个软件，就是福昕高级PDF软件，通过这个软件可以很方便的将PDF转化外word，同时也可以直接对PDF文件进行编辑，当然那种扫描版的就基本上不行，要那种由word转换来的才可以实现    个人谷歌云下载：https://dri
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-24 00:00" pubdate>
+              2020-05-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="category-chain-item">推荐软件</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">#推荐软件</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/xiaoxiaohu/page/16/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/xiaoxiaohu/">1</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/15/#board">15</a><a class="page-number" href="/xiaoxiaohu/page/16/#board">16</a><span class="page-number current">17</span><a class="page-number" href="/xiaoxiaohu/page/18/#board">18</a><a class="page-number" href="/xiaoxiaohu/page/19/#board">19</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/25/#board">25</a><a class="extend next" rel="next" href="/xiaoxiaohu/page/18/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/xiaoxiaohu/js/jquery-3.6.4.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/xiaoxiaohu/js/events.js" ></script>
+<script  src="/xiaoxiaohu/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
 
 
 
   
-<script src="/xiaoxiaohu/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/xiaoxiaohu/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/xiaoxiaohu/js/script.js"></script>
+  <script  src="/xiaoxiaohu/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/xiaoxiaohu/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>

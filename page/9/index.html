@@ -1,1169 +1,1150 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/xiaoxiaohu/img/fluid.png">
+  <link rel="icon" href="/xiaoxiaohu/img/fluid.png">
   
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="https://demon1630.github.io/xiaoxiaohu/page/9/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/xiaoxiaohu/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/xiaoxiaohu/favicon.png">
+<meta name="twitter:card" content="summary_large_image">
   
   
   
-<link rel="stylesheet" href="/xiaoxiaohu/css/style.css">
+  <title>Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/xiaoxiaohu/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/xiaoxiaohu/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/xiaoxiaohu/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"demon1630.github.io","root":"/xiaoxiaohu/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/xiaoxiaohu/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/xiaoxiaohu/js/utils.js" ></script>
+  <script  src="/xiaoxiaohu/js/color-schema.js" ></script>
+  
+
 
   
-    
-<link rel="stylesheet" href="/xiaoxiaohu/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
 <meta name="generator" content="Hexo 8.1.2"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/xiaoxiaohu/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/xiaoxiaohu/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <a class="main-nav-link" href="/xiaoxiaohu/">Home</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
         
-          <a class="main-nav-link" href="/xiaoxiaohu/archives">Archives</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
         
-      </nav>
-      <nav id="sub-nav">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/xiaoxiaohu/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
         
         
-          <a class="nav-icon" href="/xiaoxiaohu/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://demon1630.github.io/xiaoxiaohu"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-kali设置打开终端的快捷键" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2021/01/09/kali%E8%AE%BE%E7%BD%AE%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="article-date">
-  <time class="dt-published" datetime="2021-01-08T16:00:00.000Z" itemprop="datePublished">2021-01-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/kali-linux/">kali-linux</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/kali-linux/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2021/01/09/kali%E8%AE%BE%E7%BD%AE%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE/">kali设置打开终端的快捷键</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>kali中没有设置像ubuntu中一样ctrl+alt+t这样打开终端的快捷键。 因此都需要单击打开终端，很麻烦。 但是我们可以自行设置打开终端的快捷键。</p>
-<h1 id="设置打开终端的快捷键"><a href="#设置打开终端的快捷键" class="headerlink" title="设置打开终端的快捷键"></a>设置打开终端的快捷键</h1><ol>
-<li>打开设置，找到keyboard选项。</li>
-<li>拉到最下面点击<code>+</code>号，新增快捷键。</li>
-<li>在新出现的窗口中： <code>命令</code>：是按下这个快捷键后启动的命令，这里命令应该填exo-open –launch TerminalEmulator 之后设置你自己的快捷键</li>
-<li>然后就可以使用快捷键打开终端了</li>
-</ol>
-<p>现在最新版的kali linux已经自带打开终端的快捷键了，是ctrl+alt+t，可以找到上面的命令然后修改为自己想要的快捷键方式</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2021/01/09/kali%E8%AE%BE%E7%BD%AE%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE/" data-id="cuideIGJnpFzwqwFJlsX-Wulu" data-title="kali设置打开终端的快捷键" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/kali-linux/" rel="tag">kali-linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/tor/" rel="tag">tor</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-32个搜书网站，从此找书不再发愁！" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2021/01/08/32%E4%B8%AA%E6%90%9C%E4%B9%A6%E7%BD%91%E7%AB%99%EF%BC%8C%E4%BB%8E%E6%AD%A4%E6%89%BE%E4%B9%A6%E4%B8%8D%E5%86%8D%E5%8F%91%E6%84%81%EF%BC%81/" class="article-date">
-  <time class="dt-published" datetime="2021-01-07T16:00:00.000Z" itemprop="datePublished">2021-01-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2021/01/08/32%E4%B8%AA%E6%90%9C%E4%B9%A6%E7%BD%91%E7%AB%99%EF%BC%8C%E4%BB%8E%E6%AD%A4%E6%89%BE%E4%B9%A6%E4%B8%8D%E5%86%8D%E5%8F%91%E6%84%81%EF%BC%81/">32个搜书网站，从此找书不再发愁！</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>大家好，历时两天的整理今天终于码完了，今天这篇关于电子书下载的教程，包含中小学大学电子版教材、综合性网站、优质书站、英语读物、计算机读物、医学、古籍、综合类书籍等等。相信这篇教程能够解决你99%的找书问题。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-7e3143518772886fdfc51ea0965d0cf5.gif"></p>
-<h3 id="电子版教材"><a href="#电子版教材" class="headerlink" title="电子版教材"></a>电子版教材</h3><p>受疫情影响，相信正在上学的小伙伴们一定需要电子版课本，岛主也替大家考虑到了，下面提供岛主知道的方法和网站，找电子版教材不成问题。</p>
-<p>新浪网盘搜索</p>
-<p>关于大学教材</p>
-<p>如果找大学教材，强烈建议使用新浪网盘网址：<strong>vdisk.weibo.com&#x2F;</strong></p>
-<p>比如搜索高等数学，在检索选项中可以看到很多用户分享的文件。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-de44f3a07c59da8761deb1851267e625.jpeg"></p>
-<p>注意上传文件的分享者，这里面学问就来了，比如图中的 <strong><em>猪猪侠863</em></strong> 就分享了很多数学教材，点进他的主页看一下：</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-7fa1a3e17c75a08bd76279ab900f1b57.jpeg"></p>
-<p>可以发现他分享了大量的数学类教材。通过这种方法搜索下载其他大学课本也不成问题。</p>
-<p>关于中小学教材</p>
-<p>关于中小学课本，可以直接登录教材的出版社官网，比如天津市的教材选用的是人教版，登录人民教育出版社网站：<a target="_blank" rel="noopener" href="http://dwz.date/6Gb">http://dwz.date/6Gb</a></p>
-<p>可以发现：</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-7761d05d279bddb223200e0c7ffe0253.jpeg"></p>
-<p>从小学到高中全部收录：</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-9eceba668730a2288d74c40886c6a9fd.jpeg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-364fbf6ca24c0ead6a2adb677e8698ff.jpeg"></p>
-<p>使用方法</p>
-<p>找对应的出版社一定能找到。</p>
-<p>再不行，请看下面。</p>
-<p>本小节的最后，上一条重磅新闻。国家教育部关于中小学教材电子版链接的通告！</p>
-<p>网址：<a target="_blank" rel="noopener" href="http://dwz.date/6HF">http://dwz.date/6HF</a></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-b5d87a665695d3b36139dda450db145f.jpeg"></p>
-<p>链接下载后是excel表格，不清楚是否只在疫情期间特别提供，如果对教材有实际需要，请尽早下载。里面很多其实就是百度网盘链接，以后会失效的可能性很大。</p>
-<p>下面进入正题。</p>
-<h3 id="综合性搜书网站"><a href="#综合性搜书网站" class="headerlink" title="综合性搜书网站"></a>综合性搜书网站</h3><h4 id="鸠摩搜书"><a href="#鸠摩搜书" class="headerlink" title="鸠摩搜书"></a>鸠摩搜书</h4><p>网址：jiumodiary.com</p>
-<p>无需注册的搜书网站，岛主强烈推荐！简洁清爽又卡通的界面，简直人见人爱啊！</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-736fd52d35d6f1235fb57d1d88077953.jpeg"></p>
-<p>不光颜值高，功能也是顶呱呱：</p>
-<p>✦   提供DOC &#x2F; TXT／PDF／MOBI／EPUB／AZW 等多种格式；</p>
-<p>✦   提供一些论坛／书站的搜索结果</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-8427df47c5bb55de59867f211b851c2c.jpeg"></p>
-<h4 id="ePUBee"><a href="#ePUBee" class="headerlink" title="ePUBee"></a>ePUBee</h4><p>网址：cn.epubee.com</p>
-<p>网站本来用来在线电子书转换，不过因为转格式你就得上传电子书吧，所以借网友上传网站拥有丰富的电子书资源。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-872011fe3f53fdaed6e527ba93ae72f7.jpeg"></p>
-<p>如下图，有大量网友上传的电子书：</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-96ba2103e93d0164916742d4a84dceaa.png"></p>
-<h4 id="书单网"><a href="#书单网" class="headerlink" title="书单网"></a>书单网</h4><p>网址：<a target="_blank" rel="noopener" href="http://www.shudan.vip/">www.shudan.vip</a></p>
-<p>需要注册，有些许广告！但是搜索能力很强，收录了很多书站。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-8e63c6d7b981f3f25f3d8f71b45c5a79.jpeg"></p>
-<h4 id="书舟网"><a href="#书舟网" class="headerlink" title="书舟网"></a><strong>书舟网</strong></h4><p>网址：kindle.archiew.top    可以直接下载！</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-1ccdc6e794629e4a365fc9ef24885173.jpeg"></p>
-<h3 id="优质书站"><a href="#优质书站" class="headerlink" title="优质书站"></a>优质书站</h3><h4 id="子午简书"><a href="#子午简书" class="headerlink" title="子午简书"></a>子午简书</h4><p>网址：5kindle.com</p>
-<p>近4万+的电子书资源！非常给力！下载时需扫网站上提供的二维码关注公众号获取即时验证码。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-a1b401a931d03af8eb7111a1a9008b46.jpeg"></p>
-<h4 id="ePUBw"><a href="#ePUBw" class="headerlink" title="ePUBw"></a>ePUBw</h4><p>网址：epubw.com</p>
-<p>大概2万+的资源，无需注册即可下载，提供百度云资源。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-9b83818ebc65d8098e2fe92799599831.png"></p>
-<h4 id="三分钟书屋"><a href="#三分钟书屋" class="headerlink" title="三分钟书屋"></a>三分钟书屋</h4><p>网址：sanfenzhong.net</p>
-<p>有大约1万+的电子书资源。提供百度云、onedrive、天翼云3个网盘的下载地址，无需注册回复就能直接下载。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-e2132a3470e3b934e974acc1ae549db8.png"></p>
-<h4 id="好读"><a href="#好读" class="headerlink" title="好读"></a>好读</h4><p>网址：haodoo.net</p>
-<p>台湾的一位网友自建的网站，从2001年建站至今已有19年历史！在上面能找到很多经典作品、绝版作品！</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-25091f51dbd8fab134ed0ee9b06afce7.png"></p>
-<p>更多网站</p>
-<p>嘒彼小星 huibixx.com（大概3000+资源）</p>
-<p>三秋书屋 d4j.cn（约5000+资源）</p>
-<p>soBooks sobooks.cc（约7000+资源）</p>
-<p>AIBOOKS aibooks.club（资源未知）</p>
-<h3 id="电子书论坛"><a href="#电子书论坛" class="headerlink" title="电子书论坛"></a>电子书论坛</h3><p>下面列举的网站都是搜书神器，仅支持站内搜索，不对外擎开放。这些网址最好不要广泛传播，毕竟人红是非多呀， 岛主不多介绍，诸位低调使用！</p>
-<p><strong>点书网</strong>：dianbook.cc</p>
-<p><strong>掌上书苑</strong>：soepub.com</p>
-<p>**iamtxt：**<a target="_blank" rel="noopener" href="http://www.iamtxt.com/">www.iamtxt.com/</a></p>
-<p><strong>Ireade</strong>：<a target="_blank" rel="noopener" href="http://www.iread.cf/login">http://www.iread.cf/login</a></p>
-<h3 id="英文原著搜书"><a href="#英文原著搜书" class="headerlink" title="英文原著搜书"></a>英文原著搜书</h3><p>找英文原著用这几个网站基本上足够了。</p>
-<h4 id="ZLibrary"><a href="#ZLibrary" class="headerlink" title="ZLibrary"></a><strong>ZLibrary</strong></h4><p>网址：b-ok.org</p>
-<p>资源相当丰富，网站上写的是有490+万的电子书资源。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-ec283a01a077124126d9880db51c8ba8.png"></p>
-<h4 id="Project-Gutenberg"><a href="#Project-Gutenberg" class="headerlink" title="Project Gutenberg"></a><strong>Project Gutenberg</strong></h4><p>网址：gutenberg.org</p>
-<p>提供6万+的免费电子书资源</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-73e2c44ee1eb971bf6b720cf5447c269.png"></p>
-<h4 id="Library-Genesis"><a href="#Library-Genesis" class="headerlink" title="Library Genesis"></a><strong>Library Genesis</strong></h4><p>网址：gen.lib.rus.ec</p>
-<p>Library Genesis是一个文献在线查询和下载的公益网站，号称是帮助全人类知识无版权传播的计划。网站主要是英文原版的电子书和期刊论文，据说藏书多达100万本，其中也有少量的中文资料。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-5ca2e6f9845b5c7c9561048e91678f8c.png"></p>
-<h3 id="专业书籍网站"><a href="#专业书籍网站" class="headerlink" title="专业书籍网站"></a>专业书籍网站</h3><h4 id="计算机类"><a href="#计算机类" class="headerlink" title="计算机类"></a><strong>计算机类</strong></h4><p>我爱学it：<a target="_blank" rel="noopener" href="http://www.52studyit.com/forum.php">http://www.52studyit.com/forum.php</a> 【强烈推荐】</p>
-<p>图灵社区：ituring.com.cn&#x2F;book</p>
-<p>CSDN：download.csdn.net</p>
-<p>计算机书籍控：bestcbooks.com</p>
-<p>计算机开放电子书汇总：it-ebooks.flygon.net</p>
-<p><strong>医学</strong></p>
-<p>医学电子书：yixueshu.gitee.io</p>
-<p><strong>古籍</strong></p>
-<p>书格：new.shuge.org</p>
-<p><strong>多学科</strong></p>
-<p>【编程随想】收藏的电子书清单（含政治、心理、文艺、哲学等等学科）</p>
-<p>网址：github.com&#x2F;programthink&#x2F;books</p>
-<h3 id="网络小说下载"><a href="#网络小说下载" class="headerlink" title="网络小说下载"></a>网络小说下载</h3><h4 id="知轩藏书"><a href="#知轩藏书" class="headerlink" title="知轩藏书"></a>知轩藏书</h4><p>网址：<a target="_blank" rel="noopener" href="http://www.zxcs.me/">www.zxcs.me</a></p>
-<p>如果你爱看网络小说一定要收藏这个网站，全是<strong>校对版优质书源</strong>，且<strong>无需注册</strong>即可下载！</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-cb11a7f0427ada04bb4c0df5ffcea8e2.png"></p>
-<p>网站内每部小说都有标注有「校对版」或「精校版」，很多书友可能不了解两者的区别：</p>
-<p>校对版和精校版的最大区别其实就是在错别字上面！</p>
-<p>校对版 &#x3D; 软校，即软件校对。也就是用txtFormat + EmEditor排版校对一遍。</p>
-<p>精校版小说为了能最大程度减少错别字，在软较的层次上，还需要对整本小说进行「读校」，也就是一边阅读，一边修改。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-f06253c1765a20e9967e6b7398cf974b.png"></p>
-<h4 id="拨云搜索"><a href="#拨云搜索" class="headerlink" title="拨云搜索"></a>拨云搜索</h4><p>网址：<a target="_blank" rel="noopener" href="http://www.boyunso.com/">www.boyunso.com</a></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-d59ba78fb37db9c04df16175f9715e45.jpeg"></p>
-<p>非常神奇的网站，比如搜索《庆余年》，网站自动生成一张人物关系图！非常有趣！</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-8a61bc81df923a828aa5b8fc0ae6cfbe.jpeg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-9208626d15ea3e617a1a2763881a9cf3.gif"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2021/01/08/32%E4%B8%AA%E6%90%9C%E4%B9%A6%E7%BD%91%E7%AB%99%EF%BC%8C%E4%BB%8E%E6%AD%A4%E6%89%BE%E4%B9%A6%E4%B8%8D%E5%86%8D%E5%8F%91%E6%84%81%EF%BC%81/" data-id="cuidxMkz2Q70-4mZrLM7grIdJ" data-title="32个搜书网站，从此找书不再发愁！" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/excel/" rel="tag">excel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/tor/" rel="tag">tor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-kali-linux安装中文输入法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2021/01/08/kali-linux%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2021-01-07T16:00:00.000Z" itemprop="datePublished">2021-01-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/kali-linux/">kali-linux</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/kali-linux/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2021/01/08/kali-linux%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/">Kali Linux安装中文输入法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Kali-Linux安装中文输入法"><a href="#Kali-Linux安装中文输入法" class="headerlink" title="Kali Linux安装中文输入法"></a>Kali Linux安装中文输入法</h1><p>Kali Linux系统安装后，默认没有中文输入法。如果用户需要输入汉字，则需要安装中文输入法。下面将介绍安装小企鹅中文输入法，并进行配置。操作步骤如下所示：</p>
-<p>（1）安装小企鹅中文输入法。执行命令如下所示：</p>
-<p>apt-get  install  fcitx-table-wbpy  fonts-wqy-microhei  fonts-wqy-zenhei -y</p>
-<p>（2）启动输入法。执行命令如所示：</p>
-<p>fcitx</p>
-<p>（3）设置环境变量。修改~&#x2F;.bashrc文件，添加以下内容。如下所示：</p>
-<p>export XMODIFIERS&#x3D;”@im&#x3D;fcitx”</p>
-<p>export XIM&#x3D;fcitx</p>
-<p>export XIM_PROGRAM&#x3D;fcitx</p>
-<p>（4）重新启动系统，即可使用小企鹅中文输入法。其中，默认使用“Ctrl+空格”切换输入法。如果不想要使用默认设置，在程序中搜索fcitx配置并启动，即可修改快捷键。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2021/01/08/kali-linux%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/" data-id="cuiduUji_l0vR_RCNsI0saQ4j" data-title="Kali Linux安装中文输入法" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/kali-linux/" rel="tag">kali-linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-老师傅总结的制冷系统故障排除方法01：压力分析法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2021/01/04/%E8%80%81%E5%B8%88%E5%82%85%E6%80%BB%E7%BB%93%E7%9A%84%E5%88%B6%E5%86%B7%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%96%B9%E6%B3%9501%EF%BC%9A%E5%8E%8B%E5%8A%9B%E5%88%86%E6%9E%90%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2021-01-03T16:00:00.000Z" itemprop="datePublished">2021-01-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2021/01/04/%E8%80%81%E5%B8%88%E5%82%85%E6%80%BB%E7%BB%93%E7%9A%84%E5%88%B6%E5%86%B7%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%96%B9%E6%B3%9501%EF%BC%9A%E5%8E%8B%E5%8A%9B%E5%88%86%E6%9E%90%E6%B3%95/">老师傅总结的制冷系统故障排除方法01：压力分析法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>制冷系统发生了故障，一般不可能直接看到故障的部位发生在哪里，也不可能将制冷系统的部件一一分解和解剖，只能从外表检查，找出运行中的反常现象，进行综合分析。</p>
-<p>这样，制冷系统压力和温度检测就非常重要。本期我们主要来说一说制冷系统的压力判断和压力检测。</p>
-<p><strong>一、制冷系统压力的概念</strong></p>
-<p>制冷系统压力我们常见的有3个：吸气压力、排气压力、冷凝压力。</p>
-<p><strong>1、吸气压力和排气压力</strong>    </p>
-<p>制冷系统在运行时可分高、低压两部分。排气压力是指压缩机出口处排气管内制冷剂气体的压力。压缩机的吸气口压力称为吸气压力，吸气压力接近于蒸发压力。两者之差就是管路的流动阻力。压力损失一般限制在0.018Mpa以下。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-c8ea77105b1f26fb7c25c8e3fbe05ea0.jpeg"></p>
-<p>为方便起见，制冷系统的蒸发压力与冷凝压力都在压缩机的吸、排气口检测。即通常称为压缩机的吸、排气压力。检测制冷系统的吸、排气压力的目的，是要得到制冷系统的蒸发温度与冷凝温度，以此获得制冷系统的运行状况。</p>
-<p><strong>2、冷凝压力</strong>    </p>
-<p>冷凝压力就是制冷剂在冷凝器内气体冷凝成液体的压力，由于制冷系统中冷凝器内部的压力无法测量，而实际上，制冷剂在排气管以及冷凝器内的压力降其实很小，所以不管设计调试还是检修当中，一般认为排气压力近似等于冷凝压力。</p>
-<p><strong>（1）冷凝温度与制冷量的关系</strong></p>
-<p>我们简单看看R22制冷剂冷凝压力与冷凝温度的关系曲线：</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-17f4bf54c848fa7e3ee7216084b03351.jpeg"></p>
-<p>从图上很简单的就能看出，冷凝温度与冷凝压力是成正比变化的，冷凝压力与冷凝温度两者是对应的；冷凝压力（高压）越低，冷凝温度也就越低；冷凝压力（高压）越高，冷凝温度也就越高。  </p>
-<p>知道冷凝压力，我们就能查表得出冷凝温度的数值。</p>
-<p><strong>（2）热负荷与冷凝压力的关系</strong></p>
-<p>这个简单来说就是冷凝侧的负荷与冷凝压力的关系。</p>
-<p>在一恒定的工况条件下（制冷剂流量），热负荷越大，冷凝压力越高，反之亦然。我们可以想象一下，当你设计的冷凝器小了（热负荷就相对来说大了） ，制冷系统是很容易高压报警的。</p>
-<p><strong>二、制冷系统压力的影响因素</strong></p>
-<p><strong>1、吸气压力</strong>    </p>
-<p><strong>（1）吸气压力低的因素</strong></p>
-<p>吸气压力低于正常值，其因素有制冷量不足、冷负荷量小、膨胀阀开启度小、冷凝压力低（指用毛细管系统），以及过滤器不畅通。 </p>
-<p><strong>（2）吸气压力高的因素</strong></p>
-<p> 吸气压力高于正常值，其因素有制冷剂过多、制冷负荷大、膨胀阀开启度大、冷凝压力高（毛细管系统）以及压缩机效率差等。</p>
-<p><strong>2、排气压力</strong>   </p>
-<p><strong>（1）排气压力高的因素</strong></p>
-<p>当排气压力高于正常值时，一般有冷却介质的流量小或冷却介质温度高、制冷剂充注量过多、冷负荷大及膨胀阀开启度大等。 </p>
-<p>这些引起系统的循环流量增加，冷凝热负荷也相应增加。由于热量不能及时全部散出，引起冷凝温度上升，而所能检测到的是排气（冷凝）压力上升。在冷却介质流量低或冷却介质温度高的情况下，冷凝器的散热效率降低而使冷凝温度上升。</p>
-<p>在冷却介质流量低或冷却介质温度高的情况下，冷凝器的散热效率降低而使冷凝温度上升。对于制冷剂充注量过多的原因，是多余的制冷剂液占据了一部分冷凝管，使冷凝面积减少，引起冷凝温度上升。 </p>
-<p><strong>（2）排气压力低的因素</strong></p>
-<p>排气压力低于正常值，其因素有压缩机效率低、制冷剂量不足、冷负荷小、膨胀阀开度小，过滤器不畅通，包括膨胀阀过滤网以及冷却介质温度低等。 </p>
-<p>以上几种因素都会引起系统的制冷流量下降、冷凝负荷小，使冷凝温度下降。 </p>
-<p>从上述的吸气压力与排气压力与排气压力变化情况看，两者有密切的关系。在一般情况下，吸气压力升高，排气压力也相应上升；吸入压力下降，排气压力也相应下降。也可从吸气压力表的变化估计出排气压力的大致情况。</p>
-<p><strong>三、为什么要用压力来检查系统故障？</strong></p>
-<p><strong>1、排气压力</strong>   </p>
-<p>制冷系统运行时，其排气压力与冷凝温度相对应，而冷凝温度与其冷却介质的流量和温度、制冷剂流入量、冷负荷量等有关。在检查制冷系统时，应在排气管处装一只排气压力表，检测排气压力，作为分析故障资料。</p>
-<p><strong>2、吸气压力</strong>   </p>
-<p>对于用膨胀阀的系统而言，吸气压力与膨胀阀的开启度、制冷剂充注量、压缩机的冷效率、以及负荷大小有关。用毛细管的系统，吸气压力与冷凝压力、制冷量，压缩机制冷效率、以及负荷大小有关。为此在检查制冷系统时，应在吸气管上装按压力表。检测吸气压力对故障分析有重要作用。</p>
-<p><strong>四、制冷系统压力调节阀有哪些？</strong></p>
-<p><strong>压力调节阀主要包括以下3类：</strong></p>
-<p>1）蒸发压力调节阀；  </p>
-<p>2）冷凝压力调节阀；  </p>
-<p>3）吸气压力调节阀；  </p>
-<h2 id="1、蒸发压力调节阀"><a href="#1、蒸发压力调节阀" class="headerlink" title="1、蒸发压力调节阀"></a><strong>1、蒸发压力调节阀</strong></h2><p>蒸发压力调节阀通常安装在蒸发器的出口处，根据蒸发压力的高低自动调节阀门的开度，可以控制从蒸发器流出的制冷剂的流量，以维持蒸发压力的恒定；</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-19cde49a158d385a0bb3a7979ca84bfe.jpeg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-3ba73af2c0965f17b9364de589253187.jpeg"></p>
-<h2 id="2、冷凝压力调节阀"><a href="#2、冷凝压力调节阀" class="headerlink" title="2、冷凝压力调节阀"></a><strong>2、冷凝压力调节阀</strong></h2><p>冷凝压力调节阀是通过高压调节阀+差压调节阀 来实现对压力的调节。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-7e7968a6c83ac241ee40d9371ebaf02e.jpeg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-ad81280a6b820f21f8c502f8aa96212b.jpeg"></p>
-<h2 id="3、吸气压力调节阀"><a href="#3、吸气压力调节阀" class="headerlink" title="3、吸气压力调节阀"></a><strong>3、吸气压力调节阀</strong></h2><p>别称：曲轴箱压力调节阀；</p>
-<p>安装位置：压缩机吸气管上面；</p>
-<p>作用：避免因过高的吸气压力损坏电机，保护电机的作用；</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-d1aa190ab3ac36439039358c076c7582.jpeg"></p>
-<p><strong>五、利用压力表判断制冷系统故障</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-0a52d3278d608ec413ea8b575ab3e3fd.jpeg"></p>
-<p><strong>一、制冷系统正常</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-6002fcfbd2e524852ee797fdd8b77b91.jpeg"></p>
-<p>对于空调系统而言，正常的制冷系统参数如下：（R22制冷剂）</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-d5c195c9182cc5e69b6676214b192c45.jpeg"></p>
-<p>（R410A制冷剂）</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-05514e58960514976b09816f0c44b73c.jpeg"></p>
-<p><strong>二、制冷系统中有湿气</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-97c79998a4cfcbb9f5277013c34913f3.jpeg"></p>
-<p>1）、故障现象：工作期间，在低压侧压力有时正常，有时指示真空；高压侧压力指示正常，有时稍高；间歇性制冷，最后不制冷。</p>
-<p>2）、故障原因：干燥剂吸湿能力达到饱和；制冷循环系统内在膨胀阀（或孔管）处结冰，阻滞了制冷剂的流动，导致不制冷；当冰融化后，系统又恢复到正常状态。</p>
-<p>3）、故障诊断与排除：干燥剂处于饱和状态，更换储液干燥器或干燥剂。反复抽真空，排除系统中的水分，然后注入适当数量的新制冷剂。</p>
-<p><strong>三、缺制冷剂</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-c991c099207a5095413be96597f2d892.jpeg"></p>
-<p>1）、故障现象：高、低压侧的压力都偏低，从玻璃观察窗内看到有连续的气泡出现，高压管温热、低压管微冷。</p>
-<p>2）、故障原因：制冷剂充注不足或系统某些部位发生渗漏。</p>
-<p>3）、修复方法：（1）用测漏器检查是否漏气，根据需要予以修理（2）充人适量的制冷剂（3）连接压力表后，如压力示值接近0，可在漏气部位检修完毕后将制冷系统抽成真空</p>
-<p><strong>四、制冷剂循环不良</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-283ded4178dcd0754a267930bf350bb1.jpeg"></p>
-<p>1）、故障现象：高压和低压侧压力都偏低；从储液干燥器到主机组的管路都结霜；制冷不足。</p>
-<p>2）、故障原因：储液干燥器堵塞，阻滞了制冷剂的流动。</p>
-<p>3）、故障诊断与排除：更换储液干燥器。</p>
-<p><strong>五、制冷剂不循环</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-f6237855705b6d29a404e09a749e8f03.jpeg"></p>
-<p>1）、故障现象：低压侧压力指示真空，高压侧压力指示太低；膨胀阀或储液干燥器前后管路上有露水或结霜；不制冷或间歇制冷。</p>
-<p>2）、故障原因：系统中有水分或污物阻滞了制冷剂的流动；膨胀阀感温包破裂导致阀门关闭，使制冷剂无法流动。</p>
-<p>3）、故障诊断与排除：（1）检查热敏管、膨胀阀和EPR（蒸发器压力调节器）（2）用压缩空气清除膨胀阀内的污垢。如不能清除污垢，则应更换膨胀阀（3）更换储液罐（4）抽出空气，然后充入适量的制冷剂。如热敏管漏气，则更换膨胀阀</p>
-<p><strong>六、制冷剂过多或冷凝器散热不良</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-2c7f1b99f017acd825897f921054bc3d.jpeg"></p>
-<p>1）、故障现象：低压侧和高压厕压力均偏高；即使发动机转速快速升高或降低，通过观察窗也见不到气泡；制冷不足。</p>
-<p>2）、故障原因：系统中制冷剂过量；冷凝器散热不良。</p>
-<p>3）、故障诊断与排除：若制冷剂过量使制冷能力下降，应适当排放部分制冷剂；若冷凝器表面脏污或与散热器间夹有杂物、风扇电机存在故障导致冷凝器散热不良，应清洁冷凝器，检查风扇电机的运转情况。</p>
-<p><strong>七、系统中有空气</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-699a9e173e151c63d60fefca05ea1442.jpeg"></p>
-<p>1）、故障现象：高压侧和低压侧压力都太高；低压管路发热；在储液器的观察窗内出现气泡；制冷效果不好。</p>
-<p>2）、故障原因：由于抽真空作业时不彻底，使系统中残存部分空气。</p>
-<p>3）、故障诊断与排除：彻底抽真空，重新充注适量新制冷剂；检查压缩机油是否变脏或不足，应更换或添加。</p>
-<p>**八、**<strong>膨胀阀安装不正确或感温包有故障（开度不合适）</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-157c2ac1af368c5c314790dab7f921be.jpeg"></p>
-<p>1）、故障现象：高压侧和低压侧压力都太高；在低压侧管路结霜或有大量露水；制冷不足。</p>
-<p>2）、故障原因：膨胀阀存在故障或感温包安装不正确。</p>
-<p>3）、故障诊断与排除：由于膨胀阀开度过大，导致向蒸发器高低压侧都流入过量制冷剂，应检查膨胀阀的工作情况以及膨胀阀上感温包的安装位置。</p>
-<p>**九、**<strong>压缩机故障</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-c61944426bb4ab0ac4e134c2565e0418.jpeg"></p>
-<p>1）、故障现象：低压侧压力太高；高压侧压力太低；无冷气吹出。</p>
-<p>2）、故障原因：压缩机磨损严重，阀门渗漏或损坏。</p>
-<p>3）、诊断与排除：拆检压缩机，视情修复或更换。</p>
-<p>END</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2021/01/04/%E8%80%81%E5%B8%88%E5%82%85%E6%80%BB%E7%BB%93%E7%9A%84%E5%88%B6%E5%86%B7%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%96%B9%E6%B3%9501%EF%BC%9A%E5%8E%8B%E5%8A%9B%E5%88%86%E6%9E%90%E6%B3%95/" data-id="cuid3IiXKFYHGDjpZS1soCBF_" data-title="老师傅总结的制冷系统故障排除方法01：压力分析法" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" rel="tag">制冷技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-至过去的2020" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2021/01/04/%E8%87%B3%E8%BF%87%E5%8E%BB%E7%9A%842020/" class="article-date">
-  <time class="dt-published" datetime="2021-01-03T16:00:00.000Z" itemprop="datePublished">2021-01-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/">日常</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/%E7%94%9F%E6%B4%BB/">生活</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2021/01/04/%E8%87%B3%E8%BF%87%E5%8E%BB%E7%9A%842020/">至过去的2020</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2020终于过去了，这一年真的是被一场疫情全盘打乱，开年就本来打算去xyh家过年，1.22号去的，当时疫情也刚出现，武汉还没封城，各地也还没有交通管制，虽然大家都开始关注了，但还没到人人自危的地步，虽然爸妈也在劝这时候尽量不要外出，但还是毅然决然的去了。还好当时爸爸去村医疗所买了一包口罩（后面才发现马上就一罩难求，这包口罩也一直帮助我们到2月底回家），刚去没两天武汉就封城了，各地也开始交通管制，公交地铁火车什么都停运，基本上全国大停摆。活了二十几年，也是第一次见识这样的阵仗，那时候在xyh家基本上是门也不敢出，一家人天天吃了睡，睡了吃，唯一娱乐就是打打牌玩玩游戏，开始以为很快就能解封，没想到一等就是一个多月。。。</p>
-<p>那时候家里面也封锁了，外面不能进，里面不能出~一个个村都封闭起来，这样的生活也慢慢成为常态。</p>
-<p>那时候天天在家最关心的就是疫情新闻，天天关注哪里检测出多少病人，哪里死了多少人，什么时候可以解封什么的，日子也在这样的焦躁中慢慢度过，终于各地开始慢慢解封，按耐不住回家的冲动，在得知家里可以回去不用被隔离后就准备着回家的事。</p>
-<p>一路的提心吊胆，公交还是停运，一路上也各处安检，口罩也带了一路，最终还是安全回家了，在家的日子总还是开心的，虽然因为疫情，虽然打乱了毕业计划，但是也正因为疫情，让自己有机会在家待上几十天，从2.20号回家开始，在家一直待到了5月七八号，学校也终于可以返校了，算起来在我家还是待了很久了，期间也几个外甥过来玩，总的还是开心的，各种做好吃的，到处走走逛逛，在家的时候开心，吃得好穿的好，回到学校发现自己都胖了十多斤，虽然回校后马上又瘦回去了。。。。。</p>
-<p>不过因为今年是要准备毕业的，但基本上上半年在家荒废了，而且因为要做实验，所以在家也基本上做不了什么，那时候还是有点想着早点回学校搞实验台的，有得有失吧，而且以后也估计没什么机会能和xyh和全家人在家待这么长时间了~</p>
-<p>去到学校，开始各种赶时间了，试验台从零到搭建完成，全都基本上是自己一个人一点点搞，虽然还是没能把毕业要求全部做完，延毕到明年六月，但自己也还是做出很多东西来了，半年多，从对试验台一窍不通到完成试验台搭建，独立进行实验，到一点点摸索试验台数据采集与控制程序等，对自己来说，也突破了很多！虽然可能很多时候走了很多弯路，可能因为自己也是第一次搭建台架，可能还是存在很多隐患，对之后的实验也可能会带来很多问题，但起码自己也知道一点点去解决这些，一点点去努力，不说科研能力提升多少，起码比起一年前的自己，这半年多的努力，总还是让自己成长很多。</p>
-<p>2021，新的一年，希望自己能顺利完成毕业，顺利入职工作，希望xyh能顺利考上博士，希望工作后的自己也能顺顺利利！希望这些在明年都能实现，自己的生活到时候也基本上脱离学校，走上正轨~</p>
-<p>新的一年，加油！！！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2021/01/04/%E8%87%B3%E8%BF%87%E5%8E%BB%E7%9A%842020/" data-id="cuidP0ZdKgDcC3REfGVHsJmB-" data-title="至过去的2020" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" rel="tag">试验台</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-技术：vrv空调系统这样解释，小白也能看得懂" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/12/28/%E6%8A%80%E6%9C%AF%EF%BC%9Avrv%E7%A9%BA%E8%B0%83%E7%B3%BB%E7%BB%9F%E8%BF%99%E6%A0%B7%E8%A7%A3%E9%87%8A%EF%BC%8C%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E7%9C%8B%E5%BE%97%E6%87%82/" class="article-date">
-  <time class="dt-published" datetime="2020-12-27T16:00:00.000Z" itemprop="datePublished">2020-12-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/12/28/%E6%8A%80%E6%9C%AF%EF%BC%9Avrv%E7%A9%BA%E8%B0%83%E7%B3%BB%E7%BB%9F%E8%BF%99%E6%A0%B7%E8%A7%A3%E9%87%8A%EF%BC%8C%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E7%9C%8B%E5%BE%97%E6%87%82/">技术：VRV空调系统这样解释，小白也能看得懂</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>       VRV：Variable Refrigerant Volume，可变冷媒流量空调系统。由日本大金（Dakin）公司于1982年末首先推出，近几年得到不断发展。</p>
-</blockquote>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-9bfe1cb42fee8a3f621a314b453ce627.jpeg"></p>
-<p><strong>一、系统组成</strong></p>
-<p>VRV系统主要由室内机、室外机、冷媒管以及控制部分组成。室内机是VRV系统的末端装置部分，它是一个带蒸发器和循环风机的机组，与我们常见的分体空调室内机的原理完全相同。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ef0ef7884cc75365540cef9f109eb326.jpeg"></p>
-<p><strong>1、室内机形式：</strong></p>
-<p>（1）天花板嵌入式</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-61a26fa688bd5deef3af4fb7f0d3bf03.jpeg"></p>
-<p>（2）天花板内藏风管式</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-f27836a28c014927215ce4e246cf84e4.jpeg"></p>
-<p>（3）壁挂式</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-55619af265829c719f51fbb743739998.jpeg"></p>
-<p>室外机是VRV系统的关键部分，它主要由风冷冷凝器、压缩机和其他制冷附件组成，通过变频控制器控制压缩机转速，使系统内的冷媒流量进行自动控制，以满足室内冷、热负荷的要求。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-6b438f238d97817d2d8320b5258040ba.jpeg"></p>
-<p><strong>2、室外机形式：</strong></p>
-<p>冷媒管采用铜管制成，通过灵活的布置将室外机与室内机连接成一个完整的系统。</p>
-<p><strong>管接头形式：</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ec938334e849f507c310c95d4eaf07ae.jpeg"></p>
-<p>**冷媒分歧器：**可精确控制冷媒能力，以配合个别居室空间的需求，用于连接更多不同的室内机。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-9fa9950de5845d0a6bd287bf310e5c1f.jpeg"></p>
-<p><strong>不同分歧管的连接方式：</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-3130e95acf80a8d8dbf4bf9bd2fdf698.jpeg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0d8f1b254c3d8fb08b0e8c5bee759628.jpeg"></p>
-<p><strong>控制系统及设备：</strong></p>
-<p>控制建立在计算机数字控制基础上</p>
-<p>设备包括简易LCD控制器、标准LCD控制器和集中控制器等。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-6efe7d1527957736351d2e9ddc9262b3.jpeg"></p>
-<p><strong>二、系统特点</strong></p>
-<p><strong>1、优点：</strong></p>
-<blockquote>
-<p>节能</p>
-<p>使用布置灵活</p>
-<p>易于安装</p>
-<p>节省空间等</p>
-</blockquote>
-<p>2、<strong>缺点：</strong></p>
-<blockquote>
-<p>制冷剂泄漏问题</p>
-<p>新风问题</p>
-<p>冬季可能不能满足使用要求</p>
-</blockquote>
-<p><strong>三、VRV系统作用范围</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-4a916bd3d6137f487d0cd0e6956b8f6d.jpeg"></p>
-<p><strong>四、系统容量</strong></p>
-<blockquote>
-<p>一台室外机可带n台室内机。</p>
-<p>VRV系统内室内机的总装机冷量可做到室外机总容量的130％，增加了室内机选型和布置的灵活性。</p>
-<p>如一台10HP的室外机可带13HP的室内机（同时使用系数）。</p>
-<p>室内外机的匹配：VRV系统内室内机的总装机冷量可做到室外机总容量的50%~130％，增加了室内机选型和布置的灵活性。</p>
-</blockquote>
-<p><strong>容量修正系数</strong></p>
-<p><strong>随着制冷剂管长度及室内外高差的变化，其冷量衰减相差很大。</strong></p>
-<p>大金公司给予的冷量衰减图：</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1bb0bf8b8c0912dfed534cb6e45c93dc.jpeg"></p>
-<p>在设计中要考虑容量修正系数，在系统设计时要尽量使一个系统的室内外机之间的距离最短，高差最小，对高差大、管路长的系统要适当增加机组的容量，这样才能保证空调使用的效果。</p>
-<p><strong>同时使用率</strong></p>
-<p>公共建筑空调的同时使用率高而住宅建筑的同时使用率低，住宅一般取0.7即可；</p>
-<p><strong>五、冬、夏工况的转换</strong></p>
-<p>VRV系统具有冬季逆循环热泵工况，室外机可在－15℃的室外气温时工作。</p>
-<p>随着室外温度的降低，VRV热泵循环的供热能力下降。</p>
-<p>以某公司的某机组为例，当室温为20℃时，其供热量和室外温度的关系为：</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-347ec7917660ff8f592c9eaf92f15f38.jpeg"></p>
-<p>通常厂家给出的供热量是室外气温7 ℃（室温20 ℃）时的标准工况。</p>
-<p>所以，当室外气温低时需要校验供热量是否能够要求。如果不满足，则应当设置辅助热源或仅作供冷使用。</p>
-<p>当夏季空调室外气温在34～35℃，冬季在－3～－5℃， VRV空调系统基本上可同时满足冬夏季负荷的要求，合用比较经济。</p>
-<p><strong>六、新风问题</strong></p>
-<p>VRV系统是一个封闭系统，各空调房间无法直接供给经处理后的新风。</p>
-<p><strong>处理新风的方法：</strong></p>
-<blockquote>
-<p>1 、将VRV 空调系统的普通室内机作为新风机来处理新风</p>
-<p>此种方法由于系统较简单，在工程中运用较多。</p>
-<p>2 、采用全热交换机作为新风机</p>
-<p>使用全热交换机在向房间补充新风的同时，利用室内排风的冷量来预冷新风，回收冷量的效率为60%~70%，可节能28%。是VRV空调新风系统的较好方案。</p>
-<p>3 、采用VRV 制造厂家提供的新风专用机</p>
-<p>4 、设置风冷热泵机组为新风系统提供冷热源</p>
-<p>5 、利用直接蒸发式风管空调机、屋顶机作为新风机</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/12/28/%E6%8A%80%E6%9C%AF%EF%BC%9Avrv%E7%A9%BA%E8%B0%83%E7%B3%BB%E7%BB%9F%E8%BF%99%E6%A0%B7%E8%A7%A3%E9%87%8A%EF%BC%8C%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E7%9C%8B%E5%BE%97%E6%87%82/" data-id="cuidOIB9VvdnwM_VrgdrtCimf" data-title="技术：VRV空调系统这样解释，小白也能看得懂" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/vrv/" rel="tag">vrv</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-从labview库文件（llb）中提取文件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/12/21/%E4%BB%8Elabview%E5%BA%93%E6%96%87%E4%BB%B6%EF%BC%88llb%EF%BC%89%E4%B8%AD%E6%8F%90%E5%8F%96%E6%96%87%E4%BB%B6/" class="article-date">
-  <time class="dt-published" datetime="2020-12-20T16:00:00.000Z" itemprop="datePublished">2020-12-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/labview/">labview</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/12/21/%E4%BB%8Elabview%E5%BA%93%E6%96%87%E4%BB%B6%EF%BC%88llb%EF%BC%89%E4%B8%AD%E6%8F%90%E5%8F%96%E6%96%87%E4%BB%B6/">从LabVIEW库文件（LLB）中提取文件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>有时候想把llb库中所有的VI提取出来该怎么办</p>
-<p>首先先双击该llb文件，打开llb管理器</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/1608531418-llb%E8%A7%A3%E5%8E%8B1-1024x745.png"></p>
-<p>里面可以看到所有的vi，然后点击返回上一级</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/1608531564-llb%E8%A7%A3%E5%8E%8B2.png"></p>
-<p>选中该llb，然后转录该llb</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/1608531854-llb%E8%A7%A3%E5%8E%8B3.png"></p>
-<p>之后就可以把llb里面的vi都提取出来，然后把提取出来vi的文件夹放到user.lib里面就可以到labview程序中的用户库中调用了</p>
-<p>转录的时候如果选择“使用.LLX扩展名备份”作为原始LLB的选项，则可以通过把扩展名从.llx重命名为.llb将LLX文件恢复为LLB原始文件</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/12/21/%E4%BB%8Elabview%E5%BA%93%E6%96%87%E4%BB%B6%EF%BC%88llb%EF%BC%89%E4%B8%AD%E6%8F%90%E5%8F%96%E6%96%87%E4%BB%B6/" data-id="cuid2mnI9RSpkgFyd4_MU8v7W" data-title="从LabVIEW库文件（LLB）中提取文件" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/labview/" rel="tag">labview</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-电子膨胀阀和热力膨胀阀谁更胜一筹" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/12/17/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80%E5%92%8C%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80%E8%B0%81%E6%9B%B4%E8%83%9C%E4%B8%80%E7%AD%B9/" class="article-date">
-  <time class="dt-published" datetime="2020-12-16T16:00:00.000Z" itemprop="datePublished">2020-12-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/12/17/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80%E5%92%8C%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80%E8%B0%81%E6%9B%B4%E8%83%9C%E4%B8%80%E7%AD%B9/">电子膨胀阀和热力膨胀阀谁更胜一筹</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>1 热力膨胀阀</strong></p>
-<p>目前氟利昂冷藏库中多采用的节流装置是热力膨胀阀，热力膨胀阀的工作原理是通过感受蒸发器出口制冷剂蒸气过热度的大小，来调节制冷剂的流量，以维持恒定的过热度，在控制原理上属于比例调节器。虽然热力膨胀阀可以自动调节制冷剂的流量，但是它的缺点也是很显著的。</p>
-<p><img src="https://pic4.zhimg.com/v2-10512cc58c2ea70eb8662adbfb1b6997_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-52cffa6a9787ebbcdd2c104d7d42f1b3.jpg"><br><strong>（1）对过热度响应的延迟时间长，特别是容积延迟。</strong></p>
-<p>蒸发器出口处的过热蒸气先把热量传给感温包外壳，感温包外壳本身就具有较大的热惰性，造成了一定的容积延迟，感温包外壳把热量传给感温介质，这又产生了进一步的延迟。延迟的结果会导致热力膨胀阀交替地开大或关小，即产生振荡现象。</p>
-<p>当膨胀阀开得过大时，蒸发器出口过热度偏低，吸气压力上升；当阀开得过小时，蒸发器供液不足，吸气压力降低。这对整个系统的经济性和安全性都会产生不利影响。实验表明，热力膨胀阀调节效果对小型装置要十几分钟，大型装置要 30 min～40 min才稳定。</p>
-<p><strong>（2）调节范围有限。</strong></p>
-<p>因为与阀针连接的膜片的变形量有限，使得阀针的运动位移较小，故流量调节范围小。这对于负荷变化较大的冷藏库或者采用变频压缩机的系统，热力膨胀阀便无法满足要求。</p>
-<p><strong>（3）调节精度低。</strong></p>
-<p>热力膨胀阀的执行机构膜片由于加工精度和安装等因素，会产生的变形及影响变形灵敏度，故难以达到较高的调节精度。</p>
-<p><strong>2 电子膨胀阀</strong></p>
-<p>电子膨胀阀是按照预设程序调节蒸发器供液量，因属于电子式调节模式，故称为电子膨胀阀。它适应了制冷机电一体化的发展要求，具有热力膨胀阀无法比拟的优良特性，为制冷系统的智能化控制提供了条件，是一种很有发展前途的自控节能元件。电子膨胀阀与热膨胀阀的基本用途相同，结构上多种多样，但在性能上，两者却存在较大的差异。</p>
-<p>从控制实现的角度来看，电子膨胀阀由控制器、执行器和传感器3部分构成，通常所说的电子膨胀阀大多仅指执行器，即可控驱动装置和阀体，实际上仅有这一部分是无法完成控制功能的。电子膨胀阀控制器的核心硬件为单片机，如控制器同时要完成压缩机及风机的变频等控制功能，一般采用多机级连的形式。电子膨胀阀的传感器通常采用热电偶或热电阻。</p>
-<p><strong>与热力膨胀阀相比电子膨胀阀在以下方面有显著的优势：</strong></p>
-<p>**（1）电子膨胀阀的驱动方式是控制器通过对传感器采集得到的参数进行计算，向驱动板发出调节指令，由驱动板向电子膨胀阀输出电信号，驱动电子膨胀阀的动作。**电子膨胀阀从全闭到全开状态其用时仅需几秒钟，反应和动作速度快，不存在静态过热度现象，且开闭特性和速度均可人为设定，尤其适合于工况波动剧烈的热泵机组的使用。</p>
-<p>**（2）电子膨胀阀的适用温度低。**对于热力膨胀阀，当环境温度较低时，其感温包内部的感温介质的压力变化大大减小，严重影响了调节性能。而对于电子膨胀阀，其感温部件为热电偶或热电阻，它们在低温下同样能准确反应出过热度的变化。因此，在冷藏库的冻结间等低温环境中，电子膨胀阀也能提供较好的流量调节。</p>
-<p>**（3）电子膨胀阀的过热度设定值可调。**只需改变一下控制程序中的源代码，就可改变过热度的设定值。完全不像热力膨胀阀那样要进入冷库当中，现场调节弹簧的预紧力来改变过热度的设定值，对电子膨胀阀的调节作用可以彻底实现远距离控制，并且电子膨胀阀可根据不同需要灵活调整过热度以减小蒸发器表面和冷藏库内环境之间的温差，从而减少蒸发器表面的结霜，这样一来，既提高了冷冻能力，同时也可以降低食品的干耗。</p>
-<p>**（4）电子膨胀阀可起到节能的作用。**对于冷藏库制冷系统停机期间如使高低压侧连通，则会产生所谓工质迁移现象，即冷凝器中的常温高压液体将逐渐流入蒸发器，使蒸发器的温度压力都升高。再次开机时，要重新建立压差也需要消耗压缩机额外一部分能量。反之，若在停机期间切断高低压侧，这虽然维持了蒸发器的低温低压，但再次启动时，压缩机属于带载启动，电流冲击大，也会增加能量的损失。但若是采用电子膨胀阀就会解决上述问题。</p>
-<p>**具体做法是：**停机时令膨胀阀全关，防止冷凝器的高温液体流入蒸发器，造成再次启动时的能量损失。开机前，将膨胀阀全开，使系统高低压侧平衡，然后开机。这样既实现了轻载启动，又减少了停机中的热棍失。另外，采用电子膨胀阀可以缩短冻结时间，电子膨胀阀在冻结全过程中能做到负荷与冷量平衡，冻结效率可以得到提高，冻结时间比热力膨胀阀也可缩短10%，同时也就减少了压缩机的能耗。采用电子膨胀阀控制压缩机排气温度可以防止因排气温度的升高对系统性能产生的不利影响，同时又可省去专设的安全保护器，节约成本，节省电耗约6%。</p>
-<p>**（5）电子膨胀阀适应机电一体化的发展要求。**随着微机控制技术的崛起，机电一体化已成为制冷系统发展的新趋势。电子膨胀阀照比热力膨胀阀已由原来的机械式控制向电脑式控制发展，充分体现了机电一体化的发展趋势。目前在家用空调领域，电子膨胀阀和变频压缩机组成的系统已取得了很好的效果，其原理就是将电子膨胀阀大范围的流量调节特性与变频压缩机的变频特性结合起来。</p>
-<p><strong>3 电子膨胀阀的形式</strong></p>
-<p>目前人们对电子膨胀阀的研究和开发主要针对的是电磁式膨胀阀和电动式膨胀阀。电磁式膨胀阀在电磁线圈通电前，针阀处于打开位置；由线圈上施加的电压控制针阀开度的大小，从而调节膨胀阀的流量。该阀动作响应快，但在制冷系统工作时一直需要供电。电磁式膨胀阀如图所示。</p>
-<p><img src="https://pic1.zhimg.com/v2-2fc62c8bf85741236d30236d585ddc80_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2b6a6326cd65decbb6c21b9042388443.jpg"><br>电动式膨胀阀也即步进电机驱动电子膨胀阀，它通过给电机驱动施加一定逻辑关系的数字信号，使步进电机通过螺纹驱动阀针的向前和向后运动，从而改变阀口的流通面积达到控制流量的目的。电动式膨胀阀又有直动型和减速型两种。直动型是步进电机直接带动阀针；减速型是步进电机通过减速齿轮组推动阀针动作。通过减速齿轮组可以产生较大的推力，是一种常用的驱动方式。</p>
-<p>步进电机驱动的电子膨胀阀因其更适用微机控制、并有较好的稳定性，而被更多的制冷系统采用。</p>
-<p><img src="https://pic1.zhimg.com/v2-04765aede2223ed096dd9789ff848e48_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-31f0736ed4fb3b9f9e489f5f15bc32ab.jpg"><br><strong>4 结论</strong></p>
-<p>**当前，越来越多的制冷装置采用电子膨胀阀节流，其舒适性、节能性、满足特殊工作需要的灵活性充分显示出电子控制的特色。**大型制冷装置要想在制冷循环层次上实现智能优化运行，电子膨胀阀的应用也将必不可少。在远洋船舶中船舶空调系统和船舶冷藏箱的制冷系统，由于其相对恶劣多变的工作条件及较高的工作要求，以电子膨胀阀取代热力膨胀阀也有十分现实的意义。可以预见，电子膨胀阀技术作为电子控制介入制冷循环的突破口之一，有着广阔的前景。</p>
-<p>欢迎与小冷君交流，威信<strong>18期六五酒零0696</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/12/17/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80%E5%92%8C%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80%E8%B0%81%E6%9B%B4%E8%83%9C%E4%B8%80%E7%AD%B9/" data-id="cuidXieh1FY6RiQwDh33jhJHM" data-title="电子膨胀阀和热力膨胀阀谁更胜一筹" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/scr/" rel="tag">scr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" rel="tag">制冷技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">热力膨胀阀</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">电子膨胀阀</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-模糊控制" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/12/16/%E6%A8%A1%E7%B3%8A%E6%8E%A7%E5%88%B6/" class="article-date">
-  <time class="dt-published" datetime="2020-12-15T16:00:00.000Z" itemprop="datePublished">2020-12-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/labview/">labview</a>►<a class="article-category-link" href="/xiaoxiaohu/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/12/16/%E6%A8%A1%E7%B3%8A%E6%8E%A7%E5%88%B6/">模糊控制</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>1、模糊控制的基本原理</strong></p>
-<p>模糊控制是以模糊集理论、模糊语言变量和模糊逻辑推理为基础的一种智能控制方法，它是从行为上模仿人的模糊推理和决策过程的一种智能控制方法。该方法首先<strong>将操作人员或专家经验编成模糊规则，然后将来自传感器的实时信号模糊化，将模糊化后的信号作为模糊规则的输入，完成模糊推理，将推理后得到的输出量加到执行器上</strong>。</p>
-<p><img src="https://pic3.zhimg.com/v2-e87505ef269a486ca08650d4de77130a_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-604a0dd9a20fdb112efd7b241130dcac.jpg"></p>
-<p><strong>2、模糊控制器</strong></p>
-<p><strong>模糊控制器（Fuzzy Controller—FC）</strong>：也称为模糊逻辑控制器（Fuzzy Logic Controller—FLC）,由于所采用的模糊控制规则是由模糊理论中模糊条件语句来描述的，因此模糊控制器是一种语言型控制器，故也称为模糊语言控制器（Fuzzy Language Controller—FLC）。</p>
-<p><img src="https://pic2.zhimg.com/v2-c1e88986cad5645a6b2a550a1729e6c9_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-662d11944834b5cf9f954b47bc558e14.jpg"></p>
-<p>（1）模糊化接口（Fuzzy interface）</p>
-<p>模糊控制器的输入必须通过模糊化才能用于控制输出的求解，因此它实际上是模糊控制器的输入接口。它的主要作用是将真实的确定量输入转换为一个模糊矢量。</p>
-<p>（2）知识库（Knowledge Base—KB）</p>
-<p>知识库由数据库和规则库两部分构成。</p>
-<p>①数据库（Data Base—DB） 数据库所存放的是所有输入、输出变量的全部模糊子集的隶属度矢量值（即经过论域等级离散化以后对应值的集合），若论域为连续域则为隶属度函数。在规则推理的模糊关系方程求解过程中，向推理机提供数据。</p>
-<p>②规则库（Rule Base—RB） 模糊控制器的规则司基于专家知识或手动操作人员长期积累的经验，它是按人的直觉推理的一种语言表示形式。模糊规则通常有一系列的关系词连接而成，如if-then、else、also、end、or等，关系词必须经过“翻译”才能将模糊规则数值化。最常用的关系词为if-then、also，对于多变量模糊控制系统，还有and等。</p>
-<p>（3）推理与解模糊接口（Inference and Defuzzy-interface）</p>
-<p>推理是模糊控制器中，根据输入模糊量，<strong>由模糊控制规则完成模糊推理来求解模糊关系方程，并获得模糊控制量的功能部分</strong>。在模糊控制中，考虑到推理时间，通常采用运算较简单的推理方法。最基本的有Zadeh近似推理，它包含有正向推理和逆向推理两类。正向推理常被用于模糊控制中，而逆向推理一般用于知识工程学领域的专家系统中。推理结果的获得，表示模糊控制的规则推理功能已经完成。但是，至此所获得的结果仍是一个模糊矢量，不能直接用来作为控制量，还必须作一次转换，求得清晰的控制量输出，即为解模糊。通常把输出端具有转换功能作用的部分称为<strong>解模糊接口</strong>。</p>
-<p><strong>3、模糊控制系统的工作原理（实例）</strong></p>
-<p>来看一个实例，控制进水阀S1和出水阀S2，使水箱水位保持在目标水位O处。</p>
-<p><img src="https://pic1.zhimg.com/v2-6d03410b498e8a3612f8933eebfe6004_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-01ca5db25a4149bde414d2dab5035a77.jpg"></p>
-<p>按照日常操作经验，有以下规则：</p>
-<p>1、 若当前水位高于目标水位，则向外排水，差值越大，排水越快；</p>
-<p>2、 若当前水位低于目标水位，则向内注水，差值越大，注水越快；</p>
-<p>3、 若当前水位和目标水位相差很小，则保持排水速度和注水速度相等。</p>
-<p>下面来设计一个模糊控制器</p>
-<p>以水位的模糊控制为例，如图4-4所示。设有一个水箱，通过调节阀可向内注水和向外抽水。设计一个模糊控制器，通过调节阀门将水位稳定在固定点附近。按照日常的操作经验，可以得到基本的控制规则：</p>
-<p>“若水位高于O点，则向外排水，差值越大，排水越快”；</p>
-<p>“若水位低于O点，则向内注水，差值越大，注水越快”。</p>
-<p>根据上述经验，按下列步骤设计模糊控制器：</p>
-<p><img src="https://pic4.zhimg.com/v2-0dc62112ab791dd78a322ed1fc8669a3_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-6b1835005b1753af848e96d6c89f2602.jpg"></p>
-<p>1）确定观测量和控制量</p>
-<p>定义理想液位O点的水位为h0，实际测得的水位高度为h，选择液位差：</p>
-<p><img src="https://pic3.zhimg.com/v2-8d1d49bc8109480e4349ddf2eaa2b546_b.png"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-faf743230b2a26d51412c61bd11152ed.png"></p>
-<p>将当前水位对于O点的偏差e作为观测量。</p>
-<p>2）输入量和输出量的模糊化</p>
-<p>将偏差e分为五个模糊集：负大（NB），负小（NS），零（O），正小（PS），正大（PB）。根据偏差e的变化范围分为七个等级：-3，-2，-1，0，+1，+2，+3。得到水位变化模糊表4-1。</p>
-<p><img src="https://pic3.zhimg.com/v2-c90db59e71def223adda15728ed2d126_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-4cb87d8f56be0a1f9f784f2636d8c5ef.jpg"></p>
-<p>控制量u为调节阀门开度的变化。将其分为五个模糊集：负大（NB），负小（NS），零（ZO），正小（PS），正大（PB）。并将u的变化范围分为九个等级：-4，-3，-2，-1，0，+1，+2，+3，+4。得到控制量模糊划分表4-2。</p>
-<p><img src="https://pic3.zhimg.com/v2-9cef072545177cc8d9dee25c44278292_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-833ccf4a9567296837a9a8e3df48209a.jpg"></p>
-<p>3）模糊规则的描述</p>
-<p>根据日常的经验，设计以下模糊规则：</p>
-<p>（1）“若e负大，则u负大”</p>
-<p>（2）“若e负小，则u负小”</p>
-<p>（3）“若e为0，则u为0”</p>
-<p>（4）“若e正小，则u正小”</p>
-<p>（5）“若e正大，则u正大”</p>
-<p>其中，排水时，u为负，注水时，u为正。</p>
-<p>上述规则采用“IF A THEN B”形式来描述：</p>
-<p>（1） if e&#x3D;NB then u&#x3D;NB</p>
-<p>（2） if e&#x3D;NS then u&#x3D;NS</p>
-<p>（3） if e&#x3D;0 then u&#x3D;0</p>
-<p>（4） if e&#x3D;PS then u&#x3D;PS</p>
-<p>（5） if e&#x3D;PB then u&#x3D;PB</p>
-<p>根据上述经验规则，可得模糊控制表4-3。</p>
-<p><img src="https://pic3.zhimg.com/v2-f84344fca9006fa220393aabad3324e2_b.png"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-f861584ae8457fd864da3b856b151762.png"></p>
-<p>4）求模糊关系</p>
-<p>模糊控制规则是一个多条语句，它可以表示为U×V上的模糊子集，即模糊关系R：</p>
-<p><img src="https://pic3.zhimg.com/v2-29a0f1f3fcc0a89f8b14452f49dc8bfe_b.png"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-feec08ac8098fb11dff469e3876aa698.png"></p>
-<p>其中规则内的模糊集运算取交集，规则间的模糊集运算取并集。</p>
-<p><img src="https://pic2.zhimg.com/v2-f7a7b0ffc9f8a9acd60d33fc0ade8f75_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-76b9ce3fcfdfc2a98cbc82dccf410471.jpg"></p>
-<p><img src="https://pic2.zhimg.com/v2-37dab639f09a0dae2602660110c96119_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c1fa8afbac931e072fe1294fd18b77bd.jpg"></p>
-<p><img src="https://pic3.zhimg.com/v2-fabb7862bff4b0d159dcf14515fcf3ca_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-262f555b2deaa5b841d96a2d92dda4f7.jpg"></p>
-<p>5）模糊决策</p>
-<p>模糊控制器的输出为误差向量和模糊关系的合成：</p>
-<p><img src="https://pic4.zhimg.com/v2-d22ba648d125006c070fc95ca3c84093_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-009205d96006b672b82f5afd6d0a2ddf.jpg"></p>
-<p>当误差e为NB时，e&#x3D;[1,0.5,0,0,0,0,0]控制器输出为:</p>
-<p><img src="https://pic3.zhimg.com/v2-ca74ac7884f66c1711f1b6699e44bf76_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-bc0929985045aecbb8b21d7bf319fa4e.jpg"></p>
-<p>6、控制量的反模糊化</p>
-<p>由模糊决策可知，当误差为负大时，实际液位远高于理想液位，e&#x3D;NB，控制器的输出为一模糊向量，可表示为：</p>
-<p><img src="https://pic2.zhimg.com/v2-111dd36d180fe30b1f72e670b9afb4a1_b.png"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-78adc3f01eafb04709c2baef0f20a327.png"></p>
-<p>如果按照“隶属度最大原则”进行反模糊化，则选择控制量为 u&#x3D;-4，即阀门的开度应关大一些，减少进水量。</p>
-<p>7、matlab实现</p>
-<p>所幸的是，在matlab模糊控制工具箱中已经帮我们实现了4-6步求解矩阵运算的操作，只需要直接调用evalfis函数就可以得到相应的决策控制量。</p>
-<p><img src="https://pic1.zhimg.com/v2-aa3907a7511519985adcbf736e51ae4c_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-371a9214d304fa6a00057bc6a446827a.jpg"></p>
-<p>通过matlab集成的模糊控制模块，我们能够更加方便地对应偏差e和控制量u的关系，并可以调节e在不同值下u的对应输出。</p>
-<p><img src="https://pic4.zhimg.com/v2-5eb56d4a7cf6b6e4681186a4e293288b_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b84b4d6f24bdebc5255d149232d597fd.jpg"></p>
-<p><img src="https://pic2.zhimg.com/v2-f7d1afb686931f7429f537224561f761_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-291d30d77a8270fa4d2563e65ca46a3a.jpg"></p>
-<p>Matlab程序</p>
-<p>[cpp] <a href="https://link.zhihu.com/?target=https://blog.csdn.net/acelit/article/details/56495284%23">view plain</a> <a href="https://link.zhihu.com/?target=https://blog.csdn.net/acelit/article/details/56495284%23">copy</a></p>
-<ol>
-<li>%水位模糊控制算法</li>
-<li>clear all;</li>
-<li>close all;</li>
-<li>a &#x3D; newfis(‘fuzzy tank’);</li>
-<li>a &#x3D; addvar(a,’input’,’e’,[-3,3]);</li>
-<li>a &#x3D; addmf(a,’input’,1,’NB’,’zmf’,[-3,-1]);</li>
-<li>a &#x3D;addmf(a,’input’,1,’NS’,’trimf’,[-3,-1,1]);</li>
-<li>a &#x3D;addmf(a,’input’,1,’ZO’,’trimf’,[-2,0,2]);</li>
-<li>a &#x3D;addmf(a,’input’,1,’PS’,’trimf’,[-1,1,3]);</li>
-<li>a &#x3D; addmf(a,’input’,1,’PB’,’smf’,[1,3]);</li>
-<li>a &#x3D; addvar(a,’output’,’u’,[-4,4]);</li>
-<li>a &#x3D; addmf(a,’output’,1,’NB’,’zmf’,[-4,-2]);</li>
-<li>a &#x3D;addmf(a,’output’,1,’NS’,’trimf’,[-4,-2,0]);</li>
-<li>a &#x3D;addmf(a,’output’,1,’ZO’,’trimf’,[-2,0,2]);</li>
-<li>a &#x3D;addmf(a,’output’,1,’PS’,’trimf’,[0,2,4]);</li>
-<li>a &#x3D; addmf(a,’output’,1,’PB’,’smf’,[2,4]);</li>
-<li>%建立模糊规则</li>
-<li>rulelist&#x3D;[1 1 1 1;</li>
-<li>2 2 1 1;</li>
-<li>3 3 1 1;</li>
-<li>4 4 1 1;</li>
-<li>5 5 1 1];</li>
-<li>a &#x3D; addrule(a,rulelist);</li>
-<li>%设置反模糊化算法</li>
-<li>a1 &#x3D; setfis(a,’DefuzzMethod’,’mom’);</li>
-<li>writefis(a1,’tank’);</li>
-<li>a2 &#x3D; readfis(‘tank’);</li>
-<li>figure(1);</li>
-<li>plotfis(a2);</li>
-<li>figure(2);</li>
-<li>plotmf(a,’input’,1);</li>
-<li>figure(3);</li>
-<li>plotmf(a,’output’,1);</li>
-<li>showrule(a);</li>
-<li>ruleview(‘tank’);</li>
-<li>for i&#x3D;1:1:7</li>
-<li>e(i)&#x3D;i-4;</li>
-<li>Ulist(i)&#x3D;evalfis([e(i)],a2);</li>
-<li>end</li>
-<li>Ulist &#x3D; round(Ulist); %对决策结果四舍五入取整</li>
-<li>disp(‘——————————————————‘);</li>
-<li>disp(‘———-模糊控制表：e &#x3D;[-3,3], u &#x3D; [-4,4]———–’);</li>
-<li>disp(‘——————————————————‘);</li>
-<li>fprintf(‘| a |’);</li>
-<li>fprintf(‘ %d |’,e);</li>
-<li>fprintf(‘n’);</li>
-<li>fprintf(‘| u |’);</li>
-<li>fprintf(‘ %d |’,Ulist);</li>
-<li>fprintf(‘n’);</li>
-</ol>
-<p>备注：</p>
-<p>1、模糊规则矩阵rulelist的含义：模糊矩阵是由模糊规则转化而来，这里矩阵规模为5*4，矩阵第一列表示输入e(5个模糊集合PB&#x2F;PS&#x2F;ZO&#x2F;NS&#x2F;NB依次对应1-5)，矩阵第二列表示输出u(含义同理)，第三列为规则的权重weight，第四列为AND模糊运算(1对应AND，2对应OR)，如果是多输入多数出模糊控制器，规则列表的含义请参考：</p>
-<p>The first mcolumns refer to the inputs of the system. Each column contains a number thatrefers to the index of the membership function for that variable. The next n columns refer to the outputs of thesystem. Each column contains a number that refers to the index of themembership function for that variable. The m + n + 1 column contains the weight that isto be applied to the rule. The weight must be a number between zero and one andis generally left as one. The m + n + 2 column contains a 1 if the fuzzyoperator for the rule’s antecedent is AND. It contains a 2 if the fuzzyoperator is OR.</p>
-<p>2、设置反模糊化方法setfis(a,’DefuzzMethod’,’mom’);反模糊化方法不同最终输出控制量也不同。</p>
-<p>mom 最大隶属度平均法</p>
-<p>centroid 面积重心法</p>
-<p>bisector 面积等分法</p>
-<p>som 最大隶属度取小法</p>
-<p>lom 最大隶属度去大法</p>
-<p>3、如果要对决策结果取整有三种方法：round（四舍五入）、ceil（向上取整）、floor（向下取整）。</p>
-<p>最后总结一下模糊控制器的设计步骤：</p>
-<p><img src="https://pic3.zhimg.com/v2-4e2b746433731392f4bbd908d56ef2fa_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e5959baf307022b5833caf76a5cf2f1e.jpg"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/12/16/%E6%A8%A1%E7%B3%8A%E6%8E%A7%E5%88%B6/" data-id="cuidgurdamFFBCZn8j4auj-Fd" data-title="模糊控制" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" rel="tag">plc模糊逻辑控制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/scr/" rel="tag">scr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/tor/" rel="tag">tor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-pid控制算法原理（抛弃公式，从本质上真正理解pid控" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/xiaoxiaohu/2020/12/15/pid%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%EF%BC%88%E6%8A%9B%E5%BC%83%E5%85%AC%E5%BC%8F%EF%BC%8C%E4%BB%8E%E6%9C%AC%E8%B4%A8%E4%B8%8A%E7%9C%9F%E6%AD%A3%E7%90%86%E8%A7%A3pid%E6%8E%A7/" class="article-date">
-  <time class="dt-published" datetime="2020-12-14T16:00:00.000Z" itemprop="datePublished">2020-12-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/xiaoxiaohu/categories/labview/">labview</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/xiaoxiaohu/2020/12/15/pid%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%EF%BC%88%E6%8A%9B%E5%BC%83%E5%85%AC%E5%BC%8F%EF%BC%8C%E4%BB%8E%E6%9C%AC%E8%B4%A8%E4%B8%8A%E7%9C%9F%E6%AD%A3%E7%90%86%E8%A7%A3pid%E6%8E%A7/">PID控制算法原理（抛弃公式，从本质上真正理解PID控制）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>PID控制应该算是应用非常广泛的控制算法了。小到控制一个元件的温度，大到控制无人机的飞行姿态和飞行速度等等，都可以使用PID控制。这里我们从原理上来理解PID控制。 PID(proportion integration differentiation)其实就是指比例，积分，微分控制。先把图片和公式摆出来，看不懂没关系。（<strong>一开始看这个算法，公式能看懂，具体怎么用怎么写代码也知道，但是就是不知道原理，不知道为什么要用比例，微分，积分这3个项才能实现最好的控制，用其中两个为什么不行，用了3个项能好在哪里，每一个项各有什么作用</strong>）</p>
-<p><img src="https://pic3.zhimg.com/v2-3d374655a126485563bc1068cee267fa_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a4b985a6bdc11eebc85b7614aebcd613.jpg"></p>
-<p><img src="https://pic1.zhimg.com/v2-62c56b1eb4c053d58894740a8ce250a0_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1c000c21a58a0ae85fb85793ed8330d6.jpg"></p>
-<p>总的来说，当得到系统的输出后，将输出经过比例，积分，微分3种运算方式，叠加到输入中，从而控制系统的行为，下面用一个简单的实例来说明。</p>
-<h2 id="比例控制算法"><a href="#比例控制算法" class="headerlink" title="比例控制算法"></a>比例控制算法</h2><p>我们先说PID中最简单的比例控制，抛开其他两个不谈。还是用一个经典的例子吧。假设我有一个水缸，最终的控制目的是要保证水缸里的水位永远的维持在1米的高度。假设初始时刻，水缸里的水位是0.2米，那么当前时刻的水位和目标水位之间是存在一个误差的error，且error为0.8.这个时候，假设旁边站着一个人，这个人通过往缸里加水的方式来控制水位。如果单纯的用比例控制算法，就是指加入的水量u和误差error是成正比的。即 u&#x3D;kp*error 假设kp取0.5， 那么t&#x3D;1时（表示第1次加水，也就是第一次对系统施加控制），那么u&#x3D;0.5*0.8&#x3D;0.4，所以这一次加入的水量会使水位在0.2的基础上上升0.4，达到0.6. 接着，t&#x3D;2时刻（第2次施加控制），当前水位是0.6，所以error是0.4。u&#x3D;0.5*0.4&#x3D;0.2，会使水位再次上升0.2，达到0.8. 如此这么循环下去，就是比例控制算法的运行方法。 可以看到，最终水位会达到我们需要的1米。 但是，单单的比例控制存在着一些不足，其中一点就是 –稳态误差！（我也是看了很多，并且想了好久才想通什么是稳态误差以及为什么有稳态误差）。 像上述的例子，根据kp取值不同，系统最后都会达到1米，只不过kp大了到达的快，kp小了到达的慢一些。不会有稳态误差。但是，考虑另外一种情况，假设这个水缸在加水的过程中，存在漏水的情况，假设每次加水的过程，都会漏掉0.1米高度的水。仍然假设kp取0.5，那么会存在着某种情况，假设经过几次加水，水缸中的水位到0.8时，水位将不会再变换！！！因为，水位为0.8，则误差error&#x3D;0.2. 所以每次往水缸中加水的量为u&#x3D;0.5*0.2&#x3D;0.1.同时，每次加水，缸里又会流出去0.1米的水！！！加入的水和流出的水相抵消，水位将不再变化！！ 也就是说，我的目标是1米，但是最后系统达到0.8米的水位就不再变化了，且系统已经达到稳定。由此产生的误差就是稳态误差了。</p>
-<p>（在实际情况中，这种类似水缸漏水的情况往往更加常见，比如控制汽车运动，摩擦阻力就相当于是“漏水”，控制机械臂、无人机的飞行，各类阻力和消耗都可以理解为本例中的“漏水”） 所以，单独的比例控制，在很多时候并不能满足要求。</p>
-<h2 id="积分控制算法"><a href="#积分控制算法" class="headerlink" title="积分控制算法"></a>积分控制算法</h2><p>还是用上面的例子，如果仅仅用比例，可以发现存在暂态误差，最后的水位就卡在0.8了。于是，在控制中，我们再引入一个分量，该分量和误差的积分是正比关系。所以，比例+积分控制算法为： u&#x3D;kp*error+ ki∗∫ error 还是用上面的例子来说明，第一次的误差error是0.8，第二次的误差是0.4，至此，误差的积分（离散情况下积分其实就是做累加），∫error&#x3D;0.8+0.4&#x3D;1.2. 这个时候的控制量，除了比例的那一部分，还有一部分就是一个系数ki乘以这个积分项。由于这个积分项会将前面若干次的误差进行累计，所以可以很好的消除稳态误差（假设在仅有比例项的情况下，系统卡在稳态误差了，即上例中的0.8，由于加入了积分项的存在，会让输入增大，从而使得水缸的水位可以大于0.8，渐渐到达目标的1.0.）这就是积分项的作用。</p>
-<h2 id="微分控制算法"><a href="#微分控制算法" class="headerlink" title="微分控制算法"></a>微分控制算法</h2><p>换一个另外的例子，考虑刹车情况。平稳的驾驶车辆，当发现前面有红灯时，为了使得行车平稳，基本上提前几十米就放松油门并踩刹车了。当车辆离停车线非常近的时候，则使劲踩刹车，使车辆停下来。整个过程可以看做一个加入微分的控制策略。 微分，说白了在离散情况下，就是error的差值，就是t时刻和t-1时刻error的差，即u&#x3D;kd*（error（t）-error（t-1）），其中的kd是一个系数项。可以看到，在刹车过程中，因为error是越来越小的，所以这个微分控制项一定是负数，在控制中加入一个负数项，他存在的作用就是为了防止汽车由于刹车不及时而闯过了线。从常识上可以理解，越是靠近停车线，越是应该注意踩刹车，不能让车过线，所以这个微分项的作用，就可以理解为刹车，当车离停车线很近并且车速还很快时，这个微分项的绝对值（实际上是一个负数）就会很大，从而表示应该用力踩刹车才能让车停下来。 切换到上面给水缸加水的例子，就是当发现水缸里的水快要接近1的时候，加入微分项，可以防止给水缸里的水加到超过1米的高度，说白了就是减少控制过程中的震荡。</p>
-<p>现在在回头看这个公式，就很清楚了</p>
-<p><img src="https://pic1.zhimg.com/v2-62c56b1eb4c053d58894740a8ce250a0_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1c000c21a58a0ae85fb85793ed8330d6.jpg"><br>括号内第一项是比例项，第二项是积分项，第三项是微分项，前面仅仅是一个系数。很多情况下，仅仅需要在离散的时候使用，则控制可以化为</p>
-<p><img src="https://pic2.zhimg.com/v2-4326b375a25935a41bf3c5ed64eb7d65_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-fe9cf726773dd341979317c77a1d9ace.jpg"></p>
-<p>每一项前面都有系数，这些系数都是需要实验中去尝试然后确定的，为了方便起见，将这些系数进行统一一下：</p>
-<p><img src="https://pic1.zhimg.com/v2-25965fdad08db6f281dee7e0903229f0_b.jpg"></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-545c9d0f13598710983c4dbbef4728fd.jpg"><br>这样看就清晰很多了，且比例，微分，积分每个项前面都有一个系数，且离散化的公式，很适合编程实现。 讲到这里，PID的原理和方法就说完了，剩下的就是实践了。在真正的工程实践中，最难的是如果确定三个项的系数，这就需要大量的实验以及经验来决定了。通过不断的尝试和正确的思考，就能选取合适的系数，实现优良的控制器。</p>
-<hr>
-<p>文章发布到现在，发现评论中有些很有价值的信息，所以在此将评论中的精彩内容也做一个总结，方便大家进一步学习和交流。大家对于文章有任何的意见或建议，以及关于相关内容的讨论和感想，都可以发到评论里与大家一起交流，共同进步。</p>
-<p>那为啥不加入更进一步的，微分的微分或者微分的微分的微分呢。如果有其他因素，该如何使用PID呢 ——<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/31cf1b829bffdcf9f8bed9bafa37d2ff">@荆慢慢2.0</a></p>
-<p>**作者回复：**我觉这个问题问的非常好，所以我自己先回答一下我的看法。PID这个算法呢，你说它有严格的数学证明吗，貌似也没有，说它不严谨吧，但是某些情况下确实有挺管用的。在使用的过程中，各个分量的各个参数基本上都需要通过实验试出来的。某些情况下仅仅只有P或者只有PD，效果就达到要求了，所以也就不需要再考虑其他的了。PID三种分量的结合使用，加上大量的实验来确定合适的参数，基本上就能满足我们的需求了。 —— <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/65a2b7f21cb2101ccb2f0ab0fb130d98">@确定有穷自动机</a></p>
-<p>一般来说微分环节相当于放大了反馈信号中的高频分量，如果取得系数不好会引起高频震荡。所以大部分应用都只采用PI（不影响稳态精度）或者双闭环PI。至于微分的微分等一些量在物理上并没有实际意义，比如调速中转速的微分是加速度，再次微分就基本不用了。当然如果学过自控理论则可以从系统传递函数来分析需要加入什么样的控制器来保持系统稳定收敛。—— <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/2d54680ad2f98bfe518f97aa3b5dcfee">@Lyn</a></p>
-<p>好问题，一般情况pi或者pd就能搞定，本来加i就会让系统不稳定，如果外加i或者d系统的稳定性有可能会进一步受影响，具体原因得看博德图解释。不过这种控制器确实有，不过不会直接加，一般配合加一个极点或者一个零点。—— <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/f218f9ccbb437978756fd84b28e72939">@sa wang</a></p>
-<p>我喜欢这样理解pid: p是控制现在，i是纠正曾经，d是管控未来！只有不忘过往，把握当前，规划未来才能让人生的轨迹按照既定的目标前进。讲真，理解了弹性阻尼系统，对pid的内涵会更加深刻。—— <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/815ec60016bbab51776bfbf280e376f0">@spongebob</a></p>
-<p><strong>作者回复</strong>：其他的很多评论里，也提到了p代表现在，i代表过去的这种观点，这里就不一一列举啦。 ——— <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/65a2b7f21cb2101ccb2f0ab0fb130d98">@确定有穷自动机</a></p>
-<p>最近刷抖音看到了一个特别好的视频，可以很好的理解PID各项的作者用，于是就搬上来了，侵删。</p>
-<p><a href="https://link.zhihu.com/?target=https://www.zhihu.com/video/1100463935202947072"><img src="https://pic2.zhimg.com/v2-94e823af6e304519268dbaecd27b0ffd.jpg"><a target="_blank" rel="noopener" href="https://www.zhihu.com/video/1100463935202947072">https://www.zhihu.com/video/1100463935202947072</a></a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://demon1630.github.io/xiaoxiaohu/2020/12/15/pid%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%EF%BC%88%E6%8A%9B%E5%BC%83%E5%85%AC%E5%BC%8F%EF%BC%8C%E4%BB%8E%E6%9C%AC%E8%B4%A8%E4%B8%8A%E7%9C%9F%E6%AD%A3%E7%90%86%E8%A7%A3pid%E6%8E%A7/" data-id="cuid0hPFHx4t_gAqn6hJNLJcu" data-title="PID控制算法原理（抛弃公式，从本质上真正理解PID控制）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/pid%E6%8E%A7%E5%88%B6/" rel="tag">pid控制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/scr/" rel="tag">scr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/xiaoxiaohu/page/8/">&laquo; Prev</a><a class="page-number" href="/xiaoxiaohu/">1</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/7/">7</a><a class="page-number" href="/xiaoxiaohu/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/xiaoxiaohu/page/10/">10</a><a class="page-number" href="/xiaoxiaohu/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/25/">25</a><a class="extend next" rel="next" href="/xiaoxiaohu/page/10/">Next &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/ansys/">ansys</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/ansys/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/ansys/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/excel/">excel</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/excel/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/excel/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/kali-linux/">kali-linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/kali-linux/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/kali-linux/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/">labview</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/labview/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/">python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/python/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/tor/">tor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/tor/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/%E6%B1%BD%E8%BD%A6%E7%83%AD%E7%AE%A1%E7%90%86/">汽车热管理</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/">日常</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E7%94%9F%E6%B4%BB/">生活</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/">路由器</a></li><li class="category-list-item"><a class="category-list-link" href="/xiaoxiaohu/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/ac2100/" rel="tag">ac2100</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/angilent34970a/" rel="tag">angilent34970a</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/ansys/" rel="tag">ansys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/bing/" rel="tag">bing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/bitwarden/" rel="tag">bitwarden</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/calibre/" rel="tag">calibre</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/catia/" rel="tag">catia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/chatgpt/" rel="tag">chatgpt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/cloudflare/" rel="tag">cloudflare</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/endnote/" rel="tag">endnote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/endnotes9/" rel="tag">endnotes9</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/excel/" rel="tag">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/floefd/" rel="tag">floefd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/fluent/" rel="tag">fluent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/gps%E5%AE%9A%E4%BD%8D/" rel="tag">gps定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/kali-linux/" rel="tag">kali-linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/kms/" rel="tag">kms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/labview/" rel="tag">labview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" rel="tag">linux子系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/newifi3/" rel="tag">newifi3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/nextcloud/" rel="tag">nextcloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/nps/" rel="tag">nps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/openwrt/" rel="tag">openwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/pid%E6%8E%A7%E5%88%B6/" rel="tag">pid控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" rel="tag">plc模糊逻辑控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/pycharm/" rel="tag">pycharm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/python3/" rel="tag">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/refprop/" rel="tag">refprop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/scr/" rel="tag">scr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/scrcpy/" rel="tag">scrcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/sndcpy/" rel="tag">sndcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/solidworks/" rel="tag">solidworks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/ssr/" rel="tag">ssr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/telegram/" rel="tag">telegram</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/tkinter/" rel="tag">tkinter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/tor/" rel="tag">tor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/traccar/" rel="tag">traccar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/v2ray/" rel="tag">v2ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/vpn/" rel="tag">vpn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/vrv/" rel="tag">vrv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/windows%E6%BF%80%E6%B4%BB/" rel="tag">windows激活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/word/" rel="tag">word</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/wordpress/" rel="tag">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/workbench/" rel="tag">workbench</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/wsl/" rel="tag">wsl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" rel="tag">三线表格</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" rel="tag">个人图书馆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" rel="tag">串口通讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" rel="tag">二维仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BA%91%E7%9B%98/" rel="tag">云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BB%BF%E7%9C%9F/" rel="tag">仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" rel="tag">企业微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%85%8D%E6%B5%81/" rel="tag">免流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" rel="tag">免登录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" rel="tag">免费域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" rel="tag">制冷技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" rel="tag">反爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" rel="tag">固态硬盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9B%BE%E6%A0%87/" rel="tag">图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%9F%9F%E5%90%8D/" rel="tag">域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%A3%B0%E9%9F%B3/" rel="tag">声音</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" rel="tag">天翼网关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" rel="tag">安捷伦</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" rel="tag">定时执行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" rel="tag">宝塔面板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/" rel="tag">密码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" rel="tag">微信防撤回</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E5%BF%85%E5%BA%94/" rel="tag">必应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" rel="tag">手机投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8A%95%E5%B1%8F/" rel="tag">投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8A%A2%E7%A5%A8/" rel="tag">抢票</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" rel="tag">推荐软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" rel="tag">搬瓦工</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" rel="tag">文章采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" rel="tag">新路由3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" rel="tag">旁路由</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" rel="tag">服务器监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B4%9B%E9%9B%AA/" rel="tag">洛雪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" rel="tag">浏览器技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B5%B7%E8%BE%B9/" rel="tag">海边</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温湿度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E6%B8%B8%E7%8E%A9/" rel="tag">游玩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">热力膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">电子膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" rel="tag">电池热管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%99%BE%E5%BA%A6sign/" rel="tag">百度sign</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%9B%B4%E6%92%AD/" rel="tag">直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" rel="tag">离线下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" rel="tag">私有云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" rel="tag">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" rel="tag">网站监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BE%A4%E6%99%96/" rel="tag">群晖</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" rel="tag">胖鼠采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" rel="tag">自然对流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" rel="tag">蒲公英</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" rel="tag">试验台</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" rel="tag">谷歌云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" rel="tag">谷歌网盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag">路由器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%82%AE%E4%BB%B6/" rel="tag">邮件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%82%AE%E7%AE%B1/" rel="tag">邮箱</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9D%92%E5%B2%9B/" rel="tag">青岛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" rel="tag">静态网页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90/" rel="tag">音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" rel="tag">音乐播放器</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/xiaoxiaohu/tags/ac2100/" style="font-size: 10px;">ac2100</a> <a href="/xiaoxiaohu/tags/angilent34970a/" style="font-size: 10.5px;">angilent34970a</a> <a href="/xiaoxiaohu/tags/ansys/" style="font-size: 12px;">ansys</a> <a href="/xiaoxiaohu/tags/bing/" style="font-size: 10px;">bing</a> <a href="/xiaoxiaohu/tags/bitwarden/" style="font-size: 10px;">bitwarden</a> <a href="/xiaoxiaohu/tags/calibre/" style="font-size: 10px;">calibre</a> <a href="/xiaoxiaohu/tags/catia/" style="font-size: 10px;">catia</a> <a href="/xiaoxiaohu/tags/chatgpt/" style="font-size: 10px;">chatgpt</a> <a href="/xiaoxiaohu/tags/cloudflare/" style="font-size: 11.5px;">cloudflare</a> <a href="/xiaoxiaohu/tags/docker/" style="font-size: 12px;">docker</a> <a href="/xiaoxiaohu/tags/endnote/" style="font-size: 10px;">endnote</a> <a href="/xiaoxiaohu/tags/endnotes9/" style="font-size: 10px;">endnotes9</a> <a href="/xiaoxiaohu/tags/excel/" style="font-size: 16px;">excel</a> <a href="/xiaoxiaohu/tags/floefd/" style="font-size: 10px;">floefd</a> <a href="/xiaoxiaohu/tags/fluent/" style="font-size: 11px;">fluent</a> <a href="/xiaoxiaohu/tags/gps%E5%AE%9A%E4%BD%8D/" style="font-size: 10px;">gps定位</a> <a href="/xiaoxiaohu/tags/kali-linux/" style="font-size: 13px;">kali-linux</a> <a href="/xiaoxiaohu/tags/kms/" style="font-size: 10px;">kms</a> <a href="/xiaoxiaohu/tags/labview/" style="font-size: 19.5px;">labview</a> <a href="/xiaoxiaohu/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">linux子系统</a> <a href="/xiaoxiaohu/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/xiaoxiaohu/tags/nas/" style="font-size: 10.5px;">nas</a> <a href="/xiaoxiaohu/tags/newifi3/" style="font-size: 12.5px;">newifi3</a> <a href="/xiaoxiaohu/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/xiaoxiaohu/tags/nps/" style="font-size: 13px;">nps</a> <a href="/xiaoxiaohu/tags/openwrt/" style="font-size: 12px;">openwrt</a> <a href="/xiaoxiaohu/tags/pid%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">pid控制</a> <a href="/xiaoxiaohu/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">plc模糊逻辑控制</a> <a href="/xiaoxiaohu/tags/pycharm/" style="font-size: 10px;">pycharm</a> <a href="/xiaoxiaohu/tags/python/" style="font-size: 17px;">python</a> <a href="/xiaoxiaohu/tags/python3/" style="font-size: 10.5px;">python3</a> <a href="/xiaoxiaohu/tags/refprop/" style="font-size: 11px;">refprop</a> <a href="/xiaoxiaohu/tags/scr/" style="font-size: 18.5px;">scr</a> <a href="/xiaoxiaohu/tags/scrcpy/" style="font-size: 10.5px;">scrcpy</a> <a href="/xiaoxiaohu/tags/sndcpy/" style="font-size: 10px;">sndcpy</a> <a href="/xiaoxiaohu/tags/solidworks/" style="font-size: 10px;">solidworks</a> <a href="/xiaoxiaohu/tags/ssr/" style="font-size: 10.5px;">ssr</a> <a href="/xiaoxiaohu/tags/telegram/" style="font-size: 11.5px;">telegram</a> <a href="/xiaoxiaohu/tags/tkinter/" style="font-size: 10px;">tkinter</a> <a href="/xiaoxiaohu/tags/tor/" style="font-size: 19.5px;">tor</a> <a href="/xiaoxiaohu/tags/traccar/" style="font-size: 10px;">traccar</a> <a href="/xiaoxiaohu/tags/v2ray/" style="font-size: 12px;">v2ray</a> <a href="/xiaoxiaohu/tags/vpn/" style="font-size: 10.5px;">vpn</a> <a href="/xiaoxiaohu/tags/vrv/" style="font-size: 10px;">vrv</a> <a href="/xiaoxiaohu/tags/windows/" style="font-size: 13.5px;">windows</a> <a href="/xiaoxiaohu/tags/windows%E6%BF%80%E6%B4%BB/" style="font-size: 10px;">windows激活</a> <a href="/xiaoxiaohu/tags/word/" style="font-size: 18px;">word</a> <a href="/xiaoxiaohu/tags/wordpress/" style="font-size: 14px;">wordpress</a> <a href="/xiaoxiaohu/tags/workbench/" style="font-size: 11.5px;">workbench</a> <a href="/xiaoxiaohu/tags/wsl/" style="font-size: 10.5px;">wsl</a> <a href="/xiaoxiaohu/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" style="font-size: 10px;">三线表格</a> <a href="/xiaoxiaohu/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" style="font-size: 10px;">个人图书馆</a> <a href="/xiaoxiaohu/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" style="font-size: 10px;">串口通讯</a> <a href="/xiaoxiaohu/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" style="font-size: 10px;">二维仿真</a> <a href="/xiaoxiaohu/tags/%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">云盘</a> <a href="/xiaoxiaohu/tags/%E4%BB%BF%E7%9C%9F/" style="font-size: 10.5px;">仿真</a> <a href="/xiaoxiaohu/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" style="font-size: 10.5px;">企业微信</a> <a href="/xiaoxiaohu/tags/%E5%85%8D%E6%B5%81/" style="font-size: 10px;">免流</a> <a href="/xiaoxiaohu/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" style="font-size: 10px;">免登录</a> <a href="/xiaoxiaohu/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" style="font-size: 11px;">免费域名</a> <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" style="font-size: 14.5px;">制冷技术</a> <a href="/xiaoxiaohu/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" style="font-size: 10px;">反爬虫</a> <a href="/xiaoxiaohu/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" style="font-size: 10px;">固态硬盘</a> <a href="/xiaoxiaohu/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10.5px;">图床</a> <a href="/xiaoxiaohu/tags/%E5%9B%BE%E6%A0%87/" style="font-size: 13px;">图标</a> <a href="/xiaoxiaohu/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 15.5px;">域名</a> <a href="/xiaoxiaohu/tags/%E5%A3%B0%E9%9F%B3/" style="font-size: 10px;">声音</a> <a href="/xiaoxiaohu/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" style="font-size: 10px;">天翼网关</a> <a href="/xiaoxiaohu/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" style="font-size: 10.5px;">安捷伦</a> <a href="/xiaoxiaohu/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" style="font-size: 10.5px;">定时执行</a> <a href="/xiaoxiaohu/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" style="font-size: 13px;">宝塔面板</a> <a href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/" style="font-size: 17.5px;">密码</a> <a href="/xiaoxiaohu/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" style="font-size: 10px;">微信防撤回</a> <a href="/xiaoxiaohu/tags/%E5%BF%85%E5%BA%94/" style="font-size: 10px;">必应</a> <a href="/xiaoxiaohu/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">手机投屏</a> <a href="/xiaoxiaohu/tags/%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">投屏</a> <a href="/xiaoxiaohu/tags/%E6%8A%A2%E7%A5%A8/" style="font-size: 10px;">抢票</a> <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/" style="font-size: 19px;">控制</a> <a href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" style="font-size: 12px;">推荐软件</a> <a href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" style="font-size: 17.5px;">搬瓦工</a> <a href="/xiaoxiaohu/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.5px;">数据库</a> <a href="/xiaoxiaohu/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">文章采集</a> <a href="/xiaoxiaohu/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" style="font-size: 13px;">新路由3</a> <a href="/xiaoxiaohu/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" style="font-size: 10.5px;">旁路由</a> <a href="/xiaoxiaohu/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">服务器监控</a> <a href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 19px;">树莓派</a> <a href="/xiaoxiaohu/tags/%E6%B4%9B%E9%9B%AA/" style="font-size: 10px;">洛雪</a> <a href="/xiaoxiaohu/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">浏览器技术</a> <a href="/xiaoxiaohu/tags/%E6%B5%B7%E8%BE%B9/" style="font-size: 10px;">海边</a> <a href="/xiaoxiaohu/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 12px;">温度传感器</a> <a href="/xiaoxiaohu/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 10.5px;">温湿度传感器</a> <a href="/xiaoxiaohu/tags/%E6%B8%B8%E7%8E%A9/" style="font-size: 11px;">游玩</a> <a href="/xiaoxiaohu/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">热力膨胀阀</a> <a href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 16.5px;">生活</a> <a href="/xiaoxiaohu/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">电子膨胀阀</a> <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" style="font-size: 13px;">电池热管理</a> <a href="/xiaoxiaohu/tags/%E7%99%BE%E5%BA%A6sign/" style="font-size: 10px;">百度sign</a> <a href="/xiaoxiaohu/tags/%E7%9B%B4%E6%92%AD/" style="font-size: 10px;">直播</a> <a href="/xiaoxiaohu/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/xiaoxiaohu/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" style="font-size: 12.5px;">离线下载</a> <a href="/xiaoxiaohu/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">私有云盘</a> <a href="/xiaoxiaohu/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10.5px;">缓存</a> <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/" style="font-size: 20px;">网站</a> <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" style="font-size: 16px;">网站建设</a> <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">网站监控</a> <a href="/xiaoxiaohu/tags/%E7%BE%A4%E6%99%96/" style="font-size: 10.5px;">群晖</a> <a href="/xiaoxiaohu/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 10px;">翻译</a> <a href="/xiaoxiaohu/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">胖鼠采集</a> <a href="/xiaoxiaohu/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" style="font-size: 10px;">自然对流</a> <a href="/xiaoxiaohu/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" style="font-size: 10px;">蒲公英</a> <a href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/" style="font-size: 15px;">视频</a> <a href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" style="font-size: 12px;">试验台</a> <a href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" style="font-size: 11.5px;">谷歌云盘</a> <a href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" style="font-size: 10.5px;">谷歌网盘</a> <a href="/xiaoxiaohu/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" style="font-size: 15.5px;">路由器</a> <a href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 14px;">软件</a> <a href="/xiaoxiaohu/tags/%E9%82%AE%E4%BB%B6/" style="font-size: 13.5px;">邮件</a> <a href="/xiaoxiaohu/tags/%E9%82%AE%E7%AE%B1/" style="font-size: 11.5px;">邮箱</a> <a href="/xiaoxiaohu/tags/%E9%9D%92%E5%B2%9B/" style="font-size: 10px;">青岛</a> <a href="/xiaoxiaohu/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" style="font-size: 10px;">静态网页</a> <a href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">音乐</a> <a href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" style="font-size: 10.5px;">音乐播放器</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/xiaoxiaohu/archives/2019/09/">September 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/xiaoxiaohu/2024/03/05/%E6%B4%9B%E9%9B%AA%E9%9F%B3%E4%B9%90%E5%8A%A9%E6%89%8B%E6%9B%B4%E6%8D%A2%E9%9F%B3%E4%B9%90%E6%BA%90%E5%A4%B4%E5%8F%8A%E5%90%8C%E6%AD%A5%E6%89%8B%E6%9C%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/">洛雪音乐助手更换音乐源头及同步手机客户端</a>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
           </li>
+          
         
-          <li>
-            <a href="/xiaoxiaohu/2023/10/28/%E5%88%A9%E7%94%A8%E5%9C%9F%E8%80%B3%E5%85%B6%E4%BC%98%E6%83%A0%E8%B4%AD%E4%B9%B0google-one/">利用土耳其优惠购买google one</a>
-          </li>
         
-          <li>
-            <a href="/xiaoxiaohu/2023/09/11/%E7%BE%A4%E6%99%96dsm7-0%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%9C%A8esxi-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96-7-0-dsm7-0-1%E6%95%99%E7%A8%8B/">在ESXI 虚拟机上安装群晖 7.0 (DSM7.0.1)教程</a>
-          </li>
-        
-          <li>
-            <a href="/xiaoxiaohu/2023/07/19/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91fiddler%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">【工具】Fiddler使用教程</a>
-          </li>
-        
-          <li>
-            <a href="/xiaoxiaohu/2023/06/03/%E7%BE%A4%E6%99%96%E4%BD%BF%E7%94%A8alist%E6%8C%82%E8%BD%BD%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%E5%88%B0%E6%9C%AC%E5%9C%B0/">群晖使用alist挂载阿里云盘到本地</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
     </div>
   </div>
+</nav>
 
-  
-</aside>
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>Home</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/archives/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>Archives</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/categories/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-category-fill"></i>
+                  <span>Categories</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/tags/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-tags-fill"></i>
+                  <span>Tags</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/xiaoxiaohu/about/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-user-fill"></i>
+                  <span>About</span>
+                </div>
+              </a>
+            </div>
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>Search</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="Light"
+               data-label-dark="Dark">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">Dark</span>
+              </div>
+            </a>
+          </div>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
-</footer>
+</div>
 
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/xiaoxiaohu/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
-    <nav id="mobile-nav">
+  </div>
+</div>
+
+
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<h1 style="display: none">Hexo</h1>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2021/01/09/kali%E8%AE%BE%E7%BD%AE%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE/" target="_self">
+          kali设置打开终端的快捷键
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2021/01/09/kali%E8%AE%BE%E7%BD%AE%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE/" target="_self">
+        <div>
+          kali中没有设置像ubuntu中一样ctrl+alt+t这样打开终端的快捷键。 因此都需要单击打开终端，很麻烦。 但是我们可以自行设置打开终端的快捷键。 设置打开终端的快捷键 打开设置，找到keyboard选项。 拉到最下面点击+号，新增快捷键。 在新出现的窗口中： 命令：是按下这个快捷键后启动的命令，这里命令应该填exo-open –launch TerminalEmulator 之后设置你自
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-09 00:00" pubdate>
+              2021-01-09
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
   
-    <a href="/xiaoxiaohu/" class="mobile-nav-link">Home</a>
   
-    <a href="/xiaoxiaohu/archives" class="mobile-nav-link">Archives</a>
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/kali-linux/" class="category-chain-item">kali-linux</a>
   
-</nav>
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/kali-linux/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/tor/">#tor</a>
+            
+              <a href="/xiaoxiaohu/tags/kali-linux/">#kali-linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2021/01/08/32%E4%B8%AA%E6%90%9C%E4%B9%A6%E7%BD%91%E7%AB%99%EF%BC%8C%E4%BB%8E%E6%AD%A4%E6%89%BE%E4%B9%A6%E4%B8%8D%E5%86%8D%E5%8F%91%E6%84%81%EF%BC%81/" target="_self">
+          32个搜书网站，从此找书不再发愁！
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2021/01/08/32%E4%B8%AA%E6%90%9C%E4%B9%A6%E7%BD%91%E7%AB%99%EF%BC%8C%E4%BB%8E%E6%AD%A4%E6%89%BE%E4%B9%A6%E4%B8%8D%E5%86%8D%E5%8F%91%E6%84%81%EF%BC%81/" target="_self">
+        <div>
+          前言大家好，历时两天的整理今天终于码完了，今天这篇关于电子书下载的教程，包含中小学大学电子版教材、综合性网站、优质书站、英语读物、计算机读物、医学、古籍、综合类书籍等等。相信这篇教程能够解决你99%的找书问题。  电子版教材受疫情影响，相信正在上学的小伙伴们一定需要电子版课本，岛主也替大家考虑到了，下面提供岛主知道的方法和网站，找电子版教材不成问题。 新浪网盘搜索 关于大学教材 如果找大学教材，强
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-08 00:00" pubdate>
+              2021-01-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/excel/">#excel</a>
+            
+              <a href="/xiaoxiaohu/tags/tor/">#tor</a>
+            
+              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">#网站</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2021/01/08/kali-linux%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/" target="_self">
+          Kali Linux安装中文输入法
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2021/01/08/kali-linux%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/" target="_self">
+        <div>
+          Kali Linux安装中文输入法Kali Linux系统安装后，默认没有中文输入法。如果用户需要输入汉字，则需要安装中文输入法。下面将介绍安装小企鹅中文输入法，并进行配置。操作步骤如下所示： （1）安装小企鹅中文输入法。执行命令如下所示： apt-get  install  fcitx-table-wbpy  fonts-wqy-microhei  fonts-wqy-zenhei -y （2）
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-08 00:00" pubdate>
+              2021-01-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/kali-linux/" class="category-chain-item">kali-linux</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/kali-linux/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/kali-linux/">#kali-linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2021/01/04/%E8%80%81%E5%B8%88%E5%82%85%E6%80%BB%E7%BB%93%E7%9A%84%E5%88%B6%E5%86%B7%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%96%B9%E6%B3%9501%EF%BC%9A%E5%8E%8B%E5%8A%9B%E5%88%86%E6%9E%90%E6%B3%95/" target="_self">
+          老师傅总结的制冷系统故障排除方法01：压力分析法
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2021/01/04/%E8%80%81%E5%B8%88%E5%82%85%E6%80%BB%E7%BB%93%E7%9A%84%E5%88%B6%E5%86%B7%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%96%B9%E6%B3%9501%EF%BC%9A%E5%8E%8B%E5%8A%9B%E5%88%86%E6%9E%90%E6%B3%95/" target="_self">
+        <div>
+          制冷系统发生了故障，一般不可能直接看到故障的部位发生在哪里，也不可能将制冷系统的部件一一分解和解剖，只能从外表检查，找出运行中的反常现象，进行综合分析。 这样，制冷系统压力和温度检测就非常重要。本期我们主要来说一说制冷系统的压力判断和压力检测。 一、制冷系统压力的概念 制冷系统压力我们常见的有3个：吸气压力、排气压力、冷凝压力。 1、吸气压力和排气压力     制冷系统在运行时可分高、低压两部分。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-04 00:00" pubdate>
+              2021-01-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="category-chain-item">制冷技术</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/">#控制</a>
+            
+              <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">#制冷技术</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2021/01/04/%E8%87%B3%E8%BF%87%E5%8E%BB%E7%9A%842020/" target="_self">
+          至过去的2020
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2021/01/04/%E8%87%B3%E8%BF%87%E5%8E%BB%E7%9A%842020/" target="_self">
+        <div>
+          2020终于过去了，这一年真的是被一场疫情全盘打乱，开年就本来打算去xyh家过年，1.22号去的，当时疫情也刚出现，武汉还没封城，各地也还没有交通管制，虽然大家都开始关注了，但还没到人人自危的地步，虽然爸妈也在劝这时候尽量不要外出，但还是毅然决然的去了。还好当时爸爸去村医疗所买了一包口罩（后面才发现马上就一罩难求，这包口罩也一直帮助我们到2月底回家），刚去没两天武汉就封城了，各地也开始交通管制，公
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-04 00:00" pubdate>
+              2021-01-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/" class="category-chain-item">日常</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/%E7%94%9F%E6%B4%BB/" class="category-chain-item">生活</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/">#生活</a>
+            
+              <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/">#控制</a>
+            
+              <a href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/">#试验台</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/12/28/%E6%8A%80%E6%9C%AF%EF%BC%9Avrv%E7%A9%BA%E8%B0%83%E7%B3%BB%E7%BB%9F%E8%BF%99%E6%A0%B7%E8%A7%A3%E9%87%8A%EF%BC%8C%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E7%9C%8B%E5%BE%97%E6%87%82/" target="_self">
+          技术：VRV空调系统这样解释，小白也能看得懂
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/12/28/%E6%8A%80%E6%9C%AF%EF%BC%9Avrv%E7%A9%BA%E8%B0%83%E7%B3%BB%E7%BB%9F%E8%BF%99%E6%A0%B7%E8%A7%A3%E9%87%8A%EF%BC%8C%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E7%9C%8B%E5%BE%97%E6%87%82/" target="_self">
+        <div>
+          VRV：Variable Refrigerant Volume，可变冷媒流量空调系统。由日本大金（Dakin）公司于1982年末首先推出，近几年得到不断发展。   一、系统组成 VRV系统主要由室内机、室外机、冷媒管以及控制部分组成。室内机是VRV系统的末端装置部分，它是一个带蒸发器和循环风机的机组，与我们常见的分体空调室内机的原理完全相同。  1、室内机形式： （1）天花板嵌入式
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-28 00:00" pubdate>
+              2020-12-28
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="category-chain-item">制冷技术</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/">#控制</a>
+            
+              <a href="/xiaoxiaohu/tags/vrv/">#vrv</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/12/21/%E4%BB%8Elabview%E5%BA%93%E6%96%87%E4%BB%B6%EF%BC%88llb%EF%BC%89%E4%B8%AD%E6%8F%90%E5%8F%96%E6%96%87%E4%BB%B6/" target="_self">
+          从LabVIEW库文件（LLB）中提取文件
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/12/21/%E4%BB%8Elabview%E5%BA%93%E6%96%87%E4%BB%B6%EF%BC%88llb%EF%BC%89%E4%B8%AD%E6%8F%90%E5%8F%96%E6%96%87%E4%BB%B6/" target="_self">
+        <div>
+          有时候想把llb库中所有的VI提取出来该怎么办 首先先双击该llb文件，打开llb管理器  里面可以看到所有的vi，然后点击返回上一级  选中该llb，然后转录该llb  之后就可以把llb里面的vi都提取出来，然后把提取出来vi的文件夹放到user.lib里面就可以到labview程序中的用户库中调用了 转录的时候如果选择“使用.LLX扩展名备份”作为原始LLB的选项，则可以通过把扩展名从.ll
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-21 00:00" pubdate>
+              2020-12-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/labview/" class="category-chain-item">labview</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/labview/">#labview</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/12/17/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80%E5%92%8C%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80%E8%B0%81%E6%9B%B4%E8%83%9C%E4%B8%80%E7%AD%B9/" target="_self">
+          电子膨胀阀和热力膨胀阀谁更胜一筹
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/12/17/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80%E5%92%8C%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80%E8%B0%81%E6%9B%B4%E8%83%9C%E4%B8%80%E7%AD%B9/" target="_self">
+        <div>
+          1 热力膨胀阀 目前氟利昂冷藏库中多采用的节流装置是热力膨胀阀，热力膨胀阀的工作原理是通过感受蒸发器出口制冷剂蒸气过热度的大小，来调节制冷剂的流量，以维持恒定的过热度，在控制原理上属于比例调节器。虽然热力膨胀阀可以自动调节制冷剂的流量，但是它的缺点也是很显著的。  （1）对过热度响应的延迟时间长，特别是容积延迟。 蒸发器出口处的过热蒸气先把热量传给感温包外壳，感温包外壳本身就具有较大的热惰性，造成
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-17 00:00" pubdate>
+              2020-12-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="category-chain-item">制冷技术</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/scr/">#scr</a>
+            
+              <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/">#控制</a>
+            
+              <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">#制冷技术</a>
+            
+              <a href="/xiaoxiaohu/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/">#热力膨胀阀</a>
+            
+              <a href="/xiaoxiaohu/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/">#电子膨胀阀</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/12/16/%E6%A8%A1%E7%B3%8A%E6%8E%A7%E5%88%B6/" target="_self">
+          模糊控制
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/12/16/%E6%A8%A1%E7%B3%8A%E6%8E%A7%E5%88%B6/" target="_self">
+        <div>
+          1、模糊控制的基本原理 模糊控制是以模糊集理论、模糊语言变量和模糊逻辑推理为基础的一种智能控制方法，它是从行为上模仿人的模糊推理和决策过程的一种智能控制方法。该方法首先将操作人员或专家经验编成模糊规则，然后将来自传感器的实时信号模糊化，将模糊化后的信号作为模糊规则的输入，完成模糊推理，将推理后得到的输出量加到执行器上。   2、模糊控制器 模糊控制器（Fuzzy Controller—FC）：也称
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-16 00:00" pubdate>
+              2020-12-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/labview/" class="category-chain-item">labview</a>
+  
+  
+    <span>></span>
+    
+  <a href="/xiaoxiaohu/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/tor/">#tor</a>
+            
+              <a href="/xiaoxiaohu/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">#数据库</a>
+            
+              <a href="/xiaoxiaohu/tags/scr/">#scr</a>
+            
+              <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/">#控制</a>
+            
+              <a href="/xiaoxiaohu/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/">#plc模糊逻辑控制</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/xiaoxiaohu/2020/12/15/pid%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%EF%BC%88%E6%8A%9B%E5%BC%83%E5%85%AC%E5%BC%8F%EF%BC%8C%E4%BB%8E%E6%9C%AC%E8%B4%A8%E4%B8%8A%E7%9C%9F%E6%AD%A3%E7%90%86%E8%A7%A3pid%E6%8E%A7/" target="_self">
+          PID控制算法原理（抛弃公式，从本质上真正理解PID控制）
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/12/15/pid%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%EF%BC%88%E6%8A%9B%E5%BC%83%E5%85%AC%E5%BC%8F%EF%BC%8C%E4%BB%8E%E6%9C%AC%E8%B4%A8%E4%B8%8A%E7%9C%9F%E6%AD%A3%E7%90%86%E8%A7%A3pid%E6%8E%A7/" target="_self">
+        <div>
+          PID控制应该算是应用非常广泛的控制算法了。小到控制一个元件的温度，大到控制无人机的飞行姿态和飞行速度等等，都可以使用PID控制。这里我们从原理上来理解PID控制。 PID(proportion integration differentiation)其实就是指比例，积分，微分控制。先把图片和公式摆出来，看不懂没关系。（一开始看这个算法，公式能看懂，具体怎么用怎么写代码也知道，但是就是不知道原理，
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-15 00:00" pubdate>
+              2020-12-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/xiaoxiaohu/categories/labview/" class="category-chain-item">labview</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/xiaoxiaohu/tags/scr/">#scr</a>
+            
+              <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/">#控制</a>
+            
+              <a href="/xiaoxiaohu/tags/pid%E6%8E%A7%E5%88%B6/">#pid控制</a>
+            
+              <a href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/">#视频</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/xiaoxiaohu/page/8/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/xiaoxiaohu/">1</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/7/#board">7</a><a class="page-number" href="/xiaoxiaohu/page/8/#board">8</a><span class="page-number current">9</span><a class="page-number" href="/xiaoxiaohu/page/10/#board">10</a><a class="page-number" href="/xiaoxiaohu/page/11/#board">11</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/25/#board">25</a><a class="extend next" rel="next" href="/xiaoxiaohu/page/10/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/xiaoxiaohu/js/jquery-3.6.4.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/xiaoxiaohu/js/events.js" ></script>
+<script  src="/xiaoxiaohu/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
 
 
 
   
-<script src="/xiaoxiaohu/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/xiaoxiaohu/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/xiaoxiaohu/js/script.js"></script>
+  <script  src="/xiaoxiaohu/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/xiaoxiaohu/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>
