@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>GitHub pages+hexo+vs code一站式博客编写发布流程</title>
+      <link href="/xiaoxiaohu/2026/05/21/GitHub%20pages+hexo+vs%20code%E4%B8%80%E7%AB%99%E5%BC%8F%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/"/>
+      <url>/xiaoxiaohu/2026/05/21/GitHub%20pages+hexo+vs%20code%E4%B8%80%E7%AB%99%E5%BC%8F%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>作为一个技术人员，拥有自己的博客网站是一件很有意义的事情。以前搭建博客往往需要购买服务器、域名，还要配置数据库、环境等，既费钱又费时。而利用 <strong>GitHub Pages + Hexo</strong> 这套方案，完全免费就能搭建一个美观、快速、易维护的个人博客网站，配合 VS Code 进行写作，体验非常流畅。</p><h2 id="一、认识-Hexo-和-GitHub-Pages"><a href="#一、认识-Hexo-和-GitHub-Pages" class="headerlink" title="一、认识 Hexo 和 GitHub Pages"></a>一、认识 Hexo 和 GitHub Pages</h2><p><strong>Hexo</strong> 是一个基于 Node.js 的静态博客框架，支持 Markdown 语法，可以一键生成静态页面，拥有丰富的主题和插件生态。</p><p><strong>GitHub Pages</strong> 是 GitHub 提供的免费静态网站托管服务，每个用户都可以创建一个 <code>用户名.github.io</code> 的仓库，将静态文件部署上去后即可通过该域名访问。</p><p>两者的结合是目前最流行的免费博客搭建方案之一。</p><h2 id="二、环境准备"><a href="#二、环境准备" class="headerlink" title="二、环境准备"></a>二、环境准备</h2><h3 id="1-安装-Node-js"><a href="#1-安装-Node-js" class="headerlink" title="1. 安装 Node.js"></a>1. 安装 Node.js</h3><p>Hexo 基于 Node.js，需要先安装它。前往 <a href="https://nodejs.org/">Node.js 官网</a> 下载 LTS 版本并安装。安装完成后打开终端验证：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure><h3 id="2-安装-Git"><a href="#2-安装-Git" class="headerlink" title="2. 安装 Git"></a>2. 安装 Git</h3><p>Git 用于版本管理和部署博客到 GitHub。从 <a href="https://git-scm.com/">Git 官网</a> 下载安装。安装后配置基本信息：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的名字&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure><h3 id="3-安装-VS-Code"><a href="#3-安装-VS-Code" class="headerlink" title="3. 安装 VS Code"></a>3. 安装 VS Code</h3><p>VS Code 是目前最好用的 Markdown 编辑器之一，支持实时预览、快捷键、插件扩展等。从 <a href="https://code.visualstudio.com/">VS Code 官网</a> 下载安装即可。</p><h2 id="三、安装并配置-Hexo"><a href="#三、安装并配置-Hexo" class="headerlink" title="三、安装并配置 Hexo"></a>三、安装并配置 Hexo</h2><h3 id="1-全局安装-Hexo"><a href="#1-全局安装-Hexo" class="headerlink" title="1. 全局安装 Hexo"></a>1. 全局安装 Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><h3 id="2-初始化博客项目"><a href="#2-初始化博客项目" class="headerlink" title="2. 初始化博客项目"></a>2. 初始化博客项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><p><code>hexo init</code> 会自动生成博客的基础目录结构，主要包括：</p><ul><li><code>source/_posts/</code> — 存放文章 Markdown 文件</li><li><code>themes/</code> — 存放主题文件</li><li><code>_config.yml</code> — 博客配置文件</li></ul><h3 id="3-本地预览"><a href="#3-本地预览" class="headerlink" title="3. 本地预览"></a>3. 本地预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure><p>打开浏览器访问 <code>http://localhost:4000</code>，即可看到默认的 Hexo 博客页面。按 <code>Ctrl + C</code> 可以停止服务。</p><h2 id="四、配置博客信息"><a href="#四、配置博客信息" class="headerlink" title="四、配置博客信息"></a>四、配置博客信息</h2><p>编辑博客根目录下的 <code>_config.yml</code> 文件，修改基本配置：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 网站</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">我的博客</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">记录技术与生活</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">用文字记录成长</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">你的名字</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://你的用户名.github.io</span></span><br></pre></td></tr></table></figure><p>根据自己的需要修改标题、描述、作者等信息。</p><h2 id="五、更换主题"><a href="#五、更换主题" class="headerlink" title="五、更换主题"></a>五、更换主题</h2><p>Hexo 默认的主题是 landscape，比较简约。可以在 Hexo 官网主题商店挑选喜欢的主题。以流行的 <strong>NexT</strong> 主题为例：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure><p>然后在 <code>_config.yml</code> 中修改主题配置：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure><p>主题的详细配置在 <code>themes/next/_config.yml</code> 中，可以按需修改菜单、侧边栏、样式等。</p><h2 id="六、创建-GitHub-仓库"><a href="#六、创建-GitHub-仓库" class="headerlink" title="六、创建 GitHub 仓库"></a>六、创建 GitHub 仓库</h2><ol><li>登录 GitHub，点击右上角 <code>+</code> → <code>New repository</code></li><li>仓库名称填 <code>你的用户名.github.io</code>（必须严格一致）</li><li>设为 Public，其他默认，点击创建</li></ol><h2 id="七、部署到-GitHub-Pages"><a href="#七、部署到-GitHub-Pages" class="headerlink" title="七、部署到 GitHub Pages"></a>七、部署到 GitHub Pages</h2><h3 id="1-安装部署插件"><a href="#1-安装部署插件" class="headerlink" title="1. 安装部署插件"></a>1. 安装部署插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><h3 id="2-配置部署信息"><a href="#2-配置部署信息" class="headerlink" title="2. 配置部署信息"></a>2. 配置部署信息</h3><p>在 <code>_config.yml</code> 末尾添加：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/你的用户名/你的用户名.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure><h3 id="3-生成并部署"><a href="#3-生成并部署" class="headerlink" title="3. 生成并部署"></a>3. 生成并部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><p>部署完成后，访问 <code>https://你的用户名.github.io</code> 即可看到你的博客上线了。</p><h2 id="八、使用-VS-Code-编写博客"><a href="#八、使用-VS-Code-编写博客" class="headerlink" title="八、使用 VS Code 编写博客"></a>八、使用 VS Code 编写博客</h2><h3 id="1-用-VS-Code-打开博客项目"><a href="#1-用-VS-Code-打开博客项目" class="headerlink" title="1. 用 VS Code 打开博客项目"></a>1. 用 VS Code 打开博客项目</h3><p>在 VS Code 中打开博客所在的文件夹，方便管理文章和配置。</p><h3 id="2-新建文章"><a href="#2-新建文章" class="headerlink" title="2. 新建文章"></a>2. 新建文章</h3><p>在终端中执行：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure><p>这会在 <code>source/_posts/</code> 目录下生成一个 Markdown 文件，包含基本的 Front-matter 头部信息：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 2026-05-21</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure><h3 id="3-使用-Markdown-写作"><a href="#3-使用-Markdown-写作" class="headerlink" title="3. 使用 Markdown 写作"></a>3. 使用 Markdown 写作</h3><p>VS Code 对 Markdown 有很好的支持：</p><ul><li><code>Ctrl + Shift + V</code> 打开实时预览</li><li>支持代码高亮、表格、数学公式等</li><li>安装 <code>Hexo Utils</code> 等插件可以提升写作效率</li></ul><h3 id="4-发布流程"><a href="#4-发布流程" class="headerlink" title="4. 发布流程"></a>4. 发布流程</h3><p>写完文章后的发布流程非常简单：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean       <span class="comment"># 清理缓存</span></span><br><span class="line">hexo generate    <span class="comment"># 生成静态文件</span></span><br><span class="line">hexo deploy      <span class="comment"># 部署到 GitHub</span></span><br></pre></td></tr></table></figure><p>可以将这三条命令合并为一个 npm 脚本，在 <code>package.json</code> 中添加：</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;deploy&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p>之后只需执行：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run deploy</span><br></pre></td></tr></table></figure><p>即可一键发布。</p><h2 id="九、绑定自定义域名（可选）"><a href="#九、绑定自定义域名（可选）" class="headerlink" title="九、绑定自定义域名（可选）"></a>九、绑定自定义域名（可选）</h2><p>如果想使用自己的域名而非 <code>用户名.github.io</code>，可以参考以下步骤：</p><ol><li>在域名管理后台添加 CNAME 解析，指向 <code>用户名.github.io</code></li><li>在博客 <code>source</code> 目录下创建 <code>CNAME</code> 文件，内容填你的域名</li><li>重新部署即可</li></ol><h2 id="十、日常写作流程总结"><a href="#十、日常写作流程总结" class="headerlink" title="十、日常写作流程总结"></a>十、日常写作流程总结</h2><p>当一切配置完成后，每次写博客只需要三步：</p><ol><li><code>hexo new &quot;新文章标题&quot;</code> — 新建文章</li><li>在 VS Code 中编写 Markdown 内容</li><li><code>npm run deploy</code> — 一键部署上线</li></ol><p>整个过程无需接触服务器，无需担心数据库，只需一个浏览器和一个编辑器就能完成从写作到发布的全流程。</p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>GitHub Pages + Hexo + VS Code 是一套非常适合技术写作者的博客方案，零成本、高效率、易维护。希望这篇教程能帮助你快速搭建起属于自己的博客，开始记录和分享你的技术与生活。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> GitHub Pages </tag>
+            
+            <tag> VS Code </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>洛雪音乐助手更换音乐源头及同步手机客户端</title>
       <link href="/xiaoxiaohu/2024/03/05/%E6%B4%9B%E9%9B%AA%E9%9F%B3%E4%B9%90%E5%8A%A9%E6%89%8B%E6%9B%B4%E6%8D%A2%E9%9F%B3%E4%B9%90%E6%BA%90%E5%A4%B4%E5%8F%8A%E5%90%8C%E6%AD%A5%E6%89%8B%E6%9C%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
       <url>/xiaoxiaohu/2024/03/05/%E6%B4%9B%E9%9B%AA%E9%9F%B3%E4%B9%90%E5%8A%A9%E6%89%8B%E6%9B%B4%E6%8D%A2%E9%9F%B3%E4%B9%90%E6%BA%90%E5%A4%B4%E5%8F%8A%E5%90%8C%E6%AD%A5%E6%89%8B%E6%9C%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/</url>
@@ -1274,6 +1303,33 @@
     
     
     <entry>
+      <title>python 后台运行及关闭后台程序</title>
+      <link href="/xiaoxiaohu/2021/05/23/python-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%85%B3%E9%97%AD%E5%90%8E%E5%8F%B0%E7%A8%8B%E5%BA%8F/"/>
+      <url>/xiaoxiaohu/2021/05/23/python-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%85%B3%E9%97%AD%E5%90%8E%E5%8F%B0%E7%A8%8B%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">nohup</span> python3 -u socket_test.py &gt;my_socket.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-3b425e2c6a315b3a29ae77ac4d4fd7ac.png"></p><h3 id="开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询"><a href="#开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询" class="headerlink" title="开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询"></a>开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询</h3><p>1. 最后一个“&amp;”表示后台运行程序 2. “nohup” 表示程序不被挂起 3. “python3”表示执行python代码 4. “-u”表示不启用缓存，实时输出打印信息到日志文件（如果不加-u，则会导致日志文件不会实时刷新代码中的print函数的信息） 5. “socket_test.py”表示python的源代码文件 6. “my_socket.log”表示输出的日志文件 7. “&gt;”表示将打印信息重定向到日志文件 8. “2&gt;&amp;1”表示将标准错误输出转变化标准输出，可以将错误信息也输出到日志文件中（0-&gt; stdin, 1-&gt;stdout, 2-&gt;stderr）</p><h3 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h3><h3 id="功能：查看当前的所有进程"><a href="#功能：查看当前的所有进程" class="headerlink" title="功能：查看当前的所有进程"></a>功能：查看当前的所有进程</h3><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-21f5388cab8456a5200facb28d71c1a3.png"></p><h3 id="也可以单独查询某个文件开启的进程"><a href="#也可以单独查询某个文件开启的进程" class="headerlink" title="也可以单独查询某个文件开启的进程"></a>也可以单独查询某个文件开启的进程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep &quot;socket_test.py&quot;    #a:显示所有程序  u:以用户为主的格式来显示   x:显示所有程序，不以终端机来区分</span><br></pre></td></tr></table></figure><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-4de4f49fe6667b8cf2ce886ea8210bc8.png"></p><h3 id="Kill命令"><a href="#Kill命令" class="headerlink" title="Kill命令"></a>Kill命令</h3><h3 id="功能：杀死进程"><a href="#功能：杀死进程" class="headerlink" title="功能：杀死进程"></a>功能：杀死进程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill 30598</span><br></pre></td></tr></table></figure><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-bf3a1b059555402d37d17462be659251.png"></p><p>文章来源于互联网:<a href="https://blog.csdn.net/qq_37946291/article/details/105550529">python 后台运行及关闭后台程序</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 缓存 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python使用telegram机器人发送消息进行推送</title>
       <link href="/xiaoxiaohu/2021/05/23/python%E4%BD%BF%E7%94%A8telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E8%BF%9B%E8%A1%8C%E6%8E%A8%E9%80%81/"/>
       <url>/xiaoxiaohu/2021/05/23/python%E4%BD%BF%E7%94%A8telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E8%BF%9B%E8%A1%8C%E6%8E%A8%E9%80%81/</url>
@@ -1295,33 +1351,6 @@
             <tag> python </tag>
             
             <tag> telegram </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>python 后台运行及关闭后台程序</title>
-      <link href="/xiaoxiaohu/2021/05/23/python-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%85%B3%E9%97%AD%E5%90%8E%E5%8F%B0%E7%A8%8B%E5%BA%8F/"/>
-      <url>/xiaoxiaohu/2021/05/23/python-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%85%B3%E9%97%AD%E5%90%8E%E5%8F%B0%E7%A8%8B%E5%BA%8F/</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">nohup</span> python3 -u socket_test.py &gt;my_socket.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-3b425e2c6a315b3a29ae77ac4d4fd7ac.png"></p><h3 id="开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询"><a href="#开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询" class="headerlink" title="开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询"></a>开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询</h3><p>1. 最后一个“&amp;”表示后台运行程序 2. “nohup” 表示程序不被挂起 3. “python3”表示执行python代码 4. “-u”表示不启用缓存，实时输出打印信息到日志文件（如果不加-u，则会导致日志文件不会实时刷新代码中的print函数的信息） 5. “socket_test.py”表示python的源代码文件 6. “my_socket.log”表示输出的日志文件 7. “&gt;”表示将打印信息重定向到日志文件 8. “2&gt;&amp;1”表示将标准错误输出转变化标准输出，可以将错误信息也输出到日志文件中（0-&gt; stdin, 1-&gt;stdout, 2-&gt;stderr）</p><h3 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h3><h3 id="功能：查看当前的所有进程"><a href="#功能：查看当前的所有进程" class="headerlink" title="功能：查看当前的所有进程"></a>功能：查看当前的所有进程</h3><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-21f5388cab8456a5200facb28d71c1a3.png"></p><h3 id="也可以单独查询某个文件开启的进程"><a href="#也可以单独查询某个文件开启的进程" class="headerlink" title="也可以单独查询某个文件开启的进程"></a>也可以单独查询某个文件开启的进程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep &quot;socket_test.py&quot;    #a:显示所有程序  u:以用户为主的格式来显示   x:显示所有程序，不以终端机来区分</span><br></pre></td></tr></table></figure><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-4de4f49fe6667b8cf2ce886ea8210bc8.png"></p><h3 id="Kill命令"><a href="#Kill命令" class="headerlink" title="Kill命令"></a>Kill命令</h3><h3 id="功能：杀死进程"><a href="#功能：杀死进程" class="headerlink" title="功能：杀死进程"></a>功能：杀死进程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill 30598</span><br></pre></td></tr></table></figure><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-bf3a1b059555402d37d17462be659251.png"></p><p>文章来源于互联网:<a href="https://blog.csdn.net/qq_37946291/article/details/105550529">python 后台运行及关闭后台程序</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> python </tag>
-            
-            <tag> 缓存 </tag>
             
         </tags>
       
@@ -1959,11 +1988,11 @@
     
     
     <entry>
-      <title>新路由3刷hiboy老毛子固件实现l2tp校园网登入上网</title>
-      <link href="/xiaoxiaohu/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E5%AE%9E%E7%8E%B0l2tp%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%85%A5%E4%B8%8A%E7%BD%91/"/>
-      <url>/xiaoxiaohu/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E5%AE%9E%E7%8E%B0l2tp%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%85%A5%E4%B8%8A%E7%BD%91/</url>
+      <title>新路由3刷hiboy老毛子固件配置V2ray实现科学上网</title>
+      <link href="/xiaoxiaohu/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E9%85%8D%E7%BD%AEv2ray%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+      <url>/xiaoxiaohu/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E9%85%8D%E7%BD%AEv2ray%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</url>
       
-        <content type="html"><![CDATA[<p>新路由3是一款矿难产品，不过用来当路由器用还是很香的，特别是它支持校园网l2tp登入，在宿舍里用就很方便了</p><p>这里先不讲如何刷hiboy老毛子固件，直接介绍一下如何进行l2tp认证登入</p><p>刷好hiboy老毛子固件后，开机连接网络，默认无线网名称是PDCN，默认登入名称和密码都是admin</p><p>登入后台</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119135437.png"></p><p>选择如下外部网络，外网连接类型里选择L2TP</p><p>然后IP地址和dns地址里，如果你的校园网是需要使用固定的，就把这些消息填入即可</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119135808.png"></p><p>如果是自动获取的，直接选自动获取即可</p><p>之后就是在下面L2TP客户端守护程序中填入你的认证服务器地址和用户名及密码，VPN认证服务器地址一般可以在你的校园网认证客户端上看到，不知道的可以自己去搜搜自己学校的认证服务器地址是多少</p><p>其他的保持默认就可以，之后就保存配置，路由器就会自动认证，之后就可以愉快的上网了，一个账号就可以多个设备使用，同时也不用每次连接校园网都要登入了</p>]]></content>
+        <content type="html"><![CDATA[<p>这里介绍一下新路由3如何刷hiboy老毛子固件后配置V2ray</p><p>一般想科学上网，都需要在自己设备上安装客户端，但使用新路由3，可以直接在路由器上配置好，连接它的wifi或者有线，就可以直接科学上网了，方便又快捷</p><p>首选进入新路由后台 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119140636.png"></p><p>默认登入地址是192.168.123.1  默认账号密码都是admin</p><p>然后点击搭建Web环境</p><p>选择V2ray，然后开启下面两个开关</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119140827.png"></p><p>然后在下面输入订阅节点信息或者导出的Vmess信息</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119141111.png"></p><p>应用页面设置即可</p><p>然后看一下右上角，这里显示的V2ray有没有启动，没启动的话点击启动一下</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119141230.png"></p><p>然后再点击右上角的log，查看日志目录</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119141403.png"></p><p>出现下面的这些信息就说明配置成功了，连接的设备就可以自由科学上网了</p>]]></content>
       
       
       <categories>
@@ -1988,11 +2017,11 @@
     
     
     <entry>
-      <title>新路由3刷hiboy老毛子固件配置V2ray实现科学上网</title>
-      <link href="/xiaoxiaohu/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E9%85%8D%E7%BD%AEv2ray%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
-      <url>/xiaoxiaohu/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E9%85%8D%E7%BD%AEv2ray%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</url>
+      <title>新路由3刷hiboy老毛子固件实现l2tp校园网登入上网</title>
+      <link href="/xiaoxiaohu/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E5%AE%9E%E7%8E%B0l2tp%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%85%A5%E4%B8%8A%E7%BD%91/"/>
+      <url>/xiaoxiaohu/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E5%AE%9E%E7%8E%B0l2tp%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%85%A5%E4%B8%8A%E7%BD%91/</url>
       
-        <content type="html"><![CDATA[<p>这里介绍一下新路由3如何刷hiboy老毛子固件后配置V2ray</p><p>一般想科学上网，都需要在自己设备上安装客户端，但使用新路由3，可以直接在路由器上配置好，连接它的wifi或者有线，就可以直接科学上网了，方便又快捷</p><p>首选进入新路由后台 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119140636.png"></p><p>默认登入地址是192.168.123.1  默认账号密码都是admin</p><p>然后点击搭建Web环境</p><p>选择V2ray，然后开启下面两个开关</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119140827.png"></p><p>然后在下面输入订阅节点信息或者导出的Vmess信息</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119141111.png"></p><p>应用页面设置即可</p><p>然后看一下右上角，这里显示的V2ray有没有启动，没启动的话点击启动一下</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119141230.png"></p><p>然后再点击右上角的log，查看日志目录</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119141403.png"></p><p>出现下面的这些信息就说明配置成功了，连接的设备就可以自由科学上网了</p>]]></content>
+        <content type="html"><![CDATA[<p>新路由3是一款矿难产品，不过用来当路由器用还是很香的，特别是它支持校园网l2tp登入，在宿舍里用就很方便了</p><p>这里先不讲如何刷hiboy老毛子固件，直接介绍一下如何进行l2tp认证登入</p><p>刷好hiboy老毛子固件后，开机连接网络，默认无线网名称是PDCN，默认登入名称和密码都是admin</p><p>登入后台</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119135437.png"></p><p>选择如下外部网络，外网连接类型里选择L2TP</p><p>然后IP地址和dns地址里，如果你的校园网是需要使用固定的，就把这些消息填入即可</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119135808.png"></p><p>如果是自动获取的，直接选自动获取即可</p><p>之后就是在下面L2TP客户端守护程序中填入你的认证服务器地址和用户名及密码，VPN认证服务器地址一般可以在你的校园网认证客户端上看到，不知道的可以自己去搜搜自己学校的认证服务器地址是多少</p><p>其他的保持默认就可以，之后就保存配置，路由器就会自动认证，之后就可以愉快的上网了，一个账号就可以多个设备使用，同时也不用每次连接校园网都要登入了</p>]]></content>
       
       
       <categories>
@@ -2183,11 +2212,11 @@
     
     
     <entry>
-      <title>excel中使用下拉公式计算时如何固定某一个单元格值</title>
-      <link href="/xiaoxiaohu/2021/01/11/excel%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E5%85%AC%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%97%B6%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E6%9F%90%E4%B8%80%E4%B8%AA%E5%8D%95%E5%85%83%E6%A0%BC%E5%80%BC/"/>
-      <url>/xiaoxiaohu/2021/01/11/excel%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E5%85%AC%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%97%B6%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E6%9F%90%E4%B8%80%E4%B8%AA%E5%8D%95%E5%85%83%E6%A0%BC%E5%80%BC/</url>
+      <title>excel 中复制或导入内容中日期/数字格式不生效需要但双击才会生效的解决办法</title>
+      <link href="/xiaoxiaohu/2021/01/11/excel-%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%88%96%E5%AF%BC%E5%85%A5%E5%86%85%E5%AE%B9%E4%B8%AD%E6%97%A5%E6%9C%9F-%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88%E9%9C%80%E8%A6%81%E4%BD%86/"/>
+      <url>/xiaoxiaohu/2021/01/11/excel-%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%88%96%E5%AF%BC%E5%85%A5%E5%86%85%E5%AE%B9%E4%B8%AD%E6%97%A5%E6%9C%9F-%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88%E9%9C%80%E8%A6%81%E4%BD%86/</url>
       
-        <content type="html"><![CDATA[<p>在excel中使用公式进行下拉计算很方便，但有时候公式中某一个值需要固定不变</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/1610336727-excel%E5%85%AC%E5%BC%8F%E5%9B%BA%E5%AE%9A%E5%80%BC.png"></p><p>比如这里面让每一个数都加上5，就只需要在公式中5这个单元选择时在字母和数字前都加上$符号就行，然后就可以直接下拉进行计算了</p>]]></content>
+        <content type="html"><![CDATA[<p>在excel中，数字格式的内容默认事会自动移动到单元格的右边的，文本格式的则会自动在单元格左边</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/1610331736-excel%E6%A0%BC%E5%BC%8F1.png"></p><p>但其实经常我们由文本文件导入的数据，或者复制过来的数据，虽然显示是文本格式的，但其内容是数值格式的，而且此时就算将单元格格式改为数值格式，仍然需要挨个单元格双击，单元格中内容就会自动移动到单元格的右边，这样数值格式才能生效，才可以计算。</p><p>如果数据较多，一个个双击单元格就效率太低了</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">解决：</span><br><span class="line">　　选中整列，“数据”---&gt;“分列”---&gt;“分隔符号”---&gt;“下一步”---&gt;“tab键”---&gt;“下一步”---&gt;“常规”---&gt;“完成” （如果是日期格式的话，最后一步选“日期”）</span><br><span class="line">　</span><br><span class="line">　注：如经过以上步骤后数值未能正常显示，选中整列，“设置单元格格式”----&gt;“1234”----&gt;小数位数改为“0”---&gt;“确定”。</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -2208,11 +2237,11 @@
     
     
     <entry>
-      <title>excel 中复制或导入内容中日期/数字格式不生效需要但双击才会生效的解决办法</title>
-      <link href="/xiaoxiaohu/2021/01/11/excel-%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%88%96%E5%AF%BC%E5%85%A5%E5%86%85%E5%AE%B9%E4%B8%AD%E6%97%A5%E6%9C%9F-%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88%E9%9C%80%E8%A6%81%E4%BD%86/"/>
-      <url>/xiaoxiaohu/2021/01/11/excel-%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%88%96%E5%AF%BC%E5%85%A5%E5%86%85%E5%AE%B9%E4%B8%AD%E6%97%A5%E6%9C%9F-%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88%E9%9C%80%E8%A6%81%E4%BD%86/</url>
+      <title>excel中使用下拉公式计算时如何固定某一个单元格值</title>
+      <link href="/xiaoxiaohu/2021/01/11/excel%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E5%85%AC%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%97%B6%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E6%9F%90%E4%B8%80%E4%B8%AA%E5%8D%95%E5%85%83%E6%A0%BC%E5%80%BC/"/>
+      <url>/xiaoxiaohu/2021/01/11/excel%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E5%85%AC%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%97%B6%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E6%9F%90%E4%B8%80%E4%B8%AA%E5%8D%95%E5%85%83%E6%A0%BC%E5%80%BC/</url>
       
-        <content type="html"><![CDATA[<p>在excel中，数字格式的内容默认事会自动移动到单元格的右边的，文本格式的则会自动在单元格左边</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/1610331736-excel%E6%A0%BC%E5%BC%8F1.png"></p><p>但其实经常我们由文本文件导入的数据，或者复制过来的数据，虽然显示是文本格式的，但其内容是数值格式的，而且此时就算将单元格格式改为数值格式，仍然需要挨个单元格双击，单元格中内容就会自动移动到单元格的右边，这样数值格式才能生效，才可以计算。</p><p>如果数据较多，一个个双击单元格就效率太低了</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">解决：</span><br><span class="line">　　选中整列，“数据”---&gt;“分列”---&gt;“分隔符号”---&gt;“下一步”---&gt;“tab键”---&gt;“下一步”---&gt;“常规”---&gt;“完成” （如果是日期格式的话，最后一步选“日期”）</span><br><span class="line">　</span><br><span class="line">　注：如经过以上步骤后数值未能正常显示，选中整列，“设置单元格格式”----&gt;“1234”----&gt;小数位数改为“0”---&gt;“确定”。</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<p>在excel中使用公式进行下拉计算很方便，但有时候公式中某一个值需要固定不变</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/1610336727-excel%E5%85%AC%E5%BC%8F%E5%9B%BA%E5%AE%9A%E5%80%BC.png"></p><p>比如这里面让每一个数都加上5，就只需要在公式中5这个单元选择时在字母和数字前都加上$符号就行，然后就可以直接下拉进行计算了</p>]]></content>
       
       
       <categories>
@@ -2624,11 +2653,11 @@
             
             <tag> tor </tag>
             
+            <tag> 数据库 </tag>
+            
             <tag> scr </tag>
             
             <tag> 控制 </tag>
-            
-            <tag> 数据库 </tag>
             
             <tag> plc模糊逻辑控制 </tag>
             
@@ -3110,33 +3139,6 @@
     
     
     <entry>
-      <title>WordPress评论微信推送-方糖服务</title>
-      <link href="/xiaoxiaohu/2020/10/08/wordpress%E8%AF%84%E8%AE%BA%E5%BE%AE%E4%BF%A1%E6%8E%A8%E9%80%81-%E6%96%B9%E7%B3%96%E6%9C%8D%E5%8A%A1/"/>
-      <url>/xiaoxiaohu/2020/10/08/wordpress%E8%AF%84%E8%AE%BA%E5%BE%AE%E4%BF%A1%E6%8E%A8%E9%80%81-%E6%96%B9%E7%B3%96%E6%9C%8D%E5%8A%A1/</url>
-      
-        <content type="html"><![CDATA[<p>有时候不会经常登录博客后台查看消息，但别人有评论怎么办呢？这时候就可以使用推送服务，当有人评论你时，可以微信推送到你的手机，就很方便了，这里介绍一下方糖推送服务</p><h1 id="Server酱"><a href="#Server酱" class="headerlink" title="Server酱"></a>Server酱</h1><h1 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h1><p>「Server酱」，英文名「ServerChan」，是一款「程序员」和「服务器」之间的通信软件。</p><p>说人话？就是从服务器推报警和日志到手机的工具。</p><p>开通并使用上它，只需要一分钟：</p><ol><li>登入：用GitHub账号<a href="http://sc.ftqq.com/?c=github&a=login">登入网站</a>，就能获得一个<a href="http://sc.ftqq.com/?c=code">SCKEY</a>（在「<a href="http://sc.ftqq.com/?c=code">发送消息</a>」页面）</li><li>绑定：点击「<a href="http://sc.ftqq.com/?c=wechat&a=bind">微信推送</a>」，扫码关注同时即可完成绑定</li><li>发消息：往 <a href="http://sc.ftqq.com/SCKEY.send">http://sc.ftqq.com/SCKEY.send</a> 发GET请求，就可以在微信里收到消息啦</li></ol><p>使用起来很方便，只需要登录然后获得一个sckey码就可以了</p><p>然后到你的网站后台function.php文件中添加如下代码：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function sc_send($comment_id)</span><br><span class="line">&#123;</span><br><span class="line">$text = &#x27;主人，博客上有一条新的评论&#x27;;</span><br><span class="line">$comment = get_comment($comment_id);</span><br><span class="line">$desp = $comment-&gt;comment_content;</span><br><span class="line">$key = &#x27;你的sckey码&#x27;;</span><br><span class="line">$postdata = http_build_query(</span><br><span class="line">array(</span><br><span class="line">&#x27;text&#x27; =&gt; $text,</span><br><span class="line">&#x27;desp&#x27; =&gt; $desp</span><br><span class="line">)</span><br><span class="line">);</span><br><span class="line"> </span><br><span class="line">$opts = array(&#x27;http&#x27; =&gt;</span><br><span class="line">array(</span><br><span class="line">&#x27;method&#x27; =&gt; &#x27;POST&#x27;,</span><br><span class="line">&#x27;header&#x27; =&gt; &#x27;Content-type: application/x-www-form-urlencoded&#x27;,</span><br><span class="line">&#x27;content&#x27; =&gt; $postdata</span><br><span class="line">)</span><br><span class="line">);</span><br><span class="line">$context = stream_context_create($opts);</span><br><span class="line">return $result = file_get_contents(&#x27;http://sc.ftqq.com/&#x27;.$key.&#x27;.send&#x27;, false, $context);</span><br><span class="line">&#125;</span><br><span class="line">add_action(&#x27;comment_post&#x27;, &#x27;sc_send&#x27;, 19, 2);</span><br></pre></td></tr></table></figure><p>然后绑定微信就可以了</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/10/1602119536-%E6%96%B9%E7%B3%96-1024x312.png"></p><p>当由评论时，就可以在微信上收到信息了</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/10/1602119654-%E6%96%B9%E7%B3%962.png"></p><p>使用很方便</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> wordpress </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 网站 </tag>
-            
-            <tag> 网站建设 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>wordpress实现侧边栏彩色标签</title>
       <link href="/xiaoxiaohu/2020/10/08/wordpress%E5%AE%9E%E7%8E%B0%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%BD%A9%E8%89%B2%E6%A0%87%E7%AD%BE/"/>
       <url>/xiaoxiaohu/2020/10/08/wordpress%E5%AE%9E%E7%8E%B0%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%BD%A9%E8%89%B2%E6%A0%87%E7%AD%BE/</url>
@@ -3154,6 +3156,33 @@
       
       
         <tags>
+            
+            <tag> 网站建设 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>WordPress评论微信推送-方糖服务</title>
+      <link href="/xiaoxiaohu/2020/10/08/wordpress%E8%AF%84%E8%AE%BA%E5%BE%AE%E4%BF%A1%E6%8E%A8%E9%80%81-%E6%96%B9%E7%B3%96%E6%9C%8D%E5%8A%A1/"/>
+      <url>/xiaoxiaohu/2020/10/08/wordpress%E8%AF%84%E8%AE%BA%E5%BE%AE%E4%BF%A1%E6%8E%A8%E9%80%81-%E6%96%B9%E7%B3%96%E6%9C%8D%E5%8A%A1/</url>
+      
+        <content type="html"><![CDATA[<p>有时候不会经常登录博客后台查看消息，但别人有评论怎么办呢？这时候就可以使用推送服务，当有人评论你时，可以微信推送到你的手机，就很方便了，这里介绍一下方糖推送服务</p><h1 id="Server酱"><a href="#Server酱" class="headerlink" title="Server酱"></a>Server酱</h1><h1 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h1><p>「Server酱」，英文名「ServerChan」，是一款「程序员」和「服务器」之间的通信软件。</p><p>说人话？就是从服务器推报警和日志到手机的工具。</p><p>开通并使用上它，只需要一分钟：</p><ol><li>登入：用GitHub账号<a href="http://sc.ftqq.com/?c=github&a=login">登入网站</a>，就能获得一个<a href="http://sc.ftqq.com/?c=code">SCKEY</a>（在「<a href="http://sc.ftqq.com/?c=code">发送消息</a>」页面）</li><li>绑定：点击「<a href="http://sc.ftqq.com/?c=wechat&a=bind">微信推送</a>」，扫码关注同时即可完成绑定</li><li>发消息：往 <a href="http://sc.ftqq.com/SCKEY.send">http://sc.ftqq.com/SCKEY.send</a> 发GET请求，就可以在微信里收到消息啦</li></ol><p>使用起来很方便，只需要登录然后获得一个sckey码就可以了</p><p>然后到你的网站后台function.php文件中添加如下代码：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function sc_send($comment_id)</span><br><span class="line">&#123;</span><br><span class="line">$text = &#x27;主人，博客上有一条新的评论&#x27;;</span><br><span class="line">$comment = get_comment($comment_id);</span><br><span class="line">$desp = $comment-&gt;comment_content;</span><br><span class="line">$key = &#x27;你的sckey码&#x27;;</span><br><span class="line">$postdata = http_build_query(</span><br><span class="line">array(</span><br><span class="line">&#x27;text&#x27; =&gt; $text,</span><br><span class="line">&#x27;desp&#x27; =&gt; $desp</span><br><span class="line">)</span><br><span class="line">);</span><br><span class="line"> </span><br><span class="line">$opts = array(&#x27;http&#x27; =&gt;</span><br><span class="line">array(</span><br><span class="line">&#x27;method&#x27; =&gt; &#x27;POST&#x27;,</span><br><span class="line">&#x27;header&#x27; =&gt; &#x27;Content-type: application/x-www-form-urlencoded&#x27;,</span><br><span class="line">&#x27;content&#x27; =&gt; $postdata</span><br><span class="line">)</span><br><span class="line">);</span><br><span class="line">$context = stream_context_create($opts);</span><br><span class="line">return $result = file_get_contents(&#x27;http://sc.ftqq.com/&#x27;.$key.&#x27;.send&#x27;, false, $context);</span><br><span class="line">&#125;</span><br><span class="line">add_action(&#x27;comment_post&#x27;, &#x27;sc_send&#x27;, 19, 2);</span><br></pre></td></tr></table></figure><p>然后绑定微信就可以了</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/10/1602119536-%E6%96%B9%E7%B3%96-1024x312.png"></p><p>当由评论时，就可以在微信上收到信息了</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/10/1602119654-%E6%96%B9%E7%B3%962.png"></p><p>使用很方便</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> wordpress </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网站 </tag>
             
             <tag> 网站建设 </tag>
             
@@ -3390,9 +3419,9 @@
             
             <tag> labview </tag>
             
-            <tag> 控制 </tag>
-            
             <tag> 邮件 </tag>
+            
+            <tag> 控制 </tag>
             
         </tags>
       
@@ -3591,9 +3620,9 @@
             
             <tag> 网站 </tag>
             
-            <tag> 控制 </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> 控制 </tag>
             
             <tag> 视频 </tag>
             
@@ -4674,6 +4703,33 @@
     
     
     <entry>
+      <title>电池热管理工程实践认知 (1): 风冷式热管理系统</title>
+      <link href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+      <url>/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<p><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></p><p><strong>1、电池热管理技术基本概念</strong></p><p>电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升，这个时候需要及时的散热，要不然就会中暑。当电池处于低温（例如-30℃）条件下的时候，电池无法正常的工作（温度太低，电池内反应物活性受限），车辆也就无法正常行驶，正如我们在瑟瑟寒风里无任何热防护的时候，人的身体感觉寒冷，人的动作就会变慢，这时候需要我们尽快采取取暖措施，要不然身体也会冻伤。</p><p>因此，我们人体在热了或者冷了且自身无法调节时，我们会开空调去做体外调节；如果人体被病毒细菌感染了，人体的免疫系统会产生作用，并升高体温；如果被发现是感染了厉害的病毒，高烧不退、吃退烧药也无法控制体温，就需要更为强力有效的方式进行综合调理、内外兼治。显然人体可以通过种种不同的途径来调节体温，那么电池的“体温”怎么办呢？</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg"></p><p>图0 电池的冷热管理（<a href="http://dc-ts.com/advanced-battery-thermal-management-system/%EF%BC%89">http://dc-ts.com/advanced-battery-thermal-management-system/）</a></p><p>对电池运行产生的热量进行管控的方法叫做<strong>电池热管理技术</strong>（详细可参见<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a>）。电池热管理就类似于人体对于体温的调节，如果电池运行产生的热量得不到有效的管理和控制，就会产生电池的热失控问题（<em><strong>我们后面会做专题讨论</strong></em>），这就类似于我们人体被感染了很厉害的病毒。在现阶段，由于动力电池材料技术处于发展瓶颈期，我们无法从根本上消除温度对电池性能和寿命的影响，但是不论是对于铅酸电池、锂离子电池或者是燃料电池，温度对于电池性能和寿命都是一个重要的影响因素，所以我们需要开发电池热管理技术对电池产生的热量进行管理，防止电池在高温或者低温下不能正常工作。希望目前的热管理只是一种过渡方式，后期的电芯不需要做任何热管理——这里大家不用担心失业，至少未来10年内，中国的6G、7G和1nm、0.5nm芯片冷却技术可能需要我们大展身手。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg"></p><p>图1 电池热管理的重要工程实践意义（百度图片）</p><p>温度最直观的影响就是对电池容量的影响，这也是为什么在冬季电动车行驶里程要比其他季节短很多的原因，同样每年的4月到9月都会出现电动车自燃的现象（暴晒条件下，车内温度达到60℃），天气燥热，电动车又给炎热的天气添了一把柴。综合各方面因素，电池热管理技术对于目前的动力电池是不可或缺的一部分，在环境温度较高时需要对电池进行降温，同时在温度较低时对电池进行加热，电池热管理技术相当于给电池加上了一个小型的空调系统。当然，在实际中也需要根据整车的实际运行工况来调整电池热管理系统策略。</p><p> </p><p><strong>2、电池热管理部件组成</strong></p><p>今天我们针对电池热管理技术的实际应用现状做个综述，后续我们再共同对其进行细分和学习。在国内目前能够大批量生产的汽车中实际应用的电池热管理技术可以分为四类：风冷式热管理技术、液冷式电池热管理技术、自然冷却式电池热管理技术和直冷式电池热管理技术（相变冷却技术）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg"></p><p>图2 电池热管理技术分类（百度图片）</p><p>另外电池包的保温设计（其实笔者感觉有效的保温最难实现，有时候想法和实际操作相差太远，现实条件中可能不允许你做一些保温的措施）和单纯加热的系统也都隶属于电池热管理系统，当然有人提出热扩散防控也属于热管理范畴，我们这里不做定义及探讨，本文主要针对散热系统进行介绍。</p><p> </p><p><strong>3、风冷式电池热管理系统部件构成</strong></p><p>风冷式热管理系统部件包括格栅、温度探头、滤网、进风管、冷风介质、电池包内部风管、出风管、风机，密封条和固定卡扣。一般来说格栅设计在风管的进口处，其作用是为了防止一些较大尺寸的物体进入电池包内部而堵塞风管。在格栅和风管之间还会设计有滤芯和风道，风道的设计一般会根据整车的内部结构和电池包内部结构设计进行调整，在实际的设计中，风道的设计要尽量的光滑和平顺。在风道和车辆部件接触的地方需要设计密封条。风机一般分为轴流分机和离心风机，根据不同的风冷式热管理系统的需求选择不同的风机类型。在选型的过程中一般会将噪音和送风量作为主要的参考因素。离心风机在电池包内部根据使用场景的不同可以分为吹风式和抽离式，最直接的例子就是丰田卡罗拉的两款HEV电池包，一款采用了吹风形式，另外一款采用了抽风形式。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg"></p><p>图3 丰田普锐斯（Prius）使用的风冷式电池热管理系统（谷歌图片）</p><p>当然，很多人可能会对风冷式热管理系统能否有效冷却电池保持怀疑态度，因为有很多这方面的文章提到风冷式系统的不足之处，这里我们简单探讨一下。在国内，针对不同的电池包我们尝试采用不同的冷却系统，对于EV (ElectricVehicle，纯电动汽车)，国内采用较多的热管理系统是液冷系统了，当然也会有一部分厂家尝试采用风冷系统，2016年奇瑞汽车生产的小蚂蚁电动汽车就尝试采用风冷式热管理系统进行散热。对于传统汽车改新能源车来说，采用风冷式热管理系统可以节省一大笔的开发费用，整车的空调系统可以直接按照原来燃油车的系统部件进行设计。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg"></p><p>图4 奇瑞小蚂蚁电动汽车（百度图片）</p><p>而对于HEV(Hybrid Electric Vehicle，混合动力汽车) 目前很多车厂都在争先进行开发，首选的电池热管理系统就是风冷式，比如前面提到的丰田卡罗拉和本田雅阁都是采用风冷式热管理系统。从大数据上看，日系车企很少采用液冷式热管理系统，大多采用的是风冷式，这点和国内的一些车企有些不同，可能是由于日系车企对液冷式系统还有其他的考量，个人感觉不会是因为成本的原因。对于HEV来说采用的电芯和EV的电芯是不同的，HEV在运行过程中动力电池不是唯一的动力来源，大部分情况下电池持续运行时间较短，风冷式热管理系统完全可以满足系统的要求，但是EV的动力完全来自于动力电池，电池长时间持续运行，这样电池就需要散热能力更强的电池热管理系统来保证电池的正常工作。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg"></p><p>图5 丰田卡罗拉油电混合汽车（百度图片）</p><p>风冷系统一般有三种设计，第一种就是单独采用风冷对电池进行散热或者加热；第二种就是仅用来对电池进行散热，对电池系统加热的话一般会另外设计加热膜；第三种就是风冷系统和加热膜结合，当电池需要散热的时候，仅仅启动冷却，当电池需要加热的时候，加热膜和风冷同时启动，此时风冷系统的进口为温度较高的车内气体。丰田卡罗拉的PHEV在两个模组之间设计的有加热膜，加热膜和模组之间的有效接触面积很小，笔者个人觉得加热膜只是为了加热电芯之间的空气，再通过风冷系统对电池包内的空气进行扰动。丰田卡罗拉的PHEV使用的是18650电芯，同时这款电池包的热失控管理设计也十分精巧，有空我们可以再聊聊。</p><p><strong>下面我们通过几个目前已经实现量产的实例来了解风冷式电池热管理技术。</strong></p><p>本田雅阁混动HEV的电池热管理系统中使用的冷却介质来自车内部的空调风，如果车主不使用空调时，进入电池包风管内的就是是车内没通过冷却的风。图示IPU指的就是电池包，我们简单了解一下冷却风是如何在内部流动的，电池包的冷却风从总进口进入电池包内部风道(模组的一侧)，然后再通过电芯之间的间隙，离心风扇和整个模组的另外一侧并没有设计风道，直接依靠离心风扇排出到外部，这样设计不仅仅对电池进行了散热，对电池包内部的发热器件（铜排、BDU）也有一定的散热作用。有兴趣的话大家可以看一下本田的专利，电芯之间设计有一定形状的塑料隔板，隔板不仅仅起到了流通的作用，在一定程度上也起到缓冲（电芯膨胀）的作用。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png"></p><p>图6 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png"></p><p>图7 电池包三维视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png"></p><p>图8 电池包内模组实物图（百度图片）</p><p> </p><p>奥迪Q5采用的同样也是风冷散热，但是奥迪在电池包的外部单独给整个电池包系统做了一个蒸发器，专门对电池包内部循环风进行降温，使进入到电池包内部的风控制在合理的范围内，同时奥迪的这款设计比较巧妙，它的冷却系统进风可以切换，拥有引入外部自然风和内部循环风两种功能，可以通过感知电池不同的温度阶段来切换这两种功能。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png"></p><p>图9 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png"></p><p>图10 电池包三维视图及其工作原理（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png"></p><p>图11 电池包内部模组视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png"></p><p>图12 电池包内部流体流动轨迹视图（百度图片）</p><p> </p><p>广汽丰田2020年新推出的一款C-HREV采用的也是风冷散热，丰田将2个蒸发器和2个膨胀阀移到了电池包内部，采用这种设计的电池包内部空气、两个离心风机、风道（风道位于电池包2侧）和模组单独形成了一个循环（封闭式风冷系统），这款设计和奥迪Q5设计有类似之处，C-HR电池包的蒸发器位于风机出口的风道内部，电池包内部具有加热功能，在每个大模组（包内有2种模组）的底部都设计的有加热膜（有弹性支撑），这种加热膜材质和国内的差别比较大，这款车的加热速率非常低（可能是出于安全考虑），C-HR这款电池包内部设计有许多值得借鉴的细节（风道比较有特点）。在一定程度上奥迪Q5和C-HR也采用了直冷的散热方式，只是蒸发器没有和电芯直接接触，可以避免过冷的现象出现，它们将风冷和直冷结合在一块，直接给动力电池的冷却介质配置一个蒸发器，这样电池散热效果更佳，但是成本可能会增加不少。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png"></p><p>图13 电池包三维视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png"></p><p>图14 电池包俯视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png"></p><p>图15 电池包热管理原理（百度图片）</p><p> </p><p>可见，风冷式电池热管理技术有很广的应用范围，而且应用在商业电动车上也有很好的效果。目前商用电动车还有其他的电池热管理技术，下一期，我们将着重介绍和讨论<strong>液冷式和直冷式电池热管理技术</strong>。</p><p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出，后续如果有兴趣大家可以留言，我们针对热管理的一些子部件进行详细探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行剖解分析，同时以上论述均为个人见解，如有错误之处请不吝赐教，技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p><p><strong>往期精彩回顾</strong></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 制冷技术 </category>
+          
+          <category> 文章采集 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电池热管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>电池热管理工程实践认知 (2): 液冷及直冷式热管理系统</title>
       <link href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/"/>
       <url>/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/</url>
@@ -4697,33 +4753,6 @@
             <tag> 试验台 </tag>
             
             <tag> 制冷技术 </tag>
-            
-            <tag> 电池热管理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>电池热管理工程实践认知 (1): 风冷式热管理系统</title>
-      <link href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
-      <url>/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
-      
-        <content type="html"><![CDATA[<p><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></p><p><strong>1、电池热管理技术基本概念</strong></p><p>电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升，这个时候需要及时的散热，要不然就会中暑。当电池处于低温（例如-30℃）条件下的时候，电池无法正常的工作（温度太低，电池内反应物活性受限），车辆也就无法正常行驶，正如我们在瑟瑟寒风里无任何热防护的时候，人的身体感觉寒冷，人的动作就会变慢，这时候需要我们尽快采取取暖措施，要不然身体也会冻伤。</p><p>因此，我们人体在热了或者冷了且自身无法调节时，我们会开空调去做体外调节；如果人体被病毒细菌感染了，人体的免疫系统会产生作用，并升高体温；如果被发现是感染了厉害的病毒，高烧不退、吃退烧药也无法控制体温，就需要更为强力有效的方式进行综合调理、内外兼治。显然人体可以通过种种不同的途径来调节体温，那么电池的“体温”怎么办呢？</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg"></p><p>图0 电池的冷热管理（<a href="http://dc-ts.com/advanced-battery-thermal-management-system/%EF%BC%89">http://dc-ts.com/advanced-battery-thermal-management-system/）</a></p><p>对电池运行产生的热量进行管控的方法叫做<strong>电池热管理技术</strong>（详细可参见<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a>）。电池热管理就类似于人体对于体温的调节，如果电池运行产生的热量得不到有效的管理和控制，就会产生电池的热失控问题（<em><strong>我们后面会做专题讨论</strong></em>），这就类似于我们人体被感染了很厉害的病毒。在现阶段，由于动力电池材料技术处于发展瓶颈期，我们无法从根本上消除温度对电池性能和寿命的影响，但是不论是对于铅酸电池、锂离子电池或者是燃料电池，温度对于电池性能和寿命都是一个重要的影响因素，所以我们需要开发电池热管理技术对电池产生的热量进行管理，防止电池在高温或者低温下不能正常工作。希望目前的热管理只是一种过渡方式，后期的电芯不需要做任何热管理——这里大家不用担心失业，至少未来10年内，中国的6G、7G和1nm、0.5nm芯片冷却技术可能需要我们大展身手。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg"></p><p>图1 电池热管理的重要工程实践意义（百度图片）</p><p>温度最直观的影响就是对电池容量的影响，这也是为什么在冬季电动车行驶里程要比其他季节短很多的原因，同样每年的4月到9月都会出现电动车自燃的现象（暴晒条件下，车内温度达到60℃），天气燥热，电动车又给炎热的天气添了一把柴。综合各方面因素，电池热管理技术对于目前的动力电池是不可或缺的一部分，在环境温度较高时需要对电池进行降温，同时在温度较低时对电池进行加热，电池热管理技术相当于给电池加上了一个小型的空调系统。当然，在实际中也需要根据整车的实际运行工况来调整电池热管理系统策略。</p><p> </p><p><strong>2、电池热管理部件组成</strong></p><p>今天我们针对电池热管理技术的实际应用现状做个综述，后续我们再共同对其进行细分和学习。在国内目前能够大批量生产的汽车中实际应用的电池热管理技术可以分为四类：风冷式热管理技术、液冷式电池热管理技术、自然冷却式电池热管理技术和直冷式电池热管理技术（相变冷却技术）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg"></p><p>图2 电池热管理技术分类（百度图片）</p><p>另外电池包的保温设计（其实笔者感觉有效的保温最难实现，有时候想法和实际操作相差太远，现实条件中可能不允许你做一些保温的措施）和单纯加热的系统也都隶属于电池热管理系统，当然有人提出热扩散防控也属于热管理范畴，我们这里不做定义及探讨，本文主要针对散热系统进行介绍。</p><p> </p><p><strong>3、风冷式电池热管理系统部件构成</strong></p><p>风冷式热管理系统部件包括格栅、温度探头、滤网、进风管、冷风介质、电池包内部风管、出风管、风机，密封条和固定卡扣。一般来说格栅设计在风管的进口处，其作用是为了防止一些较大尺寸的物体进入电池包内部而堵塞风管。在格栅和风管之间还会设计有滤芯和风道，风道的设计一般会根据整车的内部结构和电池包内部结构设计进行调整，在实际的设计中，风道的设计要尽量的光滑和平顺。在风道和车辆部件接触的地方需要设计密封条。风机一般分为轴流分机和离心风机，根据不同的风冷式热管理系统的需求选择不同的风机类型。在选型的过程中一般会将噪音和送风量作为主要的参考因素。离心风机在电池包内部根据使用场景的不同可以分为吹风式和抽离式，最直接的例子就是丰田卡罗拉的两款HEV电池包，一款采用了吹风形式，另外一款采用了抽风形式。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg"></p><p>图3 丰田普锐斯（Prius）使用的风冷式电池热管理系统（谷歌图片）</p><p>当然，很多人可能会对风冷式热管理系统能否有效冷却电池保持怀疑态度，因为有很多这方面的文章提到风冷式系统的不足之处，这里我们简单探讨一下。在国内，针对不同的电池包我们尝试采用不同的冷却系统，对于EV (ElectricVehicle，纯电动汽车)，国内采用较多的热管理系统是液冷系统了，当然也会有一部分厂家尝试采用风冷系统，2016年奇瑞汽车生产的小蚂蚁电动汽车就尝试采用风冷式热管理系统进行散热。对于传统汽车改新能源车来说，采用风冷式热管理系统可以节省一大笔的开发费用，整车的空调系统可以直接按照原来燃油车的系统部件进行设计。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg"></p><p>图4 奇瑞小蚂蚁电动汽车（百度图片）</p><p>而对于HEV(Hybrid Electric Vehicle，混合动力汽车) 目前很多车厂都在争先进行开发，首选的电池热管理系统就是风冷式，比如前面提到的丰田卡罗拉和本田雅阁都是采用风冷式热管理系统。从大数据上看，日系车企很少采用液冷式热管理系统，大多采用的是风冷式，这点和国内的一些车企有些不同，可能是由于日系车企对液冷式系统还有其他的考量，个人感觉不会是因为成本的原因。对于HEV来说采用的电芯和EV的电芯是不同的，HEV在运行过程中动力电池不是唯一的动力来源，大部分情况下电池持续运行时间较短，风冷式热管理系统完全可以满足系统的要求，但是EV的动力完全来自于动力电池，电池长时间持续运行，这样电池就需要散热能力更强的电池热管理系统来保证电池的正常工作。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg"></p><p>图5 丰田卡罗拉油电混合汽车（百度图片）</p><p>风冷系统一般有三种设计，第一种就是单独采用风冷对电池进行散热或者加热；第二种就是仅用来对电池进行散热，对电池系统加热的话一般会另外设计加热膜；第三种就是风冷系统和加热膜结合，当电池需要散热的时候，仅仅启动冷却，当电池需要加热的时候，加热膜和风冷同时启动，此时风冷系统的进口为温度较高的车内气体。丰田卡罗拉的PHEV在两个模组之间设计的有加热膜，加热膜和模组之间的有效接触面积很小，笔者个人觉得加热膜只是为了加热电芯之间的空气，再通过风冷系统对电池包内的空气进行扰动。丰田卡罗拉的PHEV使用的是18650电芯，同时这款电池包的热失控管理设计也十分精巧，有空我们可以再聊聊。</p><p><strong>下面我们通过几个目前已经实现量产的实例来了解风冷式电池热管理技术。</strong></p><p>本田雅阁混动HEV的电池热管理系统中使用的冷却介质来自车内部的空调风，如果车主不使用空调时，进入电池包风管内的就是是车内没通过冷却的风。图示IPU指的就是电池包，我们简单了解一下冷却风是如何在内部流动的，电池包的冷却风从总进口进入电池包内部风道(模组的一侧)，然后再通过电芯之间的间隙，离心风扇和整个模组的另外一侧并没有设计风道，直接依靠离心风扇排出到外部，这样设计不仅仅对电池进行了散热，对电池包内部的发热器件（铜排、BDU）也有一定的散热作用。有兴趣的话大家可以看一下本田的专利，电芯之间设计有一定形状的塑料隔板，隔板不仅仅起到了流通的作用，在一定程度上也起到缓冲（电芯膨胀）的作用。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png"></p><p>图6 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png"></p><p>图7 电池包三维视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png"></p><p>图8 电池包内模组实物图（百度图片）</p><p> </p><p>奥迪Q5采用的同样也是风冷散热，但是奥迪在电池包的外部单独给整个电池包系统做了一个蒸发器，专门对电池包内部循环风进行降温，使进入到电池包内部的风控制在合理的范围内，同时奥迪的这款设计比较巧妙，它的冷却系统进风可以切换，拥有引入外部自然风和内部循环风两种功能，可以通过感知电池不同的温度阶段来切换这两种功能。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png"></p><p>图9 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png"></p><p>图10 电池包三维视图及其工作原理（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png"></p><p>图11 电池包内部模组视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png"></p><p>图12 电池包内部流体流动轨迹视图（百度图片）</p><p> </p><p>广汽丰田2020年新推出的一款C-HREV采用的也是风冷散热，丰田将2个蒸发器和2个膨胀阀移到了电池包内部，采用这种设计的电池包内部空气、两个离心风机、风道（风道位于电池包2侧）和模组单独形成了一个循环（封闭式风冷系统），这款设计和奥迪Q5设计有类似之处，C-HR电池包的蒸发器位于风机出口的风道内部，电池包内部具有加热功能，在每个大模组（包内有2种模组）的底部都设计的有加热膜（有弹性支撑），这种加热膜材质和国内的差别比较大，这款车的加热速率非常低（可能是出于安全考虑），C-HR这款电池包内部设计有许多值得借鉴的细节（风道比较有特点）。在一定程度上奥迪Q5和C-HR也采用了直冷的散热方式，只是蒸发器没有和电芯直接接触，可以避免过冷的现象出现，它们将风冷和直冷结合在一块，直接给动力电池的冷却介质配置一个蒸发器，这样电池散热效果更佳，但是成本可能会增加不少。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png"></p><p>图13 电池包三维视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png"></p><p>图14 电池包俯视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png"></p><p>图15 电池包热管理原理（百度图片）</p><p> </p><p>可见，风冷式电池热管理技术有很广的应用范围，而且应用在商业电动车上也有很好的效果。目前商用电动车还有其他的电池热管理技术，下一期，我们将着重介绍和讨论<strong>液冷式和直冷式电池热管理技术</strong>。</p><p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出，后续如果有兴趣大家可以留言，我们针对热管理的一些子部件进行详细探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行剖解分析，同时以上论述均为个人见解，如有错误之处请不吝赐教，技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p><p><strong>往期精彩回顾</strong></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 制冷技术 </category>
-          
-          <category> 文章采集 </category>
-          
-      </categories>
-      
-      
-        <tags>
             
             <tag> 电池热管理 </tag>
             
@@ -4865,7 +4894,7 @@
       <link href="/xiaoxiaohu/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/"/>
       <url>/xiaoxiaohu/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/</url>
       
-        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#x43;&#x50;&#85;&#x40;&#x31;&#46;&#x39;&#x47;&#72;&#122;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
+        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#x43;&#80;&#x55;&#64;&#x31;&#46;&#57;&#71;&#x48;&#122;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
       
       
       <categories>
@@ -5038,9 +5067,9 @@
             
             <tag> 图标 </tag>
             
-            <tag> 控制 </tag>
-            
             <tag> 邮件 </tag>
+            
+            <tag> 控制 </tag>
             
             <tag> windows </tag>
             
@@ -5065,11 +5094,11 @@
     
     
     <entry>
-      <title>LabVIEW串口仪器控制—安装使用仪器现有驱动</title>
-      <link href="/xiaoxiaohu/2020/05/18/labview%E4%B8%B2%E5%8F%A3%E4%BB%AA%E5%99%A8%E6%8E%A7%E5%88%B6-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%BB%AA%E5%99%A8%E7%8E%B0%E6%9C%89%E9%A9%B1%E5%8A%A8/"/>
-      <url>/xiaoxiaohu/2020/05/18/labview%E4%B8%B2%E5%8F%A3%E4%BB%AA%E5%99%A8%E6%8E%A7%E5%88%B6-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%BB%AA%E5%99%A8%E7%8E%B0%E6%9C%89%E9%A9%B1%E5%8A%A8/</url>
+      <title>LabVIEW中访问数据库的几种不同方法</title>
+      <link href="/xiaoxiaohu/2020/05/18/labview%E4%B8%AD%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95/"/>
+      <url>/xiaoxiaohu/2020/05/18/labview%E4%B8%AD%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[<h2 id="声明：很多仪器是没有驱动的。所以，具体问题具体分析。"><a href="#声明：很多仪器是没有驱动的。所以，具体问题具体分析。" class="headerlink" title="声明：很多仪器是没有驱动的。所以，具体问题具体分析。"></a>声明：很多仪器是没有驱动的。所以，具体问题具体分析。</h2><p>另外声明：所谓的驱动，也就是<a href="http://bbs.elecfans.com/zhuti_packaging_1.html">封装</a>好的底层的串口<a href="http://bbs.elecfans.com/zhuti_wireless_1.html">通信</a>程序，也是程序而已，只不过别人帮你做成了子 VI，让自己容易用。</p><p>所以：不要弄混淆了概念。</p><p>国外的很多仪器，都是有现成的 LV 程序驱动的，这个时候，我们到网上搜搜就行了。如果你要做仪器驱动，你最好先到网上搜搜，看有木有现成的。有现成的，开发速度就好多啦。如果手边的仪器搜不到现成的驱动，那就只能自己写了。</p><p>下面讲解怎么安装现成的驱动。 ①，网站下载篇，前面这个帖子讲了。 <a href="http://bbs.elecfans.com/jishu_467276_1_1.html">http://bbs.elecfans.com/jishu_467276_1_1.html</a> 有兴趣可以看看。 下面是通过 LabVIEW 软件下载。 我下面手把手教下 在 LV 软件里下载安装。</p><p>首先在 LV 的帮助菜单里，找到 查找仪器驱动 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145320o40k6u5ba5j074q9.jpg.thumb.jpg"></p><p>然后就会弹出一个仪器查找界面。如果你已经连接好了仪器的硬件，且仪器支持IDN？ 这个 SCPI 指令的话。</p><p>可以使用扫描仪器按钮，扫描一下你的仪器。因为使用那个指令，如果仪器连接好没错误，会返回一个仪器本身的仪器类型和版本的。这个时候，LV 就知道是什么仪器连接到了。这个需要查仪器说明书指令。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145425igqznznml30yzoro.jpg.thumb.jpg"></p><p>如果仪器木有连接好，或者没扫描出来（没扫描出来原因太多了。没装 VISA 驱动，电缆没连接好，仪器参数不对等。）自己想下载驱动。就自己选型号了，见下图。选型号，然后点击搜索。</p><p>我们下面搜索 Keithley2400.好了，点击搜索。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145525prt5qtozqkkkzp5a.jpg.thumb.jpg"></p><p>然后会搜出来。注意看右边的驱动信息。开发环境，版本，还有支持的接口等。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145626t2ooavzqa972roob.jpg.thumb.jpg"></p><p>从上图可以看出，这个仪器支持串口和 GPIB 口。还有支持的型号，有 2400，2410 等。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145704p5dddrdpdvnqyct5.jpg.thumb.jpg"></p><p>找到了驱动后，就点击安装，然后 LV 会自动给你安装到 instr.lib 文件夹下面。然后就可以在程序面板，仪器 IO 里，找到自己的驱动了。然后就可以调用了。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145757jtkndl63zqqqdaw7.jpg.thumb.jpg"></p><p>每个仪器驱动，会提供对应的调用例子，大家看下例子，大概知道怎么用就好了。有时候，自己把例子稍微改动一点点，就变成自己的程序了。还是很方便的。有仪器驱动，还是先看仪器。不然看仪器的 SCPI 指令是很麻烦的，一本说明书往往很长，而且大多是英文的。</p><p>下载好的驱动和例子，在这个地址：你安装的文件夹下下的这个路径。\Na<a href="http://bbs.elecfans.com/zhuti_715_1.html">ti</a>onal Instruments\LabVIEW 2011\instr.lib &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145953iiii9xqjv28s8iix.jpg.thumb.jpg"></p><p>仪器的例子，在上面的文件夹 Example下，自己连接仪器，配置程序参数和仪器的通讯参数，运行试试看。</p><p>参数什么的，最好对着说明书看看，国外的仪器，一般功能很强大，而你需要了解的命令，可能一点点而已。</p><p>声明：国外的仪器，有些有驱动（程序）的，有些是木有的。有现成的驱动仪器，最好使用现成的，这样开发速度更快。</p><p>文章来源于：</p><h2 id="小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动"><a href="#小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动" class="headerlink" title="小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动"></a><a href="https://www.cnblogs.com/mrchige/p/6238027.html">小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动</a></h2>]]></content>
+        <content type="html"><![CDATA[<p>虚拟仪器VI(Virtual Instruments)是National Instruments公司在其产品LabVIEW中首先提出的创新概念[1]。虚拟仪器系统的概念是测控系统的抽象。不管是传统的还是虚拟的仪器，它们的功能都是相同的：采集数据并进行分析处理，然后显示处理的结果。它们之间的不同主要体现在灵活性方面。虚拟仪器由用户自己定义功能，可以自由地组合计算机平台、硬件、软件以及完成应用系统所需要的各种功能。另外，虚拟仪器开发周期短、成本低、维护方便，易于应用新理论和新技术实现仪器的换代升级[2]。 <strong>现代的测试测量系统大多数需要对被测对象进行全方位检测，这必然会使获取的数据量急剧增长。面对大量的数据信息，采用数据库技术，可准确反映各类数据之间的密切联系，能够有效地管理和组织数据，是现代测试测量系统的发展趋势。但是现有的LabVIEW版本本身并不具备数据库访问功能，不能像VB、VC++、Delphi、PowerBuilder那样非常方便的进行数据库程序的开发。因此以LabVIEW编制的虚拟仪器系统需要其它辅助的方法来进行数据库访问。</strong> 1、在LabVIEW中访问数据库的方式**(1)利用NI公司的附加工具包中的数据库接口工具包LabVIEW SQL Toolkit进行数据库访问。该工具包集成了一系列的高级功能模块，这些模块封装了大多数的数据库操作和一些高级的数据库访问功能。它的优点是易于理解，操作简单，用户可以不学习SQL语法。缺点是需要另外购买且价格昂贵，无疑会增加系统成本。** <strong>(2)利用LabVIEW的ActiveX功能，调用Microsoft ADO对象，利用SQL语言实现数据库的访问。使用这种方法需要用户对Microsoft ADO以及SQL语言有较深的了解。</strong> <strong>(3)通过第三方开发的免费工具包LabSQL访问。LabSQL利用Microsoft ADO以及SQL语言来完成数据库访问，将复杂的底层ADO及SQL操作封装成一系列的LabSQL VIs，简单易用。</strong> <strong>(4)通过调用动态链接库DLL(Dynamic Link Library)访问。先利用其它语言如Visual C++编写DLL，再利用LabVIEW的调用库函数节点CLFN(Calling Library Function Node)调用此DLL访问数据库。但这种方法需要从底层进行复杂的编程才能实现，对非专业编程人员来讲是不现实的[3]。</strong> <strong>(5)利用中间文件存取数据。先将数据存入文件之中，待测量结束后再用专门的工具将数据导入到数据库之中。这种方法需要磁盘文件作为中介，而且不具有实时性，不方便使用[4]。</strong> <strong>实际应用中，前三种方法使用最为广泛，下面将重点讨论这三种方法。</strong></p><p>2 利用ADO技术访问数据库2.1 ADO技术简介ADO(ActiveX Data Objects)是Microsoft为OLE DB设计的应用层接口，它为一致的数据访问接口提供了良好的扩展性而不局限于单一的数据源。 ADO接口编程模型中包括连接(Connection)、命令(Command)、参数(Parameter)、记录集(Recordset)、字段(Field)、错误(Error)、属性(Property)、集合(Collection)、事件(Event)等元素。其中Connection、Command、Recordset是三个主体对象，Parameters、Fields、Errors、Properties是四个集合对象[5]。 ADO的一般操作方式为：1连接到数据源；2指定访问数据源的命令；3执行命令；4将命令执行后产生的结果保存在缓存中；5更新数据库。ADO的主要优点是易于使用、高速度、低内存支出和占用磁盘空间较少[6]。 2.2 LabVIEW中对ADO的调用ADO对象在LabVIEW中是以ActiveX对象的形式提供的。LabVIEW自4.1版本就引入了支持ActiveX自动控制的功能模块，在5.1版本之后支持客户和服务器双方，即虽然程序是在双方各自独立存在，但它们的信息是共享的。这种信息共享是通过客户端使用由服务器端发布的ActiveX控件来实现的。 图1展示的是LabVIEW中使用ActiveX控件的程序流程。ActiveX对象的打开和关闭是通过打开自动化节点(Automation Open)和关闭自动化节点(Close Reference)来实现的，属性的设置和获取则通过属性节点(Property Node)进行，而调用节点(Invoke Node)用于对象方法的调用。其中关键的是第二步，只有充分的利用“属性”和“方法”的设置才能成功地实现对数据库的访问</p><p>2.3应用实例(1)建立ADO对象 在前面板控件模板的Refnum子模板中选择Automation Refnum项，把它拖放到前面板上，在其右键菜单中选择Select ActiveX Class&gt;&gt;Broswer…，弹出Select ActiveX Object对话框，在类型库Type Library下拉列表中选择Microsoft ActiveX Data Objects 2.7 Library Version 2.7，在下面的对象Objects列表栏中出现这个库对LabVIEW可用的对象，选中Connection对象，点击OK按钮即可。使用同样的方法可以建立Command、Recordset等对象。 (2)连接到数据源 在程序框图功能模板中选择Communication&gt;&gt;ActiveX子模板，选择其中的Automation Open与ADODB._Connection相连即可打开Connection对象。接着从ActiveX子模板中选择Invoke Node并与Automation Open相连，在其上单击右键选择Methods&gt;&gt;Open，即出现图2中所示的节点。其中“ConnectionSring”是连接到数据源的字符串，“UserID”和“PassWord”是连接到数据源的用户名和密码，正确设置这些参数后便可连接到数据源。 (3)生成SQL命令、执行命令 与上一步相同，用 Invoke Node调用Connection对象的Execute方法执行所要的操作。Execute方法所必需的参数为CommandText，这里为所要执行的SQL语句。例如可以使用Create命令创建表，用Drop命令删除表，用Insert命令向表中插入数据，用Select命令进行查询并返回操作结果等[8]。本例使用Create命令创建了一个名为Staff的表，包括编号、姓名和年龄三个字段，其中id字段为主键，自动编号。对数据表的删除和添加数据的操作过程与建表过程类似。如果要对执行后的记录进行显示或读取字段值则需要建立Recordset对象，并与Execute相连。 (4)关闭连接 对数据库访问操作完毕后要及时关闭连接对象以释放内存和所用的系统资源。首先使用Connection对象的Close方法关闭数据库连接，然后使用Close Reference关闭ActiveX自动化参数号。</p><p>3、利用LabSQL访问数据库3.1 LabSQL简介LabSQL是一个免费的、多数据库、跨平台的LabVIEW数据库访问工具包，由Premkc Development公司的Chris Roth和Jeffrey Travis开发。目前的最新版本是LabSQL Release 1.1a，可以到网站<a href="http://jeffreytravis.com免费下载.labsql支持windows操作系统中任何基于obdc的数据库,包括access,sql/">[url&#x3D;http://jeffreytravis.com/]http://jeffreytravis.com</a>免费下载。LabSQL支持Windows操作系统中任何基于OBDC的数据库，包括Access，SQL Server，Oracle，Pervasive，Sybase等。[&#x2F;url]</p><p>LabSQL利用Microsoft ADO对象和SQL语言来完成数据库访问，将复杂的底层ADO及SQL操作封装成一系列的LabSQL VIs，简单易用。</p><p>LabSQL VIs按照功能可以分为四类：Command VIs，Connection VIs，Recordset VIs和Top Level VIs。 Command VIs的功能是完成一系列的基本ADO操作，例如，创建或删除一个Command，对数据库的某一个参数进行读或写等。 Connection VIs的功能是管理LabVIEW与数据库之间的连接。 Recordset VIs用于对数据库中的记录进行各种操作，例如，创建或删除一条记录，对记录中的某一个条目进行读或写等。 Top Level VIs属于顶层的LabSQL应用，对前三类LabSQL VIs某些功能的封装，例如，SQL Execute.vi可用于直接执行命令[9]。 3.2 LabSQL应用实例本应用实例是向数据表添加记录，所使用的数据源与上例相同，数据表为staff表。具体步骤如下： 第一步：建立与数据库的连接。首先通过ADO Connection Create.vi创建一个Connection对象，然后利用ADO Connection Open.vi建立与数据库的连接。数据库由ADO Connection Open.vi的ConnectionString指定，此参数由前面板的字符串控件提供，如图3所示。 第二步：生成SQL命令，执行命令。在前面板table控件中输入表名，name和age控件中输入字段值。在程序框图中使用Format Into String生成SQL命令，将它连接到ADO Connection Execute.vi即可执行，同时可在前面板Command Text控件中显示此命令。 第三步：断开与数据库之间的连接。利用ADO Connection Close.vi关闭Connection对象，并使用ADO Connection Destroy.vi删除Connection对象</p><p>4、利用LabVIEW SQL Toolkit访问数据库4.1 LabVIEW SQL Toolkit简介LabVIEW SQL Toolkit(又被称作为LabVIEW Database Connectivity Toolset)是用于数据库访问的附加工具包，它集成了一系列的高级功能模块，这些模块封装了大多数的数据库操作和一些高级的数据库访问功能[10]。其主要的功能如下： (1)支持ADO所支持的所有的数据库引擎； (2)支持所有与ODBC或OLE DB兼容的数据库驱动程序； (3)具有高度的可移植性，在任何情况下，用户通过改变DB Tools Open Connection VI的输入参数Connection String就可以更换数据库； (4)可以将数据库中Column Values的数据类型转换为标准LabVIEW Database Connectivity Toolset的数据类型，这进一步增强了它的可移植性； (5)与SQL兼容； (6)不使用SQL语句就可以实现数据库记录的查询、添加、修改以及删除等操作； (7)用户可以完全不需要学习SQL语法。 用户可以使用LabVIEW SQL Toolkit在LabVIEW中支持ODBC的本地或远程数据库，例如Microsoft Access，Microsoft SQL Sever，Sybase SQL Server以及Oracle等</p><p>4.2应用实例本应用实例是显示上面所建staff表中的所有记录，所使用的数据源与上面两例相同。具体步骤如下： (1)使用DB Tools Open Connection打开数据库连接[12]。 (2)显示指定数据表中所有数据。 使用DB Tools List Tables以一维数组形式列出指定数据库中的所有表，同时显示在前面板数组控件tables中。用户指定Table Index后，通过索引数组函数Index Array索引其中一个表。然后将表名连接到DB Tools List Columns和DB Tools Select All Data。 DB Tools List Columns的Columns参数用一维字符串数组返回指定表的字段名，通过属性节点将字段名显示在表格控件Table Data的首行，同时使用数组大小函数Array Size取得字段数，即表的列数，显示在Columns中。 DB Tools Select All Data的Data参数以二维字符串数组形式返回表中所有数据，显示在Table Data中，同时使用Array Size和Index Array函数取得记录数，也就是行数，显示在Rows中。 (3)使用DB Tools Close Connection断开连接</p><p>5、结论综上所述，使用ADO，LabSQL或LabVIEW SQL Toolkit访问数据库的基本步骤都是相同的，都要经过连接数据库、执行操作、断开连接这三个步骤。 使用ADO主要优点是易于使用、高速度、低内存支出和占用磁盘空间较少,但需要用户对Microsoft ADO以及SQL语言有较深的了解。 使用LabSQL不用精通ActiveX技术和SQL语言，操作简介，容易理解，但它没有对ADO的所有功能进行封装，功能上有局限性。 LabVIEW SQL Toolkit支持ADO所支持的所有的数据库引擎，不使用SQL语句就可以实现数据库记录的查询、添加、修改以及删除等操作，使用SQL语句能够实现复杂的数据库操作，功能强大，但其昂贵的价格对于很多用户来讲是不能承受的，这也限制了它的推广应用。 在实际应用中，用户究竟采用哪种方法要从项目难易程度、自身编程水平和技术经济等方面综合考虑</p>]]></content>
       
       
       <categories>
@@ -5094,11 +5123,11 @@
     
     
     <entry>
-      <title>LabVIEW中访问数据库的几种不同方法</title>
-      <link href="/xiaoxiaohu/2020/05/18/labview%E4%B8%AD%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95/"/>
-      <url>/xiaoxiaohu/2020/05/18/labview%E4%B8%AD%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95/</url>
+      <title>LabVIEW串口仪器控制—安装使用仪器现有驱动</title>
+      <link href="/xiaoxiaohu/2020/05/18/labview%E4%B8%B2%E5%8F%A3%E4%BB%AA%E5%99%A8%E6%8E%A7%E5%88%B6-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%BB%AA%E5%99%A8%E7%8E%B0%E6%9C%89%E9%A9%B1%E5%8A%A8/"/>
+      <url>/xiaoxiaohu/2020/05/18/labview%E4%B8%B2%E5%8F%A3%E4%BB%AA%E5%99%A8%E6%8E%A7%E5%88%B6-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%BB%AA%E5%99%A8%E7%8E%B0%E6%9C%89%E9%A9%B1%E5%8A%A8/</url>
       
-        <content type="html"><![CDATA[<p>虚拟仪器VI(Virtual Instruments)是National Instruments公司在其产品LabVIEW中首先提出的创新概念[1]。虚拟仪器系统的概念是测控系统的抽象。不管是传统的还是虚拟的仪器，它们的功能都是相同的：采集数据并进行分析处理，然后显示处理的结果。它们之间的不同主要体现在灵活性方面。虚拟仪器由用户自己定义功能，可以自由地组合计算机平台、硬件、软件以及完成应用系统所需要的各种功能。另外，虚拟仪器开发周期短、成本低、维护方便，易于应用新理论和新技术实现仪器的换代升级[2]。 <strong>现代的测试测量系统大多数需要对被测对象进行全方位检测，这必然会使获取的数据量急剧增长。面对大量的数据信息，采用数据库技术，可准确反映各类数据之间的密切联系，能够有效地管理和组织数据，是现代测试测量系统的发展趋势。但是现有的LabVIEW版本本身并不具备数据库访问功能，不能像VB、VC++、Delphi、PowerBuilder那样非常方便的进行数据库程序的开发。因此以LabVIEW编制的虚拟仪器系统需要其它辅助的方法来进行数据库访问。</strong> 1、在LabVIEW中访问数据库的方式**(1)利用NI公司的附加工具包中的数据库接口工具包LabVIEW SQL Toolkit进行数据库访问。该工具包集成了一系列的高级功能模块，这些模块封装了大多数的数据库操作和一些高级的数据库访问功能。它的优点是易于理解，操作简单，用户可以不学习SQL语法。缺点是需要另外购买且价格昂贵，无疑会增加系统成本。** <strong>(2)利用LabVIEW的ActiveX功能，调用Microsoft ADO对象，利用SQL语言实现数据库的访问。使用这种方法需要用户对Microsoft ADO以及SQL语言有较深的了解。</strong> <strong>(3)通过第三方开发的免费工具包LabSQL访问。LabSQL利用Microsoft ADO以及SQL语言来完成数据库访问，将复杂的底层ADO及SQL操作封装成一系列的LabSQL VIs，简单易用。</strong> <strong>(4)通过调用动态链接库DLL(Dynamic Link Library)访问。先利用其它语言如Visual C++编写DLL，再利用LabVIEW的调用库函数节点CLFN(Calling Library Function Node)调用此DLL访问数据库。但这种方法需要从底层进行复杂的编程才能实现，对非专业编程人员来讲是不现实的[3]。</strong> <strong>(5)利用中间文件存取数据。先将数据存入文件之中，待测量结束后再用专门的工具将数据导入到数据库之中。这种方法需要磁盘文件作为中介，而且不具有实时性，不方便使用[4]。</strong> <strong>实际应用中，前三种方法使用最为广泛，下面将重点讨论这三种方法。</strong></p><p>2 利用ADO技术访问数据库2.1 ADO技术简介ADO(ActiveX Data Objects)是Microsoft为OLE DB设计的应用层接口，它为一致的数据访问接口提供了良好的扩展性而不局限于单一的数据源。 ADO接口编程模型中包括连接(Connection)、命令(Command)、参数(Parameter)、记录集(Recordset)、字段(Field)、错误(Error)、属性(Property)、集合(Collection)、事件(Event)等元素。其中Connection、Command、Recordset是三个主体对象，Parameters、Fields、Errors、Properties是四个集合对象[5]。 ADO的一般操作方式为：1连接到数据源；2指定访问数据源的命令；3执行命令；4将命令执行后产生的结果保存在缓存中；5更新数据库。ADO的主要优点是易于使用、高速度、低内存支出和占用磁盘空间较少[6]。 2.2 LabVIEW中对ADO的调用ADO对象在LabVIEW中是以ActiveX对象的形式提供的。LabVIEW自4.1版本就引入了支持ActiveX自动控制的功能模块，在5.1版本之后支持客户和服务器双方，即虽然程序是在双方各自独立存在，但它们的信息是共享的。这种信息共享是通过客户端使用由服务器端发布的ActiveX控件来实现的。 图1展示的是LabVIEW中使用ActiveX控件的程序流程。ActiveX对象的打开和关闭是通过打开自动化节点(Automation Open)和关闭自动化节点(Close Reference)来实现的，属性的设置和获取则通过属性节点(Property Node)进行，而调用节点(Invoke Node)用于对象方法的调用。其中关键的是第二步，只有充分的利用“属性”和“方法”的设置才能成功地实现对数据库的访问</p><p>2.3应用实例(1)建立ADO对象 在前面板控件模板的Refnum子模板中选择Automation Refnum项，把它拖放到前面板上，在其右键菜单中选择Select ActiveX Class&gt;&gt;Broswer…，弹出Select ActiveX Object对话框，在类型库Type Library下拉列表中选择Microsoft ActiveX Data Objects 2.7 Library Version 2.7，在下面的对象Objects列表栏中出现这个库对LabVIEW可用的对象，选中Connection对象，点击OK按钮即可。使用同样的方法可以建立Command、Recordset等对象。 (2)连接到数据源 在程序框图功能模板中选择Communication&gt;&gt;ActiveX子模板，选择其中的Automation Open与ADODB._Connection相连即可打开Connection对象。接着从ActiveX子模板中选择Invoke Node并与Automation Open相连，在其上单击右键选择Methods&gt;&gt;Open，即出现图2中所示的节点。其中“ConnectionSring”是连接到数据源的字符串，“UserID”和“PassWord”是连接到数据源的用户名和密码，正确设置这些参数后便可连接到数据源。 (3)生成SQL命令、执行命令 与上一步相同，用 Invoke Node调用Connection对象的Execute方法执行所要的操作。Execute方法所必需的参数为CommandText，这里为所要执行的SQL语句。例如可以使用Create命令创建表，用Drop命令删除表，用Insert命令向表中插入数据，用Select命令进行查询并返回操作结果等[8]。本例使用Create命令创建了一个名为Staff的表，包括编号、姓名和年龄三个字段，其中id字段为主键，自动编号。对数据表的删除和添加数据的操作过程与建表过程类似。如果要对执行后的记录进行显示或读取字段值则需要建立Recordset对象，并与Execute相连。 (4)关闭连接 对数据库访问操作完毕后要及时关闭连接对象以释放内存和所用的系统资源。首先使用Connection对象的Close方法关闭数据库连接，然后使用Close Reference关闭ActiveX自动化参数号。</p><p>3、利用LabSQL访问数据库3.1 LabSQL简介LabSQL是一个免费的、多数据库、跨平台的LabVIEW数据库访问工具包，由Premkc Development公司的Chris Roth和Jeffrey Travis开发。目前的最新版本是LabSQL Release 1.1a，可以到网站<a href="http://jeffreytravis.com免费下载.labsql支持windows操作系统中任何基于obdc的数据库,包括access,sql/">[url&#x3D;http://jeffreytravis.com/]http://jeffreytravis.com</a>免费下载。LabSQL支持Windows操作系统中任何基于OBDC的数据库，包括Access，SQL Server，Oracle，Pervasive，Sybase等。[&#x2F;url]</p><p>LabSQL利用Microsoft ADO对象和SQL语言来完成数据库访问，将复杂的底层ADO及SQL操作封装成一系列的LabSQL VIs，简单易用。</p><p>LabSQL VIs按照功能可以分为四类：Command VIs，Connection VIs，Recordset VIs和Top Level VIs。 Command VIs的功能是完成一系列的基本ADO操作，例如，创建或删除一个Command，对数据库的某一个参数进行读或写等。 Connection VIs的功能是管理LabVIEW与数据库之间的连接。 Recordset VIs用于对数据库中的记录进行各种操作，例如，创建或删除一条记录，对记录中的某一个条目进行读或写等。 Top Level VIs属于顶层的LabSQL应用，对前三类LabSQL VIs某些功能的封装，例如，SQL Execute.vi可用于直接执行命令[9]。 3.2 LabSQL应用实例本应用实例是向数据表添加记录，所使用的数据源与上例相同，数据表为staff表。具体步骤如下： 第一步：建立与数据库的连接。首先通过ADO Connection Create.vi创建一个Connection对象，然后利用ADO Connection Open.vi建立与数据库的连接。数据库由ADO Connection Open.vi的ConnectionString指定，此参数由前面板的字符串控件提供，如图3所示。 第二步：生成SQL命令，执行命令。在前面板table控件中输入表名，name和age控件中输入字段值。在程序框图中使用Format Into String生成SQL命令，将它连接到ADO Connection Execute.vi即可执行，同时可在前面板Command Text控件中显示此命令。 第三步：断开与数据库之间的连接。利用ADO Connection Close.vi关闭Connection对象，并使用ADO Connection Destroy.vi删除Connection对象</p><p>4、利用LabVIEW SQL Toolkit访问数据库4.1 LabVIEW SQL Toolkit简介LabVIEW SQL Toolkit(又被称作为LabVIEW Database Connectivity Toolset)是用于数据库访问的附加工具包，它集成了一系列的高级功能模块，这些模块封装了大多数的数据库操作和一些高级的数据库访问功能[10]。其主要的功能如下： (1)支持ADO所支持的所有的数据库引擎； (2)支持所有与ODBC或OLE DB兼容的数据库驱动程序； (3)具有高度的可移植性，在任何情况下，用户通过改变DB Tools Open Connection VI的输入参数Connection String就可以更换数据库； (4)可以将数据库中Column Values的数据类型转换为标准LabVIEW Database Connectivity Toolset的数据类型，这进一步增强了它的可移植性； (5)与SQL兼容； (6)不使用SQL语句就可以实现数据库记录的查询、添加、修改以及删除等操作； (7)用户可以完全不需要学习SQL语法。 用户可以使用LabVIEW SQL Toolkit在LabVIEW中支持ODBC的本地或远程数据库，例如Microsoft Access，Microsoft SQL Sever，Sybase SQL Server以及Oracle等</p><p>4.2应用实例本应用实例是显示上面所建staff表中的所有记录，所使用的数据源与上面两例相同。具体步骤如下： (1)使用DB Tools Open Connection打开数据库连接[12]。 (2)显示指定数据表中所有数据。 使用DB Tools List Tables以一维数组形式列出指定数据库中的所有表，同时显示在前面板数组控件tables中。用户指定Table Index后，通过索引数组函数Index Array索引其中一个表。然后将表名连接到DB Tools List Columns和DB Tools Select All Data。 DB Tools List Columns的Columns参数用一维字符串数组返回指定表的字段名，通过属性节点将字段名显示在表格控件Table Data的首行，同时使用数组大小函数Array Size取得字段数，即表的列数，显示在Columns中。 DB Tools Select All Data的Data参数以二维字符串数组形式返回表中所有数据，显示在Table Data中，同时使用Array Size和Index Array函数取得记录数，也就是行数，显示在Rows中。 (3)使用DB Tools Close Connection断开连接</p><p>5、结论综上所述，使用ADO，LabSQL或LabVIEW SQL Toolkit访问数据库的基本步骤都是相同的，都要经过连接数据库、执行操作、断开连接这三个步骤。 使用ADO主要优点是易于使用、高速度、低内存支出和占用磁盘空间较少,但需要用户对Microsoft ADO以及SQL语言有较深的了解。 使用LabSQL不用精通ActiveX技术和SQL语言，操作简介，容易理解，但它没有对ADO的所有功能进行封装，功能上有局限性。 LabVIEW SQL Toolkit支持ADO所支持的所有的数据库引擎，不使用SQL语句就可以实现数据库记录的查询、添加、修改以及删除等操作，使用SQL语句能够实现复杂的数据库操作，功能强大，但其昂贵的价格对于很多用户来讲是不能承受的，这也限制了它的推广应用。 在实际应用中，用户究竟采用哪种方法要从项目难易程度、自身编程水平和技术经济等方面综合考虑</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="声明：很多仪器是没有驱动的。所以，具体问题具体分析。"><a href="#声明：很多仪器是没有驱动的。所以，具体问题具体分析。" class="headerlink" title="声明：很多仪器是没有驱动的。所以，具体问题具体分析。"></a>声明：很多仪器是没有驱动的。所以，具体问题具体分析。</h2><p>另外声明：所谓的驱动，也就是<a href="http://bbs.elecfans.com/zhuti_packaging_1.html">封装</a>好的底层的串口<a href="http://bbs.elecfans.com/zhuti_wireless_1.html">通信</a>程序，也是程序而已，只不过别人帮你做成了子 VI，让自己容易用。</p><p>所以：不要弄混淆了概念。</p><p>国外的很多仪器，都是有现成的 LV 程序驱动的，这个时候，我们到网上搜搜就行了。如果你要做仪器驱动，你最好先到网上搜搜，看有木有现成的。有现成的，开发速度就好多啦。如果手边的仪器搜不到现成的驱动，那就只能自己写了。</p><p>下面讲解怎么安装现成的驱动。 ①，网站下载篇，前面这个帖子讲了。 <a href="http://bbs.elecfans.com/jishu_467276_1_1.html">http://bbs.elecfans.com/jishu_467276_1_1.html</a> 有兴趣可以看看。 下面是通过 LabVIEW 软件下载。 我下面手把手教下 在 LV 软件里下载安装。</p><p>首先在 LV 的帮助菜单里，找到 查找仪器驱动 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145320o40k6u5ba5j074q9.jpg.thumb.jpg"></p><p>然后就会弹出一个仪器查找界面。如果你已经连接好了仪器的硬件，且仪器支持IDN？ 这个 SCPI 指令的话。</p><p>可以使用扫描仪器按钮，扫描一下你的仪器。因为使用那个指令，如果仪器连接好没错误，会返回一个仪器本身的仪器类型和版本的。这个时候，LV 就知道是什么仪器连接到了。这个需要查仪器说明书指令。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145425igqznznml30yzoro.jpg.thumb.jpg"></p><p>如果仪器木有连接好，或者没扫描出来（没扫描出来原因太多了。没装 VISA 驱动，电缆没连接好，仪器参数不对等。）自己想下载驱动。就自己选型号了，见下图。选型号，然后点击搜索。</p><p>我们下面搜索 Keithley2400.好了，点击搜索。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145525prt5qtozqkkkzp5a.jpg.thumb.jpg"></p><p>然后会搜出来。注意看右边的驱动信息。开发环境，版本，还有支持的接口等。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145626t2ooavzqa972roob.jpg.thumb.jpg"></p><p>从上图可以看出，这个仪器支持串口和 GPIB 口。还有支持的型号，有 2400，2410 等。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145704p5dddrdpdvnqyct5.jpg.thumb.jpg"></p><p>找到了驱动后，就点击安装，然后 LV 会自动给你安装到 instr.lib 文件夹下面。然后就可以在程序面板，仪器 IO 里，找到自己的驱动了。然后就可以调用了。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145757jtkndl63zqqqdaw7.jpg.thumb.jpg"></p><p>每个仪器驱动，会提供对应的调用例子，大家看下例子，大概知道怎么用就好了。有时候，自己把例子稍微改动一点点，就变成自己的程序了。还是很方便的。有仪器驱动，还是先看仪器。不然看仪器的 SCPI 指令是很麻烦的，一本说明书往往很长，而且大多是英文的。</p><p>下载好的驱动和例子，在这个地址：你安装的文件夹下下的这个路径。\Na<a href="http://bbs.elecfans.com/zhuti_715_1.html">ti</a>onal Instruments\LabVIEW 2011\instr.lib &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145953iiii9xqjv28s8iix.jpg.thumb.jpg"></p><p>仪器的例子，在上面的文件夹 Example下，自己连接仪器，配置程序参数和仪器的通讯参数，运行试试看。</p><p>参数什么的，最好对着说明书看看，国外的仪器，一般功能很强大，而你需要了解的命令，可能一点点而已。</p><p>声明：国外的仪器，有些有驱动（程序）的，有些是木有的。有现成的驱动仪器，最好使用现成的，这样开发速度更快。</p><p>文章来源于：</p><h2 id="小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动"><a href="#小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动" class="headerlink" title="小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动"></a><a href="https://www.cnblogs.com/mrchige/p/6238027.html">小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动</a></h2>]]></content>
       
       
       <categories>
@@ -5141,9 +5170,9 @@
       
         <tags>
             
-            <tag> 控制 </tag>
-            
             <tag> 邮件 </tag>
+            
+            <tag> 控制 </tag>
             
             <tag> 邮箱 </tag>
             
@@ -5272,31 +5301,6 @@
     
     
     <entry>
-      <title>LabVIEW在暖通空调数据采集控制系统的应用</title>
-      <link href="/xiaoxiaohu/2020/05/14/labview%E5%9C%A8%E6%9A%96%E9%80%9A%E7%A9%BA%E8%B0%83%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BA%94%E7%94%A8/"/>
-      <url>/xiaoxiaohu/2020/05/14/labview%E5%9C%A8%E6%9A%96%E9%80%9A%E7%A9%BA%E8%B0%83%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BA%94%E7%94%A8/</url>
-      
-        <content type="html"><![CDATA[<p><strong>引言</strong></p><p>　　LabVIEW 大量应用在自动控制领域，对于HVAC系统中采用LabVIEW作为上位端软件还不多见，但随着LabVIEW 7 Express的发布，LabVIEW已经开始逐渐渗透到各个领域。在笔者所在专业HVAC自动控制领域使用LabVIEW后发现，其功能十分强大，节省系统开发时间，非常适合工程开发人员使用。笔者结合近来开发的一套HVAC系统，对LabVIEW在HVAC数据采集控制系统的应用做个介绍。</p><p>　　<strong>1 系统总体结构</strong></p><p>　　HVAC中有大量数据需要采集，通过对数据的采集，来对各项系统参数进行调整。本系统主要由水系统、风系统、控制系统组成。</p><p>　　● 水系统包括：水冷式冷水机组，冷却塔，膨胀水箱，冷冻水泵，冷却水泵，三通调节阀、流量计等附件。</p><p>　　● 风系统包括：组合式空调箱、送风管道、回风管道、排风管道、VAVBOX以及阀门和其他控制元件。空调箱包括新回风混合段、过滤器、表冷器、电加热器、送风风机、蒸汽加湿器等。风机变频控制。新回风管上分别装有电动调节阀，可调节新回风比例，表冷器前后分别装有温湿度测点，空调箱内还装有喷嘴，用于空气流量的测量。</p><p>　　● 控制系统包括：各处的压力传感器、温度传感器、控制元件、执行器、数据采集仪、计算机、触摸屏等，可进行建筑环境与设备自动检测与数据处理。</p><p>　　实验系统房间共有两间：Room1和Room2。Room1主要用于建立低温环境实验室，因此单独配备了一套直接蒸发式水冷机组。每个房间内均有一个负荷发生器Ld，用于产生模拟负荷，并且有温湿度测点。在Room1中，布置一组送回风口，顶送下侧回；Room2中布置两组送回风口，分别为顶送、侧回。每个送、回风口上都装有手动调节阀，可开关或进行调节。房间内布置一个压差传感器，可控制房间内的正压。在两个房间的送风管道上分别装有一个压力无关型 VAVBOX。</p><p>　　通过对图1系统原理图，大家对系统能有个直观的认识。</p><p><a href="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111404435.gif"><img src="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111404435.gif"></a>[page]</p><p>　　<strong>2 数据采集控制系统</strong></p><p>　　系统分为两部分：数据采集和系统控制。数据采集部分有各种不同数据采集设备。控制部分由PLC(可编程控制器)来完成。LabVIEW能很方便的对计算机串口进行操作，因此LabVIEW可方便的建立计算机串口与PLC串口之间的通信，便捷的获得PLC中的数据，在计算机中进行PID神经模糊等复杂运算，从而得到需要的数字控制信号，对需要控制的设备进行控制，增强系统的通用性。并可开发出更加丰富的功能。从图2中可以看出整个数据采集系统中用到的软硬件部分及它们间的关系。</p><p><a href="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111405678.gif"><img src="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111405678.gif"></a></p><p>图2 采集控制关系图</p><p>　　通过数据采集系统可得数据有：表冷器水流量，VAVBOX1、2风量反馈，送风湿度，新风温湿度，低温室壁挂式温湿度计温湿度，变频压缩机节流前后压力，喷嘴压差，表冷器前后干湿球温度，蒸发机组压缩机吸排气温度，变频冷水机组压缩机吸排气温度，冷水机组压缩机吸排气温度，表冷器进出水温度，热水箱进水温度，冷却塔进水温度，变频冷水机组冷却进出水温度，变频冷水机组进水温度，冷水机组冷却水进出水温度，冷水机组进出水温度。可见需要设置大量的不同得传感器。</p><p>　　使用的末端传感器有：PT100铂电阻温度传感器，铂电阻使用四线制可以提高测量精度，避免沿途数据线电阻对测量的影响。EE10室内温湿度变送器，产生4～20mA的标准电流信号，为了便于数据采集仪测量和避免信号的失真，在其中加入250Ω的精密电阻，将电流信号转换为标准的1～5V的电压信号。压力传感器、风阀开度控制器、湿度等信号均是标准的1～5V的标准信号，或者经过转换成为1～5V的标准信号，便于数据采集仪进行处理。这些信号均为线性或近似线性，可以通过增益和偏移（M×B）把标准信号转换为我们熟悉的温度湿度压力值工程量。例如：采集到的信号为3V，此时的1V对应于0℃，5V对应于100℃，则可以通过：</p><p>　　Y＝MX＋B</p><p>　　算出M＝25，B＝-25，再把3代入，可得Y＝50℃。此部分只需通过使用LabVIEW的Database Toolset工具包和全局变量数据的交换，很容易实现信号的转换。[page]</p><p>　　数据采集仪：传感器、变送器产生的标准信号直接进入数据采集仪。数据采集仪采用的是Agilent 34970A数据采集仪（附三块HP 34901A 20通道衔铁继电器多路转换器）。它可以直接测量热电偶、电阻温度测试器、热敏电阻、直流电压、直流电流、交流电流等。电源电流、电压、功率和频率通过 PF9833三相PWM专用测试仪来测量。通过使用NI-VISA协议，可对串口读写操作，很方便的完成了数据的交换，见图3。</p><p><a href="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111406884.gif"><img src="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111406884.gif"></a></p><p>图3 LabVIEW中NI-VISA串口读写</p><p>　　控制系统PLC与PC的通信也同样使用了NI-VISA协议进行通信。通过把命令请求写入（Write）串口，设备对命令分析识别，把命令请求的数据通过RS-232接口返回到计算机，再通过对串口读操作（Read），从而获得设备采集的数据。对于不同设备有不通的命令。Agilent 34970A使用的是SCPI（Standard Commands for Programmable Instruments)可编程仪器标准命令集。PF9833则使用了另外的命令集。不同设备不管使用什么协议，通过NI-VISA都可和容易建立设备与计算机间的通信。对于PLC，需要编写设备端程序。要求程序实现获得命令后，对命令进行分析识别，把相应数据送出。</p><p>　　信号控制使用西门子 SIMATICS7-300 PLC，部分对控制有影响的采集信号进入PLC，进行PID分析运算，产生控制信号，对风阀、风机、水泵、加热器等进行控制。PLC带有的RS-232通讯接口，直接与计算机建立通信。PC获得进入PLC的各种信号，也可在计算机中进行更为复杂的运算，产生数字控制信号返回PLC，再由PLC对各种需要控制的设备进行控制。</p><p>　　本系统可通过触摸屏对整个系统发出控制指令，触摸屏的每个开关都对应于PLC各个开关触点，相当于PLC的键盘，可对整个系统的各种参数进行调整。例如可以对风阀的开关，风机、水泵、电加热器的启停，各个PID控制设备P、I、D（比例、积分、微分）三个参数的设置进行相应的操作，系统流程图可清晰的从中反映出来。</p><p>　　由于使用了大量的串口来进行数据的通信，需添置一块多串口卡，用于连接多个串口设备。</p><p>　　<strong>3 LabVIEW程序</strong></p><p>　　通过LabVIEW图形化设计很容易设计出漂亮美观的用户界面。见下图4所示。在使用Agilent 34970A数据采集仪时可对温度、电压、电流等各种参数进行测量，在进行采集时涉及到参数需要更改的情况，我们 使用了NI的数据库连接工具包（Database Connectivity Toolset），直接在一个已经编辑好的数据库（Hpsetting.mdb）里编辑所改变采集通道的参数，然后在运行程序时选择是否需要下载新的设置到数据采集仪，使数据采集仪相应设置改变，以采集到正确的数据。设置参数有通道号、通道描述、输入类型、范围、周期、延迟、触发、铂电阻阻值以及标定等。只要是使用Agilent 34970A数据采集仪采集数据，程序就不需要进行大的修改，节省了开发成本和时间，提高程序的通用性。</p><p>　　控制上使用了NI PID工具包，可对需要进行控制的部件进行PID控制，利用该工具包可以节省我们大量开发时间。LabVIEW一个很大的特点就是提供了大量的可用控件，控件提供输入输出，通过线连接输入数据，就可很方便的从输出口得到需要的控制命令。[page]</p><p>　　<strong>4 实验</strong></p><p>　　LabVIEW 和众多系统中各种传感器配合，在系统调试中发挥了很大的作用。所需数据通过一台普通装有LabVIEW的计算机就能显示出来。调试中的数据用 LabVIEW来进行分析显示，观察系统是否达到了预定的要求。</p><p>　　在系统中使用了LabVIEW软件，在硬件上不需要做太多的更改。各项所需测量控制参数在系统调试阶段已经设置好，后面就只需在软件界面和各项参数组合上做工作。</p><p><a href="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111406712.gif"><img src="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111406712.gif"></a></p><p>　　在冷水机组数据采集控制实验中，界面如图4，开启空调系统，通过数据采集设备获得当前温湿度信号。获得数据经过PID运算，输出控制信号，最终通过对 PID参数的调节（更改界面中的PID参数，经过PC对PLC的控制，达到控制设备的目的）使得温湿度参数最终稳定在设定值附近，达到了实验控制的目的。最后可以通过NI的报告生成工具包（Report generation toolset）把实验中保存的数据以报表的形式打印出来。</p><p>　　硬件亦不需做大的调整，主要集中在软件的编画（LabVIEW为图形化语言）上。因为缩短软件的开发时间，使得整个数据采集控制系统的开发时间也大大缩短。</p><p>　　<strong>5 结论</strong></p><p>　　LabVIEW在系统开发上有很大的优势。从系统建设时间来看，用 LabVIEW来进行软件编程和同一系统的PLC编程相比，所花的时间更少、程序界面设计更容易更美观。用PLC来编程，并使之通过可视的界面显现出来（我们这里使用了MCGS嵌入式图形界面），是两个系统都需要进行设计的工作。而LabVIEW把两者都集于一体，通过简单的PC，就能对LabVIEW 进行编程设计，最终在很短的时间内开发出我们需要的界面和功能，直至最终的产品。使用LabVIEW不仅在时间上优势明显，在系统的再开发上也有极大的优势。如果系统需要开发一个新的功能项目，在系统中加入某一传感器测量元件进行信号测量，然后再在LabVIEW中设计界面分析显示，很快就能达到想要结果。对于笔者所做的这一需要不断改进的系统，LabVIEW无疑是最好的选择。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> labview </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Labview安装VISA及相应扩展包</title>
       <link href="/xiaoxiaohu/2020/05/14/labview%E5%AE%89%E8%A3%85visa%E5%8F%8A%E7%9B%B8%E5%BA%94%E6%89%A9%E5%B1%95%E5%8C%85/"/>
       <url>/xiaoxiaohu/2020/05/14/labview%E5%AE%89%E8%A3%85visa%E5%8F%8A%E7%9B%B8%E5%BA%94%E6%89%A9%E5%B1%95%E5%8C%85/</url>
@@ -5320,6 +5324,31 @@
             <tag> labview </tag>
             
             <tag> 试验台 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LabVIEW在暖通空调数据采集控制系统的应用</title>
+      <link href="/xiaoxiaohu/2020/05/14/labview%E5%9C%A8%E6%9A%96%E9%80%9A%E7%A9%BA%E8%B0%83%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BA%94%E7%94%A8/"/>
+      <url>/xiaoxiaohu/2020/05/14/labview%E5%9C%A8%E6%9A%96%E9%80%9A%E7%A9%BA%E8%B0%83%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BA%94%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<p><strong>引言</strong></p><p>　　LabVIEW 大量应用在自动控制领域，对于HVAC系统中采用LabVIEW作为上位端软件还不多见，但随着LabVIEW 7 Express的发布，LabVIEW已经开始逐渐渗透到各个领域。在笔者所在专业HVAC自动控制领域使用LabVIEW后发现，其功能十分强大，节省系统开发时间，非常适合工程开发人员使用。笔者结合近来开发的一套HVAC系统，对LabVIEW在HVAC数据采集控制系统的应用做个介绍。</p><p>　　<strong>1 系统总体结构</strong></p><p>　　HVAC中有大量数据需要采集，通过对数据的采集，来对各项系统参数进行调整。本系统主要由水系统、风系统、控制系统组成。</p><p>　　● 水系统包括：水冷式冷水机组，冷却塔，膨胀水箱，冷冻水泵，冷却水泵，三通调节阀、流量计等附件。</p><p>　　● 风系统包括：组合式空调箱、送风管道、回风管道、排风管道、VAVBOX以及阀门和其他控制元件。空调箱包括新回风混合段、过滤器、表冷器、电加热器、送风风机、蒸汽加湿器等。风机变频控制。新回风管上分别装有电动调节阀，可调节新回风比例，表冷器前后分别装有温湿度测点，空调箱内还装有喷嘴，用于空气流量的测量。</p><p>　　● 控制系统包括：各处的压力传感器、温度传感器、控制元件、执行器、数据采集仪、计算机、触摸屏等，可进行建筑环境与设备自动检测与数据处理。</p><p>　　实验系统房间共有两间：Room1和Room2。Room1主要用于建立低温环境实验室，因此单独配备了一套直接蒸发式水冷机组。每个房间内均有一个负荷发生器Ld，用于产生模拟负荷，并且有温湿度测点。在Room1中，布置一组送回风口，顶送下侧回；Room2中布置两组送回风口，分别为顶送、侧回。每个送、回风口上都装有手动调节阀，可开关或进行调节。房间内布置一个压差传感器，可控制房间内的正压。在两个房间的送风管道上分别装有一个压力无关型 VAVBOX。</p><p>　　通过对图1系统原理图，大家对系统能有个直观的认识。</p><p><a href="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111404435.gif"><img src="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111404435.gif"></a>[page]</p><p>　　<strong>2 数据采集控制系统</strong></p><p>　　系统分为两部分：数据采集和系统控制。数据采集部分有各种不同数据采集设备。控制部分由PLC(可编程控制器)来完成。LabVIEW能很方便的对计算机串口进行操作，因此LabVIEW可方便的建立计算机串口与PLC串口之间的通信，便捷的获得PLC中的数据，在计算机中进行PID神经模糊等复杂运算，从而得到需要的数字控制信号，对需要控制的设备进行控制，增强系统的通用性。并可开发出更加丰富的功能。从图2中可以看出整个数据采集系统中用到的软硬件部分及它们间的关系。</p><p><a href="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111405678.gif"><img src="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111405678.gif"></a></p><p>图2 采集控制关系图</p><p>　　通过数据采集系统可得数据有：表冷器水流量，VAVBOX1、2风量反馈，送风湿度，新风温湿度，低温室壁挂式温湿度计温湿度，变频压缩机节流前后压力，喷嘴压差，表冷器前后干湿球温度，蒸发机组压缩机吸排气温度，变频冷水机组压缩机吸排气温度，冷水机组压缩机吸排气温度，表冷器进出水温度，热水箱进水温度，冷却塔进水温度，变频冷水机组冷却进出水温度，变频冷水机组进水温度，冷水机组冷却水进出水温度，冷水机组进出水温度。可见需要设置大量的不同得传感器。</p><p>　　使用的末端传感器有：PT100铂电阻温度传感器，铂电阻使用四线制可以提高测量精度，避免沿途数据线电阻对测量的影响。EE10室内温湿度变送器，产生4～20mA的标准电流信号，为了便于数据采集仪测量和避免信号的失真，在其中加入250Ω的精密电阻，将电流信号转换为标准的1～5V的电压信号。压力传感器、风阀开度控制器、湿度等信号均是标准的1～5V的标准信号，或者经过转换成为1～5V的标准信号，便于数据采集仪进行处理。这些信号均为线性或近似线性，可以通过增益和偏移（M×B）把标准信号转换为我们熟悉的温度湿度压力值工程量。例如：采集到的信号为3V，此时的1V对应于0℃，5V对应于100℃，则可以通过：</p><p>　　Y＝MX＋B</p><p>　　算出M＝25，B＝-25，再把3代入，可得Y＝50℃。此部分只需通过使用LabVIEW的Database Toolset工具包和全局变量数据的交换，很容易实现信号的转换。[page]</p><p>　　数据采集仪：传感器、变送器产生的标准信号直接进入数据采集仪。数据采集仪采用的是Agilent 34970A数据采集仪（附三块HP 34901A 20通道衔铁继电器多路转换器）。它可以直接测量热电偶、电阻温度测试器、热敏电阻、直流电压、直流电流、交流电流等。电源电流、电压、功率和频率通过 PF9833三相PWM专用测试仪来测量。通过使用NI-VISA协议，可对串口读写操作，很方便的完成了数据的交换，见图3。</p><p><a href="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111406884.gif"><img src="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111406884.gif"></a></p><p>图3 LabVIEW中NI-VISA串口读写</p><p>　　控制系统PLC与PC的通信也同样使用了NI-VISA协议进行通信。通过把命令请求写入（Write）串口，设备对命令分析识别，把命令请求的数据通过RS-232接口返回到计算机，再通过对串口读操作（Read），从而获得设备采集的数据。对于不同设备有不通的命令。Agilent 34970A使用的是SCPI（Standard Commands for Programmable Instruments)可编程仪器标准命令集。PF9833则使用了另外的命令集。不同设备不管使用什么协议，通过NI-VISA都可和容易建立设备与计算机间的通信。对于PLC，需要编写设备端程序。要求程序实现获得命令后，对命令进行分析识别，把相应数据送出。</p><p>　　信号控制使用西门子 SIMATICS7-300 PLC，部分对控制有影响的采集信号进入PLC，进行PID分析运算，产生控制信号，对风阀、风机、水泵、加热器等进行控制。PLC带有的RS-232通讯接口，直接与计算机建立通信。PC获得进入PLC的各种信号，也可在计算机中进行更为复杂的运算，产生数字控制信号返回PLC，再由PLC对各种需要控制的设备进行控制。</p><p>　　本系统可通过触摸屏对整个系统发出控制指令，触摸屏的每个开关都对应于PLC各个开关触点，相当于PLC的键盘，可对整个系统的各种参数进行调整。例如可以对风阀的开关，风机、水泵、电加热器的启停，各个PID控制设备P、I、D（比例、积分、微分）三个参数的设置进行相应的操作，系统流程图可清晰的从中反映出来。</p><p>　　由于使用了大量的串口来进行数据的通信，需添置一块多串口卡，用于连接多个串口设备。</p><p>　　<strong>3 LabVIEW程序</strong></p><p>　　通过LabVIEW图形化设计很容易设计出漂亮美观的用户界面。见下图4所示。在使用Agilent 34970A数据采集仪时可对温度、电压、电流等各种参数进行测量，在进行采集时涉及到参数需要更改的情况，我们 使用了NI的数据库连接工具包（Database Connectivity Toolset），直接在一个已经编辑好的数据库（Hpsetting.mdb）里编辑所改变采集通道的参数，然后在运行程序时选择是否需要下载新的设置到数据采集仪，使数据采集仪相应设置改变，以采集到正确的数据。设置参数有通道号、通道描述、输入类型、范围、周期、延迟、触发、铂电阻阻值以及标定等。只要是使用Agilent 34970A数据采集仪采集数据，程序就不需要进行大的修改，节省了开发成本和时间，提高程序的通用性。</p><p>　　控制上使用了NI PID工具包，可对需要进行控制的部件进行PID控制，利用该工具包可以节省我们大量开发时间。LabVIEW一个很大的特点就是提供了大量的可用控件，控件提供输入输出，通过线连接输入数据，就可很方便的从输出口得到需要的控制命令。[page]</p><p>　　<strong>4 实验</strong></p><p>　　LabVIEW 和众多系统中各种传感器配合，在系统调试中发挥了很大的作用。所需数据通过一台普通装有LabVIEW的计算机就能显示出来。调试中的数据用 LabVIEW来进行分析显示，观察系统是否达到了预定的要求。</p><p>　　在系统中使用了LabVIEW软件，在硬件上不需要做太多的更改。各项所需测量控制参数在系统调试阶段已经设置好，后面就只需在软件界面和各项参数组合上做工作。</p><p><a href="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111406712.gif"><img src="http://8.eewimg.cn/news/uploadfile/Test_and_measurement/uploadfile/201006/20100623111406712.gif"></a></p><p>　　在冷水机组数据采集控制实验中，界面如图4，开启空调系统，通过数据采集设备获得当前温湿度信号。获得数据经过PID运算，输出控制信号，最终通过对 PID参数的调节（更改界面中的PID参数，经过PC对PLC的控制，达到控制设备的目的）使得温湿度参数最终稳定在设定值附近，达到了实验控制的目的。最后可以通过NI的报告生成工具包（Report generation toolset）把实验中保存的数据以报表的形式打印出来。</p><p>　　硬件亦不需做大的调整，主要集中在软件的编画（LabVIEW为图形化语言）上。因为缩短软件的开发时间，使得整个数据采集控制系统的开发时间也大大缩短。</p><p>　　<strong>5 结论</strong></p><p>　　LabVIEW在系统开发上有很大的优势。从系统建设时间来看，用 LabVIEW来进行软件编程和同一系统的PLC编程相比，所花的时间更少、程序界面设计更容易更美观。用PLC来编程，并使之通过可视的界面显现出来（我们这里使用了MCGS嵌入式图形界面），是两个系统都需要进行设计的工作。而LabVIEW把两者都集于一体，通过简单的PC，就能对LabVIEW 进行编程设计，最终在很短的时间内开发出我们需要的界面和功能，直至最终的产品。使用LabVIEW不仅在时间上优势明显，在系统的再开发上也有极大的优势。如果系统需要开发一个新的功能项目，在系统中加入某一传感器测量元件进行信号测量，然后再在LabVIEW中设计界面分析显示，很快就能达到想要结果。对于笔者所做的这一需要不断改进的系统，LabVIEW无疑是最好的选择。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> labview </tag>
             
         </tags>
       
@@ -5753,33 +5782,6 @@
     
     
     <entry>
-      <title>树莓派更改软件源</title>
-      <link href="/xiaoxiaohu/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/"/>
-      <url>/xiaoxiaohu/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/</url>
-      
-        <content type="html"><![CDATA[<p>树莓派自带的软件源由于在国内访问速度实在是太慢了，所以一般都会更换掉软件源，这里推荐清华大学的软件源:</p><p><a href="https://mirror.tuna.tsinghua.edu.cn/help/raspbian/">https://mirror.tuna.tsinghua.edu.cn/help/raspbian/</a></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578203582-%E6%A0%91%E8%8E%93%E6%B4%BE12-1024x482.png">使用命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/os-release</span><br></pre></td></tr></table></figure><p>找到自己对应的版本，然后按照对应操作进行，建议先安装vim，使用vim进行编辑，树莓派自带的vi编辑器容易出问题</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 树莓派 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 软件 </tag>
-            
-            <tag> 树莓派 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>树莓派开启VNC</title>
       <link href="/xiaoxiaohu/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BC%80%E5%90%AFvnc/"/>
       <url>/xiaoxiaohu/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BC%80%E5%90%AFvnc/</url>
@@ -5820,6 +5822,33 @@
       
       
         <tags>
+            
+            <tag> 树莓派 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>树莓派更改软件源</title>
+      <link href="/xiaoxiaohu/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/"/>
+      <url>/xiaoxiaohu/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/</url>
+      
+        <content type="html"><![CDATA[<p>树莓派自带的软件源由于在国内访问速度实在是太慢了，所以一般都会更换掉软件源，这里推荐清华大学的软件源:</p><p><a href="https://mirror.tuna.tsinghua.edu.cn/help/raspbian/">https://mirror.tuna.tsinghua.edu.cn/help/raspbian/</a></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578203582-%E6%A0%91%E8%8E%93%E6%B4%BE12-1024x482.png">使用命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/os-release</span><br></pre></td></tr></table></figure><p>找到自己对应的版本，然后按照对应操作进行，建议先安装vim，使用vim进行编辑，树莓派自带的vi编辑器容易出问题</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 树莓派 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 软件 </tag>
             
             <tag> 树莓派 </tag>
             
@@ -6923,9 +6952,9 @@
             
             <tag> 网站 </tag>
             
-            <tag> scr </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> scr </tag>
             
             <tag> 密码 </tag>
             
