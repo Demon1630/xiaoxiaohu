@@ -1,464 +1,457 @@
-
-
-<!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
-
+<!DOCTYPE HTML>
+<html lang="zh-CN">
 
 
 <head>
-  <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="keywords" content="电池热管理工程实践认知 (1): 风冷式热管理系统, 小小胡">
+    <meta name="description" content="本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。
+1、电池热管理技术基本概念
+电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/xiaoxiaohu/img/fluid.png">
-  <link rel="icon" href="/xiaoxiaohu/img/fluid.png">
-  
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content="本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。 1、电池热管理技术基本概念 电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升">
-<meta property="og:type" content="article">
-<meta property="og:title" content="电池热管理工程实践认知 (1): 风冷式热管理系统">
-<meta property="og:url" content="https://demon1630.github.io/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。 1、电池热管理技术基本概念 电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png">
-<meta property="article:published_time" content="2020-05-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-21T06:02:59.430Z">
-<meta property="article:author" content="John Doe">
-<meta property="article:tag" content="电池热管理">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg">
-  
-  
-  
-  <title>电池热管理工程实践认知 (1): 风冷式热管理系统 - Hexo</title>
+    <title>电池热管理工程实践认知 (1): 风冷式热管理系统 | 小小胡</title>
+    <link rel="icon" type="image/png" href="/xiaoxiaohu/demon.png">
+    
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+    <!-- bg-cover style     -->
 
 
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
-
-
-<link  rel="stylesheet" href="/xiaoxiaohu/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/xiaoxiaohu/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/xiaoxiaohu/css/highlight-dark.css" />
-  
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/my.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/dark.css" media="none" onload="if(media!='all')media='all'">
 
 
 
 
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"demon1630.github.io","root":"/xiaoxiaohu/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/xiaoxiaohu/local-search.xml","include_content_in_search":true};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
-    }
-  </script>
-  <script  src="/xiaoxiaohu/js/utils.js" ></script>
-  <script  src="/xiaoxiaohu/js/color-schema.js" ></script>
-  
+    <link rel="stylesheet" href="/xiaoxiaohu/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/xiaoxiaohu/css/post.css">
 
 
-  
+
+
+    
+
+
+
+    <script src="/xiaoxiaohu/libs/jquery/jquery-3.6.0.min.js"></script>
+
 <meta name="generator" content="Hexo 8.1.2"></head>
 
 
 <body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/xiaoxiaohu/" class="waves-effect waves-light">
+                    
+                    <img src="/xiaoxiaohu/medias/demon.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">小小胡</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
   
-
-  <header>
+  <li class="hide-on-med-and-down nav-item">
     
-
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/xiaoxiaohu/">
-      <strong>Fluid</strong>
+    <a href="/xiaoxiaohu/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
     </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
 
-    <!-- Collapsible content (desktop) -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/" target="_self">
-                <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
-              </a>
-            </li>
-          
+        <img src="/xiaoxiaohu/medias/demon.jpg" class="logo-img circle responsive-img">
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/archives/" target="_self">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/categories/" target="_self">
-                <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/tags/" target="_self">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/about/" target="_self">
-                <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
+        <div class="logo-name">小小胡</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
     </div>
-  </div>
-</nav>
 
-<!-- Mobile grid menu overlay -->
-<div id="mobile-grid-menu" class="d-lg-none">
-  <div class="mobile-grid-menu-inner">
-    <div class="container">
-      <div class="row">
+    <ul class="menu-list mobile-menu-list">
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
           
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-home-fill"></i>
-                  <span>Home</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
           
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/archives/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-archive-fill"></i>
-                  <span>Archives</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
           
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/categories/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-category-fill"></i>
-                  <span>Categories</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
           
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/tags/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-tags-fill"></i>
-                  <span>Tags</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于我
+		</a>
           
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
           
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/about/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-user-fill"></i>
-                  <span>About</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
         
-          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
-            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <div class="mobile-grid-item">
-                <i class="iconfont icon-search"></i>
-                <span>Search</span>
-              </div>
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
-          </div>
+        </li>
         
-        
-          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
-               data-label-light="Light"
-               data-label-dark="Dark">
-            <a href="javascript:;" aria-label="Color Toggle">
-              <div class="mobile-grid-item">
-                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
-                <span id="mobile-color-toggle-label">Dark</span>
-              </div>
-            </a>
-          </div>
-        
-      </div>
-    </div>
-  </div>
+    </ul>
 </div>
 
-  
 
-<div id="banner" class="banner" parallax=true
-     style="background: url('/xiaoxiaohu/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="电池热管理工程实践认知 (1): 风冷式热管理系统"></span>
-          
         </div>
 
         
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-05-30 00:00" pubdate>
-          May 30, 2020 am
-        </time>
-      </span>
-    
-  </div>
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
 
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
         
-          4.2k words
-        
-      </span>
-    
+    </nav>
+
+</header>
 
     
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          35 mins
-        
-      </span>
-    
-
-    
-    
-  </div>
 
 
-        
-      </div>
 
-      
+<div class="bg-cover pd-header post-cover" style="background-image: url('/xiaoxiaohu/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">电池热管理工程实践认知 (1): 风冷式热管理系统</h1>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 
 
-</div>
 
-  </header>
+<main class="post-container content">
 
-  <main>
     
-      
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/">
+                                <span class="chip bg-color">电池热管理</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="post-category">
+                                制冷技术
+                            </a>
+                        
+                            <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
+                                文章采集
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
 
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <h1 id="seo-header">电池热管理工程实践认知 (1): 风冷式热管理系统</h1>
-            
-            
-              <div class="markdown-body">
+            <div class="post-info">
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-05-30
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
                 <p><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></p>
 <p><strong>1、电池热管理技术基本概念</strong></p>
 <p>电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升，这个时候需要及时的散热，要不然就会中暑。当电池处于低温（例如-30℃）条件下的时候，电池无法正常的工作（温度太低，电池内反应物活性受限），车辆也就无法正常行驶，正如我们在瑟瑟寒风里无任何热防护的时候，人的身体感觉寒冷，人的动作就会变慢，这时候需要我们尽快采取取暖措施，要不然身体也会冻伤。</p>
 <p>因此，我们人体在热了或者冷了且自身无法调节时，我们会开空调去做体外调节；如果人体被病毒细菌感染了，人体的免疫系统会产生作用，并升高体温；如果被发现是感染了厉害的病毒，高烧不退、吃退烧药也无法控制体温，就需要更为强力有效的方式进行综合调理、内外兼治。显然人体可以通过种种不同的途径来调节体温，那么电池的“体温”怎么办呢？</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg"></p>
 <p>图0 电池的冷热管理（<a target="_blank" rel="noopener" href="http://dc-ts.com/advanced-battery-thermal-management-system/%EF%BC%89">http://dc-ts.com/advanced-battery-thermal-management-system/）</a></p>
 <p>对电池运行产生的热量进行管控的方法叫做<strong>电池热管理技术</strong>（详细可参见<a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a>）。电池热管理就类似于人体对于体温的调节，如果电池运行产生的热量得不到有效的管理和控制，就会产生电池的热失控问题（<em><strong>我们后面会做专题讨论</strong></em>），这就类似于我们人体被感染了很厉害的病毒。在现阶段，由于动力电池材料技术处于发展瓶颈期，我们无法从根本上消除温度对电池性能和寿命的影响，但是不论是对于铅酸电池、锂离子电池或者是燃料电池，温度对于电池性能和寿命都是一个重要的影响因素，所以我们需要开发电池热管理技术对电池产生的热量进行管理，防止电池在高温或者低温下不能正常工作。希望目前的热管理只是一种过渡方式，后期的电芯不需要做任何热管理——这里大家不用担心失业，至少未来10年内，中国的6G、7G和1nm、0.5nm芯片冷却技术可能需要我们大展身手。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg"></p>
 <p>图1 电池热管理的重要工程实践意义（百度图片）</p>
 <p>温度最直观的影响就是对电池容量的影响，这也是为什么在冬季电动车行驶里程要比其他季节短很多的原因，同样每年的4月到9月都会出现电动车自燃的现象（暴晒条件下，车内温度达到60℃），天气燥热，电动车又给炎热的天气添了一把柴。综合各方面因素，电池热管理技术对于目前的动力电池是不可或缺的一部分，在环境温度较高时需要对电池进行降温，同时在温度较低时对电池进行加热，电池热管理技术相当于给电池加上了一个小型的空调系统。当然，在实际中也需要根据整车的实际运行工况来调整电池热管理系统策略。</p>
 <p> </p>
 <p><strong>2、电池热管理部件组成</strong></p>
 <p>今天我们针对电池热管理技术的实际应用现状做个综述，后续我们再共同对其进行细分和学习。在国内目前能够大批量生产的汽车中实际应用的电池热管理技术可以分为四类：风冷式热管理技术、液冷式电池热管理技术、自然冷却式电池热管理技术和直冷式电池热管理技术（相变冷却技术）。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg"></p>
 <p>图2 电池热管理技术分类（百度图片）</p>
 <p>另外电池包的保温设计（其实笔者感觉有效的保温最难实现，有时候想法和实际操作相差太远，现实条件中可能不允许你做一些保温的措施）和单纯加热的系统也都隶属于电池热管理系统，当然有人提出热扩散防控也属于热管理范畴，我们这里不做定义及探讨，本文主要针对散热系统进行介绍。</p>
 <p> </p>
 <p><strong>3、风冷式电池热管理系统部件构成</strong></p>
 <p>风冷式热管理系统部件包括格栅、温度探头、滤网、进风管、冷风介质、电池包内部风管、出风管、风机，密封条和固定卡扣。一般来说格栅设计在风管的进口处，其作用是为了防止一些较大尺寸的物体进入电池包内部而堵塞风管。在格栅和风管之间还会设计有滤芯和风道，风道的设计一般会根据整车的内部结构和电池包内部结构设计进行调整，在实际的设计中，风道的设计要尽量的光滑和平顺。在风道和车辆部件接触的地方需要设计密封条。风机一般分为轴流分机和离心风机，根据不同的风冷式热管理系统的需求选择不同的风机类型。在选型的过程中一般会将噪音和送风量作为主要的参考因素。离心风机在电池包内部根据使用场景的不同可以分为吹风式和抽离式，最直接的例子就是丰田卡罗拉的两款HEV电池包，一款采用了吹风形式，另外一款采用了抽风形式。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg"></p>
 <p>图3 丰田普锐斯（Prius）使用的风冷式电池热管理系统（谷歌图片）</p>
 <p>当然，很多人可能会对风冷式热管理系统能否有效冷却电池保持怀疑态度，因为有很多这方面的文章提到风冷式系统的不足之处，这里我们简单探讨一下。在国内，针对不同的电池包我们尝试采用不同的冷却系统，对于EV (ElectricVehicle，纯电动汽车)，国内采用较多的热管理系统是液冷系统了，当然也会有一部分厂家尝试采用风冷系统，2016年奇瑞汽车生产的小蚂蚁电动汽车就尝试采用风冷式热管理系统进行散热。对于传统汽车改新能源车来说，采用风冷式热管理系统可以节省一大笔的开发费用，整车的空调系统可以直接按照原来燃油车的系统部件进行设计。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg"></p>
 <p>图4 奇瑞小蚂蚁电动汽车（百度图片）</p>
 <p>而对于HEV(Hybrid Electric Vehicle，混合动力汽车) 目前很多车厂都在争先进行开发，首选的电池热管理系统就是风冷式，比如前面提到的丰田卡罗拉和本田雅阁都是采用风冷式热管理系统。从大数据上看，日系车企很少采用液冷式热管理系统，大多采用的是风冷式，这点和国内的一些车企有些不同，可能是由于日系车企对液冷式系统还有其他的考量，个人感觉不会是因为成本的原因。对于HEV来说采用的电芯和EV的电芯是不同的，HEV在运行过程中动力电池不是唯一的动力来源，大部分情况下电池持续运行时间较短，风冷式热管理系统完全可以满足系统的要求，但是EV的动力完全来自于动力电池，电池长时间持续运行，这样电池就需要散热能力更强的电池热管理系统来保证电池的正常工作。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg"></p>
 <p>图5 丰田卡罗拉油电混合汽车（百度图片）</p>
 <p>风冷系统一般有三种设计，第一种就是单独采用风冷对电池进行散热或者加热；第二种就是仅用来对电池进行散热，对电池系统加热的话一般会另外设计加热膜；第三种就是风冷系统和加热膜结合，当电池需要散热的时候，仅仅启动冷却，当电池需要加热的时候，加热膜和风冷同时启动，此时风冷系统的进口为温度较高的车内气体。丰田卡罗拉的PHEV在两个模组之间设计的有加热膜，加热膜和模组之间的有效接触面积很小，笔者个人觉得加热膜只是为了加热电芯之间的空气，再通过风冷系统对电池包内的空气进行扰动。丰田卡罗拉的PHEV使用的是18650电芯，同时这款电池包的热失控管理设计也十分精巧，有空我们可以再聊聊。</p>
 <p><strong>下面我们通过几个目前已经实现量产的实例来了解风冷式电池热管理技术。</strong></p>
 <p>本田雅阁混动HEV的电池热管理系统中使用的冷却介质来自车内部的空调风，如果车主不使用空调时，进入电池包风管内的就是是车内没通过冷却的风。图示IPU指的就是电池包，我们简单了解一下冷却风是如何在内部流动的，电池包的冷却风从总进口进入电池包内部风道(模组的一侧)，然后再通过电芯之间的间隙，离心风扇和整个模组的另外一侧并没有设计风道，直接依靠离心风扇排出到外部，这样设计不仅仅对电池进行了散热，对电池包内部的发热器件（铜排、BDU）也有一定的散热作用。有兴趣的话大家可以看一下本田的专利，电芯之间设计有一定形状的塑料隔板，隔板不仅仅起到了流通的作用，在一定程度上也起到缓冲（电芯膨胀）的作用。</p>
 <p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png"></p>
 <p>图6 电池包位置视图（百度图片）</p>
 <p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png"></p>
 <p>图7 电池包三维视图（百度图片）</p>
 <p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png"></p>
 <p>图8 电池包内模组实物图（百度图片）</p>
 <p> </p>
 <p>奥迪Q5采用的同样也是风冷散热，但是奥迪在电池包的外部单独给整个电池包系统做了一个蒸发器，专门对电池包内部循环风进行降温，使进入到电池包内部的风控制在合理的范围内，同时奥迪的这款设计比较巧妙，它的冷却系统进风可以切换，拥有引入外部自然风和内部循环风两种功能，可以通过感知电池不同的温度阶段来切换这两种功能。</p>
 <p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png"></p>
 <p>图9 电池包位置视图（百度图片）</p>
 <p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png"></p>
 <p>图10 电池包三维视图及其工作原理（百度图片）</p>
 <p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png"></p>
 <p>图11 电池包内部模组视图（百度图片）</p>
 <p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png"></p>
 <p>图12 电池包内部流体流动轨迹视图（百度图片）</p>
 <p> </p>
 <p>广汽丰田2020年新推出的一款C-HREV采用的也是风冷散热，丰田将2个蒸发器和2个膨胀阀移到了电池包内部，采用这种设计的电池包内部空气、两个离心风机、风道（风道位于电池包2侧）和模组单独形成了一个循环（封闭式风冷系统），这款设计和奥迪Q5设计有类似之处，C-HR电池包的蒸发器位于风机出口的风道内部，电池包内部具有加热功能，在每个大模组（包内有2种模组）的底部都设计的有加热膜（有弹性支撑），这种加热膜材质和国内的差别比较大，这款车的加热速率非常低（可能是出于安全考虑），C-HR这款电池包内部设计有许多值得借鉴的细节（风道比较有特点）。在一定程度上奥迪Q5和C-HR也采用了直冷的散热方式，只是蒸发器没有和电芯直接接触，可以避免过冷的现象出现，它们将风冷和直冷结合在一块，直接给动力电池的冷却介质配置一个蒸发器，这样电池散热效果更佳，但是成本可能会增加不少。</p>
 <p> </p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png"></p>
 <p>图13 电池包三维视图（百度图片）</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png"></p>
 <p>图14 电池包俯视图（百度图片）</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png"></p>
 <p>图15 电池包热管理原理（百度图片）</p>
 <p> </p>
 <p>可见，风冷式电池热管理技术有很广的应用范围，而且应用在商业电动车上也有很好的效果。目前商用电动车还有其他的电池热管理技术，下一期，我们将着重介绍和讨论<strong>液冷式和直冷式电池热管理技术</strong>。</p>
@@ -469,441 +462,747 @@
 <p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p>
 
                 
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="category-chain-item">制冷技术</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" class="print-no-link">#电池热管理</a>
-      
-    </div>
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>电池热管理工程实践认知 (1): 风冷式热管理系统</div>
-      <div>https://demon1630.github.io/xiaoxiaohu/2020/05/30/电池热管理工程实践认知-1-风冷式热管理系统/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>Author</div>
-          <div>John Doe</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>May 30, 2020</div>
-        </div>
-      
-      
-      
-        <div class="license-meta-item">
-          <div>Licensed under</div>
-          <div>
-            
-              
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
-                    <i class="iconfont icon-cc-by"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/xiaoxiaohu/2020/05/30/windows%E5%B9%B3%E5%8F%B0%E4%B8%8B%E4%BD%BF%E7%94%A8-rclone-%E6%8C%82%E8%BD%BD-onedrive-%E4%B8%BA%E6%9C%AC%E5%9C%B0%E7%A1%AC%E7%9B%98/" title="Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/" title="电池热管理工程实践认知 (2): 液冷及直冷式热管理系统">
-                        <span class="hidden-mobile">电池热管理工程实践认知 (2): 液冷及直冷式热管理系统</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
             </div>
+            <hr/>
 
             
-          </article>
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/xiaoxiaohu/about" rel="external nofollow noreferrer">小小胡</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://demon1630.github.io/xiaoxiaohu/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">https://demon1630.github.io/xiaoxiaohu/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/xiaoxiaohu/about" target="_blank">小小胡</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/">
+                                    <span class="chip bg-color">电池热管理</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/xiaoxiaohu/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
         </div>
-      </div>
     </div>
 
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>Table of Contents</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/xiaoxiaohu/2020/05/30/windows%E5%B9%B3%E5%8F%B0%E4%B8%8B%E4%BD%BF%E7%94%A8-rclone-%E6%8C%82%E8%BD%BD-onedrive-%E4%B8%BA%E6%9C%AC%E5%9C%B0%E7%A1%AC%E7%9B%98/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/xiaoxiaohu/medias/featureimages/6.jpg" class="responsive-img" alt="Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘">
+                        
+                        <span class="card-title">Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/xiaoxiaohu/categories/wordpress/" class="post-category">
+                                    wordpress
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/xiaoxiaohu/medias/featureimages/3.jpg" class="responsive-img" alt="电池热管理工程实践认知 (2): 液冷及直冷式热管理系统">
+                        
+                        <span class="card-title">电池热管理工程实践认知 (2): 液冷及直冷式热管理系统</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    制冷技术
+                                </a>
+                            
+                            <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
+                                    文章采集
+                                </a>
+                            
+                            <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/" class="post-category">
+                                    试验台架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/">
+                        <span class="chip bg-color">试验台</span>
+                    </a>
+                    
+                    <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">制冷技术</span>
+                    </a>
+                    
+                    <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">电池热管理</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
 
-  </aside>
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 小小胡<br />'
+            + '文章作者: 小小胡<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/xiaoxiaohu/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/xiaoxiaohu/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/xiaoxiaohu/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/xiaoxiaohu/libs/codeBlock/codeShrink.js"></script>
+
 
 
     </div>
-  </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
 </div>
 
 
+<script src="/xiaoxiaohu/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
 
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
 
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
 
-  
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
 
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
     
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
+        <link rel="stylesheet" href="/xiaoxiaohu/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
 
     
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/xiaoxiaohu/libs/aplayer/APlayer.min.js"></script>
+<script src="/xiaoxiaohu/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2026</span>
+            
+            <a href="/xiaoxiaohu/about" target="_blank">小小胡</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2019";
+                        var startMonth = "9";
+                        var startDate = "3";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/xiaoxiaohu/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+        <div id="searchResult"></div>
     </div>
-  </div>
 </div>
 
-    
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
 
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-  
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/xiaoxiaohu/js/events.js" ></script>
-<script  src="/xiaoxiaohu/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/xiaoxiaohu/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    function isExpandAllEnabled() {
-      return CONFIG.toc && CONFIG.toc.expand_all === true;
-    }
-    function expandAllToc() {
-      if (!isExpandAllEnabled()) { return; }
-      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
-    }
-    function updateTocToggle($li, $childList) {
-      var $toggle = $li.children('.toc-toggle');
-      if ($toggle.length === 0) { return; }
-      var collapsed = $childList.hasClass('tocbot-is-collapsed');
-      $toggle
-        .toggleClass('toc-toggle-collapsed', collapsed)
-        .toggleClass('toc-toggle-expanded', !collapsed);
-    }
-    function bindTocToggle() {
-      if (!isExpandAllEnabled()) { return; }
-      jQuery('#toc-body .toc-list-item').each(function() {
-        var $li = jQuery(this);
-        var $childList = $li.children('ol');
-        if ($childList.length === 0) {
-          if ($li.children('.toc-toggle').length === 0) {
-            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
-          }
-          return;
-        }
-
-        if ($li.children('.toc-toggle').length === 0) {
-          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
-        }
-        updateTocToggle($li, $childList);
-      });
-      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        var $li = jQuery(this).parent('.toc-list-item');
-        var $childList = $li.children('ol');
-        if ($childList.length === 0) { return; }
-        $childList.toggleClass('tocbot-is-collapsed');
-        updateTocToggle($li, $childList);
-      });
-      if (!window.__tocToggleObserver) {
-        window.__tocToggleObserver = new MutationObserver(function(mutations) {
-          mutations.forEach(function(mutation) {
-            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
-            var $list = jQuery(mutation.target);
-            var $li = $list.parent('.toc-list-item');
-            if ($li.length === 0) { return; }
-            updateTocToggle($li, $list);
-          });
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
         });
-        jQuery('#toc-body ol').each(function() {
-          window.__tocToggleObserver.observe(this, { attributes: true });
-        });
-      }
-    }
-    var tocConfig = Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc);
-    if (isExpandAllEnabled()) {
-      tocConfig.collapseDepth = 6;
-    }
-    window.tocbot.init(tocConfig);
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
-    expandAllToc();
-    bindTocToggle();
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-        expandAllToc();
-        bindTocToggle();
-      }
-    });
-  });
-</script>
-
-
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
-
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
     };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
 
-    Fluid.events.registerRefreshCallback(function() {
-      if ('anchors' in window) {
-        anchors.removeAll();
-        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-        var res = [];
-        for (var item of el) {
-          res.push('.markdown-body > ' + item.trim());
-        }
-        if (CONFIG.anchorjs.placement === 'left') {
-          anchors.options.class = 'anchorjs-link-left';
-        }
-        anchors.add(res.join(', '));
-      }
-    });
-  });
+    searchFunc('/xiaoxiaohu/search.xml', 'searchInput', 'searchResult');
+});
 </script>
 
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
 
-  
 <script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
 </script>
 
-
-  <script>Fluid.plugins.imageCaption();</script>
-
-  <script  src="/xiaoxiaohu/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/xiaoxiaohu/js/boot.js" ></script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
 
 
-  
+    <script src="/xiaoxiaohu/libs/materialize/materialize.min.js"></script>
+    <script src="/xiaoxiaohu/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/xiaoxiaohu/libs/aos/aos.js"></script>
+    <script src="/xiaoxiaohu/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/xiaoxiaohu/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/xiaoxiaohu/js/matery.js"></script>
 
-  <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
-  </noscript>
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/xiaoxiaohu/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/xiaoxiaohu/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/xiaoxiaohu/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/xiaoxiaohu/libs/instantpage/instantpage.js" type="module"></script>
+    
+
 </body>
+
 </html>

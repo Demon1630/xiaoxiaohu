@@ -1,1136 +1,1454 @@
-
-
-<!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
-
+<!DOCTYPE HTML>
+<html lang="zh-CN">
 
 
 <head>
-  <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="keywords" content="小小胡">
+    <meta name="description" content="小小胡">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/xiaoxiaohu/img/fluid.png">
-  <link rel="icon" href="/xiaoxiaohu/img/fluid.png">
-  
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://demon1630.github.io/xiaoxiaohu/page/10/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-  
-  <title>Hexo</title>
+    <title>小小胡</title>
+    <link rel="icon" type="image/png" href="/xiaoxiaohu/demon.png">
+    
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+    <!-- bg-cover style     -->
 
 
 
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
-
-
-<link  rel="stylesheet" href="/xiaoxiaohu/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/xiaoxiaohu/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/xiaoxiaohu/css/highlight-dark.css" />
-  
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/my.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/dark.css" media="none" onload="if(media!='all')media='all'">
 
 
 
 
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"demon1630.github.io","root":"/xiaoxiaohu/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/xiaoxiaohu/local-search.xml","include_content_in_search":true};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
-    }
-  </script>
-  <script  src="/xiaoxiaohu/js/utils.js" ></script>
-  <script  src="/xiaoxiaohu/js/color-schema.js" ></script>
-  
+    <link rel="stylesheet" href="/xiaoxiaohu/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/xiaoxiaohu/css/post.css">
 
 
-  
+
+
+
+
+    <script src="/xiaoxiaohu/libs/jquery/jquery-3.6.0.min.js"></script>
+
 <meta name="generator" content="Hexo 8.1.2"></head>
 
 
 <body>
-  
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/xiaoxiaohu/" class="waves-effect waves-light">
+                    
+                    <img src="/xiaoxiaohu/medias/demon.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">小小胡</span>
+                </a>
+            </div>
+            
 
-  <header>
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/xiaoxiaohu/medias/demon.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">小小胡</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于我
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                小小胡
+                
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="/xiaoxiaohu/libs/typed/typed.js"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
+                            
+                                "从来没有真正的绝境, 只有心灵的迷途",
+                            
+                                "Never really desperate, only the lost of the soul",
+                            
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/xiaoxiaohu/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
+<script>
+    
+      var bannerUrl = "/xiaoxiaohu/medias/featureimages/" + Math.floor(Math.random() * 24) + '.jpg';
+    
+    $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
+
+</script>
+
+
+    </div>
+</div>
+
+
+<main class="content">
+
     
 
-<div class="header-inner" style="height: 100vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/xiaoxiaohu/">
-      <strong>Fluid</strong>
+    
+
+    <!-- 所有文章卡片 -->
+    <article id="articles" class="container articles">
+        <div class="row article-row">
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/10/08/%E5%BC%BA%E5%A4%A7%E7%9A%84%E8%99%9A%E6%8B%9F%E4%B8%B2%E5%8F%A3%E8%BD%AF%E4%BB%B6/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/12.jpg" class="responsive-img" alt="强大的虚拟串口软件">
+                            
+                            <span class="card-title">强大的虚拟串口软件</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+今天给大家介绍一款VSPD虚拟串口软件，串口通讯想必做硬件开发和软件的人来说都相当了解，本款虚拟串口拥有在虚拟环境中快速调试代码、支持添加无限个虚拟串口等功能 ，解决在调试程序时受串口设备数量限制。  
+Virtual Serial Po
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-08
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="post-category">
+                                    推荐软件
+                                </a>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
+                                    文章采集
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/">
+                            <span class="chip bg-color">串口通讯</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/10/07/%E9%95%BF%E6%B2%99%E6%B8%B8/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/22.jpg" class="responsive-img" alt="长沙游">
+                            
+                            <span class="card-title">长沙游</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                国庆七天假，4号跑去参加了一下同学婚礼，感觉这几年同学都要陆陆续续结婚了
+
+这也是自己首次以第一人身份去参加的，感觉很不一样，以前去参加亲戚的婚礼，总感觉他们是大人，没毛病，但是当身边朋友开始结婚的时候，就会发现，自己也不是小孩子了，也是大
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
+                                    生活
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%B8%B8%E7%8E%A9/">
+                            <span class="chip bg-color">游玩</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/10/03/%E5%8D%81%E5%B9%B4%E4%B9%8B%E7%BA%A6/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/14.jpg" class="responsive-img" alt="十年之约">
+                            
+                            <span class="card-title">十年之约</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                之前申请过加入十年之约项目，今天终于通过了，十年，给未来的自己，也希望本博客可以一直运营下去！
+
+有想申请的可以到网站https://www.foreverblog.cn/blogs.html进行申请，目前已经有很多入驻博主了
+
+感觉蛮有意
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-03
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">
+                            <span class="chip bg-color">网站</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/10/02/%E6%96%87%E7%8C%AE%E5%BC%95%E6%96%87%E5%88%86%E6%9E%90%E5%88%A9%E5%99%A8-histcite-%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E6%9A%A8-histcite-pro-%E9%A6%96%E5%8F%91%E9%A1%B5%E9%9D%A2/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/6.jpg" class="responsive-img" alt="文献引文分析利器 HistCite 详细使用教程暨 HistCite Pro 首发页面">
+                            
+                            <span class="card-title">文献引文分析利器 HistCite 详细使用教程暨 HistCite Pro 首发页面</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+**说明：**这个知乎专栏是 HistCite Pro 唯一官方发布页面，从本文链接下载的软件绝无病毒！如果遇到杀毒软件的误报，请放心添加信任！请不要从其他下载站下载本程序！有任何问题请到我的微信公众号“科研利器”反馈。
+
+如果你选修过中
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-02
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/wordpress/" class="post-category">
+                                    wordpress
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/09/28/%E5%AE%85%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E9%83%A8%E7%BD%B2/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/7.jpg" class="responsive-img" alt="宅音乐播放器部署">
+                            
+                            <span class="card-title">宅音乐播放器部署</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                前面有文章讲使用代码为网页添加音乐播放器，这里使用的就是部署在我服务器上的宅音乐播放器，可以直接使用
+如果想自己搭建，可以参考项目：https://github.com/lzx8589561/zhai-music，上面有完整的搭建教程，比较
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-28
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/wordpress/" class="post-category">
+                                    wordpress
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/">
+                            <span class="chip bg-color">视频</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/">
+                            <span class="chip bg-color">音乐播放器</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/09/26/%E7%94%B5%E6%B1%A0%E5%8C%85%E7%83%AD%E7%AE%A1%E7%90%86%E4%BB%BF%E7%9C%9F%E6%B5%81%E7%A8%8B%E5%8F%8A%E5%89%8D%E5%A4%84%E7%90%86%E6%8A%80%E5%B7%A7/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/10.jpg" class="responsive-img" alt="电池包热管理仿真流程及前处理技巧">
+                            
+                            <span class="card-title">电池包热管理仿真流程及前处理技巧</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+众所周知，新能源汽车锂离子电池的最佳工作温度只在一个狭小的（20-35℃）范围，不仅其本身在工作时会产生热量，而且还会受周围环境温度的影响，故需要高效的热管理系统将电池维持在一定范围内。而仿真分析应用于系统开发可以缩短开发周期和降低开发成
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
+                                    文章采集
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/">
+                            <span class="chip bg-color">控制</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/">
+                            <span class="chip bg-color">温度传感器</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/">
+                            <span class="chip bg-color">电池热管理</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/09/26/%E9%94%82%E7%94%B5%E6%B1%A0%E7%83%AD%E5%A4%B1%E6%8E%A7-%E7%83%AD%E6%89%A9%E6%95%A3%E4%BB%BF%E7%9C%9F%E5%88%86%E6%9E%90/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/8.jpg" class="responsive-img" alt="锂电池热失控/热扩散仿真分析">
+                            
+                            <span class="card-title">锂电池热失控/热扩散仿真分析</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                文章来源“STAR CCM Online”公众号
+当今世界，3C电子产品已经无处不在，新能源车也越来越普及。锂电池是3C电池产品和新能源车的关键零部件，人们不仅对电池性能和寿命要求越来越高，对电池的安全性更是提出了更加严格的要求，每一次锂电
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
+                                    文章采集
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/">
+                            <span class="chip bg-color">电池热管理</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/09/24/labview%E7%94%9F%E6%88%90%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6crc%E6%A0%A1%E9%AA%8C%E7%A0%81/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/12.jpg" class="responsive-img" alt="labview生成十六进制CRC校验码">
+                            
+                            <span class="card-title">labview生成十六进制CRC校验码</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                上一篇文章讲到了使用labview进行MODBUS通讯控制继电器，不过里面只是简单的把控制命令输入到继电器中，对于控制命令如何来没有讲，这次就来讲一下如何生成控制命令。
+
+首先看一下控制代码的格式，可以看到最后两个字节就是CRC校验码，用来
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/labview/" class="post-category">
+                                    labview
+                                </a>
+                                
+                                <a href="/xiaoxiaohu/categories/labview/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/" class="post-category">
+                                    试验台架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/labview/">
+                            <span class="chip bg-color">labview</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/">
+                            <span class="chip bg-color">控制</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/09/21/%E4%BD%BF%E7%94%A8labview%E8%BF%9B%E8%A1%8Cmodbus%E9%80%9A%E8%AE%AF%E4%BB%8E%E8%80%8C%E6%8E%A7%E5%88%B68%E8%B7%AF%E7%BB%A7%E7%94%B5%E5%99%A8/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/17.jpg" class="responsive-img" alt="使用labview进行MODBUS通讯从而控制8路继电器">
+                            
+                            <span class="card-title">使用labview进行MODBUS通讯从而控制8路继电器</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                前面有文章讲到使用labview进行MODBUS通讯的几种方法，虽然理论上是有讲，但实际动手操作的时候还是出现了蛮多问题的，这次就以使用labview控制八路控制继电器来讲一下
+
+这就是可控制继电器，有八路，可以使用RS-232或者RS-4
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-21
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/labview/" class="post-category">
+                                    labview
+                                </a>
+                                
+                                <a href="/xiaoxiaohu/categories/labview/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/" class="post-category">
+                                    试验台架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/labview/">
+                            <span class="chip bg-color">labview</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E9%82%AE%E4%BB%B6/">
+                            <span class="chip bg-color">邮件</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/">
+                            <span class="chip bg-color">控制</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/09/05/%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%A0%81%E4%B8%BA%E7%BD%91%E9%A1%B5%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/18.jpg" class="responsive-img" alt="使用代码为网页添加音乐播放器">
+                            
+                            <span class="card-title">使用代码为网页添加音乐播放器</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                之前有讲过如何为WordPress网页添加音乐播放器，可以使用插件，但是添加插件总还是不太方便，这里介绍一种使用代码添加播放器的方法
+
+见：https://music.strivefysfxyh.com/
+到这里面注册登入
+
+登入后添加播放
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/wordpress/" class="post-category">
+                                    wordpress
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/wordpress/">
+                            <span class="chip bg-color">wordpress</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/">
+                            <span class="chip bg-color">音乐播放器</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/09/02/matlab%E8%B0%83%E7%94%A8refprop%E8%BF%9B%E8%A1%8C%E5%88%B6%E5%86%B7%E5%89%82%E7%89%A9%E6%80%A7%E8%B0%83%E7%94%A8%E8%AE%A1%E7%AE%97/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/13.jpg" class="responsive-img" alt="MATLAB调用Refprop进行制冷剂物性调用计算">
+                            
+                            <span class="card-title">MATLAB调用Refprop进行制冷剂物性调用计算</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                进入网址下载MATLAB调用Refprop工具文件：https://trc.nist.gov/refprop/LINKING/Linking.htm#MatLabApplications
+ 
+
+下载这五个文件
+然后将其放入Refprop安装
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-02
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    制冷技术
+                                </a>
+                                
+                                <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="post-category">
+                                    推荐软件
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/refprop/">
+                            <span class="chip bg-color">refprop</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/matlab/">
+                            <span class="chip bg-color">matlab</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/08/22/%E7%BD%91%E7%AB%99%E4%BD%BF%E7%94%A8cloudflare%E9%85%8D%E7%BD%AEssl%E6%97%B6%E5%87%BA%E7%8E%B0%E9%87%8D%E5%AE%9A%E5%90%91%E6%AC%A1%E6%95%B0%E8%BF%87%E5%A4%9A%E8%80%8C%E6%97%A0%E6%B3%95%E8%AE%BF/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/15.jpg" class="responsive-img" alt="网站使用cloudflare配置ssl时出现重定向次数过多而无法访问问题">
+                            
+                            <span class="card-title">网站使用cloudflare配置ssl时出现重定向次数过多而无法访问问题</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                在将域名添加到cloudflare后，启用其ssl，但出现访问网站时出现重定向次数过多而无法访问的问题
+
+这其实可能是由于cloudflare启用的ssl模式和服务器使用的ssl不匹配的原因
+默认情况下，CloudFlare 启用的 SSL
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/wordpress/" class="post-category">
+                                    wordpress
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">
+                            <span class="chip bg-color">网站</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/">
+                            <span class="chip bg-color">网站建设</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+        </div>
+    </article>
+
+</main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a href="/xiaoxiaohu/page/9/"
+               class="left btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">10 / 21</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a href="/xiaoxiaohu/page/11/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/xiaoxiaohu/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/xiaoxiaohu/libs/aplayer/APlayer.min.js"></script>
+<script src="/xiaoxiaohu/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2026</span>
+            
+            <a href="/xiaoxiaohu/about" target="_blank">小小胡</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2019";
+                        var startMonth = "9";
+                        var startDate = "3";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/xiaoxiaohu/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
     </a>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content (desktop) -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/" target="_self">
-                <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/archives/" target="_self">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/categories/" target="_self">
-                <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/tags/" target="_self">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/about/" target="_self">
-                <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Mobile grid menu overlay -->
-<div id="mobile-grid-menu" class="d-lg-none">
-  <div class="mobile-grid-menu-inner">
-    <div class="container">
-      <div class="row">
-        
-          
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-home-fill"></i>
-                  <span>Home</span>
-                </div>
-              </a>
-            </div>
-          
-        
-          
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/archives/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-archive-fill"></i>
-                  <span>Archives</span>
-                </div>
-              </a>
-            </div>
-          
-        
-          
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/categories/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-category-fill"></i>
-                  <span>Categories</span>
-                </div>
-              </a>
-            </div>
-          
-        
-          
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/tags/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-tags-fill"></i>
-                  <span>Tags</span>
-                </div>
-              </a>
-            </div>
-          
-        
-          
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/about/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-user-fill"></i>
-                  <span>About</span>
-                </div>
-              </a>
-            </div>
-          
-        
-        
-          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
-            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <div class="mobile-grid-item">
-                <i class="iconfont icon-search"></i>
-                <span>Search</span>
-              </div>
-            </a>
-          </div>
-        
-        
-          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
-               data-label-light="Light"
-               data-label-dark="Dark">
-            <a href="javascript:;" aria-label="Color Toggle">
-              <div class="mobile-grid-item">
-                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
-                <span id="mobile-color-toggle-label">Dark</span>
-              </div>
-            </a>
-          </div>
-        
-      </div>
-    </div>
-  </div>
 </div>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/xiaoxiaohu/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
-          
-        </div>
-
-        
-      </div>
-
-      
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
-      
     </div>
-  </div>
-</div>
+</footer>
 
+<div class="progress-bar"></div>
 
 
-</div>
-
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-x-md">
-        <div id="board"
-          style="margin-top: 0">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<h1 style="display: none">Hexo</h1>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/" target="_self">
-          LabVIEW2013软件安装步骤
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/" target="_self">
-        <div>
-          软件 下载  LabVIEW 2013（32&#x2F;64）位下载地址： pan.baidu.com&#x2F;s&#x2F;1GuuX5sSGSvkNrz1ErRcXPw 密码：8qw5 [下载方法]：点击查看如何下载软件？[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW有任何问题请咨询小屋微信客服?点击咨询  软件 介绍 LabVIEW是一种图形
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-12-14 00:00" pubdate>
-              2020-12-14
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/labview/" class="category-chain-item">labview</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/tor/">#tor</a>
-            
-              <a href="/xiaoxiaohu/tags/labview/">#labview</a>
-            
-              <a href="/xiaoxiaohu/tags/scr/">#scr</a>
-            
-              <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/">#控制</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" target="_self">
-          LabVIEW2018软件安装教程
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" target="_self">
-        <div>
-          软件 下载  LabVIEW 2018（32&#x2F;64）位下载地址：https://pan.baidu.com/s/1vOoYTrN36Mumr87zleAuPQ 密码: m035 [下载方法]：点击查看如何下载软件？[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW有任何问题请咨询小屋微信客服?点击咨询  软件 介绍 LabVIEW是一种图形化的
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-12-14 00:00" pubdate>
-              2020-12-14
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/labview/" class="category-chain-item">labview</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/tor/">#tor</a>
-            
-              <a href="/xiaoxiaohu/tags/labview/">#labview</a>
-            
-              <a href="/xiaoxiaohu/tags/%E6%8E%A7%E5%88%B6/">#控制</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/12/11/%E6%8D%A2%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" target="_self">
-          换固态硬盘
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/12/11/%E6%8D%A2%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" target="_self">
-        <div>
-          之前电脑硬盘被我脑抽拿磁铁去吸了。。。。结果啥都没了，拿去维修后给我换了一块硬盘，但估计老板比较坑，换的一块硬盘不行，之后系统一直各种系统中断问题，导致CPU暴涨，卡顿。。。 受不了了就给电脑换了块固态硬盘，买的是联想京东的，240G才200块不到，因为我电脑有光驱，所以网上找了各种教程，最后决定将原先的机械硬盘放在光驱位当存储用，然后固态硬盘放原先机械硬盘位装系统和软件，240G基本够系统和软件
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-12-11 00:00" pubdate>
-              2020-12-11
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E6%97%A5%E5%B8%B8/" class="category-chain-item">日常</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/">#固态硬盘</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/11/29/%E7%94%B5%E5%8A%A8%E6%B1%BD%E8%BD%A6%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%86%B5%E8%A7%A3%E9%87%8A%E5%92%8C%E5%8C%BA%E5%88%AB/" target="_self">
-          电动汽车各种测试工况解释和区别
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/11/29/%E7%94%B5%E5%8A%A8%E6%B1%BD%E8%BD%A6%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%86%B5%E8%A7%A3%E9%87%8A%E5%92%8C%E5%8C%BA%E5%88%AB/" target="_self">
-        <div>
-          12因为博主三年来都是研究电动汽车的电池管理系统（BMS）,所以最近，将陆续将三年间的成果陆续分享给大家，仅供交流学习，严禁其他用途。锂离子电池研究的流程一般为：实验——内部特性研究——建模——参数辨识——估算算法——搭建实验平台。本节主要简介电动汽车各种测试工况名称涵义以及特点用途,由于工况太多，部分工况下面介绍，其他会推荐相关网址和手册。　　首先，要讲的的是：工况法是评价车辆（或发动机）排放状
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-11-29 00:00" pubdate>
-              2020-11-29
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="category-chain-item">制冷技术</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/%E6%B1%BD%E8%BD%A6%E7%83%AD%E7%AE%A1%E7%90%86/" class="category-chain-item">汽车热管理</a>
-  
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/11/28/excel%E6%8A%98%E7%BA%BF%E5%9B%BE%E7%BA%B5%E5%9D%90%E6%A0%87%E8%BD%B4%E6%95%B0%E5%80%BC%E4%B8%8D%E5%AF%B9%E5%92%8C%E5%AE%9E%E9%99%85%E5%80%BC%E4%B8%8D%E4%B8%80%E8%87%B4/" target="_self">
-          excel折线图纵坐标轴数值不对和实际值不一致
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/11/28/excel%E6%8A%98%E7%BA%BF%E5%9B%BE%E7%BA%B5%E5%9D%90%E6%A0%87%E8%BD%B4%E6%95%B0%E5%80%BC%E4%B8%8D%E5%AF%B9%E5%92%8C%E5%AE%9E%E9%99%85%E5%80%BC%E4%B8%8D%E4%B8%80%E8%87%B4/" target="_self">
-        <div>
-          在制作excel图表折线图时，有时会发现纵坐标轴的数值和实际原始数据不一致，纵坐标轴要比实际数值大很多。本例向大家介绍这一现象产生的原因和如何解决这个问题。 工具&#x2F;原料 excel  过程： 1  首先看一下示例，原始数据中最大值是7，但是纵坐标轴最大值是20。    2  做图表中鼠标右键，选择【更改图表类型】。    3  我们把鼠标悬浮在当前图表类型的按钮上，会看到当前图表是【带数
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-11-28 00:00" pubdate>
-              2020-11-28
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/excel/" class="category-chain-item">excel</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/excel/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/excel/">#excel</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/11/28/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86%E7%AA%81%E7%A0%B45%E4%B8%AA%E9%87%87%E9%9B%86%E8%A7%84%E5%88%99%E9%99%90%E5%88%B6%E4%B8%8E%E9%87%87%E9%9B%86%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE/" target="_self">
-          胖鼠采集突破5个采集规则限制与采集图片不显示问题
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/11/28/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86%E7%AA%81%E7%A0%B45%E4%B8%AA%E9%87%87%E9%9B%86%E8%A7%84%E5%88%99%E9%99%90%E5%88%B6%E4%B8%8E%E9%87%87%E9%9B%86%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE/" target="_self">
-        <div>
-          胖鼠采集是一款很好用的采集文章到WordPress的插件，但是因为毕竟是付费时代，不可能免费把所有功能都给你使用，所以里面就有限制，最多只能配置5个采集规则，这就很烦了，因为对于不同的网站，采集规则是不一样的，如果你想要有多个采集你就要付费了，这里介绍一种方法，可以解除限制  进入到胖鼠采集插件的后台文件夹中  在这个文件里找到他的默认采集规则，然后复制修改就可以了 比如说我复制新建一个百度经验采
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-11-28 00:00" pubdate>
-              2020-11-28
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/wordpress/" class="category-chain-item">wordpress</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">#网站</a>
-            
-              <a href="/xiaoxiaohu/tags/wordpress/">#wordpress</a>
-            
-              <a href="/xiaoxiaohu/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/">#胖鼠采集</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/11/26/excel%E4%B8%AD%E5%AF%B9%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%B6%E9%97%B4%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%87%8F/" target="_self">
-          excel中对文本格式的时间进行加减
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/11/26/excel%E4%B8%AD%E5%AF%B9%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%B6%E9%97%B4%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%87%8F/" target="_self">
-        <div>
-          excel中经常需要对时间进行加减，但有时候你在excel中显示的并不是数字形式的，可能只是文本格式的，这时候是不能进行加减的，   如上图所示，虽然他们在excel单元格中显示的都是16时2分32秒，但其本质是不一样的，一个是单纯的文本，另一个是可以进行计算的时间数字格式，对于第一张图中的文本格式如何进行计算呢？ 首先需要把中文本格式的转换为数字格式，需要把里面的文本“时”、“分”、“秒”替换为
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-11-26 00:00" pubdate>
-              2020-11-26
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/excel/" class="category-chain-item">excel</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/excel/">#excel</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/11/19/excel%E5%AF%BC%E5%85%A5txt%E6%A0%BC%E5%BC%8F%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6/" target="_self">
-          excel导入txt格式数据文件
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/11/19/excel%E5%AF%BC%E5%85%A5txt%E6%A0%BC%E5%BC%8F%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6/" target="_self">
-        <div>
-          由于很多采集设备导出的数据格式是txt形式，展示出来如图所示：  但这样非常不便于我们进行相应的查看和绘图，最简单的方式就是导入到excel中，然后可以把里面的数据都分割开来 这里介绍一下如何导入txt文件到excel中 首先新建一个excel文件，然后打开 点击  数据-自文本  然后找到txt文件，选中导入  导入后会要进行字符分割   根据自己需求调整，之后完成就可以导入了
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-11-19 00:00" pubdate>
-              2020-11-19
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/excel/" class="category-chain-item">excel</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/excel/">#excel</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/11/02/nextcloud%E6%8C%82%E8%BD%BDonedrive%E4%BD%9C%E4%B8%BA%E5%A4%96%E6%8E%A5%E7%9B%98/" target="_self">
-          nextcloud挂载onedrive作为外接盘
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/11/02/nextcloud%E6%8C%82%E8%BD%BDonedrive%E4%BD%9C%E4%B8%BA%E5%A4%96%E6%8E%A5%E7%9B%98/" target="_self">
-        <div>
-          使用nextcloud作为私人网盘还是不错的，安装nextcloud可以查看文章 vps使用nextcloud搭建个人私有云盘虽然很安全方便，但是由于我的vps硬盘大小只有40G，同时上面还安装了蛮多网站的，所以留给储存文件的就比较少了，所以如果想存大量文件还是不太行，所以可以使用onedrive作为外接网盘，接入到nextcloud，从而可以直接在nextcloud中存入文件到onedrive中
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-11-02 00:00" pubdate>
-              2020-11-02
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/wordpress/" class="category-chain-item">wordpress</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/tor/">#tor</a>
-            
-              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">#网站</a>
-            
-              <a href="/xiaoxiaohu/tags/nextcloud/">#nextcloud</a>
-            
-              <a href="/xiaoxiaohu/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/">#私有云盘</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/11/01/linux%E4%BD%BF%E7%94%A8rclone%E6%8C%82%E8%BD%BDonedrive%E4%BD%9C%E4%B8%BA%E6%8C%82%E8%BD%BD%E7%9B%98/" target="_self">
-          linux使用rclone挂载onedrive作为挂载盘
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/11/01/linux%E4%BD%BF%E7%94%A8rclone%E6%8C%82%E8%BD%BDonedrive%E4%BD%9C%E4%B8%BA%E6%8C%82%E8%BD%BD%E7%9B%98/" target="_self">
-        <div>
-          **注意：**服务器最好是KVM的，OpenVZ需要给你的服务商发TK告诉他们开一下FUSE，如果没有FUSE是没办法挂载的。 首先我们需要先获取到onedrive的access_token 获取方式：先到https://rclone.org/downloads/下载win版本的Rclone  下载后解压，把文件夹更名为rclone 然后使用CMD，进入rclone目录，输入如下代码： 1rclo
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-11-01 00:00" pubdate>
-              2020-11-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/wordpress/" class="category-chain-item">wordpress</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/scr/">#scr</a>
-            
-              <a href="/xiaoxiaohu/tags/windows/">#windows</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/xiaoxiaohu/page/9/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/xiaoxiaohu/">1</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/8/#board">8</a><a class="page-number" href="/xiaoxiaohu/page/9/#board">9</a><span class="page-number current">10</span><a class="page-number" href="/xiaoxiaohu/page/11/#board">11</a><a class="page-number" href="/xiaoxiaohu/page/12/#board">12</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/25/#board">25</a><a class="extend next" rel="next" href="/xiaoxiaohu/page/11/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+        <div id="searchResult"></div>
     </div>
-  </div>
 </div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/xiaoxiaohu/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/xiaoxiaohu/libs/materialize/materialize.min.js"></script>
+    <script src="/xiaoxiaohu/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/xiaoxiaohu/libs/aos/aos.js"></script>
+    <script src="/xiaoxiaohu/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/xiaoxiaohu/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/xiaoxiaohu/js/matery.js"></script>
 
     
 
     
-  </main>
+    
+    
 
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-  
-</div>
+    <!-- 雪花特效 -->
+    
 
-  </footer>
+    <!-- 鼠标星星特效 -->
+    
 
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/xiaoxiaohu/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
 
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
+    <!-- Baidu Analytics -->
 
+    <!-- Baidu Push -->
 
-<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/xiaoxiaohu/js/events.js" ></script>
-<script  src="/xiaoxiaohu/js/plugins.js" ></script>
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
 
+    
+    <script src="/xiaoxiaohu/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/xiaoxiaohu/libs/others/busuanzi.pure.mini.js"></script>
+    
 
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
+    
 
+    
 
+    <!--腾讯兔小巢-->
+    
+    
 
+    
 
-  
-    <script  src="/xiaoxiaohu/js/img-lazyload.js" ></script>
-  
+    
 
+    
+    <script src="/xiaoxiaohu/libs/instantpage/instantpage.js" type="module"></script>
+    
 
-
-
-  <script  src="/xiaoxiaohu/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/xiaoxiaohu/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
-  </noscript>
 </body>
+
 </html>

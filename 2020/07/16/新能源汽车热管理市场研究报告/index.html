@@ -1,446 +1,401 @@
-
-
-<!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
-
+<!DOCTYPE HTML>
+<html lang="zh-CN">
 
 
 <head>
-  <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="keywords" content="新能源汽车热管理市场研究报告, 小小胡">
+    <meta name="description" content=" 
+报告来源：广州广证恒生证券研究所有限公司
+         ****数据支持：林琼芸
+1. **与燃油车相比，新能源汽车热管理系统更加复杂，要求更高。**燃油车的热管理系统主要由发动机冷却子系统、变速箱冷却子系统、进排气热管理系统和空调">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/xiaoxiaohu/img/fluid.png">
-  <link rel="icon" href="/xiaoxiaohu/img/fluid.png">
-  
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content="报告来源：广州广证恒生证券研究所有限公司          ****数据支持：林琼芸 1. **与燃油车相比，新能源汽车热管理系统更加复杂，要求更高。**燃油车的热管理系统主要由发动机冷却子系统、变速箱冷却子系统、进排气热管理系统和空调子系统组成。相比于燃油车, 电动汽车的能源为电能, 电机作为其驱动单元，其热管理拓扑结构主要包括电池回路、电机回路、空调回路和暖风芯体回路，即增加电池、电机及电">
-<meta property="og:type" content="article">
-<meta property="og:title" content="新能源汽车热管理市场研究报告">
-<meta property="og:url" content="https://demon1630.github.io/xiaoxiaohu/2020/07/16/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6%E7%83%AD%E7%AE%A1%E7%90%86%E5%B8%82%E5%9C%BA%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="报告来源：广州广证恒生证券研究所有限公司          ****数据支持：林琼芸 1. **与燃油车相比，新能源汽车热管理系统更加复杂，要求更高。**燃油车的热管理系统主要由发动机冷却子系统、变速箱冷却子系统、进排气热管理系统和空调子系统组成。相比于燃油车, 电动汽车的能源为电能, 电机作为其驱动单元，其热管理拓扑结构主要包括电池回路、电机回路、空调回路和暖风芯体回路，即增加电池、电机及电">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-fea478cb58af443e09576522c8355168.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-b15ee5e2763ef9061d9a1942a954d172.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-8450c91ceca45bd8c96ff0189c625a28.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-ee7a8332556253ffb2058a7beb866865.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-9f0998298b1627038eccb8ebb9c8da38.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-7eb7ad97935ad2169836e3d64de275b6.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-05e0fa5c15c2a2ec3546c068f86da333.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-e652e21b05232b2c79a595b1b646d919.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-9341f3749c00d96fb6635b5f73d030d1.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-565ea0bdfa5919a93a85737ffd97e9f7.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-5d49e4b70129d56c0b13e43921861aac.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-0accf0ef3606633453a53495346ded27.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-cc5b4deb8ad078e6dffc6044e1110a02.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-f8b409cef7a52cb77176a3da394e56c6.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-5073475d16639c99e630a00c9fe0b788.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-1690964ffd4435675a309f83b4787b7d.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-a04857f061e25074462e88aaddba0a6e.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-adf34c78bb8b4241fd4710e1e39acc7e.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-9c94daa3b2822fb2b8b568c4ed026287.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-9df3af1b4860ee32da9e3e2575b043ed.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-785f2261b2046fe06a4acb5eb58340bb.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-8ae504c8c9bb52256c9daca2ec168805.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-548add36ad3968c150be4a2b18074a9f.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-f13c7e80eb3663334fa6de80335cb65e.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-4e53013d436417c10e975b815937487d.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-8e7dbeb1a0646f993980ed7bb140ede0.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-44f2a873e8e07367330d7e6f7d7abb1e.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-d0ef2eafeeed8bbf217255ef665a989c.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-3df6d076763c14bd6c029541eb79b5dc.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-39dc2cfcfc63244f7c3da2b9f75a36e9.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-020de3a8dde47719898794e5b3b1faf8.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-06a9b6480f9b00d12ca55bf856a941cb.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-20adb3894da40190389e9172667e9e1f.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-6c5c269b5e5d322f784c76ef2ae40298.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-e9951d5aa66365dc8c3f54f3158fab4b.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-73ef44d67e3f6d6ac54ef5ca91a1923c.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-fa7399d9015209ad7dcfc1c9e9f3a252.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-1de32f43781488ab32fd12644a360830.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-f720b3e64201d9e747d1a40f13a472f3.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-0ec5108520c05d6eb3e9dbd64d9b2011.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-fdb1da378334c050ce9d14e3b919bbe9.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-0e296c463fa9c06d1cfdfc87027545f6.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-dcd00c03558256da3c52101362e5be35.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-c4008cbaf1054633da4bea92f629f35e.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-aaea366a52e2f4e2cc038942f4950d13.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-a4b5b61732272eefb10423962b741e5b.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-37bb2347b40332a6978211fc582b79ee.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-7919e37b598c01f47aeb875c323e704d.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-179c2d719bb70a7c01997601541a7870.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-c569b7d865b24a490bafa71e3987673e.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-2a8140f81a93f35d52e75c013730d86c.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-c3e0095d4f76f12b92cc52ee1976334e.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-8303dc2b34dc015b5ef4384cc74e09de.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-938370d6a9af797a35e82196167453c0.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-1efabb53ba83f806adb1fbbd8bbe4a38.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-44d01201e1e5f12aa42740e1212de9f8.png">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-4a4106cd9e624e5ae65ea3e318d34900.jpeg">
-<meta property="article:published_time" content="2020-07-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-21T06:03:00.242Z">
-<meta property="article:author" content="John Doe">
-<meta property="article:tag" content="制冷技术">
-<meta property="article:tag" content="温度传感器">
-<meta property="article:tag" content="电池热管理">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-fea478cb58af443e09576522c8355168.png">
-  
-  
-  
-  <title>新能源汽车热管理市场研究报告 - Hexo</title>
+    <title>新能源汽车热管理市场研究报告 | 小小胡</title>
+    <link rel="icon" type="image/png" href="/xiaoxiaohu/demon.png">
+    
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+    <!-- bg-cover style     -->
 
 
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
-
-
-<link  rel="stylesheet" href="/xiaoxiaohu/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/xiaoxiaohu/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/xiaoxiaohu/css/highlight-dark.css" />
-  
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/my.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/dark.css" media="none" onload="if(media!='all')media='all'">
 
 
 
 
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"demon1630.github.io","root":"/xiaoxiaohu/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/xiaoxiaohu/local-search.xml","include_content_in_search":true};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
-    }
-  </script>
-  <script  src="/xiaoxiaohu/js/utils.js" ></script>
-  <script  src="/xiaoxiaohu/js/color-schema.js" ></script>
-  
+    <link rel="stylesheet" href="/xiaoxiaohu/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/xiaoxiaohu/css/post.css">
 
 
-  
+
+
+    
+
+
+
+    <script src="/xiaoxiaohu/libs/jquery/jquery-3.6.0.min.js"></script>
+
 <meta name="generator" content="Hexo 8.1.2"></head>
 
 
 <body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/xiaoxiaohu/" class="waves-effect waves-light">
+                    
+                    <img src="/xiaoxiaohu/medias/demon.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">小小胡</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
   
-
-  <header>
+  <li class="hide-on-med-and-down nav-item">
     
-
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/xiaoxiaohu/">
-      <strong>Fluid</strong>
+    <a href="/xiaoxiaohu/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
     </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
 
-    <!-- Collapsible content (desktop) -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/" target="_self">
-                <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
-              </a>
-            </li>
-          
+        <img src="/xiaoxiaohu/medias/demon.jpg" class="logo-img circle responsive-img">
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/archives/" target="_self">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/categories/" target="_self">
-                <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/tags/" target="_self">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/about/" target="_self">
-                <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
+        <div class="logo-name">小小胡</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
     </div>
-  </div>
-</nav>
 
-<!-- Mobile grid menu overlay -->
-<div id="mobile-grid-menu" class="d-lg-none">
-  <div class="mobile-grid-menu-inner">
-    <div class="container">
-      <div class="row">
+    <ul class="menu-list mobile-menu-list">
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
           
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-home-fill"></i>
-                  <span>Home</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
           
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/archives/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-archive-fill"></i>
-                  <span>Archives</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
           
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/categories/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-category-fill"></i>
-                  <span>Categories</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
           
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/tags/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-tags-fill"></i>
-                  <span>Tags</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于我
+		</a>
           
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
           
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/about/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-user-fill"></i>
-                  <span>About</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
         
-          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
-            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <div class="mobile-grid-item">
-                <i class="iconfont icon-search"></i>
-                <span>Search</span>
-              </div>
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
-          </div>
+        </li>
         
-        
-          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
-               data-label-light="Light"
-               data-label-dark="Dark">
-            <a href="javascript:;" aria-label="Color Toggle">
-              <div class="mobile-grid-item">
-                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
-                <span id="mobile-color-toggle-label">Dark</span>
-              </div>
-            </a>
-          </div>
-        
-      </div>
-    </div>
-  </div>
+    </ul>
 </div>
 
-  
 
-<div id="banner" class="banner" parallax=true
-     style="background: url('/xiaoxiaohu/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="新能源汽车热管理市场研究报告"></span>
-          
         </div>
 
         
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-07-16 00:00" pubdate>
-          July 16, 2020 am
-        </time>
-      </span>
-    
-  </div>
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
 
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
         
-          17k words
-        
-      </span>
-    
+    </nav>
+
+</header>
 
     
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          138 mins
-        
-      </span>
-    
-
-    
-    
-  </div>
 
 
-        
-      </div>
 
-      
+<div class="bg-cover pd-header post-cover" style="background-image: url('/xiaoxiaohu/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">新能源汽车热管理市场研究报告</h1>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 
 
-</div>
 
-  </header>
+<main class="post-container content">
 
-  <main>
     
-      
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">
+                                <span class="chip bg-color">制冷技术</span>
+                            </a>
+                        
+                            <a href="/xiaoxiaohu/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/">
+                                <span class="chip bg-color">温度传感器</span>
+                            </a>
+                        
+                            <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/">
+                                <span class="chip bg-color">电池热管理</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="post-category">
+                                制冷技术
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
 
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <h1 id="seo-header">新能源汽车热管理市场研究报告</h1>
-            
-            
-              <div class="markdown-body">
+            <div class="post-info">
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-16
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
                 <p> </p>
 <p>报告来源：广州广证恒生证券研究所有限公司</p>
 <p>         ****数据支持：<strong><strong>林琼芸</strong></strong></p>
@@ -448,49 +403,49 @@
 <p>**2.新能源汽车导致热管理的要求提高，技术门槛提升，热泵空调、液冷技术逐渐成为主流应用。**1）新能源汽车空调现阶段主要采用PTC制热和热泵空调，PTC缺点是损耗电能降低续航里程，而热泵空调可大幅降低能量损耗，是目前发展趋势。基于热泵成本相较于传统空调较高，国内市场目前配套的车型主要集中在相对略高端的车型。随着技术的成熟和成本的降低，未来也会有越来越多的国内车型将搭载热泵空调。2）随着热管理要求逐步提升，电池热管理也将从自然冷却方式逐步发展成为液冷等效果更好的方式。随着A00和A0级别车型份额下降，其他车型份额上升，液冷系统的比例将迅速扩大。</p>
 <p>**3.与燃油车相比，新能源汽车热管理系统单车配套价值翻番。新能源汽车热管理市场年复合增速超过25%。**随着汽车向电动化和智能化方向发展，整车能量管理涵盖内容增多，对电动汽车能量管理的要求也从粗放型设计向精益化设计转变。从整车层面对各子系统进行能量统筹管理将成为电动汽车未来的发展趋势。燃油车热管理单车配套价值约 3000 元，纯电动乘用车热管理单车配套价值约6000元，单车配套价值翻番。根据广证恒生测算，传统汽车热管理全球市场规模在3000亿元左右，保持平稳；新能源汽车热管理市场，预计2021年全球市场空间约234亿元，2025全球市场空间约586亿元，年复合增速超过25%。</p>
 <p>**4.新能源汽车热管理竞争格局未定，内资龙头抢得市场先机。**新能源汽车热管理处于蓝海阶段，基数小，空间大。传统汽车热管理行业集中度高，外资企业电装、马勒、法雷奥、翰昂合计占据 55%的市场份额。汽车空调压缩机领域，奥特佳全球排名前六。阀类、泵类领域，三花、盾安形成双寡头格局。面对新能源汽车对热管理的强劲需求，三花智控、银轮股份等企业抓住市场机遇，加强新技术和新产品研发，进入国内外知名客户的供应体系，在手订单充足。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-fea478cb58af443e09576522c8355168.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-b15ee5e2763ef9061d9a1942a954d172.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-8450c91ceca45bd8c96ff0189c625a28.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-ee7a8332556253ffb2058a7beb866865.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-9f0998298b1627038eccb8ebb9c8da38.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-fea478cb58af443e09576522c8355168.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-b15ee5e2763ef9061d9a1942a954d172.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-8450c91ceca45bd8c96ff0189c625a28.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-ee7a8332556253ffb2058a7beb866865.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-9f0998298b1627038eccb8ebb9c8da38.png"></p>
 <p><strong><strong><strong>1</strong>. 汽车热管理简述</strong></strong>****</p>
 <p>1.1 汽车热管理系统概述</p>
 <p>      汽车是一个非常复杂的系统，由上万个不同材料的零部件组成，而每个零部件的工作温度和材料耐受温度都不尽相同。汽车热管理系统的主要作用就是通过散热、加热、保温等手段，让不同的零件都能工作在合适的温度下，以保障汽车的功能安全和使用寿命。汽车热管理系统中，主要包括发动机冷却系统、空调系统、电池热管理系统等。热管理的本质就是通过热量传递进而达到对温度的控制。热量传递是指由于温度差引起的能量转移，主要有传导、对流和辐射等三种方式。</p>
 <p>1.1.1</p>
 <p>燃油车热管理系统构成</p>
 <p>燃油车的热管理系统主要由发动机冷却子系统、变速箱冷却子系统、进排气热管理系统和空调子系统组成。发动机冷却子系统一般由散热器、冷却风扇、节温器、水泵、膨胀水箱（或储液罐）、冷却液管路、气缸体和气缸盖中的水套及其他附属装置等组成。发动机冷却子系统依靠冷却液在大、小循环中的流动实现发动机的冷却和预热。变速箱冷却子系统主要由油冷器、管道和阀体组成。变速箱冷却主要借助油冷器吸收润滑油的热量并与环境空气或散热器冷却剂进行热交换。空调子系统由压缩机、冷凝器、蒸发器、膨胀阀、贮液干燥器、管道、冷凝风扇、真空电磁阀、怠速器和控制系统等组成。空调系统通过冷媒实现制冷、利用发动机热量实现供暖功能。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-7eb7ad97935ad2169836e3d64de275b6.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-7eb7ad97935ad2169836e3d64de275b6.png"></p>
 <p>1.1.2</p>
 <p>新能源汽车热管理系统构成</p>
 <p>相比于传统燃油汽车, 电动汽车的能源为电能, 电机作为其驱动单元。其热管理拓扑结构主要包括电池回路、电机回路、空调回路和暖风芯体回路, 如图所示。新能源汽车的电机电控冷却子系统主要采用液冷方式。液冷系统由散热器、冷却风扇、膨胀水箱、冷却液泵、冷却液软管和冷却液温度传感器组成。液冷系统主要依靠冷却水泵带动冷却液在冷却管道中循环流动，通过在散热器的热交换等物理过程，冷却液带走电动机与控制器产生的热量。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-05e0fa5c15c2a2ec3546c068f86da333.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-05e0fa5c15c2a2ec3546c068f86da333.png"></p>
 <p>1.1.3</p>
 <p>混合动力汽车热管理系统构成</p>
 <p>混合动力汽车的热管理系统主要由发动机和电机电控冷却子系统、变速箱冷却子系统、电池冷却子系统和空调子系统组成。混合动力汽车的动力电池容量较小，发热量不大，因此混合动力汽车的电池冷却方式多采用风冷方式，风冷系统主要由冷却风道、风机、电阻丝组成。插电混动汽车（含增程式）发动机冷却系统和原有燃油车差别不大，部分与电池热管理系统集成，系统结构会更加复杂，零部件数量更多。混合动力汽车的主要热管理需求来自发动机、电机和电机控制器，这些零部件的冷却主要采用液冷方案，根据搭载车型的结构组成一个或多个冷却回路。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-e652e21b05232b2c79a595b1b646d919.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-e652e21b05232b2c79a595b1b646d919.png"></p>
 <p>1.2 汽车热管理技术</p>
 <p><strong>1.2.1</strong></p>
 <p><strong>燃油车热管理技术</strong></p>
 <p>**1.发动机热管理技术：**发动机热管理系统是给发动机装一台变频“空调”，使发动机在工作循环时，保持在最佳温度（90°C）。发动机只有在最佳温度下工作才最省油。发动机热管理技术主要有两个系统组成：一是冷却智能控制模式，二是风扇智能控制模式。随着计算机技术及发动机电控技术的发展，采用电子驱动及控制的冷却水泵、风扇、节温器等部件，可以通过传感器和计算机芯片根据实际的发动机温度控制运行，提供最佳的冷却介质流量，实现发动机冷却系统控制智能化，降低了能耗，提高了效率。</p>
 <p>按冷却介质类型划分可分为风冷式和水冷式。风冷发动机基本已经跟汽车划清了界限，因为水冷可以提供更为稳定的温度环境，在为乘客提供舒适服务方面，风冷发动机也表现的不是那么人性化，至少在冬天不能向水冷发动机那样为车内提供暖风服务。但是风冷发动机的质量更轻，维护起来也更方便，例如不用换冷却液，也不涉及到漏水等故障。传统发动机冷却系统的主要部件有水箱（散热器）、水泵、风扇、节温器、暖风水箱以及储液罐。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-9341f3749c00d96fb6635b5f73d030d1.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-9341f3749c00d96fb6635b5f73d030d1.png"></p>
 <p>      **2.变速箱冷却系统技术：**手动挡变速箱和机械传动的自动变速箱无需进行冷却，液压传动的自动变速箱需要进行冷却。变速箱冷却系统设计，布置及基本的工作原理同发动机冷却系统类似，主要是冷却介质不同，变速箱冷却介质为其专用的变速箱润滑油。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-565ea0bdfa5919a93a85737ffd97e9f7.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-565ea0bdfa5919a93a85737ffd97e9f7.png"></p>
 <p>      变速箱内部润滑油从油底壳经过油泵一部分流至系统各零部件进行润滑并带走摩擦产生的热量最后返回油底壳完成一个循环，一部分流至液力变矩器进行动力传递，同时会吸收动力传动过程中产生的大量热量，然后经过散热器降温后，流至油底壳完成循环。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-5d49e4b70129d56c0b13e43921861aac.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-5d49e4b70129d56c0b13e43921861aac.png"></p>
 <p>       **3.乘用舱空调系统技术：**汽车空调系统是实现对车厢内空气进行制冷、加热、换气和空气净化的装置。它可以为乘车人员提供舒适的乘车环境，降低驾驶员的疲劳强度，提高行车安全。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-0accf0ef3606633453a53495346ded27.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-cc5b4deb8ad078e6dffc6044e1110a02.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-0accf0ef3606633453a53495346ded27.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-cc5b4deb8ad078e6dffc6044e1110a02.png"></p>
 <p>1.2.2 </p>
 <p>新能源汽车热管理技术</p>
 <p>**1.电动汽车电池热管理技术：**动力电池散热研究可分为空气散热、液冷散热、固体相变材料散热和热管散热等方式，现有主要散热技术以前三种为主。</p>
 <p>（1）空冷式散热系统：也叫风冷式散热系统。空冷式的散热方式最为简单，只需要让空气流经电池表面带走动力电池所产生的热量，达到对动力电池组散热的目的。根据通风措施的不同，空冷式又有自然对流散热和强制通风散热两种方式。当前动力电池空冷式散热主要有串联式和并联式两种系统。但该种方式效果较差，且很难达到较高的电池均温性。</p>
 <p>（2）液冷式散热系统：是指制冷剂直接或间接地接触动力电池，然后通过液态流体的循环流动把电池包内产生的热量带走达到散热效果的一种散热系统。制冷剂可以是水、水和乙二醇的混合物、矿物质油和R134a等，这些制冷剂拥有较高的导热率，可以达到较好的散热效果。当前动力电池的液冷技术也拥有了相当成熟的技术，在电动汽车的散热系统中也有了相对广泛的应用，比如特斯拉电池包就是采用水和乙二醇的混合物的液冷方式散热，宝马i3采用R134a进行散热。液冷式系统往往要求更复杂的更加严苛的结构设计以防止液态制冷剂的泄漏以及保证电池包内电池单体之间的均匀性，而液冷系统的复杂结构也使得整套散热系统变得十分笨重，不仅增加整车的重量，使得整车的负担大大增加，而且同时由于其结构的复杂性及高密封性使得液冷系统的维护和保养相对困难，维护成本也相应增加。</p>
 <p>（3）相变材料式散热系统：是以相变材料作为传热介质，利用相变材料在发生相变时可以储能与放能的特性达到对动力电池低温加热与高温散热的效果。但相变材料的热导率比较低，为了改变材料的固有缺陷，人们向相变材料中填充一些金属材料，例如有些研究中将很薄的铝板填充到相变材料中从而达到提高热导率的目的。为了提高相变材料的热导率，还有人提出了向相变材料中填充碳纤维、碳纳米管等。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-f8b409cef7a52cb77176a3da394e56c6.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-f8b409cef7a52cb77176a3da394e56c6.png"></p>
 <p>       **2.电机&#x2F;电机控制器热管理技术：**电机与控制器在电能与机械能的转换过程中，部分电能会损耗成为热能释放。对于新能源汽车，驱动电机作为动力源，控制器提供能量转换，缺一不可。两者的热管理系统则主要对其冷却，使其能够安全可靠运行。随着驱动电机功率和转矩的日益增大，对电机和控制器热管理系统的要求也随之提高。目前，针对电机与控制器的冷却方式依据其介质不同，可分为风冷和液冷。新能源汽车的电机热管理系统主要为驱动电机、发电机、控制器、车载充电机和DC&#x2F;DC等元件进行温度控制，保证其能够工作在最合适的温度。采用风冷的驱动电机和控制器均只能采用较小功率，还不能适用于常规的新能源汽车；而以ATF为冷却介质的电机国内暂无相应产品，使用日本电机成本较高。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-5073475d16639c99e630a00c9fe0b788.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-1690964ffd4435675a309f83b4787b7d.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-5073475d16639c99e630a00c9fe0b788.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-1690964ffd4435675a309f83b4787b7d.png"></p>
 <p>      **3.DCDC热管理技术：**DCDC的作用就是将整车动力电池336VDC或者540VDC转化为12VDC或者24VDC，供整车低压用电器工作，同时具备给铅酸蓄电池充电的功能。DCDC是电动汽车不可或缺的一个关键零部件。DCDC除了具备电压转化功能外，还具备高压互锁检测、输出防反接保护、欠压、过压、过温保护等功能，目前市面上的DCDC技术已经非常成熟，很多采用集成电路控制，成本也同步降低了，基本上就1元&#x2F;W。</p>
 <p>       DCDC的控制方式有高压唤醒、硬线激活、CAN唤醒等方式，根据整车的不同需求而选择，目前来说最高效的是CAN唤醒模式，可以减少硬件的布置，节约空间便于布置，当然了CAN唤醒对DCDC的CAN收发模块要求比较高。DCDC与电池采用相同方式进行热管理。</p>
 <p>      **4.充电机热管理技术：**新能源车载充电机OBC较新的设计已经集成了多个功能，比如：双向功率转换以及直流转换，使得OBC整体设计更加密切紧凑。由于交流充电模式和驱动模式并不同时发生。热设计工程师通常会在多功能车载充电机里面多个热负荷共享同一个散热体，从而减少整体成本、尺寸、重量。避免出现环境污染问题。充电机与电池采用相同方式进行热管理。</p>
@@ -503,57 +458,57 @@
 <p>      4）高效的动力传动系统，当发动机水温从90-110度，整体油耗可以下降2%左右，热管理与冷却系统的优化也需要控制度，以免对燃油经济性产生负面作用。</p>
 <p>      2.节能减排势在必行</p>
 <p>      **燃油车尾气排放是大气污染重要源头之一，也是国家目前重点治理方向之一。**2017年，全球机动车四项污染物初步核算为4359.7万吨，比起2016年削减2.5%。其中，一氧化碳（CO）3327.3万吨，碳氢化合物（HC）407.1万吨，氮氧化合物（NOX）574.3万吨，颗粒物（PM）50.9万吨。汽车是污染物排放量的主要贡献者，在一氧化碳（CO）和碳氢化合物（HC）超过80%，氮氧化合物（NOX）和颗粒物（PM）超过90%</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-a04857f061e25074462e88aaddba0a6e.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-a04857f061e25074462e88aaddba0a6e.png"></p>
 <p>      **中国汽车保有量巨大，对石油能源需求巨大，石油资源高度依赖进口。**中国汽车拥有量不断上升，2018年的民众汽车拥有量达到23231.23万辆，私人汽车拥有量达到20574.93万辆。从渗透率角度来看，我国汽车行业仍颇具潜力。世界银行公布了2019年全球20个主要国家千人汽车拥有量数据，其中中国每千人拥车量为173辆，位列榜单第17名，可以看出，与发达国家相比，目前我国汽车渗透率还处于较低的水平。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-adf34c78bb8b4241fd4710e1e39acc7e.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-adf34c78bb8b4241fd4710e1e39acc7e.png"></p>
 <p>      我国石油进口依赖度一直维持在70%以上，降低汽车节能减排有利于缓解石油进口依赖度。2017年我国石油消费量58745万吨，进口量达到49141万吨，进口依赖度甚至达到83%。据预测，我国石油消费量到2050年将超过8亿吨，而国内产量由于资源和生产能力的限制，将稳定在年产2亿吨左右，进口依赖程度将达75％。。鉴于我国汽油、柴油能源消耗仍在继续增长，而目前主要采用的化石能源不仅有限，我们对石油资源的依赖度只升不降。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-9c94daa3b2822fb2b8b568c4ed026287.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-9c94daa3b2822fb2b8b568c4ed026287.png"></p>
 <p>       **双积分政策在2019年由“正向激励”向“奖罚并行”演变，鼓励节能减排。**2017年版双积分政策明确了 CAFC、NEV 双积分的核算、抵偿方法，2019和2020 年度 NEV 积分比例要求，以及对未抵偿清零负积分企业的处罚措施。2019 年 7 月，工信部发布 2021-2023 年《乘用车企业平均燃料消耗量（CAFC）与新能源汽车（NEV）积分并行管理办法(征求意见稿)》修正案，新增 2021-2023 年度 NEV 积分比例要求，在 NEV 积分达标值计算过程中引入低油耗乘用车的概念，并对积分计算方法、工况标准进行了调整；2019年9月，工信部发布关于修改《乘用车企业平均燃料消耗量与新能源汽车积分并行管理办法（征求意见稿）》的决定（以下简称“2019 版双积分修订征求意见稿”），将低油耗乘用车的生产量或者进口量按照其数量的 0.2 倍改为 0.5倍计算以及调整纯电动车型能耗目标值等。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-9df3af1b4860ee32da9e3e2575b043ed.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-9df3af1b4860ee32da9e3e2575b043ed.png"></p>
 <p>2.2 热管理对新能源汽车更加重要</p>
 <p> </p>
 <p>2.2.1热管理对新能源汽车有多重意义</p>
 <p>       2019年中国新能源乘用车保持着2.4%的正增长，整体也已达到5%的渗透率。随着新能源汽车在汽车市场上占有率的提高，消费者使用频率不断增多，因此消费者对于续航里程提出更高的要求，一是要求新能源汽车载电量上的提升，二是要求新能源汽车在冬天续航里程的不再存在较大幅度的缩短。</p>
 <p>      2019年纯电动乘用车工况续航里程在250-400km区间和400km及以上区间车型产量占比分别为59.5%和39.6%，续航里程最高可达650km，250km以下车型不足1%。</p>
 <p>      随着技术研发不断进步，动力电池的能量密度逐步提升，使用寿命要求也越来越高。根据《节能与新能源汽车技术路线图》，能量型锂离子电池比能量2020年要达到单体350Wh&#x2F;kg， 2025年达到400Wh&#x2F;kg，功率型锂离子电池比能量2020年要达到单体200Wh&#x2F;kg，2025年达到250Wh&#x2F;kg，电池寿命2020年达到10年，2025年达到12年。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-785f2261b2046fe06a4acb5eb58340bb.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-8ae504c8c9bb52256c9daca2ec168805.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-785f2261b2046fe06a4acb5eb58340bb.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-8ae504c8c9bb52256c9daca2ec168805.png"></p>
 <p>      **1.续航里程和电池成本问题，仍然制约新能源汽车的发展，汽车热管理有利于提升电动车续航里程。**在续航方面，高速行驶时的续航、高温开空调时的续航和低温开空调时的续航三项指标表现较差，其中表现最差的是低温开空调时的续航里程。从纯电动车型的实际续航表现上看，常温不开空调时的平均实际续航里程为290公里，而开启空调后，无论是冷风还是暖风，续航里程均会受此影响出现下降的情况，其中冬天开启暖风对续航的影响尤为明显，平均实际续航仅为233公里，下降了20%。北方用户受此影响很大，从满意度得分上来看，北方用户对低温时续航的满意度（60.6）显著低于南方用户（65.3）。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-548add36ad3968c150be4a2b18074a9f.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-548add36ad3968c150be4a2b18074a9f.png"></p>
 <p>       **2.新能源汽车的安全问题仍然制约新能源汽车的发展，加强动力电池品控和整车热管理有利于减少安全事故。**根据新能源汽车国家大数据联盟的数据，2019年5月到8月18日共发现新能源汽车安全事故79起；已查明着火原因的车辆中，58%车辆起火源于电池问题，19%车辆起火源于碰撞问题，还有部分车辆的起火原因源于浸水、零部件故障、使用问题等原因。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-f13c7e80eb3663334fa6de80335cb65e.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-f13c7e80eb3663334fa6de80335cb65e.png"></p>
 <p>       近期的《工业和信息化部关于修改的决定（征求意见稿）》在“准入审查要求”中也明确，“新能源汽车生产企业应具备保证产品质量和安全所必需的生产设备设施”，“应具备专用充电设备，数量应能保证产品充电需要”，“申请燃料电池汽车的，应能保证产品加氢需要”，“应建立充分的安全生产管理措施、人员防护措施、应急处理措施”。上述表明新能源车安全性受重视。</p>
 <p>       新能源汽车的自动化控制程度更高，采用的功率器件更多，且新能源汽车的动力电池系统对工作环境的温度要求较高，温度过低会影响电池的续航能力，温度过高会导致电池使用寿命变短，因此新能源汽车对热管理系统的要求更为严格。</p>
 <p>       动力电池会随着温度的升高，电压下降速率增大，表明自放电越来越大。这是由于随着温度的升高，电池内部的化学反应越来越活泼，导致电池的自放电变大。在充放电倍率相同的条件下,温度越高,电池容量的衰减速率越快；在温度相同的条件下,电池的充放电倍率越大,电池容量的衰减速率越快。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-4e53013d436417c10e975b815937487d.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-8e7dbeb1a0646f993980ed7bb140ede0.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-4e53013d436417c10e975b815937487d.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-8e7dbeb1a0646f993980ed7bb140ede0.png"></p>
 <p>2.2.2 各大车企加快投放新能源车型，热管理零部件需求大增</p>
 <p>**1.新能源汽车发展迅速。**受益于政策的优惠，我国新能源汽车市场从2014年开始快速发展。2019年受到补贴退坡影响，产销量增速放缓。中汽协数据显示，2019年我国新能源汽车产量为124万辆，同比下降1.6%。2019年我国新能源汽车销量120.6万辆，同比下降3.25%。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-44f2a873e8e07367330d7e6f7d7abb1e.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload>     全球新能源汽车的市场份额从2018年的2.1%提升到了2019年的2.5%，相当于售出的每40台车里有一台电动车。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-d0ef2eafeeed8bbf217255ef665a989c.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload>       **2.新能源汽车成长空间巨大，目前进入到1%-10%的成长期。**根据《汽车产业中长期发展规划》、《节能与新能源汽车技术路线图》和《新能源汽车产业发展规划（2021-2035 年） (征求意见稿）》，到2020-2025年，我国要迈入世界汽车强国行列，实现新能源汽车全产业链发展。（1）2025年新能源汽车销量将占总销量20%，新能源汽车保有量达2000万辆以上；（2）2030年新能源汽车将占汽车总销量40%，新能源汽车保有量超8000万辆。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-44f2a873e8e07367330d7e6f7d7abb1e.png">     全球新能源汽车的市场份额从2018年的2.1%提升到了2019年的2.5%，相当于售出的每40台车里有一台电动车。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-d0ef2eafeeed8bbf217255ef665a989c.png">       **2.新能源汽车成长空间巨大，目前进入到1%-10%的成长期。**根据《汽车产业中长期发展规划》、《节能与新能源汽车技术路线图》和《新能源汽车产业发展规划（2021-2035 年） (征求意见稿）》，到2020-2025年，我国要迈入世界汽车强国行列，实现新能源汽车全产业链发展。（1）2025年新能源汽车销量将占总销量20%，新能源汽车保有量达2000万辆以上；（2）2030年新能源汽车将占汽车总销量40%，新能源汽车保有量超8000万辆。</p>
 <p>      **3.新能源汽车生产准入门槛放宽：造车新势力迎利好，各个车企制定新能源汽车战略。**2020年4月7日，工业和信息化部组织起草了《工业和信息化部关于修改的决定（征求意见稿）》，向社会公开征求意见。工信部表示，随着国内外形势的发展变化，为更好适应我国新能源汽车产业发展需要，进一步放宽准入门槛，激发市场活力，加强事中事后监管，促进我国新能源汽车产业高质量发展，需要对《准入规定》部分条款进行修改，利好造车新势力。新能源汽车的保有量越来越多，需求量也是越来越大，各个车企规划新能源汽车产品战略。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-3df6d076763c14bd6c029541eb79b5dc.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-39dc2cfcfc63244f7c3da2b9f75a36e9.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-3df6d076763c14bd6c029541eb79b5dc.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-39dc2cfcfc63244f7c3da2b9f75a36e9.png"></p>
 <p>**3.**新能源汽车热管理应用技术主流</p>
 <p>3.1 PTC加热损耗热能，热泵空调是主要应用方向</p>
 <p>电动汽车制热系统主要有<strong>PTC加热</strong>或<strong>热泵加热</strong>2类，热泵的效果明显好于PTC。</p>
 <p>电阻PTC加热器制热的优点是体积小、组成制热系统可靠性高；缺点是系统效率小于1，在冬季会大幅度地缩短续航里程。相关数据显示，电动车上普遍使用的PTC制热可使电动车的冬季续航里程减少一半左右。</p>
 <p>热泵空调系统制热，压缩机排出的高温高压制冷剂气体经单向阀､四通换向阀进入室内换热器，与车内空气进行热交换以达到提升乘员舱内温度的目的，被冷凝为低温高压的制冷剂液体流经节流装置进行节流降压，节流后的气液两相制冷剂进入室外换热器与室外空气进行热交换｡热泵空调是一种可以将低位热源的热能强制转移到高位热源的空调装置，在冬季制热工况下COP可达2-4，能效多倍于当今普遍使用的PTC加热，可以有效延长20%以上的续航里程，成本可控，同时能够实现电动汽车空调的冷暖一体化，是电动汽车空调系统重要的采暖方案之一。并且限制其使用的低温结霜问题也已有多种解决方案，是目前为数不多适用于电动汽车制热的有效技术。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-020de3a8dde47719898794e5b3b1faf8.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-020de3a8dde47719898794e5b3b1faf8.png"></p>
 <p>       热泵空调的核心零件包括四通换向阀、电动压缩机、电子膨胀阀、换热器等，国内厂商已完成零部件全覆盖，例如三花智控。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-06a9b6480f9b00d12ca55bf856a941cb.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-06a9b6480f9b00d12ca55bf856a941cb.png"></p>
 <p>新能源汽车热泵空调可分为直接式热泵空调系统、间接式热泵空调系统和补气增焓直接式热泵空调系统。直接式热泵空调系统最典型的例子就是NISSAN Leaf，空调箱内部布置一个换热器，简称内部冷凝器，通过四通换向阀来实现热泵模式。间接式热泵空调系统将空调箱内部的换热器拿掉，将其布置在机舱内，可称之为外部板式换热器。最典型的例子就是BMW i3。补气增焓是指压缩机采用两级节流中间喷气技术，采用闪蒸器进行气液分离，实现增焓效果。它通过中低压时边压缩边喷气混合冷却，然后高压时正常压缩，提高压缩机排气量，达到低温环境下提升制热能力的目的。在低温环境下效果更明显。最典型案例就是丰田普锐斯。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-20adb3894da40190389e9172667e9e1f.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-6c5c269b5e5d322f784c76ef2ae40298.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-20adb3894da40190389e9172667e9e1f.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-6c5c269b5e5d322f784c76ef2ae40298.png"></p>
 <p>       按制冷剂划分，热泵空调系统主要有R134a型和CO2型。虽然CO2具有良好的热物理性能，并且CO2使全球变暖的潜在能力（GWP）是R134a的千分之一，但由于目前各种汽车空调系统主要使用制冷剂R134a，零部件设计、生产及售后服务及维护，均依据R134a制冷剂物理性能设计，R134a型热泵空调系统成为当前研发的主流技术。但以二氧化碳作为制冷剂，可充分发挥其高环保、低价、高制热能效的特点，因此二氧化碳热泵空调在新能源车领域具备很广阔的应用前景。</p>
 <p>        基于热泵成本相较于传统空调较高，国内市场目前配套的车型主要集中在相对略高端的车型，这个可能是目前比较容易进入的市场，平台化供货也是这个行业未来降本的方式。外资车企中搭载热泵空调的车型比较多，技术相对来说比较成熟。随着技术的成熟和成本的降低，未来也会有越来越多的国内车型将搭载热泵空调。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-e9951d5aa66365dc8c3f54f3158fab4b.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-e9951d5aa66365dc8c3f54f3158fab4b.png"></p>
 <p>       热泵空调发展方向：1）跨临界 CO2 低温热泵技术。超临界 CO2的物理性质决定了其在热泵空调方向具有很大的优势，其在低温环境下的制热性能远优于采用传统制冷剂的系统，并且部件体积更小，系统更为紧凑，所以跨临界CO2热泵空调系统应是未来汽车热泵空调技术的发展方向。2）热泵空调与电池热管理的耦合控制。对运行策略进行研究，包括对冷却剂分流比的控制、热力循环控制、系统安全保护等，从而提高整车的能量利用效率。3）关键部件设计及密封问题。CO2 压缩机和高效气体冷却器以及节流装置的设计尤为重要，一方面要提高部件的效率，另一方面要解决部件的耐高压问题，而且选取的材料不仅要达到系统的要求，还要充分研究其在高压下的寿命周期，确保系统安全可靠。</p>
 <p>3.2 液冷是电池热管理主流方向</p>
 <p>电池热管理方式有自然冷却、风冷（主动+被动）、主动液冷（板式+独立回路）、主动直冷四种，其中液冷具有技术成熟、冷却效果好等优点。随着热管理要求逐步提升，电池热管理也将从自然冷却方式逐步发展成为液冷等效果更好的方式。根据NE时代数据，2017年国内新能源汽车动力电池53%采用自然冷却，主动风冷占比25%，液冷占比22%。其中纯电动车58%采取自然冷却，预计多为A00级纯电动车；插混车型66%采取液冷方式，自然冷却占比34%。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-73ef44d67e3f6d6ac54ef5ca91a1923c.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-73ef44d67e3f6d6ac54ef5ca91a1923c.png"></p>
 <p>        随着新能源汽车补贴的逐步退坡，和新能源市场的不断推广，近几年新能源乘用车的市场结构呈现出A00和A0级别的车型比例下降，其他车型比例将上升。随着A00级别的份额下降，液冷系统的比例或将迅速扩大。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-fa7399d9015209ad7dcfc1c9e9f3a252.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-fa7399d9015209ad7dcfc1c9e9f3a252.png"></p>
 <p>3.3 新能源整车热管理是必然的趋势</p>
 <p>随着汽车向电动化和智能化方向发展，整车能量管理涵盖内容增多，对电动汽车能量管理的要求也从粗放型设计向精益化设计转变。从整车层面对各子系统进行能量统筹管理将成为电动汽车未来的发展趋势。电动汽车热管理系统，相对于传统燃油车热管理系统，温度控制范围更为细化，各回路之间的能量交互使得热管理系统设计更为复杂，热管理系统设计向集成化方向发展。为了对电动汽车能量管理控制模式进行优化和预标定，减少整车试验工作量，电动汽车热管理系统与数字样车联合仿真将成为电动汽车能量管理的未来发展方向。</p>
 <p>新能源汽车的热管理系统的重要度和成本比重的提升。一是新能源汽车热管理涉及到快充、续航这类每次出行都会遇到的问题，若不加强热管理，整车核心性能会受到重大影响。二是新能源汽车的热管理系统几乎涵盖了新能源汽车的所有组成部分，包括动力电池、驱动电机、整车电控等。</p>
@@ -563,53 +518,53 @@
 <p>3.4 新能源汽车热管理单车配套价值高</p>
 <p>传统燃油车热管理包括空调系统的热管理和发动机等其他发热设备的冷却, 热管理在传统燃油车上的应用已非常成熟。与传统乘用车不同, 新能源汽车的主要热源有电池、控制器、电机等, 因此新能源汽车热管理系统比传统汽车更复杂。新能源汽车热管理包括空调系统、电池、电机电控和其他电子设备的热管理, 插电式混合动力汽车热管理还包括发动机、变速箱的冷却。可见, 新能源汽车不仅包括传统汽车空调系统, 而且新增电池、电机等冷却需求。从热管理需求划分的话, 新能源车热管理系统主要包括电池包环境、功率电子器件、电机散热、汽车空调等, 其中最主要的是空调系统与电池热管理系统。与传统汽车相比，新能源汽车热管理系统新增冷却板、电池冷却器、电子水泵、电子膨胀阀、PTC加热器或热泵系统等部件。</p>
 <p>根据知网相关论文数据，传统热管理核心组件配套价值量约2230元，新能源汽车热管理核心组件配套价值量约6410元, 即新能源汽车热管理价值量比传统车提升近1.7倍。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-1de32f43781488ab32fd12644a360830.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-1de32f43781488ab32fd12644a360830.png"></p>
 <p><strong><strong>4.</strong></strong> 各国轻量化路线各有侧重</p>
 <p>4.1 从燃油车到新能源车，热管理单车配套价值量倍增</p>
 <p>**1）汽车销量增长及高效节能要求，带来传统汽车热管理系统部件需求提升。**根据IHS对全球主要汽车市场的统计及预测，2015年全球汽车一级供应商及整车厂共生产汽车空调总成系统8607.22万套，2021年将达到9993.60万套，而热力膨胀阀、贮液器和控制器作为汽车空调系统必须的部件，同样会随着汽车销量的增加而增加。此外，随着对汽车高效节能要求的提高，在传统汽车热管理系统中，越来越多的汽车系统会采用调温阀（TBV）、水冷式油冷器、电子水泵和电子水阀等新产品，从而会带来此类新产品新的市场需求。</p>
 <p>根据广证恒生测算，传统汽车热管理单车配套价值量在3000元左右，预计2021年国内市场空间约837亿元，全球市场空间约3000亿。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-f720b3e64201d9e747d1a40f13a472f3.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-f720b3e64201d9e747d1a40f13a472f3.png"></p>
 <p>**2）复杂的热系统及高精度要求，带来新能源汽车热管理系统部件升级及单车配套价值量提升。**在新能源汽车行业，复杂的热系统要求使得每辆汽车搭载的空调用零部件需求量远高于传统汽车，对热管理系统的部件需求也进一步增加，技术要求进一步提升，形成新的电子膨胀阀、带电磁阀的膨胀阀和电池冷却器、冷却板、电子水泵和电子水阀等部品的需求，此类产品的需求随新能源市场需求的增加而增加。</p>
 <p>新能源汽车过去3年销量直线上升，成为未来汽车行业发展的重要趋势， 2017年全球新能源汽车销售总量达到121.8万辆，同比增长57%；2017年中国新能源汽车车共销售77.7万辆，同比增长53%，2018年销量将达到125.6万辆，同比增长62%；根据国务院“十三五”国家战略性新兴产业发展规划，到2020年电动车实现产销200万辆。新能源汽车的快速发展为汽车空调和热管理系统控制部件带来了巨大的新市场空间。</p>
 <p>根据广证恒生测算，新能源汽车热管理单车配套价值量在6000元左右，预计2025年国内市场空间约300亿元，全球市场空间约600亿元。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-0ec5108520c05d6eb3e9dbd64d9b2011.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-0ec5108520c05d6eb3e9dbd64d9b2011.png"></p>
 <p>4.2 汽车热管理市场竞争格局 </p>
 <p>传统汽车热管理市场以外资品牌为主，由电装、法雷奥、翰昂、马勒四大巨头所垄断。2018年全球汽车热管理市场（含空调系统）规模为500亿美金左右，前四大巨头占据全球55%市场份额，集中度较高。2018年全球乘用车热管理（不含空调系统）市场规模接近1000亿元。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-fdb1da378334c050ce9d14e3b919bbe9.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-fdb1da378334c050ce9d14e3b919bbe9.png"></p>
 <p>        电装成立于1949年12月16日，是世界汽车系统零部件的顶级供应商。电装在环境保护、发动机管理、车身电子产品、驾驶控制与安全、信息和通讯等领域，成为全球主要整车生产商可信赖的合作伙伴。主要的汽车热管理产品有空调系统、动力传动冷却系统、压缩机等。</p>
 <p>        法雷奥专业致力于汽车零部件、系统、模块的设计、开发、生产及销售的工业集团。公司业务涉及原配套业务及售后业务，是世界领先的汽车零部件供应商，为世界上所有的主要汽车厂提供配套。主要的汽车热管理产品有空调系统、动力总成热管理系统、压缩机、前端模块等。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-0e296c463fa9c06d1cfdfc87027545f6.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-0e296c463fa9c06d1cfdfc87027545f6.png"></p>
 <p>        马勒为汽车与发动机行业提供高质量的零部件产品，并且作为活塞系统、气缸零部件、气门驱动系统、气体管理系统和液体管理系统的三大供应商之一，为全球所有的汽车制造商提供门类齐全的高质量产品。主要的汽车热管理产品有空调系统、冷却系统、压缩机、电池调节技术等。</p>
 <p>        翰昂是世界领先的汽车热管理领域的供应商，在全球行业内仅有的两个全线汽车热管理供应商之一。总部位于韩国，在韩国交易所上市，通过多种渠道向全球的汽车生产商提供适应不同消费市场需求的产品技术。主要的汽车热管理产品有空调系统、压缩机、发动机冷却系统及管路在内的热管理系统全体系。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-dcd00c03558256da3c52101362e5be35.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-dcd00c03558256da3c52101362e5be35.png"></p>
 <p>       **1）空调领域：**市场格局排名靠前的包括电装、马勒、法雷奥、翰昂等，占据全球市场80%以上的市场份额。其中乘用车市场排名靠前的有法雷奥、电装、翰昂、爱斯达克、华域三电等；商用车空调主要有东风贝洱、法雷奥、南京协众、松芝股份等。</p>
 <p>        国内空调市场上，外资品牌汽车空调企业凭借技术优势、品牌优势以及与外资品牌整车制造商良好的全球合作关系占据大部分市场份额，主要空调系统供应商主要有十几家，以外资、合资为主。在技术能力和市场份额方面，日本电装独占鳌头，其他几大汽车空调业的龙头如法国的法雷奥、美国德尔福、德国贝洱。此外，汽车空调业的龙头与该地区整车厂设立合资公司：如贝洱与东风合资建有东风贝洱，一汽与法雷奥合资建有一汽法雷奥，空调国际与长安合资建有南方英特，华域汽车与三电、贝洱合资建有上海三电贝洱等。</p>
 <p>        内资品牌当中，奥特佳、松芝股份具有较强竞争力。奥特佳，股票代码：002239。奥特佳以汽车空调压缩机起家，公司空调压缩机业务主体是全资子公司南京奥特佳新能源科技有限公司和牡丹江富通汽车空调有限公司。南京奥特佳是全世界领先的涡旋式汽车空调压缩机生产商，牡丹江富通是国内自主品牌活塞式压缩机领军企业。作为专业汽车空调压缩机厂商，奥特佳在国内行业排名第一，在全球排名第六。2015年底，奥特佳收购了美国空调国际公司，实现了全球化布局。空调国际集团是技术领先的汽车空调系统生产商，在美、欧、亚等大洲均有业务，服务通用、福特、捷豹-路虎等世界知名汽车生产厂商，在中国市场和其他新兴市场国家也拥有广泛客户。2019年，奥特佳营业收入32.11亿元，其中空调压缩机22.34亿元，汽车空调系统9.76亿元。</p>
 <p>       松芝股份创立于1998年，2010年在深交所成功上市，股票代码：002454。依托二十年的卓越管理与雄厚的技术积淀，松芝股份业务领域逐步覆盖大中型客车空调、乘用车空调、轨道车空调、冷冻冷藏车空调、车用空调零部件、新能源汽车空调领域。目前公司是国内大中客空调龙头，覆盖多个客车客户。乘用车空调领域，覆盖长安自主、江淮、上汽通用五菱等客户。2019年，松芝股份营业收入34.09亿元，其中乘用车空调15.29亿元，大中型客车空调15.07亿元。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-c4008cbaf1054633da4bea92f629f35e.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-c4008cbaf1054633da4bea92f629f35e.png"></p>
 <p>       **2）压缩机领域：**全球传统的压缩机市场高度集中，电装、三电、翰昂占据了超半数的市场份额。奥特佳和华域三电在国内占据主导地位，2016年出货量分别为758万和723万台，按照2016年国内乘用车销量2,438万辆计算，市占率分别高达31.1%和29.7%。</p>
 <p>       **3）阀类、泵类领域：**除了空调压缩机之外，冷凝器、蒸发器、截止阀、四通换向阀、电子膨胀阀、电磁阀、变频控制器等，是空调制冷的主要零部件，广泛应用于家用空调、商用空调、冷链业务和热泵系统等领域。在阀类、泵类领域，国际上有日本太平洋、韩国unix（截止阀）；日本鹭宫、日本不二工机（电子膨胀阀）等企业，国内有三花、盾安形成双寡头格局。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-aaea366a52e2f4e2cc038942f4950d13.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-a4b5b61732272eefb10423962b741e5b.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-aaea366a52e2f4e2cc038942f4950d13.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-a4b5b61732272eefb10423962b741e5b.png"></p>
 <p>       新能源汽车正处于成长阶段, 且热管理系统单车配套价值明显高于传统汽车, 各巨头正加大该领域的布局, 且多以系统产品配套为主。我国部分以传统汽车热管理业务为主的零部件公司, 如三花智控、银轮股份、奥特佳等, 也在加大布局, 目前大多还在部件配套的阶段, 仅少数企业已开始配套系统产品。新能源汽车热管理行业正处于发展初期, 国际巨头具备丰厚的技术储备, 本土企业兼具贴近市场和低成本两大优势, 两类企业各有机会。本土企业有望在新能源热管理部件产品上获取较大份额, 且优质企业有望成长为领先的新能源汽车热管理系统供应商。新能源汽车热管理系统配套技术壁垒高, 目前国内企业大多还在部件配套的阶段, 未来有望从部件向系统延伸。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-37bb2347b40332a6978211fc582b79ee.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-37bb2347b40332a6978211fc582b79ee.png"></p>
 <p><strong>5. 投资建议</strong></p>
 <p>       短期关注部件放量带来的业绩弹性, 中长期看好有望实现热管理系统配套的企业, 推荐三花智控、银轮股份。</p>
 <p>5.1 重点推荐标的：三花智控</p>
 <p>三花智控，家电与汽车零部件行业双轮驱动，新能源汽车热管理专家。汽车空调及新能源车热管理业务主要产品包括热力膨胀阀、储液器、电子膨胀阀、电子水泵、电子油泵、冷却板、热管理组件等，广泛应用在传统燃油气、混合动力车及纯电动车等乘用车热管理领域。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-7919e37b598c01f47aeb875c323e704d.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-7919e37b598c01f47aeb875c323e704d.png"></p>
 <p>（1）**产品线种类丰富，配套优势明显。**三花汽零自成立以来，不断进行汽车空调和热管理系统领域的产品研发，技术水平走在行业前列，目前公司产品线已覆盖汽车空调系统部件、电池冷却系统部件、发动机和传动系统冷却部件三大主要领域，产品类别包含阀、泵、热交换等，品类齐全使得公司拥有强大的配套优势，吸引优质客户的同时提升对客户供货的单车配套价值量。</p>
 <p>（2）**客户群体优质稳定，极具全球竞争力。**目前三花汽零已经成为法雷奥、马勒贝洱等国际著名汽车空调及热管理系统制造商全球采购的供应商，也通过奔驰、宝马、通用、特斯拉、蔚来、比亚迪、吉利、长城、江铃、上汽、一汽、广汽等整车厂商的汽车一级供应商资质认证，成为国内外各大知名汽车整车厂商的一级供应商，成功进入了汽车整车厂商“金字塔结构”供应配套体系的顶层。</p>
 <p>（3）**传统叠加新能源下汽车热管理空间广阔，三花汽零业务增长可期。**三花汽零在新能源车热管理系统中能够供应的产品包括贮液器、热膨胀阀、电子膨胀阀、电子水泵、电池冷却器、冷却板、压块等，单车配套价值约为1500-2500元，公司给沃尔沃配套的一款车型，最高单车配套价值达到 5000元。</p>
 <p>（4）**三花汽零连续获得新能源汽车热管理订单。**近三年，公司新能源汽车零部件产品受到国际豪华汽车客户的认可，先后获得包括戴姆勒、宝马、沃尔沃等国际知名整车厂商的订单，也有特斯拉这样的新能源领先品牌的订单。标杆客户的示范效应帮助公司进一步开拓新的客户资源。截止2019年年末，生命周期内的新能源汽车热管理订单超过170 亿元，这些在手订单将成为公司业绩增长的最大保障。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-179c2d719bb70a7c01997601541a7870.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-179c2d719bb70a7c01997601541a7870.png"></p>
 <p>5.2 重点推荐标的：银轮股份</p>
 <p>银轮股份（002126）：公司热交换器销量十多年保持国内第一，其中乘用车业务占比超40%，公司2018年热管理业务进展顺利，在合资品牌及国外供应商实现突破，打入吉利领克平台，电池水冷板通过GM（全球通用）审核；成为德国采埃孚变速箱油冷器供应商。被确定为东风雷诺发动机机油冷却器供应商，预计于2020年供货，订单总额约为1个亿。公司定位明晰，随着项目落地及持续拓展客户，前景广阔，看好公司长期发展。</p>
 <p>**1）2019年业绩符合预期，四季度业绩改善明显。**根据公司的2019年业绩快报，2019年实现营业收入53.7亿元，同比增长7.0%，归母净利润3.2亿元，同比下滑8.3%；Q4实现营业收入15.1亿元，同比增长25.5%，环比增长30.2%；归母净利润0.6亿元，同比微降1.6%，环比增长19.0%。公司Q4的收入和业绩均改善，主要源于新能源热管理的订单释放和国六升级促进尾气处理业务。2020年随着新能源热管理订单和国六排放标准下EGR订单的放量，公司业绩有望持续改善。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-c569b7d865b24a490bafa71e3987673e.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-c569b7d865b24a490bafa71e3987673e.png"></p>
 <p>**2）拥抱电动化浪潮，公司是新能源热管理龙头。**公司从2016年开始全面发力，量产新能源热管理产品，目前产品有高低温水箱、Chiller（电池深冷器）、电池冷却板、电机冷却器、电控冷却器、前端冷却模块、PTC 加热器、电子风扇、电子水泵、电子水阀、热泵空调系统等产品。</p>
 <p>**3）新能源热管理客户持续拓展，在手订单充裕，有望成为未来收入核心增长点。**客户有吉利 （PMA 纯电动平台热交换总成）、卡特彼勒（冷却模块）、沃尔沃（新能源乘用车SPA2平台BEV（纯电）冷却模块）、约翰迪尔（封条式冷却器）、康明斯（板式机油冷却器）、曼胡默尔（水空中冷器）、一汽解放（冷却模块）、广汽（机油冷却器、EGR）、比亚迪（冷却模块）、江铃新能源汽车（GSE热泵空调）、宁德时代（电池水冷板）、东风日产（油冷器）、上汽通用、吉利与戴姆勒合资PMA-2平台（热泵空调），特斯拉（换热模块）等，订单比较充裕，在手订单预估超过30亿元，随着热管理订单的逐步放量，或将成为公司业绩核心增长点，未来前景可期。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-2a8140f81a93f35d52e75c013730d86c.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-2a8140f81a93f35d52e75c013730d86c.png"></p>
 <p><strong>6.风险提示</strong></p>
 <p>1.宏观经济持续下滑</p>
 <p>2.新能源汽车政策波动</p>
@@ -617,11 +572,11 @@
 <p>4.新能源汽车热管理新技术推广低于预期等</p>
 <p><strong>分析师：</strong></p>
 <p>刘伟浩，中山大学工商管理硕士，浙江大学工业设计、计算机双学士。具有A股和港股跨市场的研究经验，对汽车整车、零部件、经销商有丰富的研究经验。2016年加入广证恒生高端装备团队。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-c3e0095d4f76f12b92cc52ee1976334e.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-c3e0095d4f76f12b92cc52ee1976334e.png"></p>
 <p>研究报告</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-8303dc2b34dc015b5ef4384cc74e09de.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-8303dc2b34dc015b5ef4384cc74e09de.png"></p>
 <p>月度报告</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-938370d6a9af797a35e82196167453c0.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-938370d6a9af797a35e82196167453c0.png"></p>
 <p>猜你喜欢的文章</p>
 <p>► <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MjQyNzU2MA==&mid=2247490030&idx=1&sn=6561102d6a02c380f75923716581e361&chksm=eb33e6a9dc446fbf342c24af0e85b9a873e15f255578aa906d87ac42a0d848deb3e4e96eca43&scene=21#wechat_redirect">全球加氢站分布及规划汇总</a></p>
 <p>► <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MjQyNzU2MA==&mid=2247491126&idx=1&sn=6a219c2f1ef999463faa51d6d2604c31&chksm=eb33e171dc4468670237c3618a48426b1494d640ca3381dab44936854e7fbb32f93d4d9952db&scene=21#wechat_redirect">电动卡车市场规模及趋势分析</a></p>
@@ -651,444 +606,777 @@
 <p><strong><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MjQyNzU2MA==&mid=2247484157&idx=1&sn=7a0e7d56c5dac8618bbce7ffe9dc4076&chksm=eb33fdbadc4474ac58ee8c70b3a5d91b8fdfc219d5e1b66baab312d12657e25ebba6234fecda&scene=21#wechat_redirect">汽车启停电池市场调研</a></strong> <strong>| <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MjQyNzU2MA==&mid=2247484132&idx=1&sn=0bc8f57c8a7e905651277fee0839680a&chksm=eb33fda3dc4474b58395d99666570d44c689619b1cdb23c8fd1455bd08333d65313418067148&scene=21#wechat_redirect">动力电池回收市场调研</a></strong></p>
 <p>加入社群</p>
 <p>加入“一览众车”新能源汽车、智能驾驶产业微信群，扫以下二维码加群主微信申请入群。添加好友时请注明（姓名-公司-职位）。</p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-1efabb53ba83f806adb1fbbd8bbe4a38.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-44d01201e1e5f12aa42740e1212de9f8.png" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-1efabb53ba83f806adb1fbbd8bbe4a38.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-44d01201e1e5f12aa42740e1212de9f8.png"></p>
 <p>**“一览众车”**<strong>是一览众咨询旗下专注于汽车产业链领域数据、报告及行业资讯发布平台，更多信息，扫码关注本公众号。</strong></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-4a4106cd9e624e5ae65ea3e318d34900.jpeg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/frc-4a4106cd9e624e5ae65ea3e318d34900.jpeg"></p>
 
                 
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="category-chain-item">制冷技术</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="print-no-link">#制冷技术</a>
-      
-        <a href="/xiaoxiaohu/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" class="print-no-link">#温度传感器</a>
-      
-        <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" class="print-no-link">#电池热管理</a>
-      
-    </div>
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>新能源汽车热管理市场研究报告</div>
-      <div>https://demon1630.github.io/xiaoxiaohu/2020/07/16/新能源汽车热管理市场研究报告/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>Author</div>
-          <div>John Doe</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>July 16, 2020</div>
-        </div>
-      
-      
-      
-        <div class="license-meta-item">
-          <div>Licensed under</div>
-          <div>
-            
-              
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
-                    <i class="iconfont icon-cc-by"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/xiaoxiaohu/2020/07/16/tesla-%E7%83%AD%E7%AE%A1%E7%90%86%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D/" title="Tesla 热管理架构介绍">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Tesla 热管理架构介绍</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/xiaoxiaohu/2020/07/16/%E6%B1%BD%E8%BD%A6%E7%A9%BA%E8%B0%83%E7%94%B5%E7%A3%81%E8%86%A8%E8%83%80%E9%98%80%E7%9A%84%E5%99%AA%E5%A3%B0%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%8E%A7%E5%88%B6/" title="汽车空调电磁膨胀阀的噪声测试与控制">
-                        <span class="hidden-mobile">汽车空调电磁膨胀阀的噪声测试与控制</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
             </div>
+            <hr/>
 
             
-          </article>
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/xiaoxiaohu/about" rel="external nofollow noreferrer">小小胡</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://demon1630.github.io/xiaoxiaohu/xiaoxiaohu/2020/07/16/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6%E7%83%AD%E7%AE%A1%E7%90%86%E5%B8%82%E5%9C%BA%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/">https://demon1630.github.io/xiaoxiaohu/xiaoxiaohu/2020/07/16/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6%E7%83%AD%E7%AE%A1%E7%90%86%E5%B8%82%E5%9C%BA%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/xiaoxiaohu/about" target="_blank">小小胡</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">
+                                    <span class="chip bg-color">制冷技术</span>
+                                </a>
+                            
+                                <a href="/xiaoxiaohu/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/">
+                                    <span class="chip bg-color">温度传感器</span>
+                                </a>
+                            
+                                <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/">
+                                    <span class="chip bg-color">电池热管理</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/xiaoxiaohu/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
         </div>
-      </div>
     </div>
 
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>Table of Contents</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/xiaoxiaohu/2020/07/16/tesla-%E7%83%AD%E7%AE%A1%E7%90%86%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/xiaoxiaohu/medias/featureimages/23.jpg" class="responsive-img" alt="Tesla 热管理架构介绍">
+                        
+                        <span class="card-title">Tesla 热管理架构介绍</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    制冷技术
+                                </a>
+                            
+                            <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
+                                    文章采集
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">制冷技术</span>
+                    </a>
+                    
+                    <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">电池热管理</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/xiaoxiaohu/2020/07/16/%E6%B1%BD%E8%BD%A6%E7%A9%BA%E8%B0%83%E7%94%B5%E7%A3%81%E8%86%A8%E8%83%80%E9%98%80%E7%9A%84%E5%99%AA%E5%A3%B0%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%8E%A7%E5%88%B6/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/xiaoxiaohu/medias/featureimages/21.jpg" class="responsive-img" alt="汽车空调电磁膨胀阀的噪声测试与控制">
+                        
+                        <span class="card-title">汽车空调电磁膨胀阀的噪声测试与控制</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    制冷技术
+                                </a>
+                            
+                            <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
+                                    文章采集
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/">
+                        <span class="chip bg-color">生活</span>
+                    </a>
+                    
+                    <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">制冷技术</span>
+                    </a>
+                    
+                    <a href="/xiaoxiaohu/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/">
+                        <span class="chip bg-color">温度传感器</span>
+                    </a>
+                    
+                    <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">电池热管理</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
 
-  </aside>
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 小小胡<br />'
+            + '文章作者: 小小胡<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/xiaoxiaohu/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/xiaoxiaohu/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/xiaoxiaohu/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/xiaoxiaohu/libs/codeBlock/codeShrink.js"></script>
+
 
 
     </div>
-  </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
 </div>
 
 
+<script src="/xiaoxiaohu/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
 
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
 
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
 
-  
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
 
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
     
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
+        <link rel="stylesheet" href="/xiaoxiaohu/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
 
     
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/xiaoxiaohu/libs/aplayer/APlayer.min.js"></script>
+<script src="/xiaoxiaohu/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2026</span>
+            
+            <a href="/xiaoxiaohu/about" target="_blank">小小胡</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2019";
+                        var startMonth = "9";
+                        var startDate = "3";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/xiaoxiaohu/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+        <div id="searchResult"></div>
     </div>
-  </div>
 </div>
 
-    
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
 
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-  
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/xiaoxiaohu/js/events.js" ></script>
-<script  src="/xiaoxiaohu/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/xiaoxiaohu/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    function isExpandAllEnabled() {
-      return CONFIG.toc && CONFIG.toc.expand_all === true;
-    }
-    function expandAllToc() {
-      if (!isExpandAllEnabled()) { return; }
-      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
-    }
-    function updateTocToggle($li, $childList) {
-      var $toggle = $li.children('.toc-toggle');
-      if ($toggle.length === 0) { return; }
-      var collapsed = $childList.hasClass('tocbot-is-collapsed');
-      $toggle
-        .toggleClass('toc-toggle-collapsed', collapsed)
-        .toggleClass('toc-toggle-expanded', !collapsed);
-    }
-    function bindTocToggle() {
-      if (!isExpandAllEnabled()) { return; }
-      jQuery('#toc-body .toc-list-item').each(function() {
-        var $li = jQuery(this);
-        var $childList = $li.children('ol');
-        if ($childList.length === 0) {
-          if ($li.children('.toc-toggle').length === 0) {
-            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
-          }
-          return;
-        }
-
-        if ($li.children('.toc-toggle').length === 0) {
-          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
-        }
-        updateTocToggle($li, $childList);
-      });
-      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        var $li = jQuery(this).parent('.toc-list-item');
-        var $childList = $li.children('ol');
-        if ($childList.length === 0) { return; }
-        $childList.toggleClass('tocbot-is-collapsed');
-        updateTocToggle($li, $childList);
-      });
-      if (!window.__tocToggleObserver) {
-        window.__tocToggleObserver = new MutationObserver(function(mutations) {
-          mutations.forEach(function(mutation) {
-            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
-            var $list = jQuery(mutation.target);
-            var $li = $list.parent('.toc-list-item');
-            if ($li.length === 0) { return; }
-            updateTocToggle($li, $list);
-          });
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
         });
-        jQuery('#toc-body ol').each(function() {
-          window.__tocToggleObserver.observe(this, { attributes: true });
-        });
-      }
-    }
-    var tocConfig = Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc);
-    if (isExpandAllEnabled()) {
-      tocConfig.collapseDepth = 6;
-    }
-    window.tocbot.init(tocConfig);
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
-    expandAllToc();
-    bindTocToggle();
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-        expandAllToc();
-        bindTocToggle();
-      }
-    });
-  });
-</script>
-
-
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
-
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
     };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
 
-    Fluid.events.registerRefreshCallback(function() {
-      if ('anchors' in window) {
-        anchors.removeAll();
-        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-        var res = [];
-        for (var item of el) {
-          res.push('.markdown-body > ' + item.trim());
-        }
-        if (CONFIG.anchorjs.placement === 'left') {
-          anchors.options.class = 'anchorjs-link-left';
-        }
-        anchors.add(res.join(', '));
-      }
-    });
-  });
+    searchFunc('/xiaoxiaohu/search.xml', 'searchInput', 'searchResult');
+});
 </script>
 
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
 
-  
 <script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
 </script>
 
-
-  <script>Fluid.plugins.imageCaption();</script>
-
-  <script  src="/xiaoxiaohu/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/xiaoxiaohu/js/boot.js" ></script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
 
 
-  
+    <script src="/xiaoxiaohu/libs/materialize/materialize.min.js"></script>
+    <script src="/xiaoxiaohu/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/xiaoxiaohu/libs/aos/aos.js"></script>
+    <script src="/xiaoxiaohu/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/xiaoxiaohu/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/xiaoxiaohu/js/matery.js"></script>
 
-  <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
-  </noscript>
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/xiaoxiaohu/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/xiaoxiaohu/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/xiaoxiaohu/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/xiaoxiaohu/libs/instantpage/instantpage.js" type="module"></script>
+    
+
 </body>
+
 </html>

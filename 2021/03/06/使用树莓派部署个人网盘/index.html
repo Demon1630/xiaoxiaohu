@@ -1,429 +1,400 @@
-
-
-<!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
-
+<!DOCTYPE HTML>
+<html lang="zh-CN">
 
 
 <head>
-  <meta charset="UTF-8">
-
-  <link rel="apple-touch-icon" sizes="76x76" href="/xiaoxiaohu/img/fluid.png">
-  <link rel="icon" href="/xiaoxiaohu/img/fluid.png">
-  
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content="效果展示     准备工作硬件：树莓派3B+、SD卡、SD卡读卡器、网线 软件：所有需要的软件点击此处下载 提取码: hv1b (链接失效后可在我的公众号mddxz1995后台回复个人网盘获取最新链接)。 http:&#x2F;&#x2F;weixin.qq.com&#x2F;r&#x2F;ZygXD4nE9tSJrc1s9311 (二维码自动识别) 其他环境：公网IP (若只作为局域网访问则不需要公网IP。公网IP是为了让我们的网盘可">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用树莓派部署个人网盘">
-<meta property="og:url" content="https://demon1630.github.io/xiaoxiaohu/2021/03/06/%E4%BD%BF%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="效果展示     准备工作硬件：树莓派3B+、SD卡、SD卡读卡器、网线 软件：所有需要的软件点击此处下载 提取码: hv1b (链接失效后可在我的公众号mddxz1995后台回复个人网盘获取最新链接)。 http:&#x2F;&#x2F;weixin.qq.com&#x2F;r&#x2F;ZygXD4nE9tSJrc1s9311 (二维码自动识别) 其他环境：公网IP (若只作为局域网访问则不需要公网IP。公网IP是为了让我们的网盘可">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://pic1.zhimg.com/v2-2a465c782f86156e36aa04b6267a0938_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-728d6e26c759a4c0f3bd46c78ac0c3e4.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-976c49fce6688318a9d46f396d89f6ad_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-a352113ae757173a7fa7e2f8591357e6.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/v2-eb7556702fd3ff7f01229032bfd14fb4_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-999e47a0450c0d46697a25fc6d7c87e0.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/v2-4c8e87daf19f7c32985b9922fe0cc144_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-093db90dfaef04651fedf91d080bc914.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/v2-4846316db7cbd85d57d3129bc1be9dcb_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-e2a0b2886b2ba642990fa92daac52cb4.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/v2-1bcd221dd8aff88b21c92fb43973877b_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-19935f51fc7d216df2fb1cdaa7d43cb5.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/v2-3fc172da575f43a4fa7681d1cdbe350b_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-4b62c25a71d2e161b9b6e9313ecce48c.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/v2-54deffa67963d263cbe4a5363add8380_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-73f3c9286533c5bcaaa73e2cf3bdfae7.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/v2-baa21db72e925dae0143074e04247d0b_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-b259fbe4d6b4151e9c56acd54dff0a15.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-208f8fc954f2dadaf0165b054970cb79_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-54f6e7fbd11ee4c1af08904fe59ae06b.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/v2-0119dec09948dc92d85b41b6b5dc1910_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-30b99d616a6a5bdd49a481b2c87bd3c0.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/v2-a70959b9f0afe6c30cf79f6f1a74c7ee_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-f4cc05c02e235411a9c35e56d4d0662c.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-82ac20e32bf25e0f37cbc058e92be7ad_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-fc47a7613365baf42e728b6bcf2c0903.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/v2-3e2bddbd8c8144fc36c5fb213663bfb0_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-f16d29bb8ce4fcaf117f3020c79e8076.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-1d00d4946b32c420eec20775ce2bc81d_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-12d6f5f04a1a3a989369bad8944b1828.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/v2-01903be47deb0258a9bc52f8bec13672_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-99c686292b9028a4c12a1a368923e7c6.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/v2-e5632f4d690266a43c7459fdf89448ea_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-89a211d699069f33d1221ee44347b0e1.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-fbe245618cbeb7236f431ac3faa1c579_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-3842100ae273cb430d1011d63bf39e7b.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-015845ddd1472e4751dceb8dd9889c31_b.jpg">
-<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-d1652799e0fc444b4615c5d35281c30a.jpg">
-<meta property="article:published_time" content="2021-03-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-21T06:03:02.020Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://pic1.zhimg.com/v2-2a465c782f86156e36aa04b6267a0938_b.jpg">
-  
-  
-  
-  <title>使用树莓派部署个人网盘 - Hexo</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
-
-
-<link  rel="stylesheet" href="/xiaoxiaohu/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/xiaoxiaohu/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/xiaoxiaohu/css/highlight-dark.css" />
-  
+    <meta charset="utf-8">
+    <meta name="keywords" content="使用树莓派部署个人网盘, 小小胡">
+    <meta name="description" content="效果展示
 
 
 
 
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"demon1630.github.io","root":"/xiaoxiaohu/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/xiaoxiaohu/local-search.xml","include_content_in_search":true};
+准备工作硬件：树莓派3B+、SD卡、SD卡读卡器、网线
+软件：所有需要的软件点击此处下载
+提取码: hv1b
+(链接失效后可在我的公众号mddxz1995后台回复个人网盘获取最新链接)。
+http://weixin.qq.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
-    }
-  </script>
-  <script  src="/xiaoxiaohu/js/utils.js" ></script>
-  <script  src="/xiaoxiaohu/js/color-schema.js" ></script>
-  
+
+    <title>使用树莓派部署个人网盘 | 小小胡</title>
+    <link rel="icon" type="image/png" href="/xiaoxiaohu/demon.png">
+    
 
 
-  
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/my.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/xiaoxiaohu/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/xiaoxiaohu/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/xiaoxiaohu/libs/jquery/jquery-3.6.0.min.js"></script>
+
 <meta name="generator" content="Hexo 8.1.2"></head>
 
 
 <body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/xiaoxiaohu/" class="waves-effect waves-light">
+                    
+                    <img src="/xiaoxiaohu/medias/demon.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">小小胡</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
   
-
-  <header>
+  <li class="hide-on-med-and-down nav-item">
     
-
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/xiaoxiaohu/">
-      <strong>Fluid</strong>
+    <a href="/xiaoxiaohu/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
     </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
 
-    <!-- Collapsible content (desktop) -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/" target="_self">
-                <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
-              </a>
-            </li>
-          
+        <img src="/xiaoxiaohu/medias/demon.jpg" class="logo-img circle responsive-img">
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/archives/" target="_self">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/categories/" target="_self">
-                <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/tags/" target="_self">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/about/" target="_self">
-                <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
+        <div class="logo-name">小小胡</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
     </div>
-  </div>
-</nav>
 
-<!-- Mobile grid menu overlay -->
-<div id="mobile-grid-menu" class="d-lg-none">
-  <div class="mobile-grid-menu-inner">
-    <div class="container">
-      <div class="row">
+    <ul class="menu-list mobile-menu-list">
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
           
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-home-fill"></i>
-                  <span>Home</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
           
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/archives/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-archive-fill"></i>
-                  <span>Archives</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
           
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/categories/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-category-fill"></i>
-                  <span>Categories</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
           
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/tags/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-tags-fill"></i>
-                  <span>Tags</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于我
+		</a>
           
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
           
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/about/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-user-fill"></i>
-                  <span>About</span>
-                </div>
-              </a>
-            </div>
-          
+        </li>
         
         
-          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
-            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <div class="mobile-grid-item">
-                <i class="iconfont icon-search"></i>
-                <span>Search</span>
-              </div>
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
-          </div>
+        </li>
         
-        
-          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
-               data-label-light="Light"
-               data-label-dark="Dark">
-            <a href="javascript:;" aria-label="Color Toggle">
-              <div class="mobile-grid-item">
-                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
-                <span id="mobile-color-toggle-label">Dark</span>
-              </div>
-            </a>
-          </div>
-        
-      </div>
-    </div>
-  </div>
+    </ul>
 </div>
 
-  
 
-<div id="banner" class="banner" parallax=true
-     style="background: url('/xiaoxiaohu/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="使用树莓派部署个人网盘"></span>
-          
         </div>
 
         
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2021-03-06 00:00" pubdate>
-          March 6, 2021 am
-        </time>
-      </span>
-    
-  </div>
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
 
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
         
-          3.7k words
-        
-      </span>
-    
+    </nav>
+
+</header>
 
     
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          32 mins
-        
-      </span>
-    
-
-    
-    
-  </div>
 
 
-        
-      </div>
 
-      
+<div class="bg-cover pd-header post-cover" style="background-image: url('/xiaoxiaohu/medias/featureimages/20.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">使用树莓派部署个人网盘</h1>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 
 
-</div>
 
-  </header>
+<main class="post-container content">
 
-  <main>
     
-      
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/xiaoxiaohu/categories/wordpress/" class="post-category">
+                                wordpress
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
 
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <h1 id="seo-header">使用树莓派部署个人网盘</h1>
-            
-            
-              <div class="markdown-body">
+            <div class="post-info">
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-06
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
                 <p>效果展示</p>
-<p><img src="https://pic1.zhimg.com/v2-2a465c782f86156e36aa04b6267a0938_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-728d6e26c759a4c0f3bd46c78ac0c3e4.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="https://pic2.zhimg.com/v2-976c49fce6688318a9d46f396d89f6ad_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-a352113ae757173a7fa7e2f8591357e6.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic1.zhimg.com/v2-2a465c782f86156e36aa04b6267a0938_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-728d6e26c759a4c0f3bd46c78ac0c3e4.jpg"></p>
+<p><img src="https://pic2.zhimg.com/v2-976c49fce6688318a9d46f396d89f6ad_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-a352113ae757173a7fa7e2f8591357e6.jpg"></p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>硬件：树莓派3B+、SD卡、SD卡读卡器、网线</p>
 <p>软件：所有需要的软件点击<a href="https://link.zhihu.com/?target=https://pan.baidu.com/s/1XS6tNlxzHlL5T3lmH2tV6w">此处下载</a></p>
 <p>提取码: hv1b</p>
@@ -439,53 +410,53 @@
 <ol>
 <li>将下载完成的镜像解压，解压后效果如图所示。(解压软件在<strong>软件及教程解压缩软件</strong>中提供)</li>
 </ol>
-<p><img src="https://pic1.zhimg.com/v2-eb7556702fd3ff7f01229032bfd14fb4_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-999e47a0450c0d46697a25fc6d7c87e0.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic1.zhimg.com/v2-eb7556702fd3ff7f01229032bfd14fb4_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-999e47a0450c0d46697a25fc6d7c87e0.jpg"></p>
 <ol>
 <li>将SD读卡器插入电脑，打开Win32DiskImager镜像安装软件，(在<strong>软件及教程镜像写入工具</strong>中提供) ，点击此按钮选择上一步解压出来的文件。</li>
 </ol>
-<p><img src="https://pic1.zhimg.com/v2-4c8e87daf19f7c32985b9922fe0cc144_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-093db90dfaef04651fedf91d080bc914.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic1.zhimg.com/v2-4c8e87daf19f7c32985b9922fe0cc144_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-093db90dfaef04651fedf91d080bc914.jpg"></p>
 <ol>
 <li>在设备栏选择SD卡，我这里选择H盘，选择完效果如图所示。</li>
 </ol>
-<p><img src="https://pic4.zhimg.com/v2-4846316db7cbd85d57d3129bc1be9dcb_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-e2a0b2886b2ba642990fa92daac52cb4.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic4.zhimg.com/v2-4846316db7cbd85d57d3129bc1be9dcb_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-e2a0b2886b2ba642990fa92daac52cb4.jpg"></p>
 <ol>
 <li>点击下方写入，然后等待写入完成。</li>
 </ol>
-<p><img src="https://pic4.zhimg.com/v2-1bcd221dd8aff88b21c92fb43973877b_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-19935f51fc7d216df2fb1cdaa7d43cb5.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic4.zhimg.com/v2-1bcd221dd8aff88b21c92fb43973877b_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-19935f51fc7d216df2fb1cdaa7d43cb5.jpg"></p>
 <ol>
 <li>等待进度条完成后，会提示写入成功。<strong>此处需要注意若电脑提示要格式化磁盘一定不要格式化。</strong></li>
 <li>此时SD卡被分成两个盘。为了稍后使用SSH远程登录树莓派控制台，在资源管理器中进入SD卡boot盘，右键新建&#x2F;文本文档，新建一个文件名为SSH的空文档，同时删除掉文件后缀名，效果如图所示。</li>
 </ol>
-<p><img src="https://pic4.zhimg.com/v2-3fc172da575f43a4fa7681d1cdbe350b_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-4b62c25a71d2e161b9b6e9313ecce48c.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic4.zhimg.com/v2-3fc172da575f43a4fa7681d1cdbe350b_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-4b62c25a71d2e161b9b6e9313ecce48c.jpg"></p>
 <ol>
 <li>将SD卡插入树莓派等待启动，上电前我们将树莓派通过网线接在路由器的lan口。</li>
 <li>等待约十分钟左右，这个时间刚好可以在刺激战场中玩一把团队竞技。</li>
 <li>打开路由器的后台，查看树莓派的IP。</li>
 </ol>
-<p><img src="https://pic1.zhimg.com/v2-54deffa67963d263cbe4a5363add8380_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-73f3c9286533c5bcaaa73e2cf3bdfae7.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic1.zhimg.com/v2-54deffa67963d263cbe4a5363add8380_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-73f3c9286533c5bcaaa73e2cf3bdfae7.jpg"></p>
 <ol>
 <li>打开shell工具，点击文件&#x2F;新建，协议选择SSH，主机填写树莓派IP地址，端口选择22，然后点击连接(工具在<strong>软件及教程Xshell 、Xftp 6</strong>中提供)。</li>
 </ol>
-<p><img src="https://pic4.zhimg.com/v2-baa21db72e925dae0143074e04247d0b_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-b259fbe4d6b4151e9c56acd54dff0a15.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic4.zhimg.com/v2-baa21db72e925dae0143074e04247d0b_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-b259fbe4d6b4151e9c56acd54dff0a15.jpg"></p>
 <ol>
 <li>输入默认账号密码，登入控制台，登陆成功后界面如下，也可以根据提示升级新版的nextcloud。</li>
 </ol>
 <p><strong>账号：pi</strong></p>
 <p><strong>密码：raspberry</strong></p>
-<p><img src="https://pic2.zhimg.com/v2-208f8fc954f2dadaf0165b054970cb79_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-54f6e7fbd11ee4c1af08904fe59ae06b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic2.zhimg.com/v2-208f8fc954f2dadaf0165b054970cb79_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-54f6e7fbd11ee4c1af08904fe59ae06b.jpg"></p>
 <ol>
 <li>打开浏览器，输入树莓派IP，此时可以看到next cloud已经开始运行，这里务必保存好NextCloudPi和NextCloud的账号密码，然后点击下方的<strong>Activate。</strong></li>
 </ol>
-<p><img src="https://pic1.zhimg.com/v2-0119dec09948dc92d85b41b6b5dc1910_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-30b99d616a6a5bdd49a481b2c87bd3c0.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic1.zhimg.com/v2-0119dec09948dc92d85b41b6b5dc1910_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-30b99d616a6a5bdd49a481b2c87bd3c0.jpg"></p>
 <ol>
 <li>在弹窗中输入NextCloudPi(也就是第一个)的账号密码，然后点击登录。</li>
 <li>如果安装了U盘，第一次运行会提示格式化U盘，也可以选择跳过。</li>
@@ -493,14 +464,14 @@
 <li>在浏览器地址栏输入树莓派IP，就进入了登陆界面，使用第二个密码登录。</li>
 <li>如果看到如下界面就说明已经初始化成功了，此时网盘已经可以在<strong>局域网</strong>内正常使用，可在apple store和安卓应用市场搜索nextcloud下载对应终端的APP。</li>
 </ol>
-<p><img src="https://pic3.zhimg.com/v2-a70959b9f0afe6c30cf79f6f1a74c7ee_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-f4cc05c02e235411a9c35e56d4d0662c.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic3.zhimg.com/v2-a70959b9f0afe6c30cf79f6f1a74c7ee_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-f4cc05c02e235411a9c35e56d4d0662c.jpg"></p>
 <h2 id="Frp反向代理"><a href="#Frp反向代理" class="headerlink" title="Frp反向代理"></a>Frp反向代理</h2><p>Frp是一款开源的反向代理软件，我们通过在阿里服务器上运行frp服务端，在树莓派上运行客户端与服务端进行连接。这样我们可以通过服务端作为代理，转发我们对树莓派的请求，以达到外网访问树莓派的目的。这里我主要参考了<a href="https://link.zhihu.com/?target=https://github.com/fatedier/frp/blob/master/README_zh.md">《FRP中文文档》</a>和<a href="https://link.zhihu.com/?target=https://sspai.com/post/52523">《使用frp进行内网穿透》</a>这两篇文档。</p>
 <h3 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h3><ol>
 <li>在阿里后台实例&#x2F;安全组 规则添加入方向端口，比如我这里添加7500&#x2F;7500、7001&#x2F;7001、7600&#x2F;7600三个端口分别用来作为frp的服务端管理界面的访问端口、树莓派SSH连接映射端口和树莓派网盘访问端口，配置界面如图所示。</li>
 </ol>
-<p><img src="https://pic2.zhimg.com/v2-82ac20e32bf25e0f37cbc058e92be7ad_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-fc47a7613365baf42e728b6bcf2c0903.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic2.zhimg.com/v2-82ac20e32bf25e0f37cbc058e92be7ad_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-fc47a7613365baf42e728b6bcf2c0903.jpg"></p>
 <ol>
 <li>打开xshell客户端，进入阿里服务器的控制台。</li>
 <li>执行arch如下指令，查看服务器机器架构，我的服务器是X86_64。</li>
@@ -511,22 +482,22 @@
 <li>下载对应的frp软件，因为GitHub国内访问速度过慢，我这里已经将服务端的软件上传至<strong>软件及教程frp服务端(X86_64)</strong>，随后通过ftp客户端传至设备即可，和我设备架构相同的同学可以直接使用我提供的软件，其他架构可在<a href="https://link.zhihu.com/?target=https://github.com/fatedier/frp/releases">frp官方下载界面</a>下载对应的软件（ftp客户端软件在<strong>软件及教程Xshell 、Xftp 6</strong>提供）。</li>
 <li>打开ftp软件，连接至服务器控制台，将frp服务端软件拖到服务器Dowoload目录下。</li>
 </ol>
-<p><img src="https://pic1.zhimg.com/v2-3e2bddbd8c8144fc36c5fb213663bfb0_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-f16d29bb8ce4fcaf117f3020c79e8076.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic1.zhimg.com/v2-3e2bddbd8c8144fc36c5fb213663bfb0_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-f16d29bb8ce4fcaf117f3020c79e8076.jpg"></p>
 <ol>
 <li>通过Xshell连接服务器后台，进入frp服务端软件的存放目录，执行如下命令，解压。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">cd Download/<br>sudo tar -zxvf frp_0.32.0_linux_amd64.tar.gz<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd Download/</span><br><span class="line">sudo tar -zxvf frp_0.32.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>执行如下命令，给文件夹改个名，方便使用。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">cp -r frp_0.32.0_linux_amd64 frp<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -r frp_0.32.0_linux_amd64 frp</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>执行如下命令，编辑frp的配置文件。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">cd frp<br>sudo vim frps.ini<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd frp</span><br><span class="line">sudo vim frps.ini</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>我的服务端配置内容如下：</li>
@@ -537,17 +508,17 @@
 <ol>
 <li>退出并保存，执行如下指令，运行frp服务端。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">./frps -c frps.ini<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frps -c frps.ini</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>此时通过服务器IP:7500就可以看到frp服务端的展示信息，效果如图所示。</li>
 </ol>
-<p><img src="https://pic2.zhimg.com/v2-1d00d4946b32c420eec20775ce2bc81d_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-12d6f5f04a1a3a989369bad8944b1828.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic2.zhimg.com/v2-1d00d4946b32c420eec20775ce2bc81d_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-12d6f5f04a1a3a989369bad8944b1828.jpg"></p>
 <ol>
 <li>再执行如下指令将其运行在后台。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">nohup ./frps -c frps.ini &amp;<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./frps -c frps.ini &amp;</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>至此，服务端已经配置完成。</li>
@@ -555,17 +526,17 @@
 <h3 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h3><ol>
 <li>树莓派是armv7架构，将对应的frp软件通过ftp软件拷贝到树莓派的指定目录下。</li>
 </ol>
-<p><img src="https://pic3.zhimg.com/v2-01903be47deb0258a9bc52f8bec13672_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-99c686292b9028a4c12a1a368923e7c6.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic3.zhimg.com/v2-01903be47deb0258a9bc52f8bec13672_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-99c686292b9028a4c12a1a368923e7c6.jpg"></p>
 <ol>
 <li>进入对应目录，和服务端操作类似，解压、重命名。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">cd ~/<br>tar -zxvf frp_0.32.0_linux_arm.tar.gz<br>cp -r frp_0.32.0_linux_arm frp<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/</span><br><span class="line">tar -zxvf frp_0.32.0_linux_arm.tar.gz</span><br><span class="line">cp -r frp_0.32.0_linux_arm frp</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>执行如下指令，编辑客户端配置。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">sudo apt-get install vim<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vim</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>[common]<br>server_addr &#x3D; x.x.x.x #这里填服务器IP<br>server_port &#x3D; 7000 #这里填写服务器配置中的bind_port<br>token &#x3D; 12345678 #登录口令<br>[smb]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 443<br>remote_port &#x3D; 7600<br>[SSH]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 22<br>remote_port &#x3D; 6000</p>
@@ -573,7 +544,7 @@
 <ol>
 <li>执行如下指令，运行客户端。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">./frpc -c frpc.ini<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frpc -c frpc.ini</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>输出如下内容，则客户端和服务端绑定成功。</li>
@@ -584,22 +555,22 @@
 <ol>
 <li>此时在浏览器地址栏输入<strong>服务器IP:7600</strong>即可访问树莓派。</li>
 </ol>
-<p><img src="https://pic3.zhimg.com/v2-e5632f4d690266a43c7459fdf89448ea_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-89a211d699069f33d1221ee44347b0e1.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic3.zhimg.com/v2-e5632f4d690266a43c7459fdf89448ea_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-89a211d699069f33d1221ee44347b0e1.jpg"></p>
 <ol>
 <li>出现以上弹窗则说明已经成功访问了树莓派，只是由于next cloud的配置，限制了服务器的IP访问，此时，我们进入next cloud的配置文件，将服务器IP添加进去，然后退出保存。效果如图所示。</li>
 </ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">sudo vim /var/www/nextcloud/config/config.php<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /var/www/nextcloud/config/config.php</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://pic2.zhimg.com/v2-fbe245618cbeb7236f431ac3faa1c579_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-3842100ae273cb430d1011d63bf39e7b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic2.zhimg.com/v2-fbe245618cbeb7236f431ac3faa1c579_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-3842100ae273cb430d1011d63bf39e7b.jpg"></p>
 <ol>
 <li>重新运行frp客户端在后台，成功后此时可通过外网进行访问。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">nohup ./frpc -c frpc.ini &amp;<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./frpc -c frpc.ini &amp;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://pic2.zhimg.com/v2-015845ddd1472e4751dceb8dd9889c31_b.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
-<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-d1652799e0fc444b4615c5d35281c30a.jpg" srcset="/xiaoxiaohu/img/loading.gif" lazyload></p>
+<p><img src="https://pic2.zhimg.com/v2-015845ddd1472e4751dceb8dd9889c31_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-d1652799e0fc444b4615c5d35281c30a.jpg"></p>
 <p><strong>特别感谢</strong></p>
 <p>感谢next cloud、frp团队开源分享</p>
 <blockquote>
@@ -609,427 +580,739 @@
 <p><a href="https://link.zhihu.com/?target=https://sspai.com/post/52523">使用frp进行内网穿透</a></p>
 
                 
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/wordpress/" class="category-chain-item">wordpress</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>使用树莓派部署个人网盘</div>
-      <div>https://demon1630.github.io/xiaoxiaohu/2021/03/06/使用树莓派部署个人网盘/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>Author</div>
-          <div>John Doe</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>March 6, 2021</div>
-        </div>
-      
-      
-      
-        <div class="license-meta-item">
-          <div>Licensed under</div>
-          <div>
-            
-              
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
-                    <i class="iconfont icon-cc-by"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/xiaoxiaohu/2021/03/08/%E5%9C%A8word%E8%AE%BA%E6%96%87%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E7%BC%96%E5%8F%B7%E7%9A%84%E5%BC%95%E7%94%A8%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/" title="在word论文中添加自动更新编号的引用参考文献">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">在word论文中添加自动更新编号的引用参考文献</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/xiaoxiaohu/2021/03/03/windows-10-%E8%87%AA%E5%B8%A6%E7%9A%84%E9%82%AE%E4%BB%B6%E5%BA%94%E7%94%A8%E6%B7%BB%E5%8A%A0%E5%B9%B6%E5%90%8C%E6%AD%A5%E8%B0%B7%E6%AD%8Cgmail%E9%82%AE%E7%AE%B1/" title="Windows 10 自带的邮件应用添加并同步谷歌Gmail邮箱">
-                        <span class="hidden-mobile">Windows 10 自带的邮件应用添加并同步谷歌Gmail邮箱</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
             </div>
+            <hr/>
 
             
-          </article>
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/xiaoxiaohu/about" rel="external nofollow noreferrer">小小胡</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://demon1630.github.io/xiaoxiaohu/xiaoxiaohu/2021/03/06/%E4%BD%BF%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98/">https://demon1630.github.io/xiaoxiaohu/xiaoxiaohu/2021/03/06/%E4%BD%BF%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/xiaoxiaohu/about" target="_blank">小小胡</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/xiaoxiaohu/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
         </div>
-      </div>
     </div>
 
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>Table of Contents</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/xiaoxiaohu/2021/03/08/%E5%9C%A8word%E8%AE%BA%E6%96%87%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E7%BC%96%E5%8F%B7%E7%9A%84%E5%BC%95%E7%94%A8%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/xiaoxiaohu/medias/featureimages/1.jpg" class="responsive-img" alt="在word论文中添加自动更新编号的引用参考文献">
+                        
+                        <span class="card-title">在word论文中添加自动更新编号的引用参考文献</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/xiaoxiaohu/tags/word/">
+                        <span class="chip bg-color">word</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/xiaoxiaohu/2021/03/03/windows-10-%E8%87%AA%E5%B8%A6%E7%9A%84%E9%82%AE%E4%BB%B6%E5%BA%94%E7%94%A8%E6%B7%BB%E5%8A%A0%E5%B9%B6%E5%90%8C%E6%AD%A5%E8%B0%B7%E6%AD%8Cgmail%E9%82%AE%E7%AE%B1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/xiaoxiaohu/medias/featureimages/18.jpg" class="responsive-img" alt="Windows 10 自带的邮件应用添加并同步谷歌Gmail邮箱">
+                        
+                        <span class="card-title">Windows 10 自带的邮件应用添加并同步谷歌Gmail邮箱</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/xiaoxiaohu/tags/windows/">
+                        <span class="chip bg-color">windows</span>
+                    </a>
+                    
+                    <a href="/xiaoxiaohu/tags/%E9%82%AE%E7%AE%B1/">
+                        <span class="chip bg-color">邮箱</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
 
-  </aside>
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 小小胡<br />'
+            + '文章作者: 小小胡<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/xiaoxiaohu/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/xiaoxiaohu/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/xiaoxiaohu/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/xiaoxiaohu/libs/codeBlock/codeShrink.js"></script>
+
 
 
     </div>
-  </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
 </div>
 
 
+<script src="/xiaoxiaohu/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
 
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
 
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
 
-  
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
 
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
     
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
+        <link rel="stylesheet" href="/xiaoxiaohu/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
 
     
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/xiaoxiaohu/libs/aplayer/APlayer.min.js"></script>
+<script src="/xiaoxiaohu/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2026</span>
+            
+            <a href="/xiaoxiaohu/about" target="_blank">小小胡</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2019";
+                        var startMonth = "9";
+                        var startDate = "3";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/xiaoxiaohu/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+        <div id="searchResult"></div>
     </div>
-  </div>
 </div>
 
-    
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
 
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-  
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/xiaoxiaohu/js/events.js" ></script>
-<script  src="/xiaoxiaohu/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/xiaoxiaohu/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    function isExpandAllEnabled() {
-      return CONFIG.toc && CONFIG.toc.expand_all === true;
-    }
-    function expandAllToc() {
-      if (!isExpandAllEnabled()) { return; }
-      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
-    }
-    function updateTocToggle($li, $childList) {
-      var $toggle = $li.children('.toc-toggle');
-      if ($toggle.length === 0) { return; }
-      var collapsed = $childList.hasClass('tocbot-is-collapsed');
-      $toggle
-        .toggleClass('toc-toggle-collapsed', collapsed)
-        .toggleClass('toc-toggle-expanded', !collapsed);
-    }
-    function bindTocToggle() {
-      if (!isExpandAllEnabled()) { return; }
-      jQuery('#toc-body .toc-list-item').each(function() {
-        var $li = jQuery(this);
-        var $childList = $li.children('ol');
-        if ($childList.length === 0) {
-          if ($li.children('.toc-toggle').length === 0) {
-            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
-          }
-          return;
-        }
-
-        if ($li.children('.toc-toggle').length === 0) {
-          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
-        }
-        updateTocToggle($li, $childList);
-      });
-      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        var $li = jQuery(this).parent('.toc-list-item');
-        var $childList = $li.children('ol');
-        if ($childList.length === 0) { return; }
-        $childList.toggleClass('tocbot-is-collapsed');
-        updateTocToggle($li, $childList);
-      });
-      if (!window.__tocToggleObserver) {
-        window.__tocToggleObserver = new MutationObserver(function(mutations) {
-          mutations.forEach(function(mutation) {
-            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
-            var $list = jQuery(mutation.target);
-            var $li = $list.parent('.toc-list-item');
-            if ($li.length === 0) { return; }
-            updateTocToggle($li, $list);
-          });
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
         });
-        jQuery('#toc-body ol').each(function() {
-          window.__tocToggleObserver.observe(this, { attributes: true });
-        });
-      }
-    }
-    var tocConfig = Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc);
-    if (isExpandAllEnabled()) {
-      tocConfig.collapseDepth = 6;
-    }
-    window.tocbot.init(tocConfig);
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
-    expandAllToc();
-    bindTocToggle();
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-        expandAllToc();
-        bindTocToggle();
-      }
-    });
-  });
-</script>
-
-
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
-
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
     };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
 
-    Fluid.events.registerRefreshCallback(function() {
-      if ('anchors' in window) {
-        anchors.removeAll();
-        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-        var res = [];
-        for (var item of el) {
-          res.push('.markdown-body > ' + item.trim());
-        }
-        if (CONFIG.anchorjs.placement === 'left') {
-          anchors.options.class = 'anchorjs-link-left';
-        }
-        anchors.add(res.join(', '));
-      }
-    });
-  });
+    searchFunc('/xiaoxiaohu/search.xml', 'searchInput', 'searchResult');
+});
 </script>
 
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
 
-  
 <script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
 </script>
 
-
-  <script>Fluid.plugins.imageCaption();</script>
-
-  <script  src="/xiaoxiaohu/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/xiaoxiaohu/js/boot.js" ></script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
 
 
-  
+    <script src="/xiaoxiaohu/libs/materialize/materialize.min.js"></script>
+    <script src="/xiaoxiaohu/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/xiaoxiaohu/libs/aos/aos.js"></script>
+    <script src="/xiaoxiaohu/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/xiaoxiaohu/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/xiaoxiaohu/js/matery.js"></script>
 
-  <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
-  </noscript>
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/xiaoxiaohu/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/xiaoxiaohu/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/xiaoxiaohu/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/xiaoxiaohu/libs/instantpage/instantpage.js" type="module"></script>
+    
+
 </body>
+
 </html>

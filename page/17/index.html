@@ -1,1094 +1,1462 @@
-
-
-<!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
-
+<!DOCTYPE HTML>
+<html lang="zh-CN">
 
 
 <head>
-  <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="keywords" content="小小胡">
+    <meta name="description" content="小小胡">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/xiaoxiaohu/img/fluid.png">
-  <link rel="icon" href="/xiaoxiaohu/img/fluid.png">
-  
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://demon1630.github.io/xiaoxiaohu/page/17/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-  
-  <title>Hexo</title>
+    <title>小小胡</title>
+    <link rel="icon" type="image/png" href="/xiaoxiaohu/demon.png">
+    
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+    <!-- bg-cover style     -->
 
 
 
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
-
-
-<link  rel="stylesheet" href="/xiaoxiaohu/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/xiaoxiaohu/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/xiaoxiaohu/css/highlight-dark.css" />
-  
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/my.css">
+<link rel="stylesheet" type="text/css" href="/xiaoxiaohu/css/dark.css" media="none" onload="if(media!='all')media='all'">
 
 
 
 
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"demon1630.github.io","root":"/xiaoxiaohu/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/xiaoxiaohu/local-search.xml","include_content_in_search":true};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
-    }
-  </script>
-  <script  src="/xiaoxiaohu/js/utils.js" ></script>
-  <script  src="/xiaoxiaohu/js/color-schema.js" ></script>
-  
+    <link rel="stylesheet" href="/xiaoxiaohu/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/xiaoxiaohu/css/post.css">
 
 
-  
+
+
+
+
+    <script src="/xiaoxiaohu/libs/jquery/jquery-3.6.0.min.js"></script>
+
 <meta name="generator" content="Hexo 8.1.2"></head>
 
 
 <body>
-  
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/xiaoxiaohu/" class="waves-effect waves-light">
+                    
+                    <img src="/xiaoxiaohu/medias/demon.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">小小胡</span>
+                </a>
+            </div>
+            
 
-  <header>
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/xiaoxiaohu/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/xiaoxiaohu/medias/demon.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">小小胡</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于我
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/xiaoxiaohu/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                小小胡
+                
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="/xiaoxiaohu/libs/typed/typed.js"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
+                            
+                                "从来没有真正的绝境, 只有心灵的迷途",
+                            
+                                "Never really desperate, only the lost of the soul",
+                            
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/xiaoxiaohu/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
+<script>
+    
+      var bannerUrl = "/xiaoxiaohu/medias/featureimages/" + Math.floor(Math.random() * 24) + '.jpg';
+    
+    $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
+
+</script>
+
+
+    </div>
+</div>
+
+
+<main class="content">
+
     
 
-<div class="header-inner" style="height: 100vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/xiaoxiaohu/">
-      <strong>Fluid</strong>
+    
+
+    <!-- 所有文章卡片 -->
+    <article id="articles" class="container articles">
+        <div class="row article-row">
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/04/29/centos-7%E4%B8%AD%E5%AE%9E%E7%8E%B0python-3-6%E4%B8%8E2-7%E5%85%B1%E5%AD%98%E5%8F%8A%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/22.jpg" class="responsive-img" alt="CentOS 7中实现Python 3.6与2.7共存及版本切换">
+                            
+                            <span class="card-title">CentOS 7中实现Python 3.6与2.7共存及版本切换</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                貌似目前大多数Linux发行版本中自带的Python还都是2.7.x系列,但是越来越多的包包都开始抛弃2.7.x版本了,记录一下在CentOS 7中安装Python 3.6实现与自带2.7两个版本共存并可以自由切换
+1.安装Python 3
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/wordpress/" class="post-category">
+                                    wordpress
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/04/29/python%E7%88%AC%E8%99%AB%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/0.jpg" class="responsive-img" alt="Python爬虫库的安装">
+                            
+                            <span class="card-title">Python爬虫库的安装</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                        首先，安装request爬虫库:
+            作用 : 相当于浏览器 客户端发送请求
+            安装：pip install requests
+
+requests安装
+        res&#x3
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/wordpress/" class="post-category">
+                                    wordpress
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/04/21/vps%E4%BD%BF%E7%94%A8nextcloud%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/12.jpg" class="responsive-img" alt="vps使用nextcloud搭建个人私有云盘">
+                            
+                            <span class="card-title">vps使用nextcloud搭建个人私有云盘</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                云盘的好处我就不多说了，不管是从确保数据安全、方便分享、容量大等方面来说都很不错，不过使用其他企业的云盘，总是不安全，之前像360云盘这些说不定就给你关了，目前国内还是百度云独大，毕竟用户体量在那，不过也采用限速这些手段逼你买会员，不过也不
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-21
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">
+                            <span class="chip bg-color">网站</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                            <span class="chip bg-color">数据库</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/">
+                            <span class="chip bg-color">私有云盘</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
+                            <span class="chip bg-color">搬瓦工</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/04/21/%E8%8E%B7%E5%8F%96%E8%B0%B7%E6%AD%8C%E4%BA%91%E6%97%A0%E9%99%90%E5%9B%A2%E9%98%9F%E7%BD%91%E7%9B%98/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/1.jpg" class="responsive-img" alt="获取谷歌云无限团队网盘">
+                            
+                            <span class="card-title">获取谷歌云无限团队网盘</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                谷歌云对于可以fq的用户来说还是很好用的，但一般用户的谷歌账号默认只有15G容量，用来存储一些小文件可以，但是如果想存视频啥的就不够用了，网上有很多获取谷歌无限网盘的方法，之前也有试过，有听过申请学校邮箱账号来获得谷歌无限教育网盘的，但这种
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-21
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/">
+                            <span class="chip bg-color">谷歌云盘</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E8%A7%86%E9%A2%91/">
+                            <span class="chip bg-color">视频</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/04/20/%E8%8E%B7%E5%8F%96%E7%94%B5%E4%BF%A1%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98%E5%AF%86%E7%A0%81/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/20.jpg" class="responsive-img" alt="获取电信天翼网关超级管理员密码">
+                            
+                            <span class="card-title">获取电信天翼网关超级管理员密码</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                天翼网关设备上有写用户管理员和密码，默认用户名为useradmin，默认密码在设备上，但用户管理员只能进行基本的操作设置，如图为使用普通管理员账户登入界面
+但有时候会需要有更高权限的设置，这时候就需要超级管理员
+获取超级管理员密码很方便，普
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">
+                            <span class="chip bg-color">网站</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/">
+                            <span class="chip bg-color">天翼网关</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/04/18/traccar-%E4%B8%80%E6%AC%BE%E5%BC%80%E6%BA%90%E7%9A%84gps%E5%AE%9A%E4%BD%8D%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/2.jpg" class="responsive-img" alt="traccar——一款开源的GPS定位系统搭建教程">
+                            
+                            <span class="card-title">traccar——一款开源的GPS定位系统搭建教程</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                [striped][&#x2F;striped]一 、什么是traccar   traccar是免费的开源GPS跟踪系统，支持170多种GPS协议和超过1500种型号的GPS跟踪设备。
+traccar可以满足：
+
+出租车，货车，卡车&#x2
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-18
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">
+                            <span class="chip bg-color">网站</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/word/">
+                            <span class="chip bg-color">word</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/">
+                            <span class="chip bg-color">软件</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                            <span class="chip bg-color">数据库</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E9%82%AE%E4%BB%B6/">
+                            <span class="chip bg-color">邮件</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
+                            <span class="chip bg-color">宝塔面板</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/">
+                            <span class="chip bg-color">密码</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
+                            <span class="chip bg-color">搬瓦工</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/gps%E5%AE%9A%E4%BD%8D/">
+                            <span class="chip bg-color">gps定位</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/traccar/">
+                            <span class="chip bg-color">traccar</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/vpn/">
+                            <span class="chip bg-color">vpn</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E9%82%AE%E7%AE%B1/">
+                            <span class="chip bg-color">邮箱</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/04/11/%E4%B8%AD%E5%B9%B4%E7%94%B7%E4%BA%BA%E7%9A%84%E4%B8%80%E6%AC%A1%E7%AA%9D%E5%9B%8A%E6%AD%BB%E4%BA%A1%E4%B8%A8%E4%BA%BA%E9%97%B4/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/20.jpg" class="responsive-img" alt="中年男人的一次窝囊死亡丨人间">
+                            
+                            <span class="card-title">中年男人的一次窝囊死亡丨人间</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                20年后，小镇居然也变了。土房少了，砖房多了，镇政府院里多出了两栋矮楼，满街道爬着小汽车。熟悉的事物太少了。更重要的是，人人都用起微信来了。
+配图 |《一句顶一万句》剧照
+1990年代末期的小镇是灰白色的，像老纪录片。
+没有楼房，唯一的砖房
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-11
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
+                                    文章采集
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/tor/">
+                            <span class="chip bg-color">tor</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">
+                            <span class="chip bg-color">文章采集</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/01/30/2020-2/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/4.jpg" class="responsive-img" alt="2020">
+                            
+                            <span class="card-title">2020</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                今年不愧是我的本命年。。。。开头就这么难嘛 :jingku: 去趟丈母娘家，结果碰上了新型肺炎，记得当初2003年非典的时候，那时候可能年纪比较小，没啥感觉，但知道那时候很严重，人人自危，官方报道死了快一千人，感染了五六千，结果今年的新型肺
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-30
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
+                                    生活
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/20.jpg" class="responsive-img" alt="树莓派安装宝塔面板">
+                            
+                            <span class="card-title">树莓派安装宝塔面板</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                使用宝塔面板管理树莓派还是很方便的，这里介绍一下如何安装宝塔面板，树莓派安装好原装系统后，使用一键安装宝塔面板即可：
+1wget -O install.sh http://download.bt.cn/install/install-ubu
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" class="post-category">
+                                    宝塔面板
+                                </a>
+                                
+                                <a href="/xiaoxiaohu/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%A0%91%E8%8E%93%E6%B4%BE/" class="post-category">
+                                    树莓派
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/word/">
+                            <span class="chip bg-color">word</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
+                            <span class="chip bg-color">宝塔面板</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E5%AF%86%E7%A0%81/">
+                            <span class="chip bg-color">密码</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
+                            <span class="chip bg-color">树莓派</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BC%80%E5%90%AFvnc/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/0.jpg" class="responsive-img" alt="树莓派开启VNC">
+                            
+                            <span class="card-title">树莓派开启VNC</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                使用ssh连接上树莓派后需对其进行一些配置
+由于使用ssh连接的话不会启动配置软件，输入命令raspi-config，启动配置
+
+首先开启VPN连接：
+
+进入interfacing options，
+
+选择vnc，然后确认开启即可启动vnc
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/" class="post-category">
+                                    树莓派
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
+                            <span class="chip bg-color">树莓派</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/17.jpg" class="responsive-img" alt="树莓派无显示器无网线ssh连接无线网">
+                            
+                            <span class="card-title">树莓派无显示器无网线ssh连接无线网</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                如果没有显示器等外设，同时又没有网线，只能先在树莓派里添加ssh文件，同时在里面添加wifi连接信息，使得树莓派开机就可以启动ssh同时连接上我们预设的wifi，具体操作如下
+由于树莓派系统开始时默认是不开启ssh连接的，没有开启ssh就无
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/" class="post-category">
+                                    树莓派
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
+                            <span class="chip bg-color">树莓派</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/xiaoxiaohu/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/xiaoxiaohu/medias/featureimages/16.jpg" class="responsive-img" alt="树莓派更改软件源">
+                            
+                            <span class="card-title">树莓派更改软件源</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                树莓派自带的软件源由于在国内访问速度实在是太慢了，所以一般都会更换掉软件源，这里推荐清华大学的软件源:
+https://mirror.tuna.tsinghua.edu.cn/help/raspbian/
+使用命令：
+1cat /etc/o
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/xiaoxiaohu/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/" class="post-category">
+                                    树莓派
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/xiaoxiaohu/tags/%E8%BD%AF%E4%BB%B6/">
+                            <span class="chip bg-color">软件</span>
+                        </a>
+                        
+                        <a href="/xiaoxiaohu/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
+                            <span class="chip bg-color">树莓派</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+        </div>
+    </article>
+
+</main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a href="/xiaoxiaohu/page/16/"
+               class="left btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">17 / 21</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a href="/xiaoxiaohu/page/18/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/xiaoxiaohu/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/xiaoxiaohu/libs/aplayer/APlayer.min.js"></script>
+<script src="/xiaoxiaohu/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2026</span>
+            
+            <a href="/xiaoxiaohu/about" target="_blank">小小胡</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2019";
+                        var startMonth = "9";
+                        var startDate = "3";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/xiaoxiaohu/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
     </a>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content (desktop) -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/" target="_self">
-                <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/archives/" target="_self">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/categories/" target="_self">
-                <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/tags/" target="_self">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/xiaoxiaohu/about/" target="_self">
-                <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Mobile grid menu overlay -->
-<div id="mobile-grid-menu" class="d-lg-none">
-  <div class="mobile-grid-menu-inner">
-    <div class="container">
-      <div class="row">
-        
-          
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-home-fill"></i>
-                  <span>Home</span>
-                </div>
-              </a>
-            </div>
-          
-        
-          
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/archives/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-archive-fill"></i>
-                  <span>Archives</span>
-                </div>
-              </a>
-            </div>
-          
-        
-          
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/categories/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-category-fill"></i>
-                  <span>Categories</span>
-                </div>
-              </a>
-            </div>
-          
-        
-          
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/tags/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-tags-fill"></i>
-                  <span>Tags</span>
-                </div>
-              </a>
-            </div>
-          
-        
-          
-          
-          
-          
-            <div class="col-4 mobile-grid-cell">
-              <a href="/xiaoxiaohu/about/" target="_self">
-                <div class="mobile-grid-item">
-                  <i class="iconfont icon-user-fill"></i>
-                  <span>About</span>
-                </div>
-              </a>
-            </div>
-          
-        
-        
-          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
-            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <div class="mobile-grid-item">
-                <i class="iconfont icon-search"></i>
-                <span>Search</span>
-              </div>
-            </a>
-          </div>
-        
-        
-          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
-               data-label-light="Light"
-               data-label-dark="Dark">
-            <a href="javascript:;" aria-label="Color Toggle">
-              <div class="mobile-grid-item">
-                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
-                <span id="mobile-color-toggle-label">Dark</span>
-              </div>
-            </a>
-          </div>
-        
-      </div>
-    </div>
-  </div>
 </div>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/xiaoxiaohu/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
-          
-        </div>
-
-        
-      </div>
-
-      
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
-      
     </div>
-  </div>
-</div>
+</footer>
 
+<div class="progress-bar"></div>
 
 
-</div>
-
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-x-md">
-        <div id="board"
-          style="margin-top: 0">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<h1 style="display: none">Hexo</h1>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/06/01/%E3%80%90win%E3%80%91vmware-15-5-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%B0%B8%E4%B9%85%E8%AE%B8%E5%8F%AF%E8%AF%81/" target="_self">
-          【win】VMware 15.5 虚拟机软件及永久许可证
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/06/01/%E3%80%90win%E3%80%91vmware-15-5-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%B0%B8%E4%B9%85%E8%AE%B8%E5%8F%AF%E8%AF%81/" target="_self">
-        <div>
-          [名称]：VMware 15.5[大小]：489 MB    [语言]：简体中文  [安装环境]：Win7&#x2F;Win8&#x2F;Win10 [64&#x2F;32位下载链接]：[下载链接]：pan.baidu.com&#x2F;s&#x2F;1BPbFLk-10C-Ry2V-i3BpAQ [提取码]:4l2f VMware15可以在同一台 Windows 或 Linux PC 上同时
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-06-01 00:00" pubdate>
-              2020-06-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/wordpress/" class="category-chain-item">wordpress</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/06/01/%E5%85%8D%E8%B4%B9%E7%94%B3%E8%AF%B7office-e5%E5%BC%80%E5%8F%91%E8%80%85%E8%AE%A2%E9%98%85%EF%BC%8C%E9%99%84%E6%97%A0%E9%99%90%E7%BB%AD%E6%9C%9F%E7%A7%81%E4%BA%BA%E7%BD%91%E7%9B%98%E6%95%99%E7%A8%8B-2/" target="_self">
-          免费申请office E5开发者订阅，附无限续期+私人网盘教程
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/06/01/%E5%85%8D%E8%B4%B9%E7%94%B3%E8%AF%B7office-e5%E5%BC%80%E5%8F%91%E8%80%85%E8%AE%A2%E9%98%85%EF%BC%8C%E9%99%84%E6%97%A0%E9%99%90%E7%BB%AD%E6%9C%9F%E7%A7%81%E4%BA%BA%E7%BD%91%E7%9B%98%E6%95%99%E7%A8%8B-2/" target="_self">
-        <div>
-          本文永久更新修正地址：https://blog.devyi.com/archives/388  前言Office365开发版E5是为开发人员提供的，是微软的官方活动，申请Office 365开发者计划可以获得为期3个月的免费Office365 E5。 而E5计划就包含了25个用于所有Office 365 应用的许可证。如果嫌正版office365贵的话，这可是你免费获取office的好机会了。
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-06-01 00:00" pubdate>
-              2020-06-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/tor/">#tor</a>
-            
-              <a href="/xiaoxiaohu/tags/%E7%BD%91%E7%AB%99/">#网站</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/05/30/14%E4%BA%BF%E4%BA%BA%E7%9A%84%E4%BA%8C%E5%85%AB%E5%AE%9A%E5%BE%8B-2/" target="_self">
-          14亿人的“二八定律 ”
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/30/14%E4%BA%BF%E4%BA%BA%E7%9A%84%E4%BA%8C%E5%85%AB%E5%AE%9A%E5%BE%8B-2/" target="_self">
-        <div>
-          引 “6亿人”后面的真相 不止有盛世繁华，还有残垣颓瓦； 不止有北上深广的四通八达，还有阡陌不通的边缘小镇； 不止有年赚千万的娱乐明星，还有更多失业在家的啃老青年； 不止有归不了国的留学生，还有很多上不了学的小学生； …… 总理一句大实话，惊醒了无数人。  中国是一个人口众多的发展中国家，我们人均年收入是3万元人民币，但是有6亿人每个月收入也就1000元，1000元在一个中等城市可能租房都困难，现
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-05-30 00:00" pubdate>
-              2020-05-30
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E7%94%9F%E6%B4%BB/" class="category-chain-item">生活</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/%E7%94%9F%E6%B4%BB/">#生活</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/05/30/windows%E5%B9%B3%E5%8F%B0%E4%B8%8B%E4%BD%BF%E7%94%A8-rclone-%E6%8C%82%E8%BD%BD-onedrive-%E4%B8%BA%E6%9C%AC%E5%9C%B0%E7%A1%AC%E7%9B%98/" target="_self">
-          Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/30/windows%E5%B9%B3%E5%8F%B0%E4%B8%8B%E4%BD%BF%E7%94%A8-rclone-%E6%8C%82%E8%BD%BD-onedrive-%E4%B8%BA%E6%9C%AC%E5%9C%B0%E7%A1%AC%E7%9B%98/" target="_self">
-        <div>
-          Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘Rclone (rsync for cloud storage) 是一个命令行程序,用于同步文件和目录，支持常见的 Amazon Drive 、Google Drive 、OneDrive 、Dropbox 等云存储。本文将演示在 Windows 平台下将 OneDrive 挂载为本地硬盘，并使用跨平台的 Rclone GU
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-05-30 00:00" pubdate>
-              2020-05-30
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/wordpress/" class="category-chain-item">wordpress</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" target="_self">
-          电池热管理工程实践认知 (1): 风冷式热管理系统
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" target="_self">
-        <div>
-          本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。 1、电池热管理技术基本概念 电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-05-30 00:00" pubdate>
-              2020-05-30
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="category-chain-item">制冷技术</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/">#电池热管理</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/" target="_self">
-          电池热管理工程实践认知 (2): 液冷及直冷式热管理系统
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/" target="_self">
-        <div>
-          本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。   人类可以冬天泡澡夏天玩水，电动车的电池可以不？人类可以在夏天用空调，电池也可以有这个享受不？其实呢，不是不可以（泡澡、玩水、吹空调），只要方法得当、方法好。在上一期中，我们简单介绍了电池热管理的基本概念以及相关分类，并着重介绍了风冷式电池热管理技术（电池热管理工程实践认知 (1): 风冷式热管理系统），这一期我们将介绍
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-05-30 00:00" pubdate>
-              2020-05-30
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="category-chain-item">制冷技术</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="category-chain-item">文章采集</a>
-  
-  
-    <span>></span>
-    
-  <a href="/xiaoxiaohu/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/" class="category-chain-item">试验台架</a>
-  
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/">#试验台</a>
-            
-              <a href="/xiaoxiaohu/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">#制冷技术</a>
-            
-              <a href="/xiaoxiaohu/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/">#电池热管理</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/05/24/7zip-%E4%B8%80%E6%AC%BE%E9%AB%98%E6%95%88%E7%AE%80%E5%8D%95%E7%9A%84%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B6/" target="_self">
-          7zip-一款高效简单的压缩软件
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/24/7zip-%E4%B8%80%E6%AC%BE%E9%AB%98%E6%95%88%E7%AE%80%E5%8D%95%E7%9A%84%E5%8E%8B%E7%BC%A9%E8%BD%AF%E4%BB%B6/" target="_self">
-        <div>
-          压缩解压缩软件之前一直用360压缩或者好压，但这些软件一点都不老实，经常推荐或者搞点广告啥的，后面发现了一个很好用的软件-7zip 中文官网：https://sparanoid.com/lab/7z/ 7zip算是压缩软件里我觉得最简单好用的了，做压缩软件就专心于压缩软件，占用小，也不会给你推荐啥的 到官网下载安装即可，默认安装目录是：C:\ProgramData\Microsoft\Window
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-05-24 00:00" pubdate>
-              2020-05-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="category-chain-item">推荐软件</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">#推荐软件</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/05/24/everything-windows%E4%B8%8A%E7%9A%84%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E8%BD%AF%E4%BB%B6/" target="_self">
-          everything-windows上的文件搜索软件
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/24/everything-windows%E4%B8%8A%E7%9A%84%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E8%BD%AF%E4%BB%B6/" target="_self">
-        <div>
-          windows自带的文件搜索软件功能，使用过就知道，这个太慢了，everything作为一款搜索软件，很好用，快速且可以匹配到全电脑上，轻松找到你想要的文件，对于没有很好的文件管理的人来说很重要. 官网：https://www.voidtools.com/zh-cn/ 下载安装即可，启动后需要点时间来更新搜索数据库，更新完后搜索起来很快 使用教程：https://www.voidtools.com
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-05-24 00:00" pubdate>
-              2020-05-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="category-chain-item">推荐软件</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">#推荐软件</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/05/24/trafficmonitor-%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E6%94%AF%E6%8C%81%E4%BB%BB%E5%8A%A1%E6%A0%8F%E6%98%BE%E7%A4%BA%E5%AE%9E%E6%97%B6%E7%BD%91%E9%80%9F%E3%80%81cpu%E5%8F%8A%E5%86%85%E5%AD%98%E7%9A%84/" target="_self">
-          TrafficMonitor-一个开源支持任务栏显示实时网速、CPU及内存的监控软件
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/24/trafficmonitor-%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E6%94%AF%E6%8C%81%E4%BB%BB%E5%8A%A1%E6%A0%8F%E6%98%BE%E7%A4%BA%E5%AE%9E%E6%97%B6%E7%BD%91%E9%80%9F%E3%80%81cpu%E5%8F%8A%E5%86%85%E5%AD%98%E7%9A%84/" target="_self">
-        <div>
-          之前一直想要有一个显示网速的插件，之前发现一个比较好用的是火绒的一个插件，但为了一个网速插件而去安装火绒有点得不偿失，像360或者腾讯管家就更是。 后面发现一个GitHub上的项目，这是一个简单的网速监控软件，可以显示实时网速，也可以监控CPU和内存 很简单实用 项目地址：https://github.com/zhongyang219/TrafficMonitor TrafficMonitor 简
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-05-24 00:00" pubdate>
-              2020-05-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="category-chain-item">推荐软件</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/tor/">#tor</a>
-            
-              <a href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">#推荐软件</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/xiaoxiaohu/2020/05/24/%E7%A6%8F%E6%98%95%E9%AB%98%E7%BA%A7pdf%E8%BD%AF%E4%BB%B6-%E4%B8%80%E6%AC%BE%E5%8F%AF%E4%BB%A5%E7%BC%96%E8%BE%91pdf%E4%B8%8E%E8%BD%AC%E6%8D%A2pdf%E7%9A%84%E8%BD%AF%E4%BB%B6/" target="_self">
-          福昕高级PDF软件-一款可以编辑PDF与转换PDF的软件
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/xiaoxiaohu/2020/05/24/%E7%A6%8F%E6%98%95%E9%AB%98%E7%BA%A7pdf%E8%BD%AF%E4%BB%B6-%E4%B8%80%E6%AC%BE%E5%8F%AF%E4%BB%A5%E7%BC%96%E8%BE%91pdf%E4%B8%8E%E8%BD%AC%E6%8D%A2pdf%E7%9A%84%E8%BD%AF%E4%BB%B6/" target="_self">
-        <div>
-          PDF转word一直以来都有需求，但像wps或者其他很多软件都有这样的功能，但一般都是收费的，这里可以用word来打开PDF文件，从而实现PDF转word功能，但这里介绍另一个软件，就是福昕高级PDF软件，通过这个软件可以很方便的将PDF转化外word，同时也可以直接对PDF文件进行编辑，当然那种扫描版的就基本上不行，要那种由word转换来的才可以实现    个人谷歌云下载：https://dri
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-05-24 00:00" pubdate>
-              2020-05-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/xiaoxiaohu/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="category-chain-item">推荐软件</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/xiaoxiaohu/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">#推荐软件</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/xiaoxiaohu/page/16/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/xiaoxiaohu/">1</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/15/#board">15</a><a class="page-number" href="/xiaoxiaohu/page/16/#board">16</a><span class="page-number current">17</span><a class="page-number" href="/xiaoxiaohu/page/18/#board">18</a><a class="page-number" href="/xiaoxiaohu/page/19/#board">19</a><span class="space">&hellip;</span><a class="page-number" href="/xiaoxiaohu/page/25/#board">25</a><a class="extend next" rel="next" href="/xiaoxiaohu/page/18/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+        <div id="searchResult"></div>
     </div>
-  </div>
 </div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/xiaoxiaohu/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/xiaoxiaohu/libs/materialize/materialize.min.js"></script>
+    <script src="/xiaoxiaohu/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/xiaoxiaohu/libs/aos/aos.js"></script>
+    <script src="/xiaoxiaohu/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/xiaoxiaohu/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/xiaoxiaohu/js/matery.js"></script>
 
     
 
     
-  </main>
+    
+    
 
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-  
-</div>
+    <!-- 雪花特效 -->
+    
 
-  </footer>
+    <!-- 鼠标星星特效 -->
+    
 
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/xiaoxiaohu/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
 
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
+    <!-- Baidu Analytics -->
 
+    <!-- Baidu Push -->
 
-<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/xiaoxiaohu/js/events.js" ></script>
-<script  src="/xiaoxiaohu/js/plugins.js" ></script>
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
 
+    
+    <script src="/xiaoxiaohu/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/xiaoxiaohu/libs/others/busuanzi.pure.mini.js"></script>
+    
 
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
+    
 
+    
 
+    <!--腾讯兔小巢-->
+    
+    
 
+    
 
-  
-    <script  src="/xiaoxiaohu/js/img-lazyload.js" ></script>
-  
+    
 
+    
+    <script src="/xiaoxiaohu/libs/instantpage/instantpage.js" type="module"></script>
+    
 
-
-
-  <script  src="/xiaoxiaohu/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/xiaoxiaohu/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
-  </noscript>
 </body>
+
 </html>
