@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>在ESXI 虚拟机上安装群晖 7.0 (DSM7.0.1)教程 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="一、安装步骤：先下载启动文件及系统文件下载DS918的系统文件及引导文件 https:&#x2F;&#x2F;pan.gxnas.com:1443&#x2F;%E9%BB%91%E7%BE%A4%E6%99%96&#x2F;DS918+&#x2F;DS918_7.2-64570%EF%BC%88%E5%BC%95%E5%AF%BC%E6%96%87%E4%BB%B6%EF%BC%89.img https:&#x2F;&#x2F;pan.gxnas.com:1443&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在ESXI 虚拟机上安装群晖 7.0 (DSM7.0.1)教程">
+<meta property="og:url" content="http://example.com/2023/09/11/%E7%BE%A4%E6%99%96dsm7-0%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%9C%A8esxi-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96-7-0-dsm7-0-1%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、安装步骤：先下载启动文件及系统文件下载DS918的系统文件及引导文件 https:&#x2F;&#x2F;pan.gxnas.com:1443&#x2F;%E9%BB%91%E7%BE%A4%E6%99%96&#x2F;DS918+&#x2F;DS918_7.2-64570%EF%BC%88%E5%BC%95%E5%AF%BC%E6%96%87%E4%BB%B6%EF%BC%89.img https:&#x2F;&#x2F;pan.gxnas.com:1443&#x2F;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-b9cc18af37c7fb4475ed4744cc22766f_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-205fd48bd46f302e675479e931fb9228.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-1816a4fb1eb8066ffdc102aa78220d3b_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-145b829480f11a0f11ea6e2db17995b7.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-a7a92d34e15a1940a61f79ee8546975d_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-3e1f3723ac5024ff8a2fb166e707ae45.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-1c4f31e03cdce6ffd21d8435559360ac_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-6f3b58de51e45cea2c72188d84e9bf00.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-995e33442fc122173e403b43bf64d1c2_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-967181e1e6e971278f84de6be738fefa.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-d7c09704c0d2073e1b04a07e27a213bf_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-560a954fc6a3ac9afe66501d767cff65.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-e927b15f5471f156db4e0e613d2b88de_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-62fe6d4410a645e7afb404e9866ea32d.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-71e522e5758c6b040789685b8a38f549_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-87f95302100437f8c669a43e9b134d57.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-01f2f47fe38f4f98809e70634df0828d_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-a006956e79829b340b741449832d6a84.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-3824ab56a7e8a63273dd76382741a9ab_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-13990de33cd73b5a9408efec0eb71fad.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-8d12974b5364a96a0d14624ed6524a29_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-40f101dbe356f566d03605f820da4176.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-54141be20dec44fb1be17cd4a081474f_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-6f0eb249409fc0151cf2b137f4f1b497.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-0743ca1cc990b7099ee25bafa220d6ac_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-7b442d688f7f23398c573c433e7f8dcd.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-004a8aee13a7cc048a2fb7b7b5c77165_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-9acdc8ca93e3546dd7510611f12735c4.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-2c8031eea69858e95886d68624cdce39_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-2f70c9b353765a8b6c9249b541829f6f.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-d536ddd4e0392efdea76244a3cc58a5e_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-4691f24014c4c399d879094fbe362c8f.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-a1e9c1431c467b1e8e0f9356a6b5ffdc_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-a33347097ef279a726e868f7d5dc4de0.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-c73b38d55f8faa4ae76e3aa6ea1a3b77_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-b0c958c0a4d981c795a42c76a6392ecc.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-49fca48bf51af6cd97aaee40876a700e_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-907f341ed3d0059e36965b565c979cf4.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-cd2aa2ef6418ba2075ad10352fe9f83c_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-684967d66363ac19b4b909a030b9a800.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-30fe1d376f914343c292291a06df209a_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-90fbbd0eb2d4a84c5c0bc0f171f12811.jpg">
+<meta property="og:image" content="https://wp.gxnas.com/wp-content/uploads/2021/09/1632379458-44.jpg">
+<meta property="og:image" content="https://wp.gxnas.com/wp-content/uploads/2021/09/1632379459-45.jpg">
+<meta property="og:image" content="https://wp.gxnas.com/wp-content/uploads/2021/09/1632379460-46.jpg">
+<meta property="og:image" content="https://wp.gxnas.com/wp-content/uploads/2021/09/1632379461-47.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-8c2f7575a973abea71184bb507da3571_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-dd2d57ec90005576293b81f6741b3fe0.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-c0c351dd3c208f512546a3f2d1988175_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-cd27f35379f76cd94ed8df08e0c63ac9.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-6d58bf4476eff0667e58f7998f527356_b.png">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-351f49e8979155c070fc745da4257009.png">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-085bb15af367f9bd174d7c0461eea3fe_b.png">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-ff15cb91172351d5759f9cc3fc57ffd2.png">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-3b2dd65c4e57bc09749d07be5fb17c8f_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-84bf214be78a79767671ad9931301b24.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-1adfc31563ecf607ee882cee5be2bdad_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-5be9fa9ff97fa663579b47e41fc53f20.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-2d80cb83c3d12565983debeb93635c8f_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-282b40189991591528b75040adad4c67.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-b79e50c76549de714629569cfc623d35_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-0a566c6cf4cc6d24fcf108a67b385339.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-6d77feb88e3dd573aeedb98f687a13d7_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-73cbdc5dffefa1a289292a2161b06041.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-62b058788983598c5261e25c693a5104_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-34747cf9d54179f1c73bb0d739026a31.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-5bfc44d6df6e5124c4b4433270202e68_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-365f10bdd14282b6dd8416a28ae8d42c.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-9eef137a7cbee58ab163279db3527067_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-4323bdbeb6316d9dfa895b52ab512754.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-2c42e46505ae3835435d2107dd48d179_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-d2f76bbd07245606cd6eebf85af4f2f6.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-e1822b3e914da19dfe460f76e10c393e_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-b97a94727b2eb0bde5ce79bb25daff2b.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-0fb3fe64475d484af9aadbb2dd1dba0a_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-8700d9eaa547b0813acf46184ad9bf81.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-b4954c947fc4a1b494a1768be9fe7cc2_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-104085236700611108b9a9c0727bc27d.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-83179e4b0109e87a450629ab97132be8_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-d1df2aac899176bb3bdce96ea0d9d30f.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-ee93ef913aa33858bb6c74452434447c_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-96f8690e945fcb6d5a05e98dc2c4a7a9.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-5a49d0851b32b58eb533acbb17dc5fd1_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-6ee66f16caef35684ac71ddd43037bb3.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-13723ea214a1ff067099afb0c397798b_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-c62679d21302491366a309445df8710b.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-db16d03b46091eb6ee383a6bcce02f86_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-4e656188c1cb6916972284bdd464a10e.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-b409aa9f9c80e093d34e8222f1989007_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-6f48c1df4393a3e05a84b7d86bc6d631.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-fc72d28b5841c98ed2ef77e52f387ad9_b.jpg">
+<meta property="og:image" content="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-fbde0dac52de71ea03f692c5fe4246b3.jpg">
+<meta property="article:published_time" content="2023-09-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-21T06:03:03.417Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="nas">
+<meta property="article:tag" content="scr">
+<meta property="article:tag" content="群晖">
+<meta property="article:tag" content="路由器">
+<meta property="article:tag" content="软件">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic4.zhimg.com/v2-b9cc18af37c7fb4475ed4744cc22766f_b.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-群晖dsm7-0新特性介绍及在esxi-虚拟机上安装群晖-7-0-dsm7-0-1教程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/11/%E7%BE%A4%E6%99%96dsm7-0%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%9C%A8esxi-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96-7-0-dsm7-0-1%E6%95%99%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2023-09-10T16:00:00.000Z" itemprop="datePublished">2023-09-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress/">wordpress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      在ESXI 虚拟机上安装群晖 7.0 (DSM7.0.1)教程
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="一、安装步骤：先下载启动文件及系统文件"><a href="#一、安装步骤：先下载启动文件及系统文件" class="headerlink" title="一、安装步骤：先下载启动文件及系统文件"></a>一、安装步骤：先下载启动文件及系统文件</h2><p>下载DS918的系统文件及引导文件</p>
+<p><a target="_blank" rel="noopener" href="https://pan.gxnas.com:1443/%E9%BB%91%E7%BE%A4%E6%99%96/DS918+/DS918_7.2-64570%EF%BC%88%E5%BC%95%E5%AF%BC%E6%96%87%E4%BB%B6%EF%BC%89.img">https://pan.gxnas.com:1443/%E9%BB%91%E7%BE%A4%E6%99%96/DS918+/DS918_7.2-64570%EF%BC%88%E5%BC%95%E5%AF%BC%E6%96%87%E4%BB%B6%EF%BC%89.img</a></p>
+<p><a target="_blank" rel="noopener" href="https://pan.gxnas.com:1443/%E9%BB%91%E7%BE%A4%E6%99%96/DS918+/DS918_7.2-64570%EF%BC%88%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%8C%85%EF%BC%89.pat">https://pan.gxnas.com:1443/%E9%BB%91%E7%BE%A4%E6%99%96/DS918+/DS918_7.2-64570%EF%BC%88%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%8C%85%EF%BC%89.pat</a></p>
+<p>将文件改名，尽量不要包含中文及特殊符号</p>
+<p><img src="https://pic4.zhimg.com/v2-b9cc18af37c7fb4475ed4744cc22766f_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-205fd48bd46f302e675479e931fb9228.jpg"></p>
+<h2 id="二、使用DisckGenius分区工具，打开虚拟文件"><a href="#二、使用DisckGenius分区工具，打开虚拟文件" class="headerlink" title="二、使用DisckGenius分区工具，打开虚拟文件"></a>二、使用DisckGenius分区工具，打开虚拟文件</h2><p>单击菜单上的“硬盘”—“打开虚拟硬盘文件”，选择我们下载好的img文件 ： 打开虚拟文件 DS918_7_42218.img</p>
+<p><img src="https://pic4.zhimg.com/v2-1816a4fb1eb8066ffdc102aa78220d3b_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-145b829480f11a0f11ea6e2db17995b7.jpg"></p>
+<h2 id="三、导出Grub-cfg文件"><a href="#三、导出Grub-cfg文件" class="headerlink" title="三、导出Grub.cfg文件"></a>三、导出Grub.cfg文件</h2><p>展开左边的 grub文件夹，在右边找到grub.cfg文件，鼠标右键，弹出的菜单中选择“复制到指定的文件夹”</p>
+<p><img src="https://pic2.zhimg.com/v2-a7a92d34e15a1940a61f79ee8546975d_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-3e1f3723ac5024ff8a2fb166e707ae45.jpg"></p>
+<h2 id="四、用编辑器修改grub-cfg文件"><a href="#四、用编辑器修改grub-cfg文件" class="headerlink" title="四、用编辑器修改grub.cfg文件"></a>四、用编辑器修改grub.cfg文件</h2><p><em><strong>如果没有下面这些需求，不进行修改也可以，直接采用默认的就行。</strong></em></p>
+<p>使用UltraEdit 或其它文本编辑器打开grub.cfg文件进行修改</p>
+<p><img src="https://pic1.zhimg.com/v2-1c4f31e03cdce6ffd21d8435559360ac_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-6f3b58de51e45cea2c72188d84e9bf00.jpg"></p>
+<p>1、netif_num&#x3D;1：网口数量，默认为1，如需两个网口改成netif_num&#x3D;2</p>
+<p>2、mac1&#x3D;001132123456：如有2个网口在后面再添加 mac2&#x3D;第2个网口mac地址（与第1个要不同） 如有真实的，填真实的洗白码mac值</p>
+<p>3、sn&#x3D;2021PDN123456：默认的序列号，如有真实洗白码，则改之，我用的是默认的</p>
+<p>4、esxi虚拟机安装，VID和PID可不改</p>
+<h2 id="五、如grub-cfg-有修改，则更新文件到当前分区"><a href="#五、如grub-cfg-有修改，则更新文件到当前分区" class="headerlink" title="五、如grub.cfg 有修改，则更新文件到当前分区"></a>五、如grub.cfg 有修改，则更新文件到当前分区</h2><p><img src="https://pic3.zhimg.com/v2-995e33442fc122173e403b43bf64d1c2_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-967181e1e6e971278f84de6be738fefa.jpg"></p>
+<h2 id="六、安装StarWind-V2V-Image-Converter-exe-工具并运行它"><a href="#六、安装StarWind-V2V-Image-Converter-exe-工具并运行它" class="headerlink" title="六、安装StarWind V2V Image Converter.exe 工具并运行它"></a>六、安装StarWind V2V Image Converter.exe 工具并运行它</h2><p>特别注意: 原img文件及将来生成的目标Vmdk文件 两者的目录最好是纯英文，不要有中文，否则有可能会出错</p>
+<p><img src="https://pic4.zhimg.com/v2-d7c09704c0d2073e1b04a07e27a213bf_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-560a954fc6a3ac9afe66501d767cff65.jpg"></p>
+<p>选择Local File (本地文件）</p>
+<p>选择刚才改好的img文件。这里一定要注意，要先关闭前面的分区软件DiskGenius, 否则选择文件后会出错，因为DiskGenius还占用了img文件。</p>
+<p><img src="https://pic3.zhimg.com/v2-e927b15f5471f156db4e0e613d2b88de_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-62fe6d4410a645e7afb404e9866ea32d.jpg"></p>
+<p><strong>关闭分区助手再打开，就正常了</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-71e522e5758c6b040789685b8a38f549_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-87f95302100437f8c669a43e9b134d57.jpg"></p>
+<p>目标选择 Local File, 下一步，选择VMDK。 当然也可选择Remote 虚拟机，直接过去</p>
+<p><img src="https://pic2.zhimg.com/v2-01f2f47fe38f4f98809e70634df0828d_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-a006956e79829b340b741449832d6a84.jpg"></p>
+<p>再选择esxi Server image</p>
+<p><img src="https://pic4.zhimg.com/v2-3824ab56a7e8a63273dd76382741a9ab_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-13990de33cd73b5a9408efec0eb71fad.jpg"></p>
+<p><img src="https://pic2.zhimg.com/v2-8d12974b5364a96a0d14624ed6524a29_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-40f101dbe356f566d03605f820da4176.jpg"></p>
+<p>目标名，可点…改成无中文字的纯英文名较好</p>
+<p><img src="https://pic4.zhimg.com/v2-54141be20dec44fb1be17cd4a081474f_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-6f0eb249409fc0151cf2b137f4f1b497.jpg"></p>
+<p>转换成功</p>
+<p><img src="https://pic1.zhimg.com/v2-0743ca1cc990b7099ee25bafa220d6ac_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-7b442d688f7f23398c573c433e7f8dcd.jpg"></p>
+<p>按Finish结束</p>
+<p>可看到目标文件夹会生成2个vmdk文件，其中一个带 -flat</p>
+<p><img src="https://pic2.zhimg.com/v2-004a8aee13a7cc048a2fb7b7b5c77165_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-9acdc8ca93e3546dd7510611f12735c4.jpg"></p>
+<h2 id="七、在esxi虚拟机数据存储创建一个dsm7目录，把这2个文件上载上去"><a href="#七、在esxi虚拟机数据存储创建一个dsm7目录，把这2个文件上载上去" class="headerlink" title="七、在esxi虚拟机数据存储创建一个dsm7目录，把这2个文件上载上去"></a>七、在esxi虚拟机数据存储创建一个dsm7目录，把这2个文件上载上去</h2><p><img src="https://pic2.zhimg.com/v2-2c8031eea69858e95886d68624cdce39_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-2f70c9b353765a8b6c9249b541829f6f.jpg"></p>
+<h2 id="八、在esxi创建新的虚拟机"><a href="#八、在esxi创建新的虚拟机" class="headerlink" title="八、在esxi创建新的虚拟机"></a>八、在esxi创建新的虚拟机</h2><p>客户机操作系统 选择linux ,4.x或更高版本的Linux(64位）</p>
+<p><img src="https://pic3.zhimg.com/v2-d536ddd4e0392efdea76244a3cc58a5e_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-4691f24014c4c399d879094fbe362c8f.jpg"></p>
+<p>设置如下</p>
+<p><img src="https://pic1.zhimg.com/v2-a1e9c1431c467b1e8e0f9356a6b5ffdc_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-a33347097ef279a726e868f7d5dc4de0.jpg"></p>
+<p>最终配置如下</p>
+<p><img src="https://pic4.zhimg.com/v2-c73b38d55f8faa4ae76e3aa6ea1a3b77_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-b0c958c0a4d981c795a42c76a6392ecc.jpg"></p>
+<h2 id="九、对虚拟机进行编辑，添加现有硬盘"><a href="#九、对虚拟机进行编辑，添加现有硬盘" class="headerlink" title="九、对虚拟机进行编辑，添加现有硬盘"></a>九、对虚拟机进行编辑，添加现有硬盘</h2><p>完成后再打开此虚拟机进行编辑</p>
+<p><img src="https://pic3.zhimg.com/v2-49fca48bf51af6cd97aaee40876a700e_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-907f341ed3d0059e36965b565c979cf4.jpg"></p>
+<p>添加现有硬盘，选择我们上传2个vmdk文件的路径</p>
+<p><img src="https://pic1.zhimg.com/v2-cd2aa2ef6418ba2075ad10352fe9f83c_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-684967d66363ac19b4b909a030b9a800.jpg"></p>
+<p>删除创建虚拟机时默认分配的硬盘，最终保存后的设置如下</p>
+<p><img src="https://pic3.zhimg.com/v2-30fe1d376f914343c292291a06df209a_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-90fbbd0eb2d4a84c5c0bc0f171f12811.jpg"><br>在虚拟机选项，引导选项，点开三角形；<a target="_blank" rel="noopener" href="https://wp.gxnas.com/wp-content/uploads/2021/09/1632379458-44.jpg"><img src="https://wp.gxnas.com/wp-content/uploads/2021/09/1632379458-44.jpg"></a></p>
+<p> </p>
+<p> </p>
+<p>找到“是否为此虚拟机启用UEFI安全引导”这行； <a target="_blank" rel="noopener" href="https://wp.gxnas.com/wp-content/uploads/2021/09/1632379459-45.jpg"><img src="https://wp.gxnas.com/wp-content/uploads/2021/09/1632379459-45.jpg"></a></p>
+<p> </p>
+<p> </p>
+<p>把默认的打勾去掉，保存；<a target="_blank" rel="noopener" href="https://wp.gxnas.com/wp-content/uploads/2021/09/1632379460-46.jpg"><img src="https://wp.gxnas.com/wp-content/uploads/2021/09/1632379460-46.jpg"></a></p>
+<p> </p>
+<p> </p>
+<p>点下图所示位置的三角形，启动虚拟机；<a target="_blank" rel="noopener" href="https://wp.gxnas.com/wp-content/uploads/2021/09/1632379461-47.jpg"><img src="https://wp.gxnas.com/wp-content/uploads/2021/09/1632379461-47.jpg"></a></p>
+<p> </p>
+<h2 id="十、在虚拟机内启动黑群晖"><a href="#十、在虚拟机内启动黑群晖" class="headerlink" title="十、在虚拟机内启动黑群晖"></a>十、在虚拟机内启动黑群晖</h2><p>现在就可启动虚拟机了。启动时选择 第2项 SATA Verbose</p>
+<p><img src="https://pic2.zhimg.com/v2-8c2f7575a973abea71184bb507da3571_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-dd2d57ec90005576293b81f6741b3fe0.jpg"></p>
+<p>启动正常，说明群晖启动是正常的。</p>
+<p>我进行这步出现错误：提示以下错误</p>
+<p>disk hd0 msdos1 not found</p>
+<p>sata boot support on this platform is experimental</p>
+<p>原来是sata 的顺序弄错了，将启动盘设置 为sata 0:0 数据盘设置为 sata 0:1 或 0:2 如果UEFI不行，就设置为传统BIOS启动就可以了 (我的光驱占用 SATA (0:1))</p>
+<p><img src="https://pic2.zhimg.com/v2-c0c351dd3c208f512546a3f2d1988175_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-cd27f35379f76cd94ed8df08e0c63ac9.jpg"></p>
+<h2 id="十一、用群晖助手-7-0-搜索就可找到刚装好的DSM7"><a href="#十一、用群晖助手-7-0-搜索就可找到刚装好的DSM7" class="headerlink" title="十一、用群晖助手 7.0 搜索就可找到刚装好的DSM7"></a>十一、用群晖助手 7.0 搜索就可找到刚装好的DSM7</h2><p><img src="https://pic3.zhimg.com/v2-6d58bf4476eff0667e58f7998f527356_b.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-351f49e8979155c070fc745da4257009.png"></p>
+<p>我在某些环境安装助手找不到新安装的设备，要在路由器中找到新发现的设备，直接找到它的IP，直接连接，连接一次之后，再用群晖助手，就可找到了。一般名称为：</p>
+<table>
+<thead>
+<tr>
+<th>Synology DiskStation</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<p><img src="https://pic3.zhimg.com/v2-085bb15af367f9bd174d7c0461eea3fe_b.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-ff15cb91172351d5759f9cc3fc57ffd2.png"></p>
+<p>如出现未在 DS3615 DS918+ 中检测到硬盘的错误</p>
+<p><img src="https://pic4.zhimg.com/v2-3b2dd65c4e57bc09749d07be5fb17c8f_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-84bf214be78a79767671ad9931301b24.jpg"></p>
+<p><img src="https://pic2.zhimg.com/v2-1adfc31563ecf607ee882cee5be2bdad_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-5be9fa9ff97fa663579b47e41fc53f20.jpg"></p>
+<p>则需要在前面将grub.cfg中的参数修改：</p>
+<p>虚拟机里找不到硬盘，（原来的值是 SataPortMap&#x3D;1），把它改成 SataPortMap&#x3D;4 就可以了</p>
+<h2 id="十二、双击进行系统安装"><a href="#十二、双击进行系统安装" class="headerlink" title="十二、双击进行系统安装"></a>十二、双击进行系统安装</h2><p><img src="https://pic4.zhimg.com/v2-2d80cb83c3d12565983debeb93635c8f_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-282b40189991591528b75040adad4c67.jpg"></p>
+<p>选择前面下载好的PAT系统文件</p>
+<p><img src="https://pic2.zhimg.com/v2-b79e50c76549de714629569cfc623d35_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-0a566c6cf4cc6d24fcf108a67b385339.jpg"></p>
+<p>会删除硬盘之前的数据</p>
+<p><img src="https://pic4.zhimg.com/v2-6d77feb88e3dd573aeedb98f687a13d7_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-73cbdc5dffefa1a289292a2161b06041.jpg"></p>
+<p><img src="https://pic1.zhimg.com/v2-62b058788983598c5261e25c693a5104_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-34747cf9d54179f1c73bb0d739026a31.jpg"></p>
+<p><img src="https://pic1.zhimg.com/v2-5bfc44d6df6e5124c4b4433270202e68_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-365f10bdd14282b6dd8416a28ae8d42c.jpg"></p>
+<h2 id="十三、登录群晖7-0"><a href="#十三、登录群晖7-0" class="headerlink" title="十三、登录群晖7.0"></a>十三、登录群晖7.0</h2><p><img src="https://pic4.zhimg.com/v2-9eef137a7cbee58ab163279db3527067_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-4323bdbeb6316d9dfa895b52ab512754.jpg"></p>
+<p>为避免更新导致不能使用，最好手动安装更新包</p>
+<p>我是半洗白，选择跳过创建 sysnology 账号</p>
+<p><img src="https://pic2.zhimg.com/v2-2c42e46505ae3835435d2107dd48d179_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-d2f76bbd07245606cd6eebf85af4f2f6.jpg"></p>
+<h2 id="十四、创建存储池和存储空间"><a href="#十四、创建存储池和存储空间" class="headerlink" title="十四、创建存储池和存储空间"></a>十四、创建存储池和存储空间</h2><p><img src="https://pic3.zhimg.com/v2-e1822b3e914da19dfe460f76e10c393e_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-b97a94727b2eb0bde5ce79bb25daff2b.jpg"></p>
+<p><img src="https://pic3.zhimg.com/v2-0fb3fe64475d484af9aadbb2dd1dba0a_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-8700d9eaa547b0813acf46184ad9bf81.jpg"></p>
+<p><img src="https://pic3.zhimg.com/v2-b4954c947fc4a1b494a1768be9fe7cc2_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-104085236700611108b9a9c0727bc27d.jpg"></p>
+<p><img src="https://pic1.zhimg.com/v2-83179e4b0109e87a450629ab97132be8_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-d1df2aac899176bb3bdce96ea0d9d30f.jpg"></p>
+<p><img src="https://pic1.zhimg.com/v2-ee93ef913aa33858bb6c74452434447c_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-96f8690e945fcb6d5a05e98dc2c4a7a9.jpg"></p>
+<p>为节约时间，我跳过了硬盘检查，待空闲时一定要做一次</p>
+<p><img src="https://pic2.zhimg.com/v2-5a49d0851b32b58eb533acbb17dc5fd1_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-6ee66f16caef35684ac71ddd43037bb3.jpg"></p>
+<p><img src="https://pic4.zhimg.com/v2-13723ea214a1ff067099afb0c397798b_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-c62679d21302491366a309445df8710b.jpg"></p>
+<p><img src="https://pic3.zhimg.com/v2-db16d03b46091eb6ee383a6bcce02f86_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-4e656188c1cb6916972284bdd464a10e.jpg"></p>
+<p><img src="https://pic4.zhimg.com/v2-b409aa9f9c80e093d34e8222f1989007_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-6f48c1df4393a3e05a84b7d86bc6d631.jpg"></p>
+<p>然后就是等待了。</p>
+<p>等待处理完成就可使用了。</p>
+<p>终于可以愉快地享用DSM 7.0了</p>
+<p><img src="https://pic2.zhimg.com/v2-fc72d28b5841c98ed2ef77e52f387ad9_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2023/09/frc-fbde0dac52de71ea03f692c5fe4246b3.jpg"></p>
+<p>文章来源：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/458525825">https://zhuanlan.zhihu.com/p/458525825</a></p>
+<p><a target="_blank" rel="noopener" href="https://wp.gxnas.com/11089.html">https://wp.gxnas.com/11089.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/11/%E7%BE%A4%E6%99%96dsm7-0%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%9C%A8esxi-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96-7-0-dsm7-0-1%E6%95%99%E7%A8%8B/" data-id="cuidH1Yssv9HlPzRINySwqGWG" data-title="在ESXI 虚拟机上安装群晖 7.0 (DSM7.0.1)教程" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scr/" rel="tag">scr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BE%A4%E6%99%96/" rel="tag">群晖</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag">路由器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/10/28/%E5%88%A9%E7%94%A8%E5%9C%9F%E8%80%B3%E5%85%B6%E4%BC%98%E6%83%A0%E8%B4%AD%E4%B9%B0google-one/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          利用土耳其优惠购买google one
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/07/19/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91fiddler%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【工具】Fiddler使用教程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ansys/">ansys</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ansys/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ansys/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/kali-linux/">kali-linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/kali-linux/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/kali-linux/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/labview/">labview</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/tor/">tor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/tor/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/%E6%B1%BD%E8%BD%A6%E7%83%AD%E7%AE%A1%E7%90%86/">汽车热管理</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/">路由器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ac2100/" rel="tag">ac2100</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angilent34970a/" rel="tag">angilent34970a</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ansys/" rel="tag">ansys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bing/" rel="tag">bing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bitwarden/" rel="tag">bitwarden</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/calibre/" rel="tag">calibre</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/catia/" rel="tag">catia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatgpt/" rel="tag">chatgpt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloudflare/" rel="tag">cloudflare</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/endnote/" rel="tag">endnote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/endnotes9/" rel="tag">endnotes9</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/excel/" rel="tag">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/floefd/" rel="tag">floefd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fluent/" rel="tag">fluent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gps%E5%AE%9A%E4%BD%8D/" rel="tag">gps定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali-linux/" rel="tag">kali-linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kms/" rel="tag">kms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/labview/" rel="tag">labview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" rel="tag">linux子系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/newifi3/" rel="tag">newifi3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nextcloud/" rel="tag">nextcloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nps/" rel="tag">nps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openwrt/" rel="tag">openwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pid%E6%8E%A7%E5%88%B6/" rel="tag">pid控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" rel="tag">plc模糊逻辑控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pycharm/" rel="tag">pycharm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/" rel="tag">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/refprop/" rel="tag">refprop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scr/" rel="tag">scr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrcpy/" rel="tag">scrcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sndcpy/" rel="tag">sndcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solidworks/" rel="tag">solidworks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssr/" rel="tag">ssr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegram/" rel="tag">telegram</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tkinter/" rel="tag">tkinter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tor/" rel="tag">tor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/traccar/" rel="tag">traccar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/v2ray/" rel="tag">v2ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vpn/" rel="tag">vpn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vrv/" rel="tag">vrv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows%E6%BF%80%E6%B4%BB/" rel="tag">windows激活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/word/" rel="tag">word</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/" rel="tag">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/workbench/" rel="tag">workbench</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl/" rel="tag">wsl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" rel="tag">三线表格</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" rel="tag">个人图书馆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" rel="tag">串口通讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" rel="tag">二维仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E7%9B%98/" rel="tag">云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%BF%E7%9C%9F/" rel="tag">仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" rel="tag">企业微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%8D%E6%B5%81/" rel="tag">免流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" rel="tag">免登录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" rel="tag">免费域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" rel="tag">制冷技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" rel="tag">反爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" rel="tag">固态硬盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E6%A0%87/" rel="tag">图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%9F%E5%90%8D/" rel="tag">域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A3%B0%E9%9F%B3/" rel="tag">声音</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" rel="tag">天翼网关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" rel="tag">安捷伦</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" rel="tag">定时执行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" rel="tag">宝塔面板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81/" rel="tag">密码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" rel="tag">微信防撤回</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%85%E5%BA%94/" rel="tag">必应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" rel="tag">手机投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%95%E5%B1%8F/" rel="tag">投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%A2%E7%A5%A8/" rel="tag">抢票</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" rel="tag">推荐软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" rel="tag">搬瓦工</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" rel="tag">文章采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" rel="tag">新路由3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" rel="tag">旁路由</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" rel="tag">服务器监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B4%9B%E9%9B%AA/" rel="tag">洛雪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" rel="tag">浏览器技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%B7%E8%BE%B9/" rel="tag">海边</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温湿度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E7%8E%A9/" rel="tag">游玩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">热力膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">电子膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" rel="tag">电池热管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%99%BE%E5%BA%A6sign/" rel="tag">百度sign</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%B4%E6%92%AD/" rel="tag">直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" rel="tag">离线下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" rel="tag">私有云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" rel="tag">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" rel="tag">网站监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%A4%E6%99%96/" rel="tag">群晖</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" rel="tag">胖鼠采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" rel="tag">自然对流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" rel="tag">蒲公英</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" rel="tag">试验台</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" rel="tag">谷歌云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" rel="tag">谷歌网盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag">路由器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%82%AE%E4%BB%B6/" rel="tag">邮件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%82%AE%E7%AE%B1/" rel="tag">邮箱</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%92%E5%B2%9B/" rel="tag">青岛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" rel="tag">静态网页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9F%B3%E4%B9%90/" rel="tag">音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" rel="tag">音乐播放器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ac2100/" style="font-size: 10px;">ac2100</a> <a href="/tags/angilent34970a/" style="font-size: 10.5px;">angilent34970a</a> <a href="/tags/ansys/" style="font-size: 12px;">ansys</a> <a href="/tags/bing/" style="font-size: 10px;">bing</a> <a href="/tags/bitwarden/" style="font-size: 10px;">bitwarden</a> <a href="/tags/calibre/" style="font-size: 10px;">calibre</a> <a href="/tags/catia/" style="font-size: 10px;">catia</a> <a href="/tags/chatgpt/" style="font-size: 10px;">chatgpt</a> <a href="/tags/cloudflare/" style="font-size: 11.5px;">cloudflare</a> <a href="/tags/docker/" style="font-size: 12px;">docker</a> <a href="/tags/endnote/" style="font-size: 10px;">endnote</a> <a href="/tags/endnotes9/" style="font-size: 10px;">endnotes9</a> <a href="/tags/excel/" style="font-size: 16px;">excel</a> <a href="/tags/floefd/" style="font-size: 10px;">floefd</a> <a href="/tags/fluent/" style="font-size: 11px;">fluent</a> <a href="/tags/gps%E5%AE%9A%E4%BD%8D/" style="font-size: 10px;">gps定位</a> <a href="/tags/kali-linux/" style="font-size: 13px;">kali-linux</a> <a href="/tags/kms/" style="font-size: 10px;">kms</a> <a href="/tags/labview/" style="font-size: 19.5px;">labview</a> <a href="/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">linux子系统</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/nas/" style="font-size: 10.5px;">nas</a> <a href="/tags/newifi3/" style="font-size: 12.5px;">newifi3</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/nps/" style="font-size: 13px;">nps</a> <a href="/tags/openwrt/" style="font-size: 12px;">openwrt</a> <a href="/tags/pid%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">pid控制</a> <a href="/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">plc模糊逻辑控制</a> <a href="/tags/pycharm/" style="font-size: 10px;">pycharm</a> <a href="/tags/python/" style="font-size: 17px;">python</a> <a href="/tags/python3/" style="font-size: 10.5px;">python3</a> <a href="/tags/refprop/" style="font-size: 11px;">refprop</a> <a href="/tags/scr/" style="font-size: 18.5px;">scr</a> <a href="/tags/scrcpy/" style="font-size: 10.5px;">scrcpy</a> <a href="/tags/sndcpy/" style="font-size: 10px;">sndcpy</a> <a href="/tags/solidworks/" style="font-size: 10px;">solidworks</a> <a href="/tags/ssr/" style="font-size: 10.5px;">ssr</a> <a href="/tags/telegram/" style="font-size: 11.5px;">telegram</a> <a href="/tags/tkinter/" style="font-size: 10px;">tkinter</a> <a href="/tags/tor/" style="font-size: 19.5px;">tor</a> <a href="/tags/traccar/" style="font-size: 10px;">traccar</a> <a href="/tags/v2ray/" style="font-size: 12px;">v2ray</a> <a href="/tags/vpn/" style="font-size: 10.5px;">vpn</a> <a href="/tags/vrv/" style="font-size: 10px;">vrv</a> <a href="/tags/windows/" style="font-size: 13.5px;">windows</a> <a href="/tags/windows%E6%BF%80%E6%B4%BB/" style="font-size: 10px;">windows激活</a> <a href="/tags/word/" style="font-size: 18px;">word</a> <a href="/tags/wordpress/" style="font-size: 14px;">wordpress</a> <a href="/tags/workbench/" style="font-size: 11.5px;">workbench</a> <a href="/tags/wsl/" style="font-size: 10.5px;">wsl</a> <a href="/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" style="font-size: 10px;">三线表格</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" style="font-size: 10px;">个人图书馆</a> <a href="/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" style="font-size: 10px;">串口通讯</a> <a href="/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" style="font-size: 10px;">二维仿真</a> <a href="/tags/%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">云盘</a> <a href="/tags/%E4%BB%BF%E7%9C%9F/" style="font-size: 10.5px;">仿真</a> <a href="/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" style="font-size: 10.5px;">企业微信</a> <a href="/tags/%E5%85%8D%E6%B5%81/" style="font-size: 10px;">免流</a> <a href="/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" style="font-size: 10px;">免登录</a> <a href="/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" style="font-size: 11px;">免费域名</a> <a href="/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" style="font-size: 14.5px;">制冷技术</a> <a href="/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" style="font-size: 10px;">反爬虫</a> <a href="/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" style="font-size: 10px;">固态硬盘</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10.5px;">图床</a> <a href="/tags/%E5%9B%BE%E6%A0%87/" style="font-size: 13px;">图标</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 15.5px;">域名</a> <a href="/tags/%E5%A3%B0%E9%9F%B3/" style="font-size: 10px;">声音</a> <a href="/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" style="font-size: 10px;">天翼网关</a> <a href="/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" style="font-size: 10.5px;">安捷伦</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" style="font-size: 10.5px;">定时执行</a> <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" style="font-size: 13px;">宝塔面板</a> <a href="/tags/%E5%AF%86%E7%A0%81/" style="font-size: 17.5px;">密码</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" style="font-size: 10px;">微信防撤回</a> <a href="/tags/%E5%BF%85%E5%BA%94/" style="font-size: 10px;">必应</a> <a href="/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">手机投屏</a> <a href="/tags/%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">投屏</a> <a href="/tags/%E6%8A%A2%E7%A5%A8/" style="font-size: 10px;">抢票</a> <a href="/tags/%E6%8E%A7%E5%88%B6/" style="font-size: 19px;">控制</a> <a href="/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" style="font-size: 12px;">推荐软件</a> <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" style="font-size: 17.5px;">搬瓦工</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.5px;">数据库</a> <a href="/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">文章采集</a> <a href="/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" style="font-size: 13px;">新路由3</a> <a href="/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" style="font-size: 10.5px;">旁路由</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">服务器监控</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 19px;">树莓派</a> <a href="/tags/%E6%B4%9B%E9%9B%AA/" style="font-size: 10px;">洛雪</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">浏览器技术</a> <a href="/tags/%E6%B5%B7%E8%BE%B9/" style="font-size: 10px;">海边</a> <a href="/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 12px;">温度传感器</a> <a href="/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 10.5px;">温湿度传感器</a> <a href="/tags/%E6%B8%B8%E7%8E%A9/" style="font-size: 11px;">游玩</a> <a href="/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">热力膨胀阀</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 16.5px;">生活</a> <a href="/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">电子膨胀阀</a> <a href="/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" style="font-size: 13px;">电池热管理</a> <a href="/tags/%E7%99%BE%E5%BA%A6sign/" style="font-size: 10px;">百度sign</a> <a href="/tags/%E7%9B%B4%E6%92%AD/" style="font-size: 10px;">直播</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" style="font-size: 12.5px;">离线下载</a> <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">私有云盘</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10.5px;">缓存</a> <a href="/tags/%E7%BD%91%E7%AB%99/" style="font-size: 20px;">网站</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" style="font-size: 16px;">网站建设</a> <a href="/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">网站监控</a> <a href="/tags/%E7%BE%A4%E6%99%96/" style="font-size: 10.5px;">群晖</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 10px;">翻译</a> <a href="/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">胖鼠采集</a> <a href="/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" style="font-size: 10px;">自然对流</a> <a href="/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" style="font-size: 10px;">蒲公英</a> <a href="/tags/%E8%A7%86%E9%A2%91/" style="font-size: 15px;">视频</a> <a href="/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" style="font-size: 12px;">试验台</a> <a href="/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" style="font-size: 11.5px;">谷歌云盘</a> <a href="/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" style="font-size: 10.5px;">谷歌网盘</a> <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" style="font-size: 15.5px;">路由器</a> <a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 14px;">软件</a> <a href="/tags/%E9%82%AE%E4%BB%B6/" style="font-size: 13.5px;">邮件</a> <a href="/tags/%E9%82%AE%E7%AE%B1/" style="font-size: 11.5px;">邮箱</a> <a href="/tags/%E9%9D%92%E5%B2%9B/" style="font-size: 10px;">青岛</a> <a href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" style="font-size: 10px;">静态网页</a> <a href="/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">音乐</a> <a href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" style="font-size: 10.5px;">音乐播放器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/05/%E6%B4%9B%E9%9B%AA%E9%9F%B3%E4%B9%90%E5%8A%A9%E6%89%8B%E6%9B%B4%E6%8D%A2%E9%9F%B3%E4%B9%90%E6%BA%90%E5%A4%B4%E5%8F%8A%E5%90%8C%E6%AD%A5%E6%89%8B%E6%9C%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/">洛雪音乐助手更换音乐源头及同步手机客户端</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/28/%E5%88%A9%E7%94%A8%E5%9C%9F%E8%80%B3%E5%85%B6%E4%BC%98%E6%83%A0%E8%B4%AD%E4%B9%B0google-one/">利用土耳其优惠购买google one</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/11/%E7%BE%A4%E6%99%96dsm7-0%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%9C%A8esxi-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96-7-0-dsm7-0-1%E6%95%99%E7%A8%8B/">在ESXI 虚拟机上安装群晖 7.0 (DSM7.0.1)教程</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/19/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91fiddler%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">【工具】Fiddler使用教程</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/03/%E7%BE%A4%E6%99%96%E4%BD%BF%E7%94%A8alist%E6%8C%82%E8%BD%BD%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%E5%88%B0%E6%9C%AC%E5%9C%B0/">群晖使用alist挂载阿里云盘到本地</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

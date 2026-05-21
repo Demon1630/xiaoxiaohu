@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-将solidworks文件直接链接导入到ansys的workbench中" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/21/%E5%B0%86solidworks%E6%96%87%E4%BB%B6%E7%9B%B4%E6%8E%A5%E9%93%BE%E6%8E%A5%E5%AF%BC%E5%85%A5%E5%88%B0ansys%E7%9A%84workbench%E4%B8%AD/" class="article-date">
+  <time class="dt-published" datetime="2021-09-20T16:00:00.000Z" itemprop="datePublished">2021-09-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/09/21/%E5%B0%86solidworks%E6%96%87%E4%BB%B6%E7%9B%B4%E6%8E%A5%E9%93%BE%E6%8E%A5%E5%AF%BC%E5%85%A5%E5%88%B0ansys%E7%9A%84workbench%E4%B8%AD/">将solidworks文件直接链接导入到ansys的workbench中</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>使用ansys中的workbench进行仿真分析的时候，绘制三维结构可以使用ansys自带的SpaceClaim或者DesignModeler，默认双击打开的是SpaceClaim，右键可以选择使用DesignModeler。这两个软件虽然都可以绘制三维输出到ansys后续仿真过程中 <img src="https://i.loli.net/2021/09/21/O8sxCcG9i2MvrL6.png"></p>
+<p>但有时候我们的零部件是使用solidworks绘制的，或者太过复杂的结构使用ansys中的这两个软件绘制也很麻烦，这时候就要使用solidworks将绘制好的三维输出到ansys中，用于后续的网格划分和仿真分析。</p>
+<p>通常可以将solidworks绘制好文件，然后保存为通用格式输入到DesignModeler中进行进一步结构优化，消除一些不封闭的面，或者直接输入到workbench中，文件格式通常是step，但也可以直接将solidworks与ansys接口连接起来，直接从solidworks中输出到workbench</p>
+<p>首先使用使用ansys自带的CAD config manager，打开这个软件：</p>
+<p><img src="https://i.loli.net/2021/09/21/R3iG6hrLxZvnFAo.png"></p>
+<p>注意：要使用管理员模式打开，否则后续会出错误</p>
+<p>打开后可以看到可以链接到ansys的一些二维三维软件，找到solidworks并勾选上</p>
+<p><img src="https://i.loli.net/2021/09/21/4Gpu7EODLFxbeCz.png"> 然后点击下一个</p>
+<p><img src="https://i.loli.net/2021/09/21/OciHLJrE3lT8k1S.png"> 点击配置选定的CAD界面，此时就可以看到配置链接成功的提示，然后退出，打开solidworks就可以看到与ansys的接口了</p>
+<p><img src="https://i.loli.net/2021/09/21/YWCkKQTfU1MZuc7.png"> 注意：solidworks 中的文件必须先保存才能输入到ansys中的workbench中，输入成功后会自动打开workbench，里面结构已经更新完了</p>
+<p><img src="https://i.loli.net/2021/09/21/Wt7Ygd6QN9bhezs.png"></p>
+<p>之后我们就可以将其输出到下一步的网格划分等步骤去</p>
+<p>使用这种接口连接的方式，可以省去导入导出，较为方便，但如果绘制的solidworks文件中存在一些不闭合的面或线等，可能会在后续网格划分中出问题，这时候就需要先对三维结构进行一些提前处理，这个下次再介绍</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/21/%E5%B0%86solidworks%E6%96%87%E4%BB%B6%E7%9B%B4%E6%8E%A5%E9%93%BE%E6%8E%A5%E5%AF%BC%E5%85%A5%E5%88%B0ansys%E7%9A%84workbench%E4%B8%AD/" data-id="cuidEqlmSTAMg2SXR8zOip4S7" data-title="将solidworks文件直接链接导入到ansys的workbench中" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ansys/" rel="tag">ansys</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solidworks/" rel="tag">solidworks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/workbench/" rel="tag">workbench</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ansys2020-安装教程及下载地址" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/20/ansys2020-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%E5%8F%8A%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80/" class="article-date">
+  <time class="dt-published" datetime="2021-09-19T16:00:00.000Z" itemprop="datePublished">2021-09-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/09/20/ansys2020-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%E5%8F%8A%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80/">ANSYS2020 安装教程及下载地址</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>各位粉丝，大家好，以下为ANSYS2020版本的安装教程，注意此版本在Win10系统上安装，win7将不再支持，若有粉丝系统为Win7,建议安装其他版本，其他版本可在公众主页获取。  </p>
+<p><strong>提醒大家：ANSYS2020破解方式与其他版本方式不同，不在有证书管理器的方式进行，并且破解前需要删除原版本的证书管理器，故安装此版本后其余版本便不能在同时使用<del>！大家一定要注意</del>！</strong></p>
+<p> </p>
+<p>一、打开下载后的文件，点击Disk1，右键装载。  </p>
+<p> </p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-fe0f73f7987ec92e47e5570e7ce798c7.png"></p>
+<p>二、进入装载后的文件，右键点击Setup,以管理员身份进入安装界面  </p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-3176ce7003f3de556d2e4abcd8ff4db9.png"></p>
+<p>三、点击安装ANSYS产品，点击I agree  </p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-364db84fe1c916541f5898ccbe405c3b.png"></p>
+<p>四、指定软件安装目录，注意不要有中文路径。  </p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-6bd5938b0c1c27cdb3a60eb8cd2661d8.png"></p>
+<p>五、注意这儿选择跳过此步骤，一定不要搞错了哦</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-3b4b52b1866fa07d5509447cb295616c.png"></p>
+<p>六、根据自己需要，选择合适的模块进行安装，比如这里本人不做流体类的分析，所以将流体类的安装模块去掉了。  </p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-7ac76cac3b0d4206191f76a3339986db.png"></p>
+<p>七、CAD几何配置，选择稍后配置即可。  </p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-7def08fcff506d40685abbf7602cad0f.png"></p>
+<p>八、接下来就是 漫长的等待，注意在99%时会有较长时间等待，大家别放弃哦~  </p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-0524d627e57f7f8463675bdda531c72a.png"></p>
+<p>九、在中间步骤，会让你更换盘符继续安装，这时候进入原安装文件，右键点击Disk2，点击装载，这时候会在我的计算机里面出现新的盘符，点击浏览，选择新的盘符即可继续安装。安装一段时间后，会再次出现，这时候选择disk3,重复如上步骤即可。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-47258032644b60c22dbc60eadfbd9618.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-5625034925ac008421f4e57b7a5e189e.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-7be5584675b1d813b73d454d7856db84.png"></p>
+<p>十、安装产品完毕，接下来进行证书的安装，安装证书前需要前以前版本的证书管理器卸载（若有的话），证书管理器卸载方法如下：</p>
+<p>1）首先打开证书管理器，停止一切服务；</p>
+<p>2）打开注册表，删除如下三项</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-48705337bae0ad523e96ba6c03e238a9.png"></p>
+<p>3）删除环境变量中与ANSYS有关的一切系统变量；</p>
+<p>4）暴力删除原证书文件，可用360强制删除。</p>
+<p>十一、打开破解文件，将破解文件中的Share 和V202两个文件夹复制至安装目录下进行替换。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-be099ef5d19a061c1a3806ebf7fd6c51.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-8018391ad4a6231a5ae9f4117c42cbe5.png"></p>
+<p>十二、破解完成，Enjoy yourself~!  </p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-ce81036fff53566dde1aa94d883317ce.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-fad3b0a7e500e2348e81c2216739120f.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-a7fe21fbcdc97d26ee699a857b862b23.png"></p>
+<p>十三、Workbench中文界面设置如下  </p>
+<p>1、进入WB,点击Tools&gt;Options，点击Apperance&gt;Beta options,点击OK</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-779ead67c6fb0ba48b6b729114a73db6.png"></p>
+<p>2）重新进入Options,点击Language Options,选中Chinese。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-8937c7ca215206c42c159c38d05b0bfa.png"></p>
+<p>3）点击ok后，重新进入，wb部分地方即为中文了。  </p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-bd7337a4055f17142664c94dbe555f0d.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-2ed3415a09bd120644b6efaf96a9f762.png"></p>
+<p>Emmm,水哥觉得中文版界面真的非常Nice啊…..</p>
+<p>大家可自行体会哦~  </p>
+<p>下载地址：</p>
+<p>公众号后台回复关键词 **【ANSYS2020】**即可。</p>
+<p>最近为更加方便各位同学 学习Workbench，水哥特新开了ANSYS结构院的兄弟公众号 workbench结构院，两者主要区别如下：</p>
+<p>ANSYS结构院：主要介绍经典ANSYS在结构方面的运用与使用技巧；</p>
+<p>Workbench结构院：主要介绍WB在结构方面的运用与使用技巧。</p>
+<p>新开微信公众号二维码如下，欢迎学习Workbench的同学关注：</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-80f968ee6587da4cefac8ba240395cee.jpeg"></p>
+<p>祝好</p>
+<p>ANSYS结构院</p>
+<p>2020.07.28</p>
+<p>问题：</p>
+<p>ANSYS 2020R2按照教程破解后，打开fluent出现这个提示： Could not connect to any license server. The server is down or is not responsive. ANSYSLI_SERVERS: 2325@DESKTOP-KB267LP FLEXlm Servers: 1055@DESKTOP-KB267LP Could not connect to license server: 2325@DESKTOP-KB267LP. System error: 0 “”.</p>
+<p>解决方案：删除C:\Program Files\ANSYS Inc\Shared Files\Licensing\ansyslmd.ini   路径对应自己的安装路径</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/20/ansys2020-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%E5%8F%8A%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80/" data-id="cuidU607cAr4I3ZegN0UH_PAQ" data-title="ANSYS2020 安装教程及下载地址" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ansys/" rel="tag">ansys</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/word/" rel="tag">word</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/workbench/" rel="tag">workbench</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-pycharm安装及连接github克隆项目到本地" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/20/pycharm%E5%AE%89%E8%A3%85%E5%8F%8A%E8%BF%9E%E6%8E%A5github%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-09-19T16:00:00.000Z" itemprop="datePublished">2021-09-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>►<a class="article-category-link" href="/categories/python/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/09/20/pycharm%E5%AE%89%E8%A3%85%E5%8F%8A%E8%BF%9E%E6%8E%A5github%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0/">pycharm安装配置及连接GitHub克隆项目到本地</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>pycharm是python编程平台，便于在windows系统下进行python编程测试，下载地址<a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm/download/#section=windows">https://www.jetbrains.com/pycharm/download/#section=windows</a></p>
+<p>社区版是免费的，专业版需要付费，一般来说社区版已经可以满足需求了</p>
+<p>下载安装后就可以开始使用，这里着重介绍一下如何使用pycharm连接到我们的GitHub账户，然后就可以将我们编写的程序实时上传到GitHub仓库中，保持同步，同时也可以直接把GitHub中的程序同步到pycharm本地中进行编写。</p>
+<p>首先在pycharm中登入GitHub</p>
+<p><img src="https://i.loli.net/2021/09/20/jiqYOCDhHfzF5M4.png"></p>
+<p>首先进入设置，点击github，链接账号 <img src="https://i.loli.net/2021/09/20/RgPSZVh8eCqNHyl.png"></p>
+<p>如图所示操作，将打开一个GitHub授权页面，在网页上授权</p>
+<p><img src="https://i.loli.net/2021/09/20/pHzUB6df1JGqsEj.png"> 之后就添加GitHub账号到pycharm中了 <img src="https://i.loli.net/2021/09/20/DjWTK6RHVSbC3Yn.png"></p>
+<p>此时可以开始下一步操作，将GitHub上的程序克隆到本地</p>
+<p><img src="https://i.loli.net/2021/09/20/jVSCyhMAmeZok8t.png"></p>
+<p>如图所示，在里面点击GitHub，然后就会出现你GitHub中的所有仓库，找到你想克隆的，点击clone就可以克隆下来</p>
+<p><img src="https://i.loli.net/2021/09/20/gJQ95qBUaW7cSIo.png"> 克隆过程中需要用到git，如果你电脑没有安装git会提示你，点击自动安装git即可，然后重复操作就可以将所选仓库中的程序复制到本地</p>
+<p><img src="https://i.loli.net/2021/09/20/aBiteFSCEvbRyMo.png"></p>
+<p>同时后期你对程序做的修改也可以同步到GitHub仓库中</p>
+<p><img src="https://i.loli.net/2021/09/20/X7kpc3toKvHfLGE.png"></p>
+<p>后续要安装一些python库，可以按图中所示进行安装</p>
+<p><img src="https://i.loli.net/2021/09/20/lfgFz57baW6S3px.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/20/pycharm%E5%AE%89%E8%A3%85%E5%8F%8A%E8%BF%9E%E6%8E%A5github%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0/" data-id="cuidW8-wb69DvHDJQ3nOP6mUQ" data-title="pycharm安装配置及连接GitHub克隆项目到本地" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pycharm/" rel="tag">pycharm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/" rel="tag">windows</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-青岛游记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/20/%E9%9D%92%E5%B2%9B%E6%B8%B8%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-09-19T16:00:00.000Z" itemprop="datePublished">2021-09-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/09/20/%E9%9D%92%E5%B2%9B%E6%B8%B8%E8%AE%B0/">青岛游记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>中秋节前，跑去青岛出差了快一个星期，第一次去青岛，第一次去海边，感觉还不错，可惜在海边这么多天就去海边玩了一晚。。。</p>
+<p>[video width&#x3D;”960” height&#x3D;”464” mp4&#x3D;”<a target="_blank" rel="noopener" href="http://www.demon1630.cn/wp-content/uploads/2021/09/1632133330-b0b6bf330dad71b4cbf6d5511153e0b9.mp4%22/]/[/video/]">http://www.demon1630.cn/wp-content/uploads/2021/09/1632133330-b0b6bf330dad71b4cbf6d5511153e0b9.mp4&quot;\]\[/video\]</a></p>
+<p>带了块贝壳回来+裤子被海浪打湿了。。。</p>
+<p>原谅第一次看到海的孩子，兴奋之情溢于言表</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/20/%E9%9D%92%E5%B2%9B%E6%B8%B8%E8%AE%B0/" data-id="cuidoPg5OLSN2t39P9fKJSlpl" data-title="青岛游记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%B7%E8%BE%B9/" rel="tag">海边</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%92%E5%B2%9B/" rel="tag">青岛</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-xmind-zen2021​安装教程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/19/xmind-zen2021%E2%80%8B%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-09-18T16:00:00.000Z" itemprop="datePublished">2021-09-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress/">wordpress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/09/19/xmind-zen2021%E2%80%8B%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">Xmind ZEN2021​安装教程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-4d20745c8165698fc6e28fce0a946929.gif">  </p>
+<p>下载</p>
+<p>软件</p>
+<h1 id="软件名称-：Xmind-ZEN-2021"><a href="#软件名称-：Xmind-ZEN-2021" class="headerlink" title="[软件名称]：Xmind ZEN 2021"></a>[软件名称]：Xmind ZEN 2021</h1><p>[软件语言]：简体中文   </p>
+<h1 id="软件大小-：151-50M"><a href="#软件大小-：151-50M" class="headerlink" title="[软件大小]：151.50M"></a>[软件大小]：151.50M</h1><p>[安装环境]：Win10&#x2F;Win8&#x2F;Win7﻿﻿﻿</p>
+<p>[硬件要求]：CPU@2GHz 内存@4G(或更高)</p>
+<p>[64位下载链接]：</p>
+<p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1MI986wFGeVMHt/_PdjBjQtQ">https://pan.baidu.com/s/1MI986wFGeVMHt\_PdjBjQtQ</a></p>
+<p>[提取码]：3456</p>
+<p>[下载方法]：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA4MjU4MTg2Ng==&hid=1&sn=78218e2a17854e08e9e9d35c175f7f57&scene=18">点击查看如何下载软件？</a></p>
+<p>[安装帮助]：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA4MjU4MTg2Ng==&hid=1&sn=78218e2a17854e08e9e9d35c175f7f57&scene=18">点击进入管家服务中心！</a></p>
+<p>软件</p>
+<p>简介</p>
+<h1 id="XMind-是一款非常实用的思维导图软件，应用全球最先进的Eclipse-RCP-软件架构，全力打造易用、高效的可视化思维软件，强调软件的可扩展、跨平台、稳定性和性能，致力于使用先进的软件技术帮助用户真正意义上提高生产率。"><a href="#XMind-是一款非常实用的思维导图软件，应用全球最先进的Eclipse-RCP-软件架构，全力打造易用、高效的可视化思维软件，强调软件的可扩展、跨平台、稳定性和性能，致力于使用先进的软件技术帮助用户真正意义上提高生产率。" class="headerlink" title="XMind 是一款非常实用的思维导图软件，应用全球最先进的Eclipse RCP 软件架构，全力打造易用、高效的可视化思维软件，强调软件的可扩展、跨平台、稳定性和性能，致力于使用先进的软件技术帮助用户真正意义上提高生产率。"></a>XMind 是一款非常实用的思维导图软件，应用全球最先进的Eclipse RCP 软件架构，全力打造易用、高效的可视化思维软件，强调软件的可扩展、跨平台、稳定性和性能，致力于使用先进的软件技术帮助用户真正意义上提高生产率。</h1><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-969383b7304dc3423d05f716febceada.gif"></p>
+<p>1.鼠标右击【XMind2021 (64bit)】选择【解压到 XMind2021 (64bit)】。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-dec4346ae6b37ccdd25cebbb3b500528.png"></p>
+<p>2.双击打开解压后的【XMind2021 (64bit)】文件夹。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-e69eda1dc95e3f4780c40f7b27e77362.png"></p>
+<p>3.鼠标右击【Xmind 2021】选择【复制】。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-80cd29f59f7dba1dba1523a20985a76d.png"></p>
+<p>4.打开需要将软件安装的磁盘（如：打开D盘），在空白处鼠标右击选择【粘贴】。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-ff5d456ab30f86ba94c8bb0e3b6504c7.png"></p>
+<p>5.双击打开粘贴后的【Xmind 2021】文件夹。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-d63275cabf6340c0c62ba72c9133b8b2.png"></p>
+<p>6.鼠标右击【Xmind】选择【发送到】选择【桌面快捷方式】。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-635ed8377881181965b204a462d05364.png"></p>
+<p>7.双击桌面【XMind - 快捷方式】图标启动软件。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-428c359d9751a1ff3ed65c6f4aa121e9.png"></p>
+<p>8.点击【继续】。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-bf8d4d29a056a068d36a454d37403fc8.png"></p>
+<p>9.点击【同意】。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-6772ac7ff73e1ed2637dc23aeb6d095d.png"></p>
+<p>10.点击【跳过】。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-ef64208f40421a7a5c5ba52350f24f1c.png"></p>
+<p>11.安装成功。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-4550ee06d0c727a4522674cd12127bc6.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2021/09/frc-ac42ff79d7fdff14ce31b593b224eb48.gif"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/19/xmind-zen2021%E2%80%8B%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" data-id="cuidbMoeogG85yfsiPAb25sAa" data-title="Xmind ZEN2021​安装教程" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-树莓派3b安装openwrt并进行配置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/07/%E6%A0%91%E8%8E%93%E6%B4%BE3b%E5%AE%89%E8%A3%85openwrt%E5%B9%B6%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE/" class="article-date">
+  <time class="dt-published" datetime="2021-07-06T16:00:00.000Z" itemprop="datePublished">2021-07-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/07/07/%E6%A0%91%E8%8E%93%E6%B4%BE3b%E5%AE%89%E8%A3%85openwrt%E5%B9%B6%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE/">树莓派3b+安装openwrt并进行配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>之前有写文章讲使用新路由3刷老毛子固件从而实现上校园网和fq：</p>
+<h1 id="newifi-3-路由器刷入老毛子固件教程"><a href="#newifi-3-路由器刷入老毛子固件教程" class="headerlink" title="newifi 3 路由器刷入老毛子固件教程"></a><a target="_blank" rel="noopener" href="http://www.demon1630.cn/%e5%b0%8f%e7%99%bd%e4%b9%9f%e8%83%bd%e5%88%b7%ef%bc%8cnewifi-3-%e8%b7%af%e7%94%b1%e5%99%a8%e5%88%b7%e5%85%a5%e8%80%81%e6%af%9b%e5%ad%90%e5%9b%ba%e4%bb%b6%e6%95%99%e7%a8%8b/">newifi 3 路由器刷入老毛子固件教程</a></h1><p> </p>
+<p>刚好手上有一个树莓派3b+吃灰，同样可以通过刷openwrt来当路由器使用，性能相当强悍</p>
+<h2 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h2><p>树莓派3B+及其电源，一张SD卡（以及读卡器），一根网线，联网电脑。</p>
+<p>相应操作流程类似于在树莓派上刷系统，可以参考文章：<a target="_blank" rel="noopener" href="http://www.demon1630.cn/%e6%a0%91%e8%8e%93%e6%b4%be%e7%83%a7%e5%bd%95%e7%b3%bb%e7%bb%9f/">树莓派烧录系统</a>，下载相应的软件，操作流程也是类似的</p>
+<p> </p>
+<h2 id="下载openwrt固件"><a href="#下载openwrt固件" class="headerlink" title="下载openwrt固件"></a>下载openwrt固件</h2><p>固件可以去网上搜或者直接到官网下载，我这里是到官网下载的：<a target="_blank" rel="noopener" href="https://firmware-selector.openwrt.org/">https://firmware-selector.openwrt.org/</a>，到这里搜索对应自己固件的openwrt版本，比如我的树莓派3b+：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210707102936.png"> 点击搜索对应版本然后下载</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210707103101.png"> 或者也可以到官网中所有固件中查找下载：<a target="_blank" rel="noopener" href="https://openwrt.org/zh/toh/views/toh_fwdownload">https://openwrt.org/zh/toh/views/toh_fwdownload</a>这里面包含有所有的固件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210707103631.png"> 下载完成固件后就刷入TF卡中即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210707103812.png"></p>
+<p>之后插入树莓派，然后用网线将树莓派与电脑连接起来</p>
+<p>在浏览器中输入192.168.1.1就可以进入树莓派openwrt后台，初次登入无需密码直接就可以登入</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210707171657.png"></p>
+<p>进入后台后设置系统密码,到system-administration-router password</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210707172040.png"></p>
+<p> </p>
+<h2 id="配置树莓派上网"><a href="#配置树莓派上网" class="headerlink" title="配置树莓派上网"></a>配置树莓派上网</h2><p>先开启wifi</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210707173308.png"></p>
+<p>开启后点击无线WiFi的Edit</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210707173601.png"></p>
+<p>在mode这里选择Legacy，只有这个模式才可以开启2.4GHz的WiFi，其余模式只能开启5GHz，如果你的电脑只能连接2.4GHz的记得开启这个模式，但实测采用2.4GHz网速差很多，不过也够用</p>
+<p>然后点击save，最后点击save&amp;Apply 就将wifi配置好了</p>
+<p>配置Wan口</p>
+<p>点击Network-Interfaces，然后点击添加新端口，填入WAN，选择eth0</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210707175322.png"></p>
+<p>创建完成后编辑wan口</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210707175909.png"></p>
+<p>修改后保存并应用,如果主路由地址为192.168.1.1，此时要修改</p>
+<p>然后将树莓派与路由器用网线连接，此时连接树莓派wifi，openwrt就可以上网了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/07/07/%E6%A0%91%E8%8E%93%E6%B4%BE3b%E5%AE%89%E8%A3%85openwrt%E5%B9%B6%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE/" data-id="cuida0T3P5RVlJN6aVneHfvBH" data-title="树莓派3b+安装openwrt并进行配置" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openwrt/" rel="tag">openwrt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tor/" rel="tag">tor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/word/" rel="tag">word</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AF%86%E7%A0%81/" rel="tag">密码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" rel="tag">新路由3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag">树莓派</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag">路由器</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-日常踩坑系类-python-pip安装时，报错valueerror-check_hostname-requires-server_hostname" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/27/%E6%97%A5%E5%B8%B8%E8%B8%A9%E5%9D%91%E7%B3%BB%E7%B1%BB-python-pip%E5%AE%89%E8%A3%85%E6%97%B6%EF%BC%8C%E6%8A%A5%E9%94%99valueerror-check_hostname-requires-server_hostname/" class="article-date">
+  <time class="dt-published" datetime="2021-06-26T16:00:00.000Z" itemprop="datePublished">2021-06-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress/">wordpress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/27/%E6%97%A5%E5%B8%B8%E8%B8%A9%E5%9D%91%E7%B3%BB%E7%B1%BB-python-pip%E5%AE%89%E8%A3%85%E6%97%B6%EF%BC%8C%E6%8A%A5%E9%94%99valueerror-check_hostname-requires-server_hostname/">[日常踩坑系类] Python pip安装时，报错ValueError: check_hostname requires server_hostname</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>换了台新环境，安装第三方库老是报错，如图：<br>ValueError: check_hostname requires server_hostname<br><img src="http://www.demon1630.cn/wp-content/uploads/2021/06/frc-6eac5c7b1c50c31cad87e5282f9ae6b1.png"></p>
+<h2 id="处理方法"><a href="#处理方法" class="headerlink" title="处理方法"></a>处理方法</h2><p>网上查找资料，关闭代理，解决！<br>Proxy-&gt;use a proxy server<br>中文：代理-&gt;使用代理（关闭）<br><img src="http://www.demon1630.cn/wp-content/uploads/2021/06/frc-b20aee97b6b4247b902a7145bdf712ea.png"></p>
+<h2 id="再次安装，成功"><a href="#再次安装，成功" class="headerlink" title="再次安装，成功"></a>再次安装，成功</h2><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/06/frc-7d14c4059e5809d2c6ab5953760af25a.png"></p>
+<p>文章来源于互联网:<a target="_blank" rel="noopener" href="https://blog.csdn.net/bl_yang/article/details/116742097">[日常踩坑系类] Python pip安装时，报错ValueError: check_hostname requires server_hostname</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/27/%E6%97%A5%E5%B8%B8%E8%B8%A9%E5%9D%91%E7%B3%BB%E7%B1%BB-python-pip%E5%AE%89%E8%A3%85%E6%97%B6%EF%BC%8C%E6%8A%A5%E9%94%99valueerror-check_hostname-requires-server_hostname/" data-id="cuiddlISWbeR5P7-MZepMluAs" data-title="[日常踩坑系类] Python pip安装时，报错ValueError: check_hostname requires server_hostname" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-centos7安装python3-7" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/14/centos7%E5%AE%89%E8%A3%85python3-7/" class="article-date">
+  <time class="dt-published" datetime="2021-06-13T16:00:00.000Z" itemprop="datePublished">2021-06-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/14/centos7%E5%AE%89%E8%A3%85python3-7/">centos7安装python3.7和部分库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>按照命令一步步来，实在不行重装系统后再重新开始安装</p>
+<h2 id="先配置安装环境"><a href="#先配置安装环境" class="headerlink" title="先配置安装环境"></a>先配置安装环境</h2><p>在根目录上执行，先切换到根目录：cd &#x2F;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install libffi-devel -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><p>切换目录到 你的root目录下：  #：cd &#x2F;root</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvJf  Python-3.7.0.tar.xz</span><br></pre></td></tr></table></figure>
+
+<p>（如果你的环境没有安装 wget 的话，下载时可能会报错：：：<strong>-bash: wget: command not found</strong></p>
+<p>-—-解决方法：先安装再下载python3 ：#：yum -y install wget）</p>
+<h2 id="开始编译安装"><a href="#开始编译安装" class="headerlink" title="开始编译安装"></a>开始编译安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/local/python3</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd Python-3.7.0</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/local/python3</span><br></pre></td></tr></table></figure>
+
+<p>（注： 当你输入上面的命令执行时，可能会报错：<strong>configure: error: no acceptable C compiler found in $PATH</strong></p>
+<p>-—–解决办法：安装 gcc 环境 ：yum install -y gcc   ，安装成功后重新执行  #：.&#x2F;configure –prefix&#x3D;&#x2F;usr&#x2F;python）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install   </span><br></pre></td></tr></table></figure>
+
+<h2 id="创建软件连接"><a href="#创建软件连接" class="headerlink" title="创建软件连接"></a>创建软件连接</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/python3 /usr/local/bin/python3</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3</span><br></pre></td></tr></table></figure>
+
+<p>此时已经安装完成，使用命令查看</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 --version</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614163236.png"></p>
+<p> </p>
+<h2 id="升级pip3"><a href="#升级pip3" class="headerlink" title="升级pip3"></a>升级pip3</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m pip install --upgrade pip</span><br></pre></td></tr></table></figure>
+
+<p> </p>
+<p>安装requests库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install requests</span><br></pre></td></tr></table></figure>
+
+<p>安装bs4</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install beautifulsoup4</span><br></pre></td></tr></table></figure>
+
+<p>安装fake_useragent</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install fake_useragent</span><br></pre></td></tr></table></figure>
+
+<p>安装telegram</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install python-telegram-bot</span><br></pre></td></tr></table></figure>
+
+<p>安装smtplib</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install PyEmail</span><br></pre></td></tr></table></figure>
+
+<p>安装openpyxl</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install openpyxl</span><br></pre></td></tr></table></figure>
+
+<p>安装wordcloud</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install wordcloud</span><br></pre></td></tr></table></figure>
+
+<p>安装jieba</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install jieba</span><br></pre></td></tr></table></figure>
+
+<p>安装selenium</p>
+<p>pip3 install selenium</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/14/centos7%E5%AE%89%E8%A3%85python3-7/" data-id="cuid0weDgbb0IOtTBFT5hoz-v" data-title="centos7安装python3.7和部分库" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/" rel="tag">python3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/telegram/" rel="tag">telegram</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/word/" rel="tag">word</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-弃用server酱，python使用企业微信小程序发送消息到微信" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/14/%E5%BC%83%E7%94%A8server%E9%85%B1%EF%BC%8Cpython%E4%BD%BF%E7%94%A8%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E5%88%B0%E5%BE%AE%E4%BF%A1/" class="article-date">
+  <time class="dt-published" datetime="2021-06-13T16:00:00.000Z" itemprop="datePublished">2021-06-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/14/%E5%BC%83%E7%94%A8server%E9%85%B1%EF%BC%8Cpython%E4%BD%BF%E7%94%A8%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E5%88%B0%E5%BE%AE%E4%BF%A1/">弃用server酱，python使用企业微信小程序发送消息到微信中</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>由于微信网页端口关闭了，现在基本上不能直接利用python调用微信来发送消息通知了，虽然有server酱，使用也很广泛，但随着server酱改版。。。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614184220.png"></p>
+<p>然后就没然后了。。。。。 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614184346.png"></p>
+<p>免费的只支持5条消息。。。。诶，慢慢都是要盈利的了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614184944.png"></p>
+<p> </p>
+<p>基本上是强制会员了。。。。</p>
+<p>不想冲会员，最简单的方法是使用telegram，配置简单，而且使用很方便，但由于国内，所以必须得时刻fq才能收到消息，而且平时使用最多的也是微信，因此通过微信来推送信息还是很有必要的</p>
+<p>看了一下server酱最新版本，它也是调用企业微信接口来实现发送信息的，虽然还可以配置其他如钉钉等接口，不过我们主要还是想在微信里接收通知</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614185217.png"></p>
+<p>由于企业微信本身就比较方便调用接口，所以继续使用server酱来调用就显得多此一举了（主要是现在必须要会员，否则只能发送5条信息。。。）</p>
+<p>所以这里介绍一下python直接使用企业微信接口发送消息</p>
+<p>首先得要注册有企业微信，个人也可以注册的，企业随便创建一个就可以</p>
+<p>然后登入企业微信管理后台</p>
+<p>创建一个应用，然后获取应用ID( <code>agentid</code> )，应用Secret( <code>secret</code> )，具体创建方法可以参考server酱中的描述：<a target="_blank" rel="noopener" href="https://sct.ftqq.com/forward">https://sct.ftqq.com/forward</a>，就不多介绍了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614185632.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614190059.png"></p>
+<p>获取企业ID，在我的企业中可以看到</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614190550.png"></p>
+<p>开始编写python程序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">from  fake_useragent import UserAgent</span><br><span class="line"></span><br><span class="line">def send_wechat(title,text,detal_url):</span><br><span class="line"></span><br><span class="line">    get_acs_token_url = &#x27;https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=你的企业ID&amp;corpsecret=应用的Secret&#x27;</span><br><span class="line"></span><br><span class="line">    access = requests.get(url=get_acs_token_url)</span><br><span class="line">    access_token = eval(access.text)[&#x27;access_token&#x27;]</span><br><span class="line"></span><br><span class="line">    url = f&#x27;https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=&#123;access_token&#125;&#x27;</span><br><span class="line">    print(url)</span><br><span class="line"></span><br><span class="line">    headers = &#123;</span><br><span class="line">        &#x27;User-Agent&#x27;: UserAgent().random</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    key = &#123;</span><br><span class="line">        &quot;touser&quot;: &quot;@all&quot;,</span><br><span class="line">        # &quot;toparty&quot;: &quot;PartyID1|PartyID2&quot;,</span><br><span class="line">        # &quot;totag&quot;: &quot;TagID1 | TagID2&quot;,</span><br><span class="line">        &quot;msgtype&quot;: &quot;textcard&quot;,</span><br><span class="line">        &quot;agentid&quot;: 应用ID,</span><br><span class="line">        &quot;textcard&quot;: &#123;</span><br><span class="line">            &quot;title&quot;: title,</span><br><span class="line">            &quot;description&quot;: text,</span><br><span class="line">            &quot;url&quot;: detal_url,</span><br><span class="line">            &quot;btntxt&quot;: &quot;更多&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;safe&quot;: 0,</span><br><span class="line">        &quot;enable_id_trans&quot;: 0,</span><br><span class="line">        &quot;enable_duplicate_check&quot;: 0,</span><br><span class="line">        &quot;duplicate_check_interval&quot;: 1800</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    res = requests.post(url=url,headers=headers,json=key)</span><br><span class="line">    # print(res.status_code)</span><br><span class="line">    # print(res.text)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>修改的地方主要是这三个地方，修改为自己的就行：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614192614.png"></p>
+<p>主要包含两部分，前面是获取接口调用中需要用到的access_token，后面是调用接口然后发送信息</p>
+<p>具体可以参考：<a target="_blank" rel="noopener" href="https://work.weixin.qq.com/api/doc/10013#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E8%8E%B7%E5%8F%96access_token">获取access_token</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614191053.png"></p>
+<p>调用接口 ：<a target="_blank" rel="noopener" href="https://work.weixin.qq.com/api/doc/90000/90135/90236#%E6%96%87%E6%9C%AC%E6%B6%88%E6%81%AF">发送消息</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614191251.png"></p>
+<p>我这边发送的是文本卡片信息，其他如文本、图片、视频等信息可以自己参考修改</p>
+<p>注意：在使用post发送信息的时候可能会出现报错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614191505.png"></p>
+<p>无法正常发送信息，查看返回码说错误的msgtype，这主要是由于 post发送过去的头部是“application&#x2F;json”，是json格式的，所以在python 的request中，不能使用data,data的数据只能是字典，列表或者元组。 而json&#x3D; 发送的是json的数据，所以这里需要使用json</p>
+<p>即代码中使用的json&#x3D;key，不能使用data&#x3D;key</p>
+<p>此时就可以正常使用企业微信发送消息，然后在微信中也可以收到提醒了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614191924.png"></p>
+<p>而且没有次数限制。。。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/14/%E5%BC%83%E7%94%A8server%E9%85%B1%EF%BC%8Cpython%E4%BD%BF%E7%94%A8%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E5%88%B0%E5%BE%AE%E4%BF%A1/" data-id="cuidmAKjoPm9J_4_6U3qLf9p3" data-title="弃用server酱，python使用企业微信小程序发送消息到微信中" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scr/" rel="tag">scr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/telegram/" rel="tag">telegram</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" rel="tag">企业微信</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-三线表格制作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/06/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC%E5%88%B6%E4%BD%9C/" class="article-date">
+  <time class="dt-published" datetime="2021-06-05T16:00:00.000Z" itemprop="datePublished">2021-06-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/excel/">excel</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/06/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC%E5%88%B6%E4%BD%9C/">三线表格制作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>在论文及部分期刊中，表格需要设置为三线表格形式，这里介绍一下如何设置</p>
+<p>首先先选中表格，如何选择所有框线</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210606195744.png"></p>
+<p>把所有框线显示出来</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210606200044.png"> 避免有合并的单元格，否则将导致无法选中</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210606200143.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210606200300.png"></p>
+<p>之后依次点击内部框线、左侧框线、右侧框线就可以将这些框线去除了 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210606200412.png"></p>
+<p>同样对上面标题行进行类似操作 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210606200556.png"></p>
+<p>此时三线表格大体完成了 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210606200650.png"></p>
+<p>不过后续还需调整三根框线的宽度</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210606200826.png"></p>
+<p>选择表格，点击设计，一般中间框线宽度为0.75磅，上下两根框线宽度为1.5磅，然后用边框刷点击边框线就可以调整边框线宽度</p>
+<p>最后再把原先合并的单元格合并</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210606201015.png"></p>
+<p>最后对表格内文字进行优化布局</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210606201202.png"></p>
+<p>不要使用回车符来调整文字位置，之前我一直使用回车符，结果一直无法对齐， 点击这个居中按钮可以实现文字在单元格内左右上下居中，文字前有回车符的要把回车符删除，因为回车符也会占一行，导致无法居中。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/06/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC%E5%88%B6%E4%BD%9C/" data-id="cuidfSFrTMmfofT9sE9tqIDe5" data-title="三线表格制作" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/word/" rel="tag">word</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" rel="tag">三线表格</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ansys/">ansys</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ansys/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ansys/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/kali-linux/">kali-linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/kali-linux/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/kali-linux/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/labview/">labview</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/tor/">tor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/tor/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/%E6%B1%BD%E8%BD%A6%E7%83%AD%E7%AE%A1%E7%90%86/">汽车热管理</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/">路由器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ac2100/" rel="tag">ac2100</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angilent34970a/" rel="tag">angilent34970a</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ansys/" rel="tag">ansys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bing/" rel="tag">bing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bitwarden/" rel="tag">bitwarden</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/calibre/" rel="tag">calibre</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/catia/" rel="tag">catia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatgpt/" rel="tag">chatgpt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloudflare/" rel="tag">cloudflare</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/endnote/" rel="tag">endnote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/endnotes9/" rel="tag">endnotes9</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/excel/" rel="tag">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/floefd/" rel="tag">floefd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fluent/" rel="tag">fluent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gps%E5%AE%9A%E4%BD%8D/" rel="tag">gps定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali-linux/" rel="tag">kali-linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kms/" rel="tag">kms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/labview/" rel="tag">labview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" rel="tag">linux子系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/newifi3/" rel="tag">newifi3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nextcloud/" rel="tag">nextcloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nps/" rel="tag">nps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openwrt/" rel="tag">openwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pid%E6%8E%A7%E5%88%B6/" rel="tag">pid控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" rel="tag">plc模糊逻辑控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pycharm/" rel="tag">pycharm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/" rel="tag">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/refprop/" rel="tag">refprop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scr/" rel="tag">scr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrcpy/" rel="tag">scrcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sndcpy/" rel="tag">sndcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solidworks/" rel="tag">solidworks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssr/" rel="tag">ssr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegram/" rel="tag">telegram</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tkinter/" rel="tag">tkinter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tor/" rel="tag">tor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/traccar/" rel="tag">traccar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/v2ray/" rel="tag">v2ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vpn/" rel="tag">vpn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vrv/" rel="tag">vrv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows%E6%BF%80%E6%B4%BB/" rel="tag">windows激活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/word/" rel="tag">word</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/" rel="tag">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/workbench/" rel="tag">workbench</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl/" rel="tag">wsl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" rel="tag">三线表格</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" rel="tag">个人图书馆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" rel="tag">串口通讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" rel="tag">二维仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E7%9B%98/" rel="tag">云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%BF%E7%9C%9F/" rel="tag">仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" rel="tag">企业微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%8D%E6%B5%81/" rel="tag">免流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" rel="tag">免登录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" rel="tag">免费域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" rel="tag">制冷技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" rel="tag">反爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" rel="tag">固态硬盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E6%A0%87/" rel="tag">图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%9F%E5%90%8D/" rel="tag">域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A3%B0%E9%9F%B3/" rel="tag">声音</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" rel="tag">天翼网关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" rel="tag">安捷伦</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" rel="tag">定时执行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" rel="tag">宝塔面板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81/" rel="tag">密码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" rel="tag">微信防撤回</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%85%E5%BA%94/" rel="tag">必应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" rel="tag">手机投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%95%E5%B1%8F/" rel="tag">投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%A2%E7%A5%A8/" rel="tag">抢票</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" rel="tag">推荐软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" rel="tag">搬瓦工</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" rel="tag">文章采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" rel="tag">新路由3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" rel="tag">旁路由</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" rel="tag">服务器监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B4%9B%E9%9B%AA/" rel="tag">洛雪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" rel="tag">浏览器技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%B7%E8%BE%B9/" rel="tag">海边</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温湿度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E7%8E%A9/" rel="tag">游玩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">热力膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">电子膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" rel="tag">电池热管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%99%BE%E5%BA%A6sign/" rel="tag">百度sign</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%B4%E6%92%AD/" rel="tag">直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" rel="tag">离线下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" rel="tag">私有云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" rel="tag">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" rel="tag">网站监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%A4%E6%99%96/" rel="tag">群晖</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" rel="tag">胖鼠采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" rel="tag">自然对流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" rel="tag">蒲公英</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" rel="tag">试验台</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" rel="tag">谷歌云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" rel="tag">谷歌网盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag">路由器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%82%AE%E4%BB%B6/" rel="tag">邮件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%82%AE%E7%AE%B1/" rel="tag">邮箱</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%92%E5%B2%9B/" rel="tag">青岛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" rel="tag">静态网页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9F%B3%E4%B9%90/" rel="tag">音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" rel="tag">音乐播放器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ac2100/" style="font-size: 10px;">ac2100</a> <a href="/tags/angilent34970a/" style="font-size: 10.5px;">angilent34970a</a> <a href="/tags/ansys/" style="font-size: 12px;">ansys</a> <a href="/tags/bing/" style="font-size: 10px;">bing</a> <a href="/tags/bitwarden/" style="font-size: 10px;">bitwarden</a> <a href="/tags/calibre/" style="font-size: 10px;">calibre</a> <a href="/tags/catia/" style="font-size: 10px;">catia</a> <a href="/tags/chatgpt/" style="font-size: 10px;">chatgpt</a> <a href="/tags/cloudflare/" style="font-size: 11.5px;">cloudflare</a> <a href="/tags/docker/" style="font-size: 12px;">docker</a> <a href="/tags/endnote/" style="font-size: 10px;">endnote</a> <a href="/tags/endnotes9/" style="font-size: 10px;">endnotes9</a> <a href="/tags/excel/" style="font-size: 16px;">excel</a> <a href="/tags/floefd/" style="font-size: 10px;">floefd</a> <a href="/tags/fluent/" style="font-size: 11px;">fluent</a> <a href="/tags/gps%E5%AE%9A%E4%BD%8D/" style="font-size: 10px;">gps定位</a> <a href="/tags/kali-linux/" style="font-size: 13px;">kali-linux</a> <a href="/tags/kms/" style="font-size: 10px;">kms</a> <a href="/tags/labview/" style="font-size: 19.5px;">labview</a> <a href="/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">linux子系统</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/nas/" style="font-size: 10.5px;">nas</a> <a href="/tags/newifi3/" style="font-size: 12.5px;">newifi3</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/nps/" style="font-size: 13px;">nps</a> <a href="/tags/openwrt/" style="font-size: 12px;">openwrt</a> <a href="/tags/pid%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">pid控制</a> <a href="/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">plc模糊逻辑控制</a> <a href="/tags/pycharm/" style="font-size: 10px;">pycharm</a> <a href="/tags/python/" style="font-size: 17px;">python</a> <a href="/tags/python3/" style="font-size: 10.5px;">python3</a> <a href="/tags/refprop/" style="font-size: 11px;">refprop</a> <a href="/tags/scr/" style="font-size: 18.5px;">scr</a> <a href="/tags/scrcpy/" style="font-size: 10.5px;">scrcpy</a> <a href="/tags/sndcpy/" style="font-size: 10px;">sndcpy</a> <a href="/tags/solidworks/" style="font-size: 10px;">solidworks</a> <a href="/tags/ssr/" style="font-size: 10.5px;">ssr</a> <a href="/tags/telegram/" style="font-size: 11.5px;">telegram</a> <a href="/tags/tkinter/" style="font-size: 10px;">tkinter</a> <a href="/tags/tor/" style="font-size: 19.5px;">tor</a> <a href="/tags/traccar/" style="font-size: 10px;">traccar</a> <a href="/tags/v2ray/" style="font-size: 12px;">v2ray</a> <a href="/tags/vpn/" style="font-size: 10.5px;">vpn</a> <a href="/tags/vrv/" style="font-size: 10px;">vrv</a> <a href="/tags/windows/" style="font-size: 13.5px;">windows</a> <a href="/tags/windows%E6%BF%80%E6%B4%BB/" style="font-size: 10px;">windows激活</a> <a href="/tags/word/" style="font-size: 18px;">word</a> <a href="/tags/wordpress/" style="font-size: 14px;">wordpress</a> <a href="/tags/workbench/" style="font-size: 11.5px;">workbench</a> <a href="/tags/wsl/" style="font-size: 10.5px;">wsl</a> <a href="/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" style="font-size: 10px;">三线表格</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" style="font-size: 10px;">个人图书馆</a> <a href="/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" style="font-size: 10px;">串口通讯</a> <a href="/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" style="font-size: 10px;">二维仿真</a> <a href="/tags/%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">云盘</a> <a href="/tags/%E4%BB%BF%E7%9C%9F/" style="font-size: 10.5px;">仿真</a> <a href="/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" style="font-size: 10.5px;">企业微信</a> <a href="/tags/%E5%85%8D%E6%B5%81/" style="font-size: 10px;">免流</a> <a href="/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" style="font-size: 10px;">免登录</a> <a href="/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" style="font-size: 11px;">免费域名</a> <a href="/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" style="font-size: 14.5px;">制冷技术</a> <a href="/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" style="font-size: 10px;">反爬虫</a> <a href="/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" style="font-size: 10px;">固态硬盘</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10.5px;">图床</a> <a href="/tags/%E5%9B%BE%E6%A0%87/" style="font-size: 13px;">图标</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 15.5px;">域名</a> <a href="/tags/%E5%A3%B0%E9%9F%B3/" style="font-size: 10px;">声音</a> <a href="/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" style="font-size: 10px;">天翼网关</a> <a href="/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" style="font-size: 10.5px;">安捷伦</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" style="font-size: 10.5px;">定时执行</a> <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" style="font-size: 13px;">宝塔面板</a> <a href="/tags/%E5%AF%86%E7%A0%81/" style="font-size: 17.5px;">密码</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" style="font-size: 10px;">微信防撤回</a> <a href="/tags/%E5%BF%85%E5%BA%94/" style="font-size: 10px;">必应</a> <a href="/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">手机投屏</a> <a href="/tags/%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">投屏</a> <a href="/tags/%E6%8A%A2%E7%A5%A8/" style="font-size: 10px;">抢票</a> <a href="/tags/%E6%8E%A7%E5%88%B6/" style="font-size: 19px;">控制</a> <a href="/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" style="font-size: 12px;">推荐软件</a> <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" style="font-size: 17.5px;">搬瓦工</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.5px;">数据库</a> <a href="/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">文章采集</a> <a href="/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" style="font-size: 13px;">新路由3</a> <a href="/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" style="font-size: 10.5px;">旁路由</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">服务器监控</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 19px;">树莓派</a> <a href="/tags/%E6%B4%9B%E9%9B%AA/" style="font-size: 10px;">洛雪</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">浏览器技术</a> <a href="/tags/%E6%B5%B7%E8%BE%B9/" style="font-size: 10px;">海边</a> <a href="/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 12px;">温度传感器</a> <a href="/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 10.5px;">温湿度传感器</a> <a href="/tags/%E6%B8%B8%E7%8E%A9/" style="font-size: 11px;">游玩</a> <a href="/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">热力膨胀阀</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 16.5px;">生活</a> <a href="/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">电子膨胀阀</a> <a href="/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" style="font-size: 13px;">电池热管理</a> <a href="/tags/%E7%99%BE%E5%BA%A6sign/" style="font-size: 10px;">百度sign</a> <a href="/tags/%E7%9B%B4%E6%92%AD/" style="font-size: 10px;">直播</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" style="font-size: 12.5px;">离线下载</a> <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">私有云盘</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10.5px;">缓存</a> <a href="/tags/%E7%BD%91%E7%AB%99/" style="font-size: 20px;">网站</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" style="font-size: 16px;">网站建设</a> <a href="/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">网站监控</a> <a href="/tags/%E7%BE%A4%E6%99%96/" style="font-size: 10.5px;">群晖</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 10px;">翻译</a> <a href="/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">胖鼠采集</a> <a href="/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" style="font-size: 10px;">自然对流</a> <a href="/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" style="font-size: 10px;">蒲公英</a> <a href="/tags/%E8%A7%86%E9%A2%91/" style="font-size: 15px;">视频</a> <a href="/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" style="font-size: 12px;">试验台</a> <a href="/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" style="font-size: 11.5px;">谷歌云盘</a> <a href="/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" style="font-size: 10.5px;">谷歌网盘</a> <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" style="font-size: 15.5px;">路由器</a> <a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 14px;">软件</a> <a href="/tags/%E9%82%AE%E4%BB%B6/" style="font-size: 13.5px;">邮件</a> <a href="/tags/%E9%82%AE%E7%AE%B1/" style="font-size: 11.5px;">邮箱</a> <a href="/tags/%E9%9D%92%E5%B2%9B/" style="font-size: 10px;">青岛</a> <a href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" style="font-size: 10px;">静态网页</a> <a href="/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">音乐</a> <a href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" style="font-size: 10.5px;">音乐播放器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/05/%E6%B4%9B%E9%9B%AA%E9%9F%B3%E4%B9%90%E5%8A%A9%E6%89%8B%E6%9B%B4%E6%8D%A2%E9%9F%B3%E4%B9%90%E6%BA%90%E5%A4%B4%E5%8F%8A%E5%90%8C%E6%AD%A5%E6%89%8B%E6%9C%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/">洛雪音乐助手更换音乐源头及同步手机客户端</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/28/%E5%88%A9%E7%94%A8%E5%9C%9F%E8%80%B3%E5%85%B6%E4%BC%98%E6%83%A0%E8%B4%AD%E4%B9%B0google-one/">利用土耳其优惠购买google one</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/11/%E7%BE%A4%E6%99%96dsm7-0%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%9C%A8esxi-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96-7-0-dsm7-0-1%E6%95%99%E7%A8%8B/">在ESXI 虚拟机上安装群晖 7.0 (DSM7.0.1)教程</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/19/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91fiddler%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">【工具】Fiddler使用教程</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/03/%E7%BE%A4%E6%99%96%E4%BD%BF%E7%94%A8alist%E6%8C%82%E8%BD%BD%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%E5%88%B0%E6%9C%AC%E5%9C%B0/">群晖使用alist挂载阿里云盘到本地</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

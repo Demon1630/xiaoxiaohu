@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/15/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-采集agilent数据时labview运行后无法停止，正在重置vi-问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/07/03/%E9%87%87%E9%9B%86agilent%E6%95%B0%E6%8D%AE%E6%97%B6labview%E8%BF%90%E8%A1%8C%E5%90%8E%E6%97%A0%E6%B3%95%E5%81%9C%E6%AD%A2%EF%BC%8C%E6%AD%A3%E5%9C%A8%E9%87%8D%E7%BD%AEvi-%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2020-07-02T16:00:00.000Z" itemprop="datePublished">2020-07-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/labview/">labview</a>►<a class="article-category-link" href="/categories/labview/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/07/03/%E9%87%87%E9%9B%86agilent%E6%95%B0%E6%8D%AE%E6%97%B6labview%E8%BF%90%E8%A1%8C%E5%90%8E%E6%97%A0%E6%B3%95%E5%81%9C%E6%AD%A2%EF%BC%8C%E6%AD%A3%E5%9C%A8%E9%87%8D%E7%BD%AEvi-%E9%97%AE%E9%A2%98/">采集agilent数据时labview运行后无法停止，正在重置vi 问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>在使用labview采集agilent数据时，出现启动vi后无法得到相应，同时也无法停止vi，关闭labview后出现正在重置vi问题，这可能是由于你使用labview远程控制agilent时，你的labview一直在等待agilent扫描完成，但agilent一直没收到你labview停止扫描的命令，或者是你命令错误导致，所以labview一直得不到agilent扫描完成的指令，也就只能一直运行着等待扫描完成 <img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1593767697-agilent%E9%94%99%E8%AF%AF1-1024x549.png"></p>
+<p>临时解决办法：在agilent采集仪上，将远程控制切换回本地local控制，然后强制关闭Scan扫描</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1593768052-2agilent%E9%94%99%E8%AF%AF1-1024x768.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/07/03/%E9%87%87%E9%9B%86agilent%E6%95%B0%E6%8D%AE%E6%97%B6labview%E8%BF%90%E8%A1%8C%E5%90%8E%E6%97%A0%E6%B3%95%E5%81%9C%E6%AD%A2%EF%BC%8C%E6%AD%A3%E5%9C%A8%E9%87%8D%E7%BD%AEvi-%E9%97%AE%E9%A2%98/" data-id="cuidQ0YbnZIbvPxQtzGNWpJxj" data-title="采集agilent数据时labview运行后无法停止，正在重置vi 问题" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angilent34970a/" rel="tag">angilent34970a</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/labview/" rel="tag">labview</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" rel="tag">试验台</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-windows下能ping通某个网页但是无法打开问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/07/02/windows%E4%B8%8B%E8%83%BDping%E9%80%9A%E6%9F%90%E4%B8%AA%E7%BD%91%E9%A1%B5%E4%BD%86%E6%98%AF%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2020-07-01T16:00:00.000Z" itemprop="datePublished">2020-07-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/07/02/windows%E4%B8%8B%E8%83%BDping%E9%80%9A%E6%9F%90%E4%B8%AA%E7%BD%91%E9%A1%B5%E4%BD%86%E6%98%AF%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E9%97%AE%E9%A2%98/">windows下能ping通某个网页但是无法打开问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>有时候无法打开某个网页，但是使用cmd去ping却可以ping通，这时可以尝试在cmd中运行：netsh winsock reset，然后重启电脑</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/07/02/windows%E4%B8%8B%E8%83%BDping%E9%80%9A%E6%9F%90%E4%B8%AA%E7%BD%91%E9%A1%B5%E4%BD%86%E6%98%AF%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E9%97%AE%E9%A2%98/" data-id="cuidGulyFWV7Yu3WBtL7cqb2H" data-title="windows下能ping通某个网页但是无法打开问题" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-labview创建子vi的两种方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/07/01/labview%E5%88%9B%E5%BB%BA%E5%AD%90vi%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2020-06-30T16:00:00.000Z" itemprop="datePublished">2020-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/labview/">labview</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/07/01/labview%E5%88%9B%E5%BB%BA%E5%AD%90vi%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/">labview创建子vi的两种方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>有两种创建labview子vi的方法</p>
+<h2 id="一、将vi转变为子vi"><a href="#一、将vi转变为子vi" class="headerlink" title="一、将vi转变为子vi"></a>一、将vi转变为子vi</h2><p>在创建完vi后，此时这个vi还不能被其他vi调用，因为还没有为其添加接线端类型</p>
+<p>下面以简单的加法vi介绍</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1593594055-%E5%AD%90vi1-1024x549.png"></p>
+<p>这是一个简单的计算两个数加法的vi</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1593594283-%E5%AD%90vi2-1024x560.png"></p>
+<p>修改模式为自己所需样式</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1593594574-%E5%AD%90vi3-1024x684.png"></p>
+<p>照上图所示完成vi端口与控件的对应</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1593594767-%E5%AD%90vi4-1024x549.png"></p>
+<p>完成对图标的修改，然后保存，就可以对其进行调用了</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1593594929-%E5%AD%90vi5.png"></p>
+<h2 id="二、将vi中某部分创建为子vi"><a href="#二、将vi中某部分创建为子vi" class="headerlink" title="二、将vi中某部分创建为子vi"></a>二、将vi中某部分创建为子vi</h2><p>有时候在编写完一个vi后，发现这个vi中的一部分会需要经常用到，或者为了节省空间，就可以将vi中的一部分转变为子vi，从而进行调用</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1593595198-%E5%AD%90vi6-1024x549.png"></p>
+<p>如图选择某一部分创建子vi</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1593595330-%E5%AD%90vi7-1024x459.png"></p>
+<p>创建完成后，双击打开子vi就可以如一中所述对子vi进行图标等的编辑，然后把子vi保存即可</p>
+<p> </p>
+<p>还可以对vi添加说明信息，右键子vi图标，选择vi属性</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1593605005-%E5%AD%90vi8.png"></p>
+<p>类别中选择说明信息，然后在里面添加说明内容即可</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1593605050-%E5%AD%90vi9.png"></p>
+<p>在调用子vi时，鼠标点击一下子vi，在即时帮助下就可以看到前面添加的说明内容，可以让子vi更具有可读性</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1593605097-%E5%AD%90vi10.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/07/01/labview%E5%88%9B%E5%BB%BA%E5%AD%90vi%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/" data-id="cuid4J6WcAif-9YekHYelGDL_" data-title="labview创建子vi的两种方法" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/labview/" rel="tag">labview</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-清除labview中vi密码" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/07/01/%E6%B8%85%E9%99%A4labview%E4%B8%ADvi%E5%AF%86%E7%A0%81/" class="article-date">
+  <time class="dt-published" datetime="2020-06-30T16:00:00.000Z" itemprop="datePublished">2020-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/labview/">labview</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/07/01/%E6%B8%85%E9%99%A4labview%E4%B8%ADvi%E5%AF%86%E7%A0%81/">清除labview中vi密码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>有时候为vi设置了密码，但可能忘记了怎么办？</p>
+<p>这时候就可以对vi进行清除密码，虽然也有方法进行破解，但基本上是使用猜密码的方式，比较复杂，也费时间</p>
+<p>这里介绍labview论坛，在线清除密码</p>
+<p>将vi上传后即可完成密码清除，实测快速有效，几秒即可</p>
+<p>地址：<a target="_blank" rel="noopener" href="http://www.labview.help/decode">http://www.labview.help/decode</a></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1593602342-vi%E6%B8%85%E9%99%A4%E5%AF%86%E7%A0%81-1024x610.png"></p>
+<p>注册送2000积分，清除一次500积分</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/07/01/%E6%B8%85%E9%99%A4labview%E4%B8%ADvi%E5%AF%86%E7%A0%81/" data-id="cuidlEvtC2K0TvSf_Al8RVIua" data-title="清除labview中vi密码" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/labview/" rel="tag">labview</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-labview采用安捷伦34970a读取热电偶温度数据" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/06/30/labview%E9%87%87%E7%94%A8%E5%AE%89%E6%8D%B7%E4%BC%A634970a%E8%AF%BB%E5%8F%96%E7%83%AD%E7%94%B5%E5%81%B6%E6%B8%A9%E5%BA%A6%E6%95%B0%E6%8D%AE/" class="article-date">
+  <time class="dt-published" datetime="2020-06-29T16:00:00.000Z" itemprop="datePublished">2020-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/labview/">labview</a>►<a class="article-category-link" href="/categories/labview/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/06/30/labview%E9%87%87%E7%94%A8%E5%AE%89%E6%8D%B7%E4%BC%A634970a%E8%AF%BB%E5%8F%96%E7%83%AD%E7%94%B5%E5%81%B6%E6%B8%A9%E5%BA%A6%E6%95%B0%E6%8D%AE/">labview采用安捷伦34970a读取热电偶温度数据</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>程序框图如图，采用angilent34970a采集仪与349701采集板卡，T型热电偶接在101通道上</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593505149-labview%E8%AF%BB%E5%8F%96angilent34970%E6%B8%A9%E5%BA%A61-1024x486.png"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593505185-labview%E8%AF%BB%E5%8F%96angilent34970%E6%B8%A9%E5%BA%A62-1024x604.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/06/30/labview%E9%87%87%E7%94%A8%E5%AE%89%E6%8D%B7%E4%BC%A634970a%E8%AF%BB%E5%8F%96%E7%83%AD%E7%94%B5%E5%81%B6%E6%B8%A9%E5%BA%A6%E6%95%B0%E6%8D%AE/" data-id="cuidQFFOfyM_mLRhw2Key0fhB" data-title="labview采用安捷伦34970a读取热电偶温度数据" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angilent34970a/" rel="tag">angilent34970a</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/labview/" rel="tag">labview</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" rel="tag">安捷伦</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-热点偶分类" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/06/30/%E7%83%AD%E7%82%B9%E5%81%B6%E5%88%86%E7%B1%BB/" class="article-date">
+  <time class="dt-published" datetime="2020-06-29T16:00:00.000Z" itemprop="datePublished">2020-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/06/30/%E7%83%AD%E7%82%B9%E5%81%B6%E5%88%86%E7%B1%BB/">热电偶分类</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>热电偶的分度号有主要有S、R、B、N、K、E、J、T等几种。其中S、R、B属于贵金属热电偶，N、K、E、J、T属于廉金属热电偶。</p>
+<p>以下是对热电偶分度号的解释</p>
+<p>S 铂铑10 纯铂</p>
+<p>R 铂铑13 纯铂</p>
+<p>B 铂铑30 铂铑6</p>
+<p>K 镍铬 镍硅</p>
+<p>T 纯铜 铜镍</p>
+<p>J 铁 铜镍</p>
+<p>N 镍铬硅 镍硅</p>
+<p>E 镍铬 铜镍</p>
+<h2 id="（S型热电偶）铂铑10-铂热电偶"><a href="#（S型热电偶）铂铑10-铂热电偶" class="headerlink" title="（S型热电偶）铂铑10-铂热电偶"></a>（S型热电偶）铂铑10-铂热电偶</h2><p>铂铑10-铂热电偶（S型热电偶）为贵金属热电偶。偶丝直径规定为0.5mm，允许偏差-0.015mm，其正极（SP）的名义化学成分为铂铑合金，其中含铑为10%，含铂为90%，负极（SN）为纯铂，故俗称单铂铑热电偶。该热电偶长期最高使用温度为1300℃，短期最高使用温度为1600℃。</p>
+<p>S型热电偶在热电偶系列中具有准确度最高，稳定性最好，测温温区宽，使用寿命长等优点。它的物理，化学性能良好，热电势稳定性及在高温下抗氧化性能好，适用于氧化性和惰性气氛中。由于S型热电偶具有优良的综合性能，符合国际使用温标的S型热电偶，长期以来曾作为国际温标的内插仪器，“ITS-90”虽规定今后不再作为国际温标的内查仪器，但国际温度咨询委员会（CCT）认为S型热电偶仍可用于近似实现国际温标。</p>
+<p>S型热电偶不足之处是热电势，热电势率较小，灵敏读低，高温下机械强度下降，对污染非常敏感，贵金属材料昂贵，因而一次性投资较大。</p>
+<h2 id="（R型热电偶）铂铑13-铂热电偶"><a href="#（R型热电偶）铂铑13-铂热电偶" class="headerlink" title="（R型热电偶）铂铑13-铂热电偶"></a>（R型热电偶）铂铑13-铂热电偶</h2><p>铂铑13-铂热电偶（R型热电偶）为贵金属热电偶。偶丝直径规定为0.5mm，允许偏差-0.015mm，其正极（RP）的名义化学成分为铂铑合金，其中含铑为13%，含铂为87%，负极（RN）为纯铂，长期最高使用温度为1300℃，短期最高使用温度为1600℃。</p>
+<p>R型热电偶在热电偶系列中具有准确度最高，稳定性最好，测温温区宽，使用寿命长等优点。其物理，化学性能良好，热电势稳定性及在高温下抗氧化性能好，适用于氧化性和惰性气氛中。由于R型热电偶的综合性能与S型热电偶相当，在我国一直难于推广，除在进口设备上的测温有所应用外，国内测温很少采用。1967年至1971年间，英国NPL，美国NBS和加拿大NRC三大研究机构进行了一项合作研究，其结果表明，R型热电偶的稳定性和复现性比S型热电偶均好，我国目前尚未开展这方面的研究。</p>
+<p>R型热电偶不足之处是热电势，热电势率较小，灵敏读低，高温下机械强度下降，对污染非常敏感，贵金属材料昂贵，因而一次性投资较大。</p>
+<h2 id="（B型热电偶）铂铑30-铂铑6热电偶"><a href="#（B型热电偶）铂铑30-铂铑6热电偶" class="headerlink" title="（B型热电偶）铂铑30-铂铑6热电偶"></a>（B型热电偶）铂铑30-铂铑6热电偶</h2><p>铂铑30-铂铑6热电偶（B型热电偶）为贵金属热电偶。偶丝直径规定为0.5mm，允许偏差-0.015mm，其正极（BP）的名义化学成分为铂铑合金，其中含铑为30%，含铂为70%，负极（BN）为铂铑合金，含铑为量6%，故俗称双铂铑热电偶。该热电偶长期最高使用温度为1600℃，短期最高使用温度为1800℃。</p>
+<p>B型热电偶在热电偶系列中具有准确度最高，稳定性最好，测温温区宽，使用寿命长，测温上限高等优点。适用于氧化性和惰性气氛中，也可短期用于真空中，但不适用于还原性气氛或含有金属或非金属蒸气气氛中。B型热电偶一个明显的优点是不需用补偿导线进行补偿，因为在0~50℃范围内热电势小于3μV。</p>
+<p>B型热电偶不足之处是热电势，热电势率较小，灵敏读低，高温下机械强度下降，对污染非常敏感，贵金属材料昂贵，因而一次性投资较大。</p>
+<h2 id="（K型热电偶）镍铬-镍硅热电偶"><a href="#（K型热电偶）镍铬-镍硅热电偶" class="headerlink" title="（K型热电偶）镍铬-镍硅热电偶"></a>（K型热电偶）镍铬-镍硅热电偶</h2><p>镍铬-镍硅热电偶（K型热电偶）是目前用量最大的廉金属热电偶，其用量为其他热电偶的总和。正极（KP）的名义化学成分为：Ni：Cr&#x3D;90：10，负极（KN）的名义化学成分为：Ni：Si&#x3D;97：3，其使用温度为-200~1300℃。</p>
+<p>K型热电偶具有线性度好，热电动势较大，灵敏度高，稳定性和均匀性较好，抗氧化性能强，价格便宜等优点，能用于氧化性惰性气氛中。广泛为用户所采用。</p>
+<p>K型热电偶不能直接在高温下用于硫，还原性或还原，氧化交替的气氛中和真空中，也不推荐用于弱氧化气氛中。</p>
+<h2 id="（N型热电偶）镍铬硅-镍硅热电偶"><a href="#（N型热电偶）镍铬硅-镍硅热电偶" class="headerlink" title="（N型热电偶）镍铬硅-镍硅热电偶"></a>（N型热电偶）镍铬硅-镍硅热电偶</h2><p>镍铬硅-镍硅热电偶（N型热电偶）为廉金属热电偶，是一种最新国际标准化的热电偶，是在70年代初由澳大利亚国防部实验室研制成功的它克服了K型热电偶的两个重要缺点：K型热电偶在300<del>500℃间由于镍铬合金的晶格短程有序而引起的热电动势不稳定；在800℃左右由于镍铬合金发生择优氧化引起的热电动势不稳定。正极（NP）的名义化学成分为：Ni:Cr:Si&#x3D;84.4:14.2:1.4，负极（NN）的名义化学成分为：Ni:Si:Mg&#x3D;95.5:4.4:0.1，其使用温度为-200</del>1300℃。</p>
+<p>N型热电偶具有线性度好，热电动势较大，灵敏度较高，稳定性和均匀性较好，抗氧化性能强，价格便宜，不受短程有序化影响等优点，其综合性能优于K型热电偶，是一种很有发展前途的热电偶。</p>
+<p>N型热电偶不能直接在高温下用于硫，还原性或还原，氧化交替的气氛中和真空中，也不推荐用于弱氧化气氛中。</p>
+<h2 id="（E型热电偶）镍铬-铜镍热电偶"><a href="#（E型热电偶）镍铬-铜镍热电偶" class="headerlink" title="（E型热电偶）镍铬-铜镍热电偶"></a>（E型热电偶）镍铬-铜镍热电偶</h2><p>镍铬-铜镍热电偶（E型热电偶）又称镍铬-康铜热电偶，也是一种廉金属的热电偶，正极（EP）为：镍铬10合金，化学成分与KP相同，负极（EN）为铜镍合金，名义化学成分为：55%的铜，45%的镍以及少量的锰，钴，铁等元素。该热电偶的使用温度为-200~900℃。</p>
+<p>E型热电偶热电动势之大，灵敏度之高属所有热电偶之最，宜制成热电堆，测量微小的温度变化。对于高湿度气氛的腐蚀不甚灵敏，宜用于湿度较高的环境。E热电偶还具有稳定性好，抗氧化性能优于铜-康铜，铁-康铜热电偶，价格便宜等优点，能用于氧化性和惰性气氛中，广泛为用户采用。</p>
+<p>E型热电偶不能直接在高温下用于硫，还原性气氛中，热电势均匀性较差。</p>
+<h2 id="（J型热电偶）铁-铜镍热电偶"><a href="#（J型热电偶）铁-铜镍热电偶" class="headerlink" title="（J型热电偶）铁-铜镍热电偶"></a>（J型热电偶）铁-铜镍热电偶</h2><p>铁-铜镍热电偶（J型热电偶）又称铁-康铜热电偶，也是一种价格低廉的廉金属的热电偶。它的正极（JP）的名义化学成分为纯铁，负极（JN）为铜镍合金，常被含糊地称之为康铜，其名义化学成分为：55%的铜和45%的镍以及少量却十分重要的锰，钴，铁等元素，尽管它叫康铜，但不同于镍铬-康铜和铜-康铜的康铜，故不能用EN和TN来替换。铁-康铜热电偶的覆盖测量温区为-200<del>1200℃，但通常使用的温度范围为0</del>750℃</p>
+<p>J型热电偶具有线性度好，热电动势较大，灵敏度较高，稳定性和均匀性较好，价格便宜等优点，广为用户所采用。</p>
+<p>J型热电偶可用于真空，氧化，还原和惰性气氛中，但正极铁在高温下氧化较快，故使用温度受到限制，也不能直接无保护地在高温下用于硫化气氛中。</p>
+<h2 id="（T型热电偶）铜-铜镍热电偶"><a href="#（T型热电偶）铜-铜镍热电偶" class="headerlink" title="（T型热电偶）铜-铜镍热电偶"></a>（T型热电偶）铜-铜镍热电偶</h2><p>铜-铜镍热电偶（T型热电偶）又称铜-康铜热电偶，也是一种最佳的测量低温的廉金属的热电偶。它的正极（TP）是纯铜，负极（TN）为铜镍合金，常之为康铜，它与镍铬-康铜的康铜EN通用，与铁-康铜的康铜JN不能通用，尽管它们都叫康铜，铜-铜镍热电偶的盖测量温区为-200~350℃。</p>
+<p>T型热电偶具有线性度好，热电动势较大，灵敏度较高，稳定性和均匀性较好，价格便宜等优点，特别在-200~0℃温区内使用，稳定性更好，年稳定性可小于±3μV，经低温检定可作为二等标准进行低温量值传递。</p>
+<p>T型热电偶的正极铜在高温下抗氧化性能差，故使用温度上限受到限制。</p>
+<p> </p>
+<p>选型：</p>
+<p>使用温度在1300<del>1800℃，要求精度又比较高时，一般选用B型热电偶；要求精度不高，气氛又允许可用钨铼热电偶，高于1800℃一般选用钨铼热电偶；使用温度在1000</del>1300℃要求精度又比较高可用S型热电偶和N型热电偶；在1000℃以下一般用K型热电偶和N型热电偶，低于400℃一般用E型热电偶；250℃下以及负温测量一般用T型电偶，在低温时T型热电偶稳定而且精度高</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/06/30/%E7%83%AD%E7%82%B9%E5%81%B6%E5%88%86%E7%B1%BB/" data-id="cuidbLZwhHdmiF3kJrpSOZ295" data-title="热电偶分类" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" rel="tag">制冷技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温度传感器</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-labview-安装-modbus-library" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/06/29/labview-%E5%AE%89%E8%A3%85-modbus-library/" class="article-date">
+  <time class="dt-published" datetime="2020-06-28T16:00:00.000Z" itemprop="datePublished">2020-06-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/labview/">labview</a>►<a class="article-category-link" href="/categories/labview/%E6%8A%80%E6%9C%AF/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/06/29/labview-%E5%AE%89%E8%A3%85-modbus-library/">labview 安装 modbus Library</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Modbus是工业通信中常用的协议。若要进行数据端口通讯读取，经常需要安装modbus library</p>
+<p>安装可以直接使用VIPM（vi package manage）来安装，前面文章已经介绍了<a target="_blank" rel="noopener" href="http://www.demon1630.cn/labview%e5%ae%89%e8%a3%85visa%e5%8f%8a%e7%9b%b8%e5%ba%94%e6%89%a9%e5%b1%95%e5%8c%85/">如何安装VIPM</a></p>
+<p>打开VIPM，搜索modbus</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593448433-modbus1.png"></p>
+<p>选择进行安装即可</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593448490-modbus2.png"></p>
+<p>选择接受</p>
+<p>之后重启labview就可以看到安装的modbus library</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593448752-modbus4-1024x549.png"></p>
+<p>但是这样安装的library里面有很多vi没有，所以想要更多的vi，可以直接下载ni modbus.llb，然后导入到用户库中即可</p>
+<p>到官网<a target="_blank" rel="noopener" href="http://www.ni.com/example/29756/en/">http://www.ni.com/example/29756/en/</a></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593449225-modbus5-1024x513.png"></p>
+<p>下载后解压</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593449463-modbus6.png"></p>
+<p>找到里面的这个NI Modbus.llb文件，把它复制到labview安装目录的usr.lib文件夹中</p>
+<p>然后重启labview就可以到用户库中看到所有的vi</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593449676-modbus7-1024x549.png"></p>
+<p>里面包含大部分要用到的vi</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/06/29/labview-%E5%AE%89%E8%A3%85-modbus-library/" data-id="cuidgYN_Vwd2odaGNoki-zAC-" data-title="labview 安装 modbus Library" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/labview/" rel="tag">labview</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-pt100-温度传感器原理及使用接线方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/06/28/pt100-%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%8E%A5%E7%BA%BF%E6%96%B9%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2020-06-27T16:00:00.000Z" itemprop="datePublished">2020-06-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/06/28/pt100-%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%8E%A5%E7%BA%BF%E6%96%B9%E6%B3%95/">PT100 温度传感器原理及使用接线方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>按IEC751国际标准， 温度系数 ：<strong>α</strong>=0.003851，Pt100（Rt0&#x3D;100Ω）、Pt1000（Rt0&#x3D;1000Ω）为统一设计型铂电阻。</p>
+<p><strong>α</strong>=(R100-R0)&#x2F; (R0×100)</p>
+<p>电阻值和温度一般可以用以下的近似关系式表示，即<strong>Rt&#x3D;Rt0［1+α（t-t0）］</strong>　式中，Rt为温度t时的阻值；Rt0为温度t0（通常t0&#x3D;0℃）时对应电阻值；α为温度系数</p>
+<p>Pt100 就是说它的阻值在 0 ℃时为 100 欧姆， ,在100℃时大概为138.5欧姆。是一种以铂(Pt) 作成的电阻式温度传感器。</p>
+<h2 id="一、Pt100-温度传感器的主要技术参数如下："><a href="#一、Pt100-温度传感器的主要技术参数如下：" class="headerlink" title="一、Pt100 温度传感器的主要技术参数如下："></a><strong>一、Pt100 温度传感器的主要技术参数如下：</strong></h2><p>测量范围： -200 ℃～ +850℃；</p>
+<p>允许偏差值△℃： A 级± （0.15 ＋ 0.002 │ t │）， B 级±（0.30 ＋ 0.005 │ t │）；热响应时间</p>
+<p>最小置入深度：热电阻的最小置入深度≥ 200mm；</p>
+<p>允通电流≤ 5mA。另外， Pt100 温度传感器还具有抗振动、稳定性好、准确度高、耐高压等</p>
+<p>优点。</p>
+<p>根据RTD（Resistance Temperature Detector）热电阻的引出线的数量的不同，RTD可分为两线制、三线制和四线制。</p>
+<p>两线制RTD的引线是直接在电阻的两端引出两条导线到测温模块上。测温模块采用电桥平衡的原理，RTD作为电桥的一个臂进行测量。</p>
+<p>两线制RTD的示意图如下：</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593330819-PT00-1.jpg"></p>
+<p>两线制RTD传感器没有考虑引出导线的电阻，误差较大，仅适用于精度要求不高的场合</p>
+<p>为了消除RTD引线对测量结果的影响，许多RTD采用三线制形式。三线制是在两线制的基础上，从电阻的一端引出第三条线，如下图所示：</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593331069-PT100-2.jpg"></p>
+<p>工业上多用三线制PT100<br><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-cbb812f75a2fba8c36b74384aa9593e5.jpg"></p>
+<h2 id="二、PT100-温度传感器三根芯线的接法"><a href="#二、PT100-温度传感器三根芯线的接法" class="headerlink" title="二、PT100 温度传感器三根芯线的接法"></a><strong>二、PT100 温度传感器三根芯线的接法</strong></h2><p>PT100 铂电阻传感器有三条引线, 可用 A 、B、C（或黑、红、黄）来代表三根线, 三根线之间有如下规律： A 与 B 或 C 之间的阻值常温下在 110 欧左右,B 与 C 之间为 0 欧,B 与 C在内部是直通的, 原则上 B 与 C 没什么区别.仪表上接传感器的固定端子有三个：</p>
+<p>A 线接在仪表上接传感器的一个固定的端子.B 和 C 接在仪表上的另外两个固定端子， B 和C 线的位置可以互换, 但都得接上，。如果中间接有加长线, 三条导线的规格和长度要相同。热电阻的 3 线和 4 线接法：是采用 2 线、3 线、4 线，主要由使（选）用的二次仪表来决定。</p>
+<p>一般显示仪表提供三线接法， PT100 一端出一颗线，另一端出两颗线， 都接仪表， 仪表内部通过桥抵消导线电阻。一般 PLC 为四线， 每端出两颗线， 两颗接 PLC 输出恒流源， PLC 通过另两颗测量 PT100 上的电压，也是为了抵消导线电阻，四线精确度最高，三线也可以，两线最低，具体用法要考虑精度要求和成本。</p>
+<p><img src="https://pic3.zhimg.com/v2-d164fcf20ec398e4c24daf4689c2d6f2_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-a3807ddb987889e56020a230186d8c65.jpg"></p>
+<p><img src="https://pic3.zhimg.com/v2-d452f3fabe40fa7c810d6476845a3836_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-ddcf103c1f3880c60174dd93c61e46d7.jpg"></p>
+<h2 id="三、PT100-温度传感器采用三线式接法的原因："><a href="#三、PT100-温度传感器采用三线式接法的原因：" class="headerlink" title="三、PT100 温度传感器采用三线式接法的原因："></a><strong>三、PT100 温度传感器采用三线式接法的原因：</strong></h2><p>PT100 温度传感器 0 ℃时电阻值为 100 Ω，电阻变化率为 0.3851 Ω &#x2F; ℃。由于其电阻值小灵敏度高，式接法可消除引线线路电阻带来的测量误差，原理如下：</p>
+<p>PT100 引出的三根导线截面积和长度均相同( 即 r1&#x3D;r2&#x3D;r3) ，测量铂电阻的电路一般是不平衡电桥， 铂将导线一根(r1) 接到电桥的电源端， 其余两根(r2 、r3) 分别接到铂电阻所在的桥臂及与其相邻的桥臂电阻， 电桥处于平衡状态， 引线线电阻的变化对测量结果没有任何影响。</p>
+<p><img src="https://pic3.zhimg.com/v2-6c4b2e49461c9f5f06ee2da25e48737e_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-914803e049184c37fc84e4d274654c46.jpg"></p>
+<p><img src="https://pic2.zhimg.com/v2-08756da75c69d19909d808d74d1ec6c9_b.jpg"></p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/frc-3cadd53253972a7f2e31a79f41b6210e.jpg"></p>
+<h2 id="四、pt100温度变送器"><a href="#四、pt100温度变送器" class="headerlink" title="四、pt100温度变送器"></a>四、pt100温度变送器</h2><p>若只有PT100，三线制的必须要接上PT100温度变送器才能使用安捷伦采集（两线制或四线制PT100好像可以直接接到安捷伦数据采集仪上采集）</p>
+<p>如图为接线图</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593334737-PT100-3-738x1024.jpg"></p>
+<p><img src="https://pic3.zhimg.com/v2-9bbf8a11330e12aad3ee8f50d83f8bd6_b.jpg"></p>
+<p>输出可以为4<del>20ma电流也可以为1</del>5V电压，但输出为电压时貌似只能采用两线制PT100温度传感器<br>或者可以直接采用带有变送器的PT100：</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593336319-PT100-4-e1593336393873-628x1024.jpg"></p>
+<p>此时一体式的就不需要额外的变送器了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/06/28/pt100-%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%8E%A5%E7%BA%BF%E6%96%B9%E6%B3%95/" data-id="cuidnGluWMPag_ilBw4GWWQDC" data-title="PT100 温度传感器原理及使用接线方法" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tor/" rel="tag">tor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" rel="tag">制冷技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温度传感器</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-使用excel提取单元格内部分内容" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/06/28/%E4%BD%BF%E7%94%A8excel%E6%8F%90%E5%8F%96%E5%8D%95%E5%85%83%E6%A0%BC%E5%86%85%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9/" class="article-date">
+  <time class="dt-published" datetime="2020-06-27T16:00:00.000Z" itemprop="datePublished">2020-06-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/06/28/%E4%BD%BF%E7%94%A8excel%E6%8F%90%E5%8F%96%E5%8D%95%E5%85%83%E6%A0%BC%E5%86%85%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9/">使用excel提取单元格内部分内容</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>对于采集后的数据进行处理，最简单的方法就是使用excel了，但由于数据采集仪输出的数据格式为固定的，所以你可能得到的数据是这样的：</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593307337-excel%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE1.png"></p>
+<p>里面真正有用的是红框中的，但它与其他内容在一个单元格内，如何把它提取出来就需要用到excel 的提取函数了</p>
+<p>这里介绍使用的是MID函数，使用方法为：&#x3D;MID（text，start-num, num-chars)，其中text为你所要提取的单元格，start-num为起始提取位，num-chars为提取位数</p>
+<p>使用方法如图：</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593307723-excel%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE2-1024x428.png"></p>
+<p>其中A11就是要提取的单元格，26为从单元格从左往右数，8为我们所要提取的数据40.169,1的位数</p>
+<p>此时便可以完成提取</p>
+<p>但此时可以看到提取的数据中还有个半角逗号（,)，但我们需要的数据中是不能有逗号存在的，所以还要把半角逗号（,)去掉</p>
+<p>此时可以利用excel函数SUBSTITUTE，使用方法为&#x3D;SUBSTITUTE(text,old_text,new_text)，其中text为所要进行替换的单元格，old_text为所要替换的原来内容，new_text为新内容</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1593308370-excel%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE3.png"></p>
+<p>因为要提取的为半角逗号，所以要用双引号：”,”</p>
+<p> </p>
+<p>此时便完成了半角逗号的去除</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/06/28/%E4%BD%BF%E7%94%A8excel%E6%8F%90%E5%8F%96%E5%8D%95%E5%85%83%E6%A0%BC%E5%86%85%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9/" data-id="cuidBIIXhdjEqf7pATmkS0XQN" data-title="使用excel提取单元格内部分内容" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/excel/" rel="tag">excel</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-多功能空调实验系统简介" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/06/28/%E5%A4%9A%E5%8A%9F%E8%83%BD%E7%A9%BA%E8%B0%83%E5%AE%9E%E9%AA%8C%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/" class="article-date">
+  <time class="dt-published" datetime="2020-06-27T16:00:00.000Z" itemprop="datePublished">2020-06-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/06/28/%E5%A4%9A%E5%8A%9F%E8%83%BD%E7%A9%BA%E8%B0%83%E5%AE%9E%E9%AA%8C%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/">多功能空调实验系统简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>多功能空调实验系统简介</strong></p>
+<h2 id="实验系统简介"><a href="#实验系统简介" class="headerlink" title="实验系统简介"></a>实验系统简介</h2><p>本多功能空调实验系统安装于浙江大学制冷与低温研究所301实验室，基本原理如图1所示。该系统可用于各种空调系统控制策略开发实验，也可用于测试各种环境参数下空调部件的稳态运行性能，为其他试验提供恒温恒湿气流，测试各种可能的制冷系统新结构，以及作为制冷与暖通专业科研教学基地使用。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/062820_0251_1.png"></p>
+<p>图1 多功能空调实验系统原理图</p>
+<h3 id="实验系统组成"><a href="#实验系统组成" class="headerlink" title="实验系统组成"></a>实验系统组成</h3><p>多功能空调实验系统主要由三部分组成，包括制冷系统，空气分配系统和数据采集与控制系统。数据采集与控制系统包含了一系列传感器、电控设备和上位机程序。上位机程序读取各传感器的数据，根据内置的控制程序计算得到控制信号，通过控制器将信号传递给制冷系统和空气分配系统内的设备，从而实现温湿度的恒定控制。制冷系统内包含了铂电阻温度计、压力传感器和质量流量计三种传感器，分布在系统关键点上，可以读出相应的温度、压力和流量数据；制冷系统的压缩机可以变频运行，结合电子膨胀阀可以在大范围内调节系统的制冷量。空气分配系统可对空气温湿度和风量进行监测，变频送风机可以调节送风风量，多个送风风阀和回风风阀的组合可以实现多种实验目的，如室内温湿度控制、恒温恒湿气流输送等。</p>
+<h3 id="制冷系统"><a href="#制冷系统" class="headerlink" title="制冷系统"></a>制冷系统</h3><p>制冷系统由冷凝单元和高效翅片式蒸发器组成，其中蒸发器布置在送风管道内，用于对空气的冷却与除湿处理。冷凝单元的主要部件有变频压缩机、电子膨胀阀、热力膨胀阀和风冷冷凝器，如图2所示。变频压缩机通过专用控制器调节转速，调节范围可达1000rpm<del>7200rpm，配合电子膨胀阀可以调节宽范围的系统制冷量，即1.6kW</del>11.3kW。风冷冷凝器配有DC调速风机和加热装置，冷凝温度和风量均可调节。过热度通过并联的电子膨胀阀和热力膨胀阀进行控制。制冷系统还预留多个扩展铜管接口，拓展了可行实验范围。本制冷系统使用的制冷剂为<strong>R410A。</strong></p>
+<h3 id="空气分配系统"><a href="#空气分配系统" class="headerlink" title="空气分配系统"></a>空气分配系统</h3><p>空气分配系统包含送回风风道与相应的风阀，空气过滤器，风量喷嘴、变频送风机和一个大小为3.8m×2.4m×2.6m的空调空间，如图3所示。设计送风量为1300m3&#x2F;h，该风量下蒸发器处的空气流速为2.27m&#x2F;s，风机通过变频器进行控制，实验风量可在600<del>1500 m3&#x2F;h范围内调节。空调空间内放置有热湿负荷发生器，用于模拟室内热负荷和湿负荷，可模拟0</del>0.75的显热比范围。除去空调空间的送风管道，分配系统还预留有一个送风管道，可以为其他实验提供稳定的恒温恒湿气流。</p>
+<h3 id="数据采集与控制系统"><a href="#数据采集与控制系统" class="headerlink" title="数据采集与控制系统"></a>数据采集与控制系统</h3><p>直膨式空调实验系统的主要目的是开发各种空调系统控制策略，以及测试各种环境下空调部件稳态运行性能。控制策略的开发要求压缩机转速、送风风机、冷凝风机的转速和电子膨胀阀开度全部可调，稳态性能的测试要求系统各关键点的参数全部可以测量，同时室内热湿负荷和冷凝温度可以自动控制以塑造不同的室内外气候环境。根据上述要求构建如图4所示的数据采集与控制系统，编写相应的数据采集和控制程序。</p>
+<p>需要采集的数据类型分为三部分：温度、压力和流量。在空气侧，通过符合ISO 5151标准的空气取样装置对送蒸发器进出口的空气干湿球温度计进行测量，得到相应空气温湿度，使用的温度计精度可达±0.1℃；送风量和冷凝风量均通过测量喷嘴前后压差进行计算，喷嘴的设计与安装参考标准GB&#x2F;T7725-2004与ANSI&#x2F;ASHRAE 41.2；回风温湿度通过安装在回风管道内的温湿度传感器进行测量，在测量范围内精度可达±%RH和±0.4℃；送风温度和冷凝温度通过额外的铂电阻温度计进行测量。在制冷剂侧，制冷剂流量通过KRONE质量流量计进行测量，各点的温度和压力则由分布在制冷机组的8组铂电阻温度计和压力传感器进行测量。此外还通过电功率表测量了压缩机、送风风机、冷凝风机和冷凝温度控制器等设备的功率。实验系统一共采集了34组温度、压力、流量和功率数据，其中空气侧有13组，制冷剂侧17组，设备功率4组。由传感器输出的电流、电压或者电阻信号通过多种类型的高精度隔离器转换为电压信号，再通过安捷伦数据采集仪上传到上位机，在labview程序实现所有数据的监控、处理与记录。</p>
+<p>除了数据采集，实验系统的labview程序还能输出各个设备的控制信号，通过横河UT35A控制器对压缩机、风机等设备的开度进行调节。该程序还集成了matlab程序的交互模块，只需把不同的matlab控制程序导入到该模块内，便可针对不同的控制策略进行试验，使开发人员可专注于策略开发而毋需再在设备通讯和数据采集的编程部分花费精力。</p>
+<p>通过PLC和触摸屏的联合编程，方便实现设备的快速启停。在控制程序内连锁风机、加热管等设备，加上温度、液位和设备过载等报警信号，确保实验系统的安全运行。</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/062820_0251_2.png"></p>
+<p>图2 制冷机组原理图</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/062820_0251_3.png"></p>
+<p>图3 空气分配系统原理图</p>
+<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/062820_0251_4.png"></p>
+<p>图4 数据采集与控制系统原理图</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/06/28/%E5%A4%9A%E5%8A%9F%E8%83%BD%E7%A9%BA%E8%B0%83%E5%AE%9E%E9%AA%8C%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/" data-id="cuidR0XXcq1ZIqCGs206PcQEO" data-title="多功能空调实验系统简介" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/labview/" rel="tag">labview</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/14/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/16/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ansys/">ansys</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ansys/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ansys/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/kali-linux/">kali-linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/kali-linux/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/kali-linux/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/labview/">labview</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/labview/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/tor/">tor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/tor/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/">制冷技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF/%E6%B1%BD%E8%BD%A6%E7%83%AD%E7%AE%A1%E7%90%86/">汽车热管理</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">宝塔面板</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%8A%80%E6%9C%AF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">推荐软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/">搬瓦工</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%90%AC%E7%93%A6%E5%B7%A5/wordpress/">wordpress</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/">文章采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/%E7%94%9F%E6%B4%BB/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/">试验台架</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/">路由器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ac2100/" rel="tag">ac2100</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angilent34970a/" rel="tag">angilent34970a</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ansys/" rel="tag">ansys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bing/" rel="tag">bing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bitwarden/" rel="tag">bitwarden</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/calibre/" rel="tag">calibre</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/catia/" rel="tag">catia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatgpt/" rel="tag">chatgpt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloudflare/" rel="tag">cloudflare</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/endnote/" rel="tag">endnote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/endnotes9/" rel="tag">endnotes9</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/excel/" rel="tag">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/floefd/" rel="tag">floefd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fluent/" rel="tag">fluent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gps%E5%AE%9A%E4%BD%8D/" rel="tag">gps定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali-linux/" rel="tag">kali-linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kms/" rel="tag">kms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/labview/" rel="tag">labview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" rel="tag">linux子系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/newifi3/" rel="tag">newifi3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nextcloud/" rel="tag">nextcloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nps/" rel="tag">nps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openwrt/" rel="tag">openwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pid%E6%8E%A7%E5%88%B6/" rel="tag">pid控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" rel="tag">plc模糊逻辑控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pycharm/" rel="tag">pycharm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/" rel="tag">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/refprop/" rel="tag">refprop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scr/" rel="tag">scr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrcpy/" rel="tag">scrcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sndcpy/" rel="tag">sndcpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solidworks/" rel="tag">solidworks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssr/" rel="tag">ssr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegram/" rel="tag">telegram</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tkinter/" rel="tag">tkinter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tor/" rel="tag">tor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/traccar/" rel="tag">traccar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/v2ray/" rel="tag">v2ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vpn/" rel="tag">vpn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vrv/" rel="tag">vrv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows%E6%BF%80%E6%B4%BB/" rel="tag">windows激活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/word/" rel="tag">word</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/" rel="tag">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/workbench/" rel="tag">workbench</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl/" rel="tag">wsl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" rel="tag">三线表格</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" rel="tag">个人图书馆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" rel="tag">串口通讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" rel="tag">二维仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E7%9B%98/" rel="tag">云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%BF%E7%9C%9F/" rel="tag">仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" rel="tag">企业微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%8D%E6%B5%81/" rel="tag">免流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" rel="tag">免登录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" rel="tag">免费域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" rel="tag">制冷技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" rel="tag">反爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" rel="tag">固态硬盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E6%A0%87/" rel="tag">图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%9F%E5%90%8D/" rel="tag">域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A3%B0%E9%9F%B3/" rel="tag">声音</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" rel="tag">天翼网关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" rel="tag">安捷伦</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" rel="tag">定时执行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" rel="tag">宝塔面板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81/" rel="tag">密码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" rel="tag">微信防撤回</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%85%E5%BA%94/" rel="tag">必应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" rel="tag">手机投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%95%E5%B1%8F/" rel="tag">投屏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%A2%E7%A5%A8/" rel="tag">抢票</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A7%E5%88%B6/" rel="tag">控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" rel="tag">推荐软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" rel="tag">搬瓦工</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" rel="tag">文章采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" rel="tag">新路由3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" rel="tag">旁路由</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" rel="tag">服务器监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B4%9B%E9%9B%AA/" rel="tag">洛雪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" rel="tag">浏览器技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%B7%E8%BE%B9/" rel="tag">海边</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">温湿度传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E7%8E%A9/" rel="tag">游玩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">热力膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" rel="tag">电子膨胀阀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" rel="tag">电池热管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%99%BE%E5%BA%A6sign/" rel="tag">百度sign</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%B4%E6%92%AD/" rel="tag">直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" rel="tag">离线下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" rel="tag">私有云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" rel="tag">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" rel="tag">网站监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%A4%E6%99%96/" rel="tag">群晖</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" rel="tag">胖鼠采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" rel="tag">自然对流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" rel="tag">蒲公英</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" rel="tag">试验台</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" rel="tag">谷歌云盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" rel="tag">谷歌网盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag">路由器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%82%AE%E4%BB%B6/" rel="tag">邮件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%82%AE%E7%AE%B1/" rel="tag">邮箱</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%92%E5%B2%9B/" rel="tag">青岛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" rel="tag">静态网页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9F%B3%E4%B9%90/" rel="tag">音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" rel="tag">音乐播放器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ac2100/" style="font-size: 10px;">ac2100</a> <a href="/tags/angilent34970a/" style="font-size: 10.5px;">angilent34970a</a> <a href="/tags/ansys/" style="font-size: 12px;">ansys</a> <a href="/tags/bing/" style="font-size: 10px;">bing</a> <a href="/tags/bitwarden/" style="font-size: 10px;">bitwarden</a> <a href="/tags/calibre/" style="font-size: 10px;">calibre</a> <a href="/tags/catia/" style="font-size: 10px;">catia</a> <a href="/tags/chatgpt/" style="font-size: 10px;">chatgpt</a> <a href="/tags/cloudflare/" style="font-size: 11.5px;">cloudflare</a> <a href="/tags/docker/" style="font-size: 12px;">docker</a> <a href="/tags/endnote/" style="font-size: 10px;">endnote</a> <a href="/tags/endnotes9/" style="font-size: 10px;">endnotes9</a> <a href="/tags/excel/" style="font-size: 16px;">excel</a> <a href="/tags/floefd/" style="font-size: 10px;">floefd</a> <a href="/tags/fluent/" style="font-size: 11px;">fluent</a> <a href="/tags/gps%E5%AE%9A%E4%BD%8D/" style="font-size: 10px;">gps定位</a> <a href="/tags/kali-linux/" style="font-size: 13px;">kali-linux</a> <a href="/tags/kms/" style="font-size: 10px;">kms</a> <a href="/tags/labview/" style="font-size: 19.5px;">labview</a> <a href="/tags/linux%E5%AD%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">linux子系统</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/nas/" style="font-size: 10.5px;">nas</a> <a href="/tags/newifi3/" style="font-size: 12.5px;">newifi3</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/nps/" style="font-size: 13px;">nps</a> <a href="/tags/openwrt/" style="font-size: 12px;">openwrt</a> <a href="/tags/pid%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">pid控制</a> <a href="/tags/plc%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">plc模糊逻辑控制</a> <a href="/tags/pycharm/" style="font-size: 10px;">pycharm</a> <a href="/tags/python/" style="font-size: 17px;">python</a> <a href="/tags/python3/" style="font-size: 10.5px;">python3</a> <a href="/tags/refprop/" style="font-size: 11px;">refprop</a> <a href="/tags/scr/" style="font-size: 18.5px;">scr</a> <a href="/tags/scrcpy/" style="font-size: 10.5px;">scrcpy</a> <a href="/tags/sndcpy/" style="font-size: 10px;">sndcpy</a> <a href="/tags/solidworks/" style="font-size: 10px;">solidworks</a> <a href="/tags/ssr/" style="font-size: 10.5px;">ssr</a> <a href="/tags/telegram/" style="font-size: 11.5px;">telegram</a> <a href="/tags/tkinter/" style="font-size: 10px;">tkinter</a> <a href="/tags/tor/" style="font-size: 19.5px;">tor</a> <a href="/tags/traccar/" style="font-size: 10px;">traccar</a> <a href="/tags/v2ray/" style="font-size: 12px;">v2ray</a> <a href="/tags/vpn/" style="font-size: 10.5px;">vpn</a> <a href="/tags/vrv/" style="font-size: 10px;">vrv</a> <a href="/tags/windows/" style="font-size: 13.5px;">windows</a> <a href="/tags/windows%E6%BF%80%E6%B4%BB/" style="font-size: 10px;">windows激活</a> <a href="/tags/word/" style="font-size: 18px;">word</a> <a href="/tags/wordpress/" style="font-size: 14px;">wordpress</a> <a href="/tags/workbench/" style="font-size: 11.5px;">workbench</a> <a href="/tags/wsl/" style="font-size: 10.5px;">wsl</a> <a href="/tags/%E4%B8%89%E7%BA%BF%E8%A1%A8%E6%A0%BC/" style="font-size: 10px;">三线表格</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86/" style="font-size: 10px;">个人图书馆</a> <a href="/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF/" style="font-size: 10px;">串口通讯</a> <a href="/tags/%E4%BA%8C%E7%BB%B4%E4%BB%BF%E7%9C%9F/" style="font-size: 10px;">二维仿真</a> <a href="/tags/%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">云盘</a> <a href="/tags/%E4%BB%BF%E7%9C%9F/" style="font-size: 10.5px;">仿真</a> <a href="/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/" style="font-size: 10.5px;">企业微信</a> <a href="/tags/%E5%85%8D%E6%B5%81/" style="font-size: 10px;">免流</a> <a href="/tags/%E5%85%8D%E7%99%BB%E5%BD%95/" style="font-size: 10px;">免登录</a> <a href="/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" style="font-size: 11px;">免费域名</a> <a href="/tags/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" style="font-size: 14.5px;">制冷技术</a> <a href="/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" style="font-size: 10px;">反爬虫</a> <a href="/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/" style="font-size: 10px;">固态硬盘</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10.5px;">图床</a> <a href="/tags/%E5%9B%BE%E6%A0%87/" style="font-size: 13px;">图标</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 15.5px;">域名</a> <a href="/tags/%E5%A3%B0%E9%9F%B3/" style="font-size: 10px;">声音</a> <a href="/tags/%E5%A4%A9%E7%BF%BC%E7%BD%91%E5%85%B3/" style="font-size: 10px;">天翼网关</a> <a href="/tags/%E5%AE%89%E6%8D%B7%E4%BC%A6/" style="font-size: 10.5px;">安捷伦</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/" style="font-size: 10.5px;">定时执行</a> <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" style="font-size: 13px;">宝塔面板</a> <a href="/tags/%E5%AF%86%E7%A0%81/" style="font-size: 17.5px;">密码</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" style="font-size: 10px;">微信防撤回</a> <a href="/tags/%E5%BF%85%E5%BA%94/" style="font-size: 10px;">必应</a> <a href="/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">手机投屏</a> <a href="/tags/%E6%8A%95%E5%B1%8F/" style="font-size: 10.5px;">投屏</a> <a href="/tags/%E6%8A%A2%E7%A5%A8/" style="font-size: 10px;">抢票</a> <a href="/tags/%E6%8E%A7%E5%88%B6/" style="font-size: 19px;">控制</a> <a href="/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" style="font-size: 12px;">推荐软件</a> <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" style="font-size: 17.5px;">搬瓦工</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.5px;">数据库</a> <a href="/tags/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">文章采集</a> <a href="/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/" style="font-size: 13px;">新路由3</a> <a href="/tags/%E6%97%81%E8%B7%AF%E7%94%B1/" style="font-size: 10.5px;">旁路由</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">服务器监控</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 19px;">树莓派</a> <a href="/tags/%E6%B4%9B%E9%9B%AA/" style="font-size: 10px;">洛雪</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">浏览器技术</a> <a href="/tags/%E6%B5%B7%E8%BE%B9/" style="font-size: 10px;">海边</a> <a href="/tags/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 12px;">温度传感器</a> <a href="/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 10.5px;">温湿度传感器</a> <a href="/tags/%E6%B8%B8%E7%8E%A9/" style="font-size: 11px;">游玩</a> <a href="/tags/%E7%83%AD%E5%8A%9B%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">热力膨胀阀</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 16.5px;">生活</a> <a href="/tags/%E7%94%B5%E5%AD%90%E8%86%A8%E8%83%80%E9%98%80/" style="font-size: 10px;">电子膨胀阀</a> <a href="/tags/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86/" style="font-size: 13px;">电池热管理</a> <a href="/tags/%E7%99%BE%E5%BA%A6sign/" style="font-size: 10px;">百度sign</a> <a href="/tags/%E7%9B%B4%E6%92%AD/" style="font-size: 10px;">直播</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" style="font-size: 12.5px;">离线下载</a> <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/" style="font-size: 10.5px;">私有云盘</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10.5px;">缓存</a> <a href="/tags/%E7%BD%91%E7%AB%99/" style="font-size: 20px;">网站</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" style="font-size: 16px;">网站建设</a> <a href="/tags/%E7%BD%91%E7%AB%99%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">网站监控</a> <a href="/tags/%E7%BE%A4%E6%99%96/" style="font-size: 10.5px;">群晖</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 10px;">翻译</a> <a href="/tags/%E8%83%96%E9%BC%A0%E9%87%87%E9%9B%86/" style="font-size: 10px;">胖鼠采集</a> <a href="/tags/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%B5%81/" style="font-size: 10px;">自然对流</a> <a href="/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/" style="font-size: 10px;">蒲公英</a> <a href="/tags/%E8%A7%86%E9%A2%91/" style="font-size: 15px;">视频</a> <a href="/tags/%E8%AF%95%E9%AA%8C%E5%8F%B0/" style="font-size: 12px;">试验台</a> <a href="/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98/" style="font-size: 11.5px;">谷歌云盘</a> <a href="/tags/%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%9B%98/" style="font-size: 10.5px;">谷歌网盘</a> <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" style="font-size: 15.5px;">路由器</a> <a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 14px;">软件</a> <a href="/tags/%E9%82%AE%E4%BB%B6/" style="font-size: 13.5px;">邮件</a> <a href="/tags/%E9%82%AE%E7%AE%B1/" style="font-size: 11.5px;">邮箱</a> <a href="/tags/%E9%9D%92%E5%B2%9B/" style="font-size: 10px;">青岛</a> <a href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" style="font-size: 10px;">静态网页</a> <a href="/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">音乐</a> <a href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" style="font-size: 10.5px;">音乐播放器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/05/%E6%B4%9B%E9%9B%AA%E9%9F%B3%E4%B9%90%E5%8A%A9%E6%89%8B%E6%9B%B4%E6%8D%A2%E9%9F%B3%E4%B9%90%E6%BA%90%E5%A4%B4%E5%8F%8A%E5%90%8C%E6%AD%A5%E6%89%8B%E6%9C%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/">洛雪音乐助手更换音乐源头及同步手机客户端</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/28/%E5%88%A9%E7%94%A8%E5%9C%9F%E8%80%B3%E5%85%B6%E4%BC%98%E6%83%A0%E8%B4%AD%E4%B9%B0google-one/">利用土耳其优惠购买google one</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/11/%E7%BE%A4%E6%99%96dsm7-0%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%9C%A8esxi-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96-7-0-dsm7-0-1%E6%95%99%E7%A8%8B/">在ESXI 虚拟机上安装群晖 7.0 (DSM7.0.1)教程</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/19/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91fiddler%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">【工具】Fiddler使用教程</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/03/%E7%BE%A4%E6%99%96%E4%BD%BF%E7%94%A8alist%E6%8C%82%E8%BD%BD%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%E5%88%B0%E6%9C%AC%E5%9C%B0/">群晖使用alist挂载阿里云盘到本地</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
