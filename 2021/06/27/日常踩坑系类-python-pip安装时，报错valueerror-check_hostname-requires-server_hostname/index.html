@@ -338,9 +338,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/">
+                                <span class="chip bg-color">故障排查</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -348,8 +356,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/wordpress/" class="post-category">
-                                wordpress
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                技术
                             </a>
                         
                     </div>
@@ -449,7 +457,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/">
+                                    <span class="chip bg-color">故障排查</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -531,14 +547,6 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/tor/">
-                        <span class="chip bg-color">tor</span>
-                    </a>
-                    
-                    <a href="/tags/word/">
-                        <span class="chip bg-color">word</span>
-                    </a>
-                    
                     <a href="/tags/%E5%AF%86%E7%A0%81/">
                         <span class="chip bg-color">密码</span>
                     </a>
@@ -603,10 +611,6 @@
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/word/">
-                        <span class="chip bg-color">word</span>
-                    </a>
                     
                     <a href="/tags/python/">
                         <span class="chip bg-color">python</span>
@@ -1101,6 +1105,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

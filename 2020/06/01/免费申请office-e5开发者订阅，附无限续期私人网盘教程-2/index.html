@@ -342,10 +342,6 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/tor/">
-                                <span class="chip bg-color">tor</span>
-                            </a>
-                        
                             <a href="/tags/%E7%BD%91%E7%AB%99/">
                                 <span class="chip bg-color">网站</span>
                             </a>
@@ -360,10 +356,6 @@
                         
                             <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
                                 技术
-                            </a>
-                        
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
-                                文章采集
                             </a>
                         
                     </div>
@@ -526,10 +518,6 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/tor/">
-                                    <span class="chip bg-color">tor</span>
-                                </a>
-                            
                                 <a href="/tags/%E7%BD%91%E7%AB%99/">
                                     <span class="chip bg-color">网站</span>
                                 </a>
@@ -613,6 +601,18 @@
                     </div>
                 </div>
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">
+                        <span class="chip bg-color">推荐软件</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                        <span class="chip bg-color">虚拟机</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
@@ -645,11 +645,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
-                                    文章采集
-                                </a>
-                            
-                            <a href="/categories/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E7%94%9F%E6%B4%BB/" class="post-category">
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
                                     生活
                                 </a>
                             
@@ -1145,6 +1141,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

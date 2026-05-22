@@ -592,6 +592,18 @@
                     </div>
                 </div>
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">
+                        <span class="chip bg-color">推荐软件</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">科研工具</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
@@ -638,10 +650,6 @@
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/tor/">
-                        <span class="chip bg-color">tor</span>
-                    </a>
                     
                     <a href="/tags/%E7%BD%91%E7%AB%99/">
                         <span class="chip bg-color">网站</span>
@@ -1132,6 +1140,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

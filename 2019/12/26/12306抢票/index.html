@@ -551,10 +551,6 @@
                         <span class="chip bg-color">网站</span>
                     </a>
                     
-                    <a href="/tags/word/">
-                        <span class="chip bg-color">word</span>
-                    </a>
-                    
                     <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
                         <span class="chip bg-color">数据库</span>
                     </a>
@@ -1109,6 +1105,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

@@ -616,16 +616,16 @@
                         <span class="chip bg-color">密码</span>
                     </a>
                     
+                    <a href="/tags/%E4%BA%91%E7%9B%98/">
+                        <span class="chip bg-color">云盘</span>
+                    </a>
+                    
                     <a href="/tags/nas/">
                         <span class="chip bg-color">nas</span>
                     </a>
                     
                     <a href="/tags/%E7%BE%A4%E6%99%96/">
                         <span class="chip bg-color">群晖</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%BA%91%E7%9B%98/">
-                        <span class="chip bg-color">云盘</span>
                     </a>
                     
                 </div>
@@ -681,16 +681,8 @@
                         <span class="chip bg-color">邮件</span>
                     </a>
                     
-                    <a href="/tags/bing/">
-                        <span class="chip bg-color">bing</span>
-                    </a>
-                    
-                    <a href="/tags/chatgpt/">
-                        <span class="chip bg-color">chatgpt</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%BF%85%E5%BA%94/">
-                        <span class="chip bg-color">必应</span>
+                    <a href="/tags/ChatGPT/">
+                        <span class="chip bg-color">ChatGPT</span>
                     </a>
                     
                 </div>
@@ -1174,6 +1166,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

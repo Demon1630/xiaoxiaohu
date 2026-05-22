@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> 博客搭建 </category>
+          <category> 技术 </category>
           
       </categories>
       
@@ -48,8 +48,6 @@
       
       
         <tags>
-            
-            <tag> word </tag>
             
             <tag> 软件 </tag>
             
@@ -111,8 +109,6 @@
             
             <tag> 软件 </tag>
             
-            <tag> scr </tag>
-            
             <tag> 路由器 </tag>
             
             <tag> nas </tag>
@@ -169,11 +165,11 @@
             
             <tag> 密码 </tag>
             
+            <tag> 云盘 </tag>
+            
             <tag> nas </tag>
             
             <tag> 群晖 </tag>
-            
-            <tag> 云盘 </tag>
             
         </tags>
       
@@ -239,11 +235,7 @@
             
             <tag> 邮件 </tag>
             
-            <tag> bing </tag>
-            
-            <tag> chatgpt </tag>
-            
-            <tag> 必应 </tag>
+            <tag> ChatGPT </tag>
             
         </tags>
       
@@ -267,10 +259,6 @@
       
       
         <tags>
-            
-            <tag> word </tag>
-            
-            <tag> scr </tag>
             
             <tag> windows </tag>
             
@@ -330,17 +318,15 @@
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> 软件 </tag>
             
             <tag> 密码 </tag>
             
+            <tag> 云盘 </tag>
+            
             <tag> nps </tag>
             
             <tag> 树莓派 </tag>
-            
-            <tag> 云盘 </tag>
             
             <tag> 蒲公英 </tag>
             
@@ -366,8 +352,6 @@
       
       
         <tags>
-            
-            <tag> word </tag>
             
             <tag> 软件 </tag>
             
@@ -498,7 +482,7 @@
       
       <categories>
           
-          <category> 路由器 </category>
+          <category> 技术 </category>
           
       </categories>
       
@@ -538,9 +522,9 @@
             
             <tag> ansys </tag>
             
-            <tag> fluent </tag>
+            <tag> 仿真 </tag>
             
-            <tag> 自然对流 </tag>
+            <tag> fluent </tag>
             
         </tags>
       
@@ -574,8 +558,6 @@
             <tag> fluent </tag>
             
             <tag> 控制 </tag>
-            
-            <tag> 二维仿真 </tag>
             
         </tags>
       
@@ -664,11 +646,7 @@
             
             <tag> excel </tag>
             
-            <tag> tor </tag>
-            
             <tag> python </tag>
-            
-            <tag> scr </tag>
             
         </tags>
       
@@ -718,6 +696,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> excel </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -736,6 +720,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 抓包 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -781,6 +771,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 树莓派 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -801,8 +797,6 @@
       
       
         <tags>
-            
-            <tag> word </tag>
             
             <tag> 密码 </tag>
             
@@ -843,8 +837,6 @@
       
         <tags>
             
-            <tag> word </tag>
-            
             <tag> 密码 </tag>
             
             <tag> openwrt </tag>
@@ -881,10 +873,6 @@
       
       
         <tags>
-            
-            <tag> tor </tag>
-            
-            <tag> word </tag>
             
             <tag> 密码 </tag>
             
@@ -946,11 +934,7 @@
       
         <tags>
             
-            <tag> word </tag>
-            
-            <tag> endnote </tag>
-            
-            <tag> endnotes9 </tag>
+            <tag> EndNote </tag>
             
         </tags>
       
@@ -1008,8 +992,6 @@
             
             <tag> ansys </tag>
             
-            <tag> word </tag>
-            
             <tag> workbench </tag>
             
         </tags>
@@ -1066,9 +1048,7 @@
       
         <tags>
             
-            <tag> 海边 </tag>
-            
-            <tag> 青岛 </tag>
+            <tag> 游玩 </tag>
             
         </tags>
       
@@ -1086,10 +1066,16 @@
       
       <categories>
           
-          <category> wordpress </category>
+          <category> 推荐软件 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 推荐软件 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1111,10 +1097,6 @@
       
       
         <tags>
-            
-            <tag> tor </tag>
-            
-            <tag> word </tag>
             
             <tag> 密码 </tag>
             
@@ -1142,10 +1124,18 @@
       
       <categories>
           
-          <category> wordpress </category>
+          <category> 技术 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 故障排查 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1167,8 +1157,6 @@
       
       
         <tags>
-            
-            <tag> word </tag>
             
             <tag> python </tag>
             
@@ -1203,8 +1191,6 @@
             
             <tag> telegram </tag>
             
-            <tag> scr </tag>
-            
             <tag> 视频 </tag>
             
             <tag> 企业微信 </tag>
@@ -1231,8 +1217,6 @@
       
       
         <tags>
-            
-            <tag> word </tag>
             
             <tag> 三线表格 </tag>
             
@@ -1303,6 +1287,33 @@
     
     
     <entry>
+      <title>python 后台运行及关闭后台程序</title>
+      <link href="/2021/05/23/python-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%85%B3%E9%97%AD%E5%90%8E%E5%8F%B0%E7%A8%8B%E5%BA%8F/"/>
+      <url>/2021/05/23/python-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%85%B3%E9%97%AD%E5%90%8E%E5%8F%B0%E7%A8%8B%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">nohup</span> python3 -u socket_test.py &gt;my_socket.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-3b425e2c6a315b3a29ae77ac4d4fd7ac.png"></p><h3 id="开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询"><a href="#开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询" class="headerlink" title="开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询"></a>开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询</h3><p>1. 最后一个“&amp;”表示后台运行程序 2. “nohup” 表示程序不被挂起 3. “python3”表示执行python代码 4. “-u”表示不启用缓存，实时输出打印信息到日志文件（如果不加-u，则会导致日志文件不会实时刷新代码中的print函数的信息） 5. “socket_test.py”表示python的源代码文件 6. “my_socket.log”表示输出的日志文件 7. “&gt;”表示将打印信息重定向到日志文件 8. “2&gt;&amp;1”表示将标准错误输出转变化标准输出，可以将错误信息也输出到日志文件中（0-&gt; stdin, 1-&gt;stdout, 2-&gt;stderr）</p><h3 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h3><h3 id="功能：查看当前的所有进程"><a href="#功能：查看当前的所有进程" class="headerlink" title="功能：查看当前的所有进程"></a>功能：查看当前的所有进程</h3><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-21f5388cab8456a5200facb28d71c1a3.png"></p><h3 id="也可以单独查询某个文件开启的进程"><a href="#也可以单独查询某个文件开启的进程" class="headerlink" title="也可以单独查询某个文件开启的进程"></a>也可以单独查询某个文件开启的进程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep &quot;socket_test.py&quot;    #a:显示所有程序  u:以用户为主的格式来显示   x:显示所有程序，不以终端机来区分</span><br></pre></td></tr></table></figure><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-4de4f49fe6667b8cf2ce886ea8210bc8.png"></p><h3 id="Kill命令"><a href="#Kill命令" class="headerlink" title="Kill命令"></a>Kill命令</h3><h3 id="功能：杀死进程"><a href="#功能：杀死进程" class="headerlink" title="功能：杀死进程"></a>功能：杀死进程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill 30598</span><br></pre></td></tr></table></figure><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-bf3a1b059555402d37d17462be659251.png"></p><p>文章来源于互联网:<a href="https://blog.csdn.net/qq_37946291/article/details/105550529">python 后台运行及关闭后台程序</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 缓存 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python使用telegram机器人发送消息进行推送</title>
       <link href="/2021/05/23/python%E4%BD%BF%E7%94%A8telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E8%BF%9B%E8%A1%8C%E6%8E%A8%E9%80%81/"/>
       <url>/2021/05/23/python%E4%BD%BF%E7%94%A8telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E8%BF%9B%E8%A1%8C%E6%8E%A8%E9%80%81/</url>
@@ -1324,33 +1335,6 @@
             <tag> python </tag>
             
             <tag> telegram </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>python 后台运行及关闭后台程序</title>
-      <link href="/2021/05/23/python-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%85%B3%E9%97%AD%E5%90%8E%E5%8F%B0%E7%A8%8B%E5%BA%8F/"/>
-      <url>/2021/05/23/python-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%85%B3%E9%97%AD%E5%90%8E%E5%8F%B0%E7%A8%8B%E5%BA%8F/</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">nohup</span> python3 -u socket_test.py &gt;my_socket.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-3b425e2c6a315b3a29ae77ac4d4fd7ac.png"></p><h3 id="开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询"><a href="#开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询" class="headerlink" title="开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询"></a>开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询</h3><p>1. 最后一个“&amp;”表示后台运行程序 2. “nohup” 表示程序不被挂起 3. “python3”表示执行python代码 4. “-u”表示不启用缓存，实时输出打印信息到日志文件（如果不加-u，则会导致日志文件不会实时刷新代码中的print函数的信息） 5. “socket_test.py”表示python的源代码文件 6. “my_socket.log”表示输出的日志文件 7. “&gt;”表示将打印信息重定向到日志文件 8. “2&gt;&amp;1”表示将标准错误输出转变化标准输出，可以将错误信息也输出到日志文件中（0-&gt; stdin, 1-&gt;stdout, 2-&gt;stderr）</p><h3 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h3><h3 id="功能：查看当前的所有进程"><a href="#功能：查看当前的所有进程" class="headerlink" title="功能：查看当前的所有进程"></a>功能：查看当前的所有进程</h3><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-21f5388cab8456a5200facb28d71c1a3.png"></p><h3 id="也可以单独查询某个文件开启的进程"><a href="#也可以单独查询某个文件开启的进程" class="headerlink" title="也可以单独查询某个文件开启的进程"></a>也可以单独查询某个文件开启的进程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep &quot;socket_test.py&quot;    #a:显示所有程序  u:以用户为主的格式来显示   x:显示所有程序，不以终端机来区分</span><br></pre></td></tr></table></figure><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-4de4f49fe6667b8cf2ce886ea8210bc8.png"></p><h3 id="Kill命令"><a href="#Kill命令" class="headerlink" title="Kill命令"></a>Kill命令</h3><h3 id="功能：杀死进程"><a href="#功能：杀死进程" class="headerlink" title="功能：杀死进程"></a>功能：杀死进程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill 30598</span><br></pre></td></tr></table></figure><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-bf3a1b059555402d37d17462be659251.png"></p><p>文章来源于互联网:<a href="https://blog.csdn.net/qq_37946291/article/details/105550529">python 后台运行及关闭后台程序</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> python </tag>
-            
-            <tag> 缓存 </tag>
             
         </tags>
       
@@ -1420,8 +1404,6 @@
             
             <tag> 反爬虫 </tag>
             
-            <tag> 百度sign </tag>
-            
             <tag> 翻译 </tag>
             
         </tags>
@@ -1478,17 +1460,9 @@
       
         <tags>
             
-            <tag> scr </tag>
-            
-            <tag> scrcpy </tag>
-            
-            <tag> sndcpy </tag>
+            <tag> 投屏 </tag>
             
             <tag> 声音 </tag>
-            
-            <tag> 手机投屏 </tag>
-            
-            <tag> 投屏 </tag>
             
         </tags>
       
@@ -1513,13 +1487,7 @@
       
         <tags>
             
-            <tag> scr </tag>
-            
             <tag> 控制 </tag>
-            
-            <tag> scrcpy </tag>
-            
-            <tag> 手机投屏 </tag>
             
             <tag> 投屏 </tag>
             
@@ -1623,8 +1591,6 @@
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> 网站 </tag>
             
             <tag> 邮箱 </tag>
@@ -1689,8 +1655,6 @@
             
             <tag> 网站 </tag>
             
-            <tag> word </tag>
-            
             <tag> docker </tag>
             
             <tag> 密码 </tag>
@@ -1724,11 +1688,9 @@
       
         <tags>
             
-            <tag> word </tag>
-            
-            <tag> scr </tag>
-            
             <tag> 域名 </tag>
+            
+            <tag> word </tag>
             
         </tags>
       
@@ -1757,9 +1719,9 @@
             
             <tag> windows </tag>
             
-            <tag> 路由器 </tag>
+            <tag> KMS激活 </tag>
             
-            <tag> kms </tag>
+            <tag> 路由器 </tag>
             
         </tags>
       
@@ -1806,6 +1768,14 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 云盘 </tag>
+            
+            <tag> 树莓派 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1971,8 +1941,6 @@
       
         <tags>
             
-            <tag> scr </tag>
-            
             <tag> 控制 </tag>
             
             <tag> newifi3 </tag>
@@ -2122,8 +2090,6 @@
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> nps </tag>
             
             <tag> 树莓派 </tag>
@@ -2200,8 +2166,6 @@
       
       
         <tags>
-            
-            <tag> scr </tag>
             
             <tag> 网站建设 </tag>
             
@@ -2302,8 +2266,6 @@
       
       
         <tags>
-            
-            <tag> tor </tag>
             
             <tag> kali-linux </tag>
             
@@ -2410,14 +2372,10 @@
           
           <category> kali-linux </category>
           
-          <category> 文章采集 </category>
-          
       </categories>
       
       
         <tags>
-            
-            <tag> tor </tag>
             
             <tag> kali-linux </tag>
             
@@ -2437,7 +2395,7 @@
       
       <categories>
           
-          <category> 文章采集 </category>
+          <category> 推荐软件 </category>
           
       </categories>
       
@@ -2445,8 +2403,6 @@
         <tags>
             
             <tag> excel </tag>
-            
-            <tag> tor </tag>
             
             <tag> 网站 </tag>
             
@@ -2467,8 +2423,6 @@
       <categories>
           
           <category> kali-linux </category>
-          
-          <category> 文章采集 </category>
           
       </categories>
       
@@ -2495,8 +2449,6 @@
           
           <category> 制冷技术 </category>
           
-          <category> 文章采集 </category>
-          
       </categories>
       
       
@@ -2522,8 +2474,6 @@
       
       <categories>
           
-          <category> 日常 </category>
-          
           <category> 生活 </category>
           
       </categories>
@@ -2534,8 +2484,6 @@
             <tag> 生活 </tag>
             
             <tag> 控制 </tag>
-            
-            <tag> 试验台 </tag>
             
         </tags>
       
@@ -2554,8 +2502,6 @@
       <categories>
           
           <category> 制冷技术 </category>
-          
-          <category> 文章采集 </category>
           
       </categories>
       
@@ -2609,22 +2555,16 @@
           
           <category> 制冷技术 </category>
           
-          <category> 文章采集 </category>
-          
       </categories>
       
       
         <tags>
             
-            <tag> scr </tag>
-            
             <tag> 控制 </tag>
             
             <tag> 制冷技术 </tag>
             
-            <tag> 热力膨胀阀 </tag>
-            
-            <tag> 电子膨胀阀 </tag>
+            <tag> 膨胀阀 </tag>
             
         </tags>
       
@@ -2644,18 +2584,12 @@
           
           <category> labview </category>
           
-          <category> 文章采集 </category>
-          
       </categories>
       
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> 数据库 </tag>
-            
-            <tag> scr </tag>
             
             <tag> 控制 </tag>
             
@@ -2684,46 +2618,11 @@
       
         <tags>
             
-            <tag> scr </tag>
-            
             <tag> 控制 </tag>
             
             <tag> pid控制 </tag>
             
             <tag> 视频 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>LabVIEW2013软件安装步骤</title>
-      <link href="/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/"/>
-      <url>/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/</url>
-      
-        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><p>LabVIEW 2013（32&#x2F;64）位下载地址：</p><p>pan.baidu.com&#x2F;s&#x2F;1GuuX5sSGSvkNrz1ErRcXPw</p><p>密码：8qw5</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1、右击软件压缩包选择解压到LabVIEW2013。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a319fd45c3790213041330c1088a814a.png"></p><p>2、右击选择打开labvIEW 2013.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b4053f60b9460a24bfab8e7c6b424a0d.png"></p><p>3、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2fbea235a14b87608561af26af539a2f.png"></p><p>4、点击Unzip解压文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-830e192956d6e27a6e276d8663fc1b86.png"></p><p>5、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-858d80ad28c44bde8381ef80de32ba9f.png"></p><p>6、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-939747a0bf892252b08b51fa26e5a13e.jpeg"></p><p>7、任意填写信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02b53b5e4029d01cac965ba2c99ab71d.png"></p><p>8、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d0004730b4f500a08da05c73a47eb70b.jpeg"></p><p>9、点击浏览更改安装路径，建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LabVIEW2013文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0f9634835b613697227b691316cd45c0.png"></p><p>10、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-f4e5821a301c8c03249ecf383b8fef3d.jpeg"></p><p>11、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b0153d86145818c2d2cb00cd84a9ef7a.jpeg"></p><p>12、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-998c1c27ce811734fc4bd46dfe7b40cd.png"></p><p>13、选择我接受上述2条许可协议，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cb71dc71b7193595d950370518dcda9b.jpeg"></p><p>14、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d700a74ec10bd9904ab249fcab7a04e7.jpeg"></p><p>15、软件安装中（大约需要10分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-8b640a3fd8d2769e1517e3b5e955d69a.png"></p><p>16、点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1120b7cdd6384d017d9e84568faa9b11.jpeg"></p><p>17、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2abc71ab1a9c0f1e0624decfde08c2ac.png"></p><p>18、点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-86bf52d2153dc6abc9bc14bad68f0b3e.png"></p><p>19、在安装包中找到NI LIcense Activator，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-87c1293fe9fe19f0d82962787b0eaf7b.png"></p><p>20、找到Base Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d2409d5211152e241cd21633f27a7353.png"></p><p>21、找到Debug Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-5e970bdefcb10f90283b1f0e4627a923.png"></p><p>22、找到Full Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e8e35247ace4718dc65763e651049c4b.png"></p><p>23、找到Professional Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-7eb7ff8419dc09b625eac916d5a55103.png"></p><p>24、找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-73efa7e2f54580067252db40fc465e1a.png"></p><p>25、找到Application Builder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-403a516e62f9e79bc78ed99d79df27a5.png"></p><p>26、在开始菜单找到软件打开，取消勾选启动时显示，使其处于未选中状态，点击关闭。<img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0dc244091e71c8ccc0abbe09fd88574f.jpeg"></p><p>27、安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c90ecc4aa09a9c4f24b72269717fd990.jpeg"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-771930041ff4da44c73c6343232983ab.png"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> labview </category>
-          
-          <category> 文章采集 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> tor </tag>
-            
-            <tag> labview </tag>
-            
-            <tag> scr </tag>
-            
-            <tag> 控制 </tag>
             
         </tags>
       
@@ -2743,14 +2642,37 @@
           
           <category> labview </category>
           
-          <category> 文章采集 </category>
-          
       </categories>
       
       
         <tags>
             
-            <tag> tor </tag>
+            <tag> labview </tag>
+            
+            <tag> 控制 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LabVIEW2013软件安装步骤</title>
+      <link href="/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/"/>
+      <url>/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/</url>
+      
+        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><p>LabVIEW 2013（32&#x2F;64）位下载地址：</p><p>pan.baidu.com&#x2F;s&#x2F;1GuuX5sSGSvkNrz1ErRcXPw</p><p>密码：8qw5</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1、右击软件压缩包选择解压到LabVIEW2013。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a319fd45c3790213041330c1088a814a.png"></p><p>2、右击选择打开labvIEW 2013.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b4053f60b9460a24bfab8e7c6b424a0d.png"></p><p>3、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2fbea235a14b87608561af26af539a2f.png"></p><p>4、点击Unzip解压文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-830e192956d6e27a6e276d8663fc1b86.png"></p><p>5、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-858d80ad28c44bde8381ef80de32ba9f.png"></p><p>6、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-939747a0bf892252b08b51fa26e5a13e.jpeg"></p><p>7、任意填写信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02b53b5e4029d01cac965ba2c99ab71d.png"></p><p>8、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d0004730b4f500a08da05c73a47eb70b.jpeg"></p><p>9、点击浏览更改安装路径，建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LabVIEW2013文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0f9634835b613697227b691316cd45c0.png"></p><p>10、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-f4e5821a301c8c03249ecf383b8fef3d.jpeg"></p><p>11、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b0153d86145818c2d2cb00cd84a9ef7a.jpeg"></p><p>12、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-998c1c27ce811734fc4bd46dfe7b40cd.png"></p><p>13、选择我接受上述2条许可协议，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cb71dc71b7193595d950370518dcda9b.jpeg"></p><p>14、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d700a74ec10bd9904ab249fcab7a04e7.jpeg"></p><p>15、软件安装中（大约需要10分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-8b640a3fd8d2769e1517e3b5e955d69a.png"></p><p>16、点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1120b7cdd6384d017d9e84568faa9b11.jpeg"></p><p>17、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2abc71ab1a9c0f1e0624decfde08c2ac.png"></p><p>18、点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-86bf52d2153dc6abc9bc14bad68f0b3e.png"></p><p>19、在安装包中找到NI LIcense Activator，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-87c1293fe9fe19f0d82962787b0eaf7b.png"></p><p>20、找到Base Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d2409d5211152e241cd21633f27a7353.png"></p><p>21、找到Debug Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-5e970bdefcb10f90283b1f0e4627a923.png"></p><p>22、找到Full Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e8e35247ace4718dc65763e651049c4b.png"></p><p>23、找到Professional Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-7eb7ff8419dc09b625eac916d5a55103.png"></p><p>24、找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-73efa7e2f54580067252db40fc465e1a.png"></p><p>25、找到Application Builder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-403a516e62f9e79bc78ed99d79df27a5.png"></p><p>26、在开始菜单找到软件打开，取消勾选启动时显示，使其处于未选中状态，点击关闭。<img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0dc244091e71c8ccc0abbe09fd88574f.jpeg"></p><p>27、安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c90ecc4aa09a9c4f24b72269717fd990.jpeg"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-771930041ff4da44c73c6343232983ab.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> labview </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> labview </tag>
             
@@ -2772,7 +2694,7 @@
       
       <categories>
           
-          <category> 日常 </category>
+          <category> 生活 </category>
           
       </categories>
       
@@ -2801,10 +2723,14 @@
           
           <category> 技术 </category>
           
-          <category> 汽车热管理 </category>
-          
       </categories>
       
+      
+        <tags>
+            
+            <tag> 电动汽车 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -2821,8 +2747,6 @@
       <categories>
           
           <category> excel </category>
-          
-          <category> 文章采集 </category>
           
       </categories>
       
@@ -2937,13 +2861,11 @@
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> 网站 </tag>
             
             <tag> nextcloud </tag>
             
-            <tag> 私有云盘 </tag>
+            <tag> 云盘 </tag>
             
         </tags>
       
@@ -2969,8 +2891,6 @@
       
       
         <tags>
-            
-            <tag> scr </tag>
             
             <tag> windows </tag>
             
@@ -3071,10 +2991,14 @@
           
           <category> labview </category>
           
-          <category> 文章采集 </category>
-          
       </categories>
       
+      
+        <tags>
+            
+            <tag> labview </tag>
+            
+        </tags>
       
     </entry>
     
@@ -3092,7 +3016,7 @@
           
           <category> labview </category>
           
-          <category> 试验台架 </category>
+          <category> 制冷技术 </category>
           
       </categories>
       
@@ -3121,14 +3045,10 @@
           
           <category> labview </category>
           
-          <category> 文章采集 </category>
-          
       </categories>
       
       
         <tags>
-            
-            <tag> 生活 </tag>
             
             <tag> 控制 </tag>
             
@@ -3203,8 +3123,6 @@
       <categories>
           
           <category> 推荐软件 </category>
-          
-          <category> 文章采集 </category>
           
       </categories>
       
@@ -3284,6 +3202,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 科研工具 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -3325,7 +3249,7 @@
       
       <categories>
           
-          <category> 文章采集 </category>
+          <category> 制冷技术 </category>
           
       </categories>
       
@@ -3354,7 +3278,7 @@
       
       <categories>
           
-          <category> 文章采集 </category>
+          <category> 制冷技术 </category>
           
       </categories>
       
@@ -3381,7 +3305,7 @@
           
           <category> labview </category>
           
-          <category> 试验台架 </category>
+          <category> 制冷技术 </category>
           
       </categories>
       
@@ -3410,7 +3334,7 @@
           
           <category> labview </category>
           
-          <category> 试验台架 </category>
+          <category> 制冷技术 </category>
           
       </categories>
       
@@ -3531,6 +3455,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 机械 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -3540,14 +3470,12 @@
       <link href="/2020/08/07/%E5%90%83%E7%81%B0%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BD%93%E7%94%B5%E8%A7%86%E7%9B%92%E5%AD%90%EF%BC%8C%E7%9C%81%E4%BA%86%E4%B8%80%E7%AC%94%E3%80%82/"/>
       <url>/2020/08/07/%E5%90%83%E7%81%B0%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BD%93%E7%94%B5%E8%A7%86%E7%9B%92%E5%AD%90%EF%BC%8C%E7%9C%81%E4%BA%86%E4%B8%80%E7%AC%94%E3%80%82/</url>
       
-        <content type="html"><![CDATA[<p> </p><h1 id="吃灰树莓派当电视盒子用"><a href="#吃灰树莓派当电视盒子用" class="headerlink" title="吃灰树莓派当电视盒子用"></a>吃灰树莓派当电视盒子用</h1><p>个人觉得起码比小米盒子好使，没广告，airplay很流畅，电视的台也可以自己找。</p><h3 id="文章目录"><a href="#文章目录" class="headerlink" title="文章目录"></a>文章目录</h3><ul><li>吃灰树莓派当电视盒子用<ul><li>一、硬件准备</li><li>二、软件准备</li><li>三、OSMC安装流程<ul><li>1.硬件选择</li><li>2.版本选择</li><li>3.选择运行位置</li><li>4.网络设置</li><li>5.选device</li><li>6.agreement</li><li>7.下载安装</li></ul></li><li>四、设置KODI<ul><li>1.设置时区等乱七八糟的东西</li><li>2.设置皮肤和中文</li><li>3.添加IPTV插件</li><li>4.添加 m3u</li><li>5. airplay投屏</li></ul></li><li>五、遥控器</li></ul></li></ul><p>家里的移动电视盒子不能投屏其他视频app的视频，而买的天猫魔投也坏了，连不上wifi。家里领导一直抱怨吃饭的时候不看视频都吃不下饭，疫情期间电视盒子不好买，所以找出了家里吃灰的树莓派，打算顶一顶。群友强烈推荐写个攻略，方便大家操作，所以整理了一下。</p><h2 id="一、硬件准备"><a href="#一、硬件准备" class="headerlink" title="一、硬件准备"></a>一、硬件准备</h2><p>树莓派（我用的是3B+，其他版本也可以）、SD卡、读卡器。 当然还得有你的PC和电视机。</p><h2 id="二、软件准备"><a href="#二、软件准备" class="headerlink" title="二、软件准备"></a>二、软件准备</h2><p>我是直接用的OSMC，简单省事。有条件的老铁也可以直接在系统上装KODI就行。 你也可以直接搜OSMC的<a href="https://osmc.tv/download/">官网</a>。</p><p>找到这个页面。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-fddebc87593c3c6082bb59819fd13389.png"> 下载你的PC对应的安装工具，我用的是win的电脑。</p><h2 id="三、OSMC安装流程"><a href="#三、OSMC安装流程" class="headerlink" title="三、OSMC安装流程"></a>三、OSMC安装流程</h2><h3 id="1-硬件选择"><a href="#1-硬件选择" class="headerlink" title="1.硬件选择"></a>1.硬件选择</h3><p>第一个选型 English。 第二个选型 选你使用的硬件。我选的pi3 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-d0cc23dda33e53a4415f4f8ed229602b.png"></p><h3 id="2-版本选择"><a href="#2-版本选择" class="headerlink" title="2.版本选择"></a>2.版本选择</h3><p>直接最新版本 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-993fb4f33e0a550c8e0366ce13018414.png"></p><h3 id="3-选择运行位置"><a href="#3-选择运行位置" class="headerlink" title="3.选择运行位置"></a>3.选择运行位置</h3><p>我用的是SD卡，所以直接选”from an SD card“ <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-4b2526ee096aff71b2ffb1ace74136cc.png"></p><h3 id="4-网络设置"><a href="#4-网络设置" class="headerlink" title="4.网络设置"></a>4.网络设置</h3><p>是配置OSMC的默认网络，其实这个不重要，安装好了都可以后面再设置。 我是直接选择了wired connection <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-565368db2739b67b4798d9af116882cb.png"></p><h3 id="5-选device"><a href="#5-选device" class="headerlink" title="5.选device"></a>5.选device</h3><p>选你的SD卡。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-87645a003f44558ed541283a8e922d0a.png"></p><h3 id="6-agreement"><a href="#6-agreement" class="headerlink" title="6.agreement"></a>6.agreement</h3><p>直接同意 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-e202869b4a82b4368e0eb9cc66f17689.png"></p><h3 id="7-下载安装"><a href="#7-下载安装" class="headerlink" title="7.下载安装"></a>7.下载安装</h3><p>这里点 yes，就开始下载镜像和安装了。 直接装可能会有点慢，如果你不会科学上网的话，可以去吃个小饭睡个小觉再来看看。 装好直接插树莓派里，记得插上视频线。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-07def0bed72aed7fd6920b80f8309853.png"></p><h2 id="四、设置KODI"><a href="#四、设置KODI" class="headerlink" title="四、设置KODI"></a>四、设置KODI</h2><h3 id="1-设置时区等乱七八糟的东西"><a href="#1-设置时区等乱七八糟的东西" class="headerlink" title="1.设置时区等乱七八糟的东西"></a>1.设置时区等乱七八糟的东西</h3><p>这里没啥特殊的，步骤里有设置网络的，这里可以用有线或者无线，点进去可以直接设置。 BTW：这里可以用鼠标和键盘直接操作。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-54c3b60ea3e43ad8162b5d8aaa14084d.png"></p><h3 id="2-设置皮肤和中文"><a href="#2-设置皮肤和中文" class="headerlink" title="2.设置皮肤和中文"></a>2.设置皮肤和中文</h3><p>可以先设置皮肤，<strong>改中文前要务必要先修改字体</strong>。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-15db2b536bdf2f67b3da6ba63a1ca5ff.png"></p><h3 id="3-添加IPTV插件"><a href="#3-添加IPTV插件" class="headerlink" title="3.添加IPTV插件"></a>3.添加IPTV插件</h3><p>PVR插件里找 PVR IPTV Simple Client <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-7633958953b862c2c83ac08060903ed3.png"></p><h3 id="4-添加-m3u"><a href="#4-添加-m3u" class="headerlink" title="4.添加 m3u"></a>4.添加 m3u</h3><p>如果你只是想用airplay 可以不用这一步。添加m3u文件是用于看电视频道的。 想看什么频道的可以直接去 KODI中文网上去找。点这里<a href="http://www.kodiplayer.cn/">官网</a></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-f3131635193aa421a292fd90d3f7a649.png"> 进入设置 然后将位置改为本地，然后选择你的下好的m3u文件，再回主页的频道即可看电视了。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-2f7a0eae46ce79b3abaa8135a41914b7.png"> 电视台一览 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-da6e47e0143ed30f56b4c811faac063b.png"></p><h3 id="5-airplay投屏"><a href="#5-airplay投屏" class="headerlink" title="5. airplay投屏"></a>5. airplay投屏</h3><p>KODI是不支持 屏幕镜像的。所以投屏需要点开视频app，打开你想看的视频，然后点右上角的小电视，选择OSMC（这个地方如果你前面改过硬件的名字，这里也会不一样）。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-fb81400cef87d6e11dea23ec1e9afac4.png"></p><h2 id="五、遥控器"><a href="#五、遥控器" class="headerlink" title="五、遥控器"></a>五、遥控器</h2><p>AppStore里直接搜KODI Remote，安装好后与树莓派放同一局域网内。打开app就可自动连上。 加减音量、调频道可以直接操作。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-8f5c61689b0e39840caea9fcdd0e0084.png"></p><p>大概就到这了，还有什么问题，大家留言沟通。</p><p>文章来源于互联网:<a href="https://blog.csdn.net/ffujifilm/article/details/105032623">吃灰树莓派当电视盒子，省了一笔。</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="吃灰树莓派当电视盒子用"><a href="#吃灰树莓派当电视盒子用" class="headerlink" title="吃灰树莓派当电视盒子用"></a>吃灰树莓派当电视盒子用</h1><p>个人觉得起码比小米盒子好使，没广告，airplay很流畅，电视的台也可以自己找。</p><h3 id="文章目录"><a href="#文章目录" class="headerlink" title="文章目录"></a>文章目录</h3><ul><li>吃灰树莓派当电视盒子用<ul><li>一、硬件准备</li><li>二、软件准备</li><li>三、OSMC安装流程<ul><li>1.硬件选择</li><li>2.版本选择</li><li>3.选择运行位置</li><li>4.网络设置</li><li>5.选device</li><li>6.agreement</li><li>7.下载安装</li></ul></li><li>四、设置KODI<ul><li>1.设置时区等乱七八糟的东西</li><li>2.设置皮肤和中文</li><li>3.添加IPTV插件</li><li>4.添加 m3u</li><li>5. airplay投屏</li></ul></li><li>五、遥控器</li></ul></li></ul><p>家里的移动电视盒子不能投屏其他视频app的视频，而买的天猫魔投也坏了，连不上wifi。家里领导一直抱怨吃饭的时候不看视频都吃不下饭，疫情期间电视盒子不好买，所以找出了家里吃灰的树莓派，打算顶一顶。群友强烈推荐写个攻略，方便大家操作，所以整理了一下。</p><h2 id="一、硬件准备"><a href="#一、硬件准备" class="headerlink" title="一、硬件准备"></a>一、硬件准备</h2><p>树莓派（我用的是3B+，其他版本也可以）、SD卡、读卡器。 当然还得有你的PC和电视机。</p><h2 id="二、软件准备"><a href="#二、软件准备" class="headerlink" title="二、软件准备"></a>二、软件准备</h2><p>我是直接用的OSMC，简单省事。有条件的老铁也可以直接在系统上装KODI就行。 你也可以直接搜OSMC的<a href="https://osmc.tv/download/">官网</a>。</p><p>找到这个页面。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-fddebc87593c3c6082bb59819fd13389.png"> 下载你的PC对应的安装工具，我用的是win的电脑。</p><h2 id="三、OSMC安装流程"><a href="#三、OSMC安装流程" class="headerlink" title="三、OSMC安装流程"></a>三、OSMC安装流程</h2><h3 id="1-硬件选择"><a href="#1-硬件选择" class="headerlink" title="1.硬件选择"></a>1.硬件选择</h3><p>第一个选型 English。 第二个选型 选你使用的硬件。我选的pi3 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-d0cc23dda33e53a4415f4f8ed229602b.png"></p><h3 id="2-版本选择"><a href="#2-版本选择" class="headerlink" title="2.版本选择"></a>2.版本选择</h3><p>直接最新版本 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-993fb4f33e0a550c8e0366ce13018414.png"></p><h3 id="3-选择运行位置"><a href="#3-选择运行位置" class="headerlink" title="3.选择运行位置"></a>3.选择运行位置</h3><p>我用的是SD卡，所以直接选”from an SD card“ <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-4b2526ee096aff71b2ffb1ace74136cc.png"></p><h3 id="4-网络设置"><a href="#4-网络设置" class="headerlink" title="4.网络设置"></a>4.网络设置</h3><p>是配置OSMC的默认网络，其实这个不重要，安装好了都可以后面再设置。 我是直接选择了wired connection <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-565368db2739b67b4798d9af116882cb.png"></p><h3 id="5-选device"><a href="#5-选device" class="headerlink" title="5.选device"></a>5.选device</h3><p>选你的SD卡。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-87645a003f44558ed541283a8e922d0a.png"></p><h3 id="6-agreement"><a href="#6-agreement" class="headerlink" title="6.agreement"></a>6.agreement</h3><p>直接同意 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-e202869b4a82b4368e0eb9cc66f17689.png"></p><h3 id="7-下载安装"><a href="#7-下载安装" class="headerlink" title="7.下载安装"></a>7.下载安装</h3><p>这里点 yes，就开始下载镜像和安装了。 直接装可能会有点慢，如果你不会科学上网的话，可以去吃个小饭睡个小觉再来看看。 装好直接插树莓派里，记得插上视频线。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-07def0bed72aed7fd6920b80f8309853.png"></p><h2 id="四、设置KODI"><a href="#四、设置KODI" class="headerlink" title="四、设置KODI"></a>四、设置KODI</h2><h3 id="1-设置时区等乱七八糟的东西"><a href="#1-设置时区等乱七八糟的东西" class="headerlink" title="1.设置时区等乱七八糟的东西"></a>1.设置时区等乱七八糟的东西</h3><p>这里没啥特殊的，步骤里有设置网络的，这里可以用有线或者无线，点进去可以直接设置。 BTW：这里可以用鼠标和键盘直接操作。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-54c3b60ea3e43ad8162b5d8aaa14084d.png"></p><h3 id="2-设置皮肤和中文"><a href="#2-设置皮肤和中文" class="headerlink" title="2.设置皮肤和中文"></a>2.设置皮肤和中文</h3><p>可以先设置皮肤，<strong>改中文前要务必要先修改字体</strong>。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-15db2b536bdf2f67b3da6ba63a1ca5ff.png"></p><h3 id="3-添加IPTV插件"><a href="#3-添加IPTV插件" class="headerlink" title="3.添加IPTV插件"></a>3.添加IPTV插件</h3><p>PVR插件里找 PVR IPTV Simple Client <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-7633958953b862c2c83ac08060903ed3.png"></p><h3 id="4-添加-m3u"><a href="#4-添加-m3u" class="headerlink" title="4.添加 m3u"></a>4.添加 m3u</h3><p>如果你只是想用airplay 可以不用这一步。添加m3u文件是用于看电视频道的。 想看什么频道的可以直接去 KODI中文网上去找。点这里<a href="http://www.kodiplayer.cn/">官网</a></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-f3131635193aa421a292fd90d3f7a649.png"> 进入设置 然后将位置改为本地，然后选择你的下好的m3u文件，再回主页的频道即可看电视了。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-2f7a0eae46ce79b3abaa8135a41914b7.png"> 电视台一览 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-da6e47e0143ed30f56b4c811faac063b.png"></p><h3 id="5-airplay投屏"><a href="#5-airplay投屏" class="headerlink" title="5. airplay投屏"></a>5. airplay投屏</h3><p>KODI是不支持 屏幕镜像的。所以投屏需要点开视频app，打开你想看的视频，然后点右上角的小电视，选择OSMC（这个地方如果你前面改过硬件的名字，这里也会不一样）。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-fb81400cef87d6e11dea23ec1e9afac4.png"></p><h2 id="五、遥控器"><a href="#五、遥控器" class="headerlink" title="五、遥控器"></a>五、遥控器</h2><p>AppStore里直接搜KODI Remote，安装好后与树莓派放同一局域网内。打开app就可自动连上。 加减音量、调频道可以直接操作。 <img src="http://www.demon1630.cn/wp-content/uploads/2020/08/frc-8f5c61689b0e39840caea9fcdd0e0084.png"></p><p>大概就到这了，还有什么问题，大家留言沟通。</p><p>文章来源于互联网:<a href="https://blog.csdn.net/ffujifilm/article/details/105032623">吃灰树莓派当电视盒子，省了一笔。</a></p>]]></content>
       
       
       <categories>
           
           <category> 技术 </category>
-          
-          <category> 文章采集 </category>
           
           <category> 树莓派 </category>
           
@@ -3555,8 +3483,6 @@
       
       
         <tags>
-            
-            <tag> tor </tag>
             
             <tag> 树莓派 </tag>
             
@@ -3607,16 +3533,12 @@
           
           <category> 技术 </category>
           
-          <category> 文章采集 </category>
-          
       </categories>
       
       
         <tags>
             
             <tag> 生活 </tag>
-            
-            <tag> tor </tag>
             
             <tag> 网站 </tag>
             
@@ -3648,16 +3570,12 @@
           
           <category> 技术 </category>
           
-          <category> 文章采集 </category>
-          
       </categories>
       
       
         <tags>
             
             <tag> labview </tag>
-            
-            <tag> scr </tag>
             
             <tag> 控制 </tag>
             
@@ -3680,8 +3598,6 @@
           <category> labview </category>
           
           <category> 技术 </category>
-          
-          <category> 文章采集 </category>
           
       </categories>
       
@@ -3708,16 +3624,16 @@
           
           <category> 技术 </category>
           
-          <category> 试验台架 </category>
+          <category> 制冷技术 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> scr </tag>
-            
             <tag> 控制 </tag>
+            
+            <tag> scr </tag>
             
             <tag> ssr </tag>
             
@@ -3739,9 +3655,7 @@
           
           <category> 技术 </category>
           
-          <category> 文章采集 </category>
-          
-          <category> 试验台架 </category>
+          <category> 制冷技术 </category>
           
       </categories>
       
@@ -3792,8 +3706,6 @@
       <categories>
           
           <category> 制冷技术 </category>
-          
-          <category> 文章采集 </category>
           
       </categories>
       
@@ -3851,14 +3763,10 @@
           
           <category> 制冷技术 </category>
           
-          <category> 文章采集 </category>
-          
       </categories>
       
       
         <tags>
-            
-            <tag> 生活 </tag>
             
             <tag> 制冷技术 </tag>
             
@@ -3882,10 +3790,16 @@
       
       <categories>
           
-          <category> wordpress </category>
+          <category> 制冷技术 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 制冷技术 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -3936,6 +3850,35 @@
         <tags>
             
             <tag> 树莓派 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>labview使用DSN连接数据库</title>
+      <link href="/2020/07/06/labview%E4%BD%BF%E7%94%A8dsn%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <url>/2020/07/06/labview%E4%BD%BF%E7%94%A8dsn%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+      
+        <content type="html"><![CDATA[<p>前面文章介绍了如何创建DSN:<a href="http://www.demon1630.cn/%e4%b8%ba%e6%95%b0%e6%8d%ae%e5%ba%93%e6%b7%bb%e5%8a%a0%e6%95%b0%e6%8d%ae%e6%ba%90%e5%90%8ddsn%ef%bc%88data-source-name%ef%bc%89/">为数据库添加数据源名DSN</a></p><p>创建完后，就可以使用DSN连接数据库了</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594012231-DSN%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%931.png"></p><p>如图为创建的DSN</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594012308-DSN%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%932-1024x389.png"></p><p>直接使用DSN字符串即可，然后使用DB Tools 工具包vi</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> labview </category>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> labview </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -4000,35 +3943,6 @@
     
     
     <entry>
-      <title>labview使用DSN连接数据库</title>
-      <link href="/2020/07/06/labview%E4%BD%BF%E7%94%A8dsn%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-      <url>/2020/07/06/labview%E4%BD%BF%E7%94%A8dsn%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-      
-        <content type="html"><![CDATA[<p>前面文章介绍了如何创建DSN:<a href="http://www.demon1630.cn/%e4%b8%ba%e6%95%b0%e6%8d%ae%e5%ba%93%e6%b7%bb%e5%8a%a0%e6%95%b0%e6%8d%ae%e6%ba%90%e5%90%8ddsn%ef%bc%88data-source-name%ef%bc%89/">为数据库添加数据源名DSN</a></p><p>创建完后，就可以使用DSN连接数据库了</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594012231-DSN%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%931.png"></p><p>如图为创建的DSN</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594012308-DSN%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%932-1024x389.png"></p><p>直接使用DSN字符串即可，然后使用DB Tools 工具包vi</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> labview </category>
-          
-          <category> 技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> labview </tag>
-            
-            <tag> 数据库 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>rclone多网盘互拷备份</title>
       <link href="/2020/07/05/rclone%E5%A4%9A%E7%BD%91%E7%9B%98%E4%BA%92%E6%8B%B7%E5%A4%87%E4%BB%BD/"/>
       <url>/2020/07/05/rclone%E5%A4%9A%E7%BD%91%E7%9B%98%E4%BA%92%E6%8B%B7%E5%A4%87%E4%BB%BD/</url>
@@ -4050,8 +3964,6 @@
             <tag> 离线下载 </tag>
             
             <tag> 谷歌云盘 </tag>
-            
-            <tag> 谷歌网盘 </tag>
             
         </tags>
       
@@ -4100,7 +4012,7 @@
           
           <category> labview </category>
           
-          <category> 试验台架 </category>
+          <category> 制冷技术 </category>
           
       </categories>
       
@@ -4109,9 +4021,9 @@
             
             <tag> labview </tag>
             
-            <tag> 试验台 </tag>
+            <tag> 安捷伦 </tag>
             
-            <tag> angilent34970a </tag>
+            <tag> 试验台 </tag>
             
         </tags>
       
@@ -4133,6 +4045,14 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> windows </tag>
+            
+            <tag> 网络 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -4208,8 +4128,6 @@
         <tags>
             
             <tag> labview </tag>
-            
-            <tag> angilent34970a </tag>
             
             <tag> 安捷伦 </tag>
             
@@ -4290,8 +4208,6 @@
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> 制冷技术 </tag>
             
             <tag> 温度传感器 </tag>
@@ -4328,35 +4244,6 @@
     
     
     <entry>
-      <title>安捷伦34970A 通过RS232接口连接电脑</title>
-      <link href="/2020/06/28/%E5%AE%89%E6%8D%B7%E4%BC%A634970a-%E9%80%9A%E8%BF%87rs232%E6%8E%A5%E5%8F%A3%E8%BF%9E%E6%8E%A5%E7%94%B5%E8%84%91/"/>
-      <url>/2020/06/28/%E5%AE%89%E6%8D%B7%E4%BC%A634970a-%E9%80%9A%E8%BF%87rs232%E6%8E%A5%E5%8F%A3%E8%BF%9E%E6%8E%A5%E7%94%B5%E8%84%91/</url>
-      
-        <content type="html"><![CDATA[<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>安捷伦34970A数据采集仪</p><p>安捷伦34901A数据采集卡（共22个通道，前20个通道可以用来测量<strong>直流电压、交流电压、2线制电阻、4线制电阻、频率、周期、温度（B型）、温度（E型）、温度（J型）、温度（K型）、温度（N型）、温度（R型）、温度（S型）、温度（T型）、温度2.2k热敏电阻、温度5k热敏电阻、温度10k热敏电阻、温度2线制RTD、温度4线制RTD</strong>，后两个为<strong>电流测量通道21和22通道</strong>，可以用来测量<strong>直流电流与交流电流</strong>）</p><p>RS-232转USB线RS-232数据线</p><p>agilent benchlink data logger软件 下载地址：</p><p><a href="https://www.keysight.com/main/software.jspx?ckey=778242&lc=chi&cc=CN&nid=-11143.0.00&id=778242">https://www.keysight.com/main/software.jspx?ckey=778242&amp;lc=chi&amp;cc=CN&amp;nid=-11143.0.00&amp;id=778242</a></p><p>IO Libraries Suite软件 下载地址：</p><p><a href="https://www.keysight.com/main/software.jspx?cc=US&lc=eng&ckey=2175637&nid=-11143.0.00&id=2175637">https://www.keysight.com/main/software.jspx?cc=US&amp;lc=eng&amp;ckey=2175637&amp;nid=-11143.0.00&amp;id=2175637</a></p><h2 id="一、更新安捷伦34970A设置"><a href="#一、更新安捷伦34970A设置" class="headerlink" title="一、更新安捷伦34970A设置"></a>一、更新安捷伦34970A设置</h2><h3 id="1-选择RS-232-通信模式"><a href="#1-选择RS-232-通信模式" class="headerlink" title="1.选择RS-232 通信模式"></a>1.选择RS-232 通信模式</h3><p>按 shift - Sto&#x2F;Rcl 然后使用旋钮选择 RS-232</p><p>按 Sto&#x2F;Rcl 确认</p><h3 id="2-选择波特率"><a href="#2-选择波特率" class="headerlink" title="2.选择波特率"></a>2.选择波特率</h3><p>使用旋钮 调整波特率为9600（建议）</p><p>按 Sto&#x2F;Rcl 确认</p><h3 id="3-选择奇偶校验与数据位数"><a href="#3-选择奇偶校验与数据位数" class="headerlink" title="3.选择奇偶校验与数据位数"></a>3.选择奇偶校验与数据位数</h3><p>使用旋钮选择到NONE ，  8 BITS</p><p>按 Sto&#x2F;Rcl 确认</p><h3 id="4-选择流控制方式"><a href="#4-选择流控制方式" class="headerlink" title="4.选择流控制方式"></a>4.选择流控制方式</h3><p>使用旋钮选择到 FLOW  XON&#x2F;XOFF</p><p>按 Sto&#x2F;Rcl 确认</p><p>然后推出配置即可</p><p>此时已经完成了安捷伦侧端口配置，接下来进行电脑侧配置</p><h2 id="二、配置电脑侧端口配置"><a href="#二、配置电脑侧端口配置" class="headerlink" title="二、配置电脑侧端口配置"></a>二、配置电脑侧端口配置</h2><p>打开设备管理器</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210423144526.png"> 找到端口设置，配置连接的端口</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210423144601.png"></p><p>配置需要与安捷伦上设置的一致</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210423144622.png"></p><p>使用转接线将安捷伦34970A与电脑连接起来后，此时打开keysight connection expert软件刷新就可以看到出现设备</p><p>同时打开Benchlink Data Logger软件，也可以查找到设备</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210423144651.png"></p><p>此时便完成了使用RS-232端口将安捷伦34970A与电脑间的连接通讯了</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 试验台架 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 控制 </tag>
-            
-            <tag> 试验台 </tag>
-            
-            <tag> 安捷伦 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>多功能空调实验系统简介</title>
       <link href="/2020/06/28/%E5%A4%9A%E5%8A%9F%E8%83%BD%E7%A9%BA%E8%B0%83%E5%AE%9E%E9%AA%8C%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/"/>
       <url>/2020/06/28/%E5%A4%9A%E5%8A%9F%E8%83%BD%E7%A9%BA%E8%B0%83%E5%AE%9E%E9%AA%8C%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/</url>
@@ -4366,7 +4253,7 @@
       
       <categories>
           
-          <category> 试验台架 </category>
+          <category> 制冷技术 </category>
           
       </categories>
       
@@ -4374,6 +4261,35 @@
         <tags>
             
             <tag> labview </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>安捷伦34970A 通过RS232接口连接电脑</title>
+      <link href="/2020/06/28/%E5%AE%89%E6%8D%B7%E4%BC%A634970a-%E9%80%9A%E8%BF%87rs232%E6%8E%A5%E5%8F%A3%E8%BF%9E%E6%8E%A5%E7%94%B5%E8%84%91/"/>
+      <url>/2020/06/28/%E5%AE%89%E6%8D%B7%E4%BC%A634970a-%E9%80%9A%E8%BF%87rs232%E6%8E%A5%E5%8F%A3%E8%BF%9E%E6%8E%A5%E7%94%B5%E8%84%91/</url>
+      
+        <content type="html"><![CDATA[<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>安捷伦34970A数据采集仪</p><p>安捷伦34901A数据采集卡（共22个通道，前20个通道可以用来测量<strong>直流电压、交流电压、2线制电阻、4线制电阻、频率、周期、温度（B型）、温度（E型）、温度（J型）、温度（K型）、温度（N型）、温度（R型）、温度（S型）、温度（T型）、温度2.2k热敏电阻、温度5k热敏电阻、温度10k热敏电阻、温度2线制RTD、温度4线制RTD</strong>，后两个为<strong>电流测量通道21和22通道</strong>，可以用来测量<strong>直流电流与交流电流</strong>）</p><p>RS-232转USB线RS-232数据线</p><p>agilent benchlink data logger软件 下载地址：</p><p><a href="https://www.keysight.com/main/software.jspx?ckey=778242&lc=chi&cc=CN&nid=-11143.0.00&id=778242">https://www.keysight.com/main/software.jspx?ckey=778242&amp;lc=chi&amp;cc=CN&amp;nid=-11143.0.00&amp;id=778242</a></p><p>IO Libraries Suite软件 下载地址：</p><p><a href="https://www.keysight.com/main/software.jspx?cc=US&lc=eng&ckey=2175637&nid=-11143.0.00&id=2175637">https://www.keysight.com/main/software.jspx?cc=US&amp;lc=eng&amp;ckey=2175637&amp;nid=-11143.0.00&amp;id=2175637</a></p><h2 id="一、更新安捷伦34970A设置"><a href="#一、更新安捷伦34970A设置" class="headerlink" title="一、更新安捷伦34970A设置"></a>一、更新安捷伦34970A设置</h2><h3 id="1-选择RS-232-通信模式"><a href="#1-选择RS-232-通信模式" class="headerlink" title="1.选择RS-232 通信模式"></a>1.选择RS-232 通信模式</h3><p>按 shift - Sto&#x2F;Rcl 然后使用旋钮选择 RS-232</p><p>按 Sto&#x2F;Rcl 确认</p><h3 id="2-选择波特率"><a href="#2-选择波特率" class="headerlink" title="2.选择波特率"></a>2.选择波特率</h3><p>使用旋钮 调整波特率为9600（建议）</p><p>按 Sto&#x2F;Rcl 确认</p><h3 id="3-选择奇偶校验与数据位数"><a href="#3-选择奇偶校验与数据位数" class="headerlink" title="3.选择奇偶校验与数据位数"></a>3.选择奇偶校验与数据位数</h3><p>使用旋钮选择到NONE ，  8 BITS</p><p>按 Sto&#x2F;Rcl 确认</p><h3 id="4-选择流控制方式"><a href="#4-选择流控制方式" class="headerlink" title="4.选择流控制方式"></a>4.选择流控制方式</h3><p>使用旋钮选择到 FLOW  XON&#x2F;XOFF</p><p>按 Sto&#x2F;Rcl 确认</p><p>然后推出配置即可</p><p>此时已经完成了安捷伦侧端口配置，接下来进行电脑侧配置</p><h2 id="二、配置电脑侧端口配置"><a href="#二、配置电脑侧端口配置" class="headerlink" title="二、配置电脑侧端口配置"></a>二、配置电脑侧端口配置</h2><p>打开设备管理器</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210423144526.png"> 找到端口设置，配置连接的端口</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210423144601.png"></p><p>配置需要与安捷伦上设置的一致</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210423144622.png"></p><p>使用转接线将安捷伦34970A与电脑连接起来后，此时打开keysight connection expert软件刷新就可以看到出现设备</p><p>同时打开Benchlink Data Logger软件，也可以查找到设备</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210423144651.png"></p><p>此时便完成了使用RS-232端口将安捷伦34970A与电脑间的连接通讯了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 制冷技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 控制 </tag>
+            
+            <tag> 安捷伦 </tag>
+            
+            <tag> 试验台 </tag>
             
         </tags>
       
@@ -4395,6 +4311,14 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 推荐软件 </tag>
+            
+            <tag> 科研工具 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -4450,8 +4374,6 @@
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> 网站 </tag>
             
             <tag> 网站建设 </tag>
@@ -4477,6 +4399,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 树莓派 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -4496,6 +4424,14 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 投资 </tag>
+            
+            <tag> 可转债 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -4512,10 +4448,14 @@
           
           <category> 生活 </category>
           
-          <category> 随笔 </category>
-          
       </categories>
       
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -4546,6 +4486,8 @@
             
             <tag> 搬瓦工 </tag>
             
+            <tag> 网站建设 </tag>
+            
             <tag> cloudflare </tag>
             
             <tag> wordpress </tag>
@@ -4553,8 +4495,6 @@
             <tag> 免费域名 </tag>
             
             <tag> 域名 </tag>
-            
-            <tag> 网站建设 </tag>
             
         </tags>
       
@@ -4576,6 +4516,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 制冷技术 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -4623,6 +4569,14 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 推荐软件 </tag>
+            
+            <tag> 虚拟机 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -4639,14 +4593,10 @@
           
           <category> 技术 </category>
           
-          <category> 文章采集 </category>
-          
       </categories>
       
       
         <tags>
-            
-            <tag> tor </tag>
             
             <tag> 网站 </tag>
             
@@ -4665,8 +4615,6 @@
       
       
       <categories>
-          
-          <category> 文章采集 </category>
           
           <category> 生活 </category>
           
@@ -4698,36 +4646,11 @@
       </categories>
       
       
-    </entry>
-    
-    
-    
-    <entry>
-      <title>电池热管理工程实践认知 (2): 液冷及直冷式热管理系统</title>
-      <link href="/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/"/>
-      <url>/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/</url>
-      
-        <content type="html"><![CDATA[<p><strong><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></strong></p><p> </p><p>人类可以冬天泡澡夏天玩水，电动车的电池可以不？人类可以在夏天用空调，电池也可以有这个享受不？其实呢，不是不可以（泡澡、玩水、吹空调），只要方法得当、方法好。在上一期中，我们简单介绍了电池热管理的基本概念以及相关分类，并着重介绍了风冷式电池热管理技术（<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483753&idx=1&sn=7c5f099a10bca48a40b6ad96b91f3c91&chksm=9bee6930ac99e0260293a05cf3e7a74fba13e8faf33ecd258788be7c91647815fce72aa7b1ce&scene=21#wechat_redirect">电池热管理工程实践认知 (1): 风冷式热管理系统</a>），这一期我们将介绍和讨论液冷式和直冷式电池热管理技术，带大家一起来看看如何让动力电池组玩水和吹空调，清凉一“夏”。</p><p> </p><p><strong>1、液冷式电池热管理系统部件构成</strong></p><p> </p><p>液冷系统部件包含的部件比较多，它和整车端的空调系统都相关，我们今天单纯的讲电池包内部的部件，一般液冷部件包含：进出口、温度探头、水管、导热垫(导热胶)、液冷板、冷却液、弹性支撑(弹性支撑垫)、隔热垫、固定螺栓、均温板。这些部件我们可以在网上获得他们的信息，我们今天对导热垫(导热胶)、液冷板、弹性支撑垫进行初步了解。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1452db346633c0d1bfed881ae734b3f-1024x606.png"></p><p>图1 液冷系统工作原理示意图（百度图片）</p><p> </p><p>导热垫（导热胶）位于电池和液冷板之间的中间导热介质，液冷板由于制造加公差问题，冷板的整个散热面不是一个理想的平面，需要导热系数较高的弹性体（有缓冲作用）来填充这部分高度差。在前期的很多液冷电池包设计中，国内大部分采用的都是导热垫，后来慢慢许多公司都采用了导热胶。导热胶从目前的整个电池包的实际测试结果来看，确实散热效果要优于导热垫，导热胶可以很好地填充电芯和冷板之间的缝隙，同时导热胶可以做的很薄，电芯和冷板之间的热阻大大的降低，然而从投入来看，导热胶需要投入价格不菲的导热胶设备，从返修的角度来看，导热胶的清理也是一个难题，返修过程中有可能还会对电芯和冷板造成不可修复的伤害。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5450176679110d9632015ae839040b19.jpeg"></p><p>图2 导热垫（导热胶）和液冷板（管）示意图（百度图片）</p><p> </p><p>液冷板是散热的主要部件，一般国内使用的液冷板类型有铝挤型材拼焊冷板、铝挤口琴管冷板、冲压冷板，另外市面上也出现了吹胀冷板、铝和塑料集成的冷板。国内为了追求轻量化和成本，一般铝挤口琴管冷板和冲压冷板做的都很薄，强度远远比不上铝挤型材拼焊冷板，当我们使用铝挤口琴管冷板和冲压冷板时，很大程度上都会用到弹性支撑（弹性支撑垫），除非做一些特殊设计，比如捷豹路虎I-PACE的设计，内部冲压板就是和电池包内部的均温板通过导热结构胶和螺栓牢牢的固定在一起。我们在设计弹性支撑（弹性支撑垫）的时候，计算好极限工况下的支撑力（如果使用粘接力较强的导热胶，弹性支撑可能就需要另外计算)，同时也要考虑它的弹性衰减情况（弹性过大也会造成破坏），防止若干年后车辆出现问题。由于需要通冷却液或者热液，液冷系统也存在凝露现象的出现，前期装包或者后期维修需要控制装包的温湿度环境。</p><p> </p><p>下面我们来列举几款实际案例，特斯拉的设计（熔断保护、绝缘、导热、分流、防止热失控等）也很经典，网络上的拆解很多，大家有兴趣可以查下，此处不再展示，后期具体的冷板流道设计和工艺我们有机会再细聊。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-155128f8395eac28463761ae04c3212e.jpeg"></p><p>图3 特斯拉电池模组中的液冷系统（百度图片）</p><p> </p><p>蔚来汽车ES8目前采用的就是铝挤型材拼焊冷板（后期ES6某款电量的电池包可能会更换水冷板形式），这款设计优点就是抗冲击碰撞性能较好，电池包位于车的底盘，当整车发生碰撞和底盘剐蹭的时候，铝挤型材拼焊冷板可以作为结构强度件对电池包进行很好地保护，但是铝挤型材拼焊冷板重量较重，在一定程度上也影响了整车的巡航里程。ES8水冷板设计均温效果挺不错的，无论从散热还是加热这一块，做的都是比较优秀。这款电池包还有一个优秀设计，就是整个电池包采用了快换设计，包含电快换、水快换和整包快换，这样的设计可以在时间方面让电动车（换电）和燃油车（加油）之间达到一种平衡。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-448383c4b5afe5846e137622849c6dc8.png"></p><p>图4 电池包三维结构分解图（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-94d97811c6cd90e43646408802d457de.png"></p><p>图5 电池包三维内部视图（百度照片）</p><p> </p><p>捷豹路虎I-PACE电池包是一种典型的干湿分离设计，采用的冲压成型的冷板（内部通过橡胶管联通每个冷板），液冷系统和电池系统分为两个仓，在液冷系统和电池系统之间设计的有一层板，这层板不仅起到了对液冷系统和电池系统上下隔离的效果，另外还起到了均温的效果，前面我们也提到液冷板和均温板之间是依靠导热胶和螺栓固定，电池系统和均温板之间也使用了导热胶，但是有趣的是在均温板上开了一些联通液冷系统和电池系统的孔，这种孔不知道是否具有单向排气或者排湿的作用，如果是双向的，可能没有完全意义做到干湿分离，但是将液冷系统和电池系统分开，已经大大降低了由于冷却液泄露而带来的风险。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0f173bbeb7b41c87ed21a6ed273aed92.png"></p><p>图6 电池包安装位置（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bc643fcb6c96d0fb6e39f16cfba009ee.jpeg"></p><p>图7 电池包三维视图（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7be8383418c7cd0274bbe828a98ad2bb.png"></p><p>图8 电池包底部视图（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-30e04b548a7586138f75a3484b9f324b.jpeg"></p><p>图9 电池包传热路径（百度照片）</p><p> </p><p>爱驰汽车U5同样采用了干湿分离设计，但是液冷板形式和I-PACE不同，爱驰汽车U5采用的是口琴管冷板，水冷板和下箱体集成化，集流管部分应该做了特殊的分流设计（后续这款液冷设计的专利大家可以学习一下，分流设计在液冷系统里面还是比较关键的），口琴管和均温板之间采用的应该也是导热胶（起到一定的固定作用），关于冷板的支撑设计要么采用固定，要么采用弹性支撑，U5的电池包轻量化做的比较好，同样这款车还有另外一个特点就是“叠加电池包”，用于增加续航里程，大家可以关注一下。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5736d3af2b84d9891d2ea13107cce450.png"></p><p>图10 电池包安装位置（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eb03eaa5bcef60d22d06320ff5f0b4ee.png"></p><p>图11 电池包局部剖切图（百度照片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-6b23f9f2a8d85516ce284902d587769e.png"></p><p>图12 电池包三维视图（百度照片）</p><p> </p><p><strong>2、直冷式电池热管理系统部件构成</strong></p><p> </p><p>直冷技术属于相变冷却的范畴，它主要通过冷却介质的相态变化来吸收或释放热量。直冷技术和汽车空调的原理一致，两者都是通过系统的压缩机将系统内部的制冷剂压缩成高温高压的气体，然后进入冷凝器后被冷凝成常温高压的液态，接着液态介质进入膨胀阀，膨胀后变成低温低压的两相流进入蒸发器，这里的蒸发器，在电池包内部指的就是液冷板，当然直冷式热管理技术所说的冷板和液冷式热管理技术中的冷板在内部流道是有所不同的。两相流在蒸发器内部吸热后完全变成气态，通过膨胀阀回到压缩机内部，完成一个完整的循环，整个过程通过冷却工质的态相变化（气液相变）来吸热或者释放热量。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0c6948c322dd62ff3e5da3e53ddc66e5.jpeg"></p><p>图13 直冷式电池热管理系统工作原理示意图（百度图片）</p><p> </p><p>直冷系统设计相对复杂，由于制冷剂的气液相变，整个温差比较难控制，同时对整个系统的耐压和气密性要求也是十分高的，同时为了防止后期包内凝露现象的出现，装包的环境可能会也有严格的要求（后期维修不能随意在暴露环境下拆装），我本人目前还没有实际的开发过一款直冷项目的电池包，也没参与拆解过任何单纯直冷的电池包，前面直冷的技术原理已经解释的比较清楚，这里我们对该技术的优缺点和技术难度不做过多的赘述，下面我们列举几个直冷冷却的实际案例照片。</p><p> </p><p>宝马X5热交换器（冷板）分别位于三个二层和三个一层电池模组下方，热交换器（冷板）下方有弹性支撑结构，可以看出BMW电池包冷却和液冷设计比较类似，只是冷却液换成了制冷剂，这种设计要平衡导热性及机械稳定性，防止过冷现象出现（制冷剂冻伤人事件已经屡见不鲜了，这里主要防止对电芯的伤害），此处不详细去介绍了。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-c4298bd6893e7c7e70fbee64967355bf.png"></p><p>图14 电池包位置视图（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-57eed002107fd14c8dad0dd2043d5d05.jpeg"></p><p>图15 电池包结构分解图（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b3d456dc106da8c8f0ee96e3dfa68d1d.jpeg"></p><p>图16 电池包内部冷板视图（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0fde9deaa048ec4a63ab1561bb655818.jpeg"></p><p>图17 电池包内部局部视图（百度照片）</p><p> </p><p>在2013年宝马I3就已经开始采用直冷散热技术，是采用直冷技术最早的一批新能源汽车，宝马I3近些年也在不停的变动，电池包的容量也从原先的22kWh变为目前的100kWh，目前的设计也可以使用液冷散热，在电池包前段增加2个储液罐。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0bde361674dfe87a103a5b8270339a66.png"></p><p>图18 电池包位置视图（百度照片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-28808145d2080b5374b9326ba436b2a1.jpeg"></p><p>图19 电池包结构分解图（百度照片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ab232a9302975d1828fe88b316b598d5.png"></p><p>图20 电池包局部视图（百度照片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f69fc2eab00896398a398448cf5106fa.png"></p><p>图21 电池包工质流向（百度照片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e60ea8113b579a79edbd91beee6d649.jpeg"></p><p>图22 宝马I3（2018款）三维视图（百度照片）</p><p> </p><p>这是关于电池热管理的三种最常用的技术，另外还有一种叫做“<strong>自然冷却式电池热管理技术</strong>”，很显然自然冷却式技术并没有额外的装置把电池产生的多余热量给交换走，例如BYD在秦、唐、宋、E6、腾势等采用LFP电芯的车型上都采用了自然冷却式技术，但据了解BYD后续在采用三元电芯的车型时将采用液冷式电池热管理技术。</p><p> </p><p>通过本期以及上一期的介绍（<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483753&idx=1&sn=7c5f099a10bca48a40b6ad96b91f3c91&chksm=9bee6930ac99e0260293a05cf3e7a74fba13e8faf33ecd258788be7c91647815fce72aa7b1ce&scene=21#wechat_redirect">电池热管理工程实践认知 (1): 风冷式热管理系统</a>），我们聊完了电池热管理的四种不同的技术方案，以及根据笔者个人在工作中的一些工程实践经验及体会，希望能为对热管理感兴趣的朋友们提供一点启发，后续我们可以针对动力电池热管理的一些子部件进行一些详细的工程实践探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行更进一步的剖解分析。</p><p> </p><p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出。同时以上论述均为个人见解，如有错误之处请不吝赐教。技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p><p> </p><p><strong>往期精彩回顾</strong></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483753&idx=1&sn=7c5f099a10bca48a40b6ad96b91f3c91&chksm=9bee6930ac99e0260293a05cf3e7a74fba13e8faf33ecd258788be7c91647815fce72aa7b1ce&scene=21#wechat_redirect">电池热管理工程实践认知 (1): 风冷式热管理系统</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 制冷技术 </category>
-          
-          <category> 文章采集 </category>
-          
-          <category> 试验台架 </category>
-          
-      </categories>
-      
-      
         <tags>
             
-            <tag> 试验台 </tag>
+            <tag> windows </tag>
             
-            <tag> 制冷技术 </tag>
-            
-            <tag> 电池热管理 </tag>
+            <tag> 云盘 </tag>
             
         </tags>
       
@@ -4747,12 +4670,39 @@
           
           <category> 制冷技术 </category>
           
-          <category> 文章采集 </category>
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电池热管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电池热管理工程实践认知 (2): 液冷及直冷式热管理系统</title>
+      <link href="/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/"/>
+      <url>/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/</url>
+      
+        <content type="html"><![CDATA[<p><strong><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></strong></p><p> </p><p>人类可以冬天泡澡夏天玩水，电动车的电池可以不？人类可以在夏天用空调，电池也可以有这个享受不？其实呢，不是不可以（泡澡、玩水、吹空调），只要方法得当、方法好。在上一期中，我们简单介绍了电池热管理的基本概念以及相关分类，并着重介绍了风冷式电池热管理技术（<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483753&idx=1&sn=7c5f099a10bca48a40b6ad96b91f3c91&chksm=9bee6930ac99e0260293a05cf3e7a74fba13e8faf33ecd258788be7c91647815fce72aa7b1ce&scene=21#wechat_redirect">电池热管理工程实践认知 (1): 风冷式热管理系统</a>），这一期我们将介绍和讨论液冷式和直冷式电池热管理技术，带大家一起来看看如何让动力电池组玩水和吹空调，清凉一“夏”。</p><p> </p><p><strong>1、液冷式电池热管理系统部件构成</strong></p><p> </p><p>液冷系统部件包含的部件比较多，它和整车端的空调系统都相关，我们今天单纯的讲电池包内部的部件，一般液冷部件包含：进出口、温度探头、水管、导热垫(导热胶)、液冷板、冷却液、弹性支撑(弹性支撑垫)、隔热垫、固定螺栓、均温板。这些部件我们可以在网上获得他们的信息，我们今天对导热垫(导热胶)、液冷板、弹性支撑垫进行初步了解。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1452db346633c0d1bfed881ae734b3f-1024x606.png"></p><p>图1 液冷系统工作原理示意图（百度图片）</p><p> </p><p>导热垫（导热胶）位于电池和液冷板之间的中间导热介质，液冷板由于制造加公差问题，冷板的整个散热面不是一个理想的平面，需要导热系数较高的弹性体（有缓冲作用）来填充这部分高度差。在前期的很多液冷电池包设计中，国内大部分采用的都是导热垫，后来慢慢许多公司都采用了导热胶。导热胶从目前的整个电池包的实际测试结果来看，确实散热效果要优于导热垫，导热胶可以很好地填充电芯和冷板之间的缝隙，同时导热胶可以做的很薄，电芯和冷板之间的热阻大大的降低，然而从投入来看，导热胶需要投入价格不菲的导热胶设备，从返修的角度来看，导热胶的清理也是一个难题，返修过程中有可能还会对电芯和冷板造成不可修复的伤害。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5450176679110d9632015ae839040b19.jpeg"></p><p>图2 导热垫（导热胶）和液冷板（管）示意图（百度图片）</p><p> </p><p>液冷板是散热的主要部件，一般国内使用的液冷板类型有铝挤型材拼焊冷板、铝挤口琴管冷板、冲压冷板，另外市面上也出现了吹胀冷板、铝和塑料集成的冷板。国内为了追求轻量化和成本，一般铝挤口琴管冷板和冲压冷板做的都很薄，强度远远比不上铝挤型材拼焊冷板，当我们使用铝挤口琴管冷板和冲压冷板时，很大程度上都会用到弹性支撑（弹性支撑垫），除非做一些特殊设计，比如捷豹路虎I-PACE的设计，内部冲压板就是和电池包内部的均温板通过导热结构胶和螺栓牢牢的固定在一起。我们在设计弹性支撑（弹性支撑垫）的时候，计算好极限工况下的支撑力（如果使用粘接力较强的导热胶，弹性支撑可能就需要另外计算)，同时也要考虑它的弹性衰减情况（弹性过大也会造成破坏），防止若干年后车辆出现问题。由于需要通冷却液或者热液，液冷系统也存在凝露现象的出现，前期装包或者后期维修需要控制装包的温湿度环境。</p><p> </p><p>下面我们来列举几款实际案例，特斯拉的设计（熔断保护、绝缘、导热、分流、防止热失控等）也很经典，网络上的拆解很多，大家有兴趣可以查下，此处不再展示，后期具体的冷板流道设计和工艺我们有机会再细聊。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-155128f8395eac28463761ae04c3212e.jpeg"></p><p>图3 特斯拉电池模组中的液冷系统（百度图片）</p><p> </p><p>蔚来汽车ES8目前采用的就是铝挤型材拼焊冷板（后期ES6某款电量的电池包可能会更换水冷板形式），这款设计优点就是抗冲击碰撞性能较好，电池包位于车的底盘，当整车发生碰撞和底盘剐蹭的时候，铝挤型材拼焊冷板可以作为结构强度件对电池包进行很好地保护，但是铝挤型材拼焊冷板重量较重，在一定程度上也影响了整车的巡航里程。ES8水冷板设计均温效果挺不错的，无论从散热还是加热这一块，做的都是比较优秀。这款电池包还有一个优秀设计，就是整个电池包采用了快换设计，包含电快换、水快换和整包快换，这样的设计可以在时间方面让电动车（换电）和燃油车（加油）之间达到一种平衡。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-448383c4b5afe5846e137622849c6dc8.png"></p><p>图4 电池包三维结构分解图（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-94d97811c6cd90e43646408802d457de.png"></p><p>图5 电池包三维内部视图（百度照片）</p><p> </p><p>捷豹路虎I-PACE电池包是一种典型的干湿分离设计，采用的冲压成型的冷板（内部通过橡胶管联通每个冷板），液冷系统和电池系统分为两个仓，在液冷系统和电池系统之间设计的有一层板，这层板不仅起到了对液冷系统和电池系统上下隔离的效果，另外还起到了均温的效果，前面我们也提到液冷板和均温板之间是依靠导热胶和螺栓固定，电池系统和均温板之间也使用了导热胶，但是有趣的是在均温板上开了一些联通液冷系统和电池系统的孔，这种孔不知道是否具有单向排气或者排湿的作用，如果是双向的，可能没有完全意义做到干湿分离，但是将液冷系统和电池系统分开，已经大大降低了由于冷却液泄露而带来的风险。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0f173bbeb7b41c87ed21a6ed273aed92.png"></p><p>图6 电池包安装位置（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bc643fcb6c96d0fb6e39f16cfba009ee.jpeg"></p><p>图7 电池包三维视图（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7be8383418c7cd0274bbe828a98ad2bb.png"></p><p>图8 电池包底部视图（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-30e04b548a7586138f75a3484b9f324b.jpeg"></p><p>图9 电池包传热路径（百度照片）</p><p> </p><p>爱驰汽车U5同样采用了干湿分离设计，但是液冷板形式和I-PACE不同，爱驰汽车U5采用的是口琴管冷板，水冷板和下箱体集成化，集流管部分应该做了特殊的分流设计（后续这款液冷设计的专利大家可以学习一下，分流设计在液冷系统里面还是比较关键的），口琴管和均温板之间采用的应该也是导热胶（起到一定的固定作用），关于冷板的支撑设计要么采用固定，要么采用弹性支撑，U5的电池包轻量化做的比较好，同样这款车还有另外一个特点就是“叠加电池包”，用于增加续航里程，大家可以关注一下。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5736d3af2b84d9891d2ea13107cce450.png"></p><p>图10 电池包安装位置（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eb03eaa5bcef60d22d06320ff5f0b4ee.png"></p><p>图11 电池包局部剖切图（百度照片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-6b23f9f2a8d85516ce284902d587769e.png"></p><p>图12 电池包三维视图（百度照片）</p><p> </p><p><strong>2、直冷式电池热管理系统部件构成</strong></p><p> </p><p>直冷技术属于相变冷却的范畴，它主要通过冷却介质的相态变化来吸收或释放热量。直冷技术和汽车空调的原理一致，两者都是通过系统的压缩机将系统内部的制冷剂压缩成高温高压的气体，然后进入冷凝器后被冷凝成常温高压的液态，接着液态介质进入膨胀阀，膨胀后变成低温低压的两相流进入蒸发器，这里的蒸发器，在电池包内部指的就是液冷板，当然直冷式热管理技术所说的冷板和液冷式热管理技术中的冷板在内部流道是有所不同的。两相流在蒸发器内部吸热后完全变成气态，通过膨胀阀回到压缩机内部，完成一个完整的循环，整个过程通过冷却工质的态相变化（气液相变）来吸热或者释放热量。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0c6948c322dd62ff3e5da3e53ddc66e5.jpeg"></p><p>图13 直冷式电池热管理系统工作原理示意图（百度图片）</p><p> </p><p>直冷系统设计相对复杂，由于制冷剂的气液相变，整个温差比较难控制，同时对整个系统的耐压和气密性要求也是十分高的，同时为了防止后期包内凝露现象的出现，装包的环境可能会也有严格的要求（后期维修不能随意在暴露环境下拆装），我本人目前还没有实际的开发过一款直冷项目的电池包，也没参与拆解过任何单纯直冷的电池包，前面直冷的技术原理已经解释的比较清楚，这里我们对该技术的优缺点和技术难度不做过多的赘述，下面我们列举几个直冷冷却的实际案例照片。</p><p> </p><p>宝马X5热交换器（冷板）分别位于三个二层和三个一层电池模组下方，热交换器（冷板）下方有弹性支撑结构，可以看出BMW电池包冷却和液冷设计比较类似，只是冷却液换成了制冷剂，这种设计要平衡导热性及机械稳定性，防止过冷现象出现（制冷剂冻伤人事件已经屡见不鲜了，这里主要防止对电芯的伤害），此处不详细去介绍了。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-c4298bd6893e7c7e70fbee64967355bf.png"></p><p>图14 电池包位置视图（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-57eed002107fd14c8dad0dd2043d5d05.jpeg"></p><p>图15 电池包结构分解图（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b3d456dc106da8c8f0ee96e3dfa68d1d.jpeg"></p><p>图16 电池包内部冷板视图（百度照片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0fde9deaa048ec4a63ab1561bb655818.jpeg"></p><p>图17 电池包内部局部视图（百度照片）</p><p> </p><p>在2013年宝马I3就已经开始采用直冷散热技术，是采用直冷技术最早的一批新能源汽车，宝马I3近些年也在不停的变动，电池包的容量也从原先的22kWh变为目前的100kWh，目前的设计也可以使用液冷散热，在电池包前段增加2个储液罐。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0bde361674dfe87a103a5b8270339a66.png"></p><p>图18 电池包位置视图（百度照片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-28808145d2080b5374b9326ba436b2a1.jpeg"></p><p>图19 电池包结构分解图（百度照片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ab232a9302975d1828fe88b316b598d5.png"></p><p>图20 电池包局部视图（百度照片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f69fc2eab00896398a398448cf5106fa.png"></p><p>图21 电池包工质流向（百度照片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e60ea8113b579a79edbd91beee6d649.jpeg"></p><p>图22 宝马I3（2018款）三维视图（百度照片）</p><p> </p><p>这是关于电池热管理的三种最常用的技术，另外还有一种叫做“<strong>自然冷却式电池热管理技术</strong>”，很显然自然冷却式技术并没有额外的装置把电池产生的多余热量给交换走，例如BYD在秦、唐、宋、E6、腾势等采用LFP电芯的车型上都采用了自然冷却式技术，但据了解BYD后续在采用三元电芯的车型时将采用液冷式电池热管理技术。</p><p> </p><p>通过本期以及上一期的介绍（<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483753&idx=1&sn=7c5f099a10bca48a40b6ad96b91f3c91&chksm=9bee6930ac99e0260293a05cf3e7a74fba13e8faf33ecd258788be7c91647815fce72aa7b1ce&scene=21#wechat_redirect">电池热管理工程实践认知 (1): 风冷式热管理系统</a>），我们聊完了电池热管理的四种不同的技术方案，以及根据笔者个人在工作中的一些工程实践经验及体会，希望能为对热管理感兴趣的朋友们提供一点启发，后续我们可以针对动力电池热管理的一些子部件进行一些详细的工程实践探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行更进一步的剖解分析。</p><p> </p><p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出。同时以上论述均为个人见解，如有错误之处请不吝赐教。技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p><p> </p><p><strong>往期精彩回顾</strong></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483753&idx=1&sn=7c5f099a10bca48a40b6ad96b91f3c91&chksm=9bee6930ac99e0260293a05cf3e7a74fba13e8faf33ecd258788be7c91647815fce72aa7b1ce&scene=21#wechat_redirect">电池热管理工程实践认知 (1): 风冷式热管理系统</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 制冷技术 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> 试验台 </tag>
+            
+            <tag> 制冷技术 </tag>
             
             <tag> 电池热管理 </tag>
             
@@ -4829,8 +4779,6 @@
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> 推荐软件 </tag>
             
         </tags>
@@ -4894,14 +4842,12 @@
       <link href="/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/"/>
       <url>/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/</url>
       
-        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#67;&#80;&#85;&#x40;&#x31;&#x2e;&#57;&#71;&#72;&#122;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
+        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#67;&#x50;&#85;&#x40;&#x31;&#46;&#57;&#71;&#72;&#122;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
       
       
       <categories>
           
           <category> labview </category>
-          
-          <category> 文章采集 </category>
           
           <category> 树莓派 </category>
           
@@ -4909,8 +4855,6 @@
       
       
         <tags>
-            
-            <tag> tor </tag>
             
             <tag> labview </tag>
             
@@ -4945,8 +4889,6 @@
             
             <tag> excel </tag>
             
-            <tag> tor </tag>
-            
             <tag> refprop </tag>
             
         </tags>
@@ -4966,8 +4908,6 @@
       <categories>
           
           <category> 制冷技术 </category>
-          
-          <category> 文章采集 </category>
           
       </categories>
       
@@ -5063,8 +5003,6 @@
             
             <tag> 网站 </tag>
             
-            <tag> word </tag>
-            
             <tag> 图标 </tag>
             
             <tag> 邮件 </tag>
@@ -5094,11 +5032,11 @@
     
     
     <entry>
-      <title>LabVIEW中访问数据库的几种不同方法</title>
-      <link href="/2020/05/18/labview%E4%B8%AD%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95/"/>
-      <url>/2020/05/18/labview%E4%B8%AD%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95/</url>
+      <title>LabVIEW串口仪器控制—安装使用仪器现有驱动</title>
+      <link href="/2020/05/18/labview%E4%B8%B2%E5%8F%A3%E4%BB%AA%E5%99%A8%E6%8E%A7%E5%88%B6-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%BB%AA%E5%99%A8%E7%8E%B0%E6%9C%89%E9%A9%B1%E5%8A%A8/"/>
+      <url>/2020/05/18/labview%E4%B8%B2%E5%8F%A3%E4%BB%AA%E5%99%A8%E6%8E%A7%E5%88%B6-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%BB%AA%E5%99%A8%E7%8E%B0%E6%9C%89%E9%A9%B1%E5%8A%A8/</url>
       
-        <content type="html"><![CDATA[<p>虚拟仪器VI(Virtual Instruments)是National Instruments公司在其产品LabVIEW中首先提出的创新概念[1]。虚拟仪器系统的概念是测控系统的抽象。不管是传统的还是虚拟的仪器，它们的功能都是相同的：采集数据并进行分析处理，然后显示处理的结果。它们之间的不同主要体现在灵活性方面。虚拟仪器由用户自己定义功能，可以自由地组合计算机平台、硬件、软件以及完成应用系统所需要的各种功能。另外，虚拟仪器开发周期短、成本低、维护方便，易于应用新理论和新技术实现仪器的换代升级[2]。 <strong>现代的测试测量系统大多数需要对被测对象进行全方位检测，这必然会使获取的数据量急剧增长。面对大量的数据信息，采用数据库技术，可准确反映各类数据之间的密切联系，能够有效地管理和组织数据，是现代测试测量系统的发展趋势。但是现有的LabVIEW版本本身并不具备数据库访问功能，不能像VB、VC++、Delphi、PowerBuilder那样非常方便的进行数据库程序的开发。因此以LabVIEW编制的虚拟仪器系统需要其它辅助的方法来进行数据库访问。</strong> 1、在LabVIEW中访问数据库的方式**(1)利用NI公司的附加工具包中的数据库接口工具包LabVIEW SQL Toolkit进行数据库访问。该工具包集成了一系列的高级功能模块，这些模块封装了大多数的数据库操作和一些高级的数据库访问功能。它的优点是易于理解，操作简单，用户可以不学习SQL语法。缺点是需要另外购买且价格昂贵，无疑会增加系统成本。** <strong>(2)利用LabVIEW的ActiveX功能，调用Microsoft ADO对象，利用SQL语言实现数据库的访问。使用这种方法需要用户对Microsoft ADO以及SQL语言有较深的了解。</strong> <strong>(3)通过第三方开发的免费工具包LabSQL访问。LabSQL利用Microsoft ADO以及SQL语言来完成数据库访问，将复杂的底层ADO及SQL操作封装成一系列的LabSQL VIs，简单易用。</strong> <strong>(4)通过调用动态链接库DLL(Dynamic Link Library)访问。先利用其它语言如Visual C++编写DLL，再利用LabVIEW的调用库函数节点CLFN(Calling Library Function Node)调用此DLL访问数据库。但这种方法需要从底层进行复杂的编程才能实现，对非专业编程人员来讲是不现实的[3]。</strong> <strong>(5)利用中间文件存取数据。先将数据存入文件之中，待测量结束后再用专门的工具将数据导入到数据库之中。这种方法需要磁盘文件作为中介，而且不具有实时性，不方便使用[4]。</strong> <strong>实际应用中，前三种方法使用最为广泛，下面将重点讨论这三种方法。</strong></p><p>2 利用ADO技术访问数据库2.1 ADO技术简介ADO(ActiveX Data Objects)是Microsoft为OLE DB设计的应用层接口，它为一致的数据访问接口提供了良好的扩展性而不局限于单一的数据源。 ADO接口编程模型中包括连接(Connection)、命令(Command)、参数(Parameter)、记录集(Recordset)、字段(Field)、错误(Error)、属性(Property)、集合(Collection)、事件(Event)等元素。其中Connection、Command、Recordset是三个主体对象，Parameters、Fields、Errors、Properties是四个集合对象[5]。 ADO的一般操作方式为：1连接到数据源；2指定访问数据源的命令；3执行命令；4将命令执行后产生的结果保存在缓存中；5更新数据库。ADO的主要优点是易于使用、高速度、低内存支出和占用磁盘空间较少[6]。 2.2 LabVIEW中对ADO的调用ADO对象在LabVIEW中是以ActiveX对象的形式提供的。LabVIEW自4.1版本就引入了支持ActiveX自动控制的功能模块，在5.1版本之后支持客户和服务器双方，即虽然程序是在双方各自独立存在，但它们的信息是共享的。这种信息共享是通过客户端使用由服务器端发布的ActiveX控件来实现的。 图1展示的是LabVIEW中使用ActiveX控件的程序流程。ActiveX对象的打开和关闭是通过打开自动化节点(Automation Open)和关闭自动化节点(Close Reference)来实现的，属性的设置和获取则通过属性节点(Property Node)进行，而调用节点(Invoke Node)用于对象方法的调用。其中关键的是第二步，只有充分的利用“属性”和“方法”的设置才能成功地实现对数据库的访问</p><p>2.3应用实例(1)建立ADO对象 在前面板控件模板的Refnum子模板中选择Automation Refnum项，把它拖放到前面板上，在其右键菜单中选择Select ActiveX Class&gt;&gt;Broswer…，弹出Select ActiveX Object对话框，在类型库Type Library下拉列表中选择Microsoft ActiveX Data Objects 2.7 Library Version 2.7，在下面的对象Objects列表栏中出现这个库对LabVIEW可用的对象，选中Connection对象，点击OK按钮即可。使用同样的方法可以建立Command、Recordset等对象。 (2)连接到数据源 在程序框图功能模板中选择Communication&gt;&gt;ActiveX子模板，选择其中的Automation Open与ADODB._Connection相连即可打开Connection对象。接着从ActiveX子模板中选择Invoke Node并与Automation Open相连，在其上单击右键选择Methods&gt;&gt;Open，即出现图2中所示的节点。其中“ConnectionSring”是连接到数据源的字符串，“UserID”和“PassWord”是连接到数据源的用户名和密码，正确设置这些参数后便可连接到数据源。 (3)生成SQL命令、执行命令 与上一步相同，用 Invoke Node调用Connection对象的Execute方法执行所要的操作。Execute方法所必需的参数为CommandText，这里为所要执行的SQL语句。例如可以使用Create命令创建表，用Drop命令删除表，用Insert命令向表中插入数据，用Select命令进行查询并返回操作结果等[8]。本例使用Create命令创建了一个名为Staff的表，包括编号、姓名和年龄三个字段，其中id字段为主键，自动编号。对数据表的删除和添加数据的操作过程与建表过程类似。如果要对执行后的记录进行显示或读取字段值则需要建立Recordset对象，并与Execute相连。 (4)关闭连接 对数据库访问操作完毕后要及时关闭连接对象以释放内存和所用的系统资源。首先使用Connection对象的Close方法关闭数据库连接，然后使用Close Reference关闭ActiveX自动化参数号。</p><p>3、利用LabSQL访问数据库3.1 LabSQL简介LabSQL是一个免费的、多数据库、跨平台的LabVIEW数据库访问工具包，由Premkc Development公司的Chris Roth和Jeffrey Travis开发。目前的最新版本是LabSQL Release 1.1a，可以到网站<a href="http://jeffreytravis.com免费下载.labsql支持windows操作系统中任何基于obdc的数据库,包括access,sql/">[url&#x3D;http://jeffreytravis.com/]http://jeffreytravis.com</a>免费下载。LabSQL支持Windows操作系统中任何基于OBDC的数据库，包括Access，SQL Server，Oracle，Pervasive，Sybase等。[&#x2F;url]</p><p>LabSQL利用Microsoft ADO对象和SQL语言来完成数据库访问，将复杂的底层ADO及SQL操作封装成一系列的LabSQL VIs，简单易用。</p><p>LabSQL VIs按照功能可以分为四类：Command VIs，Connection VIs，Recordset VIs和Top Level VIs。 Command VIs的功能是完成一系列的基本ADO操作，例如，创建或删除一个Command，对数据库的某一个参数进行读或写等。 Connection VIs的功能是管理LabVIEW与数据库之间的连接。 Recordset VIs用于对数据库中的记录进行各种操作，例如，创建或删除一条记录，对记录中的某一个条目进行读或写等。 Top Level VIs属于顶层的LabSQL应用，对前三类LabSQL VIs某些功能的封装，例如，SQL Execute.vi可用于直接执行命令[9]。 3.2 LabSQL应用实例本应用实例是向数据表添加记录，所使用的数据源与上例相同，数据表为staff表。具体步骤如下： 第一步：建立与数据库的连接。首先通过ADO Connection Create.vi创建一个Connection对象，然后利用ADO Connection Open.vi建立与数据库的连接。数据库由ADO Connection Open.vi的ConnectionString指定，此参数由前面板的字符串控件提供，如图3所示。 第二步：生成SQL命令，执行命令。在前面板table控件中输入表名，name和age控件中输入字段值。在程序框图中使用Format Into String生成SQL命令，将它连接到ADO Connection Execute.vi即可执行，同时可在前面板Command Text控件中显示此命令。 第三步：断开与数据库之间的连接。利用ADO Connection Close.vi关闭Connection对象，并使用ADO Connection Destroy.vi删除Connection对象</p><p>4、利用LabVIEW SQL Toolkit访问数据库4.1 LabVIEW SQL Toolkit简介LabVIEW SQL Toolkit(又被称作为LabVIEW Database Connectivity Toolset)是用于数据库访问的附加工具包，它集成了一系列的高级功能模块，这些模块封装了大多数的数据库操作和一些高级的数据库访问功能[10]。其主要的功能如下： (1)支持ADO所支持的所有的数据库引擎； (2)支持所有与ODBC或OLE DB兼容的数据库驱动程序； (3)具有高度的可移植性，在任何情况下，用户通过改变DB Tools Open Connection VI的输入参数Connection String就可以更换数据库； (4)可以将数据库中Column Values的数据类型转换为标准LabVIEW Database Connectivity Toolset的数据类型，这进一步增强了它的可移植性； (5)与SQL兼容； (6)不使用SQL语句就可以实现数据库记录的查询、添加、修改以及删除等操作； (7)用户可以完全不需要学习SQL语法。 用户可以使用LabVIEW SQL Toolkit在LabVIEW中支持ODBC的本地或远程数据库，例如Microsoft Access，Microsoft SQL Sever，Sybase SQL Server以及Oracle等</p><p>4.2应用实例本应用实例是显示上面所建staff表中的所有记录，所使用的数据源与上面两例相同。具体步骤如下： (1)使用DB Tools Open Connection打开数据库连接[12]。 (2)显示指定数据表中所有数据。 使用DB Tools List Tables以一维数组形式列出指定数据库中的所有表，同时显示在前面板数组控件tables中。用户指定Table Index后，通过索引数组函数Index Array索引其中一个表。然后将表名连接到DB Tools List Columns和DB Tools Select All Data。 DB Tools List Columns的Columns参数用一维字符串数组返回指定表的字段名，通过属性节点将字段名显示在表格控件Table Data的首行，同时使用数组大小函数Array Size取得字段数，即表的列数，显示在Columns中。 DB Tools Select All Data的Data参数以二维字符串数组形式返回表中所有数据，显示在Table Data中，同时使用Array Size和Index Array函数取得记录数，也就是行数，显示在Rows中。 (3)使用DB Tools Close Connection断开连接</p><p>5、结论综上所述，使用ADO，LabSQL或LabVIEW SQL Toolkit访问数据库的基本步骤都是相同的，都要经过连接数据库、执行操作、断开连接这三个步骤。 使用ADO主要优点是易于使用、高速度、低内存支出和占用磁盘空间较少,但需要用户对Microsoft ADO以及SQL语言有较深的了解。 使用LabSQL不用精通ActiveX技术和SQL语言，操作简介，容易理解，但它没有对ADO的所有功能进行封装，功能上有局限性。 LabVIEW SQL Toolkit支持ADO所支持的所有的数据库引擎，不使用SQL语句就可以实现数据库记录的查询、添加、修改以及删除等操作，使用SQL语句能够实现复杂的数据库操作，功能强大，但其昂贵的价格对于很多用户来讲是不能承受的，这也限制了它的推广应用。 在实际应用中，用户究竟采用哪种方法要从项目难易程度、自身编程水平和技术经济等方面综合考虑</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="声明：很多仪器是没有驱动的。所以，具体问题具体分析。"><a href="#声明：很多仪器是没有驱动的。所以，具体问题具体分析。" class="headerlink" title="声明：很多仪器是没有驱动的。所以，具体问题具体分析。"></a>声明：很多仪器是没有驱动的。所以，具体问题具体分析。</h2><p>另外声明：所谓的驱动，也就是<a href="http://bbs.elecfans.com/zhuti_packaging_1.html">封装</a>好的底层的串口<a href="http://bbs.elecfans.com/zhuti_wireless_1.html">通信</a>程序，也是程序而已，只不过别人帮你做成了子 VI，让自己容易用。</p><p>所以：不要弄混淆了概念。</p><p>国外的很多仪器，都是有现成的 LV 程序驱动的，这个时候，我们到网上搜搜就行了。如果你要做仪器驱动，你最好先到网上搜搜，看有木有现成的。有现成的，开发速度就好多啦。如果手边的仪器搜不到现成的驱动，那就只能自己写了。</p><p>下面讲解怎么安装现成的驱动。 ①，网站下载篇，前面这个帖子讲了。 <a href="http://bbs.elecfans.com/jishu_467276_1_1.html">http://bbs.elecfans.com/jishu_467276_1_1.html</a> 有兴趣可以看看。 下面是通过 LabVIEW 软件下载。 我下面手把手教下 在 LV 软件里下载安装。</p><p>首先在 LV 的帮助菜单里，找到 查找仪器驱动 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145320o40k6u5ba5j074q9.jpg.thumb.jpg"></p><p>然后就会弹出一个仪器查找界面。如果你已经连接好了仪器的硬件，且仪器支持IDN？ 这个 SCPI 指令的话。</p><p>可以使用扫描仪器按钮，扫描一下你的仪器。因为使用那个指令，如果仪器连接好没错误，会返回一个仪器本身的仪器类型和版本的。这个时候，LV 就知道是什么仪器连接到了。这个需要查仪器说明书指令。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145425igqznznml30yzoro.jpg.thumb.jpg"></p><p>如果仪器木有连接好，或者没扫描出来（没扫描出来原因太多了。没装 VISA 驱动，电缆没连接好，仪器参数不对等。）自己想下载驱动。就自己选型号了，见下图。选型号，然后点击搜索。</p><p>我们下面搜索 Keithley2400.好了，点击搜索。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145525prt5qtozqkkkzp5a.jpg.thumb.jpg"></p><p>然后会搜出来。注意看右边的驱动信息。开发环境，版本，还有支持的接口等。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145626t2ooavzqa972roob.jpg.thumb.jpg"></p><p>从上图可以看出，这个仪器支持串口和 GPIB 口。还有支持的型号，有 2400，2410 等。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145704p5dddrdpdvnqyct5.jpg.thumb.jpg"></p><p>找到了驱动后，就点击安装，然后 LV 会自动给你安装到 instr.lib 文件夹下面。然后就可以在程序面板，仪器 IO 里，找到自己的驱动了。然后就可以调用了。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145757jtkndl63zqqqdaw7.jpg.thumb.jpg"></p><p>每个仪器驱动，会提供对应的调用例子，大家看下例子，大概知道怎么用就好了。有时候，自己把例子稍微改动一点点，就变成自己的程序了。还是很方便的。有仪器驱动，还是先看仪器。不然看仪器的 SCPI 指令是很麻烦的，一本说明书往往很长，而且大多是英文的。</p><p>下载好的驱动和例子，在这个地址：你安装的文件夹下下的这个路径。\Na<a href="http://bbs.elecfans.com/zhuti_715_1.html">ti</a>onal Instruments\LabVIEW 2011\instr.lib &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145953iiii9xqjv28s8iix.jpg.thumb.jpg"></p><p>仪器的例子，在上面的文件夹 Example下，自己连接仪器，配置程序参数和仪器的通讯参数，运行试试看。</p><p>参数什么的，最好对着说明书看看，国外的仪器，一般功能很强大，而你需要了解的命令，可能一点点而已。</p><p>声明：国外的仪器，有些有驱动（程序）的，有些是木有的。有现成的驱动仪器，最好使用现成的，这样开发速度更快。</p><p>文章来源于：</p><h2 id="小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动"><a href="#小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动" class="headerlink" title="小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动"></a><a href="https://www.cnblogs.com/mrchige/p/6238027.html">小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动</a></h2>]]></content>
       
       
       <categories>
@@ -5123,11 +5061,11 @@
     
     
     <entry>
-      <title>LabVIEW串口仪器控制—安装使用仪器现有驱动</title>
-      <link href="/2020/05/18/labview%E4%B8%B2%E5%8F%A3%E4%BB%AA%E5%99%A8%E6%8E%A7%E5%88%B6-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%BB%AA%E5%99%A8%E7%8E%B0%E6%9C%89%E9%A9%B1%E5%8A%A8/"/>
-      <url>/2020/05/18/labview%E4%B8%B2%E5%8F%A3%E4%BB%AA%E5%99%A8%E6%8E%A7%E5%88%B6-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%BB%AA%E5%99%A8%E7%8E%B0%E6%9C%89%E9%A9%B1%E5%8A%A8/</url>
+      <title>LabVIEW中访问数据库的几种不同方法</title>
+      <link href="/2020/05/18/labview%E4%B8%AD%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95/"/>
+      <url>/2020/05/18/labview%E4%B8%AD%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[<h2 id="声明：很多仪器是没有驱动的。所以，具体问题具体分析。"><a href="#声明：很多仪器是没有驱动的。所以，具体问题具体分析。" class="headerlink" title="声明：很多仪器是没有驱动的。所以，具体问题具体分析。"></a>声明：很多仪器是没有驱动的。所以，具体问题具体分析。</h2><p>另外声明：所谓的驱动，也就是<a href="http://bbs.elecfans.com/zhuti_packaging_1.html">封装</a>好的底层的串口<a href="http://bbs.elecfans.com/zhuti_wireless_1.html">通信</a>程序，也是程序而已，只不过别人帮你做成了子 VI，让自己容易用。</p><p>所以：不要弄混淆了概念。</p><p>国外的很多仪器，都是有现成的 LV 程序驱动的，这个时候，我们到网上搜搜就行了。如果你要做仪器驱动，你最好先到网上搜搜，看有木有现成的。有现成的，开发速度就好多啦。如果手边的仪器搜不到现成的驱动，那就只能自己写了。</p><p>下面讲解怎么安装现成的驱动。 ①，网站下载篇，前面这个帖子讲了。 <a href="http://bbs.elecfans.com/jishu_467276_1_1.html">http://bbs.elecfans.com/jishu_467276_1_1.html</a> 有兴趣可以看看。 下面是通过 LabVIEW 软件下载。 我下面手把手教下 在 LV 软件里下载安装。</p><p>首先在 LV 的帮助菜单里，找到 查找仪器驱动 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145320o40k6u5ba5j074q9.jpg.thumb.jpg"></p><p>然后就会弹出一个仪器查找界面。如果你已经连接好了仪器的硬件，且仪器支持IDN？ 这个 SCPI 指令的话。</p><p>可以使用扫描仪器按钮，扫描一下你的仪器。因为使用那个指令，如果仪器连接好没错误，会返回一个仪器本身的仪器类型和版本的。这个时候，LV 就知道是什么仪器连接到了。这个需要查仪器说明书指令。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145425igqznznml30yzoro.jpg.thumb.jpg"></p><p>如果仪器木有连接好，或者没扫描出来（没扫描出来原因太多了。没装 VISA 驱动，电缆没连接好，仪器参数不对等。）自己想下载驱动。就自己选型号了，见下图。选型号，然后点击搜索。</p><p>我们下面搜索 Keithley2400.好了，点击搜索。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145525prt5qtozqkkkzp5a.jpg.thumb.jpg"></p><p>然后会搜出来。注意看右边的驱动信息。开发环境，版本，还有支持的接口等。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145626t2ooavzqa972roob.jpg.thumb.jpg"></p><p>从上图可以看出，这个仪器支持串口和 GPIB 口。还有支持的型号，有 2400，2410 等。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145704p5dddrdpdvnqyct5.jpg.thumb.jpg"></p><p>找到了驱动后，就点击安装，然后 LV 会自动给你安装到 instr.lib 文件夹下面。然后就可以在程序面板，仪器 IO 里，找到自己的驱动了。然后就可以调用了。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145757jtkndl63zqqqdaw7.jpg.thumb.jpg"></p><p>每个仪器驱动，会提供对应的调用例子，大家看下例子，大概知道怎么用就好了。有时候，自己把例子稍微改动一点点，就变成自己的程序了。还是很方便的。有仪器驱动，还是先看仪器。不然看仪器的 SCPI 指令是很麻烦的，一本说明书往往很长，而且大多是英文的。</p><p>下载好的驱动和例子，在这个地址：你安装的文件夹下下的这个路径。\Na<a href="http://bbs.elecfans.com/zhuti_715_1.html">ti</a>onal Instruments\LabVIEW 2011\instr.lib &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145953iiii9xqjv28s8iix.jpg.thumb.jpg"></p><p>仪器的例子，在上面的文件夹 Example下，自己连接仪器，配置程序参数和仪器的通讯参数，运行试试看。</p><p>参数什么的，最好对着说明书看看，国外的仪器，一般功能很强大，而你需要了解的命令，可能一点点而已。</p><p>声明：国外的仪器，有些有驱动（程序）的，有些是木有的。有现成的驱动仪器，最好使用现成的，这样开发速度更快。</p><p>文章来源于：</p><h2 id="小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动"><a href="#小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动" class="headerlink" title="小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动"></a><a href="https://www.cnblogs.com/mrchige/p/6238027.html">小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动</a></h2>]]></content>
+        <content type="html"><![CDATA[<p>虚拟仪器VI(Virtual Instruments)是National Instruments公司在其产品LabVIEW中首先提出的创新概念[1]。虚拟仪器系统的概念是测控系统的抽象。不管是传统的还是虚拟的仪器，它们的功能都是相同的：采集数据并进行分析处理，然后显示处理的结果。它们之间的不同主要体现在灵活性方面。虚拟仪器由用户自己定义功能，可以自由地组合计算机平台、硬件、软件以及完成应用系统所需要的各种功能。另外，虚拟仪器开发周期短、成本低、维护方便，易于应用新理论和新技术实现仪器的换代升级[2]。 <strong>现代的测试测量系统大多数需要对被测对象进行全方位检测，这必然会使获取的数据量急剧增长。面对大量的数据信息，采用数据库技术，可准确反映各类数据之间的密切联系，能够有效地管理和组织数据，是现代测试测量系统的发展趋势。但是现有的LabVIEW版本本身并不具备数据库访问功能，不能像VB、VC++、Delphi、PowerBuilder那样非常方便的进行数据库程序的开发。因此以LabVIEW编制的虚拟仪器系统需要其它辅助的方法来进行数据库访问。</strong> 1、在LabVIEW中访问数据库的方式**(1)利用NI公司的附加工具包中的数据库接口工具包LabVIEW SQL Toolkit进行数据库访问。该工具包集成了一系列的高级功能模块，这些模块封装了大多数的数据库操作和一些高级的数据库访问功能。它的优点是易于理解，操作简单，用户可以不学习SQL语法。缺点是需要另外购买且价格昂贵，无疑会增加系统成本。** <strong>(2)利用LabVIEW的ActiveX功能，调用Microsoft ADO对象，利用SQL语言实现数据库的访问。使用这种方法需要用户对Microsoft ADO以及SQL语言有较深的了解。</strong> <strong>(3)通过第三方开发的免费工具包LabSQL访问。LabSQL利用Microsoft ADO以及SQL语言来完成数据库访问，将复杂的底层ADO及SQL操作封装成一系列的LabSQL VIs，简单易用。</strong> <strong>(4)通过调用动态链接库DLL(Dynamic Link Library)访问。先利用其它语言如Visual C++编写DLL，再利用LabVIEW的调用库函数节点CLFN(Calling Library Function Node)调用此DLL访问数据库。但这种方法需要从底层进行复杂的编程才能实现，对非专业编程人员来讲是不现实的[3]。</strong> <strong>(5)利用中间文件存取数据。先将数据存入文件之中，待测量结束后再用专门的工具将数据导入到数据库之中。这种方法需要磁盘文件作为中介，而且不具有实时性，不方便使用[4]。</strong> <strong>实际应用中，前三种方法使用最为广泛，下面将重点讨论这三种方法。</strong></p><p>2 利用ADO技术访问数据库2.1 ADO技术简介ADO(ActiveX Data Objects)是Microsoft为OLE DB设计的应用层接口，它为一致的数据访问接口提供了良好的扩展性而不局限于单一的数据源。 ADO接口编程模型中包括连接(Connection)、命令(Command)、参数(Parameter)、记录集(Recordset)、字段(Field)、错误(Error)、属性(Property)、集合(Collection)、事件(Event)等元素。其中Connection、Command、Recordset是三个主体对象，Parameters、Fields、Errors、Properties是四个集合对象[5]。 ADO的一般操作方式为：1连接到数据源；2指定访问数据源的命令；3执行命令；4将命令执行后产生的结果保存在缓存中；5更新数据库。ADO的主要优点是易于使用、高速度、低内存支出和占用磁盘空间较少[6]。 2.2 LabVIEW中对ADO的调用ADO对象在LabVIEW中是以ActiveX对象的形式提供的。LabVIEW自4.1版本就引入了支持ActiveX自动控制的功能模块，在5.1版本之后支持客户和服务器双方，即虽然程序是在双方各自独立存在，但它们的信息是共享的。这种信息共享是通过客户端使用由服务器端发布的ActiveX控件来实现的。 图1展示的是LabVIEW中使用ActiveX控件的程序流程。ActiveX对象的打开和关闭是通过打开自动化节点(Automation Open)和关闭自动化节点(Close Reference)来实现的，属性的设置和获取则通过属性节点(Property Node)进行，而调用节点(Invoke Node)用于对象方法的调用。其中关键的是第二步，只有充分的利用“属性”和“方法”的设置才能成功地实现对数据库的访问</p><p>2.3应用实例(1)建立ADO对象 在前面板控件模板的Refnum子模板中选择Automation Refnum项，把它拖放到前面板上，在其右键菜单中选择Select ActiveX Class&gt;&gt;Broswer…，弹出Select ActiveX Object对话框，在类型库Type Library下拉列表中选择Microsoft ActiveX Data Objects 2.7 Library Version 2.7，在下面的对象Objects列表栏中出现这个库对LabVIEW可用的对象，选中Connection对象，点击OK按钮即可。使用同样的方法可以建立Command、Recordset等对象。 (2)连接到数据源 在程序框图功能模板中选择Communication&gt;&gt;ActiveX子模板，选择其中的Automation Open与ADODB._Connection相连即可打开Connection对象。接着从ActiveX子模板中选择Invoke Node并与Automation Open相连，在其上单击右键选择Methods&gt;&gt;Open，即出现图2中所示的节点。其中“ConnectionSring”是连接到数据源的字符串，“UserID”和“PassWord”是连接到数据源的用户名和密码，正确设置这些参数后便可连接到数据源。 (3)生成SQL命令、执行命令 与上一步相同，用 Invoke Node调用Connection对象的Execute方法执行所要的操作。Execute方法所必需的参数为CommandText，这里为所要执行的SQL语句。例如可以使用Create命令创建表，用Drop命令删除表，用Insert命令向表中插入数据，用Select命令进行查询并返回操作结果等[8]。本例使用Create命令创建了一个名为Staff的表，包括编号、姓名和年龄三个字段，其中id字段为主键，自动编号。对数据表的删除和添加数据的操作过程与建表过程类似。如果要对执行后的记录进行显示或读取字段值则需要建立Recordset对象，并与Execute相连。 (4)关闭连接 对数据库访问操作完毕后要及时关闭连接对象以释放内存和所用的系统资源。首先使用Connection对象的Close方法关闭数据库连接，然后使用Close Reference关闭ActiveX自动化参数号。</p><p>3、利用LabSQL访问数据库3.1 LabSQL简介LabSQL是一个免费的、多数据库、跨平台的LabVIEW数据库访问工具包，由Premkc Development公司的Chris Roth和Jeffrey Travis开发。目前的最新版本是LabSQL Release 1.1a，可以到网站<a href="http://jeffreytravis.com免费下载.labsql支持windows操作系统中任何基于obdc的数据库,包括access,sql/">[url&#x3D;http://jeffreytravis.com/]http://jeffreytravis.com</a>免费下载。LabSQL支持Windows操作系统中任何基于OBDC的数据库，包括Access，SQL Server，Oracle，Pervasive，Sybase等。[&#x2F;url]</p><p>LabSQL利用Microsoft ADO对象和SQL语言来完成数据库访问，将复杂的底层ADO及SQL操作封装成一系列的LabSQL VIs，简单易用。</p><p>LabSQL VIs按照功能可以分为四类：Command VIs，Connection VIs，Recordset VIs和Top Level VIs。 Command VIs的功能是完成一系列的基本ADO操作，例如，创建或删除一个Command，对数据库的某一个参数进行读或写等。 Connection VIs的功能是管理LabVIEW与数据库之间的连接。 Recordset VIs用于对数据库中的记录进行各种操作，例如，创建或删除一条记录，对记录中的某一个条目进行读或写等。 Top Level VIs属于顶层的LabSQL应用，对前三类LabSQL VIs某些功能的封装，例如，SQL Execute.vi可用于直接执行命令[9]。 3.2 LabSQL应用实例本应用实例是向数据表添加记录，所使用的数据源与上例相同，数据表为staff表。具体步骤如下： 第一步：建立与数据库的连接。首先通过ADO Connection Create.vi创建一个Connection对象，然后利用ADO Connection Open.vi建立与数据库的连接。数据库由ADO Connection Open.vi的ConnectionString指定，此参数由前面板的字符串控件提供，如图3所示。 第二步：生成SQL命令，执行命令。在前面板table控件中输入表名，name和age控件中输入字段值。在程序框图中使用Format Into String生成SQL命令，将它连接到ADO Connection Execute.vi即可执行，同时可在前面板Command Text控件中显示此命令。 第三步：断开与数据库之间的连接。利用ADO Connection Close.vi关闭Connection对象，并使用ADO Connection Destroy.vi删除Connection对象</p><p>4、利用LabVIEW SQL Toolkit访问数据库4.1 LabVIEW SQL Toolkit简介LabVIEW SQL Toolkit(又被称作为LabVIEW Database Connectivity Toolset)是用于数据库访问的附加工具包，它集成了一系列的高级功能模块，这些模块封装了大多数的数据库操作和一些高级的数据库访问功能[10]。其主要的功能如下： (1)支持ADO所支持的所有的数据库引擎； (2)支持所有与ODBC或OLE DB兼容的数据库驱动程序； (3)具有高度的可移植性，在任何情况下，用户通过改变DB Tools Open Connection VI的输入参数Connection String就可以更换数据库； (4)可以将数据库中Column Values的数据类型转换为标准LabVIEW Database Connectivity Toolset的数据类型，这进一步增强了它的可移植性； (5)与SQL兼容； (6)不使用SQL语句就可以实现数据库记录的查询、添加、修改以及删除等操作； (7)用户可以完全不需要学习SQL语法。 用户可以使用LabVIEW SQL Toolkit在LabVIEW中支持ODBC的本地或远程数据库，例如Microsoft Access，Microsoft SQL Sever，Sybase SQL Server以及Oracle等</p><p>4.2应用实例本应用实例是显示上面所建staff表中的所有记录，所使用的数据源与上面两例相同。具体步骤如下： (1)使用DB Tools Open Connection打开数据库连接[12]。 (2)显示指定数据表中所有数据。 使用DB Tools List Tables以一维数组形式列出指定数据库中的所有表，同时显示在前面板数组控件tables中。用户指定Table Index后，通过索引数组函数Index Array索引其中一个表。然后将表名连接到DB Tools List Columns和DB Tools Select All Data。 DB Tools List Columns的Columns参数用一维字符串数组返回指定表的字段名，通过属性节点将字段名显示在表格控件Table Data的首行，同时使用数组大小函数Array Size取得字段数，即表的列数，显示在Columns中。 DB Tools Select All Data的Data参数以二维字符串数组形式返回表中所有数据，显示在Table Data中，同时使用Array Size和Index Array函数取得记录数，也就是行数，显示在Rows中。 (3)使用DB Tools Close Connection断开连接</p><p>5、结论综上所述，使用ADO，LabSQL或LabVIEW SQL Toolkit访问数据库的基本步骤都是相同的，都要经过连接数据库、执行操作、断开连接这三个步骤。 使用ADO主要优点是易于使用、高速度、低内存支出和占用磁盘空间较少,但需要用户对Microsoft ADO以及SQL语言有较深的了解。 使用LabSQL不用精通ActiveX技术和SQL语言，操作简介，容易理解，但它没有对ADO的所有功能进行封装，功能上有局限性。 LabVIEW SQL Toolkit支持ADO所支持的所有的数据库引擎，不使用SQL语句就可以实现数据库记录的查询、添加、修改以及删除等操作，使用SQL语句能够实现复杂的数据库操作，功能强大，但其昂贵的价格对于很多用户来讲是不能承受的，这也限制了它的推广应用。 在实际应用中，用户究竟采用哪种方法要从项目难易程度、自身编程水平和技术经济等方面综合考虑</p>]]></content>
       
       
       <categories>
@@ -5201,8 +5139,6 @@
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> docker </tag>
             
         </tags>
@@ -5228,7 +5164,7 @@
       
         <tags>
             
-            <tag> windows激活 </tag>
+            <tag> KMS激活 </tag>
             
         </tags>
       
@@ -5400,8 +5336,6 @@
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> labview </tag>
             
         </tags>
@@ -5514,13 +5448,11 @@
             
             <tag> 离线下载 </tag>
             
-            <tag> scr </tag>
+            <tag> 谷歌云盘 </tag>
             
             <tag> 宝塔面板 </tag>
             
             <tag> 搬瓦工 </tag>
-            
-            <tag> 谷歌网盘 </tag>
             
             <tag> wordpress </tag>
             
@@ -5547,6 +5479,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -5565,6 +5503,14 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 爬虫 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -5591,7 +5537,7 @@
             
             <tag> 数据库 </tag>
             
-            <tag> 私有云盘 </tag>
+            <tag> 云盘 </tag>
             
             <tag> 搬瓦工 </tag>
             
@@ -5674,8 +5620,6 @@
             
             <tag> 网站 </tag>
             
-            <tag> word </tag>
-            
             <tag> 软件 </tag>
             
             <tag> 数据库 </tag>
@@ -5689,8 +5633,6 @@
             <tag> 搬瓦工 </tag>
             
             <tag> gps定位 </tag>
-            
-            <tag> traccar </tag>
             
             <tag> vpn </tag>
             
@@ -5712,16 +5654,14 @@
       
       <categories>
           
-          <category> 文章采集 </category>
+          <category> 生活 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> tor </tag>
-            
-            <tag> 文章采集 </tag>
+            <tag> 生活 </tag>
             
         </tags>
       
@@ -5744,36 +5684,9 @@
       </categories>
       
       
-    </entry>
-    
-    
-    
-    <entry>
-      <title>树莓派安装宝塔面板</title>
-      <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/"/>
-      <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/</url>
-      
-        <content type="html"><![CDATA[<p>使用宝塔面板管理树莓派还是很方便的，这里介绍一下如何安装宝塔面板，树莓派安装好原装系统后，使用一键安装宝塔面板即可：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure><p>即可进入安装流程，或者到宝塔面板官网查看自己系统对应的安装脚本<a href="https://www.bt.cn/bbs/thread-19376-1-1.html">https://www.bt.cn/bbs/thread-19376-1-1.html</a></p><p>等待安装完成即可，宝塔面板打开时需要使用的是树莓派的ip地址，不是安装完成后显示的ip，但端口号还是那个</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578220830-%E6%A0%91%E8%8E%93%E6%B4%BE13.png"></p><p> </p><p>如果安装过程中经常出现报错说缺这缺那的话，可以尝试使用宝塔独立安装</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://download.bt.cn/install/install_panel.sh &amp;&amp;sudo bash install.sh</span><br></pre></td></tr></table></figure><p> </p><p>更新：</p><p>目前使用树莓派官方的固件，一直出现安装不了宝塔的问题，这里推荐使用树莓派爱好者基地的系统文件，该系统优化比较好，可以正常安装：</p><p><a href="https://github.com/openfans-community-offical/Debian-Pi-Aarch64/blob/master/README_zh.md">https://github.com/openfans-community-offical/Debian-Pi-Aarch64/blob/master/README_zh.md</a></p><p>切换root账号后再安装宝塔</p><p>wget -O install.sh <a href="http://download.bt.cn/install/install-ubuntu/_6.0.sh">http://download.bt.cn/install/install-ubuntu\_6.0.sh</a> &amp;&amp; bash install.sh</p><p> </p><p>安装后要是忘记登录地址和密码，可以在ssh里输入</p><p>bt default</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 宝塔面板 </category>
-          
-          <category> 树莓派 </category>
-          
-      </categories>
-      
-      
         <tags>
             
-            <tag> word </tag>
-            
-            <tag> 宝塔面板 </tag>
-            
-            <tag> 密码 </tag>
-            
-            <tag> 树莓派 </tag>
+            <tag> 生活 </tag>
             
         </tags>
       
@@ -5807,14 +5720,16 @@
     
     
     <entry>
-      <title>树莓派无显示器无网线ssh连接无线网</title>
-      <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/"/>
-      <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/</url>
+      <title>树莓派安装宝塔面板</title>
+      <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/"/>
+      <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/</url>
       
-        <content type="html"><![CDATA[<p>如果没有显示器等外设，同时又没有网线，只能先在树莓派里添加ssh文件，同时在里面添加wifi连接信息，使得树莓派开机就可以启动ssh同时连接上我们预设的wifi，具体操作如下</p><p>由于树莓派系统开始时默认是不开启ssh连接的，没有开启ssh就无法连接电脑，后续的操作也就无从谈起。所以首先要先开启树莓派的ssh连接，烧录好系统后，内存卡只有一个boot分区可以被识别，在里面添加一个命名为ssh的空白文件即可实现开机开启ssh</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578198512-%E6%A0%91%E8%8E%93%E6%B4%BE7.png"></p><p>之后往系统里添加wifi信息</p><p>首先在内存卡中的boot分区中新建一个<strong>wpa_supplicant.conf</strong>的文件，并在里面写上树莓派的wifi配置命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">country=CN</span><br><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line"></span><br><span class="line">network=&#123;</span><br><span class="line">    ssid=&quot;wifi名称&quot;</span><br><span class="line">    psk=&quot;wifi密码&quot;</span><br><span class="line">    key_mgmt=WPA-PSK</span><br><span class="line">    priority=1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p> </p><p>其中ssid是wifi名称，psk是自己的wifi密码</p><p>添加上去之后即可开机连接上wifi，从而获取树莓派ID，使用ssh连接上去</p><p>如何查看树莓派ip地址可以使用软件<a href="https://www.advanced-ip-scanner.com/cn/">Advanced IP Scanner</a>查看，或者自己可以登入路由器后台查看，使用软件扫描如下：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578199454-%E6%A0%91%E8%8E%93%E6%B4%BE8-1024x733.png"></p><p>之后使用ssh或者putty软件连接到这个ip上，树莓派默认的登入用户名为pi，登入密码为raspberry</p><p> </p><p>如果树莓派一直在闪绿灯，而且一直连接不上wifi，那么可能是因为电源电流太小了，更换一下电源大小即可</p>]]></content>
+        <content type="html"><![CDATA[<p>使用宝塔面板管理树莓派还是很方便的，这里介绍一下如何安装宝塔面板，树莓派安装好原装系统后，使用一键安装宝塔面板即可：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure><p>即可进入安装流程，或者到宝塔面板官网查看自己系统对应的安装脚本<a href="https://www.bt.cn/bbs/thread-19376-1-1.html">https://www.bt.cn/bbs/thread-19376-1-1.html</a></p><p>等待安装完成即可，宝塔面板打开时需要使用的是树莓派的ip地址，不是安装完成后显示的ip，但端口号还是那个</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578220830-%E6%A0%91%E8%8E%93%E6%B4%BE13.png"></p><p> </p><p>如果安装过程中经常出现报错说缺这缺那的话，可以尝试使用宝塔独立安装</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://download.bt.cn/install/install_panel.sh &amp;&amp;sudo bash install.sh</span><br></pre></td></tr></table></figure><p> </p><p>更新：</p><p>目前使用树莓派官方的固件，一直出现安装不了宝塔的问题，这里推荐使用树莓派爱好者基地的系统文件，该系统优化比较好，可以正常安装：</p><p><a href="https://github.com/openfans-community-offical/Debian-Pi-Aarch64/blob/master/README_zh.md">https://github.com/openfans-community-offical/Debian-Pi-Aarch64/blob/master/README_zh.md</a></p><p>切换root账号后再安装宝塔</p><p>wget -O install.sh <a href="http://download.bt.cn/install/install-ubuntu/_6.0.sh">http://download.bt.cn/install/install-ubuntu\_6.0.sh</a> &amp;&amp; bash install.sh</p><p> </p><p>安装后要是忘记登录地址和密码，可以在ssh里输入</p><p>bt default</p>]]></content>
       
       
       <categories>
+          
+          <category> 宝塔面板 </category>
           
           <category> 树莓派 </category>
           
@@ -5822,6 +5737,10 @@
       
       
         <tags>
+            
+            <tag> 宝塔面板 </tag>
+            
+            <tag> 密码 </tag>
             
             <tag> 树莓派 </tag>
             
@@ -5849,6 +5768,31 @@
         <tags>
             
             <tag> 软件 </tag>
+            
+            <tag> 树莓派 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>树莓派无显示器无网线ssh连接无线网</title>
+      <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/"/>
+      <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/</url>
+      
+        <content type="html"><![CDATA[<p>如果没有显示器等外设，同时又没有网线，只能先在树莓派里添加ssh文件，同时在里面添加wifi连接信息，使得树莓派开机就可以启动ssh同时连接上我们预设的wifi，具体操作如下</p><p>由于树莓派系统开始时默认是不开启ssh连接的，没有开启ssh就无法连接电脑，后续的操作也就无从谈起。所以首先要先开启树莓派的ssh连接，烧录好系统后，内存卡只有一个boot分区可以被识别，在里面添加一个命名为ssh的空白文件即可实现开机开启ssh</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578198512-%E6%A0%91%E8%8E%93%E6%B4%BE7.png"></p><p>之后往系统里添加wifi信息</p><p>首先在内存卡中的boot分区中新建一个<strong>wpa_supplicant.conf</strong>的文件，并在里面写上树莓派的wifi配置命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">country=CN</span><br><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line"></span><br><span class="line">network=&#123;</span><br><span class="line">    ssid=&quot;wifi名称&quot;</span><br><span class="line">    psk=&quot;wifi密码&quot;</span><br><span class="line">    key_mgmt=WPA-PSK</span><br><span class="line">    priority=1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p> </p><p>其中ssid是wifi名称，psk是自己的wifi密码</p><p>添加上去之后即可开机连接上wifi，从而获取树莓派ID，使用ssh连接上去</p><p>如何查看树莓派ip地址可以使用软件<a href="https://www.advanced-ip-scanner.com/cn/">Advanced IP Scanner</a>查看，或者自己可以登入路由器后台查看，使用软件扫描如下：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578199454-%E6%A0%91%E8%8E%93%E6%B4%BE8-1024x733.png"></p><p>之后使用ssh或者putty软件连接到这个ip上，树莓派默认的登入用户名为pi，登入密码为raspberry</p><p> </p><p>如果树莓派一直在闪绿灯，而且一直连接不上wifi，那么可能是因为电源电流太小了，更换一下电源大小即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 树莓派 </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> 树莓派 </tag>
             
@@ -5941,8 +5885,6 @@
             
             <tag> 网站 </tag>
             
-            <tag> word </tag>
-            
             <tag> 数据库 </tag>
             
             <tag> 密码 </tag>
@@ -6030,8 +5972,6 @@
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> 推荐软件 </tag>
             
         </tags>
@@ -6050,10 +5990,16 @@
       
       <categories>
           
-          <category> 随笔 </category>
+          <category> 生活 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -6068,8 +6014,6 @@
       
       
       <categories>
-          
-          <category> 日常 </category>
           
           <category> 生活 </category>
           
@@ -6130,8 +6074,6 @@
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> kali-linux </tag>
             
         </tags>
@@ -6155,6 +6097,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -6168,8 +6116,6 @@
       
       
       <categories>
-          
-          <category> 日常 </category>
           
           <category> 生活 </category>
           
@@ -6222,8 +6168,6 @@
       
       
       <categories>
-          
-          <category> 日常 </category>
           
           <category> 生活 </category>
           
@@ -6281,6 +6225,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -6351,6 +6301,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -6365,12 +6321,16 @@
       
       <categories>
           
-          <category> 日常 </category>
-          
           <category> 生活 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -6563,8 +6523,6 @@
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> 网站 </tag>
             
             <tag> 图标 </tag>
@@ -6587,7 +6545,7 @@
       
       <categories>
           
-          <category> 日常 </category>
+          <category> 生活 </category>
           
       </categories>
       
@@ -6614,7 +6572,7 @@
       
       <categories>
           
-          <category> 日常 </category>
+          <category> 生活 </category>
           
       </categories>
       
@@ -6643,6 +6601,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 百度网盘 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -6739,7 +6703,7 @@
       
       <categories>
           
-          <category> tor </category>
+          <category> 技术 </category>
           
           <category> 推荐软件 </category>
           
@@ -6748,9 +6712,9 @@
       
         <tags>
             
-            <tag> tor </tag>
-            
             <tag> 搬瓦工 </tag>
+            
+            <tag> tor </tag>
             
         </tags>
       
@@ -6773,6 +6737,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> wordpress </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -6787,7 +6757,7 @@
       
       <categories>
           
-          <category> 日常 </category>
+          <category> 生活 </category>
           
       </categories>
       
@@ -6819,6 +6789,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 网页特效 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -6837,6 +6813,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 网页特效 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -6861,11 +6843,9 @@
             
             <tag> 网站 </tag>
             
-            <tag> scr </tag>
+            <tag> 网站建设 </tag>
             
             <tag> wordpress </tag>
-            
-            <tag> 网站建设 </tag>
             
         </tags>
       
@@ -6948,13 +6928,9 @@
       
         <tags>
             
-            <tag> 生活 </tag>
-            
             <tag> 网站 </tag>
             
             <tag> 数据库 </tag>
-            
-            <tag> scr </tag>
             
             <tag> 密码 </tag>
             

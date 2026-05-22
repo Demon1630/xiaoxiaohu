@@ -581,13 +581,11 @@ vps使用nextcloud搭建个人私有云盘虽然很安全方便，但是由于�
                         
                         <div class="card-action article-tags">
                             
-                            <a href="/tags/tor/"><span class="chip bg-color">tor</span></a>
-                            
                             <a href="/tags/%E7%BD%91%E7%AB%99/"><span class="chip bg-color">网站</span></a>
                             
                             <a href="/tags/nextcloud/"><span class="chip bg-color">nextcloud</span></a>
                             
-                            <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98/"><span class="chip bg-color">私有云盘</span></a>
+                            <a href="/tags/%E4%BA%91%E7%9B%98/"><span class="chip bg-color">云盘</span></a>
                             
                         </div>
                         
@@ -651,8 +649,6 @@ vps使用nextcloud搭建个人私有云盘虽然很安全方便，但是由于�
 
                         
                         <div class="card-action article-tags">
-                            
-                            <a href="/tags/scr/"><span class="chip bg-color">scr</span></a>
                             
                             <a href="/tags/windows/"><span class="chip bg-color">windows</span></a>
                             
@@ -901,15 +897,17 @@ vps使用nextcloud搭建个人私有云盘虽然很安全方便，但是由于�
                                     labview
                                     </a>
                                     
-                                    <a href="/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
-                                    文章采集
-                                    </a>
-                                    
                                     
                                 </span>
                             </div>
                         </div>
 
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/labview/"><span class="chip bg-color">labview</span></a>
+                            
+                        </div>
                         
                     </div>
                 </div>
@@ -964,8 +962,8 @@ vps使用nextcloud搭建个人私有云盘虽然很安全方便，但是由于�
                                     labview
                                     </a>
                                     
-                                    <a href="/categories/labview/%E8%AF%95%E9%AA%8C%E5%8F%B0%E6%9E%B6/" class="post-category">
-                                    试验台架
+                                    <a href="/categories/labview/%E5%88%B6%E5%86%B7%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    制冷技术
                                     </a>
                                     
                                     
@@ -1030,10 +1028,6 @@ vps使用nextcloud搭建个人私有云盘虽然很安全方便，但是由于�
                                     labview
                                     </a>
                                     
-                                    <a href="/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
-                                    文章采集
-                                    </a>
-                                    
                                     
                                 </span>
                             </div>
@@ -1041,8 +1035,6 @@ vps使用nextcloud搭建个人私有云盘虽然很安全方便，但是由于�
 
                         
                         <div class="card-action article-tags">
-                            
-                            <a href="/tags/%E7%94%9F%E6%B4%BB/"><span class="chip bg-color">生活</span></a>
                             
                             <a href="/tags/%E6%8E%A7%E5%88%B6/"><span class="chip bg-color">控制</span></a>
                             
@@ -1223,10 +1215,6 @@ Virtual Serial Po
                                     
                                     <a href="/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="post-category">
                                     推荐软件
-                                    </a>
-                                    
-                                    <a href="/categories/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
-                                    文章采集
                                     </a>
                                     
                                     
@@ -1601,6 +1589,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

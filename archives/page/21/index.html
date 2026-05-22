@@ -501,8 +501,8 @@
                                     
                                     <i class="fas fa-bookmark fa-fw icon-category"></i>
                                     
-                                    <a href="/categories/%E6%97%A5%E5%B8%B8/" class="post-category">
-                                    日常
+                                    <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
+                                    生活
                                     </a>
                                     
                                     
@@ -573,6 +573,12 @@
                         </div>
 
                         
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/"><span class="chip bg-color">网页特效</span></a>
+                            
+                        </div>
+                        
                     </div>
                 </div>
             </article>
@@ -626,6 +632,12 @@
                             </div>
                         </div>
 
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/"><span class="chip bg-color">网页特效</span></a>
+                            
+                        </div>
                         
                     </div>
                 </div>
@@ -684,11 +696,9 @@
                             
                             <a href="/tags/%E7%BD%91%E7%AB%99/"><span class="chip bg-color">网站</span></a>
                             
-                            <a href="/tags/scr/"><span class="chip bg-color">scr</span></a>
+                            <a href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"><span class="chip bg-color">网站建设</span></a>
                             
                             <a href="/tags/wordpress/"><span class="chip bg-color">wordpress</span></a>
-                            
-                            <a href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"><span class="chip bg-color">网站建设</span></a>
                             
                         </div>
                         
@@ -882,13 +892,9 @@
                         
                         <div class="card-action article-tags">
                             
-                            <a href="/tags/%E7%94%9F%E6%B4%BB/"><span class="chip bg-color">生活</span></a>
-                            
                             <a href="/tags/%E7%BD%91%E7%AB%99/"><span class="chip bg-color">网站</span></a>
                             
                             <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="chip bg-color">数据库</span></a>
-                            
-                            <a href="/tags/scr/"><span class="chip bg-color">scr</span></a>
                             
                             <a href="/tags/%E5%AF%86%E7%A0%81/"><span class="chip bg-color">密码</span></a>
                             
@@ -1317,6 +1323,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

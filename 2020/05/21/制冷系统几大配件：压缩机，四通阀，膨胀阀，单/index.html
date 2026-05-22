@@ -656,11 +656,7 @@
                                     labview
                                 </a>
                             
-                            <a href="/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
-                                    文章采集
-                                </a>
-                            
-                            <a href="/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/%E6%A0%91%E8%8E%93%E6%B4%BE/" class="post-category">
+                            <a href="/categories/labview/%E6%A0%91%E8%8E%93%E6%B4%BE/" class="post-category">
                                     树莓派
                                 </a>
                             
@@ -670,10 +666,6 @@
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/tor/">
-                        <span class="chip bg-color">tor</span>
-                    </a>
                     
                     <a href="/tags/labview/">
                         <span class="chip bg-color">labview</span>
@@ -1168,6 +1160,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

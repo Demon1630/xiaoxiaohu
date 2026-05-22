@@ -342,16 +342,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/word/">
-                                <span class="chip bg-color">word</span>
-                            </a>
-                        
-                            <a href="/tags/endnote/">
-                                <span class="chip bg-color">endnote</span>
-                            </a>
-                        
-                            <a href="/tags/endnotes9/">
-                                <span class="chip bg-color">endnotes9</span>
+                            <a href="/tags/EndNote/">
+                                <span class="chip bg-color">EndNote</span>
                             </a>
                         
                     </div>
@@ -520,16 +512,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/word/">
-                                    <span class="chip bg-color">word</span>
-                                </a>
-                            
-                                <a href="/tags/endnote/">
-                                    <span class="chip bg-color">endnote</span>
-                                </a>
-                            
-                                <a href="/tags/endnotes9/">
-                                    <span class="chip bg-color">endnotes9</span>
+                                <a href="/tags/EndNote/">
+                                    <span class="chip bg-color">EndNote</span>
                                 </a>
                             
                         </div>
@@ -1163,6 +1147,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

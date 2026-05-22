@@ -536,20 +536,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/scr/">
-                        <span class="chip bg-color">scr</span>
-                    </a>
-                    
                     <a href="/tags/%E6%8E%A7%E5%88%B6/">
                         <span class="chip bg-color">控制</span>
-                    </a>
-                    
-                    <a href="/tags/scrcpy/">
-                        <span class="chip bg-color">scrcpy</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F/">
-                        <span class="chip bg-color">手机投屏</span>
                     </a>
                     
                     <a href="/tags/%E6%8A%95%E5%B1%8F/">
@@ -1090,6 +1078,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

@@ -500,8 +500,8 @@
                                     
                                     <i class="fas fa-bookmark fa-fw icon-category"></i>
                                     
-                                    <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    博客搭建
+                                    <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
                                     </a>
                                     
                                     
@@ -584,8 +584,6 @@
 
                         
                         <div class="card-action article-tags">
-                            
-                            <a href="/tags/word/"><span class="chip bg-color">word</span></a>
                             
                             <a href="/tags/%E8%BD%AF%E4%BB%B6/"><span class="chip bg-color">软件</span></a>
                             
@@ -731,8 +729,6 @@ https://pan.gxnas.com:1443/%E9%BB%91%E7%BE%A4%E6%99%96/DS918+/DS918_7.2-64570%EF
                             
                             <a href="/tags/%E8%BD%AF%E4%BB%B6/"><span class="chip bg-color">软件</span></a>
                             
-                            <a href="/tags/scr/"><span class="chip bg-color">scr</span></a>
-                            
                             <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"><span class="chip bg-color">路由器</span></a>
                             
                             <a href="/tags/nas/"><span class="chip bg-color">nas</span></a>
@@ -870,11 +866,11 @@ Fiddler是最强大最好用的Web调试工具之一， 它能记录所有客户
                             
                             <a href="/tags/%E5%AF%86%E7%A0%81/"><span class="chip bg-color">密码</span></a>
                             
+                            <a href="/tags/%E4%BA%91%E7%9B%98/"><span class="chip bg-color">云盘</span></a>
+                            
                             <a href="/tags/nas/"><span class="chip bg-color">nas</span></a>
                             
                             <a href="/tags/%E7%BE%A4%E6%99%96/"><span class="chip bg-color">群晖</span></a>
-                            
-                            <a href="/tags/%E4%BA%91%E7%9B%98/"><span class="chip bg-color">云盘</span></a>
                             
                         </div>
                         
@@ -1022,11 +1018,7 @@ Fiddler是最强大最好用的Web调试工具之一， 它能记录所有客户
                             
                             <a href="/tags/%E9%82%AE%E4%BB%B6/"><span class="chip bg-color">邮件</span></a>
                             
-                            <a href="/tags/bing/"><span class="chip bg-color">bing</span></a>
-                            
-                            <a href="/tags/chatgpt/"><span class="chip bg-color">chatgpt</span></a>
-                            
-                            <a href="/tags/%E5%BF%85%E5%BA%94/"><span class="chip bg-color">必应</span></a>
+                            <a href="/tags/ChatGPT/"><span class="chip bg-color">ChatGPT</span></a>
                             
                         </div>
                         
@@ -1095,10 +1087,6 @@ Fiddler是最强大最好用的Web调试工具之一， 它能记录所有客户
 
                         
                         <div class="card-action article-tags">
-                            
-                            <a href="/tags/word/"><span class="chip bg-color">word</span></a>
-                            
-                            <a href="/tags/scr/"><span class="chip bg-color">scr</span></a>
                             
                             <a href="/tags/windows/"><span class="chip bg-color">windows</span></a>
                             
@@ -1236,17 +1224,15 @@ Fiddler是最强大最好用的Web调试工具之一， 它能记录所有客户
                         
                         <div class="card-action article-tags">
                             
-                            <a href="/tags/tor/"><span class="chip bg-color">tor</span></a>
-                            
                             <a href="/tags/%E8%BD%AF%E4%BB%B6/"><span class="chip bg-color">软件</span></a>
                             
                             <a href="/tags/%E5%AF%86%E7%A0%81/"><span class="chip bg-color">密码</span></a>
                             
+                            <a href="/tags/%E4%BA%91%E7%9B%98/"><span class="chip bg-color">云盘</span></a>
+                            
                             <a href="/tags/nps/"><span class="chip bg-color">nps</span></a>
                             
                             <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"><span class="chip bg-color">树莓派</span></a>
-                            
-                            <a href="/tags/%E4%BA%91%E7%9B%98/"><span class="chip bg-color">云盘</span></a>
                             
                             <a href="/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/"><span class="chip bg-color">蒲公英</span></a>
                             
@@ -1315,8 +1301,6 @@ Fiddler是最强大最好用的Web调试工具之一， 它能记录所有客户
 
                         
                         <div class="card-action article-tags">
-                            
-                            <a href="/tags/word/"><span class="chip bg-color">word</span></a>
                             
                             <a href="/tags/%E8%BD%AF%E4%BB%B6/"><span class="chip bg-color">软件</span></a>
                             
@@ -1691,6 +1675,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

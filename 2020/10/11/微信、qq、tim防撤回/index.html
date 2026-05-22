@@ -584,13 +584,17 @@
                                     labview
                                 </a>
                             
-                            <a href="/categories/labview/%E6%96%87%E7%AB%A0%E9%87%87%E9%9B%86/" class="post-category">
-                                    文章采集
-                                </a>
-                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/labview/">
+                        <span class="chip bg-color">labview</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1072,6 +1076,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

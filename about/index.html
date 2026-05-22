@@ -384,14 +384,14 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">65</a></span>
+    <span class="count"><a href="/categories">42</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">125</a></span>
+    <span class="count"><a href="/tags">119</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -414,14 +414,14 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">65</a></span>
+    <span class="count"><a href="/categories">42</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">125</a></span>
+    <span class="count"><a href="/tags">119</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -583,7 +583,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"文章采集","value":5},{"name":"技术","value":61},{"name":"生活","value":7},{"name":"博客搭建","value":1},{"name":"生活","value":1},{"name":"推荐软件","value":13},{"name":"wordpress","value":41},{"name":"python","value":10},{"name":"excel","value":10},{"name":"ansys","value":4},{"name":"kali-linux","value":7},{"name":"labview","value":29},{"name":"文章采集","value":1},{"name":"制冷技术","value":1},{"name":"技术","value":1},{"name":"wordpress","value":11},{"name":"文章采集","value":2},{"name":"文章采集","value":6},{"name":"技术","value":9},{"name":"试验台架","value":4},{"name":"制冷技术","value":2},{"name":"推荐软件","value":1},{"name":"文章采集","value":2},{"name":"推荐软件","value":6},{"name":"制冷技术","value":15},{"name":"树莓派","value":15},{"name":"推荐软件","value":1},{"name":"推荐软件","value":1},{"name":"技术","value":3},{"name":"文章采集","value":8},{"name":"宝塔面板","value":9},{"name":"试验台架","value":1},{"name":"tor","value":1},{"name":"技术","value":5},{"name":"wordpress","value":1},{"name":"搬瓦工","value":2},{"name":"推荐软件","value":1},{"name":"搬瓦工","value":3},{"name":"文章采集","value":4},{"name":"搬瓦工","value":1},{"name":"树莓派","value":2},{"name":"wordpress","value":1},{"name":"搬瓦工","value":7},{"name":"wordpress","value":3},{"name":"wordpress","value":1},{"name":"树莓派","value":1},{"name":"树莓派","value":1},{"name":"试验台架","value":1},{"name":"日常","value":9},{"name":"生活","value":5},{"name":"试验台架","value":2},{"name":"宝塔面板","value":1},{"name":"路由器","value":1},{"name":"技术","value":1},{"name":"文章采集","value":1},{"name":"wordpress","value":1},{"name":"wordpress","value":1},{"name":"树莓派","value":2},{"name":"树莓派","value":1},{"name":"技术","value":2},{"name":"随笔","value":1},{"name":"汽车热管理","value":1},{"name":"试验台架","value":1},{"name":"随笔","value":1},{"name":"树莓派","value":1}],
+                data: [{"name":"技术","value":65},{"name":"推荐软件","value":15},{"name":"生活","value":19},{"name":"wordpress","value":38},{"name":"python","value":10},{"name":"excel","value":10},{"name":"ansys","value":4},{"name":"制冷技术","value":1},{"name":"kali-linux","value":7},{"name":"技术","value":1},{"name":"labview","value":29},{"name":"推荐软件","value":1},{"name":"技术","value":9},{"name":"wordpress","value":11},{"name":"制冷技术","value":6},{"name":"推荐软件","value":7},{"name":"制冷技术","value":20},{"name":"树莓派","value":15},{"name":"技术","value":3},{"name":"制冷技术","value":2},{"name":"推荐软件","value":1},{"name":"宝塔面板","value":9},{"name":"wordpress","value":1},{"name":"推荐软件","value":1},{"name":"搬瓦工","value":1},{"name":"树莓派","value":3},{"name":"搬瓦工","value":7},{"name":"技术","value":5},{"name":"搬瓦工","value":2},{"name":"wordpress","value":1},{"name":"树莓派","value":1},{"name":"wordpress","value":1},{"name":"wordpress","value":3},{"name":"搬瓦工","value":3},{"name":"宝塔面板","value":1},{"name":"技术","value":1},{"name":"wordpress","value":1},{"name":"wordpress","value":1},{"name":"树莓派","value":2},{"name":"树莓派","value":1},{"name":"技术","value":2},{"name":"树莓派","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -607,7 +607,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["网站","tor","labview","控制","树莓派","scr","word","密码","搬瓦工","python"]
+                data: ["网站","labview","树莓派","控制","生活","python","密码","搬瓦工","excel","数据库"]
             }
         ],
         yAxis: [
@@ -620,7 +620,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [49,28,28,26,26,19,18,17,17,15],
+                data: [49,29,29,26,19,18,17,17,14,14],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -1029,6 +1029,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

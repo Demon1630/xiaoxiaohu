@@ -644,10 +644,6 @@ nps实现树莓派内网穿透服务端的安装基本一致
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/scr/">
-                        <span class="chip bg-color">scr</span>
-                    </a>
-                    
                     <a href="/tags/%E6%8E%A7%E5%88%B6/">
                         <span class="chip bg-color">控制</span>
                     </a>
@@ -1145,6 +1141,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->

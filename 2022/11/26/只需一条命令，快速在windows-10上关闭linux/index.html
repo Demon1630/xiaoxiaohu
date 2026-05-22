@@ -340,14 +340,6 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/word/">
-                                <span class="chip bg-color">word</span>
-                            </a>
-                        
-                            <a href="/tags/scr/">
-                                <span class="chip bg-color">scr</span>
-                            </a>
-                        
                             <a href="/tags/windows/">
                                 <span class="chip bg-color">windows</span>
                             </a>
@@ -499,14 +491,6 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/word/">
-                                    <span class="chip bg-color">word</span>
-                                </a>
-                            
-                                <a href="/tags/scr/">
-                                    <span class="chip bg-color">scr</span>
-                                </a>
-                            
                                 <a href="/tags/windows/">
                                     <span class="chip bg-color">windows</span>
                                 </a>
@@ -608,16 +592,8 @@
                         <span class="chip bg-color">邮件</span>
                     </a>
                     
-                    <a href="/tags/bing/">
-                        <span class="chip bg-color">bing</span>
-                    </a>
-                    
-                    <a href="/tags/chatgpt/">
-                        <span class="chip bg-color">chatgpt</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%BF%85%E5%BA%94/">
-                        <span class="chip bg-color">必应</span>
+                    <a href="/tags/ChatGPT/">
+                        <span class="chip bg-color">ChatGPT</span>
                     </a>
                     
                 </div>
@@ -1158,6 +1134,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->
