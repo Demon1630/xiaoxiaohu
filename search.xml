@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Obsidian + GitHub 搭建个人知识库教程</title>
+      <link href="/2026/05/24/%E6%88%91%E6%98%AF%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%EF%BC%9AObsidian%20+%20GitHub/"/>
+      <url>/2026/05/24/%E6%88%91%E6%98%AF%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%EF%BC%9AObsidian%20+%20GitHub/</url>
+      
+        <content type="html"><![CDATA[<p>如果你平时会记很多笔记、收集很多资料、保存很多技术问题的解决过程，那你大概率也会遇到同一个问题：<strong>内容越来越多，但越来越难找。</strong></p><p>这时候，一个好用的个人知识库就很有必要了。</p><p>我最近在用的一套方案是：<strong>Obsidian + 本地文件夹 + GitHub</strong>。Obsidian 负责写笔记和建立连接，本地文件夹负责保存全部内容，GitHub 负责备份和版本管理。</p><p>这篇文章就按教程的方式，介绍一下：</p><ul><li>Obsidian 是什么</li><li>为什么适合做个人知识库</li><li>怎么用 Obsidian 搭建自己的知识库</li><li>怎么配合 GitHub 做备份和版本管理</li></ul><h2 id="一、Obsidian-是什么"><a href="#一、Obsidian-是什么" class="headerlink" title="一、Obsidian 是什么"></a>一、Obsidian 是什么</h2><p>Obsidian 是一款非常适合做知识管理的笔记软件。它最大的特点，不是界面多花哨，而是它的底层很朴素：<strong>你的笔记本质上就是一篇篇 Markdown 文件，全部保存在本地。</strong></p><p>也就是说，你写下来的内容并不是锁在某个平台里，而是实实在在地存在你自己的文件夹中。</p><p>这件事很重要，因为它意味着：</p><ul><li>数据掌握在自己手里</li><li>不依赖某个平台才能打开笔记</li><li>即使以后不用 Obsidian，笔记也还能继续用</li><li>很方便和 Git、GitHub 这类工具结合</li></ul><h2 id="二、为什么-Obsidian-适合用来搭建个人知识库"><a href="#二、为什么-Obsidian-适合用来搭建个人知识库" class="headerlink" title="二、为什么 Obsidian 适合用来搭建个人知识库"></a>二、为什么 Obsidian 适合用来搭建个人知识库</h2><p>如果只是简单记事，很多软件都能做。但如果你想搭建的是一个<strong>长期积累、方便检索、能够持续整理的个人知识库</strong>，那 Obsidian 会更合适。</p><h3 id="1、基于-Markdown，本地存储更安心"><a href="#1、基于-Markdown，本地存储更安心" class="headerlink" title="1、基于 Markdown，本地存储更安心"></a>1、基于 Markdown，本地存储更安心</h3><p>Obsidian 的笔记就是普通 Markdown 文件，不依赖专有格式，所以迁移成本低，也不用担心平台锁定。</p><h3 id="2、支持双向链接，适合把知识连起来"><a href="#2、支持双向链接，适合把知识连起来" class="headerlink" title="2、支持双向链接，适合把知识连起来"></a>2、支持双向链接，适合把知识连起来</h3><p>知识库和普通笔记最大的区别，不是写了多少，而是能不能把内容串起来。</p><p>在 Obsidian 里，你可以直接用 <code>[[笔记名]]</code> 来建立内部链接。比如你写一篇 Git 笔记时，可以顺手链接到：</p><ul><li>某次项目中的 Git 踩坑记录</li><li>一篇关于分支管理的总结</li><li>某个 push 报错的解决过程</li><li>一篇后续准备继续补充的专题</li></ul><p>内容越来越多之后，这些笔记就会逐渐形成自己的知识网络。</p><h3 id="3、搜索和整理体验很好"><a href="#3、搜索和整理体验很好" class="headerlink" title="3、搜索和整理体验很好"></a>3、搜索和整理体验很好</h3><p>Obsidian 搜索很快，再配合文件夹、标签、反向链接，后期查找内容会非常方便。</p><h3 id="4、很适合技术资料、项目记录和文章草稿"><a href="#4、很适合技术资料、项目记录和文章草稿" class="headerlink" title="4、很适合技术资料、项目记录和文章草稿"></a>4、很适合技术资料、项目记录和文章草稿</h3><p>如果你平时会记：</p><ul><li>技术问题</li><li>项目笔记</li><li>部署记录</li><li>学习资料</li><li>代码片段</li><li>博客草稿</li></ul><p>那 Obsidian 用起来会非常顺手。</p><h2 id="三、第一步：创建本地知识库目录"><a href="#三、第一步：创建本地知识库目录" class="headerlink" title="三、第一步：创建本地知识库目录"></a>三、第一步：创建本地知识库目录</h2><p>先在本地创建一个专门存放知识库的文件夹。</p><p>这个目录以后尽量不要频繁移动，因为：</p><ul><li>Obsidian 会直接把它当作仓库打开</li><li>Git 会在这个目录里管理版本</li><li>图片、附件、笔记都会长期保存在这里</li></ul><h2 id="四、第二步：用-Obsidian-打开这个目录"><a href="#四、第二步：用-Obsidian-打开这个目录" class="headerlink" title="四、第二步：用 Obsidian 打开这个目录"></a>四、第二步：用 Obsidian 打开这个目录</h2><p>安装好 Obsidian 之后，直接选择“打开本地文件夹作为仓库”，然后选择你的知识库目录。</p><p>完成之后，你就可以直接开始写笔记了。</p><p>Obsidian 的好处就在于，它不会强迫你必须按照某一种方式组织内容，你完全可以从最简单的用法开始。</p><h2 id="五、第三步：先搭一个简单的目录结构"><a href="#五、第三步：先搭一个简单的目录结构" class="headerlink" title="五、第三步：先搭一个简单的目录结构"></a>五、第三步：先搭一个简单的目录结构</h2><p>刚开始不建议分得太细，不然维护起来会很累。</p><p>一个比较实用的结构可以像这样：</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">MyBrain/├─ 01-临时记录├─ 02-项目笔记├─ 03-技术积累├─ 04-生活整理├─ 05-素材收藏├─ 06-待发布文章└─ Attachments<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>可以简单理解为：</p><ul><li><strong>01-临时记录</strong>：先记下来，后面再整理</li><li><strong>02-项目笔记</strong>：记录项目过程中的问题和方案</li><li><strong>03-技术积累</strong>：长期保留的经验、教程、总结</li><li><strong>04-生活整理</strong>：非技术类内容</li><li><strong>05-素材收藏</strong>：链接、摘录、灵感、参考资料</li><li><strong>06-待发布文章</strong>：以后准备整理成博客的内容</li><li><strong>Attachments</strong>：图片和附件统一管理</li></ul><p>重点不是结构多完美，而是要让自己能够快速开始记录。</p><h2 id="六、第四步：在-Obsidian-里怎么记，才更像“知识库”"><a href="#六、第四步：在-Obsidian-里怎么记，才更像“知识库”" class="headerlink" title="六、第四步：在 Obsidian 里怎么记，才更像“知识库”"></a>六、第四步：在 Obsidian 里怎么记，才更像“知识库”</h2><p>我更推荐这三个原则。</p><h3 id="1、先记录"><a href="#1、先记录" class="headerlink" title="1、先记录"></a>1、先记录</h3><p>遇到问题先记，看到有价值的内容先收，想到什么先写下来。</p><p>不要一开始就要求每篇笔记都特别完整，因为知识库最重要的是先把有价值的信息留下来。</p><h3 id="2、再整理"><a href="#2、再整理" class="headerlink" title="2、再整理"></a>2、再整理</h3><p>等某一类内容多起来以后，再整理成主题笔记。</p><p>比如：</p><ul><li>把多个 Git 问题整理成一篇 Git 使用记录</li><li>把多个部署报错整理成一篇服务器踩坑总结</li><li>把零散的 AI 工具实践整理成一篇工作流记录</li></ul><h3 id="3、最后连接"><a href="#3、最后连接" class="headerlink" title="3、最后连接"></a>3、最后连接</h3><p>只要有相关性，就尽量建立链接。</p><p>比如写一篇关于 GitHub 的笔记时，可以链接到：</p><ul><li>Git 常用命令</li><li>个人博客部署</li><li>仓库备份方案</li><li>某次推送失败的排查记录</li></ul><p>这一步做得越多，你的知识库就越像真正的知识网络，而不是文档堆积。</p><h2 id="七、第五步：为什么还要配合-GitHub"><a href="#七、第五步：为什么还要配合-GitHub" class="headerlink" title="七、第五步：为什么还要配合 GitHub"></a>七、第五步：为什么还要配合 GitHub</h2><p>如果只是记笔记，Obsidian 其实已经够用了。但如果你想让知识库更稳定、更安全、更适合长期维护，那 GitHub 非常值得配合使用。</p><h3 id="1、做远程备份"><a href="#1、做远程备份" class="headerlink" title="1、做远程备份"></a>1、做远程备份</h3><p>本地文件虽然方便，但也会有误删、硬盘损坏、系统重装等风险。同步到 GitHub 后，至少远程还有一份。</p><h3 id="2、做版本管理"><a href="#2、做版本管理" class="headerlink" title="2、做版本管理"></a>2、做版本管理</h3><p>知识库内容会不断修改，有时候你整理后会发现之前版本更好，或者不小心删掉了重要内容。这时候 Git 的历史记录就非常有用。</p><h3 id="3、方便以后同步和迁移"><a href="#3、方便以后同步和迁移" class="headerlink" title="3、方便以后同步和迁移"></a>3、方便以后同步和迁移</h3><p>以后如果你要换电脑、做多设备同步、或者接入自动化流程，有 GitHub 仓库会方便很多。</p><h2 id="八、第六步：把知识库上传到-GitHub"><a href="#八、第六步：把知识库上传到-GitHub" class="headerlink" title="八、第六步：把知识库上传到 GitHub"></a>八、第六步：把知识库上传到 GitHub</h2><p>接下来就是这套方案里最关键的一步：把本地知识库交给 Git 管理，再同步到 GitHub。</p><h3 id="1、在知识库目录里初始化-Git"><a href="#1、在知识库目录里初始化-Git" class="headerlink" title="1、在知识库目录里初始化 Git"></a>1、在知识库目录里初始化 Git</h3><p>在你的知识库目录里执行：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这样这个目录就变成了一个 Git 仓库。</p><h3 id="2、配置-gitignore"><a href="#2、配置-gitignore" class="headerlink" title="2、配置 .gitignore"></a>2、配置 <code>.gitignore</code></h3><p>Obsidian 里会有一些本地配置、缓存文件，不一定都适合同步到 GitHub。可以按需忽略，比如：</p><pre class="line-numbers language-ignore" data-language="ignore"><code class="language-ignore"><span class="token entry string">.obsidian<span class="token punctuation">/</span>workspace.json</span><span class="token entry string">.obsidian<span class="token punctuation">/</span>cache<span class="token punctuation">/</span></span><span class="token entry string">.trash<span class="token punctuation">/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>注意，不建议无脑把整个 <code>.obsidian</code> 都忽略掉，因为有些插件配置、主题配置你可能是希望保留的。</p><h3 id="3、提交第一个版本"><a href="#3、提交第一个版本" class="headerlink" title="3、提交第一个版本"></a>3、提交第一个版本</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span><span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"初始化知识库"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="4、在-GitHub-新建仓库"><a href="#4、在-GitHub-新建仓库" class="headerlink" title="4、在 GitHub 新建仓库"></a>4、在 GitHub 新建仓库</h3><p>登录 GitHub，新建一个仓库。</p><p>如果你的知识库里会记录私人内容、服务器信息、工作资料等内容，建议优先使用<strong>私有仓库</strong>。</p><h3 id="5、把本地内容推送到-GitHub"><a href="#5、把本地内容推送到-GitHub" class="headerlink" title="5、把本地内容推送到 GitHub"></a>5、把本地内容推送到 GitHub</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">add</span> origin 你的仓库地址<span class="token function">git</span> branch <span class="token parameter variable">-M</span> main<span class="token function">git</span> push <span class="token parameter variable">-u</span> origin main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>到这里，你的知识库就已经具备了：</p><ul><li>Obsidian 笔记管理</li><li>本地文件保存</li><li>Git 版本控制</li><li>GitHub 远程备份</li></ul><h2 id="九、后续怎么维护这套知识库"><a href="#九、后续怎么维护这套知识库" class="headerlink" title="九、后续怎么维护这套知识库"></a>九、后续怎么维护这套知识库</h2><p>搭建只是第一步，真正重要的是后续怎么持续用下去。</p><p>我自己的思路比较简单。</p><h3 id="1、有内容就先记进去"><a href="#1、有内容就先记进去" class="headerlink" title="1、有内容就先记进去"></a>1、有内容就先记进去</h3><p>不要拖，先留下来。</p><h3 id="2、定期整理一次"><a href="#2、定期整理一次" class="headerlink" title="2、定期整理一次"></a>2、定期整理一次</h3><p>比如每周整理一次，把临时记录归类，把重复内容合并，把零散内容补充完整。</p><h3 id="3、重要更新再提交到-GitHub"><a href="#3、重要更新再提交到-GitHub" class="headerlink" title="3、重要更新再提交到 GitHub"></a>3、重要更新再提交到 GitHub</h3><p>不需要每写一句都提交，但完成一轮整理后，可以顺手保存一个版本：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span><span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"更新知识库"</span><span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h2 id="十、使用这套方案时要注意什么"><a href="#十、使用这套方案时要注意什么" class="headerlink" title="十、使用这套方案时要注意什么"></a>十、使用这套方案时要注意什么</h2><h3 id="1、注意隐私内容"><a href="#1、注意隐私内容" class="headerlink" title="1、注意隐私内容"></a>1、注意隐私内容</h3><p>如果你的知识库里会记：</p><ul><li>账号密码</li><li>token</li><li>服务器信息</li><li>内部资料</li><li>私人记录</li></ul><p>那一定要避免误传到公开仓库。</p><h3 id="2、注意附件体积"><a href="#2、注意附件体积" class="headerlink" title="2、注意附件体积"></a>2、注意附件体积</h3><p>图片和附件太多的话，仓库会越来越大，所以最好定期清理无用文件。</p><h3 id="3、不要把系统设计得比记录本身还复杂"><a href="#3、不要把系统设计得比记录本身还复杂" class="headerlink" title="3、不要把系统设计得比记录本身还复杂"></a>3、不要把系统设计得比记录本身还复杂</h3><p>知识库最终是拿来用的，不是拿来折腾系统的。只要它能让你更方便地记录、整理、检索和复用内容，那它就是有效的。</p><h2 id="十一、总结"><a href="#十一、总结" class="headerlink" title="十一、总结"></a>十一、总结</h2><p>如果你想搭一个属于自己的个人知识库，我觉得 <strong>Obsidian + GitHub</strong> 是一套非常值得尝试的方案。</p><p>它的核心逻辑并不复杂：</p><ul><li><strong>Obsidian 负责写和连</strong></li><li><strong>本地文件夹负责存和管</strong></li><li><strong>GitHub 负责备份和版本管理</strong></li></ul><p>这套方式最大的优点，不是多炫，而是足够稳定、足够自由，也足够适合长期积累。</p><p>如果你也想把零散的笔记、资料、教程、项目经验慢慢沉淀成自己的知识体系，不妨从一个本地文件夹开始，再用 Obsidian 和 GitHub 一步步搭起来。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 效率工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Obsidian </tag>
+            
+            <tag> GitHub </tag>
+            
+            <tag> 个人知识库 </tag>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Cursor 中 Gemini Code Assist 登录卡住问题排查与解决（v2ray 代理用户）</title>
       <link href="/2026/05/23/cursor-gemini-code-assist-v2ray-oauth-login-fix/"/>
       <url>/2026/05/23/cursor-gemini-code-assist-v2ray-oauth-login-fix/</url>
@@ -233,13 +264,13 @@
             
             <tag> docker </tag>
             
-            <tag> 密码 </tag>
-            
             <tag> calibre </tag>
             
             <tag> 个人图书馆 </tag>
             
             <tag> 宝塔面板 </tag>
+            
+            <tag> 密码 </tag>
             
         </tags>
       
@@ -353,13 +384,13 @@
             
             <tag> 软件 </tag>
             
-            <tag> nps </tag>
-            
-            <tag> 树莓派 </tag>
-            
             <tag> 密码 </tag>
             
             <tag> 云盘 </tag>
+            
+            <tag> nps </tag>
+            
+            <tag> 树莓派 </tag>
             
             <tag> 蒲公英 </tag>
             
@@ -390,11 +421,11 @@
             
             <tag> python </tag>
             
+            <tag> 密码 </tag>
+            
             <tag> nps </tag>
             
             <tag> 树莓派 </tag>
-            
-            <tag> 密码 </tag>
             
             <tag> 视频 </tag>
             
@@ -431,11 +462,11 @@
             
             <tag> telegram </tag>
             
-            <tag> 树莓派 </tag>
+            <tag> 宝塔面板 </tag>
             
             <tag> 密码 </tag>
             
-            <tag> 宝塔面板 </tag>
+            <tag> 树莓派 </tag>
             
             <tag> 企业微信 </tag>
             
@@ -522,9 +553,9 @@
       
         <tags>
             
-            <tag> openwrt </tag>
-            
             <tag> 密码 </tag>
+            
+            <tag> openwrt </tag>
             
             <tag> 路由器 </tag>
             
@@ -555,9 +586,9 @@
             
             <tag> ansys </tag>
             
-            <tag> 仿真 </tag>
-            
             <tag> fluent </tag>
+            
+            <tag> 仿真 </tag>
             
         </tags>
       
@@ -586,9 +617,9 @@
             
             <tag> workbench </tag>
             
-            <tag> 仿真 </tag>
-            
             <tag> fluent </tag>
+            
+            <tag> 仿真 </tag>
             
             <tag> 控制 </tag>
             
@@ -831,19 +862,19 @@
       
         <tags>
             
-            <tag> nps </tag>
-            
-            <tag> 树莓派 </tag>
+            <tag> 密码 </tag>
             
             <tag> newifi3 </tag>
             
-            <tag> openwrt </tag>
+            <tag> nps </tag>
             
-            <tag> 密码 </tag>
+            <tag> openwrt </tag>
             
             <tag> 新路由3 </tag>
             
             <tag> 旁路由 </tag>
+            
+            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -872,13 +903,13 @@
             
             <tag> v2ray </tag>
             
-            <tag> 树莓派 </tag>
+            <tag> 密码 </tag>
             
             <tag> openwrt </tag>
             
-            <tag> 密码 </tag>
-            
             <tag> 旁路由 </tag>
+            
+            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -909,11 +940,11 @@
             
             <tag> v2ray </tag>
             
-            <tag> 树莓派 </tag>
+            <tag> 密码 </tag>
             
             <tag> openwrt </tag>
             
-            <tag> 密码 </tag>
+            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -1131,13 +1162,13 @@
       
         <tags>
             
-            <tag> 树莓派 </tag>
+            <tag> 密码 </tag>
             
             <tag> openwrt </tag>
             
-            <tag> 密码 </tag>
-            
             <tag> 新路由3 </tag>
+            
+            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -1320,6 +1351,33 @@
     
     
     <entry>
+      <title>python 后台运行及关闭后台程序</title>
+      <link href="/2021/05/23/python-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%85%B3%E9%97%AD%E5%90%8E%E5%8F%B0%E7%A8%8B%E5%BA%8F/"/>
+      <url>/2021/05/23/python-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%85%B3%E9%97%AD%E5%90%8E%E5%8F%B0%E7%A8%8B%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nohup</span> python3 <span class="token parameter variable">-u</span> socket_test.py <span class="token operator">></span>my_socket.log <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-3b425e2c6a315b3a29ae77ac4d4fd7ac.png"></p><h3 id="开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询"><a href="#开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询" class="headerlink" title="开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询"></a>开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询</h3><p>1. 最后一个“&amp;”表示后台运行程序 2. “nohup” 表示程序不被挂起 3. “python3”表示执行python代码 4. “-u”表示不启用缓存，实时输出打印信息到日志文件（如果不加-u，则会导致日志文件不会实时刷新代码中的print函数的信息） 5. “socket_test.py”表示python的源代码文件 6. “my_socket.log”表示输出的日志文件 7. “&gt;”表示将打印信息重定向到日志文件 8. “2&gt;&amp;1”表示将标准错误输出转变化标准输出，可以将错误信息也输出到日志文件中（0-&gt; stdin, 1-&gt;stdout, 2-&gt;stderr）</p><h3 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h3><h3 id="功能：查看当前的所有进程"><a href="#功能：查看当前的所有进程" class="headerlink" title="功能：查看当前的所有进程"></a>功能：查看当前的所有进程</h3><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-21f5388cab8456a5200facb28d71c1a3.png"></p><h3 id="也可以单独查询某个文件开启的进程"><a href="#也可以单独查询某个文件开启的进程" class="headerlink" title="也可以单独查询某个文件开启的进程"></a>也可以单独查询某个文件开启的进程</h3><pre class="line-numbers language-none"><code class="language-none">ps -aux | grep &quot;socket_test.py&quot;    #a:显示所有程序  u:以用户为主的格式来显示   x:显示所有程序，不以终端机来区分<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-4de4f49fe6667b8cf2ce886ea8210bc8.png"></p><h3 id="Kill命令"><a href="#Kill命令" class="headerlink" title="Kill命令"></a>Kill命令</h3><h3 id="功能：杀死进程"><a href="#功能：杀死进程" class="headerlink" title="功能：杀死进程"></a>功能：杀死进程</h3><pre class="line-numbers language-none"><code class="language-none">kill 30598<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-bf3a1b059555402d37d17462be659251.png"></p><p>文章来源于互联网:<a href="https://blog.csdn.net/qq_37946291/article/details/105550529">python 后台运行及关闭后台程序</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 缓存 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python使用telegram机器人发送消息进行推送</title>
       <link href="/2021/05/23/python%E4%BD%BF%E7%94%A8telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E8%BF%9B%E8%A1%8C%E6%8E%A8%E9%80%81/"/>
       <url>/2021/05/23/python%E4%BD%BF%E7%94%A8telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E8%BF%9B%E8%A1%8C%E6%8E%A8%E9%80%81/</url>
@@ -1341,33 +1399,6 @@
             <tag> python </tag>
             
             <tag> telegram </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>python 后台运行及关闭后台程序</title>
-      <link href="/2021/05/23/python-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%85%B3%E9%97%AD%E5%90%8E%E5%8F%B0%E7%A8%8B%E5%BA%8F/"/>
-      <url>/2021/05/23/python-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%85%B3%E9%97%AD%E5%90%8E%E5%8F%B0%E7%A8%8B%E5%BA%8F/</url>
-      
-        <content type="html"><![CDATA[<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nohup</span> python3 <span class="token parameter variable">-u</span> socket_test.py <span class="token operator">></span>my_socket.log <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-3b425e2c6a315b3a29ae77ac4d4fd7ac.png"></p><h3 id="开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询"><a href="#开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询" class="headerlink" title="开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询"></a>开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询</h3><p>1. 最后一个“&amp;”表示后台运行程序 2. “nohup” 表示程序不被挂起 3. “python3”表示执行python代码 4. “-u”表示不启用缓存，实时输出打印信息到日志文件（如果不加-u，则会导致日志文件不会实时刷新代码中的print函数的信息） 5. “socket_test.py”表示python的源代码文件 6. “my_socket.log”表示输出的日志文件 7. “&gt;”表示将打印信息重定向到日志文件 8. “2&gt;&amp;1”表示将标准错误输出转变化标准输出，可以将错误信息也输出到日志文件中（0-&gt; stdin, 1-&gt;stdout, 2-&gt;stderr）</p><h3 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h3><h3 id="功能：查看当前的所有进程"><a href="#功能：查看当前的所有进程" class="headerlink" title="功能：查看当前的所有进程"></a>功能：查看当前的所有进程</h3><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-21f5388cab8456a5200facb28d71c1a3.png"></p><h3 id="也可以单独查询某个文件开启的进程"><a href="#也可以单独查询某个文件开启的进程" class="headerlink" title="也可以单独查询某个文件开启的进程"></a>也可以单独查询某个文件开启的进程</h3><pre class="line-numbers language-none"><code class="language-none">ps -aux | grep &quot;socket_test.py&quot;    #a:显示所有程序  u:以用户为主的格式来显示   x:显示所有程序，不以终端机来区分<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-4de4f49fe6667b8cf2ce886ea8210bc8.png"></p><h3 id="Kill命令"><a href="#Kill命令" class="headerlink" title="Kill命令"></a>Kill命令</h3><h3 id="功能：杀死进程"><a href="#功能：杀死进程" class="headerlink" title="功能：杀死进程"></a>功能：杀死进程</h3><pre class="line-numbers language-none"><code class="language-none">kill 30598<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-bf3a1b059555402d37d17462be659251.png"></p><p>文章来源于互联网:<a href="https://blog.csdn.net/qq_37946291/article/details/105550529">python 后台运行及关闭后台程序</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> python </tag>
-            
-            <tag> 缓存 </tag>
             
         </tags>
       
@@ -1690,9 +1721,9 @@
             
             <tag> docker </tag>
             
-            <tag> 搬瓦工 </tag>
-            
             <tag> 密码 </tag>
+            
+            <tag> 搬瓦工 </tag>
             
             <tag> wordpress </tag>
             
@@ -1750,9 +1781,9 @@
             
             <tag> 网站 </tag>
             
-            <tag> windows </tag>
-            
             <tag> KMS激活 </tag>
+            
+            <tag> windows </tag>
             
             <tag> 路由器 </tag>
             
@@ -1804,9 +1835,9 @@
       
         <tags>
             
-            <tag> 树莓派 </tag>
-            
             <tag> 云盘 </tag>
+            
+            <tag> 树莓派 </tag>
             
         </tags>
       
@@ -1910,9 +1941,9 @@
             
             <tag> 离线下载 </tag>
             
-            <tag> nps </tag>
-            
             <tag> newifi3 </tag>
+            
+            <tag> nps </tag>
             
             <tag> 新路由3 </tag>
             
@@ -1941,13 +1972,13 @@
       
         <tags>
             
-            <tag> nps </tag>
-            
-            <tag> 树莓派 </tag>
-            
             <tag> newifi3 </tag>
             
+            <tag> nps </tag>
+            
             <tag> 新路由3 </tag>
+            
+            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -2096,9 +2127,9 @@
             
             <tag> nps </tag>
             
-            <tag> 搬瓦工 </tag>
-            
             <tag> 树莓派 </tag>
+            
+            <tag> 搬瓦工 </tag>
             
         </tags>
       
@@ -2209,31 +2240,6 @@
     
     
     <entry>
-      <title>excel 中复制或导入内容中日期/数字格式不生效需要但双击才会生效的解决办法</title>
-      <link href="/2021/01/11/excel-%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%88%96%E5%AF%BC%E5%85%A5%E5%86%85%E5%AE%B9%E4%B8%AD%E6%97%A5%E6%9C%9F-%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88%E9%9C%80%E8%A6%81%E4%BD%86/"/>
-      <url>/2021/01/11/excel-%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%88%96%E5%AF%BC%E5%85%A5%E5%86%85%E5%AE%B9%E4%B8%AD%E6%97%A5%E6%9C%9F-%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88%E9%9C%80%E8%A6%81%E4%BD%86/</url>
-      
-        <content type="html"><![CDATA[<p>在excel中，数字格式的内容默认事会自动移动到单元格的右边的，文本格式的则会自动在单元格左边</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/1610331736-excel%E6%A0%BC%E5%BC%8F1.png"></p><p>但其实经常我们由文本文件导入的数据，或者复制过来的数据，虽然显示是文本格式的，但其内容是数值格式的，而且此时就算将单元格格式改为数值格式，仍然需要挨个单元格双击，单元格中内容就会自动移动到单元格的右边，这样数值格式才能生效，才可以计算。</p><p>如果数据较多，一个个双击单元格就效率太低了</p><pre class="line-numbers language-none"><code class="language-none">解决：　　选中整列，“数据”---&gt;“分列”---&gt;“分隔符号”---&gt;“下一步”---&gt;“tab键”---&gt;“下一步”---&gt;“常规”---&gt;“完成” （如果是日期格式的话，最后一步选“日期”）　　注：如经过以上步骤后数值未能正常显示，选中整列，“设置单元格格式”----&gt;“1234”----&gt;小数位数改为“0”---&gt;“确定”。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> excel </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> excel </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>excel中使用下拉公式计算时如何固定某一个单元格值</title>
       <link href="/2021/01/11/excel%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E5%85%AC%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%97%B6%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E6%9F%90%E4%B8%80%E4%B8%AA%E5%8D%95%E5%85%83%E6%A0%BC%E5%80%BC/"/>
       <url>/2021/01/11/excel%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E5%85%AC%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%97%B6%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E6%9F%90%E4%B8%80%E4%B8%AA%E5%8D%95%E5%85%83%E6%A0%BC%E5%80%BC/</url>
@@ -2259,11 +2265,36 @@
     
     
     <entry>
-      <title>Kali-Linux-2020.1 设置中文，汉化。</title>
-      <link href="/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/"/>
-      <url>/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/</url>
+      <title>excel 中复制或导入内容中日期/数字格式不生效需要但双击才会生效的解决办法</title>
+      <link href="/2021/01/11/excel-%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%88%96%E5%AF%BC%E5%85%A5%E5%86%85%E5%AE%B9%E4%B8%AD%E6%97%A5%E6%9C%9F-%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88%E9%9C%80%E8%A6%81%E4%BD%86/"/>
+      <url>/2021/01/11/excel-%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%88%96%E5%AF%BC%E5%85%A5%E5%86%85%E5%AE%B9%E4%B8%AD%E6%97%A5%E6%9C%9F-%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88%E9%9C%80%E8%A6%81%E4%BD%86/</url>
       
-        <content type="html"><![CDATA[<p> </p><h1 id="Kali-Linux-2020-1-设置中文，汉化。"><a href="#Kali-Linux-2020-1-设置中文，汉化。" class="headerlink" title="Kali-Linux-2020.1 设置中文，汉化。"></a>Kali-Linux-2020.1 设置中文，汉化。</h1><pre class="line-numbers language-none"><code class="language-none">Kali Linux团队在Twitter上宣布：“新的一年是进行重大改变的好时机，因此，我们宣布在  即将发布的2020.1版本中，Kali安全模型也将进行重大改革——默认非root用户。”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>所以使用kali之前版本的汉化方法可能会出现权限问题。(注意:汉化前先换源，不然可能会出问题。)</p><ol><li><p>kali 2020.1 汉化</p><p> 打开终端，输入：</p></li></ol><p><code>sudo dpkg-reconfigure locales</code></p><p>这时可能会让你输入root密码 ，默认的密码是：kali</p><p>然后选择字符编码： en_US.UTF-8（要完全汉化的话把这个去掉，如果只是想解决中文乱码就留着）、zh_CN.GBK、zh_CN.UTF-8 （用空格选定）</p><p>接着选择字符： zh_CN.UTF-8</p><ol start="2"><li>解决编码错误显示问题,终端输入：</li></ol><p><code>sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy</code></p><p>设置完之后输入：</p><p><code>sudo reboot</code></p><p>重启就好了。 <img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-28fe4bc43060061996dde07a1a88b53a.png"> 附：<a href="https://blog.csdn.net/weixin_44823747/article/details/107477695?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">Kali-Linux-2020.2 设置中文，汉化及换源方法</a></p><p>文章来源于互联网:<a href="https://blog.csdn.net/weixin_44823747/article/details/104173742">Kali-Linux-2020.1 设置中文，汉化。</a></p>]]></content>
+        <content type="html"><![CDATA[<p>在excel中，数字格式的内容默认事会自动移动到单元格的右边的，文本格式的则会自动在单元格左边</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/1610331736-excel%E6%A0%BC%E5%BC%8F1.png"></p><p>但其实经常我们由文本文件导入的数据，或者复制过来的数据，虽然显示是文本格式的，但其内容是数值格式的，而且此时就算将单元格格式改为数值格式，仍然需要挨个单元格双击，单元格中内容就会自动移动到单元格的右边，这样数值格式才能生效，才可以计算。</p><p>如果数据较多，一个个双击单元格就效率太低了</p><pre class="line-numbers language-none"><code class="language-none">解决：　　选中整列，“数据”---&gt;“分列”---&gt;“分隔符号”---&gt;“下一步”---&gt;“tab键”---&gt;“下一步”---&gt;“常规”---&gt;“完成” （如果是日期格式的话，最后一步选“日期”）　　注：如经过以上步骤后数值未能正常显示，选中整列，“设置单元格格式”----&gt;“1234”----&gt;小数位数改为“0”---&gt;“确定”。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> excel </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> excel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>kali linux使用apt-get更新全过程</title>
+      <link href="/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/"/>
+      <url>/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h3 id="0x00-修改更新源"><a href="#0x00-修改更新源" class="headerlink" title="0x00 修改更新源"></a><em>0x00 修改更新源</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#vim &#x2F;etc&#x2F;apt&#x2F;sources.list          &#x2F;&#x2F;使用vim编辑器打开更新源文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>修改之前可以先备份</p><pre class="line-numbers language-none"><code class="language-none">:~#copy &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.bak &#x2F;&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将旧的更新源使用’#’注释掉 在以下更新源中选择一个复制</p><blockquote><p>中科大 deb <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib</p><p>阿里云 deb <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib</p><p>清华大学 deb <a href="http://mirrors.tuna.tsinghua.edu.cn/kali">http://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="https://mirrors.tuna.tsinghua.edu.cn/kali">https://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>浙大 deb <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>官方源 deb <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib deb-src <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib</p></blockquote><p>使用:wq保存退出</p><hr><h3 id="0x01-使用更新源进行软件和系统的升级"><a href="#0x01-使用更新源进行软件和系统的升级" class="headerlink" title="0x01 使用更新源进行软件和系统的升级"></a><em>0x01 使用更新源进行软件和系统的升级</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get update &#x2F;&#x2F;同步 &#x2F;etc&#x2F;apt&#x2F;sources.list 和 &#x2F;etc&#x2F;apt&#x2F;sources.list.d 中列出的源的索引这样才能获取到最新的软件包&#x2F;&#x2F;只是更新apt的资源列表:~#sudo apt-get upgrade :~#sudo apt-get dist-upgrade &#x2F;&#x2F;通常情况下将两个放一起处理<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p><strong>tips</strong>: apt-get upgrade 和 apt-get dist-upgrade 本质上是没有什么不同的。 只不过，dist-upgrade 会识别出当依赖关系改变的情形并作出处理，而upgrade对此情形不处理。 例如软件包 a 原先依赖 b c d，但是在源里面可能已经升级了，现在是 a 依赖 b c e。这种情况下，dist-upgrade 会删除 d 安装 e，并把 a 软件包升级，而 upgrade 会认为依赖关系改变而拒绝升级 a 软件包。 <strong>from</strong> :<a href="https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html">https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html</a></p></blockquote><hr><h3 id="0x02-删除旧文件和缓存文件"><a href="#0x02-删除旧文件和缓存文件" class="headerlink" title="0x02 删除旧文件和缓存文件"></a><em>0x02 删除旧文件和缓存文件</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get autoclean &#x2F;&#x2F;清理旧版本的软件缓存:~#sudo apt-get clean &#x2F;&#x2F;清理所有软件缓存:~#sudo apt-get autoremove &#x2F;&#x2F;删除系统不再使用的孤立软件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
@@ -2284,11 +2315,11 @@
     
     
     <entry>
-      <title>kali linux使用apt-get更新全过程</title>
-      <link href="/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/"/>
-      <url>/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/</url>
+      <title>Kali-Linux-2020.1 设置中文，汉化。</title>
+      <link href="/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/"/>
+      <url>/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/</url>
       
-        <content type="html"><![CDATA[<h3 id="0x00-修改更新源"><a href="#0x00-修改更新源" class="headerlink" title="0x00 修改更新源"></a><em>0x00 修改更新源</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#vim &#x2F;etc&#x2F;apt&#x2F;sources.list          &#x2F;&#x2F;使用vim编辑器打开更新源文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>修改之前可以先备份</p><pre class="line-numbers language-none"><code class="language-none">:~#copy &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.bak &#x2F;&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将旧的更新源使用’#’注释掉 在以下更新源中选择一个复制</p><blockquote><p>中科大 deb <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib</p><p>阿里云 deb <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib</p><p>清华大学 deb <a href="http://mirrors.tuna.tsinghua.edu.cn/kali">http://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="https://mirrors.tuna.tsinghua.edu.cn/kali">https://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>浙大 deb <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>官方源 deb <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib deb-src <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib</p></blockquote><p>使用:wq保存退出</p><hr><h3 id="0x01-使用更新源进行软件和系统的升级"><a href="#0x01-使用更新源进行软件和系统的升级" class="headerlink" title="0x01 使用更新源进行软件和系统的升级"></a><em>0x01 使用更新源进行软件和系统的升级</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get update &#x2F;&#x2F;同步 &#x2F;etc&#x2F;apt&#x2F;sources.list 和 &#x2F;etc&#x2F;apt&#x2F;sources.list.d 中列出的源的索引这样才能获取到最新的软件包&#x2F;&#x2F;只是更新apt的资源列表:~#sudo apt-get upgrade :~#sudo apt-get dist-upgrade &#x2F;&#x2F;通常情况下将两个放一起处理<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p><strong>tips</strong>: apt-get upgrade 和 apt-get dist-upgrade 本质上是没有什么不同的。 只不过，dist-upgrade 会识别出当依赖关系改变的情形并作出处理，而upgrade对此情形不处理。 例如软件包 a 原先依赖 b c d，但是在源里面可能已经升级了，现在是 a 依赖 b c e。这种情况下，dist-upgrade 会删除 d 安装 e，并把 a 软件包升级，而 upgrade 会认为依赖关系改变而拒绝升级 a 软件包。 <strong>from</strong> :<a href="https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html">https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html</a></p></blockquote><hr><h3 id="0x02-删除旧文件和缓存文件"><a href="#0x02-删除旧文件和缓存文件" class="headerlink" title="0x02 删除旧文件和缓存文件"></a><em>0x02 删除旧文件和缓存文件</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get autoclean &#x2F;&#x2F;清理旧版本的软件缓存:~#sudo apt-get clean &#x2F;&#x2F;清理所有软件缓存:~#sudo apt-get autoremove &#x2F;&#x2F;删除系统不再使用的孤立软件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<p> </p><h1 id="Kali-Linux-2020-1-设置中文，汉化。"><a href="#Kali-Linux-2020-1-设置中文，汉化。" class="headerlink" title="Kali-Linux-2020.1 设置中文，汉化。"></a>Kali-Linux-2020.1 设置中文，汉化。</h1><pre class="line-numbers language-none"><code class="language-none">Kali Linux团队在Twitter上宣布：“新的一年是进行重大改变的好时机，因此，我们宣布在  即将发布的2020.1版本中，Kali安全模型也将进行重大改革——默认非root用户。”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>所以使用kali之前版本的汉化方法可能会出现权限问题。(注意:汉化前先换源，不然可能会出问题。)</p><ol><li><p>kali 2020.1 汉化</p><p> 打开终端，输入：</p></li></ol><p><code>sudo dpkg-reconfigure locales</code></p><p>这时可能会让你输入root密码 ，默认的密码是：kali</p><p>然后选择字符编码： en_US.UTF-8（要完全汉化的话把这个去掉，如果只是想解决中文乱码就留着）、zh_CN.GBK、zh_CN.UTF-8 （用空格选定）</p><p>接着选择字符： zh_CN.UTF-8</p><ol start="2"><li>解决编码错误显示问题,终端输入：</li></ol><p><code>sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy</code></p><p>设置完之后输入：</p><p><code>sudo reboot</code></p><p>重启就好了。 <img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-28fe4bc43060061996dde07a1a88b53a.png"> 附：<a href="https://blog.csdn.net/weixin_44823747/article/details/107477695?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">Kali-Linux-2020.2 设置中文，汉化及换源方法</a></p><p>文章来源于互联网:<a href="https://blog.csdn.net/weixin_44823747/article/details/104173742">Kali-Linux-2020.1 设置中文，汉化。</a></p>]]></content>
       
       
       <categories>
@@ -2664,11 +2695,11 @@
     
     
     <entry>
-      <title>LabVIEW2018软件安装教程</title>
-      <link href="/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
-      <url>/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+      <title>LabVIEW2013软件安装步骤</title>
+      <link href="/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/"/>
+      <url>/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/</url>
       
-        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><h1 id="LabVIEW-2018（32-64）位下载地址："><a href="#LabVIEW-2018（32-64）位下载地址：" class="headerlink" title="LabVIEW 2018（32&#x2F;64）位下载地址："></a>LabVIEW 2018（32&#x2F;64）位下载地址：</h1><p><a href="https://pan.baidu.com/s/1vOoYTrN36Mumr87zleAuPQ">https://pan.baidu.com/s/1vOoYTrN36Mumr87zleAuPQ</a></p><p>密码: m035</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1.右击软件压缩包选择解压到LabVIEW2018。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02aa4f4248d4969605a8fe47049d24ab.jpeg"></p><p>2.选中文件，鼠标右击选择以管理员身份打开2018LV-WinChn.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1bb32c3fd83ba195c4ab509f7ab27cf1.jpeg"></p><p>3.点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-55c0ebbb8e9ffe50bfa5faa7440930ae.jpeg"></p><p>4.点击Unzip解压。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2c1edfad3c1d905d0e56b564f2a687ab.jpeg"></p><p>5.点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-23e08e9b8a3b4c49a182414d33c1b464.jpeg"></p><p>6.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-be96e23cebca79c47a475c38dac45204.jpeg"></p><p>7.填写任意信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d57fabe4fab17dcd7ba07b9bb5baa1a3.jpeg"></p><p>8.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d379adcac5b51eba662ebb97999a632d.jpeg"></p><p>9.点击浏览更改安装路径建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LABVIEW2018文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a803e9d536b532d076497d32550f05b7.jpeg"></p><p>10.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-664ea2ec7a958c603a0964b961c4dce8.jpeg"></p><p>11.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cc088ef7c1aa820c244a233d0e371a9c.jpeg"></p><p>12.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c2e88085c5db563b104550e0d12b35b0.jpeg"></p><p>13.勾选我接受上述2条许可协议，然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-616bfc5e6ae1c7987a07f6415f0cd6d5.jpeg"></p><p>14.勾选我接受上述2条许可协议。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c628963fc426b498d8cc21c61ed34f73.jpeg"></p><p>15.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-544aa094ab026cd1b383c529a4750854.jpeg"></p><p>16.软件安装中（大约需要15分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-41fda548836645bd3ecbdb4223d15d27.jpeg"></p><p>17.点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ebc0a31ef253b3538f26cfef2644b89f.jpeg"></p><p>18.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-06fe7866642c9dda64c6649121cedc6a.jpeg"></p><p>19.勾选否，点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-fe731ed849551baea03695d3113d348f.jpeg"></p><p>20.点击否。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-913c782ed32f619381a8c132e184ec99.jpeg"></p><p>21.点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2dd82cc7c984474d783aab03fbccde09.jpeg"></p><p>22.返回安装包中找到NI LIcense Activator1.2，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02f2284ef829e615f2a4511431547dd0.jpeg"></p><p>23.找到BaseDevelopment System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0eedd9f2f5535ce89f624996ff9c9fde.jpeg"></p><p>24.找到Debug DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ac1ede958a0ee2c0d30aa57a0be5c2f8.jpeg"></p><p>25.找到Full DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-35af28c430fabca7bafb15c9eec19cd5.jpeg"></p><p>26.找到Professional DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-da8133590005d50b5faa3f23b9a6c722.jpeg"></p><p>27.找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-3e97b3a25b7c8b93b44ac767c037728f.jpeg"></p><p>28.找到ApplicationBuilder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1f21e8f9cacec577b7b84bfbfe273fcd.jpeg"></p><p>29.在开始菜单栏中找到LabVIEW2018软件打开。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e9493be15175c4ec484dc5079a6f1e35.jpeg"></p><p>30.安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0fd3e06b7f7b109f286557fed68f49e8.jpeg"></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><p>LabVIEW 2013（32&#x2F;64）位下载地址：</p><p>pan.baidu.com&#x2F;s&#x2F;1GuuX5sSGSvkNrz1ErRcXPw</p><p>密码：8qw5</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1、右击软件压缩包选择解压到LabVIEW2013。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a319fd45c3790213041330c1088a814a.png"></p><p>2、右击选择打开labvIEW 2013.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b4053f60b9460a24bfab8e7c6b424a0d.png"></p><p>3、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2fbea235a14b87608561af26af539a2f.png"></p><p>4、点击Unzip解压文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-830e192956d6e27a6e276d8663fc1b86.png"></p><p>5、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-858d80ad28c44bde8381ef80de32ba9f.png"></p><p>6、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-939747a0bf892252b08b51fa26e5a13e.jpeg"></p><p>7、任意填写信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02b53b5e4029d01cac965ba2c99ab71d.png"></p><p>8、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d0004730b4f500a08da05c73a47eb70b.jpeg"></p><p>9、点击浏览更改安装路径，建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LabVIEW2013文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0f9634835b613697227b691316cd45c0.png"></p><p>10、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-f4e5821a301c8c03249ecf383b8fef3d.jpeg"></p><p>11、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b0153d86145818c2d2cb00cd84a9ef7a.jpeg"></p><p>12、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-998c1c27ce811734fc4bd46dfe7b40cd.png"></p><p>13、选择我接受上述2条许可协议，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cb71dc71b7193595d950370518dcda9b.jpeg"></p><p>14、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d700a74ec10bd9904ab249fcab7a04e7.jpeg"></p><p>15、软件安装中（大约需要10分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-8b640a3fd8d2769e1517e3b5e955d69a.png"></p><p>16、点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1120b7cdd6384d017d9e84568faa9b11.jpeg"></p><p>17、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2abc71ab1a9c0f1e0624decfde08c2ac.png"></p><p>18、点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-86bf52d2153dc6abc9bc14bad68f0b3e.png"></p><p>19、在安装包中找到NI LIcense Activator，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-87c1293fe9fe19f0d82962787b0eaf7b.png"></p><p>20、找到Base Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d2409d5211152e241cd21633f27a7353.png"></p><p>21、找到Debug Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-5e970bdefcb10f90283b1f0e4627a923.png"></p><p>22、找到Full Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e8e35247ace4718dc65763e651049c4b.png"></p><p>23、找到Professional Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-7eb7ff8419dc09b625eac916d5a55103.png"></p><p>24、找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-73efa7e2f54580067252db40fc465e1a.png"></p><p>25、找到Application Builder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-403a516e62f9e79bc78ed99d79df27a5.png"></p><p>26、在开始菜单找到软件打开，取消勾选启动时显示，使其处于未选中状态，点击关闭。<img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0dc244091e71c8ccc0abbe09fd88574f.jpeg"></p><p>27、安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c90ecc4aa09a9c4f24b72269717fd990.jpeg"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-771930041ff4da44c73c6343232983ab.png"></p>]]></content>
       
       
       <categories>
@@ -2691,11 +2722,11 @@
     
     
     <entry>
-      <title>LabVIEW2013软件安装步骤</title>
-      <link href="/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/"/>
-      <url>/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/</url>
+      <title>LabVIEW2018软件安装教程</title>
+      <link href="/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+      <url>/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
       
-        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><p>LabVIEW 2013（32&#x2F;64）位下载地址：</p><p>pan.baidu.com&#x2F;s&#x2F;1GuuX5sSGSvkNrz1ErRcXPw</p><p>密码：8qw5</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1、右击软件压缩包选择解压到LabVIEW2013。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a319fd45c3790213041330c1088a814a.png"></p><p>2、右击选择打开labvIEW 2013.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b4053f60b9460a24bfab8e7c6b424a0d.png"></p><p>3、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2fbea235a14b87608561af26af539a2f.png"></p><p>4、点击Unzip解压文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-830e192956d6e27a6e276d8663fc1b86.png"></p><p>5、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-858d80ad28c44bde8381ef80de32ba9f.png"></p><p>6、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-939747a0bf892252b08b51fa26e5a13e.jpeg"></p><p>7、任意填写信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02b53b5e4029d01cac965ba2c99ab71d.png"></p><p>8、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d0004730b4f500a08da05c73a47eb70b.jpeg"></p><p>9、点击浏览更改安装路径，建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LabVIEW2013文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0f9634835b613697227b691316cd45c0.png"></p><p>10、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-f4e5821a301c8c03249ecf383b8fef3d.jpeg"></p><p>11、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b0153d86145818c2d2cb00cd84a9ef7a.jpeg"></p><p>12、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-998c1c27ce811734fc4bd46dfe7b40cd.png"></p><p>13、选择我接受上述2条许可协议，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cb71dc71b7193595d950370518dcda9b.jpeg"></p><p>14、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d700a74ec10bd9904ab249fcab7a04e7.jpeg"></p><p>15、软件安装中（大约需要10分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-8b640a3fd8d2769e1517e3b5e955d69a.png"></p><p>16、点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1120b7cdd6384d017d9e84568faa9b11.jpeg"></p><p>17、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2abc71ab1a9c0f1e0624decfde08c2ac.png"></p><p>18、点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-86bf52d2153dc6abc9bc14bad68f0b3e.png"></p><p>19、在安装包中找到NI LIcense Activator，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-87c1293fe9fe19f0d82962787b0eaf7b.png"></p><p>20、找到Base Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d2409d5211152e241cd21633f27a7353.png"></p><p>21、找到Debug Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-5e970bdefcb10f90283b1f0e4627a923.png"></p><p>22、找到Full Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e8e35247ace4718dc65763e651049c4b.png"></p><p>23、找到Professional Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-7eb7ff8419dc09b625eac916d5a55103.png"></p><p>24、找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-73efa7e2f54580067252db40fc465e1a.png"></p><p>25、找到Application Builder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-403a516e62f9e79bc78ed99d79df27a5.png"></p><p>26、在开始菜单找到软件打开，取消勾选启动时显示，使其处于未选中状态，点击关闭。<img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0dc244091e71c8ccc0abbe09fd88574f.jpeg"></p><p>27、安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c90ecc4aa09a9c4f24b72269717fd990.jpeg"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-771930041ff4da44c73c6343232983ab.png"></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><h1 id="LabVIEW-2018（32-64）位下载地址："><a href="#LabVIEW-2018（32-64）位下载地址：" class="headerlink" title="LabVIEW 2018（32&#x2F;64）位下载地址："></a>LabVIEW 2018（32&#x2F;64）位下载地址：</h1><p><a href="https://pan.baidu.com/s/1vOoYTrN36Mumr87zleAuPQ">https://pan.baidu.com/s/1vOoYTrN36Mumr87zleAuPQ</a></p><p>密码: m035</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1.右击软件压缩包选择解压到LabVIEW2018。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02aa4f4248d4969605a8fe47049d24ab.jpeg"></p><p>2.选中文件，鼠标右击选择以管理员身份打开2018LV-WinChn.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1bb32c3fd83ba195c4ab509f7ab27cf1.jpeg"></p><p>3.点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-55c0ebbb8e9ffe50bfa5faa7440930ae.jpeg"></p><p>4.点击Unzip解压。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2c1edfad3c1d905d0e56b564f2a687ab.jpeg"></p><p>5.点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-23e08e9b8a3b4c49a182414d33c1b464.jpeg"></p><p>6.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-be96e23cebca79c47a475c38dac45204.jpeg"></p><p>7.填写任意信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d57fabe4fab17dcd7ba07b9bb5baa1a3.jpeg"></p><p>8.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d379adcac5b51eba662ebb97999a632d.jpeg"></p><p>9.点击浏览更改安装路径建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LABVIEW2018文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a803e9d536b532d076497d32550f05b7.jpeg"></p><p>10.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-664ea2ec7a958c603a0964b961c4dce8.jpeg"></p><p>11.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cc088ef7c1aa820c244a233d0e371a9c.jpeg"></p><p>12.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c2e88085c5db563b104550e0d12b35b0.jpeg"></p><p>13.勾选我接受上述2条许可协议，然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-616bfc5e6ae1c7987a07f6415f0cd6d5.jpeg"></p><p>14.勾选我接受上述2条许可协议。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c628963fc426b498d8cc21c61ed34f73.jpeg"></p><p>15.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-544aa094ab026cd1b383c529a4750854.jpeg"></p><p>16.软件安装中（大约需要15分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-41fda548836645bd3ecbdb4223d15d27.jpeg"></p><p>17.点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ebc0a31ef253b3538f26cfef2644b89f.jpeg"></p><p>18.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-06fe7866642c9dda64c6649121cedc6a.jpeg"></p><p>19.勾选否，点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-fe731ed849551baea03695d3113d348f.jpeg"></p><p>20.点击否。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-913c782ed32f619381a8c132e184ec99.jpeg"></p><p>21.点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2dd82cc7c984474d783aab03fbccde09.jpeg"></p><p>22.返回安装包中找到NI LIcense Activator1.2，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02f2284ef829e615f2a4511431547dd0.jpeg"></p><p>23.找到BaseDevelopment System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0eedd9f2f5535ce89f624996ff9c9fde.jpeg"></p><p>24.找到Debug DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ac1ede958a0ee2c0d30aa57a0be5c2f8.jpeg"></p><p>25.找到Full DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-35af28c430fabca7bafb15c9eec19cd5.jpeg"></p><p>26.找到Professional DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-da8133590005d50b5faa3f23b9a6c722.jpeg"></p><p>27.找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-3e97b3a25b7c8b93b44ac767c037728f.jpeg"></p><p>28.找到ApplicationBuilder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1f21e8f9cacec577b7b84bfbfe273fcd.jpeg"></p><p>29.在开始菜单栏中找到LabVIEW2018软件打开。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e9493be15175c4ec484dc5079a6f1e35.jpeg"></p><p>30.安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0fd3e06b7f7b109f286557fed68f49e8.jpeg"></p>]]></content>
       
       
       <categories>
@@ -3920,16 +3951,18 @@
     
     
     <entry>
-      <title>labview使用udl文件连接数据库</title>
-      <link href="/2020/07/06/labview%E4%BD%BF%E7%94%A8udl%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-      <url>/2020/07/06/labview%E4%BD%BF%E7%94%A8udl%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+      <title>labview使用连接字符串连接数据库</title>
+      <link href="/2020/07/06/labview%E4%BD%BF%E7%94%A8%E8%BF%9E%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <url>/2020/07/06/labview%E4%BD%BF%E7%94%A8%E8%BF%9E%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
       
-        <content type="html"><![CDATA[<p>ADO （ActveXData Objeles ）是微软利用自动化服务器技术开发的数据库接口。它不同于传统的ODBC，ODBC仅支持关系型数据库，而ADO对关系型数据库和非关系型数据库都提供了支持。</p><p>如同ODBC的DSN一样，使用UDL(通用数据库连接)文件也可以指定ADO的连接字符串。创建UDL文件有三种常用方法。 ◆复制一个现有的UDL文件后，更改名称，然后双击文件，通过“ 连接属性”对话框连接到数据库文件。 ◆在操作系统快捷菜单中， 选择“创建数据库连接(UDL )”项。某些版本的快捷菜单中可 能不显示该项。 ◆通过LabVIEW菜单中，单击“工具”菜单下的”Create Data Link”项，创建UDL。创建UDL文件后，双击该文件，即可打开“连接属性”对话框并配置数据库连接属性。</p><p>不同类型的数据库文件必须选择对应的提供者，比如MDB数据库文件的提供者应该选择‘JET4.0OLEDB Provider”,而SQL服务器应该选择“ SQL Server”。</p><p>如果出现双击udl文件后无法编辑的问题，可以直接对udl进行文本编辑，使用文本编辑器打开udl文件</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594014991-udl%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%931-1024x138.png"></p><p>只需把指定的data source地址修改一下即可。</p><p>创建好udl文件后，连接数据库的程序框图如图：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594015271-udl%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%932-1024x233.png"></p><p>把udl放到地址中即可</p>]]></content>
+        <content type="html"><![CDATA[<p>在使用文本编辑udl文件的时候，就可以发现udl里面也只是存储一些字符串内容，我们就可以直接把里面的字符串内容提取出来，作为输入</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594020472-%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%932-1024x376.png"></p><p>这种方式避免了dsn或者udl需要创建文件的麻烦，更加直接方便</p><p>字符串内容为：Provider&#x3D;Microsoft.Jet.OLEDB.4.0;Data Source&#x3D;数据库目录\数据库.mdb;Persist Security Info&#x3D;False</p>]]></content>
       
       
       <categories>
           
           <category> labview </category>
+          
+          <category> 技术 </category>
           
       </categories>
       
@@ -3947,18 +3980,16 @@
     
     
     <entry>
-      <title>labview使用连接字符串连接数据库</title>
-      <link href="/2020/07/06/labview%E4%BD%BF%E7%94%A8%E8%BF%9E%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-      <url>/2020/07/06/labview%E4%BD%BF%E7%94%A8%E8%BF%9E%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+      <title>labview使用udl文件连接数据库</title>
+      <link href="/2020/07/06/labview%E4%BD%BF%E7%94%A8udl%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <url>/2020/07/06/labview%E4%BD%BF%E7%94%A8udl%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
       
-        <content type="html"><![CDATA[<p>在使用文本编辑udl文件的时候，就可以发现udl里面也只是存储一些字符串内容，我们就可以直接把里面的字符串内容提取出来，作为输入</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594020472-%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%932-1024x376.png"></p><p>这种方式避免了dsn或者udl需要创建文件的麻烦，更加直接方便</p><p>字符串内容为：Provider&#x3D;Microsoft.Jet.OLEDB.4.0;Data Source&#x3D;数据库目录\数据库.mdb;Persist Security Info&#x3D;False</p>]]></content>
+        <content type="html"><![CDATA[<p>ADO （ActveXData Objeles ）是微软利用自动化服务器技术开发的数据库接口。它不同于传统的ODBC，ODBC仅支持关系型数据库，而ADO对关系型数据库和非关系型数据库都提供了支持。</p><p>如同ODBC的DSN一样，使用UDL(通用数据库连接)文件也可以指定ADO的连接字符串。创建UDL文件有三种常用方法。 ◆复制一个现有的UDL文件后，更改名称，然后双击文件，通过“ 连接属性”对话框连接到数据库文件。 ◆在操作系统快捷菜单中， 选择“创建数据库连接(UDL )”项。某些版本的快捷菜单中可 能不显示该项。 ◆通过LabVIEW菜单中，单击“工具”菜单下的”Create Data Link”项，创建UDL。创建UDL文件后，双击该文件，即可打开“连接属性”对话框并配置数据库连接属性。</p><p>不同类型的数据库文件必须选择对应的提供者，比如MDB数据库文件的提供者应该选择‘JET4.0OLEDB Provider”,而SQL服务器应该选择“ SQL Server”。</p><p>如果出现双击udl文件后无法编辑的问题，可以直接对udl进行文本编辑，使用文本编辑器打开udl文件</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594014991-udl%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%931-1024x138.png"></p><p>只需把指定的data source地址修改一下即可。</p><p>创建好udl文件后，连接数据库的程序框图如图：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594015271-udl%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%932-1024x233.png"></p><p>把udl放到地址中即可</p>]]></content>
       
       
       <categories>
           
           <category> labview </category>
-          
-          <category> 技术 </category>
           
       </categories>
       
@@ -4054,9 +4085,9 @@
             
             <tag> labview </tag>
             
-            <tag> 试验台 </tag>
-            
             <tag> 安捷伦 </tag>
+            
+            <tag> 试验台 </tag>
             
         </tags>
       
@@ -4320,9 +4351,9 @@
             
             <tag> 控制 </tag>
             
-            <tag> 试验台 </tag>
-            
             <tag> 安捷伦 </tag>
+            
+            <tag> 试验台 </tag>
             
         </tags>
       
@@ -4692,31 +4723,6 @@
     
     
     <entry>
-      <title>电池热管理工程实践认知 (1): 风冷式热管理系统</title>
-      <link href="/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
-      <url>/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
-      
-        <content type="html"><![CDATA[<p><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></p><p><strong>1、电池热管理技术基本概念</strong></p><p>电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升，这个时候需要及时的散热，要不然就会中暑。当电池处于低温（例如-30℃）条件下的时候，电池无法正常的工作（温度太低，电池内反应物活性受限），车辆也就无法正常行驶，正如我们在瑟瑟寒风里无任何热防护的时候，人的身体感觉寒冷，人的动作就会变慢，这时候需要我们尽快采取取暖措施，要不然身体也会冻伤。</p><p>因此，我们人体在热了或者冷了且自身无法调节时，我们会开空调去做体外调节；如果人体被病毒细菌感染了，人体的免疫系统会产生作用，并升高体温；如果被发现是感染了厉害的病毒，高烧不退、吃退烧药也无法控制体温，就需要更为强力有效的方式进行综合调理、内外兼治。显然人体可以通过种种不同的途径来调节体温，那么电池的“体温”怎么办呢？</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg"></p><p>图0 电池的冷热管理（<a href="http://dc-ts.com/advanced-battery-thermal-management-system/%EF%BC%89">http://dc-ts.com/advanced-battery-thermal-management-system/）</a></p><p>对电池运行产生的热量进行管控的方法叫做<strong>电池热管理技术</strong>（详细可参见<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a>）。电池热管理就类似于人体对于体温的调节，如果电池运行产生的热量得不到有效的管理和控制，就会产生电池的热失控问题（<em><strong>我们后面会做专题讨论</strong></em>），这就类似于我们人体被感染了很厉害的病毒。在现阶段，由于动力电池材料技术处于发展瓶颈期，我们无法从根本上消除温度对电池性能和寿命的影响，但是不论是对于铅酸电池、锂离子电池或者是燃料电池，温度对于电池性能和寿命都是一个重要的影响因素，所以我们需要开发电池热管理技术对电池产生的热量进行管理，防止电池在高温或者低温下不能正常工作。希望目前的热管理只是一种过渡方式，后期的电芯不需要做任何热管理——这里大家不用担心失业，至少未来10年内，中国的6G、7G和1nm、0.5nm芯片冷却技术可能需要我们大展身手。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg"></p><p>图1 电池热管理的重要工程实践意义（百度图片）</p><p>温度最直观的影响就是对电池容量的影响，这也是为什么在冬季电动车行驶里程要比其他季节短很多的原因，同样每年的4月到9月都会出现电动车自燃的现象（暴晒条件下，车内温度达到60℃），天气燥热，电动车又给炎热的天气添了一把柴。综合各方面因素，电池热管理技术对于目前的动力电池是不可或缺的一部分，在环境温度较高时需要对电池进行降温，同时在温度较低时对电池进行加热，电池热管理技术相当于给电池加上了一个小型的空调系统。当然，在实际中也需要根据整车的实际运行工况来调整电池热管理系统策略。</p><p> </p><p><strong>2、电池热管理部件组成</strong></p><p>今天我们针对电池热管理技术的实际应用现状做个综述，后续我们再共同对其进行细分和学习。在国内目前能够大批量生产的汽车中实际应用的电池热管理技术可以分为四类：风冷式热管理技术、液冷式电池热管理技术、自然冷却式电池热管理技术和直冷式电池热管理技术（相变冷却技术）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg"></p><p>图2 电池热管理技术分类（百度图片）</p><p>另外电池包的保温设计（其实笔者感觉有效的保温最难实现，有时候想法和实际操作相差太远，现实条件中可能不允许你做一些保温的措施）和单纯加热的系统也都隶属于电池热管理系统，当然有人提出热扩散防控也属于热管理范畴，我们这里不做定义及探讨，本文主要针对散热系统进行介绍。</p><p> </p><p><strong>3、风冷式电池热管理系统部件构成</strong></p><p>风冷式热管理系统部件包括格栅、温度探头、滤网、进风管、冷风介质、电池包内部风管、出风管、风机，密封条和固定卡扣。一般来说格栅设计在风管的进口处，其作用是为了防止一些较大尺寸的物体进入电池包内部而堵塞风管。在格栅和风管之间还会设计有滤芯和风道，风道的设计一般会根据整车的内部结构和电池包内部结构设计进行调整，在实际的设计中，风道的设计要尽量的光滑和平顺。在风道和车辆部件接触的地方需要设计密封条。风机一般分为轴流分机和离心风机，根据不同的风冷式热管理系统的需求选择不同的风机类型。在选型的过程中一般会将噪音和送风量作为主要的参考因素。离心风机在电池包内部根据使用场景的不同可以分为吹风式和抽离式，最直接的例子就是丰田卡罗拉的两款HEV电池包，一款采用了吹风形式，另外一款采用了抽风形式。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg"></p><p>图3 丰田普锐斯（Prius）使用的风冷式电池热管理系统（谷歌图片）</p><p>当然，很多人可能会对风冷式热管理系统能否有效冷却电池保持怀疑态度，因为有很多这方面的文章提到风冷式系统的不足之处，这里我们简单探讨一下。在国内，针对不同的电池包我们尝试采用不同的冷却系统，对于EV (ElectricVehicle，纯电动汽车)，国内采用较多的热管理系统是液冷系统了，当然也会有一部分厂家尝试采用风冷系统，2016年奇瑞汽车生产的小蚂蚁电动汽车就尝试采用风冷式热管理系统进行散热。对于传统汽车改新能源车来说，采用风冷式热管理系统可以节省一大笔的开发费用，整车的空调系统可以直接按照原来燃油车的系统部件进行设计。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg"></p><p>图4 奇瑞小蚂蚁电动汽车（百度图片）</p><p>而对于HEV(Hybrid Electric Vehicle，混合动力汽车) 目前很多车厂都在争先进行开发，首选的电池热管理系统就是风冷式，比如前面提到的丰田卡罗拉和本田雅阁都是采用风冷式热管理系统。从大数据上看，日系车企很少采用液冷式热管理系统，大多采用的是风冷式，这点和国内的一些车企有些不同，可能是由于日系车企对液冷式系统还有其他的考量，个人感觉不会是因为成本的原因。对于HEV来说采用的电芯和EV的电芯是不同的，HEV在运行过程中动力电池不是唯一的动力来源，大部分情况下电池持续运行时间较短，风冷式热管理系统完全可以满足系统的要求，但是EV的动力完全来自于动力电池，电池长时间持续运行，这样电池就需要散热能力更强的电池热管理系统来保证电池的正常工作。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg"></p><p>图5 丰田卡罗拉油电混合汽车（百度图片）</p><p>风冷系统一般有三种设计，第一种就是单独采用风冷对电池进行散热或者加热；第二种就是仅用来对电池进行散热，对电池系统加热的话一般会另外设计加热膜；第三种就是风冷系统和加热膜结合，当电池需要散热的时候，仅仅启动冷却，当电池需要加热的时候，加热膜和风冷同时启动，此时风冷系统的进口为温度较高的车内气体。丰田卡罗拉的PHEV在两个模组之间设计的有加热膜，加热膜和模组之间的有效接触面积很小，笔者个人觉得加热膜只是为了加热电芯之间的空气，再通过风冷系统对电池包内的空气进行扰动。丰田卡罗拉的PHEV使用的是18650电芯，同时这款电池包的热失控管理设计也十分精巧，有空我们可以再聊聊。</p><p><strong>下面我们通过几个目前已经实现量产的实例来了解风冷式电池热管理技术。</strong></p><p>本田雅阁混动HEV的电池热管理系统中使用的冷却介质来自车内部的空调风，如果车主不使用空调时，进入电池包风管内的就是是车内没通过冷却的风。图示IPU指的就是电池包，我们简单了解一下冷却风是如何在内部流动的，电池包的冷却风从总进口进入电池包内部风道(模组的一侧)，然后再通过电芯之间的间隙，离心风扇和整个模组的另外一侧并没有设计风道，直接依靠离心风扇排出到外部，这样设计不仅仅对电池进行了散热，对电池包内部的发热器件（铜排、BDU）也有一定的散热作用。有兴趣的话大家可以看一下本田的专利，电芯之间设计有一定形状的塑料隔板，隔板不仅仅起到了流通的作用，在一定程度上也起到缓冲（电芯膨胀）的作用。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png"></p><p>图6 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png"></p><p>图7 电池包三维视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png"></p><p>图8 电池包内模组实物图（百度图片）</p><p> </p><p>奥迪Q5采用的同样也是风冷散热，但是奥迪在电池包的外部单独给整个电池包系统做了一个蒸发器，专门对电池包内部循环风进行降温，使进入到电池包内部的风控制在合理的范围内，同时奥迪的这款设计比较巧妙，它的冷却系统进风可以切换，拥有引入外部自然风和内部循环风两种功能，可以通过感知电池不同的温度阶段来切换这两种功能。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png"></p><p>图9 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png"></p><p>图10 电池包三维视图及其工作原理（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png"></p><p>图11 电池包内部模组视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png"></p><p>图12 电池包内部流体流动轨迹视图（百度图片）</p><p> </p><p>广汽丰田2020年新推出的一款C-HREV采用的也是风冷散热，丰田将2个蒸发器和2个膨胀阀移到了电池包内部，采用这种设计的电池包内部空气、两个离心风机、风道（风道位于电池包2侧）和模组单独形成了一个循环（封闭式风冷系统），这款设计和奥迪Q5设计有类似之处，C-HR电池包的蒸发器位于风机出口的风道内部，电池包内部具有加热功能，在每个大模组（包内有2种模组）的底部都设计的有加热膜（有弹性支撑），这种加热膜材质和国内的差别比较大，这款车的加热速率非常低（可能是出于安全考虑），C-HR这款电池包内部设计有许多值得借鉴的细节（风道比较有特点）。在一定程度上奥迪Q5和C-HR也采用了直冷的散热方式，只是蒸发器没有和电芯直接接触，可以避免过冷的现象出现，它们将风冷和直冷结合在一块，直接给动力电池的冷却介质配置一个蒸发器，这样电池散热效果更佳，但是成本可能会增加不少。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png"></p><p>图13 电池包三维视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png"></p><p>图14 电池包俯视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png"></p><p>图15 电池包热管理原理（百度图片）</p><p> </p><p>可见，风冷式电池热管理技术有很广的应用范围，而且应用在商业电动车上也有很好的效果。目前商用电动车还有其他的电池热管理技术，下一期，我们将着重介绍和讨论<strong>液冷式和直冷式电池热管理技术</strong>。</p><p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出，后续如果有兴趣大家可以留言，我们针对热管理的一些子部件进行详细探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行剖解分析，同时以上论述均为个人见解，如有错误之处请不吝赐教，技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p><p><strong>往期精彩回顾</strong></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 制冷技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 电池热管理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>电池热管理工程实践认知 (2): 液冷及直冷式热管理系统</title>
       <link href="/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/"/>
       <url>/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/</url>
@@ -4736,6 +4742,31 @@
             <tag> 试验台 </tag>
             
             <tag> 制冷技术 </tag>
+            
+            <tag> 电池热管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电池热管理工程实践认知 (1): 风冷式热管理系统</title>
+      <link href="/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<p><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></p><p><strong>1、电池热管理技术基本概念</strong></p><p>电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升，这个时候需要及时的散热，要不然就会中暑。当电池处于低温（例如-30℃）条件下的时候，电池无法正常的工作（温度太低，电池内反应物活性受限），车辆也就无法正常行驶，正如我们在瑟瑟寒风里无任何热防护的时候，人的身体感觉寒冷，人的动作就会变慢，这时候需要我们尽快采取取暖措施，要不然身体也会冻伤。</p><p>因此，我们人体在热了或者冷了且自身无法调节时，我们会开空调去做体外调节；如果人体被病毒细菌感染了，人体的免疫系统会产生作用，并升高体温；如果被发现是感染了厉害的病毒，高烧不退、吃退烧药也无法控制体温，就需要更为强力有效的方式进行综合调理、内外兼治。显然人体可以通过种种不同的途径来调节体温，那么电池的“体温”怎么办呢？</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg"></p><p>图0 电池的冷热管理（<a href="http://dc-ts.com/advanced-battery-thermal-management-system/%EF%BC%89">http://dc-ts.com/advanced-battery-thermal-management-system/）</a></p><p>对电池运行产生的热量进行管控的方法叫做<strong>电池热管理技术</strong>（详细可参见<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a>）。电池热管理就类似于人体对于体温的调节，如果电池运行产生的热量得不到有效的管理和控制，就会产生电池的热失控问题（<em><strong>我们后面会做专题讨论</strong></em>），这就类似于我们人体被感染了很厉害的病毒。在现阶段，由于动力电池材料技术处于发展瓶颈期，我们无法从根本上消除温度对电池性能和寿命的影响，但是不论是对于铅酸电池、锂离子电池或者是燃料电池，温度对于电池性能和寿命都是一个重要的影响因素，所以我们需要开发电池热管理技术对电池产生的热量进行管理，防止电池在高温或者低温下不能正常工作。希望目前的热管理只是一种过渡方式，后期的电芯不需要做任何热管理——这里大家不用担心失业，至少未来10年内，中国的6G、7G和1nm、0.5nm芯片冷却技术可能需要我们大展身手。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg"></p><p>图1 电池热管理的重要工程实践意义（百度图片）</p><p>温度最直观的影响就是对电池容量的影响，这也是为什么在冬季电动车行驶里程要比其他季节短很多的原因，同样每年的4月到9月都会出现电动车自燃的现象（暴晒条件下，车内温度达到60℃），天气燥热，电动车又给炎热的天气添了一把柴。综合各方面因素，电池热管理技术对于目前的动力电池是不可或缺的一部分，在环境温度较高时需要对电池进行降温，同时在温度较低时对电池进行加热，电池热管理技术相当于给电池加上了一个小型的空调系统。当然，在实际中也需要根据整车的实际运行工况来调整电池热管理系统策略。</p><p> </p><p><strong>2、电池热管理部件组成</strong></p><p>今天我们针对电池热管理技术的实际应用现状做个综述，后续我们再共同对其进行细分和学习。在国内目前能够大批量生产的汽车中实际应用的电池热管理技术可以分为四类：风冷式热管理技术、液冷式电池热管理技术、自然冷却式电池热管理技术和直冷式电池热管理技术（相变冷却技术）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg"></p><p>图2 电池热管理技术分类（百度图片）</p><p>另外电池包的保温设计（其实笔者感觉有效的保温最难实现，有时候想法和实际操作相差太远，现实条件中可能不允许你做一些保温的措施）和单纯加热的系统也都隶属于电池热管理系统，当然有人提出热扩散防控也属于热管理范畴，我们这里不做定义及探讨，本文主要针对散热系统进行介绍。</p><p> </p><p><strong>3、风冷式电池热管理系统部件构成</strong></p><p>风冷式热管理系统部件包括格栅、温度探头、滤网、进风管、冷风介质、电池包内部风管、出风管、风机，密封条和固定卡扣。一般来说格栅设计在风管的进口处，其作用是为了防止一些较大尺寸的物体进入电池包内部而堵塞风管。在格栅和风管之间还会设计有滤芯和风道，风道的设计一般会根据整车的内部结构和电池包内部结构设计进行调整，在实际的设计中，风道的设计要尽量的光滑和平顺。在风道和车辆部件接触的地方需要设计密封条。风机一般分为轴流分机和离心风机，根据不同的风冷式热管理系统的需求选择不同的风机类型。在选型的过程中一般会将噪音和送风量作为主要的参考因素。离心风机在电池包内部根据使用场景的不同可以分为吹风式和抽离式，最直接的例子就是丰田卡罗拉的两款HEV电池包，一款采用了吹风形式，另外一款采用了抽风形式。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg"></p><p>图3 丰田普锐斯（Prius）使用的风冷式电池热管理系统（谷歌图片）</p><p>当然，很多人可能会对风冷式热管理系统能否有效冷却电池保持怀疑态度，因为有很多这方面的文章提到风冷式系统的不足之处，这里我们简单探讨一下。在国内，针对不同的电池包我们尝试采用不同的冷却系统，对于EV (ElectricVehicle，纯电动汽车)，国内采用较多的热管理系统是液冷系统了，当然也会有一部分厂家尝试采用风冷系统，2016年奇瑞汽车生产的小蚂蚁电动汽车就尝试采用风冷式热管理系统进行散热。对于传统汽车改新能源车来说，采用风冷式热管理系统可以节省一大笔的开发费用，整车的空调系统可以直接按照原来燃油车的系统部件进行设计。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg"></p><p>图4 奇瑞小蚂蚁电动汽车（百度图片）</p><p>而对于HEV(Hybrid Electric Vehicle，混合动力汽车) 目前很多车厂都在争先进行开发，首选的电池热管理系统就是风冷式，比如前面提到的丰田卡罗拉和本田雅阁都是采用风冷式热管理系统。从大数据上看，日系车企很少采用液冷式热管理系统，大多采用的是风冷式，这点和国内的一些车企有些不同，可能是由于日系车企对液冷式系统还有其他的考量，个人感觉不会是因为成本的原因。对于HEV来说采用的电芯和EV的电芯是不同的，HEV在运行过程中动力电池不是唯一的动力来源，大部分情况下电池持续运行时间较短，风冷式热管理系统完全可以满足系统的要求，但是EV的动力完全来自于动力电池，电池长时间持续运行，这样电池就需要散热能力更强的电池热管理系统来保证电池的正常工作。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg"></p><p>图5 丰田卡罗拉油电混合汽车（百度图片）</p><p>风冷系统一般有三种设计，第一种就是单独采用风冷对电池进行散热或者加热；第二种就是仅用来对电池进行散热，对电池系统加热的话一般会另外设计加热膜；第三种就是风冷系统和加热膜结合，当电池需要散热的时候，仅仅启动冷却，当电池需要加热的时候，加热膜和风冷同时启动，此时风冷系统的进口为温度较高的车内气体。丰田卡罗拉的PHEV在两个模组之间设计的有加热膜，加热膜和模组之间的有效接触面积很小，笔者个人觉得加热膜只是为了加热电芯之间的空气，再通过风冷系统对电池包内的空气进行扰动。丰田卡罗拉的PHEV使用的是18650电芯，同时这款电池包的热失控管理设计也十分精巧，有空我们可以再聊聊。</p><p><strong>下面我们通过几个目前已经实现量产的实例来了解风冷式电池热管理技术。</strong></p><p>本田雅阁混动HEV的电池热管理系统中使用的冷却介质来自车内部的空调风，如果车主不使用空调时，进入电池包风管内的就是是车内没通过冷却的风。图示IPU指的就是电池包，我们简单了解一下冷却风是如何在内部流动的，电池包的冷却风从总进口进入电池包内部风道(模组的一侧)，然后再通过电芯之间的间隙，离心风扇和整个模组的另外一侧并没有设计风道，直接依靠离心风扇排出到外部，这样设计不仅仅对电池进行了散热，对电池包内部的发热器件（铜排、BDU）也有一定的散热作用。有兴趣的话大家可以看一下本田的专利，电芯之间设计有一定形状的塑料隔板，隔板不仅仅起到了流通的作用，在一定程度上也起到缓冲（电芯膨胀）的作用。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png"></p><p>图6 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png"></p><p>图7 电池包三维视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png"></p><p>图8 电池包内模组实物图（百度图片）</p><p> </p><p>奥迪Q5采用的同样也是风冷散热，但是奥迪在电池包的外部单独给整个电池包系统做了一个蒸发器，专门对电池包内部循环风进行降温，使进入到电池包内部的风控制在合理的范围内，同时奥迪的这款设计比较巧妙，它的冷却系统进风可以切换，拥有引入外部自然风和内部循环风两种功能，可以通过感知电池不同的温度阶段来切换这两种功能。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png"></p><p>图9 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png"></p><p>图10 电池包三维视图及其工作原理（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png"></p><p>图11 电池包内部模组视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png"></p><p>图12 电池包内部流体流动轨迹视图（百度图片）</p><p> </p><p>广汽丰田2020年新推出的一款C-HREV采用的也是风冷散热，丰田将2个蒸发器和2个膨胀阀移到了电池包内部，采用这种设计的电池包内部空气、两个离心风机、风道（风道位于电池包2侧）和模组单独形成了一个循环（封闭式风冷系统），这款设计和奥迪Q5设计有类似之处，C-HR电池包的蒸发器位于风机出口的风道内部，电池包内部具有加热功能，在每个大模组（包内有2种模组）的底部都设计的有加热膜（有弹性支撑），这种加热膜材质和国内的差别比较大，这款车的加热速率非常低（可能是出于安全考虑），C-HR这款电池包内部设计有许多值得借鉴的细节（风道比较有特点）。在一定程度上奥迪Q5和C-HR也采用了直冷的散热方式，只是蒸发器没有和电芯直接接触，可以避免过冷的现象出现，它们将风冷和直冷结合在一块，直接给动力电池的冷却介质配置一个蒸发器，这样电池散热效果更佳，但是成本可能会增加不少。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png"></p><p>图13 电池包三维视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png"></p><p>图14 电池包俯视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png"></p><p>图15 电池包热管理原理（百度图片）</p><p> </p><p>可见，风冷式电池热管理技术有很广的应用范围，而且应用在商业电动车上也有很好的效果。目前商用电动车还有其他的电池热管理技术，下一期，我们将着重介绍和讨论<strong>液冷式和直冷式电池热管理技术</strong>。</p><p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出，后续如果有兴趣大家可以留言，我们针对热管理的一些子部件进行详细探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行剖解分析，同时以上论述均为个人见解，如有错误之处请不吝赐教，技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p><p><strong>往期精彩回顾</strong></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 制冷技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> 电池热管理 </tag>
             
@@ -4875,7 +4906,7 @@
       <link href="/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/"/>
       <url>/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/</url>
       
-        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><pre class="line-numbers language-none"><code class="language-none">ifconfig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#x43;&#x50;&#x55;&#x40;&#49;&#46;&#57;&#x47;&#72;&#x7a;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
+        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><pre class="line-numbers language-none"><code class="language-none">ifconfig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#x43;&#80;&#x55;&#x40;&#49;&#x2e;&#x39;&#x47;&#x48;&#122;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
       
       
       <categories>
@@ -5046,9 +5077,9 @@
             
             <tag> windows </tag>
             
-            <tag> 搬瓦工 </tag>
-            
             <tag> 宝塔面板 </tag>
+            
+            <tag> 搬瓦工 </tag>
             
             <tag> cloudflare </tag>
             
@@ -5065,11 +5096,11 @@
     
     
     <entry>
-      <title>LabVIEW串口仪器控制—安装使用仪器现有驱动</title>
-      <link href="/2020/05/18/labview%E4%B8%B2%E5%8F%A3%E4%BB%AA%E5%99%A8%E6%8E%A7%E5%88%B6-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%BB%AA%E5%99%A8%E7%8E%B0%E6%9C%89%E9%A9%B1%E5%8A%A8/"/>
-      <url>/2020/05/18/labview%E4%B8%B2%E5%8F%A3%E4%BB%AA%E5%99%A8%E6%8E%A7%E5%88%B6-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%BB%AA%E5%99%A8%E7%8E%B0%E6%9C%89%E9%A9%B1%E5%8A%A8/</url>
+      <title>LabVIEW中访问数据库的几种不同方法</title>
+      <link href="/2020/05/18/labview%E4%B8%AD%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95/"/>
+      <url>/2020/05/18/labview%E4%B8%AD%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[<h2 id="声明：很多仪器是没有驱动的。所以，具体问题具体分析。"><a href="#声明：很多仪器是没有驱动的。所以，具体问题具体分析。" class="headerlink" title="声明：很多仪器是没有驱动的。所以，具体问题具体分析。"></a>声明：很多仪器是没有驱动的。所以，具体问题具体分析。</h2><p>另外声明：所谓的驱动，也就是<a href="http://bbs.elecfans.com/zhuti_packaging_1.html">封装</a>好的底层的串口<a href="http://bbs.elecfans.com/zhuti_wireless_1.html">通信</a>程序，也是程序而已，只不过别人帮你做成了子 VI，让自己容易用。</p><p>所以：不要弄混淆了概念。</p><p>国外的很多仪器，都是有现成的 LV 程序驱动的，这个时候，我们到网上搜搜就行了。如果你要做仪器驱动，你最好先到网上搜搜，看有木有现成的。有现成的，开发速度就好多啦。如果手边的仪器搜不到现成的驱动，那就只能自己写了。</p><p>下面讲解怎么安装现成的驱动。 ①，网站下载篇，前面这个帖子讲了。 <a href="http://bbs.elecfans.com/jishu_467276_1_1.html">http://bbs.elecfans.com/jishu_467276_1_1.html</a> 有兴趣可以看看。 下面是通过 LabVIEW 软件下载。 我下面手把手教下 在 LV 软件里下载安装。</p><p>首先在 LV 的帮助菜单里，找到 查找仪器驱动 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145320o40k6u5ba5j074q9.jpg.thumb.jpg"></p><p>然后就会弹出一个仪器查找界面。如果你已经连接好了仪器的硬件，且仪器支持IDN？ 这个 SCPI 指令的话。</p><p>可以使用扫描仪器按钮，扫描一下你的仪器。因为使用那个指令，如果仪器连接好没错误，会返回一个仪器本身的仪器类型和版本的。这个时候，LV 就知道是什么仪器连接到了。这个需要查仪器说明书指令。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145425igqznznml30yzoro.jpg.thumb.jpg"></p><p>如果仪器木有连接好，或者没扫描出来（没扫描出来原因太多了。没装 VISA 驱动，电缆没连接好，仪器参数不对等。）自己想下载驱动。就自己选型号了，见下图。选型号，然后点击搜索。</p><p>我们下面搜索 Keithley2400.好了，点击搜索。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145525prt5qtozqkkkzp5a.jpg.thumb.jpg"></p><p>然后会搜出来。注意看右边的驱动信息。开发环境，版本，还有支持的接口等。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145626t2ooavzqa972roob.jpg.thumb.jpg"></p><p>从上图可以看出，这个仪器支持串口和 GPIB 口。还有支持的型号，有 2400，2410 等。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145704p5dddrdpdvnqyct5.jpg.thumb.jpg"></p><p>找到了驱动后，就点击安装，然后 LV 会自动给你安装到 instr.lib 文件夹下面。然后就可以在程序面板，仪器 IO 里，找到自己的驱动了。然后就可以调用了。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145757jtkndl63zqqqdaw7.jpg.thumb.jpg"></p><p>每个仪器驱动，会提供对应的调用例子，大家看下例子，大概知道怎么用就好了。有时候，自己把例子稍微改动一点点，就变成自己的程序了。还是很方便的。有仪器驱动，还是先看仪器。不然看仪器的 SCPI 指令是很麻烦的，一本说明书往往很长，而且大多是英文的。</p><p>下载好的驱动和例子，在这个地址：你安装的文件夹下下的这个路径。\Na<a href="http://bbs.elecfans.com/zhuti_715_1.html">ti</a>onal Instruments\LabVIEW 2011\instr.lib &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145953iiii9xqjv28s8iix.jpg.thumb.jpg"></p><p>仪器的例子，在上面的文件夹 Example下，自己连接仪器，配置程序参数和仪器的通讯参数，运行试试看。</p><p>参数什么的，最好对着说明书看看，国外的仪器，一般功能很强大，而你需要了解的命令，可能一点点而已。</p><p>声明：国外的仪器，有些有驱动（程序）的，有些是木有的。有现成的驱动仪器，最好使用现成的，这样开发速度更快。</p><p>文章来源于：</p><h2 id="小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动"><a href="#小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动" class="headerlink" title="小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动"></a><a href="https://www.cnblogs.com/mrchige/p/6238027.html">小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动</a></h2>]]></content>
+        <content type="html"><![CDATA[<p>虚拟仪器VI(Virtual Instruments)是National Instruments公司在其产品LabVIEW中首先提出的创新概念[1]。虚拟仪器系统的概念是测控系统的抽象。不管是传统的还是虚拟的仪器，它们的功能都是相同的：采集数据并进行分析处理，然后显示处理的结果。它们之间的不同主要体现在灵活性方面。虚拟仪器由用户自己定义功能，可以自由地组合计算机平台、硬件、软件以及完成应用系统所需要的各种功能。另外，虚拟仪器开发周期短、成本低、维护方便，易于应用新理论和新技术实现仪器的换代升级[2]。 <strong>现代的测试测量系统大多数需要对被测对象进行全方位检测，这必然会使获取的数据量急剧增长。面对大量的数据信息，采用数据库技术，可准确反映各类数据之间的密切联系，能够有效地管理和组织数据，是现代测试测量系统的发展趋势。但是现有的LabVIEW版本本身并不具备数据库访问功能，不能像VB、VC++、Delphi、PowerBuilder那样非常方便的进行数据库程序的开发。因此以LabVIEW编制的虚拟仪器系统需要其它辅助的方法来进行数据库访问。</strong> 1、在LabVIEW中访问数据库的方式**(1)利用NI公司的附加工具包中的数据库接口工具包LabVIEW SQL Toolkit进行数据库访问。该工具包集成了一系列的高级功能模块，这些模块封装了大多数的数据库操作和一些高级的数据库访问功能。它的优点是易于理解，操作简单，用户可以不学习SQL语法。缺点是需要另外购买且价格昂贵，无疑会增加系统成本。** <strong>(2)利用LabVIEW的ActiveX功能，调用Microsoft ADO对象，利用SQL语言实现数据库的访问。使用这种方法需要用户对Microsoft ADO以及SQL语言有较深的了解。</strong> <strong>(3)通过第三方开发的免费工具包LabSQL访问。LabSQL利用Microsoft ADO以及SQL语言来完成数据库访问，将复杂的底层ADO及SQL操作封装成一系列的LabSQL VIs，简单易用。</strong> <strong>(4)通过调用动态链接库DLL(Dynamic Link Library)访问。先利用其它语言如Visual C++编写DLL，再利用LabVIEW的调用库函数节点CLFN(Calling Library Function Node)调用此DLL访问数据库。但这种方法需要从底层进行复杂的编程才能实现，对非专业编程人员来讲是不现实的[3]。</strong> <strong>(5)利用中间文件存取数据。先将数据存入文件之中，待测量结束后再用专门的工具将数据导入到数据库之中。这种方法需要磁盘文件作为中介，而且不具有实时性，不方便使用[4]。</strong> <strong>实际应用中，前三种方法使用最为广泛，下面将重点讨论这三种方法。</strong></p><p>2 利用ADO技术访问数据库2.1 ADO技术简介ADO(ActiveX Data Objects)是Microsoft为OLE DB设计的应用层接口，它为一致的数据访问接口提供了良好的扩展性而不局限于单一的数据源。 ADO接口编程模型中包括连接(Connection)、命令(Command)、参数(Parameter)、记录集(Recordset)、字段(Field)、错误(Error)、属性(Property)、集合(Collection)、事件(Event)等元素。其中Connection、Command、Recordset是三个主体对象，Parameters、Fields、Errors、Properties是四个集合对象[5]。 ADO的一般操作方式为：1连接到数据源；2指定访问数据源的命令；3执行命令；4将命令执行后产生的结果保存在缓存中；5更新数据库。ADO的主要优点是易于使用、高速度、低内存支出和占用磁盘空间较少[6]。 2.2 LabVIEW中对ADO的调用ADO对象在LabVIEW中是以ActiveX对象的形式提供的。LabVIEW自4.1版本就引入了支持ActiveX自动控制的功能模块，在5.1版本之后支持客户和服务器双方，即虽然程序是在双方各自独立存在，但它们的信息是共享的。这种信息共享是通过客户端使用由服务器端发布的ActiveX控件来实现的。 图1展示的是LabVIEW中使用ActiveX控件的程序流程。ActiveX对象的打开和关闭是通过打开自动化节点(Automation Open)和关闭自动化节点(Close Reference)来实现的，属性的设置和获取则通过属性节点(Property Node)进行，而调用节点(Invoke Node)用于对象方法的调用。其中关键的是第二步，只有充分的利用“属性”和“方法”的设置才能成功地实现对数据库的访问</p><p>2.3应用实例(1)建立ADO对象 在前面板控件模板的Refnum子模板中选择Automation Refnum项，把它拖放到前面板上，在其右键菜单中选择Select ActiveX Class&gt;&gt;Broswer…，弹出Select ActiveX Object对话框，在类型库Type Library下拉列表中选择Microsoft ActiveX Data Objects 2.7 Library Version 2.7，在下面的对象Objects列表栏中出现这个库对LabVIEW可用的对象，选中Connection对象，点击OK按钮即可。使用同样的方法可以建立Command、Recordset等对象。 (2)连接到数据源 在程序框图功能模板中选择Communication&gt;&gt;ActiveX子模板，选择其中的Automation Open与ADODB._Connection相连即可打开Connection对象。接着从ActiveX子模板中选择Invoke Node并与Automation Open相连，在其上单击右键选择Methods&gt;&gt;Open，即出现图2中所示的节点。其中“ConnectionSring”是连接到数据源的字符串，“UserID”和“PassWord”是连接到数据源的用户名和密码，正确设置这些参数后便可连接到数据源。 (3)生成SQL命令、执行命令 与上一步相同，用 Invoke Node调用Connection对象的Execute方法执行所要的操作。Execute方法所必需的参数为CommandText，这里为所要执行的SQL语句。例如可以使用Create命令创建表，用Drop命令删除表，用Insert命令向表中插入数据，用Select命令进行查询并返回操作结果等[8]。本例使用Create命令创建了一个名为Staff的表，包括编号、姓名和年龄三个字段，其中id字段为主键，自动编号。对数据表的删除和添加数据的操作过程与建表过程类似。如果要对执行后的记录进行显示或读取字段值则需要建立Recordset对象，并与Execute相连。 (4)关闭连接 对数据库访问操作完毕后要及时关闭连接对象以释放内存和所用的系统资源。首先使用Connection对象的Close方法关闭数据库连接，然后使用Close Reference关闭ActiveX自动化参数号。</p><p>3、利用LabSQL访问数据库3.1 LabSQL简介LabSQL是一个免费的、多数据库、跨平台的LabVIEW数据库访问工具包，由Premkc Development公司的Chris Roth和Jeffrey Travis开发。目前的最新版本是LabSQL Release 1.1a，可以到网站<a href="http://jeffreytravis.com免费下载.labsql支持windows操作系统中任何基于obdc的数据库,包括access,sql/">[url&#x3D;http://jeffreytravis.com/]http://jeffreytravis.com</a>免费下载。LabSQL支持Windows操作系统中任何基于OBDC的数据库，包括Access，SQL Server，Oracle，Pervasive，Sybase等。[&#x2F;url]</p><p>LabSQL利用Microsoft ADO对象和SQL语言来完成数据库访问，将复杂的底层ADO及SQL操作封装成一系列的LabSQL VIs，简单易用。</p><p>LabSQL VIs按照功能可以分为四类：Command VIs，Connection VIs，Recordset VIs和Top Level VIs。 Command VIs的功能是完成一系列的基本ADO操作，例如，创建或删除一个Command，对数据库的某一个参数进行读或写等。 Connection VIs的功能是管理LabVIEW与数据库之间的连接。 Recordset VIs用于对数据库中的记录进行各种操作，例如，创建或删除一条记录，对记录中的某一个条目进行读或写等。 Top Level VIs属于顶层的LabSQL应用，对前三类LabSQL VIs某些功能的封装，例如，SQL Execute.vi可用于直接执行命令[9]。 3.2 LabSQL应用实例本应用实例是向数据表添加记录，所使用的数据源与上例相同，数据表为staff表。具体步骤如下： 第一步：建立与数据库的连接。首先通过ADO Connection Create.vi创建一个Connection对象，然后利用ADO Connection Open.vi建立与数据库的连接。数据库由ADO Connection Open.vi的ConnectionString指定，此参数由前面板的字符串控件提供，如图3所示。 第二步：生成SQL命令，执行命令。在前面板table控件中输入表名，name和age控件中输入字段值。在程序框图中使用Format Into String生成SQL命令，将它连接到ADO Connection Execute.vi即可执行，同时可在前面板Command Text控件中显示此命令。 第三步：断开与数据库之间的连接。利用ADO Connection Close.vi关闭Connection对象，并使用ADO Connection Destroy.vi删除Connection对象</p><p>4、利用LabVIEW SQL Toolkit访问数据库4.1 LabVIEW SQL Toolkit简介LabVIEW SQL Toolkit(又被称作为LabVIEW Database Connectivity Toolset)是用于数据库访问的附加工具包，它集成了一系列的高级功能模块，这些模块封装了大多数的数据库操作和一些高级的数据库访问功能[10]。其主要的功能如下： (1)支持ADO所支持的所有的数据库引擎； (2)支持所有与ODBC或OLE DB兼容的数据库驱动程序； (3)具有高度的可移植性，在任何情况下，用户通过改变DB Tools Open Connection VI的输入参数Connection String就可以更换数据库； (4)可以将数据库中Column Values的数据类型转换为标准LabVIEW Database Connectivity Toolset的数据类型，这进一步增强了它的可移植性； (5)与SQL兼容； (6)不使用SQL语句就可以实现数据库记录的查询、添加、修改以及删除等操作； (7)用户可以完全不需要学习SQL语法。 用户可以使用LabVIEW SQL Toolkit在LabVIEW中支持ODBC的本地或远程数据库，例如Microsoft Access，Microsoft SQL Sever，Sybase SQL Server以及Oracle等</p><p>4.2应用实例本应用实例是显示上面所建staff表中的所有记录，所使用的数据源与上面两例相同。具体步骤如下： (1)使用DB Tools Open Connection打开数据库连接[12]。 (2)显示指定数据表中所有数据。 使用DB Tools List Tables以一维数组形式列出指定数据库中的所有表，同时显示在前面板数组控件tables中。用户指定Table Index后，通过索引数组函数Index Array索引其中一个表。然后将表名连接到DB Tools List Columns和DB Tools Select All Data。 DB Tools List Columns的Columns参数用一维字符串数组返回指定表的字段名，通过属性节点将字段名显示在表格控件Table Data的首行，同时使用数组大小函数Array Size取得字段数，即表的列数，显示在Columns中。 DB Tools Select All Data的Data参数以二维字符串数组形式返回表中所有数据，显示在Table Data中，同时使用Array Size和Index Array函数取得记录数，也就是行数，显示在Rows中。 (3)使用DB Tools Close Connection断开连接</p><p>5、结论综上所述，使用ADO，LabSQL或LabVIEW SQL Toolkit访问数据库的基本步骤都是相同的，都要经过连接数据库、执行操作、断开连接这三个步骤。 使用ADO主要优点是易于使用、高速度、低内存支出和占用磁盘空间较少,但需要用户对Microsoft ADO以及SQL语言有较深的了解。 使用LabSQL不用精通ActiveX技术和SQL语言，操作简介，容易理解，但它没有对ADO的所有功能进行封装，功能上有局限性。 LabVIEW SQL Toolkit支持ADO所支持的所有的数据库引擎，不使用SQL语句就可以实现数据库记录的查询、添加、修改以及删除等操作，使用SQL语句能够实现复杂的数据库操作，功能强大，但其昂贵的价格对于很多用户来讲是不能承受的，这也限制了它的推广应用。 在实际应用中，用户究竟采用哪种方法要从项目难易程度、自身编程水平和技术经济等方面综合考虑</p>]]></content>
       
       
       <categories>
@@ -5094,11 +5125,11 @@
     
     
     <entry>
-      <title>LabVIEW中访问数据库的几种不同方法</title>
-      <link href="/2020/05/18/labview%E4%B8%AD%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95/"/>
-      <url>/2020/05/18/labview%E4%B8%AD%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95/</url>
+      <title>LabVIEW串口仪器控制—安装使用仪器现有驱动</title>
+      <link href="/2020/05/18/labview%E4%B8%B2%E5%8F%A3%E4%BB%AA%E5%99%A8%E6%8E%A7%E5%88%B6-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%BB%AA%E5%99%A8%E7%8E%B0%E6%9C%89%E9%A9%B1%E5%8A%A8/"/>
+      <url>/2020/05/18/labview%E4%B8%B2%E5%8F%A3%E4%BB%AA%E5%99%A8%E6%8E%A7%E5%88%B6-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%BB%AA%E5%99%A8%E7%8E%B0%E6%9C%89%E9%A9%B1%E5%8A%A8/</url>
       
-        <content type="html"><![CDATA[<p>虚拟仪器VI(Virtual Instruments)是National Instruments公司在其产品LabVIEW中首先提出的创新概念[1]。虚拟仪器系统的概念是测控系统的抽象。不管是传统的还是虚拟的仪器，它们的功能都是相同的：采集数据并进行分析处理，然后显示处理的结果。它们之间的不同主要体现在灵活性方面。虚拟仪器由用户自己定义功能，可以自由地组合计算机平台、硬件、软件以及完成应用系统所需要的各种功能。另外，虚拟仪器开发周期短、成本低、维护方便，易于应用新理论和新技术实现仪器的换代升级[2]。 <strong>现代的测试测量系统大多数需要对被测对象进行全方位检测，这必然会使获取的数据量急剧增长。面对大量的数据信息，采用数据库技术，可准确反映各类数据之间的密切联系，能够有效地管理和组织数据，是现代测试测量系统的发展趋势。但是现有的LabVIEW版本本身并不具备数据库访问功能，不能像VB、VC++、Delphi、PowerBuilder那样非常方便的进行数据库程序的开发。因此以LabVIEW编制的虚拟仪器系统需要其它辅助的方法来进行数据库访问。</strong> 1、在LabVIEW中访问数据库的方式**(1)利用NI公司的附加工具包中的数据库接口工具包LabVIEW SQL Toolkit进行数据库访问。该工具包集成了一系列的高级功能模块，这些模块封装了大多数的数据库操作和一些高级的数据库访问功能。它的优点是易于理解，操作简单，用户可以不学习SQL语法。缺点是需要另外购买且价格昂贵，无疑会增加系统成本。** <strong>(2)利用LabVIEW的ActiveX功能，调用Microsoft ADO对象，利用SQL语言实现数据库的访问。使用这种方法需要用户对Microsoft ADO以及SQL语言有较深的了解。</strong> <strong>(3)通过第三方开发的免费工具包LabSQL访问。LabSQL利用Microsoft ADO以及SQL语言来完成数据库访问，将复杂的底层ADO及SQL操作封装成一系列的LabSQL VIs，简单易用。</strong> <strong>(4)通过调用动态链接库DLL(Dynamic Link Library)访问。先利用其它语言如Visual C++编写DLL，再利用LabVIEW的调用库函数节点CLFN(Calling Library Function Node)调用此DLL访问数据库。但这种方法需要从底层进行复杂的编程才能实现，对非专业编程人员来讲是不现实的[3]。</strong> <strong>(5)利用中间文件存取数据。先将数据存入文件之中，待测量结束后再用专门的工具将数据导入到数据库之中。这种方法需要磁盘文件作为中介，而且不具有实时性，不方便使用[4]。</strong> <strong>实际应用中，前三种方法使用最为广泛，下面将重点讨论这三种方法。</strong></p><p>2 利用ADO技术访问数据库2.1 ADO技术简介ADO(ActiveX Data Objects)是Microsoft为OLE DB设计的应用层接口，它为一致的数据访问接口提供了良好的扩展性而不局限于单一的数据源。 ADO接口编程模型中包括连接(Connection)、命令(Command)、参数(Parameter)、记录集(Recordset)、字段(Field)、错误(Error)、属性(Property)、集合(Collection)、事件(Event)等元素。其中Connection、Command、Recordset是三个主体对象，Parameters、Fields、Errors、Properties是四个集合对象[5]。 ADO的一般操作方式为：1连接到数据源；2指定访问数据源的命令；3执行命令；4将命令执行后产生的结果保存在缓存中；5更新数据库。ADO的主要优点是易于使用、高速度、低内存支出和占用磁盘空间较少[6]。 2.2 LabVIEW中对ADO的调用ADO对象在LabVIEW中是以ActiveX对象的形式提供的。LabVIEW自4.1版本就引入了支持ActiveX自动控制的功能模块，在5.1版本之后支持客户和服务器双方，即虽然程序是在双方各自独立存在，但它们的信息是共享的。这种信息共享是通过客户端使用由服务器端发布的ActiveX控件来实现的。 图1展示的是LabVIEW中使用ActiveX控件的程序流程。ActiveX对象的打开和关闭是通过打开自动化节点(Automation Open)和关闭自动化节点(Close Reference)来实现的，属性的设置和获取则通过属性节点(Property Node)进行，而调用节点(Invoke Node)用于对象方法的调用。其中关键的是第二步，只有充分的利用“属性”和“方法”的设置才能成功地实现对数据库的访问</p><p>2.3应用实例(1)建立ADO对象 在前面板控件模板的Refnum子模板中选择Automation Refnum项，把它拖放到前面板上，在其右键菜单中选择Select ActiveX Class&gt;&gt;Broswer…，弹出Select ActiveX Object对话框，在类型库Type Library下拉列表中选择Microsoft ActiveX Data Objects 2.7 Library Version 2.7，在下面的对象Objects列表栏中出现这个库对LabVIEW可用的对象，选中Connection对象，点击OK按钮即可。使用同样的方法可以建立Command、Recordset等对象。 (2)连接到数据源 在程序框图功能模板中选择Communication&gt;&gt;ActiveX子模板，选择其中的Automation Open与ADODB._Connection相连即可打开Connection对象。接着从ActiveX子模板中选择Invoke Node并与Automation Open相连，在其上单击右键选择Methods&gt;&gt;Open，即出现图2中所示的节点。其中“ConnectionSring”是连接到数据源的字符串，“UserID”和“PassWord”是连接到数据源的用户名和密码，正确设置这些参数后便可连接到数据源。 (3)生成SQL命令、执行命令 与上一步相同，用 Invoke Node调用Connection对象的Execute方法执行所要的操作。Execute方法所必需的参数为CommandText，这里为所要执行的SQL语句。例如可以使用Create命令创建表，用Drop命令删除表，用Insert命令向表中插入数据，用Select命令进行查询并返回操作结果等[8]。本例使用Create命令创建了一个名为Staff的表，包括编号、姓名和年龄三个字段，其中id字段为主键，自动编号。对数据表的删除和添加数据的操作过程与建表过程类似。如果要对执行后的记录进行显示或读取字段值则需要建立Recordset对象，并与Execute相连。 (4)关闭连接 对数据库访问操作完毕后要及时关闭连接对象以释放内存和所用的系统资源。首先使用Connection对象的Close方法关闭数据库连接，然后使用Close Reference关闭ActiveX自动化参数号。</p><p>3、利用LabSQL访问数据库3.1 LabSQL简介LabSQL是一个免费的、多数据库、跨平台的LabVIEW数据库访问工具包，由Premkc Development公司的Chris Roth和Jeffrey Travis开发。目前的最新版本是LabSQL Release 1.1a，可以到网站<a href="http://jeffreytravis.com免费下载.labsql支持windows操作系统中任何基于obdc的数据库,包括access,sql/">[url&#x3D;http://jeffreytravis.com/]http://jeffreytravis.com</a>免费下载。LabSQL支持Windows操作系统中任何基于OBDC的数据库，包括Access，SQL Server，Oracle，Pervasive，Sybase等。[&#x2F;url]</p><p>LabSQL利用Microsoft ADO对象和SQL语言来完成数据库访问，将复杂的底层ADO及SQL操作封装成一系列的LabSQL VIs，简单易用。</p><p>LabSQL VIs按照功能可以分为四类：Command VIs，Connection VIs，Recordset VIs和Top Level VIs。 Command VIs的功能是完成一系列的基本ADO操作，例如，创建或删除一个Command，对数据库的某一个参数进行读或写等。 Connection VIs的功能是管理LabVIEW与数据库之间的连接。 Recordset VIs用于对数据库中的记录进行各种操作，例如，创建或删除一条记录，对记录中的某一个条目进行读或写等。 Top Level VIs属于顶层的LabSQL应用，对前三类LabSQL VIs某些功能的封装，例如，SQL Execute.vi可用于直接执行命令[9]。 3.2 LabSQL应用实例本应用实例是向数据表添加记录，所使用的数据源与上例相同，数据表为staff表。具体步骤如下： 第一步：建立与数据库的连接。首先通过ADO Connection Create.vi创建一个Connection对象，然后利用ADO Connection Open.vi建立与数据库的连接。数据库由ADO Connection Open.vi的ConnectionString指定，此参数由前面板的字符串控件提供，如图3所示。 第二步：生成SQL命令，执行命令。在前面板table控件中输入表名，name和age控件中输入字段值。在程序框图中使用Format Into String生成SQL命令，将它连接到ADO Connection Execute.vi即可执行，同时可在前面板Command Text控件中显示此命令。 第三步：断开与数据库之间的连接。利用ADO Connection Close.vi关闭Connection对象，并使用ADO Connection Destroy.vi删除Connection对象</p><p>4、利用LabVIEW SQL Toolkit访问数据库4.1 LabVIEW SQL Toolkit简介LabVIEW SQL Toolkit(又被称作为LabVIEW Database Connectivity Toolset)是用于数据库访问的附加工具包，它集成了一系列的高级功能模块，这些模块封装了大多数的数据库操作和一些高级的数据库访问功能[10]。其主要的功能如下： (1)支持ADO所支持的所有的数据库引擎； (2)支持所有与ODBC或OLE DB兼容的数据库驱动程序； (3)具有高度的可移植性，在任何情况下，用户通过改变DB Tools Open Connection VI的输入参数Connection String就可以更换数据库； (4)可以将数据库中Column Values的数据类型转换为标准LabVIEW Database Connectivity Toolset的数据类型，这进一步增强了它的可移植性； (5)与SQL兼容； (6)不使用SQL语句就可以实现数据库记录的查询、添加、修改以及删除等操作； (7)用户可以完全不需要学习SQL语法。 用户可以使用LabVIEW SQL Toolkit在LabVIEW中支持ODBC的本地或远程数据库，例如Microsoft Access，Microsoft SQL Sever，Sybase SQL Server以及Oracle等</p><p>4.2应用实例本应用实例是显示上面所建staff表中的所有记录，所使用的数据源与上面两例相同。具体步骤如下： (1)使用DB Tools Open Connection打开数据库连接[12]。 (2)显示指定数据表中所有数据。 使用DB Tools List Tables以一维数组形式列出指定数据库中的所有表，同时显示在前面板数组控件tables中。用户指定Table Index后，通过索引数组函数Index Array索引其中一个表。然后将表名连接到DB Tools List Columns和DB Tools Select All Data。 DB Tools List Columns的Columns参数用一维字符串数组返回指定表的字段名，通过属性节点将字段名显示在表格控件Table Data的首行，同时使用数组大小函数Array Size取得字段数，即表的列数，显示在Columns中。 DB Tools Select All Data的Data参数以二维字符串数组形式返回表中所有数据，显示在Table Data中，同时使用Array Size和Index Array函数取得记录数，也就是行数，显示在Rows中。 (3)使用DB Tools Close Connection断开连接</p><p>5、结论综上所述，使用ADO，LabSQL或LabVIEW SQL Toolkit访问数据库的基本步骤都是相同的，都要经过连接数据库、执行操作、断开连接这三个步骤。 使用ADO主要优点是易于使用、高速度、低内存支出和占用磁盘空间较少,但需要用户对Microsoft ADO以及SQL语言有较深的了解。 使用LabSQL不用精通ActiveX技术和SQL语言，操作简介，容易理解，但它没有对ADO的所有功能进行封装，功能上有局限性。 LabVIEW SQL Toolkit支持ADO所支持的所有的数据库引擎，不使用SQL语句就可以实现数据库记录的查询、添加、修改以及删除等操作，使用SQL语句能够实现复杂的数据库操作，功能强大，但其昂贵的价格对于很多用户来讲是不能承受的，这也限制了它的推广应用。 在实际应用中，用户究竟采用哪种方法要从项目难易程度、自身编程水平和技术经济等方面综合考虑</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="声明：很多仪器是没有驱动的。所以，具体问题具体分析。"><a href="#声明：很多仪器是没有驱动的。所以，具体问题具体分析。" class="headerlink" title="声明：很多仪器是没有驱动的。所以，具体问题具体分析。"></a>声明：很多仪器是没有驱动的。所以，具体问题具体分析。</h2><p>另外声明：所谓的驱动，也就是<a href="http://bbs.elecfans.com/zhuti_packaging_1.html">封装</a>好的底层的串口<a href="http://bbs.elecfans.com/zhuti_wireless_1.html">通信</a>程序，也是程序而已，只不过别人帮你做成了子 VI，让自己容易用。</p><p>所以：不要弄混淆了概念。</p><p>国外的很多仪器，都是有现成的 LV 程序驱动的，这个时候，我们到网上搜搜就行了。如果你要做仪器驱动，你最好先到网上搜搜，看有木有现成的。有现成的，开发速度就好多啦。如果手边的仪器搜不到现成的驱动，那就只能自己写了。</p><p>下面讲解怎么安装现成的驱动。 ①，网站下载篇，前面这个帖子讲了。 <a href="http://bbs.elecfans.com/jishu_467276_1_1.html">http://bbs.elecfans.com/jishu_467276_1_1.html</a> 有兴趣可以看看。 下面是通过 LabVIEW 软件下载。 我下面手把手教下 在 LV 软件里下载安装。</p><p>首先在 LV 的帮助菜单里，找到 查找仪器驱动 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145320o40k6u5ba5j074q9.jpg.thumb.jpg"></p><p>然后就会弹出一个仪器查找界面。如果你已经连接好了仪器的硬件，且仪器支持IDN？ 这个 SCPI 指令的话。</p><p>可以使用扫描仪器按钮，扫描一下你的仪器。因为使用那个指令，如果仪器连接好没错误，会返回一个仪器本身的仪器类型和版本的。这个时候，LV 就知道是什么仪器连接到了。这个需要查仪器说明书指令。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145425igqznznml30yzoro.jpg.thumb.jpg"></p><p>如果仪器木有连接好，或者没扫描出来（没扫描出来原因太多了。没装 VISA 驱动，电缆没连接好，仪器参数不对等。）自己想下载驱动。就自己选型号了，见下图。选型号，然后点击搜索。</p><p>我们下面搜索 Keithley2400.好了，点击搜索。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145525prt5qtozqkkkzp5a.jpg.thumb.jpg"></p><p>然后会搜出来。注意看右边的驱动信息。开发环境，版本，还有支持的接口等。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145626t2ooavzqa972roob.jpg.thumb.jpg"></p><p>从上图可以看出，这个仪器支持串口和 GPIB 口。还有支持的型号，有 2400，2410 等。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145704p5dddrdpdvnqyct5.jpg.thumb.jpg"></p><p>找到了驱动后，就点击安装，然后 LV 会自动给你安装到 instr.lib 文件夹下面。然后就可以在程序面板，仪器 IO 里，找到自己的驱动了。然后就可以调用了。 &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145757jtkndl63zqqqdaw7.jpg.thumb.jpg"></p><p>每个仪器驱动，会提供对应的调用例子，大家看下例子，大概知道怎么用就好了。有时候，自己把例子稍微改动一点点，就变成自己的程序了。还是很方便的。有仪器驱动，还是先看仪器。不然看仪器的 SCPI 指令是很麻烦的，一本说明书往往很长，而且大多是英文的。</p><p>下载好的驱动和例子，在这个地址：你安装的文件夹下下的这个路径。\Na<a href="http://bbs.elecfans.com/zhuti_715_1.html">ti</a>onal Instruments\LabVIEW 2011\instr.lib &lt;ignore_js_op&gt;<img src="http://bbs.elecfans.com/data/attachment/forum/201501/23/145953iiii9xqjv28s8iix.jpg.thumb.jpg"></p><p>仪器的例子，在上面的文件夹 Example下，自己连接仪器，配置程序参数和仪器的通讯参数，运行试试看。</p><p>参数什么的，最好对着说明书看看，国外的仪器，一般功能很强大，而你需要了解的命令，可能一点点而已。</p><p>声明：国外的仪器，有些有驱动（程序）的，有些是木有的。有现成的驱动仪器，最好使用现成的，这样开发速度更快。</p><p>文章来源于：</p><h2 id="小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动"><a href="#小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动" class="headerlink" title="小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动"></a><a href="https://www.cnblogs.com/mrchige/p/6238027.html">小草手把手教你LabVIEW串口仪器控制—安装使用仪器现有驱动</a></h2>]]></content>
       
       
       <categories>
@@ -5483,9 +5514,9 @@
             
             <tag> 谷歌云盘 </tag>
             
-            <tag> 搬瓦工 </tag>
-            
             <tag> 宝塔面板 </tag>
+            
+            <tag> 搬瓦工 </tag>
             
             <tag> wordpress </tag>
             
@@ -5570,9 +5601,9 @@
             
             <tag> 数据库 </tag>
             
-            <tag> 搬瓦工 </tag>
-            
             <tag> 云盘 </tag>
+            
+            <tag> 搬瓦工 </tag>
             
         </tags>
       
@@ -5659,11 +5690,11 @@
             
             <tag> 邮件 </tag>
             
-            <tag> 搬瓦工 </tag>
+            <tag> 宝塔面板 </tag>
             
             <tag> 密码 </tag>
             
-            <tag> 宝塔面板 </tag>
+            <tag> 搬瓦工 </tag>
             
             <tag> gps定位 </tag>
             
@@ -5746,11 +5777,11 @@
       
         <tags>
             
-            <tag> 树莓派 </tag>
+            <tag> 宝塔面板 </tag>
             
             <tag> 密码 </tag>
             
-            <tag> 宝塔面板 </tag>
+            <tag> 树莓派 </tag>
             
         </tags>
       
@@ -5764,31 +5795,6 @@
       <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BC%80%E5%90%AFvnc/</url>
       
         <content type="html"><![CDATA[<p>使用ssh连接上树莓派后需对其进行一些配置</p><p>由于使用ssh连接的话不会启动配置软件，输入命令raspi-config，启动配置</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210113203415.png"></p><p>首先开启VPN连接：</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210113203443.png"></p><p>进入interfacing options，</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210113203500.png"></p><p>选择vnc，然后确认开启即可启动vnc</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 树莓派 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 树莓派 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>树莓派无显示器无网线ssh连接无线网</title>
-      <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/"/>
-      <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/</url>
-      
-        <content type="html"><![CDATA[<p>如果没有显示器等外设，同时又没有网线，只能先在树莓派里添加ssh文件，同时在里面添加wifi连接信息，使得树莓派开机就可以启动ssh同时连接上我们预设的wifi，具体操作如下</p><p>由于树莓派系统开始时默认是不开启ssh连接的，没有开启ssh就无法连接电脑，后续的操作也就无从谈起。所以首先要先开启树莓派的ssh连接，烧录好系统后，内存卡只有一个boot分区可以被识别，在里面添加一个命名为ssh的空白文件即可实现开机开启ssh</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578198512-%E6%A0%91%E8%8E%93%E6%B4%BE7.png"></p><p>之后往系统里添加wifi信息</p><p>首先在内存卡中的boot分区中新建一个<strong>wpa_supplicant.conf</strong>的文件，并在里面写上树莓派的wifi配置命令：</p><pre class="line-numbers language-none"><code class="language-none">country&#x3D;CNctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdevupdate_config&#x3D;1network&#x3D;&#123;    ssid&#x3D;&quot;wifi名称&quot;    psk&#x3D;&quot;wifi密码&quot;    key_mgmt&#x3D;WPA-PSK    priority&#x3D;1&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p> </p><p>其中ssid是wifi名称，psk是自己的wifi密码</p><p>添加上去之后即可开机连接上wifi，从而获取树莓派ID，使用ssh连接上去</p><p>如何查看树莓派ip地址可以使用软件<a href="https://www.advanced-ip-scanner.com/cn/">Advanced IP Scanner</a>查看，或者自己可以登入路由器后台查看，使用软件扫描如下：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578199454-%E6%A0%91%E8%8E%93%E6%B4%BE8-1024x733.png"></p><p>之后使用ssh或者putty软件连接到这个ip上，树莓派默认的登入用户名为pi，登入密码为raspberry</p><p> </p><p>如果树莓派一直在闪绿灯，而且一直连接不上wifi，那么可能是因为电源电流太小了，更换一下电源大小即可</p>]]></content>
       
       
       <categories>
@@ -5826,6 +5832,31 @@
         <tags>
             
             <tag> 软件 </tag>
+            
+            <tag> 树莓派 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>树莓派无显示器无网线ssh连接无线网</title>
+      <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/"/>
+      <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/</url>
+      
+        <content type="html"><![CDATA[<p>如果没有显示器等外设，同时又没有网线，只能先在树莓派里添加ssh文件，同时在里面添加wifi连接信息，使得树莓派开机就可以启动ssh同时连接上我们预设的wifi，具体操作如下</p><p>由于树莓派系统开始时默认是不开启ssh连接的，没有开启ssh就无法连接电脑，后续的操作也就无从谈起。所以首先要先开启树莓派的ssh连接，烧录好系统后，内存卡只有一个boot分区可以被识别，在里面添加一个命名为ssh的空白文件即可实现开机开启ssh</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578198512-%E6%A0%91%E8%8E%93%E6%B4%BE7.png"></p><p>之后往系统里添加wifi信息</p><p>首先在内存卡中的boot分区中新建一个<strong>wpa_supplicant.conf</strong>的文件，并在里面写上树莓派的wifi配置命令：</p><pre class="line-numbers language-none"><code class="language-none">country&#x3D;CNctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdevupdate_config&#x3D;1network&#x3D;&#123;    ssid&#x3D;&quot;wifi名称&quot;    psk&#x3D;&quot;wifi密码&quot;    key_mgmt&#x3D;WPA-PSK    priority&#x3D;1&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p> </p><p>其中ssid是wifi名称，psk是自己的wifi密码</p><p>添加上去之后即可开机连接上wifi，从而获取树莓派ID，使用ssh连接上去</p><p>如何查看树莓派ip地址可以使用软件<a href="https://www.advanced-ip-scanner.com/cn/">Advanced IP Scanner</a>查看，或者自己可以登入路由器后台查看，使用软件扫描如下：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578199454-%E6%A0%91%E8%8E%93%E6%B4%BE8-1024x733.png"></p><p>之后使用ssh或者putty软件连接到这个ip上，树莓派默认的登入用户名为pi，登入密码为raspberry</p><p> </p><p>如果树莓派一直在闪绿灯，而且一直连接不上wifi，那么可能是因为电源电流太小了，更换一下电源大小即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 树莓派 </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> 树莓派 </tag>
             
@@ -5920,9 +5951,9 @@
             
             <tag> 数据库 </tag>
             
-            <tag> 搬瓦工 </tag>
-            
             <tag> 密码 </tag>
+            
+            <tag> 搬瓦工 </tag>
             
             <tag> wordpress </tag>
             
@@ -6965,9 +6996,9 @@
             
             <tag> 数据库 </tag>
             
-            <tag> 搬瓦工 </tag>
-            
             <tag> 密码 </tag>
+            
+            <tag> 搬瓦工 </tag>
             
         </tags>
       
