@@ -401,6 +401,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -408,11 +411,18 @@
             <div id="articleContent">
                 <p>ServerStatus-Toyo是一个可以同时监控多台服务器的云探针程序，可以直接使用一键安装脚本安装，方便易用 项目地址：<a target="_blank" rel="noopener" href="https://github.com/ToyoDAdoubi/ServerStatus-Toyo">https://github.com/ToyoDAdoubi/ServerStatus-Toyo</a> </p>
 <h2 id="1、首先安装服务端："><a href="#1、首先安装服务端：" class="headerlink" title="1、首先安装服务端："></a>1、首先安装服务端：</h2><p>服务端就是你想要把探针部署的服务器上安装的文件，登入服务器，使用一键安装脚本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://softs.loan/Bash/status.sh &amp;&amp; chmod +x status.sh</span><br><span class="line">备用地址：</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">wget -N --no-check-certificate https:&#x2F;&#x2F;softs.loan&#x2F;Bash&#x2F;status.sh &amp;&amp; chmod +x status.sh
+备用地址：<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/status.sh &amp;&amp; chmod +x status.sh</span><br><span class="line"></span><br><span class="line">启动脚本安装服务端：</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">wget -N --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ToyoDAdoubi&#x2F;doubi&#x2F;master&#x2F;status.sh &amp;&amp; chmod +x status.sh
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bash status.sh s</span><br><span class="line"></span><br><span class="line">输入1，安装服务端</span><br><span class="line">监听端口可以使用默认，直接回车</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+启动脚本安装服务端：<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">bash status.sh s
+
+输入1，安装服务端
+监听端口可以使用默认，直接回车
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>是否由脚本自动配置HTTP服务(服务端的在线监控网站)[Y&#x2F;n] # 如果你不懂，那就直接回车，如果你想用其他的HTTP服务自己配置，那么请输入 n 并回车。 # 注意，当你曾经安装过 服务端，同时没有卸载Caddy(HTTP服务)，那么重新安装服务端的时候，请输入 n 并回车。 # 如果使用宝塔，可以输入n，然后在宝塔新建一个网站，根目录 修改为：&#x2F;usr&#x2F;local&#x2F;ServerStatus&#x2F;web 即可！无需数据库！</p>
 <p> </p>
@@ -421,9 +431,10 @@
 <h2 id="至此完成服务端初步安装-2、安装客户端"><a href="#至此完成服务端初步安装-2、安装客户端" class="headerlink" title="至此完成服务端初步安装  2、安装客户端"></a>至此完成服务端初步安装 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320113305.png"> 2、安装客户端</h2><p>客户端是指你想要监控的服务器，可以同时安装在你部署了服务端的服务器上，如果是部署在安装了服务端的服务器上，则直接启动客户端安装文件：</p>
 <p>bash status.sh c</p>
 <p>如果在其他服务器上安装客户端，则下载安装文件，与服务端安装文件一样：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://softs.loan/Bash/status.sh &amp;&amp; chmod +x status.sh</span><br><span class="line">备用地址：</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">wget -N --no-check-certificate https:&#x2F;&#x2F;softs.loan&#x2F;Bash&#x2F;status.sh &amp;&amp; chmod +x status.sh
+备用地址：<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/status.sh &amp;&amp; chmod +x status.sh</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">wget -N --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ToyoDAdoubi&#x2F;doubi&#x2F;master&#x2F;status.sh &amp;&amp; chmod +x status.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320113321.png"></p>
 <p>输入1安装客户端</p>
@@ -437,7 +448,8 @@
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320113421.png"> <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320113436.png"></p>
 <p>至此完成服务端配置</p>
 <h2 id="4、部署服务端"><a href="#4、部署服务端" class="headerlink" title="4、部署服务端"></a>4、部署服务端</h2><p>此次使用宝塔面板部署服务端，所以前面安装服务端时选择n进行自己布置,添加网站，根目录修改为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/ServerStatus/web</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;local&#x2F;ServerStatus&#x2F;web
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p> </p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210320113501.png"></p>
@@ -723,6 +735,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="跳动的心-Font Awesome 图标源码, 小小胡">
     <meta name="description" content="有女朋友的可以来看了，实现使用Font Awesome的爱心图标跳动
-1&amp;lt;i class=&amp;quot;fa fa-heartbeat&amp;quot; style=&amp;quot;font-size:36px;color:red&amp;quot; i">
+&amp;lt;i class&amp;#x3D;&amp;quot;fa fa-heartbeat&amp;quot; style&amp;#x3D;&amp;quot;font-size:36px;color:re">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,18 +389,30 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>有女朋友的可以来看了，实现使用Font Awesome的爱心图标跳动</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;i class=&quot;fa fa-heartbeat&quot; style=&quot;font-size:36px;color:red&quot; id=&quot;myheart&quot; &gt;&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;animate.css&quot; /&gt;&lt;/i&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&lt;i class&#x3D;&quot;fa fa-heartbeat&quot; style&#x3D;&quot;font-size:36px;color:red&quot; id&#x3D;&quot;myheart&quot; &gt;&lt;link type&#x3D;&quot;text&#x2F;css&quot; rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;animate.css&quot; &#x2F;&gt;&lt;&#x2F;i&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>把这段代码加入到footer.php文件中关于页脚的合适位置，</p>
 <p>再添加一个animate.css文件</p>
 <p>添加如下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@keyframes heartAnimate&#123; </span><br><span class="line">    0%,100%&#123;transform:scale(1);&#125;                     /*0%,100%时保持图形的原大小*/</span><br><span class="line">    10%,30%&#123;transform: scale(0.9);&#125;                 /*10%,30%时图形缩小成0.9倍*/</span><br><span class="line">    20%,40%,60%,80%&#123;transform:scale(1.1);&#125;          /*20%,40%,60%,80%时图形扩大成1.1倍*/</span><br><span class="line">    50%,70%&#123; transform:scale(1.1);&#125;                 /*50%,70%时图形扩大成1.1倍*/</span><br><span class="line">&#125;</span><br><span class="line">#myheart&#123;</span><br><span class="line">     color:red;                             /*心当然要是红色的啦*/</span><br><span class="line">    animation: heartAnimate 1s infinite;       /*心当然要是跳动的啦*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">@keyframes heartAnimate&#123; 
+    0%,100%&#123;transform:scale(1);&#125;                     &#x2F;*0%,100%时保持图形的原大小*&#x2F;
+    10%,30%&#123;transform: scale(0.9);&#125;                 &#x2F;*10%,30%时图形缩小成0.9倍*&#x2F;
+    20%,40%,60%,80%&#123;transform:scale(1.1);&#125;          &#x2F;*20%,40%,60%,80%时图形扩大成1.1倍*&#x2F;
+    50%,70%&#123; transform:scale(1.1);&#125;                 &#x2F;*50%,70%时图形扩大成1.1倍*&#x2F;
+&#125;
+#myheart&#123;
+     color:red;                             &#x2F;*心当然要是红色的啦*&#x2F;
+    animation: heartAnimate 1s infinite;       &#x2F;*心当然要是跳动的啦*&#x2F;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>就可以实现在页脚上加上跳动的心了，详细可以查看我的页脚</p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/10/1602947885-%E8%B7%B3%E5%8A%A8%E7%9A%84%E5%BF%83.png"></p>
@@ -666,6 +678,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

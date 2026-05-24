@@ -5,10 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="python 后台运行及关闭后台程序, 小小胡">
-    <meta name="description" content="1nohup python3 -u socket_test.py &amp;gt;my_socket.log 2&amp;gt;&amp;amp;1 &amp;amp;
+    <meta name="description" content="nohup python3 -u socket_test.py &gt;my_socket.log 2&gt;&amp;amp;1 &amp;amp;
 
 
-开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询1. 最后一个">
+开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询1. 最后一个“&amp;amp;”">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -387,20 +387,23 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">nohup</span> python3 -u socket_test.py &gt;my_socket.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+                <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nohup</span> python3 <span class="token parameter variable">-u</span> socket_test.py <span class="token operator">></span>my_socket.log <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-3b425e2c6a315b3a29ae77ac4d4fd7ac.png"></p>
 <h3 id="开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询"><a href="#开启以后会显示-进程ID-后面可以利用这个ID杀死后台进程-忘记了下面也有办法查询" class="headerlink" title="开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询"></a>开启以后会显示 进程ID 后面可以利用这个ID杀死后台进程  忘记了下面也有办法查询</h3><p>1. 最后一个“&amp;”表示后台运行程序 2. “nohup” 表示程序不被挂起 3. “python3”表示执行python代码 4. “-u”表示不启用缓存，实时输出打印信息到日志文件（如果不加-u，则会导致日志文件不会实时刷新代码中的print函数的信息） 5. “socket_test.py”表示python的源代码文件 6. “my_socket.log”表示输出的日志文件 7. “&gt;”表示将打印信息重定向到日志文件 8. “2&gt;&amp;1”表示将标准错误输出转变化标准输出，可以将错误信息也输出到日志文件中（0-&gt; stdin, 1-&gt;stdout, 2-&gt;stderr）</p>
 <h3 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h3><h3 id="功能：查看当前的所有进程"><a href="#功能：查看当前的所有进程" class="headerlink" title="功能：查看当前的所有进程"></a>功能：查看当前的所有进程</h3><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-21f5388cab8456a5200facb28d71c1a3.png"></p>
-<h3 id="也可以单独查询某个文件开启的进程"><a href="#也可以单独查询某个文件开启的进程" class="headerlink" title="也可以单独查询某个文件开启的进程"></a>也可以单独查询某个文件开启的进程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep &quot;socket_test.py&quot;    #a:显示所有程序  u:以用户为主的格式来显示   x:显示所有程序，不以终端机来区分</span><br></pre></td></tr></table></figure>
+<h3 id="也可以单独查询某个文件开启的进程"><a href="#也可以单独查询某个文件开启的进程" class="headerlink" title="也可以单独查询某个文件开启的进程"></a>也可以单独查询某个文件开启的进程</h3><pre class="line-numbers language-none"><code class="language-none">ps -aux | grep &quot;socket_test.py&quot;    #a:显示所有程序  u:以用户为主的格式来显示   x:显示所有程序，不以终端机来区分<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-4de4f49fe6667b8cf2ce886ea8210bc8.png"></p>
-<h3 id="Kill命令"><a href="#Kill命令" class="headerlink" title="Kill命令"></a>Kill命令</h3><h3 id="功能：杀死进程"><a href="#功能：杀死进程" class="headerlink" title="功能：杀死进程"></a>功能：杀死进程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill 30598</span><br></pre></td></tr></table></figure>
+<h3 id="Kill命令"><a href="#Kill命令" class="headerlink" title="Kill命令"></a>Kill命令</h3><h3 id="功能：杀死进程"><a href="#功能：杀死进程" class="headerlink" title="功能：杀死进程"></a>功能：杀死进程</h3><pre class="line-numbers language-none"><code class="language-none">kill 30598<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2021/05/frc-bf3a1b059555402d37d17462be659251.png"></p>
 <p>文章来源于互联网:<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37946291/article/details/105550529">python 后台运行及关闭后台程序</a></p>
@@ -698,6 +701,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

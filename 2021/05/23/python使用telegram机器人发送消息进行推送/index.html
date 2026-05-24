@@ -392,6 +392,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -408,7 +411,8 @@
 <p>注意： 机器人必须设置为频道管理员，否则无法发送消息</p>
 <p>频道必须设置为公开</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210523111604.png"></p>
-<h1 id="使用-python-telegram-bot-库"><a href="#使用-python-telegram-bot-库" class="headerlink" title="使用 python-telegram-bot 库"></a>使用 python-telegram-bot 库</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">安装python库：</span><br><span class="line">pip install python-telegram-bot --upgrade</span><br></pre></td></tr></table></figure>
+<h1 id="使用-python-telegram-bot-库"><a href="#使用-python-telegram-bot-库" class="headerlink" title="使用 python-telegram-bot 库"></a>使用 python-telegram-bot 库</h1><pre class="line-numbers language-none"><code class="language-none">安装python库：
+pip install python-telegram-bot --upgrade<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>调用</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210523111741.png"></p>
@@ -416,15 +420,32 @@
 <p>token就是前面获取到的机器人token</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210523111855.png"></p>
 <p>此时就可以正常调用了</p>
-<h2 id="发送带标题网址链接"><a href="#发送带标题网址链接" class="headerlink" title="发送带标题网址链接"></a>发送带标题网址链接</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bot.send_message(</span><br><span class="line">    chat_id=chat_id,</span><br><span class="line">    text=&quot;&lt;a href=&quot;https://lijianxun.top/&quot;&gt;简讯的个人博客&lt;/a&gt;&quot;,</span><br><span class="line">    parse_mode=telegram.ParseMode.HTML</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="发送带标题网址链接"><a href="#发送带标题网址链接" class="headerlink" title="发送带标题网址链接"></a>发送带标题网址链接</h2><pre class="line-numbers language-none"><code class="language-none">bot.send_message(
+    chat_id&#x3D;chat_id,
+    text&#x3D;&quot;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;lijianxun.top&#x2F;&quot;&gt;简讯的个人博客&lt;&#x2F;a&gt;&quot;,
+    parse_mode&#x3D;telegram.ParseMode.HTML
+)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>Python</p>
 <p>ParseMode 支持 html 和 markdown 两种格式。</p>
 <p>html 标签支持加粗 <code>&lt;b&gt;&lt;/b&gt;</code>，斜体 <code>&lt;i&gt;&lt;/i&gt;</code> 等。</p>
-<h2 id="发送图片"><a href="#发送图片" class="headerlink" title="发送图片"></a>发送图片</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bot.send_photo(</span><br><span class="line">    chat_id=chat_id,</span><br><span class="line">    photo=&quot;https://i.loli.net/2019/09/19/PcQst46mwUaMEgV.png&quot;,</span><br><span class="line">    caption=&quot;非必填的图片描述&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="发送图片"><a href="#发送图片" class="headerlink" title="发送图片"></a>发送图片</h2><pre class="line-numbers language-none"><code class="language-none">bot.send_photo(
+    chat_id&#x3D;chat_id,
+    photo&#x3D;&quot;https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;09&#x2F;19&#x2F;PcQst46mwUaMEgV.png&quot;,
+    caption&#x3D;&quot;非必填的图片描述&quot;
+)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="发送多张图片"><a href="#发送多张图片" class="headerlink" title="发送多张图片"></a>发送多张图片</h2><p>完整代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import telegram </span><br><span class="line">from telegram import InputMediaPhoto </span><br><span class="line">photo_list = [ &quot;https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png&quot;,</span><br><span class="line">&quot;https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png&quot;, </span><br><span class="line">&quot;https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png&quot;, </span><br><span class="line">&quot;https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png&quot;, </span><br><span class="line">&quot;https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png&quot;, </span><br><span class="line">&quot;https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png&quot; ] </span><br><span class="line">result = [InputMediaPhoto(media=p, caption=&quot;知乎钓鱼贴&quot;) for p in photo_list] </span><br><span class="line">bot.send_media_group( chat_id=chat_id, media=result )</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">import telegram 
+from telegram import InputMediaPhoto 
+photo_list &#x3D; [ &quot;https:&#x2F;&#x2F;www.google.com&#x2F;images&#x2F;branding&#x2F;googlelogo&#x2F;2x&#x2F;googlelogo_color_272x92dp.png&quot;,
+&quot;https:&#x2F;&#x2F;www.google.com&#x2F;images&#x2F;branding&#x2F;googlelogo&#x2F;2x&#x2F;googlelogo_color_272x92dp.png&quot;, 
+&quot;https:&#x2F;&#x2F;www.google.com&#x2F;images&#x2F;branding&#x2F;googlelogo&#x2F;2x&#x2F;googlelogo_color_272x92dp.png&quot;, 
+&quot;https:&#x2F;&#x2F;www.google.com&#x2F;images&#x2F;branding&#x2F;googlelogo&#x2F;2x&#x2F;googlelogo_color_272x92dp.png&quot;, 
+&quot;https:&#x2F;&#x2F;www.google.com&#x2F;images&#x2F;branding&#x2F;googlelogo&#x2F;2x&#x2F;googlelogo_color_272x92dp.png&quot;, 
+&quot;https:&#x2F;&#x2F;www.google.com&#x2F;images&#x2F;branding&#x2F;googlelogo&#x2F;2x&#x2F;googlelogo_color_272x92dp.png&quot; ] 
+result &#x3D; [InputMediaPhoto(media&#x3D;p, caption&#x3D;&quot;知乎钓鱼贴&quot;) for p in photo_list] 
+bot.send_media_group( chat_id&#x3D;chat_id, media&#x3D;result )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>传相册的时候 <code>media</code> 需要 <code>InputMediaPhoto</code> 类型。</p>
 
@@ -705,6 +726,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

@@ -381,6 +381,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -391,7 +394,16 @@
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578198512-%E6%A0%91%E8%8E%93%E6%B4%BE7.png"></p>
 <p>之后往系统里添加wifi信息</p>
 <p>首先在内存卡中的boot分区中新建一个<strong>wpa_supplicant.conf</strong>的文件，并在里面写上树莓派的wifi配置命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">country=CN</span><br><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line"></span><br><span class="line">network=&#123;</span><br><span class="line">    ssid=&quot;wifi名称&quot;</span><br><span class="line">    psk=&quot;wifi密码&quot;</span><br><span class="line">    key_mgmt=WPA-PSK</span><br><span class="line">    priority=1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">country&#x3D;CN
+ctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdev
+update_config&#x3D;1
+
+network&#x3D;&#123;
+    ssid&#x3D;&quot;wifi名称&quot;
+    psk&#x3D;&quot;wifi密码&quot;
+    key_mgmt&#x3D;WPA-PSK
+    priority&#x3D;1
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p> </p>
 <p>其中ssid是wifi名称，psk是自己的wifi密码</p>
@@ -516,13 +528,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
+                <a href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BC%80%E5%90%AFvnc/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="树莓派安装宝塔面板">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="树莓派开启VNC">
                         
-                        <span class="card-title">树莓派安装宝塔面板</span>
+                        <span class="card-title">树莓派开启VNC</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -539,11 +551,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" class="post-category">
-                                    宝塔面板
-                                </a>
-                            
-                            <a href="/categories/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/%E6%A0%91%E8%8E%93%E6%B4%BE/" class="post-category">
+                            <a href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/" class="post-category">
                                     树莓派
                                 </a>
                             
@@ -553,14 +561,6 @@
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
-                        <span class="chip bg-color">宝塔面板</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AF%86%E7%A0%81/">
-                        <span class="chip bg-color">密码</span>
-                    </a>
                     
                     <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
                         <span class="chip bg-color">树莓派</span>
@@ -577,13 +577,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F/">
+                <a href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="树莓派烧录系统">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="树莓派更改软件源">
                         
-                        <span class="card-title">树莓派烧录系统</span>
+                        <span class="card-title">树莓派更改软件源</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -610,6 +610,10 @@
                 </div>
                 
                 <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%BD%AF%E4%BB%B6/">
+                        <span class="chip bg-color">软件</span>
+                    </a>
                     
                     <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
                         <span class="chip bg-color">树莓派</span>
@@ -667,6 +671,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

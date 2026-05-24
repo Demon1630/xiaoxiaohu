@@ -5,7 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="查看树莓派版本号, 小小胡">
-    <meta name="description" content="12345678getconf LONG_BIT        # 查看系统位数uname -a            # kernel 版本/opt/vc/bin/vcgencmd  version   # firmware版本strin">
+    <meta name="description" content="getconf LONG_BIT        # 查看系统位数
+uname -a            # kernel 版本
+&amp;#x2F;opt&amp;#x2F;vc&amp;#x2F;bin&amp;#x2F;vcgencmd  version   # f">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -380,12 +382,22 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">getconf LONG_BIT        # 查看系统位数</span><br><span class="line">uname -a            # kernel 版本</span><br><span class="line">/opt/vc/bin/vcgencmd  version   # firmware版本</span><br><span class="line">strings /boot/start.elf  |  grep VC_BUILD_ID    # firmware版本</span><br><span class="line">cat /proc/version       # kernel</span><br><span class="line">cat /etc/os-release     # OS版本资讯</span><br><span class="line">cat /etc/issue          # Linux distro 版本</span><br><span class="line">cat /etc/debian_version     # Debian版本编号</span><br></pre></td></tr></table></figure>
+                <pre class="line-numbers language-none"><code class="language-none">getconf LONG_BIT        # 查看系统位数
+uname -a            # kernel 版本
+&#x2F;opt&#x2F;vc&#x2F;bin&#x2F;vcgencmd  version   # firmware版本
+strings &#x2F;boot&#x2F;start.elf  |  grep VC_BUILD_ID    # firmware版本
+cat &#x2F;proc&#x2F;version       # kernel
+cat &#x2F;etc&#x2F;os-release     # OS版本资讯
+cat &#x2F;etc&#x2F;issue          # Linux distro 版本
+cat &#x2F;etc&#x2F;debian_version     # Debian版本编号<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -644,6 +656,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

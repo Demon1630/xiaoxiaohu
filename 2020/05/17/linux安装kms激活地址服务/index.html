@@ -380,6 +380,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -388,46 +391,51 @@
                 <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><code>KMS</code>是<code>Key Management System</code>的缩写，也就是密钥管理系统。这里所说的<code>KMS</code>毋庸置疑就是用来激活<code>VOL</code>版本的<code>Windows</code>和<code>Office</code>的<code>KMS</code>啦。经常能在网上看到有人提供的<code>KMS</code>服务器地址，那么你有没有想过自己也来搞一个这样的服务呢？而这样的服务在<code>Github</code>上已经有开源代码实现了； 本文就是在这个开源代码的基础上，开发了适用于三大<code>Linux</code>发行版的一键安装<code>KMS</code>服务的脚本</p>
 <h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><p>1、本脚本适用于三大<code>Linux</code>发行版，其他版本则不支持。 2、KMS服务安装完成后会加入开机自启动。 3、默认记录日志，其日志位于<code>/var/log/vlmcsd.log</code></p>
 <h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>使用root用户登录，运行以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://github.com/teddysun/across/raw/master/kms.sh &amp;&amp; chmod +x kms.sh &amp;&amp; ./kms.sh</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">wget --no-check-certificate https:&#x2F;&#x2F;github.com&#x2F;teddysun&#x2F;across&#x2F;raw&#x2F;master&#x2F;kms.sh &amp;&amp; chmod +x kms.sh &amp;&amp; .&#x2F;kms.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><code>KMS</code>服务需要使用<code>1688</code>端口，防火墙需要放行； 安装完成后，输入以下命令查看端口号<code>1688</code>的监听情况</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nxtlp | grep 1688</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">netstat -nxtlp | grep 1688<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>返回值类似于如下这样就表示OK了；</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tcp        0      0 0.0.0.0:1688          0.0.0.0:*            LISTEN      3200/vlmcsd         </span><br><span class="line">tcp        0      0 :::1688               :::*                 LISTEN      3200/vlmcsd</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">tcp        0      0 0.0.0.0:1688          0.0.0.0:*            LISTEN      3200&#x2F;vlmcsd         
+tcp        0      0 :::1688               :::*                 LISTEN      3200&#x2F;vlmcsd<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>本脚本安装完成后，会将<code>KMS</code>服务加入开机自启动；</p>
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>启动:<code>/etc/init.d/kms start</code> 停止:<code>/etc/init.d/kms stop</code> 重启:<code>/etc/init.d/kms restart</code> 状态:<code>/etc/init.d/kms status</code></p>
 <h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p>使用 root 用户登录，运行以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kms.sh uninstall</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">.&#x2F;kms.sh uninstall<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h2 id="激活支持说明"><a href="#激活支持说明" class="headerlink" title="激活支持说明"></a>激活支持说明</h2><blockquote>
 <p><strong>支持Windows操作系统(VL) Office软件(VL)</strong> <strong>支持最新的Windows 10 和 Office 2019</strong></p>
 </blockquote>
 <h2 id="Windows激活方法"><a href="#Windows激活方法" class="headerlink" title="Windows激活方法"></a>Windows激活方法</h2><p><strong>PC端以管理员身份运行CMD（命令提示符）</strong> <a target="_blank" rel="noopener" href="https://sunpma.com/usr/uploads/2019/10/1879320344.png"><img src="https://sunpma.com/usr/uploads/2019/10/1879320344.png"></a> <strong>然后依次输入以下命令：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">slmgr /skms 你的ip地址</span><br><span class="line">slmgr /ato</span><br><span class="line">slmgr /xpr</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">slmgr &#x2F;skms 你的ip地址
+slmgr &#x2F;ato
+slmgr &#x2F;xpr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>等待出现以下弹窗就说明成功激活了</strong> <a target="_blank" rel="noopener" href="https://sunpma.com/usr/uploads/2019/12/521896607.png"><img src="https://sunpma.com/usr/uploads/2019/12/521896607.png"></a> <a target="_blank" rel="noopener" href="https://sunpma.com/usr/uploads/2019/12/584297664.png"><img src="https://sunpma.com/usr/uploads/2019/12/584297664.png"></a> <a target="_blank" rel="noopener" href="https://sunpma.com/usr/uploads/2019/12/1806899802.png"><img src="https://sunpma.com/usr/uploads/2019/12/1806899802.png"></a></p>
 <h2 id="Office激活方法"><a href="#Office激活方法" class="headerlink" title="Office激活方法"></a>Office激活方法</h2><p><strong>PC端以管理员身份运行CMD（命令提示符）</strong> <strong>输入命令进入 Office 默认安装目录</strong> <strong>Office2016 &#x2F; Office365 &#x2F; Office2019 进入默认安装目录</strong> <strong>32位office：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:\Program Files (x86)\Microsoft Office\Office16</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">cd C:\Program Files (x86)\Microsoft Office\Office16<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>64位office：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:\Program Files\Microsoft Office\Office16</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">cd C:\Program Files\Microsoft Office\Office16<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>Office2013 进入默认安装目录</strong> <strong>32位office：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:\Program Files (x86)\Microsoft Office\Office15</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">cd C:\Program Files (x86)\Microsoft Office\Office15<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>64位office：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:\Program Files\Microsoft Office\Office15</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">cd C:\Program Files\Microsoft Office\Office15<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>Office2010 进入默认安装目录</strong> <strong>32位office：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:\Program Files (x86)\Microsoft Office\Office14</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">cd C:\Program Files (x86)\Microsoft Office\Office14<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>64位office：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:\Program Files\Microsoft Office\Office14</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">cd C:\Program Files\Microsoft Office\Office14<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>然后再依次输入以下命令：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cscript ospp.vbs /sethst:你的ip地址</span><br><span class="line">cscript ospp.vbs /act</span><br><span class="line">cscript ospp.vbs /dstatus</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">cscript ospp.vbs &#x2F;sethst:你的ip地址
+cscript ospp.vbs &#x2F;act
+cscript ospp.vbs &#x2F;dstatus<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
 <p><strong>KMS方式单次激活有效期为180天，每隔一段时间系统会自动从KMS服务器请求续期</strong> <strong>所以保持稳定的ip即可，这些都是自动的，可以一直使用，无需再人为干预</strong></p>
@@ -706,6 +714,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

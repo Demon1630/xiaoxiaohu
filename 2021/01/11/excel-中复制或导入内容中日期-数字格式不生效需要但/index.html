@@ -382,6 +382,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -391,7 +394,10 @@
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/1610331736-excel%E6%A0%BC%E5%BC%8F1.png"></p>
 <p>但其实经常我们由文本文件导入的数据，或者复制过来的数据，虽然显示是文本格式的，但其内容是数值格式的，而且此时就算将单元格格式改为数值格式，仍然需要挨个单元格双击，单元格中内容就会自动移动到单元格的右边，这样数值格式才能生效，才可以计算。</p>
 <p>如果数据较多，一个个双击单元格就效率太低了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">解决：</span><br><span class="line">　　选中整列，“数据”---&gt;“分列”---&gt;“分隔符号”---&gt;“下一步”---&gt;“tab键”---&gt;“下一步”---&gt;“常规”---&gt;“完成” （如果是日期格式的话，最后一步选“日期”）</span><br><span class="line">　</span><br><span class="line">　注：如经过以上步骤后数值未能正常显示，选中整列，“设置单元格格式”----&gt;“1234”----&gt;小数位数改为“0”---&gt;“确定”。</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">解决：
+　　选中整列，“数据”---&gt;“分列”---&gt;“分隔符号”---&gt;“下一步”---&gt;“tab键”---&gt;“下一步”---&gt;“常规”---&gt;“完成” （如果是日期格式的话，最后一步选“日期”）
+　
+　注：如经过以上步骤后数值未能正常显示，选中整列，“设置单元格格式”----&gt;“1234”----&gt;小数位数改为“0”---&gt;“确定”。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -646,6 +652,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

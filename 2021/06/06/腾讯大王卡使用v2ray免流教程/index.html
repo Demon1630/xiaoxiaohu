@@ -389,6 +389,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -397,7 +400,7 @@
                 <p>腾讯虽然对于老用户可以每个月给1G通用流量，然后对于腾讯系应用可以免流40G，但如果只用腾讯王卡，1G通用流量基本上不够，这时候就可能要买1元&#x2F;G的日租流量包，不划算，这里就介绍如何用vps搭建v2ray来实现免流</p>
 <p>首先要有一台vps，因为流量需要通过走这台vps实现流量伪装</p>
 <p>登录vps，使用脚本安装v2ray</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -s -L https://git.io/v2ray.sh)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">bash &lt;(curl -s -L https:&#x2F;&#x2F;git.io&#x2F;v2ray.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210606110821.png"></p>
 <p>选择1安装，然后选择3 websocket</p>
@@ -408,7 +411,15 @@
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210606111626.png"></p>
 <p>进入v2ray 中，点击导入的配置文件，在伪装域名里填入腾讯的免流域名：short.weixin.qq.com，然后在路径处填入 斜杠&#x2F;</p>
 <p>v2ray需要配置为全局模式，从而代理所有流量</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">腾讯大王卡：tx.flv.huya.com</span><br><span class="line">腾讯大王卡：short.weixin.qq.com</span><br><span class="line">腾讯大王卡：szextshort.weixin.qq.com</span><br><span class="line">腾讯大王卡：short.weixin.qq.com</span><br><span class="line">百度圣卡：data.video.qiyi.com</span><br><span class="line">阿里宝卡：vali-dns.cp31.ott.cibntv.net</span><br><span class="line">阿里宝卡：gw.alicdn.com</span><br><span class="line">api.mobile.youku.com</span><br><span class="line">米粉卡混淆参数：api.ad.xiaomi.com</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">腾讯大王卡：tx.flv.huya.com
+腾讯大王卡：short.weixin.qq.com
+腾讯大王卡：szextshort.weixin.qq.com
+腾讯大王卡：short.weixin.qq.com
+百度圣卡：data.video.qiyi.com
+阿里宝卡：vali-dns.cp31.ott.cibntv.net
+阿里宝卡：gw.alicdn.com
+api.mobile.youku.com
+米粉卡混淆参数：api.ad.xiaomi.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>其余卡混淆可以参考配置，最后自己再上网看看是否免流，避免出错</p>
 <p> </p>
@@ -693,6 +704,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

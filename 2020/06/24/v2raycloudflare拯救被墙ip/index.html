@@ -393,6 +393,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -418,25 +421,32 @@
 <p>按如图配置，然后为网站添加ssl</p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1592965150-v2ray%E4%BD%BF%E7%94%A83.png"></p>
 <h2 id="三、安装v2ray-fun面板"><a href="#三、安装v2ray-fun面板" class="headerlink" title="三、安装v2ray.fun面板"></a>三、安装v2ray.fun面板</h2><p>运行脚本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/v2ray.fun/master/install.sh &amp;&amp; bash install.sh</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">wget -N --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;FunctionClub&#x2F;v2ray.fun&#x2F;master&#x2F;install.sh &amp;&amp; bash install.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>进行安装，记住用户名、密码和端口号</p>
 <p>宝塔面板 “安全” - “防火墙” 放行上面的V2ray面板监听端口</p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1592965638-v2ray%E4%BD%BF%E7%94%A84-1024x742.png"></p>
 <p>登陆V2ray.fun控制面板；登陆方式是：IP:5000，输入账号（admin）、密码（admin）登陆； 点击控制面板菜单中的“修改连接 ”</p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1592965928-v2ray%E4%BD%BF%E7%94%A85-1024x567.png"></p>
-<h2 id="四、添加V2ray的ws-path-路径"><a href="#四、添加V2ray的ws-path-路径" class="headerlink" title="四、添加V2ray的ws path 路径"></a>四、添加V2ray的ws path 路径</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/v2ray/config.json</span><br></pre></td></tr></table></figure>
+<h2 id="四、添加V2ray的ws-path-路径"><a href="#四、添加V2ray的ws-path-路径" class="headerlink" title="四、添加V2ray的ws path 路径"></a>四、添加V2ray的ws path 路径</h2><pre class="line-numbers language-none"><code class="language-none">vi &#x2F;etc&#x2F;v2ray&#x2F;config.json<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>编辑config.json文件</p>
 <p>修改”path”: “”,为”path”:”&#x2F;ws&#x2F;“, ，这里的“&#x2F;ws&#x2F;”可以自行修改，但是要跟后面的保持一致</p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1592966173-v2ray%E4%BD%BF%E7%94%A86.png"></p>
 <p>打开宝塔管理面板 - 网站，进入刚才新建的网站站点管理，在管理界面点击配置文件；在网站配置文件的最后一个“｝”之前添加如下参数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">location /ws &#123;</span><br><span class="line">proxy_redirect off;</span><br><span class="line">proxy_pass http://127.0.0.1:10010;</span><br><span class="line">proxy_http_version 1.1;</span><br><span class="line">proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line">proxy_set_header Host $http_host;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">location &#x2F;ws &#123;
+proxy_redirect off;
+proxy_pass http:&#x2F;&#x2F;127.0.0.1:10010;
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection &quot;upgrade&quot;;
+proxy_set_header Host $http_host;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这里的端口10010修改为自己在v2ray面板上设置的端口号</p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1592966347-v2ray%E4%BD%BF%E7%94%A87.png"></p>
 <h2 id="五、在宝塔面板里面重启Nginx，在SSH里面重启V2ray"><a href="#五、在宝塔面板里面重启Nginx，在SSH里面重启V2ray" class="headerlink" title="五、在宝塔面板里面重启Nginx，在SSH里面重启V2ray"></a>五、在宝塔面板里面重启Nginx，在SSH里面重启V2ray</h2><p>重启V2ray的命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service v2ray restart</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">service v2ray restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="六、回到Cloudflare域名管理面板的DNS选项，将域名的小黄云点亮"><a href="#六、回到Cloudflare域名管理面板的DNS选项，将域名的小黄云点亮" class="headerlink" title="六、回到Cloudflare域名管理面板的DNS选项，将域名的小黄云点亮"></a>六、回到Cloudflare域名管理面板的DNS选项，将域名的小黄云点亮</h2><h2 id="七、到电脑客户端上添加VMess服务器"><a href="#七、到电脑客户端上添加VMess服务器" class="headerlink" title="七、到电脑客户端上添加VMess服务器"></a>七、到电脑客户端上添加VMess服务器</h2><p>下载v2ray客户端：<a target="_blank" rel="noopener" href="https://github.com/v2ray/v2ray-core/releases">https://github.com/v2ray/v2ray-core/releases</a></p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1592966697-v2ray%E4%BD%BF%E7%94%A88.png"></p>
@@ -711,6 +721,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

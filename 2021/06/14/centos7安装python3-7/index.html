@@ -7,7 +7,7 @@
     <meta name="keywords" content="centos7安装python3.7和部分库, 小小胡">
     <meta name="description" content="按照命令一步步来，实在不行重装系统后再重新开始安装
 先配置安装环境在根目录上执行，先切换到根目录：cd &amp;#x2F;
-1yum -y install zlib-devel bzip2-devel openssl-devel ncurses-">
+yum -y install zlib-devel bzip2-devel openssl-devel ncurses-d">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,6 +390,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -397,62 +400,62 @@
             <div id="articleContent">
                 <p>按照命令一步步来，实在不行重装系统后再重新开始安装</p>
 <h2 id="先配置安装环境"><a href="#先配置安装环境" class="headerlink" title="先配置安装环境"></a>先配置安装环境</h2><p>在根目录上执行，先切换到根目录：cd &#x2F;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install libffi-devel -y</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">yum install libffi-devel -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><p>切换目录到 你的root目录下：  #：cd &#x2F;root</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">wget https:&#x2F;&#x2F;www.python.org&#x2F;ftp&#x2F;python&#x2F;3.7.0&#x2F;Python-3.7.0.tar.xz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvJf  Python-3.7.0.tar.xz</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">tar -xvJf  Python-3.7.0.tar.xz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>（如果你的环境没有安装 wget 的话，下载时可能会报错：：：<strong>-bash: wget: command not found</strong></p>
 <p>-—-解决方法：先安装再下载python3 ：#：yum -y install wget）</p>
-<h2 id="开始编译安装"><a href="#开始编译安装" class="headerlink" title="开始编译安装"></a>开始编译安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/local/python3</span><br></pre></td></tr></table></figure>
+<h2 id="开始编译安装"><a href="#开始编译安装" class="headerlink" title="开始编译安装"></a>开始编译安装</h2><pre class="line-numbers language-none"><code class="language-none">mkdir &#x2F;usr&#x2F;local&#x2F;python3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd Python-3.7.0</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">cd Python-3.7.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/local/python3</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">.&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;python3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>（注： 当你输入上面的命令执行时，可能会报错：<strong>configure: error: no acceptable C compiler found in $PATH</strong></p>
 <p>-—–解决办法：安装 gcc 环境 ：yum install -y gcc   ，安装成功后重新执行  #：.&#x2F;configure –prefix&#x3D;&#x2F;usr&#x2F;python）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install   </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">make &amp;&amp; make install   <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="创建软件连接"><a href="#创建软件连接" class="headerlink" title="创建软件连接"></a>创建软件连接</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/python3 /usr/local/bin/python3</span><br></pre></td></tr></table></figure>
+<h2 id="创建软件连接"><a href="#创建软件连接" class="headerlink" title="创建软件连接"></a>创建软件连接</h2><pre class="line-numbers language-none"><code class="language-none">ln -s &#x2F;usr&#x2F;local&#x2F;python3&#x2F;bin&#x2F;python3 &#x2F;usr&#x2F;local&#x2F;bin&#x2F;python3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">ln -s &#x2F;usr&#x2F;local&#x2F;python3&#x2F;bin&#x2F;pip3 &#x2F;usr&#x2F;local&#x2F;bin&#x2F;pip3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>此时已经安装完成，使用命令查看</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 --version</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">python3 --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614163236.png"></p>
 <p> </p>
-<h2 id="升级pip3"><a href="#升级pip3" class="headerlink" title="升级pip3"></a>升级pip3</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m pip install --upgrade pip</span><br></pre></td></tr></table></figure>
+<h2 id="升级pip3"><a href="#升级pip3" class="headerlink" title="升级pip3"></a>升级pip3</h2><pre class="line-numbers language-none"><code class="language-none">python3 -m pip install --upgrade pip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p> </p>
 <p>安装requests库</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install requests</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">pip3 install requests<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>安装bs4</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install beautifulsoup4</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">pip3 install beautifulsoup4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>安装fake_useragent</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install fake_useragent</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">pip3 install fake_useragent<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>安装telegram</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install python-telegram-bot</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">pip3 install python-telegram-bot<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>安装smtplib</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install PyEmail</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">pip3 install PyEmail<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>安装openpyxl</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install openpyxl</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">pip3 install openpyxl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>安装wordcloud</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install wordcloud</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">pip3 install wordcloud<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>安装jieba</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install jieba</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">pip3 install jieba<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>安装selenium</p>
 <p>pip3 install selenium</p>
@@ -734,6 +737,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

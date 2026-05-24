@@ -349,6 +349,10 @@
                                 <span class="chip bg-color">docker</span>
                             </a>
                         
+                            <a href="/tags/%E5%AF%86%E7%A0%81/">
+                                <span class="chip bg-color">密码</span>
+                            </a>
+                        
                             <a href="/tags/calibre/">
                                 <span class="chip bg-color">calibre</span>
                             </a>
@@ -359,10 +363,6 @@
                         
                             <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
                                 <span class="chip bg-color">宝塔面板</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%AF%86%E7%A0%81/">
-                                <span class="chip bg-color">密码</span>
                             </a>
                         
                     </div>
@@ -406,6 +406,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -420,13 +423,37 @@
 <h1 id="vps安装宝塔面板"><a href="#vps安装宝塔面板" class="headerlink" title="vps安装宝塔面板"></a><a target="_blank" rel="noopener" href="http://www.demon1630.cn/vps%e5%ae%89%e8%a3%85%e5%ae%9d%e5%a1%94%e9%9d%a2%e6%9d%bf/">vps安装宝塔面板</a></h1><p>其实进入其部署的网站：<a target="_blank" rel="noopener" href="https://registry.hub.docker.com/r/johngong/calibre-web">https://registry.hub.docker.com/r/johngong/calibre-web</a>就可以看到其详细介绍了</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20230507122327.png"></p>
 <p>首先拉取docker镜像，docker：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull johngong/calibre-web</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">docker pull johngong&#x2F;calibre-web<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>之后启动镜像：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker create  \</span><br><span class="line">    --name=calibre-web  \</span><br><span class="line">    -p 8083:8083  \</span><br><span class="line">    -p 8080:8080  \</span><br><span class="line">    -v /配置文件位置:/config  \</span><br><span class="line">    -v /书库:/library  \</span><br><span class="line">    -v /自动添加文件夹:/autoaddbooks  \</span><br><span class="line">    -e UID=1000  \</span><br><span class="line">    -e GID=1000  \</span><br><span class="line">    -e CALIBRE_SERVER_USER=用户名  \</span><br><span class="line">    -e CALIBRE_SERVER_PASSWORD=用户密码 \</span><br><span class="line">    --restart unless-stopped  \</span><br><span class="line">    johngong/calibre-web:latest</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">docker create  \
+    --name&#x3D;calibre-web  \
+    -p 8083:8083  \
+    -p 8080:8080  \
+    -v &#x2F;配置文件位置:&#x2F;config  \
+    -v &#x2F;书库:&#x2F;library  \
+    -v &#x2F;自动添加文件夹:&#x2F;autoaddbooks  \
+    -e UID&#x3D;1000  \
+    -e GID&#x3D;1000  \
+    -e CALIBRE_SERVER_USER&#x3D;用户名  \
+    -e CALIBRE_SERVER_PASSWORD&#x3D;用户密码 \
+    --restart unless-stopped  \
+    johngong&#x2F;calibre-web:latest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>里面的：&#x2F;配置文件位置、&#x2F;书库、&#x2F;自动添加文件夹  都可以自定义，是用来放置图书文件和相关配置文件的地址，后面的用户名、密码也需要自己配置，后面可以用来登录，如果不知道怎么配置可以参考我下面的配置位置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker create  \</span><br><span class="line">    --name=calibre-web  \</span><br><span class="line">    -p 8083:8083  \</span><br><span class="line">    -p 8080:8080  \</span><br><span class="line">    -v /data/calibre/config:/config  \</span><br><span class="line">    -v /data/calibre/books:/library  \</span><br><span class="line">    -v /data/autoaddbooks:/autoaddbooks  \</span><br><span class="line">    -e UID=1000  \</span><br><span class="line">    -e GID=1000  \</span><br><span class="line">    -e CALIBRE_SERVER_USER=mm  \</span><br><span class="line">    -e CALIBRE_SERVER_PASSWORD=mm11 \</span><br><span class="line">    --restart unless-stopped  \</span><br><span class="line">    johngong/calibre-web:latest</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">docker create  \
+    --name&#x3D;calibre-web  \
+    -p 8083:8083  \
+    -p 8080:8080  \
+    -v &#x2F;data&#x2F;calibre&#x2F;config:&#x2F;config  \
+    -v &#x2F;data&#x2F;calibre&#x2F;books:&#x2F;library  \
+    -v &#x2F;data&#x2F;autoaddbooks:&#x2F;autoaddbooks  \
+    -e UID&#x3D;1000  \
+    -e GID&#x3D;1000  \
+    -e CALIBRE_SERVER_USER&#x3D;mm  \
+    -e CALIBRE_SERVER_PASSWORD&#x3D;mm11 \
+    --restart unless-stopped  \
+    johngong&#x2F;calibre-web:latest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>启动好之后进入宝塔面板后台，需要将8083、8080端口放行，点击宝塔面板中安全-添加端口规则，填入8083、8080然后确定就可以为这两个端口放行了</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20230507123240.png"></p>
@@ -515,6 +542,10 @@
                                     <span class="chip bg-color">docker</span>
                                 </a>
                             
+                                <a href="/tags/%E5%AF%86%E7%A0%81/">
+                                    <span class="chip bg-color">密码</span>
+                                </a>
+                            
                                 <a href="/tags/calibre/">
                                     <span class="chip bg-color">calibre</span>
                                 </a>
@@ -525,10 +556,6 @@
                             
                                 <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
                                     <span class="chip bg-color">宝塔面板</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%AF%86%E7%A0%81/">
-                                    <span class="chip bg-color">密码</span>
                                 </a>
                             
                         </div>
@@ -612,12 +639,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BA%91%E7%9B%98/">
-                        <span class="chip bg-color">云盘</span>
-                    </a>
-                    
                     <a href="/tags/%E5%AF%86%E7%A0%81/">
                         <span class="chip bg-color">密码</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BA%91%E7%9B%98/">
+                        <span class="chip bg-color">云盘</span>
                     </a>
                     
                     <a href="/tags/nas/">
@@ -737,6 +764,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

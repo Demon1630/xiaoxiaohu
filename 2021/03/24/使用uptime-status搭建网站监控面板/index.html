@@ -397,6 +397,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -430,7 +433,21 @@
 <p>进入cloudflare 点击workers-管理workers，然后点击创建workers</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210324143016.png"></p>
 <p>把原先脚本中内容删除，复制代码进去</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const handleRequest = async (&#123; request &#125;) =&gt; &#123;</span><br><span class="line">  let url = new URL(request.url);</span><br><span class="line">  let response = await fetch(&#x27;https://api.uptimerobot.com&#x27; + url.pathname, request);</span><br><span class="line">  response = new Response(response.body, response);</span><br><span class="line">  response.headers.set(&#x27;Access-Control-Allow-Origin&#x27;, &#x27;*&#x27;);</span><br><span class="line">  response.headers.set(&#x27;Access-Control-Allow-Methods&#x27;, &#x27;*&#x27;);</span><br><span class="line">  response.headers.set(&#x27;Access-Control-Allow-Credentials&#x27;, &#x27;true&#x27;);</span><br><span class="line">  response.headers.set(&#x27;Access-Control-Allow-Headers&#x27;, &#x27;Content-Type,Access-Token&#x27;);</span><br><span class="line">  response.headers.set(&#x27;Access-Control-Expose-Headers&#x27;, &#x27;*&#x27;);</span><br><span class="line">  return response;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">addEventListener(&#x27;fetch&#x27;, (event) =&gt; &#123;</span><br><span class="line">  event.respondWith(handleRequest(event));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">const handleRequest &#x3D; async (&#123; request &#125;) &#x3D;&gt; &#123;
+  let url &#x3D; new URL(request.url);
+  let response &#x3D; await fetch(&#39;https:&#x2F;&#x2F;api.uptimerobot.com&#39; + url.pathname, request);
+  response &#x3D; new Response(response.body, response);
+  response.headers.set(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;);
+  response.headers.set(&#39;Access-Control-Allow-Methods&#39;, &#39;*&#39;);
+  response.headers.set(&#39;Access-Control-Allow-Credentials&#39;, &#39;true&#39;);
+  response.headers.set(&#39;Access-Control-Allow-Headers&#39;, &#39;Content-Type,Access-Token&#39;);
+  response.headers.set(&#39;Access-Control-Expose-Headers&#39;, &#39;*&#39;);
+  return response;
+&#125;
+
+addEventListener(&#39;fetch&#39;, (event) &#x3D;&gt; &#123;
+  event.respondWith(handleRequest(event));
+&#125;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>然后点击保存并部署，就可以获得对应的域名</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210324143250.png"></p>
@@ -712,6 +729,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

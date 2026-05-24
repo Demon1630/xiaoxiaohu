@@ -9,7 +9,7 @@
 
 类似于时间轴一样的，但更加简洁，可以只用一句话，而且是纯代码实现
 首先在主题的functions.php里面加入以下代码：
-123">
+fun">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -392,6 +392,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -401,13 +404,238 @@
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1592882462-%E8%AF%B4%E8%AF%B41-1024x395.png"></p>
 <p>类似于时间轴一样的，但更加简洁，可以只用一句话，而且是纯代码实现</p>
 <p>首先在主题的functions.php里面加入以下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">function my_custom_shuoshuo_init() &#123; </span><br><span class="line">    $labels = array( </span><br><span class="line">        &#x27;name&#x27; =&gt; &#x27;说说&#x27;,</span><br><span class="line">        &#x27;singular_name&#x27; =&gt; &#x27;说说&#x27;, </span><br><span class="line">        &#x27;all_items&#x27; =&gt; &#x27;所有说说&#x27;,</span><br><span class="line">        &#x27;add_new&#x27; =&gt; &#x27;发表说说&#x27;, </span><br><span class="line">        &#x27;add_new_item&#x27; =&gt; &#x27;撰写新说说&#x27;,</span><br><span class="line">        &#x27;edit_item&#x27; =&gt; &#x27;编辑说说&#x27;, </span><br><span class="line">        &#x27;new_item&#x27; =&gt; &#x27;新说说&#x27;, </span><br><span class="line">        &#x27;view_item&#x27; =&gt; &#x27;查看说说&#x27;, </span><br><span class="line">        &#x27;search_items&#x27; =&gt; &#x27;搜索说说&#x27;, </span><br><span class="line">        &#x27;not_found&#x27; =&gt; &#x27;暂无说说&#x27;, </span><br><span class="line">        &#x27;not_found_in_trash&#x27; =&gt; &#x27;没有已遗弃的说说&#x27;, </span><br><span class="line">        &#x27;parent_item_colon&#x27; =&gt; &#x27;&#x27;,</span><br><span class="line">        &#x27;menu_name&#x27; =&gt; &#x27;说说&#x27;</span><br><span class="line">    ); </span><br><span class="line">    $args = array( </span><br><span class="line">        &#x27;labels&#x27; =&gt; $labels, </span><br><span class="line">        &#x27;public&#x27; =&gt; true, </span><br><span class="line">        &#x27;publicly_queryable&#x27; =&gt; true, </span><br><span class="line">        &#x27;show_ui&#x27; =&gt; true, </span><br><span class="line">        &#x27;show_in_menu&#x27; =&gt; true, </span><br><span class="line">        &#x27;query_var&#x27; =&gt; true, </span><br><span class="line">        &#x27;rewrite&#x27; =&gt; true, </span><br><span class="line">        &#x27;capability_type&#x27; =&gt; &#x27;post&#x27;, </span><br><span class="line">        &#x27;has_archive&#x27; =&gt; true, </span><br><span class="line">        &#x27;hierarchical&#x27; =&gt; false, </span><br><span class="line">        &#x27;menu_position&#x27; =&gt; null, </span><br><span class="line">        &#x27;supports&#x27; =&gt; array(&#x27;title&#x27;,&#x27;editor&#x27;,&#x27;author&#x27;) </span><br><span class="line">    ); </span><br><span class="line">register_post_type(&#x27;shuoshuo&#x27;,$args); </span><br><span class="line">&#125;</span><br><span class="line">add_action(&#x27;init&#x27;, &#x27;my_custom_shuoshuo_init&#x27;); </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">function my_custom_shuoshuo_init() &#123; 
+    $labels &#x3D; array( 
+        &#39;name&#39; &#x3D;&gt; &#39;说说&#39;,
+        &#39;singular_name&#39; &#x3D;&gt; &#39;说说&#39;, 
+        &#39;all_items&#39; &#x3D;&gt; &#39;所有说说&#39;,
+        &#39;add_new&#39; &#x3D;&gt; &#39;发表说说&#39;, 
+        &#39;add_new_item&#39; &#x3D;&gt; &#39;撰写新说说&#39;,
+        &#39;edit_item&#39; &#x3D;&gt; &#39;编辑说说&#39;, 
+        &#39;new_item&#39; &#x3D;&gt; &#39;新说说&#39;, 
+        &#39;view_item&#39; &#x3D;&gt; &#39;查看说说&#39;, 
+        &#39;search_items&#39; &#x3D;&gt; &#39;搜索说说&#39;, 
+        &#39;not_found&#39; &#x3D;&gt; &#39;暂无说说&#39;, 
+        &#39;not_found_in_trash&#39; &#x3D;&gt; &#39;没有已遗弃的说说&#39;, 
+        &#39;parent_item_colon&#39; &#x3D;&gt; &#39;&#39;,
+        &#39;menu_name&#39; &#x3D;&gt; &#39;说说&#39;
+    ); 
+    $args &#x3D; array( 
+        &#39;labels&#39; &#x3D;&gt; $labels, 
+        &#39;public&#39; &#x3D;&gt; true, 
+        &#39;publicly_queryable&#39; &#x3D;&gt; true, 
+        &#39;show_ui&#39; &#x3D;&gt; true, 
+        &#39;show_in_menu&#39; &#x3D;&gt; true, 
+        &#39;query_var&#39; &#x3D;&gt; true, 
+        &#39;rewrite&#39; &#x3D;&gt; true, 
+        &#39;capability_type&#39; &#x3D;&gt; &#39;post&#39;, 
+        &#39;has_archive&#39; &#x3D;&gt; true, 
+        &#39;hierarchical&#39; &#x3D;&gt; false, 
+        &#39;menu_position&#39; &#x3D;&gt; null, 
+        &#39;supports&#39; &#x3D;&gt; array(&#39;title&#39;,&#39;editor&#39;,&#39;author&#39;) 
+    ); 
+register_post_type(&#39;shuoshuo&#39;,$args); 
+&#125;
+add_action(&#39;init&#39;, &#39;my_custom_shuoshuo_init&#39;); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>然后找到主题的页面文件夹下新建一个shuoshuo.php页面文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">/* Template Name: 说说/心情 */</span><br><span class="line">get_header(); </span><br><span class="line">?&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;?php echo get_template_directory_uri(); ?&gt;/static/css/vertical_timeline.css&quot; /&gt;</span><br><span class="line">&lt;section class=&quot;container&quot;&gt;</span><br><span class="line">&lt;div class=&quot;content-wrap&quot;&gt;</span><br><span class="line">&lt;div class=&quot;content&quot;&gt;</span><br><span class="line">    &lt;div style=&quot;background: #FFF; padding: 30px; border-radius: 5px;&quot;&gt;</span><br><span class="line">        &lt;ul class=&quot;cbp_tmtimeline&quot;&gt;</span><br><span class="line">        &lt;?php </span><br><span class="line">        query_posts(&quot;post_type=shuoshuo &amp; post_status=publish &amp; posts_per_page=-1&quot;);</span><br><span class="line">        if ( have_posts() ) &#123; </span><br><span class="line">        while ( have_posts() ) &#123; </span><br><span class="line">        the_post(); ?&gt;</span><br><span class="line">            &lt;li&gt;</span><br><span class="line">                &lt;time class=&quot;cbp_tmtime&quot;&gt;&lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; &lt;?php the_time(&#x27;Y年n月j日G:i&#x27;); ?&gt;&lt;/time&gt;</span><br><span class="line">                &lt;div class=&quot;cbp_tmicon&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://www.demon1630.cn/wp-content/uploads/2019/09/BABEE112-64B2-CC97-58A6-C55864CF87A4.jpg&quot; class=&quot;avatar avatar-48&quot; width=&quot;48&quot; height=&quot;48&quot;&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;div class=&quot;cbp_tmlabel&quot; &gt;</span><br><span class="line">                    &lt;span style=&quot;font-size:14px;&quot;&gt;&lt;?php the_content(); ?&gt;&lt;/span&gt;</span><br><span class="line">                    &lt;h2&gt;&lt;?php the_title(); ?&gt;&lt;span&gt;&lt;?php echo get_bloginfo(&#x27;name&#x27;); ?&gt; | &lt;?php echo get_bloginfo(&#x27;description&#x27; ); ?&gt;&lt;/span&gt;&lt;/h2&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &lt;?php &#125;</span><br><span class="line">        &#125; ?&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;?php get_sidebar(); ?&gt;</span><br><span class="line">&lt;/section&gt;</span><br><span class="line">&lt;?php get_footer();?&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&lt;?php 
+&#x2F;* Template Name: 说说&#x2F;心情 *&#x2F;
+get_header(); 
+?&gt;
+&lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text&#x2F;css&quot; href&#x3D;&quot;&lt;?php echo get_template_directory_uri(); ?&gt;&#x2F;static&#x2F;css&#x2F;vertical_timeline.css&quot; &#x2F;&gt;
+&lt;section class&#x3D;&quot;container&quot;&gt;
+&lt;div class&#x3D;&quot;content-wrap&quot;&gt;
+&lt;div class&#x3D;&quot;content&quot;&gt;
+    &lt;div style&#x3D;&quot;background: #FFF; padding: 30px; border-radius: 5px;&quot;&gt;
+        &lt;ul class&#x3D;&quot;cbp_tmtimeline&quot;&gt;
+        &lt;?php 
+        query_posts(&quot;post_type&#x3D;shuoshuo &amp; post_status&#x3D;publish &amp; posts_per_page&#x3D;-1&quot;);
+        if ( have_posts() ) &#123; 
+        while ( have_posts() ) &#123; 
+        the_post(); ?&gt;
+            &lt;li&gt;
+                &lt;time class&#x3D;&quot;cbp_tmtime&quot;&gt;&lt;i class&#x3D;&quot;fa fa-clock-o&quot;&gt;&lt;&#x2F;i&gt; &lt;?php the_time(&#39;Y年n月j日G:i&#39;); ?&gt;&lt;&#x2F;time&gt;
+                &lt;div class&#x3D;&quot;cbp_tmicon&quot;&gt;
+                &lt;img src&#x3D;&quot;http:&#x2F;&#x2F;www.demon1630.cn&#x2F;wp-content&#x2F;uploads&#x2F;2019&#x2F;09&#x2F;BABEE112-64B2-CC97-58A6-C55864CF87A4.jpg&quot; class&#x3D;&quot;avatar avatar-48&quot; width&#x3D;&quot;48&quot; height&#x3D;&quot;48&quot;&gt;
+                &lt;&#x2F;div&gt;
+                &lt;div class&#x3D;&quot;cbp_tmlabel&quot; &gt;
+                    &lt;span style&#x3D;&quot;font-size:14px;&quot;&gt;&lt;?php the_content(); ?&gt;&lt;&#x2F;span&gt;
+                    &lt;h2&gt;&lt;?php the_title(); ?&gt;&lt;span&gt;&lt;?php echo get_bloginfo(&#39;name&#39;); ?&gt; | &lt;?php echo get_bloginfo(&#39;description&#39; ); ?&gt;&lt;&#x2F;span&gt;&lt;&#x2F;h2&gt;
+                &lt;&#x2F;div&gt;
+            &lt;&#x2F;li&gt;
+        &lt;?php &#125;
+        &#125; ?&gt;
+        &lt;&#x2F;ul&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt; 
+&lt;&#x2F;div&gt;
+&lt;?php get_sidebar(); ?&gt;
+&lt;&#x2F;section&gt;
+&lt;?php get_footer();?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>之后，到主题的css文件夹下添加一个 vertical_timeline.css文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line">/** 垂直时间线CSS样式 */</span><br><span class="line"> </span><br><span class="line">.cbp_tmtimeline &#123;</span><br><span class="line">    margin: 30px 0 0 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">    list-style: none;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125; </span><br><span class="line">/* The line */</span><br><span class="line">.cbp_tmtimeline:before &#123;</span><br><span class="line">    content: &#x27;&#x27;;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line">    width: 10px;</span><br><span class="line">    background: #afdcf8;</span><br><span class="line">    left: 20%;</span><br><span class="line">    margin-left: -6px;</span><br><span class="line">&#125;</span><br><span class="line">/* The date/time */</span><br><span class="line">.cbp_tmtimeline &gt; li .cbp_tmtime &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    width: 30%;</span><br><span class="line">    padding-right: 100px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    color: #AAA;</span><br><span class="line">&#125;</span><br><span class="line">.cbp_tmtimeline &gt; li .cbp_tmtime span &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    text-align: right;</span><br><span class="line">&#125;</span><br><span class="line">.cbp_tmtimeline &gt; li .cbp_tmtime span:first-child &#123;</span><br><span class="line">    font-size: 0.9em;</span><br><span class="line">    color: #bdd0db;</span><br><span class="line">&#125;</span><br><span class="line">.cbp_tmtimeline &gt; li .cbp_tmtime span:last-child &#123;</span><br><span class="line">    font-size: 2.9em;</span><br><span class="line">    color: #24a0f0;</span><br><span class="line">&#125;</span><br><span class="line">.cbp_tmtimeline &gt; li:nth-child(odd) .cbp_tmtime span:last-child &#123;</span><br><span class="line">    color: #7878f0;</span><br><span class="line">&#125;</span><br><span class="line">/* Right content */</span><br><span class="line">.cbp_tmtimeline &gt; li .cbp_tmlabel &#123;</span><br><span class="line">    margin: 0 0 15px 25%;</span><br><span class="line">    background: #24a0f0;</span><br><span class="line">    color: #fff;</span><br><span class="line">    padding: 1em;</span><br><span class="line">    font-size: 3em;</span><br><span class="line">    font-weight: 300;</span><br><span class="line">    line-height: 1.4;</span><br><span class="line">    position: relative;</span><br><span class="line">    border-radius: 5px;</span><br><span class="line">&#125;</span><br><span class="line">.cbp_tmtimeline &gt; li:nth-child(odd) .cbp_tmlabel &#123;</span><br><span class="line">    background: #7878f0;</span><br><span class="line">&#125;</span><br><span class="line">.cbp_tmtimeline &gt; li .cbp_tmlabel h2 &#123; </span><br><span class="line">    border-bottom: 0px;</span><br><span class="line">    border-top:1px dashed #FFF; </span><br><span class="line">    font-size:16px; </span><br><span class="line">    height: 24px; </span><br><span class="line">    padding: 5px 3px 12px; </span><br><span class="line">    margin:0px;</span><br><span class="line">&#125;</span><br><span class="line">.cbp_tmtimeline &gt; li .cbp_tmlabel h2 &gt; span &#123; </span><br><span class="line">    font-size: 12px; </span><br><span class="line">    float: right; </span><br><span class="line">    text-align: center; </span><br><span class="line">    line-height: 24px; </span><br><span class="line">    overflow: hidden; </span><br><span class="line">    text-overflow: ellipsis; </span><br><span class="line">    white-space: nowrap;</span><br><span class="line">&#125;</span><br><span class="line">/* The triangle */</span><br><span class="line">.cbp_tmtimeline &gt; li .cbp_tmlabel:after &#123;</span><br><span class="line">    right: 100%;</span><br><span class="line">    border: solid transparent;</span><br><span class="line">    content: &quot; &quot;;</span><br><span class="line">    height: 0;</span><br><span class="line">    width: 0;</span><br><span class="line">    position: absolute;</span><br><span class="line">    pointer-events: none;</span><br><span class="line">    border-right-color: #24a0f0;</span><br><span class="line">    border-width: 10px;</span><br><span class="line">    top: 10px;</span><br><span class="line">&#125;</span><br><span class="line">.cbp_tmtimeline &gt; li:nth-child(odd) .cbp_tmlabel:after &#123;</span><br><span class="line">    border-right-color: #7878f0;</span><br><span class="line">&#125;</span><br><span class="line">/* The icons */</span><br><span class="line">.cbp_tmtimeline &gt; li .cbp_tmicon &#123;</span><br><span class="line">    width: 48px;</span><br><span class="line">    height: 48px;</span><br><span class="line">    font-family: &#x27;ecoico&#x27;;</span><br><span class="line">    speak: none;</span><br><span class="line">    font-style: normal;</span><br><span class="line">    font-weight: normal;</span><br><span class="line">    font-variant: normal;</span><br><span class="line">    text-transform: none;</span><br><span class="line">    font-size: 48px;</span><br><span class="line">    line-height: 48px;</span><br><span class="line">    -webkit-font-smoothing: antialiased;</span><br><span class="line">    position: relative;</span><br><span class="line">    color: #fff;</span><br><span class="line">    background: #46a4da;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    box-shadow: 0 0 0 8px #afdcf8;</span><br><span class="line">    text-align: center;</span><br><span class="line">    left: 20%;</span><br><span class="line">    top: 0;</span><br><span class="line">    margin: 0 0 0 -25px;</span><br><span class="line">&#125;</span><br><span class="line">.cbp_tmtimeline &gt; li .cbp_tmicon &gt;img &#123;</span><br><span class="line">    border-radius: 50%; </span><br><span class="line">    position: absolute; </span><br><span class="line">    top: 0px; </span><br><span class="line">    left: 0px;</span><br><span class="line">&#125;</span><br><span class="line">/* Example Media Queries */</span><br><span class="line">@media screen and (max-width: 65.375em) &#123;</span><br><span class="line">    .cbp_tmtimeline &gt; li .cbp_tmtime span:last-child &#123;</span><br><span class="line">        font-size: 3em;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@media screen and (max-width: 47.2em) &#123;</span><br><span class="line">    .cbp_tmtimeline:before &#123;</span><br><span class="line">        display: none;</span><br><span class="line">    &#125;</span><br><span class="line">    .cbp_tmtimeline &gt; li .cbp_tmtime &#123;</span><br><span class="line">        width: 100%;</span><br><span class="line">        position: relative;</span><br><span class="line">        padding: 0 0 20px 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .cbp_tmtimeline &gt; li .cbp_tmtime span &#123;</span><br><span class="line">        text-align: left;</span><br><span class="line">    &#125;</span><br><span class="line">    .cbp_tmtimeline &gt; li .cbp_tmlabel &#123;</span><br><span class="line">        margin: 0 0 30px 0;</span><br><span class="line">        padding: 1em;</span><br><span class="line">        font-weight: 400;</span><br><span class="line">        font-size: 95%;</span><br><span class="line">    &#125;</span><br><span class="line">    .cbp_tmtimeline &gt; li .cbp_tmlabel:after &#123;</span><br><span class="line">        right: auto;</span><br><span class="line">        left: 20px;</span><br><span class="line">        border-right-color: transparent;</span><br><span class="line">        border-bottom-color: #24a0f0;</span><br><span class="line">        top: -20px;</span><br><span class="line">    &#125;</span><br><span class="line">    .cbp_tmtimeline &gt; li:nth-child(odd) .cbp_tmlabel:after &#123;</span><br><span class="line">        border-right-color: transparent;</span><br><span class="line">        border-bottom-color: #7878f0;</span><br><span class="line">    &#125;</span><br><span class="line">    .cbp_tmtimeline &gt; li .cbp_tmicon &#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        float: right;</span><br><span class="line">        left: auto;</span><br><span class="line">        margin: -55px 5px 0 0px;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;** 垂直时间线CSS样式 *&#x2F;
+ 
+.cbp_tmtimeline &#123;
+    margin: 30px 0 0 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+&#125; 
+&#x2F;* The line *&#x2F;
+.cbp_tmtimeline:before &#123;
+    content: &#39;&#39;;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: #afdcf8;
+    left: 20%;
+    margin-left: -6px;
+&#125;
+&#x2F;* The date&#x2F;time *&#x2F;
+.cbp_tmtimeline &gt; li .cbp_tmtime &#123;
+    display: block;
+    width: 30%;
+    padding-right: 100px;
+    position: absolute;
+    color: #AAA;
+&#125;
+.cbp_tmtimeline &gt; li .cbp_tmtime span &#123;
+    display: block;
+    text-align: right;
+&#125;
+.cbp_tmtimeline &gt; li .cbp_tmtime span:first-child &#123;
+    font-size: 0.9em;
+    color: #bdd0db;
+&#125;
+.cbp_tmtimeline &gt; li .cbp_tmtime span:last-child &#123;
+    font-size: 2.9em;
+    color: #24a0f0;
+&#125;
+.cbp_tmtimeline &gt; li:nth-child(odd) .cbp_tmtime span:last-child &#123;
+    color: #7878f0;
+&#125;
+&#x2F;* Right content *&#x2F;
+.cbp_tmtimeline &gt; li .cbp_tmlabel &#123;
+    margin: 0 0 15px 25%;
+    background: #24a0f0;
+    color: #fff;
+    padding: 1em;
+    font-size: 3em;
+    font-weight: 300;
+    line-height: 1.4;
+    position: relative;
+    border-radius: 5px;
+&#125;
+.cbp_tmtimeline &gt; li:nth-child(odd) .cbp_tmlabel &#123;
+    background: #7878f0;
+&#125;
+.cbp_tmtimeline &gt; li .cbp_tmlabel h2 &#123; 
+    border-bottom: 0px;
+    border-top:1px dashed #FFF; 
+    font-size:16px; 
+    height: 24px; 
+    padding: 5px 3px 12px; 
+    margin:0px;
+&#125;
+.cbp_tmtimeline &gt; li .cbp_tmlabel h2 &gt; span &#123; 
+    font-size: 12px; 
+    float: right; 
+    text-align: center; 
+    line-height: 24px; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+&#125;
+&#x2F;* The triangle *&#x2F;
+.cbp_tmtimeline &gt; li .cbp_tmlabel:after &#123;
+    right: 100%;
+    border: solid transparent;
+    content: &quot; &quot;;
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-right-color: #24a0f0;
+    border-width: 10px;
+    top: 10px;
+&#125;
+.cbp_tmtimeline &gt; li:nth-child(odd) .cbp_tmlabel:after &#123;
+    border-right-color: #7878f0;
+&#125;
+&#x2F;* The icons *&#x2F;
+.cbp_tmtimeline &gt; li .cbp_tmicon &#123;
+    width: 48px;
+    height: 48px;
+    font-family: &#39;ecoico&#39;;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 48px;
+    line-height: 48px;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    color: #fff;
+    background: #46a4da;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #afdcf8;
+    text-align: center;
+    left: 20%;
+    top: 0;
+    margin: 0 0 0 -25px;
+&#125;
+.cbp_tmtimeline &gt; li .cbp_tmicon &gt;img &#123;
+    border-radius: 50%; 
+    position: absolute; 
+    top: 0px; 
+    left: 0px;
+&#125;
+&#x2F;* Example Media Queries *&#x2F;
+@media screen and (max-width: 65.375em) &#123;
+    .cbp_tmtimeline &gt; li .cbp_tmtime span:last-child &#123;
+        font-size: 3em;
+    &#125;
+&#125;
+@media screen and (max-width: 47.2em) &#123;
+    .cbp_tmtimeline:before &#123;
+        display: none;
+    &#125;
+    .cbp_tmtimeline &gt; li .cbp_tmtime &#123;
+        width: 100%;
+        position: relative;
+        padding: 0 0 20px 0;
+    &#125;
+    .cbp_tmtimeline &gt; li .cbp_tmtime span &#123;
+        text-align: left;
+    &#125;
+    .cbp_tmtimeline &gt; li .cbp_tmlabel &#123;
+        margin: 0 0 30px 0;
+        padding: 1em;
+        font-weight: 400;
+        font-size: 95%;
+    &#125;
+    .cbp_tmtimeline &gt; li .cbp_tmlabel:after &#123;
+        right: auto;
+        left: 20px;
+        border-right-color: transparent;
+        border-bottom-color: #24a0f0;
+        top: -20px;
+    &#125;
+    .cbp_tmtimeline &gt; li:nth-child(odd) .cbp_tmlabel:after &#123;
+        border-right-color: transparent;
+        border-bottom-color: #7878f0;
+    &#125;
+    .cbp_tmtimeline &gt; li .cbp_tmicon &#123;
+        position: relative;
+        float: right;
+        left: auto;
+        margin: -55px 5px 0 0px;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>把前面这些代码部署完成后就可以到word press后台添加一个说说页面</p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/06/1592883653-%E8%AF%B4%E8%AF%B42-1024x468.png"></p>
@@ -684,6 +912,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

@@ -382,6 +382,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -391,7 +394,8 @@
 <p>但有时候你如果想搞点其他，可以尝试购买一根usb转ttl线连接树莓派</p>
 <p>淘宝上大概八九块钱一根</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594431950-QRV19HPIY@2300L70L-1016x1024.jpg"></h2><h2 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h2><p>在安装好树莓派系统后，打开里内存卡，可以看到里面有一个文件叫config.txt，打开后在文件最后添加代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Fix UART</span><br><span class="line">enable_uart=1</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none"># Fix UART
+enable_uart&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>然后按照线名称将线接到树莓派上，记住txd和rxd反接即可，然后接3v和接地线连上去，如果后面显示打开树莓派ssh后显示电压过低，可以尝试把3v换为5v接上去</p>
 <p>把usb接到电脑上</p>
@@ -671,6 +675,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

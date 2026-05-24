@@ -358,16 +358,16 @@ traccar可以满足：
                                 <span class="chip bg-color">邮件</span>
                             </a>
                         
-                            <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
-                                <span class="chip bg-color">宝塔面板</span>
+                            <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
+                                <span class="chip bg-color">搬瓦工</span>
                             </a>
                         
                             <a href="/tags/%E5%AF%86%E7%A0%81/">
                                 <span class="chip bg-color">密码</span>
                             </a>
                         
-                            <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
-                                <span class="chip bg-color">搬瓦工</span>
+                            <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
+                                <span class="chip bg-color">宝塔面板</span>
                             </a>
                         
                             <a href="/tags/gps%E5%AE%9A%E4%BD%8D/">
@@ -419,6 +419,9 @@ traccar可以满足：
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -438,41 +441,68 @@ traccar可以满足：
 <h1 id="二、如何搭建traccar"><a href="#二、如何搭建traccar" class="headerlink" title="二、如何搭建traccar"></a>二、如何搭建traccar</h1><h3 id="1、购买vps"><a href="#1、购买vps" class="headerlink" title="1、购买vps"></a>1、购买vps</h3><p>首先traccar是搭建在VPS上的，当然也可以搭建在个人电脑上，但不推荐，所以这里主要介绍如何搭建在个人VPS上，所以首先需要有一台vps,我这里使用的是搬瓦工的VPS，如何购买搬瓦工VPS可以看我之前文章 <a target="_blank" rel="noopener" href="https://www.demon1630.cf/%e6%90%ac%e7%93%a6%e5%b7%a5vps%e8%b4%ad%e4%b9%b0/"><strong>如何购买搬瓦工VPS</strong></a></p>
 <h3 id="2、安装宝塔面板"><a href="#2、安装宝塔面板" class="headerlink" title="2、安装宝塔面板"></a>2、安装宝塔面板</h3><p>购买完vps后，最好安装上宝塔面板，方便后面对vps的管理，同时由于traccar安装需要安装数据库，使用宝塔面板安装会简单很多，宝塔面板安装可参考 文章 <a target="_blank" rel="noopener" href="https://www.demon1630.cf/vps%e5%ae%89%e8%a3%85%e5%ae%9d%e5%a1%94%e9%9d%a2%e6%9d%bf/"><strong>vps安装宝塔面板</strong></a></p>
 <h3 id="3、安装必要软件"><a href="#3、安装必要软件" class="headerlink" title="3、安装必要软件"></a>3、安装必要软件</h3><p>使用xshell或者putty远程登入vps，然后开始安装java配置软件，我vps是centos系统：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install jre</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">yum install jre<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="然后安装数据库，如果安装了宝塔面板，可以直接在宝塔面板中添加数据库即可：-数据库名字取traccar，用户名和密码自己记住。"><a href="#然后安装数据库，如果安装了宝塔面板，可以直接在宝塔面板中添加数据库即可：-数据库名字取traccar，用户名和密码自己记住。" class="headerlink" title="然后安装数据库，如果安装了宝塔面板，可以直接在宝塔面板中添加数据库即可： 数据库名字取traccar，用户名和密码自己记住。"></a>然后安装数据库，如果安装了宝塔面板，可以直接在宝塔面板中添加数据库即可： <a target="_blank" rel="noopener" href="https://www.demon1630.cf/traccar-%e4%b8%80%e6%ac%be%e5%bc%80%e6%ba%90%e7%9a%84gps%e5%ae%9a%e4%bd%8d%e7%b3%bb%e7%bb%9f%e6%90%ad%e5%bb%ba%e6%95%99%e7%a8%8b/1587182268-traccar3/"><img src="https://www.demon1630.cf/wp-content/uploads/2020/04/1587182268-traccar3-1024x479.png"></a>数据库名字取traccar，用户名和密码自己记住。</h3><h3 id="4、服务端安装traccar"><a href="#4、服务端安装traccar" class="headerlink" title="4、服务端安装traccar"></a>4、服务端安装traccar</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/traccar/traccar/releases/download/v4.8/traccar-linux-64-4.8.zip</span><br></pre></td></tr></table></figure>
+<h3 id="然后安装数据库，如果安装了宝塔面板，可以直接在宝塔面板中添加数据库即可：-数据库名字取traccar，用户名和密码自己记住。"><a href="#然后安装数据库，如果安装了宝塔面板，可以直接在宝塔面板中添加数据库即可：-数据库名字取traccar，用户名和密码自己记住。" class="headerlink" title="然后安装数据库，如果安装了宝塔面板，可以直接在宝塔面板中添加数据库即可： 数据库名字取traccar，用户名和密码自己记住。"></a>然后安装数据库，如果安装了宝塔面板，可以直接在宝塔面板中添加数据库即可： <a target="_blank" rel="noopener" href="https://www.demon1630.cf/traccar-%e4%b8%80%e6%ac%be%e5%bc%80%e6%ba%90%e7%9a%84gps%e5%ae%9a%e4%bd%8d%e7%b3%bb%e7%bb%9f%e6%90%ad%e5%bb%ba%e6%95%99%e7%a8%8b/1587182268-traccar3/"><img src="https://www.demon1630.cf/wp-content/uploads/2020/04/1587182268-traccar3-1024x479.png"></a>数据库名字取traccar，用户名和密码自己记住。</h3><h3 id="4、服务端安装traccar"><a href="#4、服务端安装traccar" class="headerlink" title="4、服务端安装traccar"></a>4、服务端安装traccar</h3><pre class="line-numbers language-none"><code class="language-none">wget https:&#x2F;&#x2F;github.com&#x2F;traccar&#x2F;traccar&#x2F;releases&#x2F;download&#x2F;v4.8&#x2F;traccar-linux-64-4.8.zip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip traccar-linux-*.zip</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">unzip traccar-linux-*.zip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">安装traccar</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">安装traccar
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./traccar.run</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">.&#x2F;traccar.run<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>创建配置文件 “traccar.xml”</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano traccar.xml</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">nano traccar.xml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">配置如下内容：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">配置如下内容：
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&#x27;1.0&#x27; encoding=&#x27;UTF-8&#x27;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE properties SYSTEM &#x27;http://java.sun.com/dtd/properties.dtd&#x27;&gt;</span><br><span class="line"></span><br><span class="line">&lt;properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;entry key=&quot;config.default&quot;&gt;./conf/default.xml&lt;/entry&gt;</span><br><span class="line"></span><br><span class="line">    &lt;entry key=&#x27;web.port&#x27;&gt;8082&lt;/entry&gt;</span><br><span class="line"></span><br><span class="line">    &lt;entry key=&#x27;geocoder.enable&#x27;&gt;false&lt;/entry&gt;</span><br><span class="line"></span><br><span class="line">    &lt;entry key=&#x27;database.driver&#x27;&gt;com.mysql.jdbc.Driver&lt;/entry&gt;</span><br><span class="line">    &lt;entry key=&#x27;database.url&#x27;&gt;jdbc:mysql://localhost/traccar?allowMultiQueries=true&amp;amp;autoReconnect=true&amp;amp;useUnicode=yes&amp;amp;characterEncoding=UTF-8&amp;amp;sessionVariables=sql_mode=&#x27;&#x27;&lt;/entry&gt;</span><br><span class="line">    &lt;entry key=&#x27;database.user&#x27;&gt;你的数据库用户名&lt;/entry&gt;</span><br><span class="line">    &lt;entry key=&#x27;database.password&#x27;&gt;你的MySQL密码&lt;/entry&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;entry key=&#x27;server.timeout&#x27;&gt;120&lt;/entry&gt;</span><br><span class="line"></span><br><span class="line">&lt;/properties&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&lt;?xml version&#x3D;&#39;1.0&#39; encoding&#x3D;&#39;UTF-8&#39;?&gt;
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">替换默认配置文件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+&lt;!DOCTYPE properties SYSTEM &#39;http:&#x2F;&#x2F;java.sun.com&#x2F;dtd&#x2F;properties.dtd&#39;&gt;
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp traccar.xml /opt/traccar/conf/</span><br></pre></td></tr></table></figure>
+&lt;properties&gt;
+
+    &lt;entry key&#x3D;&quot;config.default&quot;&gt;.&#x2F;conf&#x2F;default.xml&lt;&#x2F;entry&gt;
+
+    &lt;entry key&#x3D;&#39;web.port&#39;&gt;8082&lt;&#x2F;entry&gt;
+
+    &lt;entry key&#x3D;&#39;geocoder.enable&#39;&gt;false&lt;&#x2F;entry&gt;
+
+    &lt;entry key&#x3D;&#39;database.driver&#39;&gt;com.mysql.jdbc.Driver&lt;&#x2F;entry&gt;
+    &lt;entry key&#x3D;&#39;database.url&#39;&gt;jdbc:mysql:&#x2F;&#x2F;localhost&#x2F;traccar?allowMultiQueries&#x3D;true&amp;autoReconnect&#x3D;true&amp;useUnicode&#x3D;yes&amp;characterEncoding&#x3D;UTF-8&amp;sessionVariables&#x3D;sql_mode&#x3D;&#39;&#39;&lt;&#x2F;entry&gt;
+    &lt;entry key&#x3D;&#39;database.user&#39;&gt;你的数据库用户名&lt;&#x2F;entry&gt;
+    &lt;entry key&#x3D;&#39;database.password&#39;&gt;你的MySQL密码&lt;&#x2F;entry&gt;
+    
+    &lt;entry key&#x3D;&#39;server.timeout&#39;&gt;120&lt;&#x2F;entry&gt;
+
+&lt;&#x2F;properties&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">替换默认配置文件
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">cp traccar.xml &#x2F;opt&#x2F;traccar&#x2F;conf&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>删除安装压缩包  （可选）安装完就用不到安装包了，删除节省服务器空间</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -f traccar.run README.txt traccar-linux-*.zip</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">rm -f traccar.run README.txt traccar-linux-*.zip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">启动traccar服务</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">启动traccar服务
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start traccar.service</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">sudo systemctl start traccar.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">查看启动状态</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">查看启动状态
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status traccar.service</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">sudo systemctl status traccar.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">如果看到active即表示启动成功</span><br><span class="line">之后这时候打开浏览器，输入ip:8082进入网站配置</span><br><span class="line">可以把语言配置为中文，默认email和密码是admin，登入后可以尽快修改，此时完成了服务端traccar的安装配置</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">如果看到active即表示启动成功
+之后这时候打开浏览器，输入ip:8082进入网站配置
+可以把语言配置为中文，默认email和密码是admin，登入后可以尽快修改，此时完成了服务端traccar的安装配置
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="5、用户端安装配置traccar"><a href="#5、用户端安装配置traccar" class="headerlink" title="5、用户端安装配置traccar"></a>5、用户端安装配置traccar</h3><p>traccar有安卓和苹果客户端，可以到官网下载：<a target="_blank" rel="noopener" href="https://www.traccar.org/client">https://www.traccar.org/client</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.demon1630.cf/traccar-%e4%b8%80%e6%ac%be%e5%bc%80%e6%ba%90%e7%9a%84gps%e5%ae%9a%e4%bd%8d%e7%b3%bb%e7%bb%9f%e6%90%ad%e5%bb%ba%e6%95%99%e7%a8%8b/1587183413-traccar5/"><img src="https://www.demon1630.cf/wp-content/uploads/2020/04/1587183413-traccar5-1024x462.png"></a>安卓端还有隐藏版，就是安装配置完后手机上看不到这个软件 :huaji3:</p>
@@ -484,13 +514,25 @@ traccar可以满足：
 <p>如果后面有配置电子围栏等，可以配合邮件通知来做到进出电子围栏发邮件通知，参考官方邮件通知教程</p>
 <p><a target="_blank" rel="noopener" href="https://www.traccar.org/notifications/">https://www.traccar.org/notifications/</a></p>
 <p>找到我们之前在目录&#x2F;opt&#x2F;traccar&#x2F;conf&#x2F;下面配置的traccar.xml文件，在里面添加这一部分内容，里面的smtp主机和账号密码替换为自己的，可以用163或qq邮箱都可以</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;entry key=&#x27;mail.smtp.host&#x27;&gt;smtp.gmail.com&lt;/entry&gt;</span><br><span class="line">&lt;entry key=&#x27;mail.smtp.port&#x27;&gt;465&lt;/entry&gt;</span><br><span class="line">&lt;entry key=&#x27;mail.smtp.ssl.enable&#x27;&gt;true&lt;/entry&gt;</span><br><span class="line">&lt;entry key=&#x27;mail.smtp.from&#x27;&gt;traccar@gmail.com&lt;/entry&gt;</span><br><span class="line">&lt;entry key=&#x27;mail.smtp.auth&#x27;&gt;true&lt;/entry&gt;</span><br><span class="line">&lt;entry key=&#x27;mail.smtp.username&#x27;&gt;traccar@gmail.com&lt;/entry&gt;</span><br><span class="line">&lt;entry key=&#x27;mail.smtp.password&#x27;&gt;password&lt;/entry&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&lt;entry key&#x3D;&#39;mail.smtp.host&#39;&gt;smtp.gmail.com&lt;&#x2F;entry&gt;
+&lt;entry key&#x3D;&#39;mail.smtp.port&#39;&gt;465&lt;&#x2F;entry&gt;
+&lt;entry key&#x3D;&#39;mail.smtp.ssl.enable&#39;&gt;true&lt;&#x2F;entry&gt;
+&lt;entry key&#x3D;&#39;mail.smtp.from&#39;&gt;traccar@gmail.com&lt;&#x2F;entry&gt;
+&lt;entry key&#x3D;&#39;mail.smtp.auth&#39;&gt;true&lt;&#x2F;entry&gt;
+&lt;entry key&#x3D;&#39;mail.smtp.username&#39;&gt;traccar@gmail.com&lt;&#x2F;entry&gt;
+&lt;entry key&#x3D;&#39;mail.smtp.password&#39;&gt;password&lt;&#x2F;entry&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>对于163邮箱可以参考如下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;entry key=&#x27;mail.smtp.host&#x27;&gt;smtp.163.com&lt;/entry&gt;</span><br><span class="line">    &lt;entry key=&#x27;mail.smtp.port&#x27;&gt;465&lt;/entry&gt;</span><br><span class="line">    &lt;entry key=&#x27;mail.smtp.ssl.enable&#x27;&gt;true&lt;/entry&gt;</span><br><span class="line">    &lt;entry key=&#x27;mail.smtp.from&#x27;&gt;你自己的163邮箱账号&lt;/entry&gt;</span><br><span class="line">    &lt;entry key=&#x27;mail.smtp.auth&#x27;&gt;true&lt;/entry&gt;</span><br><span class="line">    &lt;entry key=&#x27;mail.smtp.username&#x27;&gt;你自己的163邮箱账号&lt;/entry&gt;</span><br><span class="line">    &lt;entry key=&#x27;mail.smtp.password&#x27;&gt;申请的临时smtp密码&lt;/entry&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&lt;entry key&#x3D;&#39;mail.smtp.host&#39;&gt;smtp.163.com&lt;&#x2F;entry&gt;
+    &lt;entry key&#x3D;&#39;mail.smtp.port&#39;&gt;465&lt;&#x2F;entry&gt;
+    &lt;entry key&#x3D;&#39;mail.smtp.ssl.enable&#39;&gt;true&lt;&#x2F;entry&gt;
+    &lt;entry key&#x3D;&#39;mail.smtp.from&#39;&gt;你自己的163邮箱账号&lt;&#x2F;entry&gt;
+    &lt;entry key&#x3D;&#39;mail.smtp.auth&#39;&gt;true&lt;&#x2F;entry&gt;
+    &lt;entry key&#x3D;&#39;mail.smtp.username&#39;&gt;你自己的163邮箱账号&lt;&#x2F;entry&gt;
+    &lt;entry key&#x3D;&#39;mail.smtp.password&#39;&gt;申请的临时smtp密码&lt;&#x2F;entry&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>保存，然后重启一下traccar服务：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart traccar.service</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">sudo systemctl restart traccar.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后回到自己的traccar后台，把账户的邮箱修改为自己想接收通知的邮箱，然后到通知目录下，选择类型为自己想在什么情况下触发通知，通道选择邮件，勾选上所有设备，然后点击测试通道进行测试，如果可以接收到通知邮件则表示正常，保存即可</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20230507233815.png"></p>
@@ -574,16 +616,16 @@ traccar可以满足：
                                     <span class="chip bg-color">邮件</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
-                                    <span class="chip bg-color">宝塔面板</span>
+                                <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
+                                    <span class="chip bg-color">搬瓦工</span>
                                 </a>
                             
                                 <a href="/tags/%E5%AF%86%E7%A0%81/">
                                     <span class="chip bg-color">密码</span>
                                 </a>
                             
-                                <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
-                                    <span class="chip bg-color">搬瓦工</span>
+                                <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
+                                    <span class="chip bg-color">宝塔面板</span>
                                 </a>
                             
                                 <a href="/tags/gps%E5%AE%9A%E4%BD%8D/">
@@ -788,6 +830,9 @@ traccar可以满足：
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

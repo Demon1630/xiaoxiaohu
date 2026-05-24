@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="鼠标点击文字特效, 小小胡">
     <meta name="description" content="之前看到有人的博客里鼠标点击的时候会出现文字的特效，当时非常心动，所以经过一番搜索，找到了这段代码，代码如下，将其插入到footer.php 中就行：
-12345678910111213141516171819202122232425262">
+&amp;lt;script type&amp;#x3D;&amp;quot;text&amp;#x2F;javascr">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -381,13 +381,55 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>之前看到有人的博客里鼠标点击的时候会出现文字的特效，当时非常心动，所以经过一番搜索，找到了这段代码，代码如下，将其插入到footer.php 中就行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    /* 鼠标特效 */</span><br><span class="line">    var a_idx = 0;</span><br><span class="line">    jQuery(document).ready(function ($) &#123;</span><br><span class="line">        $(&quot;body&quot;).click(function (e) &#123;</span><br><span class="line">            var a = [</span><br><span class="line">                 &quot;老婆&quot;, &quot;爱你&quot;, &quot;么么哒&quot;</span><br><span class="line">            ];</span><br><span class="line">            var b = [</span><br><span class="line">                &quot;#FFF68F&quot;, &quot;#FFBBFF&quot;, &quot;#FF0000&quot;, &quot;#FF00FF&quot;, &quot;#F08080&quot;,</span><br><span class="line">                &quot;#008000&quot;, &quot;#7FFFAA&quot;, &quot;#0000CD&quot;, &quot;#0000FF&quot;, &quot;#080808&quot;</span><br><span class="line">            ];</span><br><span class="line">            var a_index = Math.floor((Math.random() * a.length));</span><br><span class="line">            var b_index = Math.floor((Math.random() * b.length));</span><br><span class="line"> </span><br><span class="line">            var color = b[b_index];</span><br><span class="line">            var $i = $(&quot;&lt;span/&gt;&quot;).text(a[a_index]);</span><br><span class="line">            /* a_idx = (a_idx + 1) % a.length; */</span><br><span class="line">            var x = e.pageX,</span><br><span class="line">                y = e.pageY;</span><br><span class="line"> </span><br><span class="line">            $i.css(&#123;</span><br><span class="line">                &quot;z-index&quot;: 999999999999999999999999999999999999999999999999999999999999999999999,</span><br><span class="line">                &quot;top&quot;: y - 20,</span><br><span class="line">                &quot;left&quot;: x,</span><br><span class="line">                &quot;position&quot;: &quot;absolute&quot;,</span><br><span class="line">                &quot;font-weight&quot;: &quot;bold&quot;,</span><br><span class="line">                &quot;color&quot;: color,</span><br><span class="line">            &#125;);</span><br><span class="line">            $(&quot;body&quot;).append($i);</span><br><span class="line">            $i.animate(&#123;</span><br><span class="line">                &quot;top&quot;: y - 180,</span><br><span class="line">                &quot;opacity&quot;: 0</span><br><span class="line">            &#125;, 1500, function () &#123;</span><br><span class="line">                $i.remove();</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;
+    &#x2F;* 鼠标特效 *&#x2F;
+    var a_idx &#x3D; 0;
+    jQuery(document).ready(function ($) &#123;
+        $(&quot;body&quot;).click(function (e) &#123;
+            var a &#x3D; [
+                 &quot;老婆&quot;, &quot;爱你&quot;, &quot;么么哒&quot;
+            ];
+            var b &#x3D; [
+                &quot;#FFF68F&quot;, &quot;#FFBBFF&quot;, &quot;#FF0000&quot;, &quot;#FF00FF&quot;, &quot;#F08080&quot;,
+                &quot;#008000&quot;, &quot;#7FFFAA&quot;, &quot;#0000CD&quot;, &quot;#0000FF&quot;, &quot;#080808&quot;
+            ];
+            var a_index &#x3D; Math.floor((Math.random() * a.length));
+            var b_index &#x3D; Math.floor((Math.random() * b.length));
+ 
+            var color &#x3D; b[b_index];
+            var $i &#x3D; $(&quot;&lt;span&#x2F;&gt;&quot;).text(a[a_index]);
+            &#x2F;* a_idx &#x3D; (a_idx + 1) % a.length; *&#x2F;
+            var x &#x3D; e.pageX,
+                y &#x3D; e.pageY;
+ 
+            $i.css(&#123;
+                &quot;z-index&quot;: 999999999999999999999999999999999999999999999999999999999999999999999,
+                &quot;top&quot;: y - 20,
+                &quot;left&quot;: x,
+                &quot;position&quot;: &quot;absolute&quot;,
+                &quot;font-weight&quot;: &quot;bold&quot;,
+                &quot;color&quot;: color,
+            &#125;);
+            $(&quot;body&quot;).append($i);
+            $i.animate(&#123;
+                &quot;top&quot;: y - 180,
+                &quot;opacity&quot;: 0
+            &#125;, 1500, function () &#123;
+                $i.remove();
+            &#125;);
+        &#125;);
+    &#125;);
+&lt;&#x2F;script&gt;
+ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>:huaji3:效果如<a target="_blank" rel="noopener" href="https://www,demon1630.cf/">首页</a>所示，文字颜色啥的都可以自己修改，不需要使用插件，还是比较方便的</p>
 
@@ -652,6 +694,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

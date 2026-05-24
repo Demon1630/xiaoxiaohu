@@ -398,6 +398,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -423,7 +426,45 @@
 <p>获取企业ID，在我的企业中可以看到</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614190550.png"></p>
 <p>开始编写python程序</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">from  fake_useragent import UserAgent</span><br><span class="line"></span><br><span class="line">def send_wechat(title,text,detal_url):</span><br><span class="line"></span><br><span class="line">    get_acs_token_url = &#x27;https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=你的企业ID&amp;corpsecret=应用的Secret&#x27;</span><br><span class="line"></span><br><span class="line">    access = requests.get(url=get_acs_token_url)</span><br><span class="line">    access_token = eval(access.text)[&#x27;access_token&#x27;]</span><br><span class="line"></span><br><span class="line">    url = f&#x27;https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=&#123;access_token&#125;&#x27;</span><br><span class="line">    print(url)</span><br><span class="line"></span><br><span class="line">    headers = &#123;</span><br><span class="line">        &#x27;User-Agent&#x27;: UserAgent().random</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    key = &#123;</span><br><span class="line">        &quot;touser&quot;: &quot;@all&quot;,</span><br><span class="line">        # &quot;toparty&quot;: &quot;PartyID1|PartyID2&quot;,</span><br><span class="line">        # &quot;totag&quot;: &quot;TagID1 | TagID2&quot;,</span><br><span class="line">        &quot;msgtype&quot;: &quot;textcard&quot;,</span><br><span class="line">        &quot;agentid&quot;: 应用ID,</span><br><span class="line">        &quot;textcard&quot;: &#123;</span><br><span class="line">            &quot;title&quot;: title,</span><br><span class="line">            &quot;description&quot;: text,</span><br><span class="line">            &quot;url&quot;: detal_url,</span><br><span class="line">            &quot;btntxt&quot;: &quot;更多&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;safe&quot;: 0,</span><br><span class="line">        &quot;enable_id_trans&quot;: 0,</span><br><span class="line">        &quot;enable_duplicate_check&quot;: 0,</span><br><span class="line">        &quot;duplicate_check_interval&quot;: 1800</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    res = requests.post(url=url,headers=headers,json=key)</span><br><span class="line">    # print(res.status_code)</span><br><span class="line">    # print(res.text)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+from  fake_useragent import UserAgent
+
+def send_wechat(title,text,detal_url):
+
+    get_acs_token_url &#x3D; &#39;https:&#x2F;&#x2F;qyapi.weixin.qq.com&#x2F;cgi-bin&#x2F;gettoken?corpid&#x3D;你的企业ID&amp;corpsecret&#x3D;应用的Secret&#39;
+
+    access &#x3D; requests.get(url&#x3D;get_acs_token_url)
+    access_token &#x3D; eval(access.text)[&#39;access_token&#39;]
+
+    url &#x3D; f&#39;https:&#x2F;&#x2F;qyapi.weixin.qq.com&#x2F;cgi-bin&#x2F;message&#x2F;send?access_token&#x3D;&#123;access_token&#125;&#39;
+    print(url)
+
+    headers &#x3D; &#123;
+        &#39;User-Agent&#39;: UserAgent().random
+    &#125;
+
+    key &#x3D; &#123;
+        &quot;touser&quot;: &quot;@all&quot;,
+        # &quot;toparty&quot;: &quot;PartyID1|PartyID2&quot;,
+        # &quot;totag&quot;: &quot;TagID1 | TagID2&quot;,
+        &quot;msgtype&quot;: &quot;textcard&quot;,
+        &quot;agentid&quot;: 应用ID,
+        &quot;textcard&quot;: &#123;
+            &quot;title&quot;: title,
+            &quot;description&quot;: text,
+            &quot;url&quot;: detal_url,
+            &quot;btntxt&quot;: &quot;更多&quot;
+        &#125;,
+        &quot;safe&quot;: 0,
+        &quot;enable_id_trans&quot;: 0,
+        &quot;enable_duplicate_check&quot;: 0,
+        &quot;duplicate_check_interval&quot;: 1800
+    &#125;
+
+    res &#x3D; requests.post(url&#x3D;url,headers&#x3D;headers,json&#x3D;key)
+    # print(res.status_code)
+    # print(res.text)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>修改的地方主要是这三个地方，修改为自己的就行：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210614192614.png"></p>
@@ -714,6 +755,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

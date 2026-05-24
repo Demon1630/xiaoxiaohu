@@ -393,6 +393,9 @@ vps使用nextcloud搭建个人私有云盘虽然很安全方便，但是由于�
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -408,7 +411,8 @@ vps使用nextcloud搭建个人私有云盘虽然很安全方便，但是由于�
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/11/1604306097-nextcloud3-1024x347.png"></p>
 <p>进入外部存储可能会发现提示：**“smbclient” 未安装。无法挂载 “SMB &#x2F; CIFS”, “SMB &#x2F; CIFS 使用 OC 登录信息”。请联系管理员安装。**需要进入SSH安装smbclient。</p>
 <p>进入SSH运行命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install libsmbclient libsmbclient-devel</span><br><span class="line">pecl install smbclient</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">yum install libsmbclient libsmbclient-devel
+pecl install smbclient<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>**注意：**安装之前进入宝塔面板→php管理→禁用函数里面把“exec”“popen”“putenv”删除不然会安装不上</p>
 <p>如果这样出现pecl未安装可以参考文章<a target="_blank" rel="noopener" href="https://www.cnblogs.com/sandea/p/9395556.html">https://www.cnblogs.com/sandea/p/9395556.html</a>进行pecl的安装</p>
@@ -683,6 +687,9 @@ vps使用nextcloud搭建个人私有云盘虽然很安全方便，但是由于�
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

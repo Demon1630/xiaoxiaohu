@@ -390,6 +390,9 @@ import openpyxl
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -411,7 +414,103 @@ import openpyxl
 <p>work_sheet.cell(row&#x3D;2, column&#x3D;3).number_format &#x3D; ‘0.000’</p>
 <p> </p>
 <p>三、具体详细：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"># Copyright (c) 2010-2021 openpyxl</span><br><span class="line"></span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line">from openpyxl.descriptors import (</span><br><span class="line">    String,</span><br><span class="line">    Sequence,</span><br><span class="line">    Integer,</span><br><span class="line">)</span><br><span class="line">from openpyxl.descriptors.serialisable import Serialisable</span><br><span class="line"></span><br><span class="line">BUILTIN_FORMATS = &#123;</span><br><span class="line">    0: &#x27;General&#x27;,</span><br><span class="line">    1: &#x27;0&#x27;,</span><br><span class="line">    2: &#x27;0.00&#x27;,</span><br><span class="line">    3: &#x27;#,##0&#x27;,</span><br><span class="line">    4: &#x27;#,##0.00&#x27;,</span><br><span class="line">    5: &#x27;&quot;$&quot;#,##0_);(&quot;$&quot;#,##0)&#x27;,</span><br><span class="line">    6: &#x27;&quot;$&quot;#,##0_);[Red](&quot;$&quot;#,##0)&#x27;,</span><br><span class="line">    7: &#x27;&quot;$&quot;#,##0.00_);(&quot;$&quot;#,##0.00)&#x27;,</span><br><span class="line">    8: &#x27;&quot;$&quot;#,##0.00_);[Red](&quot;$&quot;#,##0.00)&#x27;,</span><br><span class="line">    9: &#x27;0%&#x27;,</span><br><span class="line">    10: &#x27;0.00%&#x27;,</span><br><span class="line">    11: &#x27;0.00E+00&#x27;,</span><br><span class="line">    12: &#x27;# ?/?&#x27;,</span><br><span class="line">    13: &#x27;# ??/??&#x27;,</span><br><span class="line">    14: &#x27;mm-dd-yy&#x27;,</span><br><span class="line">    15: &#x27;d-mmm-yy&#x27;,</span><br><span class="line">    16: &#x27;d-mmm&#x27;,</span><br><span class="line">    17: &#x27;mmm-yy&#x27;,</span><br><span class="line">    18: &#x27;h:mm AM/PM&#x27;,</span><br><span class="line">    19: &#x27;h:mm:ss AM/PM&#x27;,</span><br><span class="line">    20: &#x27;h:mm&#x27;,</span><br><span class="line">    21: &#x27;h:mm:ss&#x27;,</span><br><span class="line">    22: &#x27;m/d/yy h:mm&#x27;,</span><br><span class="line"></span><br><span class="line">    37: &#x27;#,##0_);(#,##0)&#x27;,</span><br><span class="line">    38: &#x27;#,##0_);[Red](#,##0)&#x27;,</span><br><span class="line">    39: &#x27;#,##0.00_);(#,##0.00)&#x27;,</span><br><span class="line">    40: &#x27;#,##0.00_);[Red](#,##0.00)&#x27;,</span><br><span class="line"></span><br><span class="line">    41: r&#x27;_(* #,##0_);_(* \(#,##0\);_(* &quot;-&quot;_);_(@_)&#x27;,</span><br><span class="line">    42: r&#x27;_(&quot;$&quot;* #,##0_);_(&quot;$&quot;* \(#,##0\);_(&quot;$&quot;* &quot;-&quot;_);_(@_)&#x27;,</span><br><span class="line">    43: r&#x27;_(* #,##0.00_);_(* \(#,##0.00\);_(* &quot;-&quot;??_);_(@_)&#x27;,</span><br><span class="line"></span><br><span class="line">    44: r&#x27;_(&quot;$&quot;* #,##0.00_)_(&quot;$&quot;* \(#,##0.00\)_(&quot;$&quot;* &quot;-&quot;??_)_(@_)&#x27;,</span><br><span class="line">    45: &#x27;mm:ss&#x27;,</span><br><span class="line">    46: &#x27;[h]:mm:ss&#x27;,</span><br><span class="line">    47: &#x27;mmss.0&#x27;,</span><br><span class="line">    48: &#x27;##0.0E+0&#x27;,</span><br><span class="line">    49: &#x27;@&#x27;, &#125;</span><br><span class="line"></span><br><span class="line">BUILTIN_FORMATS_MAX_SIZE = 164</span><br><span class="line">BUILTIN_FORMATS_REVERSE = dict(</span><br><span class="line">        [(value, key) for key, value in BUILTIN_FORMATS.items()])</span><br><span class="line"></span><br><span class="line">FORMAT_GENERAL = BUILTIN_FORMATS[0]</span><br><span class="line">FORMAT_TEXT = BUILTIN_FORMATS[49]</span><br><span class="line">FORMAT_NUMBER = BUILTIN_FORMATS[1]</span><br><span class="line">FORMAT_NUMBER_00 = BUILTIN_FORMATS[2]</span><br><span class="line">FORMAT_NUMBER_COMMA_SEPARATED1 = BUILTIN_FORMATS[4]</span><br><span class="line">FORMAT_NUMBER_COMMA_SEPARATED2 = &#x27;#,##0.00_-&#x27;</span><br><span class="line">FORMAT_PERCENTAGE = BUILTIN_FORMATS[9]</span><br><span class="line">FORMAT_PERCENTAGE_00 = BUILTIN_FORMATS[10]</span><br><span class="line">FORMAT_DATE_YYYYMMDD2 = &#x27;yyyy-mm-dd&#x27;</span><br><span class="line">FORMAT_DATE_YYMMDD = &#x27;yy-mm-dd&#x27;</span><br><span class="line">FORMAT_DATE_DDMMYY = &#x27;dd/mm/yy&#x27;</span><br><span class="line">FORMAT_DATE_DMYSLASH = &#x27;d/m/y&#x27;</span><br><span class="line">FORMAT_DATE_DMYMINUS = &#x27;d-m-y&#x27;</span><br><span class="line">FORMAT_DATE_DMMINUS = &#x27;d-m&#x27;</span><br><span class="line">FORMAT_DATE_MYMINUS = &#x27;m-y&#x27;</span><br><span class="line">FORMAT_DATE_XLSX14 = BUILTIN_FORMATS[14]</span><br><span class="line">FORMAT_DATE_XLSX15 = BUILTIN_FORMATS[15]</span><br><span class="line">FORMAT_DATE_XLSX16 = BUILTIN_FORMATS[16]</span><br><span class="line">FORMAT_DATE_XLSX17 = BUILTIN_FORMATS[17]</span><br><span class="line">FORMAT_DATE_XLSX22 = BUILTIN_FORMATS[22]</span><br><span class="line">FORMAT_DATE_DATETIME = &#x27;yyyy-mm-dd h:mm:ss&#x27;</span><br><span class="line">FORMAT_DATE_TIME1 = BUILTIN_FORMATS[18]</span><br><span class="line">FORMAT_DATE_TIME2 = BUILTIN_FORMATS[19]</span><br><span class="line">FORMAT_DATE_TIME3 = BUILTIN_FORMATS[20]</span><br><span class="line">FORMAT_DATE_TIME4 = BUILTIN_FORMATS[21]</span><br><span class="line">FORMAT_DATE_TIME5 = BUILTIN_FORMATS[45]</span><br><span class="line">FORMAT_DATE_TIME6 = BUILTIN_FORMATS[21]</span><br><span class="line">FORMAT_DATE_TIME7 = &#x27;i:s.S&#x27;</span><br><span class="line">FORMAT_DATE_TIME8 = &#x27;h:mm:ss@&#x27;</span><br><span class="line">FORMAT_DATE_TIMEDELTA = &#x27;[hh]:mm:ss&#x27;</span><br><span class="line">FORMAT_DATE_YYMMDDSLASH = &#x27;yy/mm/dd@&#x27;</span><br><span class="line">FORMAT_CURRENCY_USD_SIMPLE = &#x27;&quot;$&quot;#,##0.00_-&#x27;</span><br><span class="line">FORMAT_CURRENCY_USD = &#x27;$#,##0_-&#x27;</span><br><span class="line">FORMAT_CURRENCY_EUR_SIMPLE = &#x27;[$EUR ]#,##0.00_-&#x27;</span><br><span class="line"></span><br><span class="line">COLORS = r&quot;\[(BLACK|BLUE|CYAN|GREEN|MAGENTA|RED|WHITE|YELLOW)\]&quot;</span><br><span class="line">LITERAL_GROUP = r&#x27;&quot;.*?&quot;&#x27; # anything in quotes</span><br><span class="line">LOCALE_GROUP = r&#x27;\[(?!hh?\]|mm?\]|ss?\])[^\]]*\]&#x27; # anything in square brackets, except hours or minutes or seconds</span><br><span class="line">STRIP_RE = re.compile(f&quot;&#123;LITERAL_GROUP&#125;|&#123;LOCALE_GROUP&#125;&quot;)</span><br><span class="line">TIMEDELTA_RE = re.compile(r&#x27;\[hh?\](:mm(:ss(\.0*)?)?)?|\[mm?\](:ss(\.0*)?)?|\[ss?\](\.0*)?&#x27;, re.I)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none"># Copyright (c) 2010-2021 openpyxl
+
+import re
+
+from openpyxl.descriptors import (
+    String,
+    Sequence,
+    Integer,
+)
+from openpyxl.descriptors.serialisable import Serialisable
+
+BUILTIN_FORMATS &#x3D; &#123;
+    0: &#39;General&#39;,
+    1: &#39;0&#39;,
+    2: &#39;0.00&#39;,
+    3: &#39;#,##0&#39;,
+    4: &#39;#,##0.00&#39;,
+    5: &#39;&quot;$&quot;#,##0_);(&quot;$&quot;#,##0)&#39;,
+    6: &#39;&quot;$&quot;#,##0_);[Red](&quot;$&quot;#,##0)&#39;,
+    7: &#39;&quot;$&quot;#,##0.00_);(&quot;$&quot;#,##0.00)&#39;,
+    8: &#39;&quot;$&quot;#,##0.00_);[Red](&quot;$&quot;#,##0.00)&#39;,
+    9: &#39;0%&#39;,
+    10: &#39;0.00%&#39;,
+    11: &#39;0.00E+00&#39;,
+    12: &#39;# ?&#x2F;?&#39;,
+    13: &#39;# ??&#x2F;??&#39;,
+    14: &#39;mm-dd-yy&#39;,
+    15: &#39;d-mmm-yy&#39;,
+    16: &#39;d-mmm&#39;,
+    17: &#39;mmm-yy&#39;,
+    18: &#39;h:mm AM&#x2F;PM&#39;,
+    19: &#39;h:mm:ss AM&#x2F;PM&#39;,
+    20: &#39;h:mm&#39;,
+    21: &#39;h:mm:ss&#39;,
+    22: &#39;m&#x2F;d&#x2F;yy h:mm&#39;,
+
+    37: &#39;#,##0_);(#,##0)&#39;,
+    38: &#39;#,##0_);[Red](#,##0)&#39;,
+    39: &#39;#,##0.00_);(#,##0.00)&#39;,
+    40: &#39;#,##0.00_);[Red](#,##0.00)&#39;,
+
+    41: r&#39;_(* #,##0_);_(* \(#,##0\);_(* &quot;-&quot;_);_(@_)&#39;,
+    42: r&#39;_(&quot;$&quot;* #,##0_);_(&quot;$&quot;* \(#,##0\);_(&quot;$&quot;* &quot;-&quot;_);_(@_)&#39;,
+    43: r&#39;_(* #,##0.00_);_(* \(#,##0.00\);_(* &quot;-&quot;??_);_(@_)&#39;,
+
+    44: r&#39;_(&quot;$&quot;* #,##0.00_)_(&quot;$&quot;* \(#,##0.00\)_(&quot;$&quot;* &quot;-&quot;??_)_(@_)&#39;,
+    45: &#39;mm:ss&#39;,
+    46: &#39;[h]:mm:ss&#39;,
+    47: &#39;mmss.0&#39;,
+    48: &#39;##0.0E+0&#39;,
+    49: &#39;@&#39;, &#125;
+
+BUILTIN_FORMATS_MAX_SIZE &#x3D; 164
+BUILTIN_FORMATS_REVERSE &#x3D; dict(
+        [(value, key) for key, value in BUILTIN_FORMATS.items()])
+
+FORMAT_GENERAL &#x3D; BUILTIN_FORMATS[0]
+FORMAT_TEXT &#x3D; BUILTIN_FORMATS[49]
+FORMAT_NUMBER &#x3D; BUILTIN_FORMATS[1]
+FORMAT_NUMBER_00 &#x3D; BUILTIN_FORMATS[2]
+FORMAT_NUMBER_COMMA_SEPARATED1 &#x3D; BUILTIN_FORMATS[4]
+FORMAT_NUMBER_COMMA_SEPARATED2 &#x3D; &#39;#,##0.00_-&#39;
+FORMAT_PERCENTAGE &#x3D; BUILTIN_FORMATS[9]
+FORMAT_PERCENTAGE_00 &#x3D; BUILTIN_FORMATS[10]
+FORMAT_DATE_YYYYMMDD2 &#x3D; &#39;yyyy-mm-dd&#39;
+FORMAT_DATE_YYMMDD &#x3D; &#39;yy-mm-dd&#39;
+FORMAT_DATE_DDMMYY &#x3D; &#39;dd&#x2F;mm&#x2F;yy&#39;
+FORMAT_DATE_DMYSLASH &#x3D; &#39;d&#x2F;m&#x2F;y&#39;
+FORMAT_DATE_DMYMINUS &#x3D; &#39;d-m-y&#39;
+FORMAT_DATE_DMMINUS &#x3D; &#39;d-m&#39;
+FORMAT_DATE_MYMINUS &#x3D; &#39;m-y&#39;
+FORMAT_DATE_XLSX14 &#x3D; BUILTIN_FORMATS[14]
+FORMAT_DATE_XLSX15 &#x3D; BUILTIN_FORMATS[15]
+FORMAT_DATE_XLSX16 &#x3D; BUILTIN_FORMATS[16]
+FORMAT_DATE_XLSX17 &#x3D; BUILTIN_FORMATS[17]
+FORMAT_DATE_XLSX22 &#x3D; BUILTIN_FORMATS[22]
+FORMAT_DATE_DATETIME &#x3D; &#39;yyyy-mm-dd h:mm:ss&#39;
+FORMAT_DATE_TIME1 &#x3D; BUILTIN_FORMATS[18]
+FORMAT_DATE_TIME2 &#x3D; BUILTIN_FORMATS[19]
+FORMAT_DATE_TIME3 &#x3D; BUILTIN_FORMATS[20]
+FORMAT_DATE_TIME4 &#x3D; BUILTIN_FORMATS[21]
+FORMAT_DATE_TIME5 &#x3D; BUILTIN_FORMATS[45]
+FORMAT_DATE_TIME6 &#x3D; BUILTIN_FORMATS[21]
+FORMAT_DATE_TIME7 &#x3D; &#39;i:s.S&#39;
+FORMAT_DATE_TIME8 &#x3D; &#39;h:mm:ss@&#39;
+FORMAT_DATE_TIMEDELTA &#x3D; &#39;[hh]:mm:ss&#39;
+FORMAT_DATE_YYMMDDSLASH &#x3D; &#39;yy&#x2F;mm&#x2F;dd@&#39;
+FORMAT_CURRENCY_USD_SIMPLE &#x3D; &#39;&quot;$&quot;#,##0.00_-&#39;
+FORMAT_CURRENCY_USD &#x3D; &#39;$#,##0_-&#39;
+FORMAT_CURRENCY_EUR_SIMPLE &#x3D; &#39;[$EUR ]#,##0.00_-&#39;
+
+COLORS &#x3D; r&quot;\[(BLACK|BLUE|CYAN|GREEN|MAGENTA|RED|WHITE|YELLOW)\]&quot;
+LITERAL_GROUP &#x3D; r&#39;&quot;.*?&quot;&#39; # anything in quotes
+LOCALE_GROUP &#x3D; r&#39;\[(?!hh?\]|mm?\]|ss?\])[^\]]*\]&#39; # anything in square brackets, except hours or minutes or seconds
+STRIP_RE &#x3D; re.compile(f&quot;&#123;LITERAL_GROUP&#125;|&#123;LOCALE_GROUP&#125;&quot;)
+TIMEDELTA_RE &#x3D; re.compile(r&#39;\[hh?\](:mm(:ss(\.0*)?)?)?|\[mm?\](:ss(\.0*)?)?|\[ss?\](\.0*)?&#39;, re.I)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -682,6 +781,9 @@ import openpyxl
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

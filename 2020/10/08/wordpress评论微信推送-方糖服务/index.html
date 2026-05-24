@@ -385,6 +385,9 @@ Server酱是什么「Server酱」，英文名「ServerChan」，是一款">
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -401,7 +404,30 @@ Server酱是什么「Server酱」，英文名「ServerChan」，是一款">
 </ol>
 <p>使用起来很方便，只需要登录然后获得一个sckey码就可以了</p>
 <p>然后到你的网站后台function.php文件中添加如下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function sc_send($comment_id)</span><br><span class="line">&#123;</span><br><span class="line">$text = &#x27;主人，博客上有一条新的评论&#x27;;</span><br><span class="line">$comment = get_comment($comment_id);</span><br><span class="line">$desp = $comment-&gt;comment_content;</span><br><span class="line">$key = &#x27;你的sckey码&#x27;;</span><br><span class="line">$postdata = http_build_query(</span><br><span class="line">array(</span><br><span class="line">&#x27;text&#x27; =&gt; $text,</span><br><span class="line">&#x27;desp&#x27; =&gt; $desp</span><br><span class="line">)</span><br><span class="line">);</span><br><span class="line"> </span><br><span class="line">$opts = array(&#x27;http&#x27; =&gt;</span><br><span class="line">array(</span><br><span class="line">&#x27;method&#x27; =&gt; &#x27;POST&#x27;,</span><br><span class="line">&#x27;header&#x27; =&gt; &#x27;Content-type: application/x-www-form-urlencoded&#x27;,</span><br><span class="line">&#x27;content&#x27; =&gt; $postdata</span><br><span class="line">)</span><br><span class="line">);</span><br><span class="line">$context = stream_context_create($opts);</span><br><span class="line">return $result = file_get_contents(&#x27;http://sc.ftqq.com/&#x27;.$key.&#x27;.send&#x27;, false, $context);</span><br><span class="line">&#125;</span><br><span class="line">add_action(&#x27;comment_post&#x27;, &#x27;sc_send&#x27;, 19, 2);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">function sc_send($comment_id)
+&#123;
+$text &#x3D; &#39;主人，博客上有一条新的评论&#39;;
+$comment &#x3D; get_comment($comment_id);
+$desp &#x3D; $comment-&gt;comment_content;
+$key &#x3D; &#39;你的sckey码&#39;;
+$postdata &#x3D; http_build_query(
+array(
+&#39;text&#39; &#x3D;&gt; $text,
+&#39;desp&#39; &#x3D;&gt; $desp
+)
+);
+ 
+$opts &#x3D; array(&#39;http&#39; &#x3D;&gt;
+array(
+&#39;method&#39; &#x3D;&gt; &#39;POST&#39;,
+&#39;header&#39; &#x3D;&gt; &#39;Content-type: application&#x2F;x-www-form-urlencoded&#39;,
+&#39;content&#39; &#x3D;&gt; $postdata
+)
+);
+$context &#x3D; stream_context_create($opts);
+return $result &#x3D; file_get_contents(&#39;http:&#x2F;&#x2F;sc.ftqq.com&#x2F;&#39;.$key.&#39;.send&#39;, false, $context);
+&#125;
+add_action(&#39;comment_post&#39;, &#39;sc_send&#39;, 19, 2);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>然后绑定微信就可以了</p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/10/1602119536-%E6%96%B9%E7%B3%96-1024x312.png"></p>
@@ -670,6 +696,9 @@ Server酱是什么「Server酱」，英文名「ServerChan」，是一款">
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

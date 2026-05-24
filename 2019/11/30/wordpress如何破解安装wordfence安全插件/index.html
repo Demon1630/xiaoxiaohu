@@ -382,6 +382,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -394,10 +397,13 @@
 <h3 id="二-后台更改文件"><a href="#二-后台更改文件" class="headerlink" title="二 后台更改文件"></a>二 后台更改文件</h3><p>使用FTP或者ssh或宝塔面板，在自己的网站目录下找到</p>
 <p>wp-content&#x2F;plugins&#x2F;wordfence&#x2F;lib&#x2F;wordfenceClass.php这个文件，打开后进行更改</p>
 <p>找到下面这段代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (!WFWAF_SUBDIRECTORY_INSTALL &amp;&amp; $waf = wfWAF::getInstance()) &#123;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">if (!WFWAF_SUBDIRECTORY_INSTALL &amp;&amp; $waf &#x3D; wfWAF::getInstance()) &#123;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后在这行代码下面的$siteurl &#x3D; wfUtils::wpSiteURL();代码下放，添加上下面这4行代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wfConfig::set(&#x27;isPaid&#x27;, 1);</span><br><span class="line">wfConfig::set(&#x27;keyType&#x27;, wfAPI::KEY_TYPE_PAID_CURRENT);</span><br><span class="line">!!wfConfig::set(&#x27;isPaid&#x27;, 1);</span><br><span class="line">!!wfConfig::set(&#x27;keyType&#x27;, wfAPI::KEY_TYPE_PAID_CURRENT);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">wfConfig::set(&#39;isPaid&#39;, 1);
+wfConfig::set(&#39;keyType&#39;, wfAPI::KEY_TYPE_PAID_CURRENT);
+!!wfConfig::set(&#39;isPaid&#39;, 1);
+!!wfConfig::set(&#39;keyType&#39;, wfAPI::KEY_TYPE_PAID_CURRENT);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><a target="_blank" rel="noopener" href="https://www.demon1630.cf/wordpress%e5%a6%82%e4%bd%95%e7%a0%b4%e8%a7%a3%e5%ae%89%e8%a3%85wordfence%e5%ae%89%e5%85%a8%e6%8f%92%e4%bb%b6/1575082903-e5a7ffb4-64fb-46be-9aa9-0e65625fd74c/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1575082903-E5A7FFB4-64FB-46BE-9AA9-0E65625FD74C-1024x533.jpeg"></a>效果如图所示，这就破解完成了，相对于其他直接安装破解版插件，这种方法的还是比较安全的，因为上传别人的插件，谁也不知道里面有没有包恶意代码</p>
 <p>这是基于我的wordfence版本为7.4.1，其他版本的没有试过，暂时不知道效果怎么样，然后能支持正版就尽量支持正版吧</p>
@@ -655,6 +661,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

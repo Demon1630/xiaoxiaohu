@@ -11,7 +11,7 @@
 写入：
 
 然后给npc.sh文件修改权限：
-12sudo chmod 7">
+sudo chmod 777">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,6 +390,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -401,21 +404,30 @@
 <p>写入：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210116163255.png"></p>
 <p>然后给npc.sh文件修改权限：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 777 npc.sh</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">sudo chmod 777 npc.sh
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>文前。npc的安装，以及配置什么的就不写了。现在只记录如何在树莓派中让npc客户端开机自启。</p>
 <hr>
 <h3 id="第一步。（我的npc文件是在-home-pi-npc的文件夹中。）"><a href="#第一步。（我的npc文件是在-home-pi-npc的文件夹中。）" class="headerlink" title="第一步。（我的npc文件是在&#x2F;home&#x2F;pi&#x2F;npc的文件夹中。）"></a>第一步。（我的npc文件是在&#x2F;home&#x2F;pi&#x2F;npc的文件夹中。）</h3><p>现在文件中创建npc.sh文件。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">cd /home/pi/npc</span><br><span class="line">./npc -server=149.129.103.241:8024 -vkey=123456789 -type=tcp &lt; /dev/null &gt; /dev/null 2&gt;1 &amp;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">#!&#x2F;bin&#x2F;sh
+cd &#x2F;home&#x2F;pi&#x2F;npc
+.&#x2F;npc -server&#x3D;149.129.103.241:8024 -vkey&#x3D;123456789 -type&#x3D;tcp &lt; &#x2F;dev&#x2F;null &gt; &#x2F;dev&#x2F;null 2&gt;1 &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>其中的第二行，是先切换到npc文件所在的文件夹中。第三行，是在服务端获取的启动npc的命令。</p>
 <p>然后给npc.sh文件修改权限</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 777 start.sh</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">sudo chmod 777 start.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后在rc.local中添加该脚本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/rc.local</span><br><span class="line"></span><br><span class="line">在最后一行exit 0前添加：</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">sudo nano &#x2F;etc&#x2F;rc.local
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/home/pi/npc/npc.sh start</span><br><span class="line"></span><br><span class="line">前面是你的nps所在的目录，按照自己目录修改就像</span><br><span class="line"></span><br><span class="line">到此就可以开机启动nps服务了</span><br></pre></td></tr></table></figure>
+在最后一行exit 0前添加：<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;home&#x2F;pi&#x2F;npc&#x2F;npc.sh start
+
+前面是你的nps所在的目录，按照自己目录修改就像
+
+到此就可以开机启动nps服务了<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -690,6 +702,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

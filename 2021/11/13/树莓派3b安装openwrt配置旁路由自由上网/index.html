@@ -344,16 +344,16 @@
                                 <span class="chip bg-color">v2ray</span>
                             </a>
                         
-                            <a href="/tags/%E5%AF%86%E7%A0%81/">
-                                <span class="chip bg-color">密码</span>
-                            </a>
-                        
                             <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
                                 <span class="chip bg-color">树莓派</span>
                             </a>
                         
                             <a href="/tags/openwrt/">
                                 <span class="chip bg-color">openwrt</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AF%86%E7%A0%81/">
+                                <span class="chip bg-color">密码</span>
                             </a>
                         
                             <a href="/tags/%E6%97%81%E8%B7%AF%E7%94%B1/">
@@ -401,6 +401,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -417,7 +420,7 @@
 <p><img src="https://i.loli.net/2021/11/13/DFd3tZXr4MN6kqJ.png"></p>
 <p>此时就可以重新进入树莓派后台，然后测试一下看是否树莓派能联网</p>
 <p><img src="https://i.loli.net/2021/11/13/htWBSnxifFzQRy6.png"> 之后还必须配置防火墙，在后面黏贴</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -I POSTROUTING -j MASQUERADE</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">iptables -t nat -I POSTROUTING -j MASQUERADE<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后重启防火墙 <img src="https://i.loli.net/2021/11/13/htWBSnxifFzQRy6.png"> 此时可能还会有问题，还需把树莓派的端口桥接关闭</p>
 <p><img src="https://i.loli.net/2021/11/13/UKOlB1u8PJXceT5.png"> 把桥接接口取消勾选，然后选择eth0网口，保存应用</p>
@@ -497,16 +500,16 @@
                                     <span class="chip bg-color">v2ray</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AF%86%E7%A0%81/">
-                                    <span class="chip bg-color">密码</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
                                     <span class="chip bg-color">树莓派</span>
                                 </a>
                             
                                 <a href="/tags/openwrt/">
                                     <span class="chip bg-color">openwrt</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AF%86%E7%A0%81/">
+                                    <span class="chip bg-color">密码</span>
                                 </a>
                             
                                 <a href="/tags/%E6%97%81%E8%B7%AF%E7%94%B1/">
@@ -598,10 +601,6 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AF%86%E7%A0%81/">
-                        <span class="chip bg-color">密码</span>
-                    </a>
-                    
                     <a href="/tags/nps/">
                         <span class="chip bg-color">nps</span>
                     </a>
@@ -616,6 +615,10 @@
                     
                     <a href="/tags/openwrt/">
                         <span class="chip bg-color">openwrt</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AF%86%E7%A0%81/">
+                        <span class="chip bg-color">密码</span>
                     </a>
                     
                     <a href="/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/">
@@ -683,16 +686,16 @@
                         <span class="chip bg-color">v2ray</span>
                     </a>
                     
-                    <a href="/tags/%E5%AF%86%E7%A0%81/">
-                        <span class="chip bg-color">密码</span>
-                    </a>
-                    
                     <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
                         <span class="chip bg-color">树莓派</span>
                     </a>
                     
                     <a href="/tags/openwrt/">
                         <span class="chip bg-color">openwrt</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AF%86%E7%A0%81/">
+                        <span class="chip bg-color">密码</span>
                     </a>
                     
                     <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">
@@ -751,6 +754,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

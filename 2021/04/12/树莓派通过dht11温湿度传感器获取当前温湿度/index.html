@@ -394,6 +394,9 @@ DATA连接树莓派3">
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -412,10 +415,76 @@ DATA连接树莓派3">
 <li>DATA连接树莓派3号引脚</li>
 <li>VCC连接树莓派1号引脚</li>
 </ol>
-<h2 id="python读取代码"><a href="#python读取代码" class="headerlink" title="python读取代码"></a>python读取代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python</span><br><span class="line">import RPi.GPIO as GPIO</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">channel =2</span><br><span class="line">data = []</span><br><span class="line">j = 0</span><br><span class="line"></span><br><span class="line">GPIO.setmode(GPIO.BCM)</span><br><span class="line"></span><br><span class="line">GPIO.setup(channel, GPIO.OUT)</span><br><span class="line">GPIO.output(channel, GPIO.LOW)</span><br><span class="line">time.sleep(0.025)</span><br><span class="line">GPIO.output(channel, GPIO.HIGH)</span><br><span class="line">GPIO.setup(channel, GPIO.IN)</span><br><span class="line"></span><br><span class="line">while GPIO.input(channel) == GPIO.LOW:</span><br><span class="line">  continue</span><br><span class="line">while GPIO.input(channel) == GPIO.HIGH:</span><br><span class="line">  continue</span><br><span class="line"></span><br><span class="line">while j &lt; 40: </span><br><span class="line">  k = 0 </span><br><span class="line">while GPIO.input(channel) == GPIO.LOW: </span><br><span class="line">  continue </span><br><span class="line">while GPIO.input(channel) == GPIO.HIGH: </span><br><span class="line">  k += 1 </span><br><span class="line">  if k &gt; 100:</span><br><span class="line">      break</span><br><span class="line">  if k &lt; 8:</span><br><span class="line">    data.append(0)</span><br><span class="line">  else:</span><br><span class="line">    data.append(1)</span><br><span class="line"></span><br><span class="line">  j += 1</span><br><span class="line"></span><br><span class="line">print &quot;DHT11 sensor is working.&quot;</span><br><span class="line"></span><br><span class="line">humidity_bit = data[0:8]</span><br><span class="line">humidity_point_bit = data[8:16]</span><br><span class="line">temperature_bit = data[16:24]</span><br><span class="line">temperature_point_bit = data[24:32]</span><br><span class="line">check_bit = data[32:40]</span><br><span class="line"></span><br><span class="line">humidity = 0</span><br><span class="line">humidity_point = 0</span><br><span class="line">temperature = 0</span><br><span class="line">temperature_point = 0</span><br><span class="line">check = 0</span><br><span class="line"></span><br><span class="line">for i in range(8):</span><br><span class="line">  humidity += humidity_bit[i] * 2 ** (7-i)</span><br><span class="line">  humidity_point += humidity_point_bit[i] * 2 ** (7-i)</span><br><span class="line">  temperature += temperature_bit[i] * 2 ** (7-i)</span><br><span class="line">  temperature_point += temperature_point_bit[i] * 2 ** (7-i)</span><br><span class="line">  check += check_bit[i] * 2 ** (7-i)</span><br><span class="line"></span><br><span class="line">tmp = humidity + humidity_point + temperature + temperature_point</span><br><span class="line"></span><br><span class="line">if check == tmp:</span><br><span class="line">  print &quot;&quot;</span><br><span class="line">  print &quot;temperature :&quot;, temperature, &quot;*C, humidity :&quot;, humidity, &quot;%&quot;</span><br><span class="line">else:</span><br><span class="line">  print &quot;crc wrong&quot;</span><br><span class="line">  print &quot;check :&quot;, check, &quot;, tmp :&quot;, tmp</span><br><span class="line"></span><br><span class="line">GPIO.cleanup()</span><br></pre></td></tr></table></figure>
+<h2 id="python读取代码"><a href="#python读取代码" class="headerlink" title="python读取代码"></a>python读取代码</h2><pre class="line-numbers language-none"><code class="language-none">#!&#x2F;usr&#x2F;bin&#x2F;python
+import RPi.GPIO as GPIO
+import time
+
+channel &#x3D;2
+data &#x3D; []
+j &#x3D; 0
+
+GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(channel, GPIO.OUT)
+GPIO.output(channel, GPIO.LOW)
+time.sleep(0.025)
+GPIO.output(channel, GPIO.HIGH)
+GPIO.setup(channel, GPIO.IN)
+
+while GPIO.input(channel) &#x3D;&#x3D; GPIO.LOW:
+  continue
+while GPIO.input(channel) &#x3D;&#x3D; GPIO.HIGH:
+  continue
+
+while j &lt; 40: 
+  k &#x3D; 0 
+while GPIO.input(channel) &#x3D;&#x3D; GPIO.LOW: 
+  continue 
+while GPIO.input(channel) &#x3D;&#x3D; GPIO.HIGH: 
+  k +&#x3D; 1 
+  if k &gt; 100:
+      break
+  if k &lt; 8:
+    data.append(0)
+  else:
+    data.append(1)
+
+  j +&#x3D; 1
+
+print &quot;DHT11 sensor is working.&quot;
+
+humidity_bit &#x3D; data[0:8]
+humidity_point_bit &#x3D; data[8:16]
+temperature_bit &#x3D; data[16:24]
+temperature_point_bit &#x3D; data[24:32]
+check_bit &#x3D; data[32:40]
+
+humidity &#x3D; 0
+humidity_point &#x3D; 0
+temperature &#x3D; 0
+temperature_point &#x3D; 0
+check &#x3D; 0
+
+for i in range(8):
+  humidity +&#x3D; humidity_bit[i] * 2 ** (7-i)
+  humidity_point +&#x3D; humidity_point_bit[i] * 2 ** (7-i)
+  temperature +&#x3D; temperature_bit[i] * 2 ** (7-i)
+  temperature_point +&#x3D; temperature_point_bit[i] * 2 ** (7-i)
+  check +&#x3D; check_bit[i] * 2 ** (7-i)
+
+tmp &#x3D; humidity + humidity_point + temperature + temperature_point
+
+if check &#x3D;&#x3D; tmp:
+  print &quot;&quot;
+  print &quot;temperature :&quot;, temperature, &quot;*C, humidity :&quot;, humidity, &quot;%&quot;
+else:
+  print &quot;crc wrong&quot;
+  print &quot;check :&quot;, check, &quot;, tmp :&quot;, tmp
+
+GPIO.cleanup()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>保存为dht11.py，然后执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python dht11.py</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">python dht11.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>之后就可以看到当前输出的温度和湿度信息</p>
 
@@ -676,6 +745,9 @@ DATA连接树莓派3">
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

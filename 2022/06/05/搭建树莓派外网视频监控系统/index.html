@@ -343,16 +343,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
-                            </a>
-                        
                             <a href="/tags/%E8%BD%AF%E4%BB%B6/">
                                 <span class="chip bg-color">软件</span>
                             </a>
                         
-                            <a href="/tags/%E5%AF%86%E7%A0%81/">
-                                <span class="chip bg-color">密码</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
                             <a href="/tags/nps/">
@@ -361,6 +357,10 @@
                         
                             <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
                                 <span class="chip bg-color">树莓派</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AF%86%E7%A0%81/">
+                                <span class="chip bg-color">密码</span>
                             </a>
                         
                             <a href="/tags/%E8%A7%86%E9%A2%91/">
@@ -404,6 +404,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -418,20 +421,22 @@
 <p>直接插上去就好了，不够要看准其方向</p>
 <p>连接上去之后还需要对树莓派进行配置</p>
 <p>打开树莓派配置工具：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">sudo raspi-config <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220529120848.png"> 然后选择camera <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220529121006.png"></p>
 <p>激活摄像头功能：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220529121132.png"> 之后重启一下树莓派，然后就可以测试一下拍照了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raspistill -o test.jpg</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">raspistill -o test.jpg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>如果没什么问题，此时拍摄的照片已经存为test.jpg了</p>
 <h2 id="motion"><a href="#motion" class="headerlink" title="motion"></a>motion</h2><p><a target="_blank" rel="noopener" href="https://motion-project.github.io/">motion</a> 是一款开源的支持多种摄像头的监控软件。</p>
 <p>我使用的是 Raspbian ，你如果使用其它的发行版本，使用对应命令进行安装即可。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line">sudo apt-get install motion</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install motion<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>motion 有着超多的配置，我们先配置一些必须的，打开 motion 的配置文件 <code>/etc/motion/motion.conf</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/motion/motion.conf</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">nano &#x2F;etc&#x2F;motion&#x2F;motion.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>找到里面的这些值进行修改</p>
 <ol>
@@ -450,10 +455,10 @@
 <li>如果画面非常卡，可以调整 <code>stream_maxrate</code> 和 <code>framerate</code> 找到一个合适你的值</li>
 </ul>
 <p>当 motion 运行以后，可以通过 <code>SIGHUP</code> 信号来重新加载配置文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo killall -SIGHUP motion</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">sudo killall -SIGHUP motion<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>启动：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo motion</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">sudo motion<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>启动 motion 后，摄像头上红灯会开启，打开另一台电脑或手机上的浏览器，访问 http:&#x2F;&#x2F;树莓派地址:8081&#x2F; 即可查看到画面。 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/86a7a7f5f163aa23682fd741f7d1640.jpg"> 如果开启了密码，输入用户名和密码即可</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220605150130.png"></p>
@@ -527,16 +532,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
-                                </a>
-                            
                                 <a href="/tags/%E8%BD%AF%E4%BB%B6/">
                                     <span class="chip bg-color">软件</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AF%86%E7%A0%81/">
-                                    <span class="chip bg-color">密码</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
                                 <a href="/tags/nps/">
@@ -545,6 +546,10 @@
                             
                                 <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
                                     <span class="chip bg-color">树莓派</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AF%86%E7%A0%81/">
+                                    <span class="chip bg-color">密码</span>
                                 </a>
                             
                                 <a href="/tags/%E8%A7%86%E9%A2%91/">
@@ -636,20 +641,20 @@
                         <span class="chip bg-color">软件</span>
                     </a>
                     
-                    <a href="/tags/%E4%BA%91%E7%9B%98/">
-                        <span class="chip bg-color">云盘</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AF%86%E7%A0%81/">
-                        <span class="chip bg-color">密码</span>
-                    </a>
-                    
                     <a href="/tags/nps/">
                         <span class="chip bg-color">nps</span>
                     </a>
                     
                     <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
                         <span class="chip bg-color">树莓派</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AF%86%E7%A0%81/">
+                        <span class="chip bg-color">密码</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BA%91%E7%9B%98/">
+                        <span class="chip bg-color">云盘</span>
                     </a>
                     
                     <a href="/tags/%E8%92%B2%E5%85%AC%E8%8B%B1/">
@@ -721,16 +726,16 @@
                         <span class="chip bg-color">telegram</span>
                     </a>
                     
-                    <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
-                        <span class="chip bg-color">宝塔面板</span>
+                    <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
+                        <span class="chip bg-color">树莓派</span>
                     </a>
                     
                     <a href="/tags/%E5%AF%86%E7%A0%81/">
                         <span class="chip bg-color">密码</span>
                     </a>
                     
-                    <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
-                        <span class="chip bg-color">树莓派</span>
+                    <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
+                        <span class="chip bg-color">宝塔面板</span>
                     </a>
                     
                     <a href="/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/">
@@ -797,6 +802,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

@@ -399,6 +399,9 @@ nps是一款轻量级、高性能、功能强大的内网穿透代理服务器�
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -422,7 +425,7 @@ nps是一款轻量级、高性能、功能强大的内网穿透代理服务器�
 <p><code>tar -xvf 安装包</code></p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210116142030.png"></p>
 <p>安装</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nps install</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">.&#x2F;nps install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210116142126.png"></p>
 <p>配置文件在：  <code>/etc/nps/conf/``nps.conf</code></p>
@@ -449,7 +452,17 @@ nps是一款轻量级、高性能、功能强大的内网穿透代理服务器�
 <p>客户端命令记录下来，之后配置客户端时需要使用</p>
 <p>到这里服务端配置就基本结束了。</p>
 <p>nps其他命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 配置文件重载</span><br><span class="line">$ sudo nps reload</span><br><span class="line"></span><br><span class="line"># 停止</span><br><span class="line">$ nps stop</span><br><span class="line"></span><br><span class="line"># 重启</span><br><span class="line">$ nps restart</span><br><span class="line"></span><br><span class="line"># 服务端更新</span><br><span class="line">$ nps-update update</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none"># 配置文件重载
+$ sudo nps reload
+
+# 停止
+$ nps stop
+
+# 重启
+$ nps restart
+
+# 服务端更新
+$ nps-update update<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p> </p>
 <h1 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h1><p>前面安装好服务端的nps后，需要安装客户端的nps，同样到<a target="_blank" rel="noopener" href="https://github.com/ehang-io/nps/releases">nps官网</a>中找到对应系统的安装文件下载下来</p>
@@ -744,6 +757,9 @@ nps是一款轻量级、高性能、功能强大的内网穿透代理服务器�
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

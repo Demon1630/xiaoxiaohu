@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="WordPress如何登入后控制重定向到其他页面, 小小胡">
     <meta name="description" content="WordPress因为用户登入后会直接进入用户后台，但有时候我们并不想订阅用户进入后台，这时候就可以用下面的代码将我们登入后重定向到其他页面：
-12345function soi_login_redirect($redirect_to, $">
+function soi_login_redirect($redirect_to, $reque">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -381,13 +381,20 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>WordPress因为用户登入后会直接进入用户后台，但有时候我们并不想订阅用户进入后台，这时候就可以用下面的代码将我们登入后重定向到其他页面：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function soi_login_redirect($redirect_to, $request, $user)   </span><br><span class="line">&#123;   </span><br><span class="line">    return (is_array($user-&gt;roles) &amp;&amp; in_array(&#x27;administrator&#x27;, $user-&gt;roles)) ? admin_url() : site_url();   </span><br><span class="line">&#125;    </span><br><span class="line">add_filter(&#x27;login_redirect&#x27;, &#x27;soi_login_redirect&#x27;, 10, 3); </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">function soi_login_redirect($redirect_to, $request, $user)   
+&#123;   
+    return (is_array($user-&gt;roles) &amp;&amp; in_array(&#39;administrator&#39;, $user-&gt;roles)) ? admin_url() : site_url();   
+&#125;    
+add_filter(&#39;login_redirect&#39;, &#39;soi_login_redirect&#39;, 10, 3); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>代码如上所示，将上面代码复制到function.php中，就可以把普通用户登入后重定向到首页，而管理员登入后重定向到后台，就可以实现目的。</p>
 
@@ -656,6 +663,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

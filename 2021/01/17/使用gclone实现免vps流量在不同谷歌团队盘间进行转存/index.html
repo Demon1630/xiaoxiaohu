@@ -388,6 +388,9 @@ linux使用rclone挂载onedrive作为挂载盘
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -402,16 +405,22 @@ linux使用rclone挂载onedrive作为挂载盘
 <p>但是使用rclone进行互拷备份的时候需要走vps的流量，而且是双份流量，所以一旦你的团队盘里面存的文件比较多，有个一两百G你的vps的流量就会吃不消，所以这里介绍一下gclone，它进行互拷备份的时候不需要走vps的流量，而且速度很快，基本上10G只要十几秒就行</p>
 <p>gclone官网：<a target="_blank" rel="noopener" href="https://github.com/donwa/gclone">https://github.com/donwa/gclone</a></p>
 <p>安装gclone命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- https://git.io/gclone.sh)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">bash &lt;(wget -qO- https:&#x2F;&#x2F;git.io&#x2F;gclone.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>安装成功后运行gclone,测试安装是否成功，得到命令如下</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210117231226.png"></p>
 <p>运行gclone看到有命令命令输出就说明安装成功了</p>
 <p>可以使用gclone挂载谷歌团队盘，步骤和rclone一样，只不过是运行gclone config，其他的参考rclone挂载就行</p>
 <p>如果已经使用rclone挂载好了，就不用再进行gclone挂载，直接进行gclone的互拷备份就行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gclone copy g1s:&#123;1qMBhAIjgQKTp-Eitxs0k1pHpeZrTNjZI&#125; g2s:&#123;1q2696hdHYcD4EimOBVvq4BpM-EhzPlOE&#125;  --drive-server-side-across-configs</span><br><span class="line">其中g1s为网盘1配置名，g2s为网盘2配置名，替换成你自己的即可。</span><br><span class="line">1qMBhAIjgQKTp-Eitxs0k1pHpeZrTNjZI只指的是别人团队盘或者共享盘的目录ID</span><br><span class="line">1q2696hdHYcD4EimOBVvq4BpM-EhzPlOE指的是你自己GD的目录ID</span><br><span class="line"></span><br><span class="line">OneDrive拷贝到谷歌云盘</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">gclone copy g1s:&#123;1qMBhAIjgQKTp-Eitxs0k1pHpeZrTNjZI&#125; g2s:&#123;1q2696hdHYcD4EimOBVvq4BpM-EhzPlOE&#125;  --drive-server-side-across-configs
+其中g1s为网盘1配置名，g2s为网盘2配置名，替换成你自己的即可。
+1qMBhAIjgQKTp-Eitxs0k1pHpeZrTNjZI只指的是别人团队盘或者共享盘的目录ID
+1q2696hdHYcD4EimOBVvq4BpM-EhzPlOE指的是你自己GD的目录ID
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rclone copy -P od:abc gd:abc --ignore-errors --stats-one-line</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+OneDrive拷贝到谷歌云盘<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">rclone copy -P od:abc gd:abc --ignore-errors --stats-one-line
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
@@ -694,6 +703,9 @@ linux使用rclone挂载onedrive作为挂载盘
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

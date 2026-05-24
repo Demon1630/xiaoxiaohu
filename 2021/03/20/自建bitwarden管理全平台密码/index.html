@@ -347,12 +347,12 @@
                                 <span class="chip bg-color">docker</span>
                             </a>
                         
-                            <a href="/tags/%E5%AF%86%E7%A0%81/">
-                                <span class="chip bg-color">密码</span>
-                            </a>
-                        
                             <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
                                 <span class="chip bg-color">搬瓦工</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AF%86%E7%A0%81/">
+                                <span class="chip bg-color">密码</span>
                             </a>
                         
                             <a href="/tags/wordpress/">
@@ -404,6 +404,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -414,13 +417,19 @@
 <p>bitwarden可以使用项目自带的服务器，只需创建自己的主账号就可以，也可以选择在自己服务器上搭建，有自己的服务器当然选择自己建了，建在自己服务器上也省心，而且项目是开源的，所以安全上基本不用怕</p>
 <h3 id="Bitwarden和bitwarden-rs"><a href="#Bitwarden和bitwarden-rs" class="headerlink" title="Bitwarden和bitwarden_rs"></a>Bitwarden和bitwarden_rs</h3><p>bitwarden_rs项目延伸自Bitwarden，bitwarden_rs使用Rust实现了Bitwarden相似的功能，两者均开源。不过Bitwarden需要较多的依赖（如MSSQL），占用内存也比较大，如果是个人或家庭使用，推荐更加轻量的bitwarden_rs，并且bitwarden_rs还可以免费使用Bitwarden的一些高级功能，如附件上传、TOTP等功能。</p>
 <h3 id="安装bitwarden-rs"><a href="#安装bitwarden-rs" class="headerlink" title="安装bitwarden_rs"></a>安装bitwarden_rs</h3><p>本文提供了Docker安装方式，因此我们需要先安装Docker（<strong>注意：OpenVZ虚拟化不支持Docker</strong>），安装Docker方法如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#安装Docker</span><br><span class="line">yum -y install docker</span><br><span class="line">#启动docker</span><br><span class="line">systemctl start docker</span><br><span class="line">#开机自启</span><br><span class="line">systemctl enable docker</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">#安装Docker
+yum -y install docker
+#启动docker
+systemctl start docker
+#开机自启
+systemctl enable docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>接下来使用Docker拉取bitwarden_rs镜像并运行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull bitwardenrs/server:latest</span><br><span class="line">docker run -d --name bitwarden -v /bw-data/:/data/ -p 80:80 bitwardenrs/server:latest</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">docker pull bitwardenrs&#x2F;server:latest
+docker run -d --name bitwarden -v &#x2F;bw-data&#x2F;:&#x2F;data&#x2F; -p 80:80 bitwardenrs&#x2F;server:latest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>上方使用了80端口，如果您已经安装了WEB服务，可能会导致冲突，可以将bitwarden_rs映射的端口修改为其它，比如8880</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name bitwarden -v /bw-data/:/data/ -p 8880:80 bitwardenrs/server:latest</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">docker run -d --name bitwarden -v &#x2F;bw-data&#x2F;:&#x2F;data&#x2F; -p 8880:80 bitwardenrs&#x2F;server:latest<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="配置反向代理"><a href="#配置反向代理" class="headerlink" title="配置反向代理"></a>配置反向代理</h3><p>前面就配置好了bitwarden的docker了，但还需要在服务器上配置反向代理，从而可以利用自己的域名访问bitworden服务</p>
 <p>首先要知道怎么创建网站，这里参考之前的文章：</p>
@@ -515,12 +524,12 @@
                                     <span class="chip bg-color">docker</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AF%86%E7%A0%81/">
-                                    <span class="chip bg-color">密码</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
                                     <span class="chip bg-color">搬瓦工</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AF%86%E7%A0%81/">
+                                    <span class="chip bg-color">密码</span>
                                 </a>
                             
                                 <a href="/tags/wordpress/">
@@ -725,6 +734,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

@@ -7,7 +7,10 @@
     <meta name="keywords" content="使用python对excel文件进行操作, 小小胡">
     <meta name="description" content="对合并单元格进行取消合并
 
-1234567891011121314151617181920import openpyxldef chuli_excel(path):    wb = openpyxl.load_workbook(path) ">
+import openpyxl
+def chuli_excel(path):
+    wb &amp;#x3D; openpyxl.load_workbook(path)
+    print(wb.sheetnames)">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -386,6 +389,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -393,7 +399,26 @@
             <div id="articleContent">
                 <p>对合并单元格进行取消合并</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20211220230838.png"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import openpyxl</span><br><span class="line">def chuli_excel(path):</span><br><span class="line">    wb = openpyxl.load_workbook(path)</span><br><span class="line">    print(wb.sheetnames)</span><br><span class="line">    ws = wb[&#x27;立体库出入库明细&#x27;]</span><br><span class="line">    m_list = ws.merged_cells   #获取合并的单元格信息</span><br><span class="line">    print(m_list)</span><br><span class="line">    cr = []</span><br><span class="line">    for m_area in m_list:</span><br><span class="line">        # 合并单元格的起始行坐标、终止行坐标。。。。，</span><br><span class="line">        r1, r2, c1, c2 = m_area.min_row, m_area.max_row, m_area.min_col, m_area.max_col</span><br><span class="line">        # 只对上下合并的单元格进行获取</span><br><span class="line">        # if r2 - r1 &gt; 0:</span><br><span class="line">        #     cr.append((r1, r2, c1, c2))</span><br><span class="line"></span><br><span class="line">        #获取所有的合并单元格</span><br><span class="line">        cr.append((r1, r2, c1, c2))</span><br><span class="line">    for r in cr:</span><br><span class="line">        ws.unmerge_cells(start_row=r[0], end_row=r[1], start_column=r[2], end_column=r[3])</span><br><span class="line">    wb.save(path)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">import openpyxl
+def chuli_excel(path):
+    wb &#x3D; openpyxl.load_workbook(path)
+    print(wb.sheetnames)
+    ws &#x3D; wb[&#39;立体库出入库明细&#39;]
+    m_list &#x3D; ws.merged_cells   #获取合并的单元格信息
+    print(m_list)
+    cr &#x3D; []
+    for m_area in m_list:
+        # 合并单元格的起始行坐标、终止行坐标。。。。，
+        r1, r2, c1, c2 &#x3D; m_area.min_row, m_area.max_row, m_area.min_col, m_area.max_col
+        # 只对上下合并的单元格进行获取
+        # if r2 - r1 &gt; 0:
+        #     cr.append((r1, r2, c1, c2))
+
+        #获取所有的合并单元格
+        cr.append((r1, r2, c1, c2))
+    for r in cr:
+        ws.unmerge_cells(start_row&#x3D;r[0], end_row&#x3D;r[1], start_column&#x3D;r[2], end_column&#x3D;r[3])
+    wb.save(path)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -656,6 +681,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

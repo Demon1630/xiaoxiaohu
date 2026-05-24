@@ -10,7 +10,7 @@
 之后当切换到其他窗口后： 
 可以看到title已经发生了改变
 上代码：
-12345678910111213">
+var title;  &amp;#x2F">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -385,6 +385,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -395,7 +398,19 @@
 <p>之后当切换到其他窗口后： <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210113195946.png"></p>
 <p>可以看到title已经发生了改变</p>
 <p>上代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var title;  // 用于临时存放原来的title内容</span><br><span class="line">    window.onblur = function()&#123;</span><br><span class="line">      // onblur时先存下原来的title,再更改title内容</span><br><span class="line">      title = document.title;</span><br><span class="line">      document.title = &quot; 你莫走！ヾ(≧▽≦*)o&quot;;</span><br><span class="line">    &#125;;</span><br><span class="line">    window.onfocus = function () &#123;</span><br><span class="line">      // onfocus时原来的title不为空才替换回去</span><br><span class="line">      // 防止页面还没加载完成且onblur时title=undefined的情况</span><br><span class="line">      if(title) &#123; </span><br><span class="line">        document.title = title;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">var title;  &#x2F;&#x2F; 用于临时存放原来的title内容
+    window.onblur &#x3D; function()&#123;
+      &#x2F;&#x2F; onblur时先存下原来的title,再更改title内容
+      title &#x3D; document.title;
+      document.title &#x3D; &quot; 你莫走！ヾ(≧▽≦*)o&quot;;
+    &#125;;
+    window.onfocus &#x3D; function () &#123;
+      &#x2F;&#x2F; onfocus时原来的title不为空才替换回去
+      &#x2F;&#x2F; 防止页面还没加载完成且onblur时title&#x3D;undefined的情况
+      if(title) &#123; 
+        document.title &#x3D; title;
+      &#125;
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>将上面代码添加到主题js文件中即可</p>
 
@@ -652,6 +667,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

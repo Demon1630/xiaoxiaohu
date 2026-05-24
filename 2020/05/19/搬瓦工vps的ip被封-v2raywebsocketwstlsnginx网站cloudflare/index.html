@@ -365,12 +365,12 @@
                                 <span class="chip bg-color">windows</span>
                             </a>
                         
-                            <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
-                                <span class="chip bg-color">宝塔面板</span>
-                            </a>
-                        
                             <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
                                 <span class="chip bg-color">搬瓦工</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
+                                <span class="chip bg-color">宝塔面板</span>
                             </a>
                         
                             <a href="/tags/cloudflare/">
@@ -438,6 +438,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -458,43 +461,106 @@
 <p>做完这些后开始正式安装v2ray</p>
 <p>使用xshell连接到vps</p>
 <p>首先安装一些必备软件，执行命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y curl</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">yum install -y curl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p> </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y unzip</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">yum install -y unzip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后安装v2ray，目前有很多一键安装脚本，如2333的，不过好像这个脚本现在安装完无法启动v2ray，而且由于它使用了caddy，会与nginx出现端口冲突，所以不建议使用，直接使用官方安装v2ray的脚本，确保不会出错，运行命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">bash &lt;(curl -L https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;v2fly&#x2F;fhs-install-v2ray&#x2F;master&#x2F;install-release.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210602174308.png"></p>
 <p>出现这样的结果说明安装完成了，安装的位置及一些配置文件位置都可以在这看到</p>
 <p>编辑v2ray的配置文件    关键！！</p>
 <p>运行命令进入配置文件编辑：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /usr/local/etc/v2ray/config.json</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">nano &#x2F;usr&#x2F;local&#x2F;etc&#x2F;v2ray&#x2F;config.json<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>把里面的{}删掉，然后把下面的内容复制进去，把自己的域名填进去，其他的可以不用改，避免出错</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">下面4个位置可根据自身需要修改：（不了解就不要改）</span><br><span class="line">&quot;path&quot;: &quot;/ws/&quot;, ##这里是路径，配合Nginx转发；</span><br><span class="line">&quot;port&quot;: 10010, ##这里是需要Nginx转发的端口；</span><br><span class="line">&quot;alterId&quot;: 100, ##这里是额外ID；</span><br><span class="line">&quot;id&quot;: &quot;00b93379-2d11-4392-a600-52f1d7ea0148&quot;, ##这里是UUID。</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">下面4个位置可根据自身需要修改：（不了解就不要改）
+&quot;path&quot;: &quot;&#x2F;ws&#x2F;&quot;, ##这里是路径，配合Nginx转发；
+&quot;port&quot;: 10010, ##这里是需要Nginx转发的端口；
+&quot;alterId&quot;: 100, ##这里是额外ID；
+&quot;id&quot;: &quot;00b93379-2d11-4392-a600-52f1d7ea0148&quot;, ##这里是UUID。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;inbound&quot;: &#123;</span><br><span class="line">    &quot;streamSettings&quot;: &#123;</span><br><span class="line">      &quot;network&quot;: &quot;ws&quot;, </span><br><span class="line">      &quot;wsSettings&quot;: &#123;</span><br><span class="line">        &quot;path&quot;: &quot;/ws/&quot;, </span><br><span class="line">        &quot;headers&quot;: &#123;</span><br><span class="line">          &quot;Host&quot;: &quot;自己的域名&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, </span><br><span class="line">    &quot;protocol&quot;: &quot;vmess&quot;, </span><br><span class="line">    &quot;port&quot;: 10010, </span><br><span class="line">    &quot;settings&quot;: &#123;</span><br><span class="line">      &quot;clients&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;alterId&quot;: 100, </span><br><span class="line">          &quot;security&quot;: &quot;auto&quot;, </span><br><span class="line">          &quot;id&quot;: &quot;eb3ca677-0c5e-45fd-9ef1-28b130cdd478&quot;, </span><br><span class="line">          &quot;level&quot;: 1</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, </span><br><span class="line">  &quot;outboundDetour&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;tag&quot;: &quot;blocked&quot;, </span><br><span class="line">      &quot;protocol&quot;: &quot;blackhole&quot;, </span><br><span class="line">      &quot;settings&quot;: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ], </span><br><span class="line">  &quot;outbound&quot;: &#123;</span><br><span class="line">    &quot;protocol&quot;: &quot;freedom&quot;, </span><br><span class="line">    &quot;settings&quot;: &#123;&#125;</span><br><span class="line">  &#125;, </span><br><span class="line">  &quot;log&quot;: &#123;</span><br><span class="line">    &quot;access&quot;: &quot;/var/log/v2ray/access.log&quot;, </span><br><span class="line">    &quot;loglevel&quot;: &quot;warning&quot;, </span><br><span class="line">    &quot;error&quot;: &quot;/var/log/v2ray/error.log&quot;</span><br><span class="line">  &#125;, </span><br><span class="line">  &quot;routing&quot;: &#123;</span><br><span class="line">    &quot;settings&quot;: &#123;</span><br><span class="line">      &quot;rules&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;ip&quot;: [&quot;geoip:private&quot;], </span><br><span class="line">          &quot;type&quot;: &quot;field&quot;, </span><br><span class="line">          &quot;outboundTag&quot;: &quot;blocked&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;, </span><br><span class="line">    &quot;strategy&quot;: &quot;rules&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#123;
+  &quot;inbound&quot;: &#123;
+    &quot;streamSettings&quot;: &#123;
+      &quot;network&quot;: &quot;ws&quot;, 
+      &quot;wsSettings&quot;: &#123;
+        &quot;path&quot;: &quot;&#x2F;ws&#x2F;&quot;, 
+        &quot;headers&quot;: &#123;
+          &quot;Host&quot;: &quot;自己的域名&quot;
+        &#125;
+      &#125;
+    &#125;, 
+    &quot;protocol&quot;: &quot;vmess&quot;, 
+    &quot;port&quot;: 10010, 
+    &quot;settings&quot;: &#123;
+      &quot;clients&quot;: [
+        &#123;
+          &quot;alterId&quot;: 100, 
+          &quot;security&quot;: &quot;auto&quot;, 
+          &quot;id&quot;: &quot;eb3ca677-0c5e-45fd-9ef1-28b130cdd478&quot;, 
+          &quot;level&quot;: 1
+        &#125;
+      ]
+    &#125;
+  &#125;, 
+  &quot;outboundDetour&quot;: [
+    &#123;
+      &quot;tag&quot;: &quot;blocked&quot;, 
+      &quot;protocol&quot;: &quot;blackhole&quot;, 
+      &quot;settings&quot;: &#123;&#125;
+    &#125;
+  ], 
+  &quot;outbound&quot;: &#123;
+    &quot;protocol&quot;: &quot;freedom&quot;, 
+    &quot;settings&quot;: &#123;&#125;
+  &#125;, 
+  &quot;log&quot;: &#123;
+    &quot;access&quot;: &quot;&#x2F;var&#x2F;log&#x2F;v2ray&#x2F;access.log&quot;, 
+    &quot;loglevel&quot;: &quot;warning&quot;, 
+    &quot;error&quot;: &quot;&#x2F;var&#x2F;log&#x2F;v2ray&#x2F;error.log&quot;
+  &#125;, 
+  &quot;routing&quot;: &#123;
+    &quot;settings&quot;: &#123;
+      &quot;rules&quot;: [
+        &#123;
+          &quot;ip&quot;: [&quot;geoip:private&quot;], 
+          &quot;type&quot;: &quot;field&quot;, 
+          &quot;outboundTag&quot;: &quot;blocked&quot;
+        &#125;
+      ]
+    &#125;, 
+    &quot;strategy&quot;: &quot;rules&quot;
+  &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p> </p>
 <p>赋予日志写入权限：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R nobody /var/log/v2ray</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">chown -R nobody &#x2F;var&#x2F;log&#x2F;v2ray<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>设置开机启动</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable v2ray</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">systemctl enable v2ray<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>启动v2ray</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start v2ray</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">systemctl start v2ray<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>查看v2ray运行状态</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status v2ray</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">systemctl status v2ray<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>出现这样的就说明v2ray运行正常了</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210602171510.png"></p>
 <p>这样就可以进行下一步</p>
 <p>进入宝塔面板，进入添加的网站，修改配置文件，在最后一行大括号结尾前添加如下代码，里面的10010是前面v2ray中配置的端口，必须对应起来</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">location /ws &#123;</span><br><span class="line">        proxy_redirect off;</span><br><span class="line">        proxy_pass http://127.0.0.1:10010;</span><br><span class="line">        proxy_http_version 1.1;</span><br><span class="line">        proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">        proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line">        proxy_set_header Host $http_host;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">location &#x2F;ws &#123;
+        proxy_redirect off;
+        proxy_pass http:&#x2F;&#x2F;127.0.0.1:10010;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection &quot;upgrade&quot;;
+        proxy_set_header Host $http_host;
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210602171626.png"></p>
 <p>在宝塔面板重启Nginx</p>
@@ -592,12 +658,12 @@
                                     <span class="chip bg-color">windows</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
-                                    <span class="chip bg-color">宝塔面板</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
                                     <span class="chip bg-color">搬瓦工</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
+                                    <span class="chip bg-color">宝塔面板</span>
                                 </a>
                             
                                 <a href="/tags/cloudflare/">
@@ -814,6 +880,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

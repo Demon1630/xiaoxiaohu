@@ -393,6 +393,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -404,11 +407,12 @@
 <h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p>首先需要有一台服务器，国内或国外的都可以，因为我们访问网络的流量都要通过这台服务器进行转发</p>
 <p>这里我们利用68端口，首先在服务器上开启68端口，在防火墙中放行</p>
 <p>然后在服务器上安装v2ray，可以使用2333的一键安装脚本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -s -L https://git.io/v2ray.sh)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">bash &lt;(curl -s -L https:&#x2F;&#x2F;git.io&#x2F;v2ray.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p> </p>
 <p>如果是国内主机，可能会出现无法连接脚本问题，因为这个脚本需要访问github，这时可以修改主机hosts文件，添加GitHub的解析</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#修改/etc/hosts文件，新增一行：</span><br><span class="line">13.250.177.223 github.com</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">#修改&#x2F;etc&#x2F;hosts文件，新增一行：
+13.250.177.223 github.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210601194134.png"></p>
 <p>启动脚本后，选择1安装，然后选择9，伪装成微信视频流量 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210601194250.png"></p>
@@ -705,6 +709,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

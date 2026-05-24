@@ -381,6 +381,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -388,27 +391,60 @@
             <div id="articleContent">
                 <p>貌似目前大多数Linux发行版本中自带的Python还都是2.7.x系列,但是越来越多的包包都开始抛弃2.7.x版本了,记录一下在CentOS 7中安装Python 3.6实现与自带2.7两个版本共存并可以自由切换</p>
 <h1 id="1-安装Python-3-6和pip"><a href="#1-安装Python-3-6和pip" class="headerlink" title="1.安装Python 3.6和pip"></a>1.安装Python 3.6和pip</h1><p>先添加阿里云镜像站的EPEL仓库，然后一键傻瓜yum走起</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># cd /etc/yum.repo.d/ </span><br><span class="line"># curl -o epel-7.repo http://mirrors.aliyun.com/repo/epel-7.repo </span><br><span class="line"># yum install -y python36 python36-setuptools</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;etc&#x2F;yum.repo.d&#x2F; 
+# curl -o epel-7.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo 
+# yum install -y python36 python36-setuptools<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="2-update-alternatives分别安装两个版本的python和pip"><a href="#2-update-alternatives分别安装两个版本的python和pip" class="headerlink" title="2.update-alternatives分别安装两个版本的python和pip"></a>2.update-alternatives分别安装两个版本的python和pip</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># alternatives --install /usr/bin/python python /usr/bin/python2.7 1</span><br><span class="line"># alternatives --install /usr/bin/python python /usr/bin/python3.6 2</span><br><span class="line"># mv /usr/bin/pip /usr/bin/pip.bak    //原有的pip不是软连接，先把它干掉</span><br><span class="line"># alternatives --install /usr/bin/pip pip /usr/bin/pip2.7 1</span><br><span class="line"># alternatives --install /usr/bin/pip pip /usr/local/bin/pip3.6 2</span><br></pre></td></tr></table></figure>
+<h1 id="2-update-alternatives分别安装两个版本的python和pip"><a href="#2-update-alternatives分别安装两个版本的python和pip" class="headerlink" title="2.update-alternatives分别安装两个版本的python和pip"></a>2.update-alternatives分别安装两个版本的python和pip</h1><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"># alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+# alternatives --install /usr/bin/python python /usr/bin/python3.6 2
+# mv /usr/bin/pip /usr/bin/pip.bak    //原有的pip不是软连接，先把它干掉
+# alternatives --install /usr/bin/pip pip /usr/bin/pip2.7 1
+# alternatives --install /usr/bin/pip pip /usr/local/bin/pip3.6 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>检查一下设置是否生效</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># alternatives --display python</span><br><span class="line">python - status is auto.</span><br><span class="line"> link currently points to /usr/bin/python3.6</span><br><span class="line">/usr/bin/python2.7 - priority 1</span><br><span class="line">/usr/bin/python3.6 - priority 2</span><br><span class="line">Current `best&#x27; version is /usr/bin/python3.6.</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"># alternatives --display python
+python - status is auto.
+ link currently points to /usr/bin/python3.6
+/usr/bin/python2.7 - priority 1
+/usr/bin/python3.6 - priority 2
+Current `best' version is /usr/bin/python3.6.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="3-切换Python和pip版本"><a href="#3-切换Python和pip版本" class="headerlink" title="3.切换Python和pip版本"></a>3.切换Python和pip版本</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># alternatives --config python</span><br><span class="line"></span><br><span class="line">There are 2 programs which provide &#x27;python&#x27;.</span><br><span class="line"></span><br><span class="line">  Selection    Command</span><br><span class="line">-----------------------------------------------</span><br><span class="line">   1           /usr/bin/python2.7</span><br><span class="line">*+ 2           /usr/bin/python3.6</span><br><span class="line"></span><br><span class="line">Enter to keep the current selection[+], or type selection number:</span><br><span class="line"></span><br><span class="line"># alternatives --config pip</span><br></pre></td></tr></table></figure>
+<h1 id="3-切换Python和pip版本"><a href="#3-切换Python和pip版本" class="headerlink" title="3.切换Python和pip版本"></a>3.切换Python和pip版本</h1><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"># alternatives --config python
+
+There are 2 programs which provide 'python'.
+
+  Selection    Command
+-----------------------------------------------
+   1           /usr/bin/python2.7
+*+ 2           /usr/bin/python3.6
+
+Enter to keep the current selection[+], or type selection number:
+
+# alternatives --config pip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>在这里输入对应版本的序号就可以完成一键切换了~</p>
 <h1 id="4-后续yum问题"><a href="#4-后续yum问题" class="headerlink" title="4.后续yum问题"></a>4.后续yum问题</h1><p>当切换成Python3以后发现yum命令不能用了,一执行就会报错:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># yum</span><br><span class="line">  File &quot;/usr/bin/yum&quot;, line 30</span><br><span class="line">    except KeyboardInterrupt, e:</span><br><span class="line">                            ^</span><br><span class="line">SyntaxError: invalid syntax</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"># yum
+  File "/usr/bin/yum", line 30
+    except KeyboardInterrupt, e:
+                            ^
+SyntaxError: invalid syntax<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这是因为系统yum命令使用的还需要使用Python2,分别修改&#x2F;usr&#x2F;libexec&#x2F;urlgrabber-ext-down和&#x2F;usr&#x2F;bin&#x2F;yum文件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># vi /usr/libexec/urlgrabber-ext-down</span><br><span class="line"># vi /usr/bin/yum</span><br><span class="line">首行的#! /usr/bin/python</span><br><span class="line">都改为#! /usr/bin/python2.7</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"># vi /usr/libexec/urlgrabber-ext-down
+# vi /usr/bin/yum
+首行的#! /usr/bin/python
+都改为#! /usr/bin/python2.7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这样在切换到Python3.6以后也可以正常使用yum了</p>
-<h1 id="5-firewall-cmd也需要手工设置一下"><a href="#5-firewall-cmd也需要手工设置一下" class="headerlink" title="5.firewall-cmd也需要手工设置一下"></a>5.firewall-cmd也需要手工设置一下</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># vim /usr/bin/firewall-cmd</span><br><span class="line"></span><br><span class="line">首行改为</span><br><span class="line">#!/usr/bin/python2.7 -Es</span><br></pre></td></tr></table></figure>
+<h1 id="5-firewall-cmd也需要手工设置一下"><a href="#5-firewall-cmd也需要手工设置一下" class="headerlink" title="5.firewall-cmd也需要手工设置一下"></a>5.firewall-cmd也需要手工设置一下</h1><pre class="line-numbers language-none"><code class="language-none"># vim &#x2F;usr&#x2F;bin&#x2F;firewall-cmd
+
+首行改为
+#!&#x2F;usr&#x2F;bin&#x2F;python2.7 -Es<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="6-补充知识点"><a href="#6-补充知识点" class="headerlink" title="6.补充知识点"></a>6.补充知识点</h1><p>貌似CentOS7里面使用yum install python36后内置的就有pip,但是调用的时候不能直接pip install xxx这种写法,得这样写:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># python -m pip install [Package_to_install]</span><br><span class="line">这里需要将python切换到3.6以后再执行</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none"># python -m pip install [Package_to_install]
+这里需要将python切换到3.6以后再执行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>本文来源于互联网:<a target="_blank" rel="noopener" href="https://blog.csdn.net/lpwmm/article/details/80160242">CentOS 7中实现Python 3.6与2.7共存及版本切换</a></p>
 
@@ -584,12 +620,12 @@
                         <span class="chip bg-color">谷歌云盘</span>
                     </a>
                     
-                    <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
-                        <span class="chip bg-color">宝塔面板</span>
-                    </a>
-                    
                     <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
                         <span class="chip bg-color">搬瓦工</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
+                        <span class="chip bg-color">宝塔面板</span>
                     </a>
                     
                     <a href="/tags/wordpress/">
@@ -705,6 +741,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Centos7安装chrome及chromedriver, 小小胡">
     <meta name="description" content="服务器上部署了Centos7，在学习selenium过程中，为实现在centos7服务器上也能用selenium调用浏览器，需要给centos7安装chrome，首先安装google的epel源
-1234567vi /etc/yum.rep">
+vi &amp;#x2F;etc&amp;#x2F;yum.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -381,13 +381,22 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>服务器上部署了Centos7，在学习selenium过程中，为实现在centos7服务器上也能用selenium调用浏览器，需要给centos7安装chrome，首先安装google的epel源</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/yum.repos.d/google.repo</span><br><span class="line">[google]</span><br><span class="line">name=Google-x86_64</span><br><span class="line">baseurl=http://dl.google.com/linux/rpm/stable/x86_64</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=0</span><br><span class="line">gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">vi &#x2F;etc&#x2F;yum.repos.d&#x2F;google.repo
+[google]
+name&#x3D;Google-x86_64
+baseurl&#x3D;http:&#x2F;&#x2F;dl.google.com&#x2F;linux&#x2F;rpm&#x2F;stable&#x2F;x86_64
+enabled&#x3D;1
+gpgcheck&#x3D;0
+gpgkey&#x3D;https:&#x2F;&#x2F;dl-ssl.google.com&#x2F;linux&#x2F;linux_signing_key.pub <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>yum update , 然后yum install google-chrome-stable</strong></p>
 <p>正常来说已经安装好chrome了，之后还需下载chromedriver</p>
@@ -649,6 +658,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

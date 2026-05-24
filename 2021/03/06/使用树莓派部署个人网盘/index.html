@@ -348,12 +348,12 @@ http://weixin.qq.">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BA%91%E7%9B%98/">
-                                <span class="chip bg-color">云盘</span>
-                            </a>
-                        
                             <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
                                 <span class="chip bg-color">树莓派</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BA%91%E7%9B%98/">
+                                <span class="chip bg-color">云盘</span>
                             </a>
                         
                     </div>
@@ -392,6 +392,9 @@ http://weixin.qq.">
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
         
 
         
@@ -495,17 +498,19 @@ http://weixin.qq.">
 <ol>
 <li>通过Xshell连接服务器后台，进入frp服务端软件的存放目录，执行如下命令，解压。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd Download/</span><br><span class="line">sudo tar -zxvf frp_0.32.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">cd Download/
+sudo tar -zxvf frp_0.32.0_linux_amd64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ol>
 <li>执行如下命令，给文件夹改个名，方便使用。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -r frp_0.32.0_linux_amd64 frp</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">cp -r frp_0.32.0_linux_amd64 frp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol>
 <li>执行如下命令，编辑frp的配置文件。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd frp</span><br><span class="line">sudo vim frps.ini</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">cd frp
+sudo vim frps.ini<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ol>
 <li>我的服务端配置内容如下：</li>
@@ -516,7 +521,7 @@ http://weixin.qq.">
 <ol>
 <li>退出并保存，执行如下指令，运行frp服务端。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frps -c frps.ini</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">./frps -c frps.ini<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol>
 <li>此时通过服务器IP:7500就可以看到frp服务端的展示信息，效果如图所示。</li>
@@ -526,7 +531,7 @@ http://weixin.qq.">
 <ol>
 <li>再执行如下指令将其运行在后台。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./frps -c frps.ini &amp;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">nohup ./frps -c frps.ini &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol>
 <li>至此，服务端已经配置完成。</li>
@@ -539,12 +544,14 @@ http://weixin.qq.">
 <ol>
 <li>进入对应目录，和服务端操作类似，解压、重命名。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/</span><br><span class="line">tar -zxvf frp_0.32.0_linux_arm.tar.gz</span><br><span class="line">cp -r frp_0.32.0_linux_arm frp</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">cd ~/
+tar -zxvf frp_0.32.0_linux_arm.tar.gz
+cp -r frp_0.32.0_linux_arm frp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ol>
 <li>执行如下指令，编辑客户端配置。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vim</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">sudo apt-get install vim<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>[common]<br>server_addr &#x3D; x.x.x.x #这里填服务器IP<br>server_port &#x3D; 7000 #这里填写服务器配置中的bind_port<br>token &#x3D; 12345678 #登录口令<br>[smb]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 443<br>remote_port &#x3D; 7600<br>[SSH]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 22<br>remote_port &#x3D; 6000</p>
@@ -552,7 +559,7 @@ http://weixin.qq.">
 <ol>
 <li>执行如下指令，运行客户端。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frpc -c frpc.ini</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">./frpc -c frpc.ini<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol>
 <li>输出如下内容，则客户端和服务端绑定成功。</li>
@@ -568,14 +575,14 @@ http://weixin.qq.">
 <ol>
 <li>出现以上弹窗则说明已经成功访问了树莓派，只是由于next cloud的配置，限制了服务器的IP访问，此时，我们进入next cloud的配置文件，将服务器IP添加进去，然后退出保存。效果如图所示。</li>
 </ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /var/www/nextcloud/config/config.php</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">sudo vim <span class="token operator">/</span>var<span class="token operator">/</span>www<span class="token operator">/</span>nextcloud<span class="token operator">/</span>config<span class="token operator">/</span>config<span class="token punctuation">.</span>php<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://pic2.zhimg.com/v2-fbe245618cbeb7236f431ac3faa1c579_b.jpg"></p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-3842100ae273cb430d1011d63bf39e7b.jpg"></p>
 <ol>
 <li>重新运行frp客户端在后台，成功后此时可通过外网进行访问。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./frpc -c frpc.ini &amp;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">nohup ./frpc -c frpc.ini &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://pic2.zhimg.com/v2-015845ddd1472e4751dceb8dd9889c31_b.jpg"></p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2021/03/frc-d1652799e0fc444b4615c5d35281c30a.jpg"></p>
@@ -650,12 +657,12 @@ http://weixin.qq.">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BA%91%E7%9B%98/">
-                                    <span class="chip bg-color">云盘</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
                                     <span class="chip bg-color">树莓派</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BA%91%E7%9B%98/">
+                                    <span class="chip bg-color">云盘</span>
                                 </a>
                             
                         </div>
@@ -848,6 +855,9 @@ http://weixin.qq.">
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

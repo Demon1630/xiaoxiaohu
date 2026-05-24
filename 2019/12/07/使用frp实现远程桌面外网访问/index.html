@@ -384,6 +384,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -400,7 +403,7 @@
 <p>使用ssh连接到服务器上，使用wget下载对应安装包：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210113201153.png"></p>
 <p>下载后解压缩：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf 安装包</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">tar -xvf 安装包<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后进入安装包内进行配置：</p>
 <p>作为服务器端，需要配置的是frps.ini文件，frps表示作为服务器，frpc表示作为客户端</p>
@@ -677,6 +680,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

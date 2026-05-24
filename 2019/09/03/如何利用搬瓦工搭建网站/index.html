@@ -348,12 +348,12 @@
                                 <span class="chip bg-color">数据库</span>
                             </a>
                         
-                            <a href="/tags/%E5%AF%86%E7%A0%81/">
-                                <span class="chip bg-color">密码</span>
-                            </a>
-                        
                             <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
                                 <span class="chip bg-color">搬瓦工</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AF%86%E7%A0%81/">
+                                <span class="chip bg-color">密码</span>
                             </a>
                         
                     </div>
@@ -397,6 +397,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -408,20 +411,20 @@
 <p>在购买完搬瓦工的VPS之后，就可以开始搭建自己的网站了，为方便搭建，这里使用的是<a target="_blank" rel="noopener" href="https://lnmp.org/install.html">LNMP一键安装包</a>，可查看安装包详情。</p>
 <p>首先使用ssh连接到搬瓦工后台，如何使用ssh，请查看文章<strong>如何使用ssh连接搬瓦工</strong>后台，进入后台之后，</p>
 <p>首先创建screen会话：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># screen -S lamp</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none"># screen -S lamp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>如果显示：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen: command not found</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">screen: command not found<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>可以使用命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># apt-get install screen</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none"># apt-get install screen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>此目的主要是为防止安装过程中出现异常导致中断，可以输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># screen -r lamp</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none"># screen -r lamp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>  来恢复安装界面。</p>
 <p>之后开始下载LNMP最新安装包：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#  wget -c http://soft.vpser.net/lnmp/lnmp1.6-full.tar.gz &amp;&amp; tar -zxf lnmp1.6-full.tar.gz &amp;&amp; cd lnmp1.6-full &amp;&amp; ./install.sh lamp</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">#  wget -c http:&#x2F;&#x2F;soft.vpser.net&#x2F;lnmp&#x2F;lnmp1.6-full.tar.gz &amp;&amp; tar -zxf lnmp1.6-full.tar.gz &amp;&amp; cd lnmp1.6-full &amp;&amp; .&#x2F;install.sh lamp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>此时安装开始，按照安装选项一步步进行就行，选项一般默认即可，设置的数据库密码需牢记，后面需要用到。如果数据库密码忘记了，可以进行重置，详情看重置MySQL root密码。</p>
 <p>当出现绿字 “Press any key to install…or Press Ctrl+c to cancel” 后，按回车键确认开始安装。</p>
@@ -500,12 +503,12 @@
                                     <span class="chip bg-color">数据库</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AF%86%E7%A0%81/">
-                                    <span class="chip bg-color">密码</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
                                     <span class="chip bg-color">搬瓦工</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AF%86%E7%A0%81/">
+                                    <span class="chip bg-color">密码</span>
                                 </a>
                             
                         </div>
@@ -706,6 +709,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

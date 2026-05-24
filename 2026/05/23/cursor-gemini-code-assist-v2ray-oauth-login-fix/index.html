@@ -396,6 +396,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -435,7 +438,11 @@
 <li>扩展界面会出现一个输入框，粘贴授权码即可完成登录</li>
 </ol>
 <h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><p>在 Cursor 的 <code>settings.json</code> 中添加以下配置：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;http.proxy&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://127.0.0.1:10809&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;http.proxySupport&quot;</span><span class="punctuation">:</span> <span class="string">&quot;on&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;geminicodeassist.beta.forceOobLogin&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"http.proxy"</span><span class="token operator">:</span> <span class="token string">"http://127.0.0.1:10809"</span><span class="token punctuation">,</span>
+  <span class="token property">"http.proxySupport"</span><span class="token operator">:</span> <span class="token string">"on"</span><span class="token punctuation">,</span>
+  <span class="token property">"geminicodeassist.beta.forceOobLogin"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li><code>http.proxy</code> —— 告诉 Cursor 使用 v2ray 作为代理</li>
@@ -452,7 +459,7 @@
 </ol>
 <h1 id="排查过程（供参考）"><a href="#排查过程（供参考）" class="headerlink" title="排查过程（供参考）"></a>排查过程（供参考）</h1><p>如果你遇到类似问题但不确定原因，可以按以下步骤排查：</p>
 <p><strong>1. 检查 Windows 系统代理状态</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ItemProperty</span> <span class="literal">-Path</span> <span class="string">&#x27;HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings&#x27;</span> | <span class="built_in">Select-Object</span> ProxyEnable, ProxyServer, ProxyOverride</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Get-ItemProperty</span> <span class="token operator">-</span>Path <span class="token string">'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings'</span> <span class="token punctuation">|</span> <span class="token function">Select-Object</span> ProxyEnable<span class="token punctuation">,</span> ProxyServer<span class="token punctuation">,</span> ProxyOverride<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>2. 检查 OAuth 回调是否到达</strong></p>
 <p>在浏览器授权完成后，观察地址栏是否跳转到了 <code>http://localhost:{端口}/oauth2redirect?...</code>。如果跳转了但扩展无反应，说明是本地回调接收环节出了问题。</p>
@@ -753,6 +760,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

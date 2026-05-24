@@ -5,10 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="kali linux使用apt-get更新全过程, 小小胡">
-    <meta name="description" content="0x00 修改更新源1:~#vim /etc/apt/sources.list          //使用vim编辑器打开更新源文件
+    <meta name="description" content="0x00 修改更新源:~#vim &amp;#x2F;etc&amp;#x2F;apt&amp;#x2F;sources.list          &amp;#x2F;&amp;#x2F;使用vim编辑器打开更新源文件
 
 修改之前可以先备份
-1:~#copy /etc/apt/sources.list /etc/apt/so">
+:~#copy &amp;#x2F;etc&amp;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -383,15 +383,18 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="0x00-修改更新源"><a href="#0x00-修改更新源" class="headerlink" title="0x00 修改更新源"></a><em>0x00 修改更新源</em></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:~#vim /etc/apt/sources.list          //使用vim编辑器打开更新源文件</span><br></pre></td></tr></table></figure>
+                <h3 id="0x00-修改更新源"><a href="#0x00-修改更新源" class="headerlink" title="0x00 修改更新源"></a><em>0x00 修改更新源</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#vim &#x2F;etc&#x2F;apt&#x2F;sources.list          &#x2F;&#x2F;使用vim编辑器打开更新源文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>修改之前可以先备份</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:~#copy /etc/apt/sources.list /etc/apt/sources.list.bak //</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">:~#copy &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.bak &#x2F;&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>将旧的更新源使用’#’注释掉 在以下更新源中选择一个复制</p>
 <blockquote>
@@ -403,13 +406,20 @@
 </blockquote>
 <p>使用:wq保存退出</p>
 <hr>
-<h3 id="0x01-使用更新源进行软件和系统的升级"><a href="#0x01-使用更新源进行软件和系统的升级" class="headerlink" title="0x01 使用更新源进行软件和系统的升级"></a><em>0x01 使用更新源进行软件和系统的升级</em></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:~#sudo apt-get update </span><br><span class="line">//同步 /etc/apt/sources.list 和 /etc/apt/sources.list.d 中列出的源的索引这样才能获取到最新的软件包</span><br><span class="line">//只是更新apt的资源列表</span><br><span class="line">:~#sudo apt-get upgrade </span><br><span class="line">:~#sudo apt-get dist-upgrade </span><br><span class="line">//通常情况下将两个放一起处理</span><br></pre></td></tr></table></figure>
+<h3 id="0x01-使用更新源进行软件和系统的升级"><a href="#0x01-使用更新源进行软件和系统的升级" class="headerlink" title="0x01 使用更新源进行软件和系统的升级"></a><em>0x01 使用更新源进行软件和系统的升级</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get update 
+&#x2F;&#x2F;同步 &#x2F;etc&#x2F;apt&#x2F;sources.list 和 &#x2F;etc&#x2F;apt&#x2F;sources.list.d 中列出的源的索引这样才能获取到最新的软件包
+&#x2F;&#x2F;只是更新apt的资源列表
+:~#sudo apt-get upgrade 
+:~#sudo apt-get dist-upgrade 
+&#x2F;&#x2F;通常情况下将两个放一起处理<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p><strong>tips</strong>: apt-get upgrade 和 apt-get dist-upgrade 本质上是没有什么不同的。 只不过，dist-upgrade 会识别出当依赖关系改变的情形并作出处理，而upgrade对此情形不处理。 例如软件包 a 原先依赖 b c d，但是在源里面可能已经升级了，现在是 a 依赖 b c e。这种情况下，dist-upgrade 会删除 d 安装 e，并把 a 软件包升级，而 upgrade 会认为依赖关系改变而拒绝升级 a 软件包。 <strong>from</strong> :<a target="_blank" rel="noopener" href="https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html">https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html</a></p>
 </blockquote>
 <hr>
-<h3 id="0x02-删除旧文件和缓存文件"><a href="#0x02-删除旧文件和缓存文件" class="headerlink" title="0x02 删除旧文件和缓存文件"></a><em>0x02 删除旧文件和缓存文件</em></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:~#sudo apt-get autoclean //清理旧版本的软件缓存</span><br><span class="line">:~#sudo apt-get clean //清理所有软件缓存</span><br><span class="line">:~#sudo apt-get autoremove //删除系统不再使用的孤立软件</span><br></pre></td></tr></table></figure>
+<h3 id="0x02-删除旧文件和缓存文件"><a href="#0x02-删除旧文件和缓存文件" class="headerlink" title="0x02 删除旧文件和缓存文件"></a><em>0x02 删除旧文件和缓存文件</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get autoclean &#x2F;&#x2F;清理旧版本的软件缓存
+:~#sudo apt-get clean &#x2F;&#x2F;清理所有软件缓存
+:~#sudo apt-get autoremove &#x2F;&#x2F;删除系统不再使用的孤立软件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -664,6 +674,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

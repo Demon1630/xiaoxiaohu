@@ -353,12 +353,12 @@
                                 <span class="chip bg-color">谷歌云盘</span>
                             </a>
                         
-                            <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
-                                <span class="chip bg-color">宝塔面板</span>
-                            </a>
-                        
                             <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
                                 <span class="chip bg-color">搬瓦工</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
+                                <span class="chip bg-color">宝塔面板</span>
                             </a>
                         
                             <a href="/tags/wordpress/">
@@ -418,6 +418,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -429,7 +432,7 @@
 <p> </p>
 <p>做好这几步后开始下面的安装</p>
 <h2 id="2-安装aria2"><a href="#2-安装aria2" class="headerlink" title="2.安装aria2"></a>2.安装aria2</h2><p>这里使用 大佬的<a target="_blank" rel="noopener" href="https://github.com/P3TERX/aria2.sh">Aria2 一键安装管理脚本</a>，执行下面的代码下载并运行脚本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- git.io/aria2.sh)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">bash &lt;(wget -qO- git.io&#x2F;aria2.sh)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/1588661605-googledrive2.png"></p>
 <p>输入1即会进行自动安装</p>
@@ -453,10 +456,10 @@
 <p>此时即可进行连接</p>
 <p>网站尽量不要开启ssl加密，有可能导致aria2无法连接</p>
 <h2 id="4-安装配置rclone"><a href="#4-安装配置rclone" class="headerlink" title="4.安装配置rclone"></a>4.安装配置rclone</h2><p>安装依赖：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install fuse</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">yum -y install fuse<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>采用官方一键安装脚本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://rclone.org/install.sh | sudo bash</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">curl https:&#x2F;&#x2F;rclone.org&#x2F;install.sh | sudo bash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>安装完成后输入 rclone config进行配置</p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/1588664385-googledrive10.png"></p>
@@ -483,7 +486,7 @@
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/1588695308-googledrive19.png"></p>
 <p> </p>
 <p>最后重启aria2</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service aria2 restart</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">service aria2 restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>当你进行完以上所有操作，现在下载文件就会自动上传至相应的网盘，本地的文件也会自动删除。</p>
 
@@ -562,12 +565,12 @@
                                     <span class="chip bg-color">谷歌云盘</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
-                                    <span class="chip bg-color">宝塔面板</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/">
                                     <span class="chip bg-color">搬瓦工</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">
+                                    <span class="chip bg-color">宝塔面板</span>
                                 </a>
                             
                                 <a href="/tags/wordpress/">
@@ -768,6 +771,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

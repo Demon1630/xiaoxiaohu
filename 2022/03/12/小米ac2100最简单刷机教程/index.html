@@ -339,12 +339,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AF%86%E7%A0%81/">
-                                <span class="chip bg-color">密码</span>
-                            </a>
-                        
                             <a href="/tags/openwrt/">
                                 <span class="chip bg-color">openwrt</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AF%86%E7%A0%81/">
+                                <span class="chip bg-color">密码</span>
                             </a>
                         
                             <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">
@@ -392,6 +392,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -406,12 +409,12 @@
 <p>这里前提是你路由器可以联网，先接到其他路由器上去</p>
 <p>刷完后重新加入后台，在网址里可以看到一个stok名字，把stok的内容复制下来</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20220312224307.png"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.31.1/cgi-bin/luci/;stok=CCCCCCCCCCC/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=%0A%5B%20-z%20%22%24(dmesg%20%7C%20grep%20ESMT)%22%20%5D%20%26%26%20B%3D%22Toshiba%22%20%7C%7C%20B%3D%22ESMT%22%0Auci%20set%20wireless.%24(uci%20show%20wireless%20%7C%20awk%20-F%20&#x27;.&#x27;%20&#x27;%2Fwl1%2F%20%7Bprint%20%242%7D&#x27;).ssid%3D%22%24B%20%24(dmesg%20%7C%20awk%20&#x27;%2FBad%2F%20%7Bprint%20%245%7D&#x27;)%22%0A%2Fetc%2Finit.d%2Fnetwork%20restart%0A</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">http:&#x2F;&#x2F;192.168.31.1&#x2F;cgi-bin&#x2F;luci&#x2F;;stok&#x3D;CCCCCCCCCCC&#x2F;api&#x2F;misystem&#x2F;set_config_iotdev?bssid&#x3D;Xiaomi&amp;user_id&#x3D;longdike&amp;ssid&#x3D;%0A%5B%20-z%20%22%24(dmesg%20%7C%20grep%20ESMT)%22%20%5D%20%26%26%20B%3D%22Toshiba%22%20%7C%7C%20B%3D%22ESMT%22%0Auci%20set%20wireless.%24(uci%20show%20wireless%20%7C%20awk%20-F%20&#39;.&#39;%20&#39;%2Fwl1%2F%20%7Bprint%20%242%7D&#39;).ssid%3D%22%24B%20%24(dmesg%20%7C%20awk%20&#39;%2FBad%2F%20%7Bprint%20%245%7D&#39;)%22%0A%2Fetc%2Finit.d%2Fnetwork%20restart%0A<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>把里面的ccccccc替换为你路由器后台网址中的stok，然后打开这个网址</p>
 <p>在页面上会反馈一个{“code”:0}的代码</p>
 <p>然后进行坏块检查</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.31.1/cgi-bin/luci/;stok=CCCCCCCCCCC/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=%0Acd%20%2Ftmp%0Acurl%20-o%20B%20-O%20https%3A%2F%2Fbreed.hackpascal.net%2Fr1286%2520%255b2020-10-09%255d%2Fbreed-mt7621-xiaomi-r3g.bin%20-k%20-g%0A%5B%20-z%20%22%24(sha256sum%20B%20%7C%20grep%20242d42eb5f5aaa67ddc9c1baf1acdf58d289e3f792adfdd77b589b9dc71eff85)%22%20%5D%20%7C%7C%20mtd%20-r%20write%20B%20Bootloader%0A</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">http:&#x2F;&#x2F;192.168.31.1&#x2F;cgi-bin&#x2F;luci&#x2F;;stok&#x3D;CCCCCCCCCCC&#x2F;api&#x2F;misystem&#x2F;set_config_iotdev?bssid&#x3D;Xiaomi&amp;user_id&#x3D;longdike&amp;ssid&#x3D;%0Acd%20%2Ftmp%0Acurl%20-o%20B%20-O%20https%3A%2F%2Fbreed.hackpascal.net%2Fr1286%2520%255b2020-10-09%255d%2Fbreed-mt7621-xiaomi-r3g.bin%20-k%20-g%0A%5B%20-z%20%22%24(sha256sum%20B%20%7C%20grep%20242d42eb5f5aaa67ddc9c1baf1acdf58d289e3f792adfdd77b589b9dc71eff85)%22%20%5D%20%7C%7C%20mtd%20-r%20write%20B%20Bootloader%0A<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>打开后就会把你的wifi名称更改</p>
 <p>路由器开机超过一小时建议先重启。运行代码后，你路由器的2.4g WiFi名称会改名成：比如  “ESMT”，”Toshiba”，”Toshiba 90 768”。 90和768是坏块。 如果ESMT或者Toshiba后面没数字，那恭喜你，没有坏块！！！</p>
@@ -501,12 +504,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AF%86%E7%A0%81/">
-                                    <span class="chip bg-color">密码</span>
-                                </a>
-                            
                                 <a href="/tags/openwrt/">
                                     <span class="chip bg-color">openwrt</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AF%86%E7%A0%81/">
+                                    <span class="chip bg-color">密码</span>
                                 </a>
                             
                                 <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">
@@ -719,6 +722,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

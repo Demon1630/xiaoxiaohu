@@ -381,6 +381,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -416,24 +419,24 @@
 <p>为了保险起见，请先移除 Mac 上的所有外接磁盘，再把树莓派上的 SD 卡放入读卡器然后插到 Mac 上。</p>
 </blockquote>
 <h3 id="4-1-找出磁盘对应的设备文件"><a href="#4-1-找出磁盘对应的设备文件" class="headerlink" title="4.1 找出磁盘对应的设备文件"></a><strong>4.1 找出磁盘对应的设备文件</strong></h3><p>打开「终端」，然后执行以下命令：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diskutil list </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">diskutil list <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后通过磁盘的总容量找到设备名。比如我的是 <code>/dev/disk2</code>。</p>
 <h3 id="4-2-卸载-SD-卡已挂载的分区"><a href="#4-2-卸载-SD-卡已挂载的分区" class="headerlink" title="4.2 卸载 SD 卡已挂载的分区"></a><strong>4.2 卸载 SD 卡已挂载的分区</strong></h3><blockquote>
 <p>如果 SD 卡中含有 macOS 所能识别的分区（比如 FAT32），都会自动被挂载。如果不卸载的话，那么下面的烧写操作将无法进行。<br>如果插入 SD 卡之后，在桌面上没有发现有挂载了新的分区，或者弹出了「此电脑不能读取您插入的磁盘。」的提示，则此步可跳过。<br>请<strong>不要</strong>在桌面上将已挂载的分区直接拖到废纸篓中，这样的话系统会把整个磁盘卸载掉，那么下面的烧写操作也将无法进行。</p>
 </blockquote>
 <p>请先将以下命令中的 改成 4.1 获取的设备文件名，然后执行命令：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diskutil umount `mount | grep &quot;&quot; | awk &#x27;&#123;print $3&#125;&#x27;` </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">diskutil umount `mount | grep "" | awk '&#123;print $3&#125;'` <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>例如我的是：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diskutil umount `mount | grep &quot;/dev/disk2&quot; | awk &#x27;&#123;print $3&#125;&#x27;` </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">diskutil umount `mount | grep "/dev/disk2" | awk '&#123;print $3&#125;'` <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="4-3-将磁盘映像文件烧写到-SD-卡中"><a href="#4-3-将磁盘映像文件烧写到-SD-卡中" class="headerlink" title="4.3 将磁盘映像文件烧写到 SD 卡中"></a><strong>4.3 将磁盘映像文件烧写到 SD 卡中</strong></h3><p>先输入 <code>sudo dd if=</code>，然后将解压出来的 <code>.img</code> 文件拖到终端窗口中。再输入 <code>of=</code>，回车输入管理员密码执行，映像文件就会被烧写到 SD 卡中。</p>
 <blockquote>
 <p>请将上面的 改成 4.1 获取的设备文件名。</p>
 </blockquote>
 <p>例如我的是：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd if=/Users/zenandidi/Downloads/CentOS-Userland-7-armv7hl-Minimal-1708-RaspberryPi3.img of=/dev/disk2</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">sudo dd if=/Users/zenandidi/Downloads/CentOS-Userland-7-armv7hl-Minimal-1708-RaspberryPi3.img of=/dev/disk2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>执行完命令之后，请耐心等待烧写完成。</p>
@@ -448,7 +451,7 @@
 <p>树莓派的 IP 地址可以通过查询 DHCP 服务器上的信息或者局域网扫描软件（比如 Fing）来获取。</p>
 </blockquote>
 <p>执行以下命令：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@ </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">ssh root@ <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>出现 <code>The authenticity of host &#39;XXX&#39; can&#39;t be established.</code> 的提示，输入 <code>yes</code> 回车即可。</p>
 <blockquote>
@@ -456,7 +459,7 @@
 </blockquote>
 <p>默认的登录密码为 <code>centos</code>。</p>
 <p>例如我的是：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@192.168.188.222 </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">ssh root@192.168.188.222 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://pic1.zhimg.com/v2-a692600d67e2e414959868323a94ae38_b.jpg"></p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2021/11/frc-82e202a4b33765224dee4072e9797544.jpg"></p>
@@ -467,7 +470,7 @@
 <p>如果不需要使用 Wi-Fi 网络的话可以跳过此步骤。<br>配置 Wi-Fi 非常简单，使用 CentOS 中自带的 <code>NetworkManager</code> 工具即可配置。</p>
 </blockquote>
 <p>执行以下命令：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmtui </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">nmtui <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选择 <code>启用连接</code> 然后回车。</p>
 <p><img src="https://pic2.zhimg.com/v2-ff27b1b943bf7d0d6aedbb6e32d3b329_b.jpg"></p>
@@ -482,7 +485,7 @@
 <p>由于系统默认的映像把根分区的空间设定得很小，因此我们需要手动扩展根分区。<br>虽然系统上自带了一个 <code>rootfs-expand</code> 自动扩展根分区的脚本，但是不知道为什么我使用了没有任何效果。所以还是得手动操作一下。</p>
 </blockquote>
 <p>执行以下命令：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk /dev/mmcblk0 </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">fdisk /dev/mmcblk0 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>执行完之后，输入 <code>d</code> -&gt; 按 2 下回车 -&gt; 输入 <code>n</code> -&gt; 按 5 下回车 -&gt; 输入 <code>w</code> -&gt; 按回车。</p>
 <p>如果出现 <code>设备或资源忙</code> 提示的话不用管它。</p>
@@ -491,7 +494,7 @@
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2021/11/frc-c9dc2a4669d9600cc16182b10e132356.jpg"></p>
 <p>然后执行 <code>reboot</code> 重启树莓派。</p>
 <p>重启之后重新连接到树莓派，然后执行以下命令：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resize2fs /dev/mmcblk0p3 </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">resize2fs /dev/mmcblk0p3 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>根分区的扩展就完成了。</p>
 <p>扩展完成后可以执行 <code>df -h</code> 来检查扩展是否成功。</p>
@@ -502,7 +505,13 @@
 <p>EPEL 软件源收录了很多自带软件源没有的常用的软件。在 x86 版 CentOS 上，我们可以很方便地用 <code>yum -y install epel-release</code> 来添加 EPEL 软件源，但是在 ARM 版 CentOS 上就行不通了。<br>不过我们可以通过手动修改 <code>yum</code> 源的配置文件来添加它。</p>
 </blockquote>
 <p>执行以下命令：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat  /etc/yum.repos.d/epel.repo</span><br><span class="line">[epel]</span><br><span class="line">name=Epel rebuild for armhfp</span><br><span class="line">baseurl=https://armv7.dev.centos.org/repodir/epel-pass-1/</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=0</span><br><span class="line">EOF </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">cat  /etc/yum.repos.d/epel.repo
+[epel]
+name=Epel rebuild for armhfp
+baseurl=https://armv7.dev.centos.org/repodir/epel-pass-1/
+enabled=1
+gpgcheck=0
+EOF <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>至此，树莓派版的 CentOS 安装以及基本配置就完成了。请尽情享受 CentOS 和树莓派的乐趣吧！</p>
 
@@ -703,10 +712,6 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AF%86%E7%A0%81/">
-                        <span class="chip bg-color">密码</span>
-                    </a>
-                    
                     <a href="/tags/nps/">
                         <span class="chip bg-color">nps</span>
                     </a>
@@ -721,6 +726,10 @@
                     
                     <a href="/tags/openwrt/">
                         <span class="chip bg-color">openwrt</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AF%86%E7%A0%81/">
+                        <span class="chip bg-color">密码</span>
                     </a>
                     
                     <a href="/tags/%E6%96%B0%E8%B7%AF%E7%94%B13/">
@@ -787,6 +796,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

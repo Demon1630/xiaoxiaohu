@@ -388,6 +388,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -395,7 +398,24 @@
             <div id="articleContent">
                 <p>    WordPress在页面上如果想显示一个统计时间的话，可以不需要使用插件，直接在外观&gt;主题编辑器&gt;footer.php文件中，将以下代码放到最前面然后更新文件即可实现，具体代码如下，实现的情况可以参考<a target="_blank" rel="noopener" href="https://www.demon1630.cf/">主页</a>下方时间显示情况：</p>
 <p> </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">和老婆在一起：&lt;SPAN id=span_dt_dt style=&quot;color: #2F889A;&quot;&gt;&lt;/SPAN&gt; &lt;SCRIPT language=javascript&gt;function show_date_time()&#123;</span><br><span class="line">window.setTimeout(&quot;show_date_time()&quot;, 1000);</span><br><span class="line">BirthDay=new Date(&quot;10/1/2018 00:00:00&quot;);</span><br><span class="line">today=new Date();</span><br><span class="line">timeold=(today.getTime()-BirthDay.getTime());</span><br><span class="line">sectimeold=timeold/1000</span><br><span class="line">secondsold=Math.floor(sectimeold);</span><br><span class="line">msPerDay=24*60*60*1000</span><br><span class="line">e_daysold=timeold/msPerDay</span><br><span class="line">daysold=Math.floor(e_daysold);</span><br><span class="line">e_hrsold=(e_daysold-daysold)*24;</span><br><span class="line">hrsold=Math.floor(e_hrsold);</span><br><span class="line">e_minsold=(e_hrsold-hrsold)*60;</span><br><span class="line">minsold=Math.floor((e_hrsold-hrsold)*60);</span><br><span class="line">seconds=Math.floor((e_minsold-minsold)*60);</span><br><span class="line">span_dt_dt.innerHTML=&#x27;&lt;font style=color:#C40000&gt;&#x27;+daysold+&#x27;&lt;/font&gt; 天 &lt;font style=color:#C40000&gt;&#x27;+hrsold+&#x27;&lt;/font&gt; 时 &lt;font style=color:#C40000&gt;&#x27;+minsold+&#x27;&lt;/font&gt; 分 &lt;font style=color:#C40000&gt;&#x27;+seconds+&#x27;&lt;/font&gt; 秒&#x27;;</span><br><span class="line">&#125;</span><br><span class="line">show_date_time();&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">和老婆在一起：&lt;SPAN id&#x3D;span_dt_dt style&#x3D;&quot;color: #2F889A;&quot;&gt;&lt;&#x2F;SPAN&gt; &lt;SCRIPT language&#x3D;javascript&gt;function show_date_time()&#123;
+window.setTimeout(&quot;show_date_time()&quot;, 1000);
+BirthDay&#x3D;new Date(&quot;10&#x2F;1&#x2F;2018 00:00:00&quot;);
+today&#x3D;new Date();
+timeold&#x3D;(today.getTime()-BirthDay.getTime());
+sectimeold&#x3D;timeold&#x2F;1000
+secondsold&#x3D;Math.floor(sectimeold);
+msPerDay&#x3D;24*60*60*1000
+e_daysold&#x3D;timeold&#x2F;msPerDay
+daysold&#x3D;Math.floor(e_daysold);
+e_hrsold&#x3D;(e_daysold-daysold)*24;
+hrsold&#x3D;Math.floor(e_hrsold);
+e_minsold&#x3D;(e_hrsold-hrsold)*60;
+minsold&#x3D;Math.floor((e_hrsold-hrsold)*60);
+seconds&#x3D;Math.floor((e_minsold-minsold)*60);
+span_dt_dt.innerHTML&#x3D;&#39;&lt;font style&#x3D;color:#C40000&gt;&#39;+daysold+&#39;&lt;&#x2F;font&gt; 天 &lt;font style&#x3D;color:#C40000&gt;&#39;+hrsold+&#39;&lt;&#x2F;font&gt; 时 &lt;font style&#x3D;color:#C40000&gt;&#39;+minsold+&#39;&lt;&#x2F;font&gt; 分 &lt;font style&#x3D;color:#C40000&gt;&#39;+seconds+&#39;&lt;&#x2F;font&gt; 秒&#39;;
+&#125;
+show_date_time();&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>添加代码位置如图所示：</p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2019/10/1571795840-%E6%97%B6%E9%97%B4%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81-1024x434.png"></p>
@@ -665,6 +685,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

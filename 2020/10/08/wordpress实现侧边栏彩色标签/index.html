@@ -387,6 +387,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -396,7 +399,27 @@
 <h2 id="首先先看看效果："><a href="#首先先看看效果：" class="headerlink" title="首先先看看效果："></a>首先先看看效果：</h2><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/10/1602161479-%E5%BD%A9%E8%89%B2%E6%A0%87%E7%AD%BE%E6%A0%8F1.png"></p>
 <p>可以随机显示标签的颜色</p>
 <p>只要在function.php文件中添加如下代码即可：</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/* 彩色静态标签云 Color Tag Cloud </span><br><span class="line">/* -------------------------------- */</span><br><span class="line">function colorCloud($text) &#123;</span><br><span class="line">  $text = preg_replace_callback(&#x27;|&lt;a (.+?)&gt;|i&#x27;, &#x27;colorCloudCallback&#x27;, $text);</span><br><span class="line">  $text=preg_replace(&#x27;/&lt;a /&#x27;,&#x27;&lt;a &#x27;,$text);</span><br><span class="line">  return $text;</span><br><span class="line">&#125;</span><br><span class="line">function colorCloudCallback($matches) &#123;</span><br><span class="line">  $text = $matches[1];</span><br><span class="line">//这里定义我们背景色的范围，如果不想设置背景色的输出范围我们可以使用</span><br><span class="line">//$color = dechex(rand(0,16777215));从所有颜色中随机出一个</span><br><span class="line">  $a = array(&#x27;8D7EEA&#x27;,&#x27;F99FB2&#x27;,&#x27;AEE05B&#x27;,&#x27;E8D368&#x27;,&#x27;F75D78&#x27;,&#x27;55DCAB&#x27;,&#x27;F75DB1&#x27;,&#x27;ABABAF&#x27;,&#x27;7EA8EA&#x27;);</span><br><span class="line">  $co = array_rand($a,2);</span><br><span class="line">  $color = $a[$co[0]];</span><br><span class="line">//随机颜色代码结束，下面开始吧颜色赋值给每个标签生成背景色</span><br><span class="line">  $pattern = &#x27;/style=(\&#x27;|\&quot;)(.*)(\&#x27;|\&quot;)/i&#x27;;</span><br><span class="line">  $text = preg_replace($pattern, &quot;style=\&quot;background:#&#123;$color&#125;;\&quot;&quot;, $text);</span><br><span class="line">  return &quot;&lt;a $text&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">//把php代码挂载到wp_tag_cloud钩子上</span><br><span class="line">add_filter(&#x27;wp_tag_cloud&#x27;, &#x27;colorCloud&#x27;, 1);</span><br></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-none"><code class="language-none">&#x2F;* 彩色静态标签云 Color Tag Cloud 
+&#x2F;* -------------------------------- *&#x2F;
+function colorCloud($text) &#123;
+  $text &#x3D; preg_replace_callback(&#39;|&lt;a (.+?)&gt;|i&#39;, &#39;colorCloudCallback&#39;, $text);
+  $text&#x3D;preg_replace(&#39;&#x2F;&lt;a &#x2F;&#39;,&#39;&lt;a &#39;,$text);
+  return $text;
+&#125;
+function colorCloudCallback($matches) &#123;
+  $text &#x3D; $matches[1];
+&#x2F;&#x2F;这里定义我们背景色的范围，如果不想设置背景色的输出范围我们可以使用
+&#x2F;&#x2F;$color &#x3D; dechex(rand(0,16777215));从所有颜色中随机出一个
+  $a &#x3D; array(&#39;8D7EEA&#39;,&#39;F99FB2&#39;,&#39;AEE05B&#39;,&#39;E8D368&#39;,&#39;F75D78&#39;,&#39;55DCAB&#39;,&#39;F75DB1&#39;,&#39;ABABAF&#39;,&#39;7EA8EA&#39;);
+  $co &#x3D; array_rand($a,2);
+  $color &#x3D; $a[$co[0]];
+&#x2F;&#x2F;随机颜色代码结束，下面开始吧颜色赋值给每个标签生成背景色
+  $pattern &#x3D; &#39;&#x2F;style&#x3D;(\&#39;|\&quot;)(.*)(\&#39;|\&quot;)&#x2F;i&#39;;
+  $text &#x3D; preg_replace($pattern, &quot;style&#x3D;\&quot;background:#&#123;$color&#125;;\&quot;&quot;, $text);
+  return &quot;&lt;a $text&gt;&quot;;
+&#125;
+&#x2F;&#x2F;把php代码挂载到wp_tag_cloud钩子上
+add_filter(&#39;wp_tag_cloud&#39;, &#39;colorCloud&#39;, 1);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -655,6 +678,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

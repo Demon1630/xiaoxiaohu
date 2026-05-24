@@ -386,6 +386,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -397,7 +400,7 @@
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/11/1604230100-rclone%E6%8C%82%E8%BD%BDonedrive1-1024x647.png"></p>
 <p>下载后解压，把文件夹更名为rclone</p>
 <p>然后使用CMD，进入rclone目录，输入如下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone authorize &quot;onedrive&quot;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">rclone authorize &quot;onedrive&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/11/1604232212-rclone%E6%8C%82%E8%BD%BDonedrive2-1024x535.png"></p>
 <p>之后会自动打开浏览器，进行授权，授权成功后就会获得access-token，就是图中一大堆的代码，把{}里内容全部复制好备用</p>
@@ -416,9 +419,9 @@
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/11/1604233509-rclone%E6%8C%82%E8%BD%BDonedrive7.png"></p>
 <p>照着操作，到这里就配置好了，之后就是挂载</p>
 <p>创建一个文件夹 :</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/onedrive</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">mkdir &#x2F;home&#x2F;onedrive<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone mount onedrive: /home/onedrive --allow-other --allow-non-empty --vfs-cache-mode writes</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">rclone mount onedrive: &#x2F;home&#x2F;onedrive --allow-other --allow-non-empty --vfs-cache-mode writes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>在运行挂载命令后，SSH窗口会出现中断，光标丢失，此时关掉窗口即可。如需另外再挂载网盘，只需要重新连接。</p>
 <p><img src="http://www.demon1630.cn/wp-content/uploads/2020/11/1604233777-rclone%E6%8C%82%E8%BD%BDonedrive8.png"></p>
@@ -431,22 +434,37 @@
 <p>如果rclone不在<code>/usr/bin/</code>目录的话（可以通过<code>which rclone</code>命令查询是否在这个目录），需要先把rclone的可执行文件复制到<code>/usr/bin</code>。</p>
 </blockquote>
 <p>新建一个<code>rclone.service</code>文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/lib/systemd/system/rclone.service</span><br><span class="line"></span><br><span class="line">写入：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">vi &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;rclone.service
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description = rclone</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User = root</span><br><span class="line">ExecStart = /usr/bin/rclone mount mydriver:share  /home/onedrive --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000</span><br><span class="line">Restart = on-abort</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy = multi-user.target</span><br></pre></td></tr></table></figure>
+写入：
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">其中，mydrive是之前设置的网盘名（onedrive），share是指你要挂载的网盘里的文件夹，全部挂载就直接留空格就可以， /home/onedrive是你要挂载到vps上的位置，需要先mkdir这个文件夹</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">[Unit]
+Description &#x3D; rclone
+
+[Service]
+User &#x3D; root
+ExecStart &#x3D; &#x2F;usr&#x2F;bin&#x2F;rclone mount mydriver:share  &#x2F;home&#x2F;onedrive --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000
+Restart &#x3D; on-abort
+
+[Install]
+WantedBy &#x3D; multi-user.target<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">其中，mydrive是之前设置的网盘名（onedrive），share是指你要挂载的网盘里的文件夹，全部挂载就直接留空格就可以， &#x2F;home&#x2F;onedrive是你要挂载到vps上的位置，需要先mkdir这个文件夹
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>现在就可以用systemctl来启动rclone了：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start rclone</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">systemctl start rclone<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>设置开机启动：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable rclone</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">systemctl enable rclone<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>停止、查看状态可以用：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop rclone</span><br><span class="line">systemctl status rclone</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">systemctl stop rclone
+systemctl status rclone<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果你想挂载多个网盘，那么将systemd配置文件的rclone.service改成rclone1.service即可，重启动什么的同样换成rclone1。可以配置多个rclone.service文件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">如果你想挂载多个网盘，那么将systemd配置文件的rclone.service改成rclone1.service即可，重启动什么的同样换成rclone1。可以配置多个rclone.service文件
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
@@ -721,6 +739,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->
