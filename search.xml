@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>有道云笔记下载为markdown文件到本地</title>
+      <link href="/2026/06/01/%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%B8%8B%E8%BD%BD%E4%B8%BAmarkdown%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0/"/>
+      <url>/2026/06/01/%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%B8%8B%E8%BD%BD%E4%B8%BAmarkdown%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0/</url>
+      
+        <content type="html"><![CDATA[<p>项目地址：</p><h1 id="youdaonote-pull"><a href="#youdaonote-pull" class="headerlink" title="youdaonote-pull"></a>youdaonote-pull</h1><p>现在有道云笔记不能导出笔记，迁移笔记很麻烦。此脚本可将所有笔记下载到本地。脚本完全本地运行，你不用担心数据安全。</p><h2 id="最近更新"><a href="#最近更新" class="headerlink" title="最近更新"></a>最近更新</h2><ul><li>兼容性修复：补充了 <code>beautifulsoup4</code> 的版本约束，避免在较老的 Python 环境里导入 <code>markdownify</code> 时报错</li><li>目录处理修复：脚本现在按项目根目录定位配置文件，不再依赖你从哪个工作目录启动</li><li>Cookie 处理修复：<code>YNOTE_CSTK</code> 不再要求排在第一位，只要 <code>cookies.json</code> 里存在就能识别</li><li>路径处理修复：图片、附件和本地目录创建更稳，减少空格、嵌套目录和多级路径带来的失败</li><li>测试更新：统一了换行符断言，Windows 和非 Windows 环境下都能通过测试</li><li>导出隔离：下载出来的笔记目录 <code>youdaonote/</code> 已加入 <code>.gitignore</code>，不会被误提交到 GitHub</li></ul><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul><li>可将所有笔记（文件）按原格式下载到本地</li><li>由于「笔记」类型文件下载后默认为 <code>Xml</code> 或者是 <code>Json</code> 格式，不是正常笔记内容，<strong>默认将其转换为 <code>Markdown</code> 格式</strong></li><li>由于有道云笔记图床图片不能在有道云笔记外显示，<strong>默认将其下载到本地，或指定上传到 <a href="https://sm.ms/">SM.MS</a></strong></li></ul><h2 id="非技术人员使用"><a href="#非技术人员使用" class="headerlink" title="非技术人员使用"></a>非技术人员使用</h2><p>如果你是非技术人员，也提供<a href="https://github.com/DeppWang/youdaonote-pull/releases/">可直接本地运行程序</a>，不需要安装 Git、Python 和下载代码。具体使用教程请看<a href="https://depp.wang/2024/simple-youdaonote-pull/">更简单的「有道云笔记」导出与备份</a></p><h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ul><li><a href="https://www.bilibili.com/video/BV11F411F7vG/?share_source=copy_web&vd_source=8bd019082f4e243f4bb5c3b6fabf4dd8">视频教程</a></li></ul><h3 id="一、导出前的准备工作"><a href="#一、导出前的准备工作" class="headerlink" title="一、导出前的准备工作"></a>一、导出前的准备工作</h3><h4 id="1、安装-Git、clone-项目"><a href="#1、安装-Git、clone-项目" class="headerlink" title="1、安装  Git、clone 项目"></a>1、安装  <a href="https://git-scm.com/downloads">Git</a>、clone 项目</h4><ul><li>可根据 <a href="https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496">廖雪峰 Git 教程</a> 安装 Git，测试是否安装成功</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token parameter variable">--version</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>打开命令行软件，如 Terminal (macOS)、PowerShell (Windows)，clone 项目，里面包含脚本</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">pwd</span><span class="token function">git</span> clone https://github.com/DeppWang/youdaonote-pull.git<span class="token builtin class-name">cd</span> youdaonote-pull<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h4 id="2、安装-Python3、安装依赖模块（包）"><a href="#2、安装-Python3、安装依赖模块（包）" class="headerlink" title="2、安装 Python3、安装依赖模块（包）"></a>2、安装 <a href="https://www.python.org/downloads/">Python3</a>、安装依赖模块（包）</h4><ul><li>可根据 <a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1016959856222624">廖雪峰 Python 教程</a> 安装，如果 pull 遇到<a href="https://github.com/DeppWang/youdaonote-pull/issues/137">此错误</a>，请安装 Python 3.11.7（可使用 pyenv）， 测试是否安装成功</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python3 <span class="token parameter variable">--version</span>  <span class="token comment"># macOS/Linux</span>python <span class="token parameter variable">--version</span>   <span class="token comment"># Windows</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><ul><li>安装依赖包</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># macOS</span><span class="token function">sudo</span> easy_install pip3      <span class="token comment"># 安装 Python3 Package Installer</span>python3 <span class="token parameter variable">-m</span> venv venv        <span class="token comment"># 使用虚拟环境</span><span class="token builtin class-name">.</span> venv/bin/activate         <span class="token comment"># 激活虚拟环境</span><span class="token function">sudo</span> pip3 <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Windows</span>python <span class="token parameter variable">-m</span> venv venv         <span class="token comment"># 使用虚拟环境</span><span class="token builtin class-name">.</span> venv/bin/activate         <span class="token comment"># 激活虚拟环境</span>pip <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt<span class="token comment"># 有问题可参考 https://www.liaoxuefeng.com/wiki/1016959663602400/1017493741106496</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="3、设置登录-Cookies-文件-cookies-json"><a href="#3、设置登录-Cookies-文件-cookies-json" class="headerlink" title="3、设置登录 Cookies 文件 cookies.json"></a>3、设置登录 <code>Cookies</code> 文件 <code>cookies.json</code></h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>    <span class="token property">"cookies"</span><span class="token operator">:</span> <span class="token punctuation">[</span>        <span class="token punctuation">[</span>            <span class="token string">"YNOTE_CSTK"</span><span class="token punctuation">,</span>            <span class="token string">"**"</span><span class="token punctuation">,</span>            <span class="token string">".note.youdao.com"</span><span class="token punctuation">,</span>            <span class="token string">"/"</span>        <span class="token punctuation">]</span><span class="token punctuation">,</span>        <span class="token punctuation">[</span>            <span class="token string">"YNOTE_LOGIN"</span><span class="token punctuation">,</span>            <span class="token string">"**"</span><span class="token punctuation">,</span>            <span class="token string">".note.youdao.com"</span><span class="token punctuation">,</span>            <span class="token string">"/"</span>        <span class="token punctuation">]</span><span class="token punctuation">,</span>        <span class="token punctuation">[</span>            <span class="token string">"YNOTE_SESS"</span><span class="token punctuation">,</span>            <span class="token string">"**"</span><span class="token punctuation">,</span>            <span class="token string">".note.youdao.com"</span><span class="token punctuation">,</span>            <span class="token string">"/"</span>        <span class="token punctuation">]</span>    <span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>由于有道云笔记登录升级，加了图形验证吗。<strong>目前脚本不能使用账号密码登录，只能使用 <code>Cookies</code> 登录。</strong></p><p>你可以通过安装插件「<a href="https://chromewebstore.google.com/detail/cookie-copy/igfcbpdchlohbhjdfbcimhbpajlglaac?hl=zh-CN&utm_source=ext_sidebar">Cookie-copy</a>」快速复制 Cookie。</p><p>或者直接在浏览器 DevTools 中获取 <code>Cookies</code>：</p><ol><li>在浏览器如 Chrome 中使用账号密码或者其他方式登录有道云笔记</li><li>打开 DevTools (F12)，Network 下找「主」请求（一般是第一个），再找 <code>Cookie</code></li><li>复制对应数据替换  <code>**</code></li></ol><p><img src="https://s2.loli.net/2022/04/04/N47KPEaSGvCpsfX.png" alt="image.png"></p><p>示例：</p><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>    <span class="token property">"cookies"</span><span class="token operator">:</span> <span class="token punctuation">[</span>        <span class="token punctuation">[</span>            <span class="token string">"YNOTE_CSTK"</span><span class="token punctuation">,</span>            <span class="token string">"rR_Pejz0"</span><span class="token punctuation">,</span>            <span class="token string">".note.youdao.com"</span><span class="token punctuation">,</span>            <span class="token string">"/"</span>        <span class="token punctuation">]</span><span class="token punctuation">,</span>        <span class="token punctuation">[</span>            <span class="token string">"YNOTE_LOGIN"</span><span class="token punctuation">,</span>            <span class="token string">"3||1649054441155"</span><span class="token punctuation">,</span>            <span class="token string">".note.youdao.com"</span><span class="token punctuation">,</span>            <span class="token string">"/"</span>        <span class="token punctuation">]</span><span class="token punctuation">,</span>        <span class="token punctuation">[</span>            <span class="token string">"YNOTE_SESS"</span><span class="token punctuation">,</span>            <span class="token string">"v2|BdllbnwfaWl5RMUWOfqZ0gShf***6LqFRqB0MYfh4JLR"</span><span class="token punctuation">,</span>            <span class="token string">".note.youdao.com"</span><span class="token punctuation">,</span>            <span class="token string">"/"</span>        <span class="token punctuation">]</span>    <span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>提示：脚本完全本地运行，不用担心你的 <code>Cookies</code> 泄露</li></ul><h4 id="4、设置脚本参数配置文件-config-json"><a href="#4、设置脚本参数配置文件-config-json" class="headerlink" title="4、设置脚本参数配置文件 config.json"></a>4、设置脚本参数配置文件 <code>config.json</code></h4><p>建议使用 <a href="https://www.sublimetext.com/3">Sublime</a> 等三方编辑器编辑 <code>config.json</code>，避免编码格式错误</p><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>    <span class="token property">"local_dir"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>    <span class="token property">"ydnote_dir"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>    <span class="token property">"smms_secret_token"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>    <span class="token property">"is_relative_path"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li><code>local_dir</code>：选填，本地存放导出文件的文件夹（绝对路径），不填则默认为当前文件夹</li><li><code>ydnote_dir</code>：选填，有道云笔记指定导出文件夹名，不填则导出所有文件</li><li><code>smms_secret_token</code>：选填， <a href="https://sm.ms/">SM.MS</a> 的 <code>Secret Token</code>（注册后 -&gt; Dashboard -&gt; API Token），用于上传笔记中有道云图床图片到 SM.MS 图床，不填则只下载到本地（<code>youdaonote-images</code> 文件夹），<code>Markdown</code> 中使用本地链接</li><li><code>is_relative_path</code>：选填，在 MD 文件中图片 &#x2F; 附件是否采用相对路径展示，不填或 false 为绝对路径，true 为相对路径</li></ul><p>示例：</p><ul><li>macOS</li></ul><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>    <span class="token property">"local_dir"</span><span class="token operator">:</span> <span class="token string">"/Users/deppwang/Documents/youdaonote-pull/test"</span><span class="token punctuation">,</span>    <span class="token property">"ydnote_dir"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>    <span class="token property">"smms_secret_token"</span><span class="token operator">:</span> <span class="token string">"SGSLk9yWdTe4RenXYqEPWkqVrx0Yexample"</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>Windows</li></ul><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>    <span class="token property">"local_dir"</span><span class="token operator">:</span> <span class="token string">"D:/Documents/youdaonote-pull/test"</span><span class="token punctuation">,</span>    <span class="token property">"ydnote_dir"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>    <span class="token property">"smms_secret_token"</span><span class="token operator">:</span> <span class="token string">"SGSLk9yWdTe4RenXYqEPWkqVrx0Yexample"</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="二、运行导出脚本"><a href="#二、运行导出脚本" class="headerlink" title="二、运行导出脚本"></a>二、运行导出脚本</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python3 pull.py  <span class="token comment"># macOS/Linux</span>python pull.py   <span class="token comment"># Windows</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>效果：</p><p><img src="https://deppwang.oss-cn-beijing.aliyuncs.com/blog/image-20240430154201191.png" alt="image-20240430154201191"></p><h3 id="三、多次导出"><a href="#三、多次导出" class="headerlink" title="三、多次导出"></a>三、多次导出</h3><p>多次导出时，同样使用以下命令：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python3 pull.py  <span class="token comment"># macOS/Linux</span>python pull.py   <span class="token comment"># Windows</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>根据有道云笔记文件最后修改时间是否大于本地文件最后修改时间来判断是否需要更新。再次导出时，只会导出有道云笔记上次导出后新增、修改或未导出的笔记，不会覆盖本地已经修改的文件。<strong>但有道云笔记和本地不要同时修改同一个文件，这样可能会导致本地修改丢失</strong>！</p><p>更新时，会重新下载文件并覆盖原文件，图片也会重新下载。</p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol><li>如果你自己修改脚本，注意不要将 <code>cookies.json</code> 文件 <code>push</code> 到 GitHub</li><li>如果你不是开发者，可能对上面的命令行操作有所陌生，建议按步骤慢慢操作一遍</li><li>请确认代码是否为最新，有问题请先看 <a href="https://github.com/DeppWang/youdaonote-pull/issues?q=is:issue+is:closed">issue</a> 是否存在，不存在再提 issue<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> pull origin master  <span class="token comment"># 更新代码</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> 有道云 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Obsidian + GitHub 搭建个人知识库教程</title>
       <link href="/2026/05/24/%E6%88%91%E6%98%AF%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%EF%BC%9AObsidian%20+%20GitHub/"/>
       <url>/2026/05/24/%E6%88%91%E6%98%AF%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%EF%BC%9AObsidian%20+%20GitHub/</url>
@@ -227,9 +248,9 @@
       
         <tags>
             
-            <tag> 密码 </tag>
-            
             <tag> 云盘 </tag>
+            
+            <tag> 密码 </tag>
             
             <tag> nas </tag>
             
@@ -384,9 +405,9 @@
             
             <tag> 软件 </tag>
             
-            <tag> 密码 </tag>
-            
             <tag> 云盘 </tag>
+            
+            <tag> 密码 </tag>
             
             <tag> nps </tag>
             
@@ -586,9 +607,9 @@
             
             <tag> ansys </tag>
             
-            <tag> fluent </tag>
-            
             <tag> 仿真 </tag>
+            
+            <tag> fluent </tag>
             
         </tags>
       
@@ -617,9 +638,9 @@
             
             <tag> workbench </tag>
             
-            <tag> fluent </tag>
-            
             <tag> 仿真 </tag>
+            
+            <tag> fluent </tag>
             
             <tag> 控制 </tag>
             
@@ -864,17 +885,17 @@
             
             <tag> 密码 </tag>
             
-            <tag> newifi3 </tag>
-            
             <tag> nps </tag>
+            
+            <tag> 树莓派 </tag>
+            
+            <tag> newifi3 </tag>
             
             <tag> openwrt </tag>
             
             <tag> 新路由3 </tag>
             
             <tag> 旁路由 </tag>
-            
-            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -905,11 +926,11 @@
             
             <tag> 密码 </tag>
             
+            <tag> 树莓派 </tag>
+            
             <tag> openwrt </tag>
             
             <tag> 旁路由 </tag>
-            
-            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -942,9 +963,9 @@
             
             <tag> 密码 </tag>
             
-            <tag> openwrt </tag>
-            
             <tag> 树莓派 </tag>
+            
+            <tag> openwrt </tag>
             
             <tag> 路由器 </tag>
             
@@ -1164,11 +1185,11 @@
             
             <tag> 密码 </tag>
             
+            <tag> 树莓派 </tag>
+            
             <tag> openwrt </tag>
             
             <tag> 新路由3 </tag>
-            
-            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -1941,9 +1962,9 @@
             
             <tag> 离线下载 </tag>
             
-            <tag> newifi3 </tag>
-            
             <tag> nps </tag>
+            
+            <tag> newifi3 </tag>
             
             <tag> 新路由3 </tag>
             
@@ -1972,13 +1993,13 @@
       
         <tags>
             
-            <tag> newifi3 </tag>
-            
             <tag> nps </tag>
             
-            <tag> 新路由3 </tag>
-            
             <tag> 树莓派 </tag>
+            
+            <tag> newifi3 </tag>
+            
+            <tag> 新路由3 </tag>
             
             <tag> 路由器 </tag>
             
@@ -2020,11 +2041,11 @@
     
     
     <entry>
-      <title>新路由3刷hiboy老毛子固件实现l2tp校园网登入上网</title>
-      <link href="/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E5%AE%9E%E7%8E%B0l2tp%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%85%A5%E4%B8%8A%E7%BD%91/"/>
-      <url>/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E5%AE%9E%E7%8E%B0l2tp%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%85%A5%E4%B8%8A%E7%BD%91/</url>
+      <title>新路由3刷hiboy老毛子固件配置V2ray实现科学上网</title>
+      <link href="/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E9%85%8D%E7%BD%AEv2ray%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+      <url>/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E9%85%8D%E7%BD%AEv2ray%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</url>
       
-        <content type="html"><![CDATA[<p>新路由3是一款矿难产品，不过用来当路由器用还是很香的，特别是它支持校园网l2tp登入，在宿舍里用就很方便了</p><p>这里先不讲如何刷hiboy老毛子固件，直接介绍一下如何进行l2tp认证登入</p><p>刷好hiboy老毛子固件后，开机连接网络，默认无线网名称是PDCN，默认登入名称和密码都是admin</p><p>登入后台</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119135437.png"></p><p>选择如下外部网络，外网连接类型里选择L2TP</p><p>然后IP地址和dns地址里，如果你的校园网是需要使用固定的，就把这些消息填入即可</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119135808.png"></p><p>如果是自动获取的，直接选自动获取即可</p><p>之后就是在下面L2TP客户端守护程序中填入你的认证服务器地址和用户名及密码，VPN认证服务器地址一般可以在你的校园网认证客户端上看到，不知道的可以自己去搜搜自己学校的认证服务器地址是多少</p><p>其他的保持默认就可以，之后就保存配置，路由器就会自动认证，之后就可以愉快的上网了，一个账号就可以多个设备使用，同时也不用每次连接校园网都要登入了</p>]]></content>
+        <content type="html"><![CDATA[<p>这里介绍一下新路由3如何刷hiboy老毛子固件后配置V2ray</p><p>一般想科学上网，都需要在自己设备上安装客户端，但使用新路由3，可以直接在路由器上配置好，连接它的wifi或者有线，就可以直接科学上网了，方便又快捷</p><p>首选进入新路由后台 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119140636.png"></p><p>默认登入地址是192.168.123.1  默认账号密码都是admin</p><p>然后点击搭建Web环境</p><p>选择V2ray，然后开启下面两个开关</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119140827.png"></p><p>然后在下面输入订阅节点信息或者导出的Vmess信息</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119141111.png"></p><p>应用页面设置即可</p><p>然后看一下右上角，这里显示的V2ray有没有启动，没启动的话点击启动一下</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119141230.png"></p><p>然后再点击右上角的log，查看日志目录</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119141403.png"></p><p>出现下面的这些信息就说明配置成功了，连接的设备就可以自由科学上网了</p>]]></content>
       
       
       <categories>
@@ -2049,11 +2070,11 @@
     
     
     <entry>
-      <title>新路由3刷hiboy老毛子固件配置V2ray实现科学上网</title>
-      <link href="/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E9%85%8D%E7%BD%AEv2ray%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
-      <url>/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E9%85%8D%E7%BD%AEv2ray%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</url>
+      <title>新路由3刷hiboy老毛子固件实现l2tp校园网登入上网</title>
+      <link href="/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E5%AE%9E%E7%8E%B0l2tp%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%85%A5%E4%B8%8A%E7%BD%91/"/>
+      <url>/2021/01/19/%E6%96%B0%E8%B7%AF%E7%94%B13%E5%88%B7hiboy%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E5%AE%9E%E7%8E%B0l2tp%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%85%A5%E4%B8%8A%E7%BD%91/</url>
       
-        <content type="html"><![CDATA[<p>这里介绍一下新路由3如何刷hiboy老毛子固件后配置V2ray</p><p>一般想科学上网，都需要在自己设备上安装客户端，但使用新路由3，可以直接在路由器上配置好，连接它的wifi或者有线，就可以直接科学上网了，方便又快捷</p><p>首选进入新路由后台 <img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119140636.png"></p><p>默认登入地址是192.168.123.1  默认账号密码都是admin</p><p>然后点击搭建Web环境</p><p>选择V2ray，然后开启下面两个开关</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119140827.png"></p><p>然后在下面输入订阅节点信息或者导出的Vmess信息</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119141111.png"></p><p>应用页面设置即可</p><p>然后看一下右上角，这里显示的V2ray有没有启动，没启动的话点击启动一下</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119141230.png"></p><p>然后再点击右上角的log，查看日志目录</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119141403.png"></p><p>出现下面的这些信息就说明配置成功了，连接的设备就可以自由科学上网了</p>]]></content>
+        <content type="html"><![CDATA[<p>新路由3是一款矿难产品，不过用来当路由器用还是很香的，特别是它支持校园网l2tp登入，在宿舍里用就很方便了</p><p>这里先不讲如何刷hiboy老毛子固件，直接介绍一下如何进行l2tp认证登入</p><p>刷好hiboy老毛子固件后，开机连接网络，默认无线网名称是PDCN，默认登入名称和密码都是admin</p><p>登入后台</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119135437.png"></p><p>选择如下外部网络，外网连接类型里选择L2TP</p><p>然后IP地址和dns地址里，如果你的校园网是需要使用固定的，就把这些消息填入即可</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20210119135808.png"></p><p>如果是自动获取的，直接选自动获取即可</p><p>之后就是在下面L2TP客户端守护程序中填入你的认证服务器地址和用户名及密码，VPN认证服务器地址一般可以在你的校园网认证客户端上看到，不知道的可以自己去搜搜自己学校的认证服务器地址是多少</p><p>其他的保持默认就可以，之后就保存配置，路由器就会自动认证，之后就可以愉快的上网了，一个账号就可以多个设备使用，同时也不用每次连接校园网都要登入了</p>]]></content>
       
       
       <categories>
@@ -2127,9 +2148,9 @@
             
             <tag> nps </tag>
             
-            <tag> 树莓派 </tag>
-            
             <tag> 搬瓦工 </tag>
+            
+            <tag> 树莓派 </tag>
             
         </tags>
       
@@ -2240,31 +2261,6 @@
     
     
     <entry>
-      <title>excel中使用下拉公式计算时如何固定某一个单元格值</title>
-      <link href="/2021/01/11/excel%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E5%85%AC%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%97%B6%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E6%9F%90%E4%B8%80%E4%B8%AA%E5%8D%95%E5%85%83%E6%A0%BC%E5%80%BC/"/>
-      <url>/2021/01/11/excel%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E5%85%AC%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%97%B6%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E6%9F%90%E4%B8%80%E4%B8%AA%E5%8D%95%E5%85%83%E6%A0%BC%E5%80%BC/</url>
-      
-        <content type="html"><![CDATA[<p>在excel中使用公式进行下拉计算很方便，但有时候公式中某一个值需要固定不变</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/1610336727-excel%E5%85%AC%E5%BC%8F%E5%9B%BA%E5%AE%9A%E5%80%BC.png"></p><p>比如这里面让每一个数都加上5，就只需要在公式中5这个单元选择时在字母和数字前都加上$符号就行，然后就可以直接下拉进行计算了</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> excel </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> excel </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>excel 中复制或导入内容中日期/数字格式不生效需要但双击才会生效的解决办法</title>
       <link href="/2021/01/11/excel-%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%88%96%E5%AF%BC%E5%85%A5%E5%86%85%E5%AE%B9%E4%B8%AD%E6%97%A5%E6%9C%9F-%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88%E9%9C%80%E8%A6%81%E4%BD%86/"/>
       <url>/2021/01/11/excel-%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%88%96%E5%AF%BC%E5%85%A5%E5%86%85%E5%AE%B9%E4%B8%AD%E6%97%A5%E6%9C%9F-%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88%E9%9C%80%E8%A6%81%E4%BD%86/</url>
@@ -2290,11 +2286,36 @@
     
     
     <entry>
-      <title>kali linux使用apt-get更新全过程</title>
-      <link href="/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/"/>
-      <url>/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/</url>
+      <title>excel中使用下拉公式计算时如何固定某一个单元格值</title>
+      <link href="/2021/01/11/excel%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E5%85%AC%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%97%B6%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E6%9F%90%E4%B8%80%E4%B8%AA%E5%8D%95%E5%85%83%E6%A0%BC%E5%80%BC/"/>
+      <url>/2021/01/11/excel%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E5%85%AC%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%97%B6%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E6%9F%90%E4%B8%80%E4%B8%AA%E5%8D%95%E5%85%83%E6%A0%BC%E5%80%BC/</url>
       
-        <content type="html"><![CDATA[<h3 id="0x00-修改更新源"><a href="#0x00-修改更新源" class="headerlink" title="0x00 修改更新源"></a><em>0x00 修改更新源</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#vim &#x2F;etc&#x2F;apt&#x2F;sources.list          &#x2F;&#x2F;使用vim编辑器打开更新源文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>修改之前可以先备份</p><pre class="line-numbers language-none"><code class="language-none">:~#copy &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.bak &#x2F;&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将旧的更新源使用’#’注释掉 在以下更新源中选择一个复制</p><blockquote><p>中科大 deb <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib</p><p>阿里云 deb <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib</p><p>清华大学 deb <a href="http://mirrors.tuna.tsinghua.edu.cn/kali">http://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="https://mirrors.tuna.tsinghua.edu.cn/kali">https://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>浙大 deb <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>官方源 deb <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib deb-src <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib</p></blockquote><p>使用:wq保存退出</p><hr><h3 id="0x01-使用更新源进行软件和系统的升级"><a href="#0x01-使用更新源进行软件和系统的升级" class="headerlink" title="0x01 使用更新源进行软件和系统的升级"></a><em>0x01 使用更新源进行软件和系统的升级</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get update &#x2F;&#x2F;同步 &#x2F;etc&#x2F;apt&#x2F;sources.list 和 &#x2F;etc&#x2F;apt&#x2F;sources.list.d 中列出的源的索引这样才能获取到最新的软件包&#x2F;&#x2F;只是更新apt的资源列表:~#sudo apt-get upgrade :~#sudo apt-get dist-upgrade &#x2F;&#x2F;通常情况下将两个放一起处理<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p><strong>tips</strong>: apt-get upgrade 和 apt-get dist-upgrade 本质上是没有什么不同的。 只不过，dist-upgrade 会识别出当依赖关系改变的情形并作出处理，而upgrade对此情形不处理。 例如软件包 a 原先依赖 b c d，但是在源里面可能已经升级了，现在是 a 依赖 b c e。这种情况下，dist-upgrade 会删除 d 安装 e，并把 a 软件包升级，而 upgrade 会认为依赖关系改变而拒绝升级 a 软件包。 <strong>from</strong> :<a href="https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html">https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html</a></p></blockquote><hr><h3 id="0x02-删除旧文件和缓存文件"><a href="#0x02-删除旧文件和缓存文件" class="headerlink" title="0x02 删除旧文件和缓存文件"></a><em>0x02 删除旧文件和缓存文件</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get autoclean &#x2F;&#x2F;清理旧版本的软件缓存:~#sudo apt-get clean &#x2F;&#x2F;清理所有软件缓存:~#sudo apt-get autoremove &#x2F;&#x2F;删除系统不再使用的孤立软件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<p>在excel中使用公式进行下拉计算很方便，但有时候公式中某一个值需要固定不变</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/1610336727-excel%E5%85%AC%E5%BC%8F%E5%9B%BA%E5%AE%9A%E5%80%BC.png"></p><p>比如这里面让每一个数都加上5，就只需要在公式中5这个单元选择时在字母和数字前都加上$符号就行，然后就可以直接下拉进行计算了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> excel </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> excel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Kali-Linux-2020.1 设置中文，汉化。</title>
+      <link href="/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/"/>
+      <url>/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/</url>
+      
+        <content type="html"><![CDATA[<p> </p><h1 id="Kali-Linux-2020-1-设置中文，汉化。"><a href="#Kali-Linux-2020-1-设置中文，汉化。" class="headerlink" title="Kali-Linux-2020.1 设置中文，汉化。"></a>Kali-Linux-2020.1 设置中文，汉化。</h1><pre class="line-numbers language-none"><code class="language-none">Kali Linux团队在Twitter上宣布：“新的一年是进行重大改变的好时机，因此，我们宣布在  即将发布的2020.1版本中，Kali安全模型也将进行重大改革——默认非root用户。”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>所以使用kali之前版本的汉化方法可能会出现权限问题。(注意:汉化前先换源，不然可能会出问题。)</p><ol><li><p>kali 2020.1 汉化</p><p> 打开终端，输入：</p></li></ol><p><code>sudo dpkg-reconfigure locales</code></p><p>这时可能会让你输入root密码 ，默认的密码是：kali</p><p>然后选择字符编码： en_US.UTF-8（要完全汉化的话把这个去掉，如果只是想解决中文乱码就留着）、zh_CN.GBK、zh_CN.UTF-8 （用空格选定）</p><p>接着选择字符： zh_CN.UTF-8</p><ol start="2"><li>解决编码错误显示问题,终端输入：</li></ol><p><code>sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy</code></p><p>设置完之后输入：</p><p><code>sudo reboot</code></p><p>重启就好了。 <img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-28fe4bc43060061996dde07a1a88b53a.png"> 附：<a href="https://blog.csdn.net/weixin_44823747/article/details/107477695?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">Kali-Linux-2020.2 设置中文，汉化及换源方法</a></p><p>文章来源于互联网:<a href="https://blog.csdn.net/weixin_44823747/article/details/104173742">Kali-Linux-2020.1 设置中文，汉化。</a></p>]]></content>
       
       
       <categories>
@@ -2315,11 +2336,11 @@
     
     
     <entry>
-      <title>Kali-Linux-2020.1 设置中文，汉化。</title>
-      <link href="/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/"/>
-      <url>/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/</url>
+      <title>kali linux使用apt-get更新全过程</title>
+      <link href="/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/"/>
+      <url>/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/</url>
       
-        <content type="html"><![CDATA[<p> </p><h1 id="Kali-Linux-2020-1-设置中文，汉化。"><a href="#Kali-Linux-2020-1-设置中文，汉化。" class="headerlink" title="Kali-Linux-2020.1 设置中文，汉化。"></a>Kali-Linux-2020.1 设置中文，汉化。</h1><pre class="line-numbers language-none"><code class="language-none">Kali Linux团队在Twitter上宣布：“新的一年是进行重大改变的好时机，因此，我们宣布在  即将发布的2020.1版本中，Kali安全模型也将进行重大改革——默认非root用户。”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>所以使用kali之前版本的汉化方法可能会出现权限问题。(注意:汉化前先换源，不然可能会出问题。)</p><ol><li><p>kali 2020.1 汉化</p><p> 打开终端，输入：</p></li></ol><p><code>sudo dpkg-reconfigure locales</code></p><p>这时可能会让你输入root密码 ，默认的密码是：kali</p><p>然后选择字符编码： en_US.UTF-8（要完全汉化的话把这个去掉，如果只是想解决中文乱码就留着）、zh_CN.GBK、zh_CN.UTF-8 （用空格选定）</p><p>接着选择字符： zh_CN.UTF-8</p><ol start="2"><li>解决编码错误显示问题,终端输入：</li></ol><p><code>sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy</code></p><p>设置完之后输入：</p><p><code>sudo reboot</code></p><p>重启就好了。 <img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-28fe4bc43060061996dde07a1a88b53a.png"> 附：<a href="https://blog.csdn.net/weixin_44823747/article/details/107477695?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">Kali-Linux-2020.2 设置中文，汉化及换源方法</a></p><p>文章来源于互联网:<a href="https://blog.csdn.net/weixin_44823747/article/details/104173742">Kali-Linux-2020.1 设置中文，汉化。</a></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="0x00-修改更新源"><a href="#0x00-修改更新源" class="headerlink" title="0x00 修改更新源"></a><em>0x00 修改更新源</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#vim &#x2F;etc&#x2F;apt&#x2F;sources.list          &#x2F;&#x2F;使用vim编辑器打开更新源文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>修改之前可以先备份</p><pre class="line-numbers language-none"><code class="language-none">:~#copy &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.bak &#x2F;&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将旧的更新源使用’#’注释掉 在以下更新源中选择一个复制</p><blockquote><p>中科大 deb <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib</p><p>阿里云 deb <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib</p><p>清华大学 deb <a href="http://mirrors.tuna.tsinghua.edu.cn/kali">http://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="https://mirrors.tuna.tsinghua.edu.cn/kali">https://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>浙大 deb <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>官方源 deb <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib deb-src <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib</p></blockquote><p>使用:wq保存退出</p><hr><h3 id="0x01-使用更新源进行软件和系统的升级"><a href="#0x01-使用更新源进行软件和系统的升级" class="headerlink" title="0x01 使用更新源进行软件和系统的升级"></a><em>0x01 使用更新源进行软件和系统的升级</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get update &#x2F;&#x2F;同步 &#x2F;etc&#x2F;apt&#x2F;sources.list 和 &#x2F;etc&#x2F;apt&#x2F;sources.list.d 中列出的源的索引这样才能获取到最新的软件包&#x2F;&#x2F;只是更新apt的资源列表:~#sudo apt-get upgrade :~#sudo apt-get dist-upgrade &#x2F;&#x2F;通常情况下将两个放一起处理<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p><strong>tips</strong>: apt-get upgrade 和 apt-get dist-upgrade 本质上是没有什么不同的。 只不过，dist-upgrade 会识别出当依赖关系改变的情形并作出处理，而upgrade对此情形不处理。 例如软件包 a 原先依赖 b c d，但是在源里面可能已经升级了，现在是 a 依赖 b c e。这种情况下，dist-upgrade 会删除 d 安装 e，并把 a 软件包升级，而 upgrade 会认为依赖关系改变而拒绝升级 a 软件包。 <strong>from</strong> :<a href="https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html">https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html</a></p></blockquote><hr><h3 id="0x02-删除旧文件和缓存文件"><a href="#0x02-删除旧文件和缓存文件" class="headerlink" title="0x02 删除旧文件和缓存文件"></a><em>0x02 删除旧文件和缓存文件</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get autoclean &#x2F;&#x2F;清理旧版本的软件缓存:~#sudo apt-get clean &#x2F;&#x2F;清理所有软件缓存:~#sudo apt-get autoremove &#x2F;&#x2F;删除系统不再使用的孤立软件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
@@ -2653,9 +2674,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> 控制 </tag>
+            
+            <tag> 数据库 </tag>
             
             <tag> plc模糊逻辑控制 </tag>
             
@@ -3407,9 +3428,9 @@
             
             <tag> labview </tag>
             
-            <tag> 邮件 </tag>
-            
             <tag> 控制 </tag>
+            
+            <tag> 邮件 </tag>
             
         </tags>
       
@@ -3606,9 +3627,9 @@
             
             <tag> 网站 </tag>
             
-            <tag> 数据库 </tag>
-            
             <tag> 控制 </tag>
+            
+            <tag> 数据库 </tag>
             
             <tag> 视频 </tag>
             
@@ -3922,6 +3943,33 @@
     
     
     <entry>
+      <title>labview使用udl文件连接数据库</title>
+      <link href="/2020/07/06/labview%E4%BD%BF%E7%94%A8udl%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <url>/2020/07/06/labview%E4%BD%BF%E7%94%A8udl%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+      
+        <content type="html"><![CDATA[<p>ADO （ActveXData Objeles ）是微软利用自动化服务器技术开发的数据库接口。它不同于传统的ODBC，ODBC仅支持关系型数据库，而ADO对关系型数据库和非关系型数据库都提供了支持。</p><p>如同ODBC的DSN一样，使用UDL(通用数据库连接)文件也可以指定ADO的连接字符串。创建UDL文件有三种常用方法。 ◆复制一个现有的UDL文件后，更改名称，然后双击文件，通过“ 连接属性”对话框连接到数据库文件。 ◆在操作系统快捷菜单中， 选择“创建数据库连接(UDL )”项。某些版本的快捷菜单中可 能不显示该项。 ◆通过LabVIEW菜单中，单击“工具”菜单下的”Create Data Link”项，创建UDL。创建UDL文件后，双击该文件，即可打开“连接属性”对话框并配置数据库连接属性。</p><p>不同类型的数据库文件必须选择对应的提供者，比如MDB数据库文件的提供者应该选择‘JET4.0OLEDB Provider”,而SQL服务器应该选择“ SQL Server”。</p><p>如果出现双击udl文件后无法编辑的问题，可以直接对udl进行文本编辑，使用文本编辑器打开udl文件</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594014991-udl%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%931-1024x138.png"></p><p>只需把指定的data source地址修改一下即可。</p><p>创建好udl文件后，连接数据库的程序框图如图：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594015271-udl%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%932-1024x233.png"></p><p>把udl放到地址中即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> labview </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> labview </tag>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>labview使用DSN连接数据库</title>
       <link href="/2020/07/06/labview%E4%BD%BF%E7%94%A8dsn%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
       <url>/2020/07/06/labview%E4%BD%BF%E7%94%A8dsn%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
@@ -3963,33 +4011,6 @@
           <category> labview </category>
           
           <category> 技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> labview </tag>
-            
-            <tag> 数据库 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>labview使用udl文件连接数据库</title>
-      <link href="/2020/07/06/labview%E4%BD%BF%E7%94%A8udl%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-      <url>/2020/07/06/labview%E4%BD%BF%E7%94%A8udl%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-      
-        <content type="html"><![CDATA[<p>ADO （ActveXData Objeles ）是微软利用自动化服务器技术开发的数据库接口。它不同于传统的ODBC，ODBC仅支持关系型数据库，而ADO对关系型数据库和非关系型数据库都提供了支持。</p><p>如同ODBC的DSN一样，使用UDL(通用数据库连接)文件也可以指定ADO的连接字符串。创建UDL文件有三种常用方法。 ◆复制一个现有的UDL文件后，更改名称，然后双击文件，通过“ 连接属性”对话框连接到数据库文件。 ◆在操作系统快捷菜单中， 选择“创建数据库连接(UDL )”项。某些版本的快捷菜单中可 能不显示该项。 ◆通过LabVIEW菜单中，单击“工具”菜单下的”Create Data Link”项，创建UDL。创建UDL文件后，双击该文件，即可打开“连接属性”对话框并配置数据库连接属性。</p><p>不同类型的数据库文件必须选择对应的提供者，比如MDB数据库文件的提供者应该选择‘JET4.0OLEDB Provider”,而SQL服务器应该选择“ SQL Server”。</p><p>如果出现双击udl文件后无法编辑的问题，可以直接对udl进行文本编辑，使用文本编辑器打开udl文件</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594014991-udl%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%931-1024x138.png"></p><p>只需把指定的data source地址修改一下即可。</p><p>创建好udl文件后，连接数据库的程序框图如图：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594015271-udl%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%932-1024x233.png"></p><p>把udl放到地址中即可</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> labview </category>
           
       </categories>
       
@@ -4085,9 +4106,9 @@
             
             <tag> labview </tag>
             
-            <tag> 安捷伦 </tag>
-            
             <tag> 试验台 </tag>
+            
+            <tag> 安捷伦 </tag>
             
         </tags>
       
@@ -4351,9 +4372,9 @@
             
             <tag> 控制 </tag>
             
-            <tag> 安捷伦 </tag>
-            
             <tag> 试验台 </tag>
+            
+            <tag> 安捷伦 </tag>
             
         </tags>
       
@@ -4550,6 +4571,8 @@
             
             <tag> 搬瓦工 </tag>
             
+            <tag> 网站建设 </tag>
+            
             <tag> cloudflare </tag>
             
             <tag> wordpress </tag>
@@ -4557,8 +4580,6 @@
             <tag> 免费域名 </tag>
             
             <tag> 域名 </tag>
-            
-            <tag> 网站建设 </tag>
             
         </tags>
       
@@ -4712,9 +4733,34 @@
       
         <tags>
             
+            <tag> 云盘 </tag>
+            
             <tag> windows </tag>
             
-            <tag> 云盘 </tag>
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电池热管理工程实践认知 (1): 风冷式热管理系统</title>
+      <link href="/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<p><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></p><p><strong>1、电池热管理技术基本概念</strong></p><p>电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升，这个时候需要及时的散热，要不然就会中暑。当电池处于低温（例如-30℃）条件下的时候，电池无法正常的工作（温度太低，电池内反应物活性受限），车辆也就无法正常行驶，正如我们在瑟瑟寒风里无任何热防护的时候，人的身体感觉寒冷，人的动作就会变慢，这时候需要我们尽快采取取暖措施，要不然身体也会冻伤。</p><p>因此，我们人体在热了或者冷了且自身无法调节时，我们会开空调去做体外调节；如果人体被病毒细菌感染了，人体的免疫系统会产生作用，并升高体温；如果被发现是感染了厉害的病毒，高烧不退、吃退烧药也无法控制体温，就需要更为强力有效的方式进行综合调理、内外兼治。显然人体可以通过种种不同的途径来调节体温，那么电池的“体温”怎么办呢？</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg"></p><p>图0 电池的冷热管理（<a href="http://dc-ts.com/advanced-battery-thermal-management-system/%EF%BC%89">http://dc-ts.com/advanced-battery-thermal-management-system/）</a></p><p>对电池运行产生的热量进行管控的方法叫做<strong>电池热管理技术</strong>（详细可参见<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a>）。电池热管理就类似于人体对于体温的调节，如果电池运行产生的热量得不到有效的管理和控制，就会产生电池的热失控问题（<em><strong>我们后面会做专题讨论</strong></em>），这就类似于我们人体被感染了很厉害的病毒。在现阶段，由于动力电池材料技术处于发展瓶颈期，我们无法从根本上消除温度对电池性能和寿命的影响，但是不论是对于铅酸电池、锂离子电池或者是燃料电池，温度对于电池性能和寿命都是一个重要的影响因素，所以我们需要开发电池热管理技术对电池产生的热量进行管理，防止电池在高温或者低温下不能正常工作。希望目前的热管理只是一种过渡方式，后期的电芯不需要做任何热管理——这里大家不用担心失业，至少未来10年内，中国的6G、7G和1nm、0.5nm芯片冷却技术可能需要我们大展身手。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg"></p><p>图1 电池热管理的重要工程实践意义（百度图片）</p><p>温度最直观的影响就是对电池容量的影响，这也是为什么在冬季电动车行驶里程要比其他季节短很多的原因，同样每年的4月到9月都会出现电动车自燃的现象（暴晒条件下，车内温度达到60℃），天气燥热，电动车又给炎热的天气添了一把柴。综合各方面因素，电池热管理技术对于目前的动力电池是不可或缺的一部分，在环境温度较高时需要对电池进行降温，同时在温度较低时对电池进行加热，电池热管理技术相当于给电池加上了一个小型的空调系统。当然，在实际中也需要根据整车的实际运行工况来调整电池热管理系统策略。</p><p> </p><p><strong>2、电池热管理部件组成</strong></p><p>今天我们针对电池热管理技术的实际应用现状做个综述，后续我们再共同对其进行细分和学习。在国内目前能够大批量生产的汽车中实际应用的电池热管理技术可以分为四类：风冷式热管理技术、液冷式电池热管理技术、自然冷却式电池热管理技术和直冷式电池热管理技术（相变冷却技术）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg"></p><p>图2 电池热管理技术分类（百度图片）</p><p>另外电池包的保温设计（其实笔者感觉有效的保温最难实现，有时候想法和实际操作相差太远，现实条件中可能不允许你做一些保温的措施）和单纯加热的系统也都隶属于电池热管理系统，当然有人提出热扩散防控也属于热管理范畴，我们这里不做定义及探讨，本文主要针对散热系统进行介绍。</p><p> </p><p><strong>3、风冷式电池热管理系统部件构成</strong></p><p>风冷式热管理系统部件包括格栅、温度探头、滤网、进风管、冷风介质、电池包内部风管、出风管、风机，密封条和固定卡扣。一般来说格栅设计在风管的进口处，其作用是为了防止一些较大尺寸的物体进入电池包内部而堵塞风管。在格栅和风管之间还会设计有滤芯和风道，风道的设计一般会根据整车的内部结构和电池包内部结构设计进行调整，在实际的设计中，风道的设计要尽量的光滑和平顺。在风道和车辆部件接触的地方需要设计密封条。风机一般分为轴流分机和离心风机，根据不同的风冷式热管理系统的需求选择不同的风机类型。在选型的过程中一般会将噪音和送风量作为主要的参考因素。离心风机在电池包内部根据使用场景的不同可以分为吹风式和抽离式，最直接的例子就是丰田卡罗拉的两款HEV电池包，一款采用了吹风形式，另外一款采用了抽风形式。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg"></p><p>图3 丰田普锐斯（Prius）使用的风冷式电池热管理系统（谷歌图片）</p><p>当然，很多人可能会对风冷式热管理系统能否有效冷却电池保持怀疑态度，因为有很多这方面的文章提到风冷式系统的不足之处，这里我们简单探讨一下。在国内，针对不同的电池包我们尝试采用不同的冷却系统，对于EV (ElectricVehicle，纯电动汽车)，国内采用较多的热管理系统是液冷系统了，当然也会有一部分厂家尝试采用风冷系统，2016年奇瑞汽车生产的小蚂蚁电动汽车就尝试采用风冷式热管理系统进行散热。对于传统汽车改新能源车来说，采用风冷式热管理系统可以节省一大笔的开发费用，整车的空调系统可以直接按照原来燃油车的系统部件进行设计。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg"></p><p>图4 奇瑞小蚂蚁电动汽车（百度图片）</p><p>而对于HEV(Hybrid Electric Vehicle，混合动力汽车) 目前很多车厂都在争先进行开发，首选的电池热管理系统就是风冷式，比如前面提到的丰田卡罗拉和本田雅阁都是采用风冷式热管理系统。从大数据上看，日系车企很少采用液冷式热管理系统，大多采用的是风冷式，这点和国内的一些车企有些不同，可能是由于日系车企对液冷式系统还有其他的考量，个人感觉不会是因为成本的原因。对于HEV来说采用的电芯和EV的电芯是不同的，HEV在运行过程中动力电池不是唯一的动力来源，大部分情况下电池持续运行时间较短，风冷式热管理系统完全可以满足系统的要求，但是EV的动力完全来自于动力电池，电池长时间持续运行，这样电池就需要散热能力更强的电池热管理系统来保证电池的正常工作。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg"></p><p>图5 丰田卡罗拉油电混合汽车（百度图片）</p><p>风冷系统一般有三种设计，第一种就是单独采用风冷对电池进行散热或者加热；第二种就是仅用来对电池进行散热，对电池系统加热的话一般会另外设计加热膜；第三种就是风冷系统和加热膜结合，当电池需要散热的时候，仅仅启动冷却，当电池需要加热的时候，加热膜和风冷同时启动，此时风冷系统的进口为温度较高的车内气体。丰田卡罗拉的PHEV在两个模组之间设计的有加热膜，加热膜和模组之间的有效接触面积很小，笔者个人觉得加热膜只是为了加热电芯之间的空气，再通过风冷系统对电池包内的空气进行扰动。丰田卡罗拉的PHEV使用的是18650电芯，同时这款电池包的热失控管理设计也十分精巧，有空我们可以再聊聊。</p><p><strong>下面我们通过几个目前已经实现量产的实例来了解风冷式电池热管理技术。</strong></p><p>本田雅阁混动HEV的电池热管理系统中使用的冷却介质来自车内部的空调风，如果车主不使用空调时，进入电池包风管内的就是是车内没通过冷却的风。图示IPU指的就是电池包，我们简单了解一下冷却风是如何在内部流动的，电池包的冷却风从总进口进入电池包内部风道(模组的一侧)，然后再通过电芯之间的间隙，离心风扇和整个模组的另外一侧并没有设计风道，直接依靠离心风扇排出到外部，这样设计不仅仅对电池进行了散热，对电池包内部的发热器件（铜排、BDU）也有一定的散热作用。有兴趣的话大家可以看一下本田的专利，电芯之间设计有一定形状的塑料隔板，隔板不仅仅起到了流通的作用，在一定程度上也起到缓冲（电芯膨胀）的作用。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png"></p><p>图6 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png"></p><p>图7 电池包三维视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png"></p><p>图8 电池包内模组实物图（百度图片）</p><p> </p><p>奥迪Q5采用的同样也是风冷散热，但是奥迪在电池包的外部单独给整个电池包系统做了一个蒸发器，专门对电池包内部循环风进行降温，使进入到电池包内部的风控制在合理的范围内，同时奥迪的这款设计比较巧妙，它的冷却系统进风可以切换，拥有引入外部自然风和内部循环风两种功能，可以通过感知电池不同的温度阶段来切换这两种功能。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png"></p><p>图9 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png"></p><p>图10 电池包三维视图及其工作原理（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png"></p><p>图11 电池包内部模组视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png"></p><p>图12 电池包内部流体流动轨迹视图（百度图片）</p><p> </p><p>广汽丰田2020年新推出的一款C-HREV采用的也是风冷散热，丰田将2个蒸发器和2个膨胀阀移到了电池包内部，采用这种设计的电池包内部空气、两个离心风机、风道（风道位于电池包2侧）和模组单独形成了一个循环（封闭式风冷系统），这款设计和奥迪Q5设计有类似之处，C-HR电池包的蒸发器位于风机出口的风道内部，电池包内部具有加热功能，在每个大模组（包内有2种模组）的底部都设计的有加热膜（有弹性支撑），这种加热膜材质和国内的差别比较大，这款车的加热速率非常低（可能是出于安全考虑），C-HR这款电池包内部设计有许多值得借鉴的细节（风道比较有特点）。在一定程度上奥迪Q5和C-HR也采用了直冷的散热方式，只是蒸发器没有和电芯直接接触，可以避免过冷的现象出现，它们将风冷和直冷结合在一块，直接给动力电池的冷却介质配置一个蒸发器，这样电池散热效果更佳，但是成本可能会增加不少。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png"></p><p>图13 电池包三维视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png"></p><p>图14 电池包俯视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png"></p><p>图15 电池包热管理原理（百度图片）</p><p> </p><p>可见，风冷式电池热管理技术有很广的应用范围，而且应用在商业电动车上也有很好的效果。目前商用电动车还有其他的电池热管理技术，下一期，我们将着重介绍和讨论<strong>液冷式和直冷式电池热管理技术</strong>。</p><p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出，后续如果有兴趣大家可以留言，我们针对热管理的一些子部件进行详细探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行剖解分析，同时以上论述均为个人见解，如有错误之处请不吝赐教，技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p><p><strong>往期精彩回顾</strong></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 制冷技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电池热管理 </tag>
             
         </tags>
       
@@ -4742,31 +4788,6 @@
             <tag> 试验台 </tag>
             
             <tag> 制冷技术 </tag>
-            
-            <tag> 电池热管理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>电池热管理工程实践认知 (1): 风冷式热管理系统</title>
-      <link href="/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
-      <url>/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
-      
-        <content type="html"><![CDATA[<p><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></p><p><strong>1、电池热管理技术基本概念</strong></p><p>电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升，这个时候需要及时的散热，要不然就会中暑。当电池处于低温（例如-30℃）条件下的时候，电池无法正常的工作（温度太低，电池内反应物活性受限），车辆也就无法正常行驶，正如我们在瑟瑟寒风里无任何热防护的时候，人的身体感觉寒冷，人的动作就会变慢，这时候需要我们尽快采取取暖措施，要不然身体也会冻伤。</p><p>因此，我们人体在热了或者冷了且自身无法调节时，我们会开空调去做体外调节；如果人体被病毒细菌感染了，人体的免疫系统会产生作用，并升高体温；如果被发现是感染了厉害的病毒，高烧不退、吃退烧药也无法控制体温，就需要更为强力有效的方式进行综合调理、内外兼治。显然人体可以通过种种不同的途径来调节体温，那么电池的“体温”怎么办呢？</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg"></p><p>图0 电池的冷热管理（<a href="http://dc-ts.com/advanced-battery-thermal-management-system/%EF%BC%89">http://dc-ts.com/advanced-battery-thermal-management-system/）</a></p><p>对电池运行产生的热量进行管控的方法叫做<strong>电池热管理技术</strong>（详细可参见<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a>）。电池热管理就类似于人体对于体温的调节，如果电池运行产生的热量得不到有效的管理和控制，就会产生电池的热失控问题（<em><strong>我们后面会做专题讨论</strong></em>），这就类似于我们人体被感染了很厉害的病毒。在现阶段，由于动力电池材料技术处于发展瓶颈期，我们无法从根本上消除温度对电池性能和寿命的影响，但是不论是对于铅酸电池、锂离子电池或者是燃料电池，温度对于电池性能和寿命都是一个重要的影响因素，所以我们需要开发电池热管理技术对电池产生的热量进行管理，防止电池在高温或者低温下不能正常工作。希望目前的热管理只是一种过渡方式，后期的电芯不需要做任何热管理——这里大家不用担心失业，至少未来10年内，中国的6G、7G和1nm、0.5nm芯片冷却技术可能需要我们大展身手。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg"></p><p>图1 电池热管理的重要工程实践意义（百度图片）</p><p>温度最直观的影响就是对电池容量的影响，这也是为什么在冬季电动车行驶里程要比其他季节短很多的原因，同样每年的4月到9月都会出现电动车自燃的现象（暴晒条件下，车内温度达到60℃），天气燥热，电动车又给炎热的天气添了一把柴。综合各方面因素，电池热管理技术对于目前的动力电池是不可或缺的一部分，在环境温度较高时需要对电池进行降温，同时在温度较低时对电池进行加热，电池热管理技术相当于给电池加上了一个小型的空调系统。当然，在实际中也需要根据整车的实际运行工况来调整电池热管理系统策略。</p><p> </p><p><strong>2、电池热管理部件组成</strong></p><p>今天我们针对电池热管理技术的实际应用现状做个综述，后续我们再共同对其进行细分和学习。在国内目前能够大批量生产的汽车中实际应用的电池热管理技术可以分为四类：风冷式热管理技术、液冷式电池热管理技术、自然冷却式电池热管理技术和直冷式电池热管理技术（相变冷却技术）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg"></p><p>图2 电池热管理技术分类（百度图片）</p><p>另外电池包的保温设计（其实笔者感觉有效的保温最难实现，有时候想法和实际操作相差太远，现实条件中可能不允许你做一些保温的措施）和单纯加热的系统也都隶属于电池热管理系统，当然有人提出热扩散防控也属于热管理范畴，我们这里不做定义及探讨，本文主要针对散热系统进行介绍。</p><p> </p><p><strong>3、风冷式电池热管理系统部件构成</strong></p><p>风冷式热管理系统部件包括格栅、温度探头、滤网、进风管、冷风介质、电池包内部风管、出风管、风机，密封条和固定卡扣。一般来说格栅设计在风管的进口处，其作用是为了防止一些较大尺寸的物体进入电池包内部而堵塞风管。在格栅和风管之间还会设计有滤芯和风道，风道的设计一般会根据整车的内部结构和电池包内部结构设计进行调整，在实际的设计中，风道的设计要尽量的光滑和平顺。在风道和车辆部件接触的地方需要设计密封条。风机一般分为轴流分机和离心风机，根据不同的风冷式热管理系统的需求选择不同的风机类型。在选型的过程中一般会将噪音和送风量作为主要的参考因素。离心风机在电池包内部根据使用场景的不同可以分为吹风式和抽离式，最直接的例子就是丰田卡罗拉的两款HEV电池包，一款采用了吹风形式，另外一款采用了抽风形式。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg"></p><p>图3 丰田普锐斯（Prius）使用的风冷式电池热管理系统（谷歌图片）</p><p>当然，很多人可能会对风冷式热管理系统能否有效冷却电池保持怀疑态度，因为有很多这方面的文章提到风冷式系统的不足之处，这里我们简单探讨一下。在国内，针对不同的电池包我们尝试采用不同的冷却系统，对于EV (ElectricVehicle，纯电动汽车)，国内采用较多的热管理系统是液冷系统了，当然也会有一部分厂家尝试采用风冷系统，2016年奇瑞汽车生产的小蚂蚁电动汽车就尝试采用风冷式热管理系统进行散热。对于传统汽车改新能源车来说，采用风冷式热管理系统可以节省一大笔的开发费用，整车的空调系统可以直接按照原来燃油车的系统部件进行设计。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg"></p><p>图4 奇瑞小蚂蚁电动汽车（百度图片）</p><p>而对于HEV(Hybrid Electric Vehicle，混合动力汽车) 目前很多车厂都在争先进行开发，首选的电池热管理系统就是风冷式，比如前面提到的丰田卡罗拉和本田雅阁都是采用风冷式热管理系统。从大数据上看，日系车企很少采用液冷式热管理系统，大多采用的是风冷式，这点和国内的一些车企有些不同，可能是由于日系车企对液冷式系统还有其他的考量，个人感觉不会是因为成本的原因。对于HEV来说采用的电芯和EV的电芯是不同的，HEV在运行过程中动力电池不是唯一的动力来源，大部分情况下电池持续运行时间较短，风冷式热管理系统完全可以满足系统的要求，但是EV的动力完全来自于动力电池，电池长时间持续运行，这样电池就需要散热能力更强的电池热管理系统来保证电池的正常工作。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg"></p><p>图5 丰田卡罗拉油电混合汽车（百度图片）</p><p>风冷系统一般有三种设计，第一种就是单独采用风冷对电池进行散热或者加热；第二种就是仅用来对电池进行散热，对电池系统加热的话一般会另外设计加热膜；第三种就是风冷系统和加热膜结合，当电池需要散热的时候，仅仅启动冷却，当电池需要加热的时候，加热膜和风冷同时启动，此时风冷系统的进口为温度较高的车内气体。丰田卡罗拉的PHEV在两个模组之间设计的有加热膜，加热膜和模组之间的有效接触面积很小，笔者个人觉得加热膜只是为了加热电芯之间的空气，再通过风冷系统对电池包内的空气进行扰动。丰田卡罗拉的PHEV使用的是18650电芯，同时这款电池包的热失控管理设计也十分精巧，有空我们可以再聊聊。</p><p><strong>下面我们通过几个目前已经实现量产的实例来了解风冷式电池热管理技术。</strong></p><p>本田雅阁混动HEV的电池热管理系统中使用的冷却介质来自车内部的空调风，如果车主不使用空调时，进入电池包风管内的就是是车内没通过冷却的风。图示IPU指的就是电池包，我们简单了解一下冷却风是如何在内部流动的，电池包的冷却风从总进口进入电池包内部风道(模组的一侧)，然后再通过电芯之间的间隙，离心风扇和整个模组的另外一侧并没有设计风道，直接依靠离心风扇排出到外部，这样设计不仅仅对电池进行了散热，对电池包内部的发热器件（铜排、BDU）也有一定的散热作用。有兴趣的话大家可以看一下本田的专利，电芯之间设计有一定形状的塑料隔板，隔板不仅仅起到了流通的作用，在一定程度上也起到缓冲（电芯膨胀）的作用。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png"></p><p>图6 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png"></p><p>图7 电池包三维视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png"></p><p>图8 电池包内模组实物图（百度图片）</p><p> </p><p>奥迪Q5采用的同样也是风冷散热，但是奥迪在电池包的外部单独给整个电池包系统做了一个蒸发器，专门对电池包内部循环风进行降温，使进入到电池包内部的风控制在合理的范围内，同时奥迪的这款设计比较巧妙，它的冷却系统进风可以切换，拥有引入外部自然风和内部循环风两种功能，可以通过感知电池不同的温度阶段来切换这两种功能。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png"></p><p>图9 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png"></p><p>图10 电池包三维视图及其工作原理（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png"></p><p>图11 电池包内部模组视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png"></p><p>图12 电池包内部流体流动轨迹视图（百度图片）</p><p> </p><p>广汽丰田2020年新推出的一款C-HREV采用的也是风冷散热，丰田将2个蒸发器和2个膨胀阀移到了电池包内部，采用这种设计的电池包内部空气、两个离心风机、风道（风道位于电池包2侧）和模组单独形成了一个循环（封闭式风冷系统），这款设计和奥迪Q5设计有类似之处，C-HR电池包的蒸发器位于风机出口的风道内部，电池包内部具有加热功能，在每个大模组（包内有2种模组）的底部都设计的有加热膜（有弹性支撑），这种加热膜材质和国内的差别比较大，这款车的加热速率非常低（可能是出于安全考虑），C-HR这款电池包内部设计有许多值得借鉴的细节（风道比较有特点）。在一定程度上奥迪Q5和C-HR也采用了直冷的散热方式，只是蒸发器没有和电芯直接接触，可以避免过冷的现象出现，它们将风冷和直冷结合在一块，直接给动力电池的冷却介质配置一个蒸发器，这样电池散热效果更佳，但是成本可能会增加不少。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png"></p><p>图13 电池包三维视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png"></p><p>图14 电池包俯视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png"></p><p>图15 电池包热管理原理（百度图片）</p><p> </p><p>可见，风冷式电池热管理技术有很广的应用范围，而且应用在商业电动车上也有很好的效果。目前商用电动车还有其他的电池热管理技术，下一期，我们将着重介绍和讨论<strong>液冷式和直冷式电池热管理技术</strong>。</p><p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出，后续如果有兴趣大家可以留言，我们针对热管理的一些子部件进行详细探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行剖解分析，同时以上论述均为个人见解，如有错误之处请不吝赐教，技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p><p><strong>往期精彩回顾</strong></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 制冷技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
             
             <tag> 电池热管理 </tag>
             
@@ -4906,7 +4927,7 @@
       <link href="/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/"/>
       <url>/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/</url>
       
-        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><pre class="line-numbers language-none"><code class="language-none">ifconfig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#x43;&#80;&#x55;&#x40;&#49;&#x2e;&#x39;&#x47;&#x48;&#122;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
+        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><pre class="line-numbers language-none"><code class="language-none">ifconfig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#x43;&#x50;&#x55;&#64;&#x31;&#46;&#57;&#71;&#72;&#x7a;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
       
       
       <categories>
@@ -5071,13 +5092,13 @@
             
             <tag> v2ray </tag>
             
-            <tag> 邮件 </tag>
-            
             <tag> 控制 </tag>
             
-            <tag> windows </tag>
+            <tag> 邮件 </tag>
             
             <tag> 宝塔面板 </tag>
+            
+            <tag> windows </tag>
             
             <tag> 搬瓦工 </tag>
             
@@ -5172,9 +5193,9 @@
       
         <tags>
             
-            <tag> 邮件 </tag>
-            
             <tag> 控制 </tag>
+            
+            <tag> 邮件 </tag>
             
             <tag> 邮箱 </tag>
             
@@ -5815,6 +5836,31 @@
     
     
     <entry>
+      <title>树莓派无显示器无网线ssh连接无线网</title>
+      <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/"/>
+      <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/</url>
+      
+        <content type="html"><![CDATA[<p>如果没有显示器等外设，同时又没有网线，只能先在树莓派里添加ssh文件，同时在里面添加wifi连接信息，使得树莓派开机就可以启动ssh同时连接上我们预设的wifi，具体操作如下</p><p>由于树莓派系统开始时默认是不开启ssh连接的，没有开启ssh就无法连接电脑，后续的操作也就无从谈起。所以首先要先开启树莓派的ssh连接，烧录好系统后，内存卡只有一个boot分区可以被识别，在里面添加一个命名为ssh的空白文件即可实现开机开启ssh</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578198512-%E6%A0%91%E8%8E%93%E6%B4%BE7.png"></p><p>之后往系统里添加wifi信息</p><p>首先在内存卡中的boot分区中新建一个<strong>wpa_supplicant.conf</strong>的文件，并在里面写上树莓派的wifi配置命令：</p><pre class="line-numbers language-none"><code class="language-none">country&#x3D;CNctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdevupdate_config&#x3D;1network&#x3D;&#123;    ssid&#x3D;&quot;wifi名称&quot;    psk&#x3D;&quot;wifi密码&quot;    key_mgmt&#x3D;WPA-PSK    priority&#x3D;1&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p> </p><p>其中ssid是wifi名称，psk是自己的wifi密码</p><p>添加上去之后即可开机连接上wifi，从而获取树莓派ID，使用ssh连接上去</p><p>如何查看树莓派ip地址可以使用软件<a href="https://www.advanced-ip-scanner.com/cn/">Advanced IP Scanner</a>查看，或者自己可以登入路由器后台查看，使用软件扫描如下：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578199454-%E6%A0%91%E8%8E%93%E6%B4%BE8-1024x733.png"></p><p>之后使用ssh或者putty软件连接到这个ip上，树莓派默认的登入用户名为pi，登入密码为raspberry</p><p> </p><p>如果树莓派一直在闪绿灯，而且一直连接不上wifi，那么可能是因为电源电流太小了，更换一下电源大小即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 树莓派 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 树莓派 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>树莓派更改软件源</title>
       <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/"/>
       <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/</url>
@@ -5832,31 +5878,6 @@
         <tags>
             
             <tag> 软件 </tag>
-            
-            <tag> 树莓派 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>树莓派无显示器无网线ssh连接无线网</title>
-      <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/"/>
-      <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/</url>
-      
-        <content type="html"><![CDATA[<p>如果没有显示器等外设，同时又没有网线，只能先在树莓派里添加ssh文件，同时在里面添加wifi连接信息，使得树莓派开机就可以启动ssh同时连接上我们预设的wifi，具体操作如下</p><p>由于树莓派系统开始时默认是不开启ssh连接的，没有开启ssh就无法连接电脑，后续的操作也就无从谈起。所以首先要先开启树莓派的ssh连接，烧录好系统后，内存卡只有一个boot分区可以被识别，在里面添加一个命名为ssh的空白文件即可实现开机开启ssh</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578198512-%E6%A0%91%E8%8E%93%E6%B4%BE7.png"></p><p>之后往系统里添加wifi信息</p><p>首先在内存卡中的boot分区中新建一个<strong>wpa_supplicant.conf</strong>的文件，并在里面写上树莓派的wifi配置命令：</p><pre class="line-numbers language-none"><code class="language-none">country&#x3D;CNctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdevupdate_config&#x3D;1network&#x3D;&#123;    ssid&#x3D;&quot;wifi名称&quot;    psk&#x3D;&quot;wifi密码&quot;    key_mgmt&#x3D;WPA-PSK    priority&#x3D;1&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p> </p><p>其中ssid是wifi名称，psk是自己的wifi密码</p><p>添加上去之后即可开机连接上wifi，从而获取树莓派ID，使用ssh连接上去</p><p>如何查看树莓派ip地址可以使用软件<a href="https://www.advanced-ip-scanner.com/cn/">Advanced IP Scanner</a>查看，或者自己可以登入路由器后台查看，使用软件扫描如下：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578199454-%E6%A0%91%E8%8E%93%E6%B4%BE8-1024x733.png"></p><p>之后使用ssh或者putty软件连接到这个ip上，树莓派默认的登入用户名为pi，登入密码为raspberry</p><p> </p><p>如果树莓派一直在闪绿灯，而且一直连接不上wifi，那么可能是因为电源电流太小了，更换一下电源大小即可</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 树莓派 </category>
-          
-      </categories>
-      
-      
-        <tags>
             
             <tag> 树莓派 </tag>
             
@@ -6401,11 +6422,11 @@
     
     
     <entry>
-      <title>WordPress使用cloudflare的CDN解析后如何在后台显示用户真实ip</title>
-      <link href="/2019/11/24/wordpress%E4%BD%BF%E7%94%A8cloudflare%E7%9A%84cdn%E8%A7%A3%E6%9E%90%E5%90%8E%E5%A6%82%E4%BD%95%E5%9C%A8%E5%90%8E%E5%8F%B0%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9Eip/"/>
-      <url>/2019/11/24/wordpress%E4%BD%BF%E7%94%A8cloudflare%E7%9A%84cdn%E8%A7%A3%E6%9E%90%E5%90%8E%E5%A6%82%E4%BD%95%E5%9C%A8%E5%90%8E%E5%8F%B0%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9Eip/</url>
+      <title>WordPress使用插件Image Watermark为文章图片添加水印</title>
+      <link href="/2019/11/24/wordpress%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6image-watermark%E4%B8%BA%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0/"/>
+      <url>/2019/11/24/wordpress%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6image-watermark%E4%B8%BA%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0/</url>
       
-        <content type="html"><![CDATA[<p>在WordPress里安装了统计插件，可以显示访问用户的设备和ip信息等情况，但之前由于使用了cloudflare的CDN，导致显示的用户ip都是cloudflare的ip，没有任何作用，所以为了得到用户的真实ip，我们可以通过添加一小段代码来实现，代码如下：</p><pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F;绕过 CDN 代理IP获取客户真实IP地址if(isset($_SERVER[&#39;HTTP_X_FORWARDED_FOR&#39;]))&#123;$list &#x3D; explode(&#39;,&#39;,$_SERVER[&#39;HTTP_X_FORWARDED_FOR&#39;]);$_SERVER[&#39;REMOTE_ADDR&#39;] &#x3D; $list[0];&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>将上面这段代码添加到网站根目录的wp-config.php文件开头中php下即可，记住是根目录下的，不是主题下的：</p><p><a href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8cloudflare%e7%9a%84cdn%e8%a7%a3%e6%9e%90%e5%90%8e%e5%a6%82%e4%bd%95%e5%9c%a8%e5%90%8e%e5%8f%b0%e6%98%be%e7%a4%ba%e7%94%a8%e6%88%b7%e7%9c%9f%e5%ae%9eip/1574577843-%e8%8e%b7%e5%8f%96%e7%9c%9f%e5%ae%9eip/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574577843-%E8%8E%B7%E5%8F%96%E7%9C%9F%E5%AE%9Eip-1024x291.png"></a>添加后效果如下： <a href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8cloudflare%e7%9a%84cdn%e8%a7%a3%e6%9e%90%e5%90%8e%e5%a6%82%e4%bd%95%e5%9c%a8%e5%90%8e%e5%8f%b0%e6%98%be%e7%a4%ba%e7%94%a8%e6%88%b7%e7%9c%9f%e5%ae%9eip/1574578002-%e6%98%be%e7%a4%ba%e7%9c%9f%e5%ae%9eip2/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574578002-%E6%98%BE%E7%A4%BA%E7%9C%9F%E5%AE%9Eip2.png"></a>此时已经可以把访问用户的真实ip和地址显示出来，起到一定的监控作用，对于恶意访问的ip也可以进行封禁了</p>]]></content>
+        <content type="html"><![CDATA[<p>有时候我们经常需要在文章中上传图片，但由于有些图片是我们的原创，所以我们不希望别人随便盗用，此时我们就可以在图片上添加水印，但要是一张张图片去添加就会太麻烦了，这里介绍一个插件，叫做：Image Watermark，我们可以到插件里面去搜索安装</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574576130-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B61-1024x400.png"></p><p>水印插件比较多，但这个插件功能比较完善，主要有以下特点</p><ul><li>上传的图片自动加水印</li><li>原有媒体库文件批量添加水印</li><li>特定类型图片添加水印</li><li>水印位置调整、边距偏移</li><li>水印大小、透明度调整</li><li>图片保护</li></ul><p>所以总体来说可以满足我们的需求了，安装完成之后进行设置，配置内容基本上如下所示：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574576748-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B64-1024x706.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574576752-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B63-1024x709.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574576756-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B62-1024x448.png"></p><p><a href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8%e6%8f%92%e4%bb%b6image-watermark%e4%b8%ba%e6%96%87%e7%ab%a0%e5%9b%be%e7%89%87%e6%b7%bb%e5%8a%a0%e6%b0%b4%e5%8d%b0/1574576752-%e6%b0%b4%e5%8d%b0%e6%8f%92%e4%bb%b63/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574576752-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B63-1024x709.png"></a><a href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8%e6%8f%92%e4%bb%b6image-watermark%e4%b8%ba%e6%96%87%e7%ab%a0%e5%9b%be%e7%89%87%e6%b7%bb%e5%8a%a0%e6%b0%b4%e5%8d%b0/1574576748-%e6%b0%b4%e5%8d%b0%e6%8f%92%e4%bb%b64/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574576748-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B64-1024x706.png"></a>配置完成之后，我们上传图片都会添加上我们的水印，如果想为之前添加的图片添加水印，可以到媒体库中：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574577043-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B65.png"><a href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8%e6%8f%92%e4%bb%b6image-watermark%e4%b8%ba%e6%96%87%e7%ab%a0%e5%9b%be%e7%89%87%e6%b7%bb%e5%8a%a0%e6%b0%b4%e5%8d%b0/1574577043-%e6%b0%b4%e5%8d%b0%e6%8f%92%e4%bb%b65/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574577043-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B65.png"></a>照上图所示操作即可为以前上传的图片添加水印</p>]]></content>
       
       
       <categories>
@@ -6428,11 +6449,11 @@
     
     
     <entry>
-      <title>WordPress使用插件Image Watermark为文章图片添加水印</title>
-      <link href="/2019/11/24/wordpress%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6image-watermark%E4%B8%BA%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0/"/>
-      <url>/2019/11/24/wordpress%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6image-watermark%E4%B8%BA%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0/</url>
+      <title>WordPress使用cloudflare的CDN解析后如何在后台显示用户真实ip</title>
+      <link href="/2019/11/24/wordpress%E4%BD%BF%E7%94%A8cloudflare%E7%9A%84cdn%E8%A7%A3%E6%9E%90%E5%90%8E%E5%A6%82%E4%BD%95%E5%9C%A8%E5%90%8E%E5%8F%B0%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9Eip/"/>
+      <url>/2019/11/24/wordpress%E4%BD%BF%E7%94%A8cloudflare%E7%9A%84cdn%E8%A7%A3%E6%9E%90%E5%90%8E%E5%A6%82%E4%BD%95%E5%9C%A8%E5%90%8E%E5%8F%B0%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9Eip/</url>
       
-        <content type="html"><![CDATA[<p>有时候我们经常需要在文章中上传图片，但由于有些图片是我们的原创，所以我们不希望别人随便盗用，此时我们就可以在图片上添加水印，但要是一张张图片去添加就会太麻烦了，这里介绍一个插件，叫做：Image Watermark，我们可以到插件里面去搜索安装</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574576130-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B61-1024x400.png"></p><p>水印插件比较多，但这个插件功能比较完善，主要有以下特点</p><ul><li>上传的图片自动加水印</li><li>原有媒体库文件批量添加水印</li><li>特定类型图片添加水印</li><li>水印位置调整、边距偏移</li><li>水印大小、透明度调整</li><li>图片保护</li></ul><p>所以总体来说可以满足我们的需求了，安装完成之后进行设置，配置内容基本上如下所示：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574576748-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B64-1024x706.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574576752-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B63-1024x709.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574576756-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B62-1024x448.png"></p><p><a href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8%e6%8f%92%e4%bb%b6image-watermark%e4%b8%ba%e6%96%87%e7%ab%a0%e5%9b%be%e7%89%87%e6%b7%bb%e5%8a%a0%e6%b0%b4%e5%8d%b0/1574576752-%e6%b0%b4%e5%8d%b0%e6%8f%92%e4%bb%b63/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574576752-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B63-1024x709.png"></a><a href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8%e6%8f%92%e4%bb%b6image-watermark%e4%b8%ba%e6%96%87%e7%ab%a0%e5%9b%be%e7%89%87%e6%b7%bb%e5%8a%a0%e6%b0%b4%e5%8d%b0/1574576748-%e6%b0%b4%e5%8d%b0%e6%8f%92%e4%bb%b64/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574576748-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B64-1024x706.png"></a>配置完成之后，我们上传图片都会添加上我们的水印，如果想为之前添加的图片添加水印，可以到媒体库中：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2019/11/1574577043-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B65.png"><a href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8%e6%8f%92%e4%bb%b6image-watermark%e4%b8%ba%e6%96%87%e7%ab%a0%e5%9b%be%e7%89%87%e6%b7%bb%e5%8a%a0%e6%b0%b4%e5%8d%b0/1574577043-%e6%b0%b4%e5%8d%b0%e6%8f%92%e4%bb%b65/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574577043-%E6%B0%B4%E5%8D%B0%E6%8F%92%E4%BB%B65.png"></a>照上图所示操作即可为以前上传的图片添加水印</p>]]></content>
+        <content type="html"><![CDATA[<p>在WordPress里安装了统计插件，可以显示访问用户的设备和ip信息等情况，但之前由于使用了cloudflare的CDN，导致显示的用户ip都是cloudflare的ip，没有任何作用，所以为了得到用户的真实ip，我们可以通过添加一小段代码来实现，代码如下：</p><pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F;绕过 CDN 代理IP获取客户真实IP地址if(isset($_SERVER[&#39;HTTP_X_FORWARDED_FOR&#39;]))&#123;$list &#x3D; explode(&#39;,&#39;,$_SERVER[&#39;HTTP_X_FORWARDED_FOR&#39;]);$_SERVER[&#39;REMOTE_ADDR&#39;] &#x3D; $list[0];&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>将上面这段代码添加到网站根目录的wp-config.php文件开头中php下即可，记住是根目录下的，不是主题下的：</p><p><a href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8cloudflare%e7%9a%84cdn%e8%a7%a3%e6%9e%90%e5%90%8e%e5%a6%82%e4%bd%95%e5%9c%a8%e5%90%8e%e5%8f%b0%e6%98%be%e7%a4%ba%e7%94%a8%e6%88%b7%e7%9c%9f%e5%ae%9eip/1574577843-%e8%8e%b7%e5%8f%96%e7%9c%9f%e5%ae%9eip/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574577843-%E8%8E%B7%E5%8F%96%E7%9C%9F%E5%AE%9Eip-1024x291.png"></a>添加后效果如下： <a href="https://www.demon1630.cf/wordpress%e4%bd%bf%e7%94%a8cloudflare%e7%9a%84cdn%e8%a7%a3%e6%9e%90%e5%90%8e%e5%a6%82%e4%bd%95%e5%9c%a8%e5%90%8e%e5%8f%b0%e6%98%be%e7%a4%ba%e7%94%a8%e6%88%b7%e7%9c%9f%e5%ae%9eip/1574578002-%e6%98%be%e7%a4%ba%e7%9c%9f%e5%ae%9eip2/"><img src="https://www.demon1630.cf/wp-content/uploads/2019/11/1574578002-%E6%98%BE%E7%A4%BA%E7%9C%9F%E5%AE%9Eip2.png"></a>此时已经可以把访问用户的真实ip和地址显示出来，起到一定的监控作用，对于恶意访问的ip也可以进行封禁了</p>]]></content>
       
       
       <categories>
@@ -6907,9 +6928,9 @@
             
             <tag> 网站 </tag>
             
-            <tag> wordpress </tag>
-            
             <tag> 网站建设 </tag>
+            
+            <tag> wordpress </tag>
             
         </tags>
       
