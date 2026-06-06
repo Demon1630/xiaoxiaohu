@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>2026 年土耳其区 Apple ID 订阅 ChatGPT Plus 教程</title>
+      <link href="/2026/06/06/turkey-apple-id-chatgpt-plus-risk-notes/"/>
+      <url>/2026/06/06/turkey-apple-id-chatgpt-plus-risk-notes/</url>
+      
+        <content type="html"><![CDATA[<p>这篇文章整理一套通过土耳其区 Apple ID，在 iPhone 或 iPad 上使用 App Store 余额订阅 ChatGPT Plus 的流程。</p><p>先说清楚：不同地区的 App Store 规则、礼品卡价格、Apple 风控和 OpenAI 订阅政策都会变化，本文只能作为 2026 年的操作参考。请尽量使用官方渠道和正规礼品卡，不要使用来路不明的代充、黑卡或异常低价卡。</p><h2 id="适合谁看"><a href="#适合谁看" class="headerlink" title="适合谁看"></a>适合谁看</h2><p>如果你已经有 iPhone 或 iPad，想了解如何注册土耳其区 Apple ID，并通过 App Store 内购订阅 ChatGPT Plus，可以参考这篇。</p><p>如果你只是想省事，最稳妥的方法仍然是使用自己所在地区的官方订阅渠道。外区账号方案需要处理注册、地区、礼品卡、风控等问题，并不一定省心。</p><h2 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h2><p>开始前准备好这些东西：</p><ul><li>一台 iPhone 或 iPad；</li><li>一个没有注册过 Apple ID 的邮箱，建议使用 Outlook、Gmail、163 或学校&#x2F;公司邮箱；</li><li>一个可以长期接收短信验证码的手机号；</li><li>一个土耳其地址信息；</li><li>一张正规渠道购买的土耳其区 Apple Gift Card；</li><li>已安装或准备安装的 ChatGPT App。</li></ul><p>注意：不建议使用主力 Apple ID 反复切换地区。更稳妥的做法是单独注册一个土耳其区 Apple ID，只用于 App Store 下载和订阅。</p><h2 id="第一步：生成土耳其地址"><a href="#第一步：生成土耳其地址" class="headerlink" title="第一步：生成土耳其地址"></a>第一步：生成土耳其地址</h2><p>注册 Apple ID 时需要填写姓名、生日、国家地区等信息，后续充值或订阅时也可能要求补充地址。</p><p>可以使用土耳其地址生成器生成一套地址信息，并把下面这些内容保存好：</p><ul><li>姓名；</li><li>街道地址；</li><li>城市；</li><li>省份或地区；</li><li>邮编；</li><li>电话号码格式。</li></ul><p>地址前后要尽量保持一致，不要注册时填一套，充值时又换另一套。</p><h2 id="第二步：注册土耳其区-Apple-ID"><a href="#第二步：注册土耳其区-Apple-ID" class="headerlink" title="第二步：注册土耳其区 Apple ID"></a>第二步：注册土耳其区 Apple ID</h2><p>在电脑浏览器中打开 Apple 账户官网：</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">https://account.apple.com/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>建议使用浏览器的隐私窗口或无痕窗口，然后选择“创建你的 Apple 账户”。</p><p>填写信息时注意：</p><ul><li>国家或地区选择“土耳其”；</li><li>邮箱不要使用已经绑定过 Apple ID 的邮箱；</li><li>年龄需要大于 18 岁；</li><li>手机号可以使用能正常接收验证码的号码；</li><li>邮箱验证码和短信验证码都要正常完成。</li></ul><p>如果页面提示“此时无法创建你的账户”，可以尝试：</p><ul><li>换一个邮箱；</li><li>换浏览器；</li><li>使用隐私窗口重新注册；</li><li>换一个更稳定的网络；</li><li>等一段时间后再试。</li></ul><h2 id="第三步：先把-App-Store-切到土耳其区"><a href="#第三步：先把-App-Store-切到土耳其区" class="headerlink" title="第三步：先把 App Store 切到土耳其区"></a>第三步：先把 App Store 切到土耳其区</h2><p>这一步很关键。不要急着直接在 App Store 登录新账号。</p><p>先在 iPhone 或 iPad 上退出当前 App Store 账号，然后尝试把 App Store 商店切到土耳其区。可以在 Safari 中打开下面这个跳转链接：</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143480&amp;cc=tr<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>打开后，系统可能会跳转到 App Store，并提示无法显示内容。此时可以点搜索图标或进入 App Store 首页，观察页面语言和内容是否已经变成土耳其区。</p><p>确认方法：</p><ul><li>App Store 首页大概率会显示英文或土耳其相关内容；</li><li>点击右上角头像；</li><li>进入账号信息；</li><li>查看地区是否显示为土耳其。</li></ul><p>确认 App Store 已经切到土耳其区后，再登录刚注册的土耳其区 Apple ID。<br>或者直接在浏览器苹果账号管理<a href="https://account.apple.com/account/manage/section/information" title="https:&#x2F;&#x2F;account.apple.com&#x2F;account&#x2F;manage&#x2F;section&#x2F;information">information</a>这里修改为土区地址也可以，主要是付款方式那里必须选择num，避免要填你的信用卡或者电话号码<br><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606172321330.png" alt="image.png"></p><h2 id="第四步：购买土耳其区-Apple-礼品卡"><a href="#第四步：购买土耳其区-Apple-礼品卡" class="headerlink" title="第四步：购买土耳其区 Apple 礼品卡"></a>第四步：购买土耳其区 Apple 礼品卡</h2><p>接下来需要给这个 Apple ID 充值土耳其区余额。</p><p>礼品卡建议只从相对可靠的正规渠道购买。不要购买明显低于市场价的卡，也不要找陌生人代充。代充和黑卡可能导致余额冻结、订阅失效，严重时还可能影响 Apple ID。</p><p>第一次可以先买小面额礼品卡测试，例如 25 里拉或其他较小金额。确认能正常兑换后，再按 ChatGPT Plus 所需金额充值。<br>购买可以在这个网站：<a href="https://www.seagm.com/zh-cn" title="https:&#x2F;&#x2F;www.seagm.com&#x2F;zh-cn">https://www.seagm.com</a>购买，不会溢价太多，目前500里拉大概在79块钱左右，刚好够买plus的会员，而且这里可以支持支付宝支付，比较方便<br><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606172619074.png" alt="image.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606172846631.png" alt="image.png"></p><h2 id="第五步：兑换礼品卡"><a href="#第五步：兑换礼品卡" class="headerlink" title="第五步：兑换礼品卡"></a>第五步：兑换礼品卡</h2><p>在 iPhone 或 iPad 上打开 App Store：</p><ol><li>点击右上角头像；</li><li>选择兑换礼品卡或代码；</li><li>粘贴礼品卡兑换码；</li><li>按提示确认兑换。</li></ol><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606173118024.png" alt="image.png"></p><p>如果系统要求填写地址，就填写前面保存的土耳其地址信息。</p><p>兑换成功后，可以在 App Store 账号余额中看到对应金额。到这一步，账号的土耳其区状态通常会更稳定。</p><h2 id="第六步：安装或重装-ChatGPT-App"><a href="#第六步：安装或重装-ChatGPT-App" class="headerlink" title="第六步：安装或重装 ChatGPT App"></a>第六步：安装或重装 ChatGPT App</h2><p>为了减少地区缓存和旧账号影响，建议这样处理：</p><ol><li>确认 App Store 当前登录的是土耳其区 Apple ID；</li><li>如果手机上已经安装过 ChatGPT App，可以先卸载；</li><li>用土耳其区 Apple ID 在 App Store 重新下载安装 ChatGPT App；</li><li>打开 ChatGPT App；</li><li>登录自己的 OpenAI &#x2F; ChatGPT 账号。</li></ol><p>这里的 Apple ID 和 ChatGPT 账号不是一回事。Apple ID 只是用于 App Store 下载和付款，ChatGPT App 里仍然登录你自己的 ChatGPT 账号。</p><h2 id="第七步：在-ChatGPT-App-内订阅-Plus"><a href="#第七步：在-ChatGPT-App-内订阅-Plus" class="headerlink" title="第七步：在 ChatGPT App 内订阅 Plus"></a>第七步：在 ChatGPT App 内订阅 Plus</h2><p>打开 ChatGPT App 后，进入升级页面，选择 ChatGPT Plus。</p><p>如果 App Store 余额充足，付款方式会优先使用 Apple ID 余额。确认订阅后，系统会要求输入 Apple ID 密码或使用 Face ID &#x2F; Touch ID 验证。</p><p>如果第一次提示购买失败，可以尝试：</p><ul><li>退出 ChatGPT App 后重新打开；</li><li>确认 App Store 余额足够；</li><li>确认 App Store 账号仍然是土耳其区；</li><li>检查是否需要补全账单地址；</li><li>等几分钟后再试。</li></ul><p>订阅成功后，可以在 ChatGPT App 中查看 Plus 状态，也可以在 App Store 的订阅管理中看到对应订阅。</p><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="需要一直使用土耳其-IP-吗"><a href="#需要一直使用土耳其-IP-吗" class="headerlink" title="需要一直使用土耳其 IP 吗"></a>需要一直使用土耳其 IP 吗</h3><p>注册 Apple ID 时最重要的是网络稳定，不一定需要土耳其 IP。使用 ChatGPT 时，主要看 ChatGPT 服务本身是否能正常访问。</p><p>不过，频繁切换异常网络环境可能触发平台风控。尽量保持使用环境稳定。</p><h3 id="可以用国内手机号注册吗"><a href="#可以用国内手机号注册吗" class="headerlink" title="可以用国内手机号注册吗"></a>可以用国内手机号注册吗</h3><p>可以使用能正常接收短信的手机号。关键是能稳定收到验证码，并且后续还能继续使用这个号码。</p><h3 id="可以用-QQ-邮箱吗"><a href="#可以用-QQ-邮箱吗" class="headerlink" title="可以用 QQ 邮箱吗"></a>可以用 QQ 邮箱吗</h3><p>不建议。虽然有人反馈 QQ 邮箱也能成功，但新号注册时更容易遇到风控。建议使用 Outlook、Gmail、163、学校邮箱或公司邮箱。</p><h3 id="可以直接把现有-Apple-ID-切到土耳其区吗"><a href="#可以直接把现有-Apple-ID-切到土耳其区吗" class="headerlink" title="可以直接把现有 Apple ID 切到土耳其区吗"></a>可以直接把现有 Apple ID 切到土耳其区吗</h3><p>不建议拿主力 Apple ID 做实验。主力账号通常绑定了订阅、购买记录、家庭共享、iCloud 和支付方式，切区失败或触发风控会很麻烦。</p><h2 id="风险提醒"><a href="#风险提醒" class="headerlink" title="风险提醒"></a>风险提醒</h2><p>这类操作存在几个风险：</p><ul><li>Apple ID 可能无法注册或被自动切回原地区；</li><li>礼品卡可能兑换失败；</li><li>订阅可能购买失败；</li><li>跨区订阅可能不符合平台服务条款；</li><li>未来 Apple 或 OpenAI 调整规则后，方法可能失效。</li></ul><p>所以不要把它当成永久方案，也不要一次性充值太多余额。小额测试、确认可用、再继续操作，会更稳妥。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>整体流程可以概括为：</p><ol><li>准备邮箱、手机号、iPhone 和土耳其地址；</li><li>在 Apple 官网注册土耳其区 Apple ID；</li><li>先把 App Store 切到土耳其区；</li><li>登录新注册的土耳其区 Apple ID；</li><li>购买并兑换土耳其区 Apple Gift Card；</li><li>用土耳其区账号下载或重装 ChatGPT App；</li><li>在 App 内通过 App Store 余额订阅 ChatGPT Plus。</li></ol><p>这套方法的关键不是某一个按钮怎么点，而是顺序和风控：先确认地区，再登录账号，再充值，最后订阅。中间任何一步异常，都建议停下来排查，不要反复乱试。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ChatGPT </tag>
+            
+            <tag> Apple ID </tag>
+            
+            <tag> App Store </tag>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>最强知识管理工具 Obsidian，保姆级入门教程！</title>
+      <link href="/2026/06/05/%E6%9C%80%E5%BC%BA%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%20Obsidian%EF%BC%8C%E4%BF%9D%E5%A7%86%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%81%201/"/>
+      <url>/2026/06/05/%E6%9C%80%E5%BC%BA%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%20Obsidian%EF%BC%8C%E4%BF%9D%E5%A7%86%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%81%201/</url>
+      
+        <content type="html"><![CDATA[<p>前面有提到搭建个人知识库[[我是怎么搭建个人知识库的：Obsidian + GitHub]]</p><p>随着AI时代的发展，用户对知识管理工具的需求越来越强烈。</p><p>有了知识管理工具，你就拥有了一个海量记忆的外接大脑，能够随时存储和检索你的个性化信息。</p><p>如今市面上推出了各种各样的知识管理工具，究竟哪一家最强呢？目前公认最强大的工具当属 Obsidian 。</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174303747.png" alt="01.png"></p><p>今天，小灰就为大家介绍一下 Obsidian 的基本概念、安装方法、插件种类、同步技巧、图床功能等等。文章较长，建议大家先收藏，不迷路。</p><p>一、Obsidian 到底是什么？</p><p>一句话说清楚，Obsidian 是一款本地优先的 Markdown 笔记软件。</p><p>它和普通文档工具最大的区别，不是界面，而在于你可以将笔记长期保存在本地，并通过链接把内容相互关联起来。</p><p>如果你只是偶尔写一篇文章，Typora 就已经能满足需求了。</p><p>但如果你想把资料、灵感、草稿、项目记录慢慢积累成自己的知识库，Obsidian 更合适。</p><h2 id="二、安装与初始设置"><a href="#二、安装与初始设置" class="headerlink" title="二、安装与初始设置"></a>二、安装与初始设置</h2><h2 id="1-下载安装并创建-Vault"><a href="#1-下载安装并创建-Vault" class="headerlink" title="1. 下载安装并创建 Vault"></a>1. 下载安装并创建 Vault</h2><p>官网是 <code>https://obsidian.md</code> 。<br><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174334102.png" alt="02.png"></p><p>安装完成后，首次启动会让你创建一个 Vault。</p><p>你可以把 Vault 理解成一个专门放笔记的文件夹，比如：</p><pre class="line-numbers language-none"><code class="language-none">我的知识库&#x2F;├── 读书笔记.md├── AI写作.md├── 项目复盘.md└── 素材&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这一步很重要，因为 Obsidian 的笔记本质上就是普通文件。你以后做同步、备份、迁移、导出，都是基于这个文件夹来做。</p><p>如果官网或插件下载比较慢，我把安装包和需要用到的插件放在了网盘里，大家可以自取：</p><p><a href="https://pan.quark.cn/s/bde04f0a8c18">https://pan.quark.cn/s/bde04f0a8c18</a></p><p>2. 先认识这几个区域</p><p>第一次打开后，先认这几个地方：</p><ul><li>• 左侧，文件列表和搜索</li><li>• 中间，编辑区</li><li>• 右侧，反向链接和大纲</li><li>• 左下角，设置入口<br><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174348488.png" alt="03.png"></li></ul><p>3. 先打开几个常用核心功能</p><p>进入“设置 → 核心插件”，建议优先打开这些：</p><table><thead><tr><th>功能</th><th>作用</th></tr></thead><tbody><tr><td>搜索</td><td>全文搜索，找笔记最快</td></tr><tr><td>快速切换</td><td>用 <code>Ctrl + O</code> 快速跳转到任意笔记</td></tr><tr><td>反向链接</td><td>查看哪些笔记提到了当前这篇</td></tr><tr><td>大纲</td><td>快速浏览长文结构</td></tr><tr><td>模板</td><td>固定格式的笔记可以一键套用</td></tr><tr><td>关系图谱</td><td>用知识图谱方式查看笔记关系</td></tr><tr><td>命令面板</td><td>用 <code>Ctrl + Shift + P</code> 找几乎所有命令</td></tr><tr><td>斜杠命令</td><td>启用后，在编辑器中输入斜杠可以快速触发命令</td></tr><tr><td>发布</td><td>一键发布到小红书、微信公众号等平台</td></tr></tbody></table><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174402697.png" alt="04.png"></p><h2 id="三、怎么安装插件？"><a href="#三、怎么安装插件？" class="headerlink" title="三、怎么安装插件？"></a>三、怎么安装插件？</h2><p>这几乎是每个新手最关心的问题。</p><p>Obsidian 的插件分两类：</p><ul><li>• 核心插件，官方自带，打开就能用</li><li>• 社区插件，第三方开发，需要你自己安装</li></ul><p>安装社区插件的步骤很简单：</p><ol><li><p>1. 打开“设置”</p></li><li><p>2. 进入“第三方插件”</p></li><li><p>3. 先关闭安全模式<br><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174423211.png" alt="05.png"></p></li><li><p>4. 点击“浏览”</p></li><li><p>5. 搜索插件名</p></li><li><p>6. 点击“安装”<br><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174432415.png" alt="06.png"></p></li></ol><p>第一次装插件，最容易犯的错就是一下装太多。</p><p>对小白来说，前期先配 3 个 Obsidian 插件就够了：</p><table><thead><tr><th>插件</th><th>作用</th></tr></thead><tbody><tr><td>Editing Toolbar</td><td>给编辑器加一排常用按钮，不想手敲 Markdown 的人很适合</td></tr><tr><td>Image auto upload</td><td>自动图片上传</td></tr><tr><td>Nutstore Sync</td><td>坚果云同步插件</td></tr></tbody></table><p>考虑到很多小伙伴网络的问题，大家只需把网盘里面的插件解压到Obsidian的插件文件夹，然后刷新即可。</p><p>1. 打开插件文件夹：</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174443697.png" alt="07.png"></p><p>2. 将网盘下载的插件压缩包解压：<br><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174537869.png" alt="08.png"></p><p>3. 点击刷新，即可加载刚刚解压的插件：<br><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174553100.png" alt="09.png"></p><h2 id="四、怎么安装和使用-Web-Clipper-？"><a href="#四、怎么安装和使用-Web-Clipper-？" class="headerlink" title="四、怎么安装和使用 Web Clipper ？"></a>四、怎么安装和使用 Web Clipper ？</h2><p>很多人看到一篇好文章、一个工具页、一个教程页面，第一反应是先收藏到浏览器，结果过几天就再也找不到了。</p><p><code>Web Clipper</code> 的作用，就是你在浏览网页时，可以直接把当前页面一键保存到 Obsidian。</p><p>你可以先把它理解成： <strong>把网上看到的有用内容，更顺手地收进自己的知识库。</strong></p><p>它比较适合这几种场景：</p><ul><li>• 收藏一篇以后要细读的文章</li><li>• 保存某个工具官网的介绍页</li><li>• 剪藏教程、案例、清单类内容</li><li>• 先收集资料，后面再慢慢整理成自己的笔记</li></ul><p>对小白来说， <code>Web Clipper</code> 真正有用的地方，不是“收藏网页”这件事本身，而是它帮你少走了一步。</p><p>以前你可能是：看到好内容，先加入浏览器收藏夹，过几天再忘记。</p><p>现在你可以直接把内容收进 Obsidian，后面再配合搜索、标签、双向链接慢慢整理。</p><p>如果你平时经常看教程、刷工具、存案例，那这个功能会非常高频。</p><p>这里我们以 <code>Chrome</code> 为例，介绍该插件如何使用。</p><p>1. 从网盘下载 <code>Web Clipper</code> 插件。</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174606603.png" alt="10.png"></p><p>2. 打开 <code>Chrome</code> 扩展程序页面，开启开发者模式，直接将压缩包拖拽到扩展程序页面完成安装。</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174618416.png" alt="11.png"></p><p>3. 配置和使用</p><p>打开设置页面：</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174628631.png" alt="12.png"></p><p>修改语言为中文，配置保管库：</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174641899.png" alt="13.png"></p><p>配置模板：</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174654781.png" alt="14.png"></p><p>4. 测试效果：</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174705386.png" alt="15.png"></p><h2 id="五、怎么配置图床"><a href="#五、怎么配置图床" class="headerlink" title="五、怎么配置图床"></a>五、怎么配置图床</h2><p>这里可以参考之前的[[使用github+picgo搭建图床并使用免费cdn服务进行加速]]<br>如果你只是自己本地记笔记，图片直接存在 Vault 里就够了。</p><p>但如果你要把 Obsidian 里的内容发到公众号、博客、论坛，图床会很重要。</p><p>因为很多平台不认你本地电脑上的图片路径，你需要把图片先传到网上，再拿到一个可访问的链接。</p><p>对小白来说，最常见也最省心的组合就是 <strong>PicGo + 阿里云</strong> ：PicGo 负责上传，阿里云负责存。</p><p>也就是说： <strong>拖一张图进笔记，PicGo 自动上传，返回一个图片链接。</strong></p><p>配置顺序很简单：</p><p>1. 启用 <code>Image auto upload</code> 插件：</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174717691.png" alt="16.png"></p><p>2. 安装 PicGo 选择你需要的版本进行安装，Windows选exe文件，Mac选dmg文件：<br><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174728592.png" alt="17.png"></p><p>3. 去阿里云注册，完成实名认证。</p><p>4. 进入阿里云对象存储 OSS，没开通的点击 <code>立即开通</code></p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174741046.png" alt="18.png"></p><p>5. 快速创建 <code>Bucket</code></p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174752691.png" alt="19.png"></p><p>6. 开启公共访问权限</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174806631.png" alt="20.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174817151.png" alt="21.png"></p><p>7. 创建 AccessKey ID、AccessKey Secret</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174827785.png" alt="22.png"></p><p>8. 在 PicGo 中选择阿里云图床，填入以上信息</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174838313.png" alt="23.png"></p><p>9. 常用配置</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174849430.png" alt="24.png"></p><p>10. 复制粘贴一张图片到文档，正常返回链接显示图片就表示成功了</p><p><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174904137.png" alt="25.png"></p><p>如果你暂时还不发文章，图床可以先不折腾。但如果你经常写公众号或博客，这一步早点配好，不然后面搬图片会很麻烦。</p><h2 id="六、怎样同步笔记-？"><a href="#六、怎样同步笔记-？" class="headerlink" title="六、怎样同步笔记 ？"></a>六、怎样同步笔记 ？</h2><p>很多人觉得同步功能可以后期再配置，其实不然。</p><p>如果多设备间无法同步笔记，使用体验会大打折扣，久而久之你就会转向其他便携工具。</p><p>1. 常见同步方案怎么选</p><table><thead><tr><th>方案</th><th>适合谁</th><th>特点</th></tr></thead><tbody><tr><td>Obsidian Sync</td><td>想省心、省折腾的人</td><td>官方方案，体验完整，但要付费</td></tr><tr><td>坚果云</td><td>大多数中文用户</td><td>上手门槛低，日常同步够用，比较适合新手</td></tr><tr><td>Git + Gitee</td><td>程序员、进阶用户</td><td>版本记录清楚，适合备份和回滚，但门槛更高</td></tr></tbody></table><p>如果你问我新手优先选哪个，我还是更建议先用坚果云。</p><ol><li><p>启用 <code>Nutstore Sync</code> 插件<br><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174915423.png" alt="26.png"></p></li><li><p>登录坚果云，绑定账号<br><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174925476.png" alt="27.png"></p></li><li><p>开始同步<br><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260606174934500.png" alt="28.png"></p></li></ol><p>如果你本身就熟悉 Git，那也可以把整个 Vault 放进 Git 仓库，再同步到 Gitee，适合做长期备份和版本回滚。</p><h2 id="七、怎么搭建-LLM-Wiki"><a href="#七、怎么搭建-LLM-Wiki" class="headerlink" title="七、怎么搭建 LLM Wiki"></a>七、怎么搭建 LLM Wiki</h2><p>很多人一开始把 Obsidian 当成笔记软件，但真正拉开使用差距的，是能否将它打造成专属的个人 AI 知识库。</p><p>你可以先简单理解成一句话： <strong>让你记下来的内容，不只是方便自己搜索，以后也能更方便给 AI 调用。</strong></p><p>对小白来说，这一块先不用一开始就深挖。</p><p>但有一个前提要先明白： <strong>LLM Wiki 的基础，不是先装多少 AI 工具，而是你手里先得有内容。</strong></p><p>也就是说，前期最重要的不是折腾配置，而是先持续积累笔记、资料、想法和链接。</p><p>你只要先把内容慢慢记下来，再尽量写清楚、标题起明白、相关内容连起来，后面不管是做知识整理、AI 问答，还是让 AI 帮你生成内容，都会顺很多。</p><p>等你前面这些先跑通了，后面我们再单独讲，怎么把 Obsidian 慢慢搭成一个真正能用的 LLM Wiki。</p><h2 id="八、给小白的最小建议"><a href="#八、给小白的最小建议" class="headerlink" title="八、给小白的最小建议"></a>八、给小白的最小建议</h2><p>如果你今天第一次开始用 Obsidian，不要想着一步到位。</p><p>先按这个顺序来就够了：</p><ol><li>1. 安装 Obsidian，建一个 Vault</li><li>2. 打开搜索、反向链接、关系图谱 这些核心功能</li><li>3. 先装 <code>Editing Toolbar</code> 、 <code>Web Clipper</code> 、 <code>Image auto upload</code> 、 <code>Nutstore Sync</code> 这几个最常用的插件</li><li>4. 学会用 <code>Web Clipper</code> 把网上有用内容收进知识库</li><li>5. 如果你经常发文章，再去配 <code>PicGo + 阿里云</code></li><li>6. 尽早把同步跑通，新手优先用坚果云</li><li>7. 平时把笔记按主题写清楚，尽量加上 <code>[[双向链接]]</code></li><li>8. 慢慢整理出专题页，让知识库能被 AI 更好理解和调用</li></ol><p>文章来源于：<a href="https://mp.weixin.qq.com/s/eta2xD_NIIXZH2DqEt0JLQ">https://mp.weixin.qq.com/s/eta2xD_NIIXZH2DqEt0JLQ</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> clippings </tag>
+            
+            <tag> bosidian </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>有道云笔记下载为markdown文件到本地</title>
       <link href="/2026/06/01/%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%B8%8B%E8%BD%BD%E4%B8%BAmarkdown%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0/"/>
       <url>/2026/06/01/%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%B8%8B%E8%BD%BD%E4%B8%BAmarkdown%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0/</url>
@@ -41,13 +93,13 @@
       
         <tags>
             
+            <tag> 教程 </tag>
+            
             <tag> Obsidian </tag>
             
             <tag> GitHub </tag>
             
             <tag> 个人知识库 </tag>
-            
-            <tag> 教程 </tag>
             
         </tags>
       
@@ -607,9 +659,9 @@
             
             <tag> ansys </tag>
             
-            <tag> 仿真 </tag>
-            
             <tag> fluent </tag>
+            
+            <tag> 仿真 </tag>
             
         </tags>
       
@@ -638,9 +690,9 @@
             
             <tag> workbench </tag>
             
-            <tag> 仿真 </tag>
-            
             <tag> fluent </tag>
+            
+            <tag> 仿真 </tag>
             
             <tag> 控制 </tag>
             
@@ -885,17 +937,17 @@
             
             <tag> 密码 </tag>
             
-            <tag> newifi3 </tag>
-            
             <tag> nps </tag>
+            
+            <tag> 树莓派 </tag>
+            
+            <tag> newifi3 </tag>
             
             <tag> openwrt </tag>
             
             <tag> 新路由3 </tag>
             
             <tag> 旁路由 </tag>
-            
-            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -926,11 +978,11 @@
             
             <tag> 密码 </tag>
             
+            <tag> 树莓派 </tag>
+            
             <tag> openwrt </tag>
             
             <tag> 旁路由 </tag>
-            
-            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -963,9 +1015,9 @@
             
             <tag> 密码 </tag>
             
-            <tag> openwrt </tag>
-            
             <tag> 树莓派 </tag>
+            
+            <tag> openwrt </tag>
             
             <tag> 路由器 </tag>
             
@@ -1185,11 +1237,11 @@
             
             <tag> 密码 </tag>
             
+            <tag> 树莓派 </tag>
+            
             <tag> openwrt </tag>
             
             <tag> 新路由3 </tag>
-            
-            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -1802,9 +1854,9 @@
             
             <tag> 网站 </tag>
             
-            <tag> KMS激活 </tag>
-            
             <tag> windows </tag>
+            
+            <tag> KMS激活 </tag>
             
             <tag> 路由器 </tag>
             
@@ -1962,9 +2014,9 @@
             
             <tag> 离线下载 </tag>
             
-            <tag> newifi3 </tag>
-            
             <tag> nps </tag>
+            
+            <tag> newifi3 </tag>
             
             <tag> 新路由3 </tag>
             
@@ -1993,13 +2045,13 @@
       
         <tags>
             
-            <tag> newifi3 </tag>
-            
             <tag> nps </tag>
             
-            <tag> 新路由3 </tag>
-            
             <tag> 树莓派 </tag>
+            
+            <tag> newifi3 </tag>
+            
+            <tag> 新路由3 </tag>
             
             <tag> 路由器 </tag>
             
@@ -2148,9 +2200,9 @@
             
             <tag> nps </tag>
             
-            <tag> 树莓派 </tag>
-            
             <tag> 搬瓦工 </tag>
+            
+            <tag> 树莓派 </tag>
             
         </tags>
       
@@ -2716,11 +2768,11 @@
     
     
     <entry>
-      <title>LabVIEW2018软件安装教程</title>
-      <link href="/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
-      <url>/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+      <title>LabVIEW2013软件安装步骤</title>
+      <link href="/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/"/>
+      <url>/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/</url>
       
-        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><h1 id="LabVIEW-2018（32-64）位下载地址："><a href="#LabVIEW-2018（32-64）位下载地址：" class="headerlink" title="LabVIEW 2018（32&#x2F;64）位下载地址："></a>LabVIEW 2018（32&#x2F;64）位下载地址：</h1><p><a href="https://pan.baidu.com/s/1vOoYTrN36Mumr87zleAuPQ">https://pan.baidu.com/s/1vOoYTrN36Mumr87zleAuPQ</a></p><p>密码: m035</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1.右击软件压缩包选择解压到LabVIEW2018。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02aa4f4248d4969605a8fe47049d24ab.jpeg"></p><p>2.选中文件，鼠标右击选择以管理员身份打开2018LV-WinChn.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1bb32c3fd83ba195c4ab509f7ab27cf1.jpeg"></p><p>3.点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-55c0ebbb8e9ffe50bfa5faa7440930ae.jpeg"></p><p>4.点击Unzip解压。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2c1edfad3c1d905d0e56b564f2a687ab.jpeg"></p><p>5.点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-23e08e9b8a3b4c49a182414d33c1b464.jpeg"></p><p>6.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-be96e23cebca79c47a475c38dac45204.jpeg"></p><p>7.填写任意信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d57fabe4fab17dcd7ba07b9bb5baa1a3.jpeg"></p><p>8.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d379adcac5b51eba662ebb97999a632d.jpeg"></p><p>9.点击浏览更改安装路径建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LABVIEW2018文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a803e9d536b532d076497d32550f05b7.jpeg"></p><p>10.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-664ea2ec7a958c603a0964b961c4dce8.jpeg"></p><p>11.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cc088ef7c1aa820c244a233d0e371a9c.jpeg"></p><p>12.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c2e88085c5db563b104550e0d12b35b0.jpeg"></p><p>13.勾选我接受上述2条许可协议，然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-616bfc5e6ae1c7987a07f6415f0cd6d5.jpeg"></p><p>14.勾选我接受上述2条许可协议。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c628963fc426b498d8cc21c61ed34f73.jpeg"></p><p>15.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-544aa094ab026cd1b383c529a4750854.jpeg"></p><p>16.软件安装中（大约需要15分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-41fda548836645bd3ecbdb4223d15d27.jpeg"></p><p>17.点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ebc0a31ef253b3538f26cfef2644b89f.jpeg"></p><p>18.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-06fe7866642c9dda64c6649121cedc6a.jpeg"></p><p>19.勾选否，点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-fe731ed849551baea03695d3113d348f.jpeg"></p><p>20.点击否。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-913c782ed32f619381a8c132e184ec99.jpeg"></p><p>21.点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2dd82cc7c984474d783aab03fbccde09.jpeg"></p><p>22.返回安装包中找到NI LIcense Activator1.2，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02f2284ef829e615f2a4511431547dd0.jpeg"></p><p>23.找到BaseDevelopment System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0eedd9f2f5535ce89f624996ff9c9fde.jpeg"></p><p>24.找到Debug DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ac1ede958a0ee2c0d30aa57a0be5c2f8.jpeg"></p><p>25.找到Full DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-35af28c430fabca7bafb15c9eec19cd5.jpeg"></p><p>26.找到Professional DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-da8133590005d50b5faa3f23b9a6c722.jpeg"></p><p>27.找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-3e97b3a25b7c8b93b44ac767c037728f.jpeg"></p><p>28.找到ApplicationBuilder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1f21e8f9cacec577b7b84bfbfe273fcd.jpeg"></p><p>29.在开始菜单栏中找到LabVIEW2018软件打开。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e9493be15175c4ec484dc5079a6f1e35.jpeg"></p><p>30.安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0fd3e06b7f7b109f286557fed68f49e8.jpeg"></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><p>LabVIEW 2013（32&#x2F;64）位下载地址：</p><p>pan.baidu.com&#x2F;s&#x2F;1GuuX5sSGSvkNrz1ErRcXPw</p><p>密码：8qw5</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1、右击软件压缩包选择解压到LabVIEW2013。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a319fd45c3790213041330c1088a814a.png"></p><p>2、右击选择打开labvIEW 2013.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b4053f60b9460a24bfab8e7c6b424a0d.png"></p><p>3、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2fbea235a14b87608561af26af539a2f.png"></p><p>4、点击Unzip解压文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-830e192956d6e27a6e276d8663fc1b86.png"></p><p>5、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-858d80ad28c44bde8381ef80de32ba9f.png"></p><p>6、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-939747a0bf892252b08b51fa26e5a13e.jpeg"></p><p>7、任意填写信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02b53b5e4029d01cac965ba2c99ab71d.png"></p><p>8、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d0004730b4f500a08da05c73a47eb70b.jpeg"></p><p>9、点击浏览更改安装路径，建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LabVIEW2013文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0f9634835b613697227b691316cd45c0.png"></p><p>10、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-f4e5821a301c8c03249ecf383b8fef3d.jpeg"></p><p>11、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b0153d86145818c2d2cb00cd84a9ef7a.jpeg"></p><p>12、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-998c1c27ce811734fc4bd46dfe7b40cd.png"></p><p>13、选择我接受上述2条许可协议，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cb71dc71b7193595d950370518dcda9b.jpeg"></p><p>14、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d700a74ec10bd9904ab249fcab7a04e7.jpeg"></p><p>15、软件安装中（大约需要10分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-8b640a3fd8d2769e1517e3b5e955d69a.png"></p><p>16、点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1120b7cdd6384d017d9e84568faa9b11.jpeg"></p><p>17、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2abc71ab1a9c0f1e0624decfde08c2ac.png"></p><p>18、点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-86bf52d2153dc6abc9bc14bad68f0b3e.png"></p><p>19、在安装包中找到NI LIcense Activator，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-87c1293fe9fe19f0d82962787b0eaf7b.png"></p><p>20、找到Base Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d2409d5211152e241cd21633f27a7353.png"></p><p>21、找到Debug Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-5e970bdefcb10f90283b1f0e4627a923.png"></p><p>22、找到Full Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e8e35247ace4718dc65763e651049c4b.png"></p><p>23、找到Professional Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-7eb7ff8419dc09b625eac916d5a55103.png"></p><p>24、找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-73efa7e2f54580067252db40fc465e1a.png"></p><p>25、找到Application Builder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-403a516e62f9e79bc78ed99d79df27a5.png"></p><p>26、在开始菜单找到软件打开，取消勾选启动时显示，使其处于未选中状态，点击关闭。<img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0dc244091e71c8ccc0abbe09fd88574f.jpeg"></p><p>27、安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c90ecc4aa09a9c4f24b72269717fd990.jpeg"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-771930041ff4da44c73c6343232983ab.png"></p>]]></content>
       
       
       <categories>
@@ -2743,11 +2795,11 @@
     
     
     <entry>
-      <title>LabVIEW2013软件安装步骤</title>
-      <link href="/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/"/>
-      <url>/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/</url>
+      <title>LabVIEW2018软件安装教程</title>
+      <link href="/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+      <url>/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
       
-        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><p>LabVIEW 2013（32&#x2F;64）位下载地址：</p><p>pan.baidu.com&#x2F;s&#x2F;1GuuX5sSGSvkNrz1ErRcXPw</p><p>密码：8qw5</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1、右击软件压缩包选择解压到LabVIEW2013。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a319fd45c3790213041330c1088a814a.png"></p><p>2、右击选择打开labvIEW 2013.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b4053f60b9460a24bfab8e7c6b424a0d.png"></p><p>3、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2fbea235a14b87608561af26af539a2f.png"></p><p>4、点击Unzip解压文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-830e192956d6e27a6e276d8663fc1b86.png"></p><p>5、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-858d80ad28c44bde8381ef80de32ba9f.png"></p><p>6、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-939747a0bf892252b08b51fa26e5a13e.jpeg"></p><p>7、任意填写信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02b53b5e4029d01cac965ba2c99ab71d.png"></p><p>8、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d0004730b4f500a08da05c73a47eb70b.jpeg"></p><p>9、点击浏览更改安装路径，建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LabVIEW2013文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0f9634835b613697227b691316cd45c0.png"></p><p>10、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-f4e5821a301c8c03249ecf383b8fef3d.jpeg"></p><p>11、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b0153d86145818c2d2cb00cd84a9ef7a.jpeg"></p><p>12、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-998c1c27ce811734fc4bd46dfe7b40cd.png"></p><p>13、选择我接受上述2条许可协议，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cb71dc71b7193595d950370518dcda9b.jpeg"></p><p>14、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d700a74ec10bd9904ab249fcab7a04e7.jpeg"></p><p>15、软件安装中（大约需要10分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-8b640a3fd8d2769e1517e3b5e955d69a.png"></p><p>16、点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1120b7cdd6384d017d9e84568faa9b11.jpeg"></p><p>17、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2abc71ab1a9c0f1e0624decfde08c2ac.png"></p><p>18、点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-86bf52d2153dc6abc9bc14bad68f0b3e.png"></p><p>19、在安装包中找到NI LIcense Activator，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-87c1293fe9fe19f0d82962787b0eaf7b.png"></p><p>20、找到Base Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d2409d5211152e241cd21633f27a7353.png"></p><p>21、找到Debug Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-5e970bdefcb10f90283b1f0e4627a923.png"></p><p>22、找到Full Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e8e35247ace4718dc65763e651049c4b.png"></p><p>23、找到Professional Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-7eb7ff8419dc09b625eac916d5a55103.png"></p><p>24、找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-73efa7e2f54580067252db40fc465e1a.png"></p><p>25、找到Application Builder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-403a516e62f9e79bc78ed99d79df27a5.png"></p><p>26、在开始菜单找到软件打开，取消勾选启动时显示，使其处于未选中状态，点击关闭。<img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0dc244091e71c8ccc0abbe09fd88574f.jpeg"></p><p>27、安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c90ecc4aa09a9c4f24b72269717fd990.jpeg"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-771930041ff4da44c73c6343232983ab.png"></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><h1 id="LabVIEW-2018（32-64）位下载地址："><a href="#LabVIEW-2018（32-64）位下载地址：" class="headerlink" title="LabVIEW 2018（32&#x2F;64）位下载地址："></a>LabVIEW 2018（32&#x2F;64）位下载地址：</h1><p><a href="https://pan.baidu.com/s/1vOoYTrN36Mumr87zleAuPQ">https://pan.baidu.com/s/1vOoYTrN36Mumr87zleAuPQ</a></p><p>密码: m035</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1.右击软件压缩包选择解压到LabVIEW2018。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02aa4f4248d4969605a8fe47049d24ab.jpeg"></p><p>2.选中文件，鼠标右击选择以管理员身份打开2018LV-WinChn.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1bb32c3fd83ba195c4ab509f7ab27cf1.jpeg"></p><p>3.点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-55c0ebbb8e9ffe50bfa5faa7440930ae.jpeg"></p><p>4.点击Unzip解压。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2c1edfad3c1d905d0e56b564f2a687ab.jpeg"></p><p>5.点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-23e08e9b8a3b4c49a182414d33c1b464.jpeg"></p><p>6.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-be96e23cebca79c47a475c38dac45204.jpeg"></p><p>7.填写任意信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d57fabe4fab17dcd7ba07b9bb5baa1a3.jpeg"></p><p>8.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d379adcac5b51eba662ebb97999a632d.jpeg"></p><p>9.点击浏览更改安装路径建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LABVIEW2018文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a803e9d536b532d076497d32550f05b7.jpeg"></p><p>10.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-664ea2ec7a958c603a0964b961c4dce8.jpeg"></p><p>11.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cc088ef7c1aa820c244a233d0e371a9c.jpeg"></p><p>12.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c2e88085c5db563b104550e0d12b35b0.jpeg"></p><p>13.勾选我接受上述2条许可协议，然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-616bfc5e6ae1c7987a07f6415f0cd6d5.jpeg"></p><p>14.勾选我接受上述2条许可协议。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c628963fc426b498d8cc21c61ed34f73.jpeg"></p><p>15.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-544aa094ab026cd1b383c529a4750854.jpeg"></p><p>16.软件安装中（大约需要15分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-41fda548836645bd3ecbdb4223d15d27.jpeg"></p><p>17.点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ebc0a31ef253b3538f26cfef2644b89f.jpeg"></p><p>18.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-06fe7866642c9dda64c6649121cedc6a.jpeg"></p><p>19.勾选否，点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-fe731ed849551baea03695d3113d348f.jpeg"></p><p>20.点击否。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-913c782ed32f619381a8c132e184ec99.jpeg"></p><p>21.点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2dd82cc7c984474d783aab03fbccde09.jpeg"></p><p>22.返回安装包中找到NI LIcense Activator1.2，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02f2284ef829e615f2a4511431547dd0.jpeg"></p><p>23.找到BaseDevelopment System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0eedd9f2f5535ce89f624996ff9c9fde.jpeg"></p><p>24.找到Debug DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ac1ede958a0ee2c0d30aa57a0be5c2f8.jpeg"></p><p>25.找到Full DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-35af28c430fabca7bafb15c9eec19cd5.jpeg"></p><p>26.找到Professional DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-da8133590005d50b5faa3f23b9a6c722.jpeg"></p><p>27.找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-3e97b3a25b7c8b93b44ac767c037728f.jpeg"></p><p>28.找到ApplicationBuilder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1f21e8f9cacec577b7b84bfbfe273fcd.jpeg"></p><p>29.在开始菜单栏中找到LabVIEW2018软件打开。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e9493be15175c4ec484dc5079a6f1e35.jpeg"></p><p>30.安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0fd3e06b7f7b109f286557fed68f49e8.jpeg"></p>]]></content>
       
       
       <categories>
@@ -3943,16 +3995,18 @@
     
     
     <entry>
-      <title>labview使用udl文件连接数据库</title>
-      <link href="/2020/07/06/labview%E4%BD%BF%E7%94%A8udl%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-      <url>/2020/07/06/labview%E4%BD%BF%E7%94%A8udl%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+      <title>labview使用DSN连接数据库</title>
+      <link href="/2020/07/06/labview%E4%BD%BF%E7%94%A8dsn%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <url>/2020/07/06/labview%E4%BD%BF%E7%94%A8dsn%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
       
-        <content type="html"><![CDATA[<p>ADO （ActveXData Objeles ）是微软利用自动化服务器技术开发的数据库接口。它不同于传统的ODBC，ODBC仅支持关系型数据库，而ADO对关系型数据库和非关系型数据库都提供了支持。</p><p>如同ODBC的DSN一样，使用UDL(通用数据库连接)文件也可以指定ADO的连接字符串。创建UDL文件有三种常用方法。 ◆复制一个现有的UDL文件后，更改名称，然后双击文件，通过“ 连接属性”对话框连接到数据库文件。 ◆在操作系统快捷菜单中， 选择“创建数据库连接(UDL )”项。某些版本的快捷菜单中可 能不显示该项。 ◆通过LabVIEW菜单中，单击“工具”菜单下的”Create Data Link”项，创建UDL。创建UDL文件后，双击该文件，即可打开“连接属性”对话框并配置数据库连接属性。</p><p>不同类型的数据库文件必须选择对应的提供者，比如MDB数据库文件的提供者应该选择‘JET4.0OLEDB Provider”,而SQL服务器应该选择“ SQL Server”。</p><p>如果出现双击udl文件后无法编辑的问题，可以直接对udl进行文本编辑，使用文本编辑器打开udl文件</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594014991-udl%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%931-1024x138.png"></p><p>只需把指定的data source地址修改一下即可。</p><p>创建好udl文件后，连接数据库的程序框图如图：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594015271-udl%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%932-1024x233.png"></p><p>把udl放到地址中即可</p>]]></content>
+        <content type="html"><![CDATA[<p>前面文章介绍了如何创建DSN:<a href="http://www.demon1630.cn/%e4%b8%ba%e6%95%b0%e6%8d%ae%e5%ba%93%e6%b7%bb%e5%8a%a0%e6%95%b0%e6%8d%ae%e6%ba%90%e5%90%8ddsn%ef%bc%88data-source-name%ef%bc%89/">为数据库添加数据源名DSN</a></p><p>创建完后，就可以使用DSN连接数据库了</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594012231-DSN%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%931.png"></p><p>如图为创建的DSN</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594012308-DSN%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%932-1024x389.png"></p><p>直接使用DSN字符串即可，然后使用DB Tools 工具包vi</p>]]></content>
       
       
       <categories>
           
           <category> labview </category>
+          
+          <category> 技术 </category>
           
       </categories>
       
@@ -3970,18 +4024,16 @@
     
     
     <entry>
-      <title>labview使用DSN连接数据库</title>
-      <link href="/2020/07/06/labview%E4%BD%BF%E7%94%A8dsn%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-      <url>/2020/07/06/labview%E4%BD%BF%E7%94%A8dsn%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+      <title>labview使用udl文件连接数据库</title>
+      <link href="/2020/07/06/labview%E4%BD%BF%E7%94%A8udl%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <url>/2020/07/06/labview%E4%BD%BF%E7%94%A8udl%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
       
-        <content type="html"><![CDATA[<p>前面文章介绍了如何创建DSN:<a href="http://www.demon1630.cn/%e4%b8%ba%e6%95%b0%e6%8d%ae%e5%ba%93%e6%b7%bb%e5%8a%a0%e6%95%b0%e6%8d%ae%e6%ba%90%e5%90%8ddsn%ef%bc%88data-source-name%ef%bc%89/">为数据库添加数据源名DSN</a></p><p>创建完后，就可以使用DSN连接数据库了</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594012231-DSN%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%931.png"></p><p>如图为创建的DSN</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594012308-DSN%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%932-1024x389.png"></p><p>直接使用DSN字符串即可，然后使用DB Tools 工具包vi</p>]]></content>
+        <content type="html"><![CDATA[<p>ADO （ActveXData Objeles ）是微软利用自动化服务器技术开发的数据库接口。它不同于传统的ODBC，ODBC仅支持关系型数据库，而ADO对关系型数据库和非关系型数据库都提供了支持。</p><p>如同ODBC的DSN一样，使用UDL(通用数据库连接)文件也可以指定ADO的连接字符串。创建UDL文件有三种常用方法。 ◆复制一个现有的UDL文件后，更改名称，然后双击文件，通过“ 连接属性”对话框连接到数据库文件。 ◆在操作系统快捷菜单中， 选择“创建数据库连接(UDL )”项。某些版本的快捷菜单中可 能不显示该项。 ◆通过LabVIEW菜单中，单击“工具”菜单下的”Create Data Link”项，创建UDL。创建UDL文件后，双击该文件，即可打开“连接属性”对话框并配置数据库连接属性。</p><p>不同类型的数据库文件必须选择对应的提供者，比如MDB数据库文件的提供者应该选择‘JET4.0OLEDB Provider”,而SQL服务器应该选择“ SQL Server”。</p><p>如果出现双击udl文件后无法编辑的问题，可以直接对udl进行文本编辑，使用文本编辑器打开udl文件</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594014991-udl%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%931-1024x138.png"></p><p>只需把指定的data source地址修改一下即可。</p><p>创建好udl文件后，连接数据库的程序框图如图：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/07/1594015271-udl%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%932-1024x233.png"></p><p>把udl放到地址中即可</p>]]></content>
       
       
       <categories>
           
           <category> labview </category>
-          
-          <category> 技术 </category>
           
       </categories>
       
@@ -4927,7 +4979,7 @@
       <link href="/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/"/>
       <url>/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/</url>
       
-        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><pre class="line-numbers language-none"><code class="language-none">ifconfig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#x43;&#x50;&#x55;&#64;&#49;&#x2e;&#x39;&#x47;&#72;&#x7a;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
+        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><pre class="line-numbers language-none"><code class="language-none">ifconfig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#x43;&#80;&#x55;&#x40;&#x31;&#x2e;&#x39;&#71;&#x48;&#x7a;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
       
       
       <categories>
@@ -5096,9 +5148,9 @@
             
             <tag> 控制 </tag>
             
-            <tag> 宝塔面板 </tag>
-            
             <tag> windows </tag>
+            
+            <tag> 宝塔面板 </tag>
             
             <tag> 搬瓦工 </tag>
             
