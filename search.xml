@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>Clawd on Desk：一个会显示 Codex 状态的 Windows 桌面宠物</title>
+      <link href="/2026/06/07/clawd-on-desk-%E6%A1%8C%E9%9D%A2%E5%AE%A0%E7%89%A9%E4%B8%8ECodex%E7%8A%B6%E6%80%81%E8%81%94%E5%8A%A8/"/>
+      <url>/2026/06/07/clawd-on-desk-%E6%A1%8C%E9%9D%A2%E5%AE%A0%E7%89%A9%E4%B8%8ECodex%E7%8A%B6%E6%80%81%E8%81%94%E5%8A%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Clawd-on-Desk：一个会显示-Codex-状态的-Windows-桌面宠物"><a href="#Clawd-on-Desk：一个会显示-Codex-状态的-Windows-桌面宠物" class="headerlink" title="Clawd on Desk：一个会显示 Codex 状态的 Windows 桌面宠物"></a>Clawd on Desk：一个会显示 Codex 状态的 Windows 桌面宠物</h1><p><code>Clawd on Desk</code> 是一个 Windows 桌面宠物项目，基于原始项目 <code>clawd-on-desk</code> 整理而来。和普通桌宠不同的是，这个版本把 <code>Codex</code> 的状态也接了进来，可以在桌宠旁边直接看到额度、会话状态和最新回复内容。</p><p>本项目地址：<a href="https://github.com/Demon1630/clawd-on-desk" title="https:&#x2F;&#x2F;github.com&#x2F;Demon1630&#x2F;clawd-on-desk">clawd-on-desk</a></p><p>如果你平时会频繁使用 Codex CLI，这个项目就很实用：不用一直切回终端，也能快速知道当前会话在做什么。<br><img src="https://cdn.jsdelivr.net/gh/Demon1630/picBed/img/20260607082014806.png" alt="image.png"></p><h2 id="项目特点"><a href="#项目特点" class="headerlink" title="项目特点"></a>项目特点</h2><p>这个版本主要做了两件事：</p><ul><li>保留桌面宠物的基础交互和动画</li><li>增加 Codex 相关信息展示</li></ul><p>具体来说，它支持：</p><ul><li>桌面宠物悬浮显示</li><li>主题、动画、托盘菜单和基础设置</li><li>显示 Codex 5 小时额度和本周额度</li><li>根据当前时间进度提示额度使用是否偏快</li><li>显示当前 Codex 会话标题、运行状态和最新回复内容</li><li>读取 Codex transcript，并支持回复过程中的实时刷新</li><li>本地读取 Codex 状态，不上传额度、会话或 token</li></ul><h2 id="安装运行环境"><a href="#安装运行环境" class="headerlink" title="安装运行环境"></a>安装运行环境</h2><p>官方说明里列出的环境要求如下：</p><ul><li>Windows 10 或 Windows 11</li><li>Node.js 20 或更高版本</li><li>npm</li><li>Git</li><li>已安装并登录 Codex CLI</li></ul><p>可以先检查环境：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">node <span class="token operator">-</span>vnpm <span class="token operator">-</span>vgit <span class="token operator">--</span>versioncodex <span class="token operator">--</span>version<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>如果 <code>codex --version</code> 无法运行，先安装并登录 Codex CLI，再继续。</p><h2 id="本地运行"><a href="#本地运行" class="headerlink" title="本地运行"></a>本地运行</h2><p>项目的本地运行方式比较直接：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">git clone https:<span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com/Demon1630/clawd-on-desk<span class="token punctuation">.</span>gitcd clawd-on-desknpm installnpm <span class="token function">start</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>如果想用开发模式，也可以执行：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">npm run dev<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="打包方式"><a href="#打包方式" class="headerlink" title="打包方式"></a>打包方式</h2><p>如果你想生成安装包，可以使用：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">npm run pack<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>生成正式安装包则使用：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">npm run build<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>通常打包产物会输出到 <code>dist/</code> 或 Electron Builder 对应的输出目录。</p><h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>从仓库结构来看，这个项目拆分得比较清楚：</p><ul><li><code>src/</code>：Electron 主进程、渲染层、状态管理和界面逻辑</li><li><code>hooks/</code>：面向 Codex、Claude Code 等工具的 hook 脚本</li><li><code>agents/</code>：不同 agent 的定义和日志监听逻辑</li><li><code>themes/</code>：桌宠主题资源</li><li><code>assets/</code>：图标、音效、SVG 资源</li><li><code>pwa/</code>：PWA 相关资源</li><li><code>extensions/</code>：编辑器扩展相关文件</li></ul><p>这说明它不是单一的桌宠动画项目，而是围绕“桌宠 + AI 工具状态展示”做了一整套能力。</p><h2 id="主题和状态展示"><a href="#主题和状态展示" class="headerlink" title="主题和状态展示"></a>主题和状态展示</h2><p>项目里提供了多种 Clawd 状态图，覆盖的场景也比较全：</p><ul><li>idle</li><li>working</li><li>thinking</li><li>sleeping</li><li>notification</li><li>error</li><li>attention</li><li>carrying</li><li>sweeping</li><li>juggling</li></ul><p>另外还有 mini mode，适合更小的显示场景。</p><p>这些状态图不是只为观感服务，而是和实际使用场景对应的。比如：</p><ul><li>正在处理任务时显示 working</li><li>没有操作时切到 idle</li><li>睡眠或空闲过久时切换 sleeping</li><li>有通知时显示 notification</li><li>出错时显示 error</li></ul><h2 id="为什么它有用"><a href="#为什么它有用" class="headerlink" title="为什么它有用"></a>为什么它有用</h2><p>这个项目的核心价值不是“让桌面更可爱”，而是让 Codex 的运行状态更容易被看见。</p><p>很多时候我们在本地跑 AI 工具，会遇到下面这些问题：</p><ul><li>不知道当前会话在执行什么</li><li>不清楚额度还剩多少</li><li>终端窗口太多，不方便来回切换</li><li>想快速看最新回复，但不想翻 transcript</li></ul><p><code>Clawd on Desk</code> 就是把这些信息放到了桌面上，减少切窗口的成本。</p><h2 id="适合谁用"><a href="#适合谁用" class="headerlink" title="适合谁用"></a>适合谁用</h2><p>这个项目比较适合以下几类人：</p><ul><li>日常使用 Codex CLI 的开发者</li><li>喜欢桌面宠物，但希望它更实用的人</li><li>想把 AI 工具状态可视化的人</li><li>想在 Windows 桌面上放一个轻量状态面板的人</li></ul><p>如果你只是想要一个单纯的桌宠，它也能满足；如果你更在意工作流，它会更有价值。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><code>Clawd on Desk</code> 把桌面宠物和 Codex 状态展示结合到了一起，做成了一个很轻量、但又很实用的 Windows 工具。</p><p>它保留了桌宠的陪伴感，又补上了 AI 工具状态可视化这部分能力。对于经常使用 Codex CLI 的人来说，这是一个值得试试的小项目。</p><h2 id="原项目说明"><a href="#原项目说明" class="headerlink" title="原项目说明"></a>原项目说明</h2><p>本文介绍的项目基于原始项目 <code>rullerzhou-afk/clawd-on-desk</code> 整理而来，建议保留原始来源说明，方便后续了解项目演进和分支关系。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+          <category> 桌面宠物 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Clawd on Desk </tag>
+            
+            <tag> Codex </tag>
+            
+            <tag> Electron </tag>
+            
+            <tag> Windows </tag>
+            
+            <tag> 桌面宠物 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2026 年土耳其区 Apple ID 订阅 ChatGPT Plus 教程</title>
       <link href="/2026/06/06/turkey-apple-id-chatgpt-plus-risk-notes/"/>
       <url>/2026/06/06/turkey-apple-id-chatgpt-plus-risk-notes/</url>
@@ -459,11 +494,11 @@
             
             <tag> 密码 </tag>
             
-            <tag> 云盘 </tag>
-            
             <tag> nps </tag>
             
             <tag> 树莓派 </tag>
+            
+            <tag> 云盘 </tag>
             
             <tag> 蒲公英 </tag>
             
@@ -490,9 +525,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 软件 </tag>
+            
+            <tag> python </tag>
             
             <tag> 密码 </tag>
             
@@ -659,9 +694,9 @@
             
             <tag> ansys </tag>
             
-            <tag> fluent </tag>
-            
             <tag> 仿真 </tag>
+            
+            <tag> fluent </tag>
             
         </tags>
       
@@ -690,9 +725,9 @@
             
             <tag> workbench </tag>
             
-            <tag> fluent </tag>
-            
             <tag> 仿真 </tag>
+            
+            <tag> fluent </tag>
             
             <tag> 控制 </tag>
             
@@ -937,17 +972,17 @@
             
             <tag> 密码 </tag>
             
-            <tag> nps </tag>
-            
-            <tag> 树莓派 </tag>
-            
             <tag> newifi3 </tag>
+            
+            <tag> nps </tag>
             
             <tag> openwrt </tag>
             
             <tag> 新路由3 </tag>
             
             <tag> 旁路由 </tag>
+            
+            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -978,11 +1013,11 @@
             
             <tag> 密码 </tag>
             
-            <tag> 树莓派 </tag>
-            
             <tag> openwrt </tag>
             
             <tag> 旁路由 </tag>
+            
+            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -1015,9 +1050,9 @@
             
             <tag> 密码 </tag>
             
-            <tag> 树莓派 </tag>
-            
             <tag> openwrt </tag>
+            
+            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -1237,11 +1272,11 @@
             
             <tag> 密码 </tag>
             
-            <tag> 树莓派 </tag>
-            
             <tag> openwrt </tag>
             
             <tag> 新路由3 </tag>
+            
+            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -1908,9 +1943,9 @@
       
         <tags>
             
-            <tag> 云盘 </tag>
-            
             <tag> 树莓派 </tag>
+            
+            <tag> 云盘 </tag>
             
         </tags>
       
@@ -2014,9 +2049,9 @@
             
             <tag> 离线下载 </tag>
             
-            <tag> nps </tag>
-            
             <tag> newifi3 </tag>
+            
+            <tag> nps </tag>
             
             <tag> 新路由3 </tag>
             
@@ -2045,13 +2080,13 @@
       
         <tags>
             
-            <tag> nps </tag>
-            
-            <tag> 树莓派 </tag>
-            
             <tag> newifi3 </tag>
             
+            <tag> nps </tag>
+            
             <tag> 新路由3 </tag>
+            
+            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -2200,9 +2235,9 @@
             
             <tag> nps </tag>
             
-            <tag> 搬瓦工 </tag>
-            
             <tag> 树莓派 </tag>
+            
+            <tag> 搬瓦工 </tag>
             
         </tags>
       
@@ -2363,11 +2398,11 @@
     
     
     <entry>
-      <title>Kali-Linux-2020.1 设置中文，汉化。</title>
-      <link href="/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/"/>
-      <url>/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/</url>
+      <title>kali linux使用apt-get更新全过程</title>
+      <link href="/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/"/>
+      <url>/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/</url>
       
-        <content type="html"><![CDATA[<p> </p><h1 id="Kali-Linux-2020-1-设置中文，汉化。"><a href="#Kali-Linux-2020-1-设置中文，汉化。" class="headerlink" title="Kali-Linux-2020.1 设置中文，汉化。"></a>Kali-Linux-2020.1 设置中文，汉化。</h1><pre class="line-numbers language-none"><code class="language-none">Kali Linux团队在Twitter上宣布：“新的一年是进行重大改变的好时机，因此，我们宣布在  即将发布的2020.1版本中，Kali安全模型也将进行重大改革——默认非root用户。”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>所以使用kali之前版本的汉化方法可能会出现权限问题。(注意:汉化前先换源，不然可能会出问题。)</p><ol><li><p>kali 2020.1 汉化</p><p> 打开终端，输入：</p></li></ol><p><code>sudo dpkg-reconfigure locales</code></p><p>这时可能会让你输入root密码 ，默认的密码是：kali</p><p>然后选择字符编码： en_US.UTF-8（要完全汉化的话把这个去掉，如果只是想解决中文乱码就留着）、zh_CN.GBK、zh_CN.UTF-8 （用空格选定）</p><p>接着选择字符： zh_CN.UTF-8</p><ol start="2"><li>解决编码错误显示问题,终端输入：</li></ol><p><code>sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy</code></p><p>设置完之后输入：</p><p><code>sudo reboot</code></p><p>重启就好了。 <img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-28fe4bc43060061996dde07a1a88b53a.png"> 附：<a href="https://blog.csdn.net/weixin_44823747/article/details/107477695?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">Kali-Linux-2020.2 设置中文，汉化及换源方法</a></p><p>文章来源于互联网:<a href="https://blog.csdn.net/weixin_44823747/article/details/104173742">Kali-Linux-2020.1 设置中文，汉化。</a></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="0x00-修改更新源"><a href="#0x00-修改更新源" class="headerlink" title="0x00 修改更新源"></a><em>0x00 修改更新源</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#vim &#x2F;etc&#x2F;apt&#x2F;sources.list          &#x2F;&#x2F;使用vim编辑器打开更新源文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>修改之前可以先备份</p><pre class="line-numbers language-none"><code class="language-none">:~#copy &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.bak &#x2F;&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将旧的更新源使用’#’注释掉 在以下更新源中选择一个复制</p><blockquote><p>中科大 deb <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib</p><p>阿里云 deb <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib</p><p>清华大学 deb <a href="http://mirrors.tuna.tsinghua.edu.cn/kali">http://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="https://mirrors.tuna.tsinghua.edu.cn/kali">https://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>浙大 deb <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>官方源 deb <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib deb-src <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib</p></blockquote><p>使用:wq保存退出</p><hr><h3 id="0x01-使用更新源进行软件和系统的升级"><a href="#0x01-使用更新源进行软件和系统的升级" class="headerlink" title="0x01 使用更新源进行软件和系统的升级"></a><em>0x01 使用更新源进行软件和系统的升级</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get update &#x2F;&#x2F;同步 &#x2F;etc&#x2F;apt&#x2F;sources.list 和 &#x2F;etc&#x2F;apt&#x2F;sources.list.d 中列出的源的索引这样才能获取到最新的软件包&#x2F;&#x2F;只是更新apt的资源列表:~#sudo apt-get upgrade :~#sudo apt-get dist-upgrade &#x2F;&#x2F;通常情况下将两个放一起处理<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p><strong>tips</strong>: apt-get upgrade 和 apt-get dist-upgrade 本质上是没有什么不同的。 只不过，dist-upgrade 会识别出当依赖关系改变的情形并作出处理，而upgrade对此情形不处理。 例如软件包 a 原先依赖 b c d，但是在源里面可能已经升级了，现在是 a 依赖 b c e。这种情况下，dist-upgrade 会删除 d 安装 e，并把 a 软件包升级，而 upgrade 会认为依赖关系改变而拒绝升级 a 软件包。 <strong>from</strong> :<a href="https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html">https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html</a></p></blockquote><hr><h3 id="0x02-删除旧文件和缓存文件"><a href="#0x02-删除旧文件和缓存文件" class="headerlink" title="0x02 删除旧文件和缓存文件"></a><em>0x02 删除旧文件和缓存文件</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get autoclean &#x2F;&#x2F;清理旧版本的软件缓存:~#sudo apt-get clean &#x2F;&#x2F;清理所有软件缓存:~#sudo apt-get autoremove &#x2F;&#x2F;删除系统不再使用的孤立软件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
@@ -2388,11 +2423,11 @@
     
     
     <entry>
-      <title>kali linux使用apt-get更新全过程</title>
-      <link href="/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/"/>
-      <url>/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/</url>
+      <title>Kali-Linux-2020.1 设置中文，汉化。</title>
+      <link href="/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/"/>
+      <url>/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/</url>
       
-        <content type="html"><![CDATA[<h3 id="0x00-修改更新源"><a href="#0x00-修改更新源" class="headerlink" title="0x00 修改更新源"></a><em>0x00 修改更新源</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#vim &#x2F;etc&#x2F;apt&#x2F;sources.list          &#x2F;&#x2F;使用vim编辑器打开更新源文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>修改之前可以先备份</p><pre class="line-numbers language-none"><code class="language-none">:~#copy &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.bak &#x2F;&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将旧的更新源使用’#’注释掉 在以下更新源中选择一个复制</p><blockquote><p>中科大 deb <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib</p><p>阿里云 deb <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib</p><p>清华大学 deb <a href="http://mirrors.tuna.tsinghua.edu.cn/kali">http://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="https://mirrors.tuna.tsinghua.edu.cn/kali">https://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>浙大 deb <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>官方源 deb <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib deb-src <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib</p></blockquote><p>使用:wq保存退出</p><hr><h3 id="0x01-使用更新源进行软件和系统的升级"><a href="#0x01-使用更新源进行软件和系统的升级" class="headerlink" title="0x01 使用更新源进行软件和系统的升级"></a><em>0x01 使用更新源进行软件和系统的升级</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get update &#x2F;&#x2F;同步 &#x2F;etc&#x2F;apt&#x2F;sources.list 和 &#x2F;etc&#x2F;apt&#x2F;sources.list.d 中列出的源的索引这样才能获取到最新的软件包&#x2F;&#x2F;只是更新apt的资源列表:~#sudo apt-get upgrade :~#sudo apt-get dist-upgrade &#x2F;&#x2F;通常情况下将两个放一起处理<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p><strong>tips</strong>: apt-get upgrade 和 apt-get dist-upgrade 本质上是没有什么不同的。 只不过，dist-upgrade 会识别出当依赖关系改变的情形并作出处理，而upgrade对此情形不处理。 例如软件包 a 原先依赖 b c d，但是在源里面可能已经升级了，现在是 a 依赖 b c e。这种情况下，dist-upgrade 会删除 d 安装 e，并把 a 软件包升级，而 upgrade 会认为依赖关系改变而拒绝升级 a 软件包。 <strong>from</strong> :<a href="https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html">https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html</a></p></blockquote><hr><h3 id="0x02-删除旧文件和缓存文件"><a href="#0x02-删除旧文件和缓存文件" class="headerlink" title="0x02 删除旧文件和缓存文件"></a><em>0x02 删除旧文件和缓存文件</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get autoclean &#x2F;&#x2F;清理旧版本的软件缓存:~#sudo apt-get clean &#x2F;&#x2F;清理所有软件缓存:~#sudo apt-get autoremove &#x2F;&#x2F;删除系统不再使用的孤立软件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<p> </p><h1 id="Kali-Linux-2020-1-设置中文，汉化。"><a href="#Kali-Linux-2020-1-设置中文，汉化。" class="headerlink" title="Kali-Linux-2020.1 设置中文，汉化。"></a>Kali-Linux-2020.1 设置中文，汉化。</h1><pre class="line-numbers language-none"><code class="language-none">Kali Linux团队在Twitter上宣布：“新的一年是进行重大改变的好时机，因此，我们宣布在  即将发布的2020.1版本中，Kali安全模型也将进行重大改革——默认非root用户。”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>所以使用kali之前版本的汉化方法可能会出现权限问题。(注意:汉化前先换源，不然可能会出问题。)</p><ol><li><p>kali 2020.1 汉化</p><p> 打开终端，输入：</p></li></ol><p><code>sudo dpkg-reconfigure locales</code></p><p>这时可能会让你输入root密码 ，默认的密码是：kali</p><p>然后选择字符编码： en_US.UTF-8（要完全汉化的话把这个去掉，如果只是想解决中文乱码就留着）、zh_CN.GBK、zh_CN.UTF-8 （用空格选定）</p><p>接着选择字符： zh_CN.UTF-8</p><ol start="2"><li>解决编码错误显示问题,终端输入：</li></ol><p><code>sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy</code></p><p>设置完之后输入：</p><p><code>sudo reboot</code></p><p>重启就好了。 <img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-28fe4bc43060061996dde07a1a88b53a.png"> 附：<a href="https://blog.csdn.net/weixin_44823747/article/details/107477695?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">Kali-Linux-2020.2 设置中文，汉化及换源方法</a></p><p>文章来源于互联网:<a href="https://blog.csdn.net/weixin_44823747/article/details/104173742">Kali-Linux-2020.1 设置中文，汉化。</a></p>]]></content>
       
       
       <categories>
@@ -2575,33 +2610,6 @@
     
     
     <entry>
-      <title>老师傅总结的制冷系统故障排除方法01：压力分析法</title>
-      <link href="/2021/01/04/%E8%80%81%E5%B8%88%E5%82%85%E6%80%BB%E7%BB%93%E7%9A%84%E5%88%B6%E5%86%B7%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%96%B9%E6%B3%9501%EF%BC%9A%E5%8E%8B%E5%8A%9B%E5%88%86%E6%9E%90%E6%B3%95/"/>
-      <url>/2021/01/04/%E8%80%81%E5%B8%88%E5%82%85%E6%80%BB%E7%BB%93%E7%9A%84%E5%88%B6%E5%86%B7%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%96%B9%E6%B3%9501%EF%BC%9A%E5%8E%8B%E5%8A%9B%E5%88%86%E6%9E%90%E6%B3%95/</url>
-      
-        <content type="html"><![CDATA[<p>制冷系统发生了故障，一般不可能直接看到故障的部位发生在哪里，也不可能将制冷系统的部件一一分解和解剖，只能从外表检查，找出运行中的反常现象，进行综合分析。</p><p>这样，制冷系统压力和温度检测就非常重要。本期我们主要来说一说制冷系统的压力判断和压力检测。</p><p><strong>一、制冷系统压力的概念</strong></p><p>制冷系统压力我们常见的有3个：吸气压力、排气压力、冷凝压力。</p><p><strong>1、吸气压力和排气压力</strong>    </p><p>制冷系统在运行时可分高、低压两部分。排气压力是指压缩机出口处排气管内制冷剂气体的压力。压缩机的吸气口压力称为吸气压力，吸气压力接近于蒸发压力。两者之差就是管路的流动阻力。压力损失一般限制在0.018Mpa以下。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-c8ea77105b1f26fb7c25c8e3fbe05ea0.jpeg"></p><p>为方便起见，制冷系统的蒸发压力与冷凝压力都在压缩机的吸、排气口检测。即通常称为压缩机的吸、排气压力。检测制冷系统的吸、排气压力的目的，是要得到制冷系统的蒸发温度与冷凝温度，以此获得制冷系统的运行状况。</p><p><strong>2、冷凝压力</strong>    </p><p>冷凝压力就是制冷剂在冷凝器内气体冷凝成液体的压力，由于制冷系统中冷凝器内部的压力无法测量，而实际上，制冷剂在排气管以及冷凝器内的压力降其实很小，所以不管设计调试还是检修当中，一般认为排气压力近似等于冷凝压力。</p><p><strong>（1）冷凝温度与制冷量的关系</strong></p><p>我们简单看看R22制冷剂冷凝压力与冷凝温度的关系曲线：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-17f4bf54c848fa7e3ee7216084b03351.jpeg"></p><p>从图上很简单的就能看出，冷凝温度与冷凝压力是成正比变化的，冷凝压力与冷凝温度两者是对应的；冷凝压力（高压）越低，冷凝温度也就越低；冷凝压力（高压）越高，冷凝温度也就越高。  </p><p>知道冷凝压力，我们就能查表得出冷凝温度的数值。</p><p><strong>（2）热负荷与冷凝压力的关系</strong></p><p>这个简单来说就是冷凝侧的负荷与冷凝压力的关系。</p><p>在一恒定的工况条件下（制冷剂流量），热负荷越大，冷凝压力越高，反之亦然。我们可以想象一下，当你设计的冷凝器小了（热负荷就相对来说大了） ，制冷系统是很容易高压报警的。</p><p><strong>二、制冷系统压力的影响因素</strong></p><p><strong>1、吸气压力</strong>    </p><p><strong>（1）吸气压力低的因素</strong></p><p>吸气压力低于正常值，其因素有制冷量不足、冷负荷量小、膨胀阀开启度小、冷凝压力低（指用毛细管系统），以及过滤器不畅通。 </p><p><strong>（2）吸气压力高的因素</strong></p><p> 吸气压力高于正常值，其因素有制冷剂过多、制冷负荷大、膨胀阀开启度大、冷凝压力高（毛细管系统）以及压缩机效率差等。</p><p><strong>2、排气压力</strong>   </p><p><strong>（1）排气压力高的因素</strong></p><p>当排气压力高于正常值时，一般有冷却介质的流量小或冷却介质温度高、制冷剂充注量过多、冷负荷大及膨胀阀开启度大等。 </p><p>这些引起系统的循环流量增加，冷凝热负荷也相应增加。由于热量不能及时全部散出，引起冷凝温度上升，而所能检测到的是排气（冷凝）压力上升。在冷却介质流量低或冷却介质温度高的情况下，冷凝器的散热效率降低而使冷凝温度上升。</p><p>在冷却介质流量低或冷却介质温度高的情况下，冷凝器的散热效率降低而使冷凝温度上升。对于制冷剂充注量过多的原因，是多余的制冷剂液占据了一部分冷凝管，使冷凝面积减少，引起冷凝温度上升。 </p><p><strong>（2）排气压力低的因素</strong></p><p>排气压力低于正常值，其因素有压缩机效率低、制冷剂量不足、冷负荷小、膨胀阀开度小，过滤器不畅通，包括膨胀阀过滤网以及冷却介质温度低等。 </p><p>以上几种因素都会引起系统的制冷流量下降、冷凝负荷小，使冷凝温度下降。 </p><p>从上述的吸气压力与排气压力与排气压力变化情况看，两者有密切的关系。在一般情况下，吸气压力升高，排气压力也相应上升；吸入压力下降，排气压力也相应下降。也可从吸气压力表的变化估计出排气压力的大致情况。</p><p><strong>三、为什么要用压力来检查系统故障？</strong></p><p><strong>1、排气压力</strong>   </p><p>制冷系统运行时，其排气压力与冷凝温度相对应，而冷凝温度与其冷却介质的流量和温度、制冷剂流入量、冷负荷量等有关。在检查制冷系统时，应在排气管处装一只排气压力表，检测排气压力，作为分析故障资料。</p><p><strong>2、吸气压力</strong>   </p><p>对于用膨胀阀的系统而言，吸气压力与膨胀阀的开启度、制冷剂充注量、压缩机的冷效率、以及负荷大小有关。用毛细管的系统，吸气压力与冷凝压力、制冷量，压缩机制冷效率、以及负荷大小有关。为此在检查制冷系统时，应在吸气管上装按压力表。检测吸气压力对故障分析有重要作用。</p><p><strong>四、制冷系统压力调节阀有哪些？</strong></p><p><strong>压力调节阀主要包括以下3类：</strong></p><p>1）蒸发压力调节阀；  </p><p>2）冷凝压力调节阀；  </p><p>3）吸气压力调节阀；  </p><h2 id="1、蒸发压力调节阀"><a href="#1、蒸发压力调节阀" class="headerlink" title="1、蒸发压力调节阀"></a><strong>1、蒸发压力调节阀</strong></h2><p>蒸发压力调节阀通常安装在蒸发器的出口处，根据蒸发压力的高低自动调节阀门的开度，可以控制从蒸发器流出的制冷剂的流量，以维持蒸发压力的恒定；</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-19cde49a158d385a0bb3a7979ca84bfe.jpeg"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-3ba73af2c0965f17b9364de589253187.jpeg"></p><h2 id="2、冷凝压力调节阀"><a href="#2、冷凝压力调节阀" class="headerlink" title="2、冷凝压力调节阀"></a><strong>2、冷凝压力调节阀</strong></h2><p>冷凝压力调节阀是通过高压调节阀+差压调节阀 来实现对压力的调节。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-7e7968a6c83ac241ee40d9371ebaf02e.jpeg"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-ad81280a6b820f21f8c502f8aa96212b.jpeg"></p><h2 id="3、吸气压力调节阀"><a href="#3、吸气压力调节阀" class="headerlink" title="3、吸气压力调节阀"></a><strong>3、吸气压力调节阀</strong></h2><p>别称：曲轴箱压力调节阀；</p><p>安装位置：压缩机吸气管上面；</p><p>作用：避免因过高的吸气压力损坏电机，保护电机的作用；</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-d1aa190ab3ac36439039358c076c7582.jpeg"></p><p><strong>五、利用压力表判断制冷系统故障</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-0a52d3278d608ec413ea8b575ab3e3fd.jpeg"></p><p><strong>一、制冷系统正常</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-6002fcfbd2e524852ee797fdd8b77b91.jpeg"></p><p>对于空调系统而言，正常的制冷系统参数如下：（R22制冷剂）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-d5c195c9182cc5e69b6676214b192c45.jpeg"></p><p>（R410A制冷剂）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-05514e58960514976b09816f0c44b73c.jpeg"></p><p><strong>二、制冷系统中有湿气</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-97c79998a4cfcbb9f5277013c34913f3.jpeg"></p><p>1）、故障现象：工作期间，在低压侧压力有时正常，有时指示真空；高压侧压力指示正常，有时稍高；间歇性制冷，最后不制冷。</p><p>2）、故障原因：干燥剂吸湿能力达到饱和；制冷循环系统内在膨胀阀（或孔管）处结冰，阻滞了制冷剂的流动，导致不制冷；当冰融化后，系统又恢复到正常状态。</p><p>3）、故障诊断与排除：干燥剂处于饱和状态，更换储液干燥器或干燥剂。反复抽真空，排除系统中的水分，然后注入适当数量的新制冷剂。</p><p><strong>三、缺制冷剂</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-c991c099207a5095413be96597f2d892.jpeg"></p><p>1）、故障现象：高、低压侧的压力都偏低，从玻璃观察窗内看到有连续的气泡出现，高压管温热、低压管微冷。</p><p>2）、故障原因：制冷剂充注不足或系统某些部位发生渗漏。</p><p>3）、修复方法：（1）用测漏器检查是否漏气，根据需要予以修理（2）充人适量的制冷剂（3）连接压力表后，如压力示值接近0，可在漏气部位检修完毕后将制冷系统抽成真空</p><p><strong>四、制冷剂循环不良</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-283ded4178dcd0754a267930bf350bb1.jpeg"></p><p>1）、故障现象：高压和低压侧压力都偏低；从储液干燥器到主机组的管路都结霜；制冷不足。</p><p>2）、故障原因：储液干燥器堵塞，阻滞了制冷剂的流动。</p><p>3）、故障诊断与排除：更换储液干燥器。</p><p><strong>五、制冷剂不循环</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-f6237855705b6d29a404e09a749e8f03.jpeg"></p><p>1）、故障现象：低压侧压力指示真空，高压侧压力指示太低；膨胀阀或储液干燥器前后管路上有露水或结霜；不制冷或间歇制冷。</p><p>2）、故障原因：系统中有水分或污物阻滞了制冷剂的流动；膨胀阀感温包破裂导致阀门关闭，使制冷剂无法流动。</p><p>3）、故障诊断与排除：（1）检查热敏管、膨胀阀和EPR（蒸发器压力调节器）（2）用压缩空气清除膨胀阀内的污垢。如不能清除污垢，则应更换膨胀阀（3）更换储液罐（4）抽出空气，然后充入适量的制冷剂。如热敏管漏气，则更换膨胀阀</p><p><strong>六、制冷剂过多或冷凝器散热不良</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-2c7f1b99f017acd825897f921054bc3d.jpeg"></p><p>1）、故障现象：低压侧和高压厕压力均偏高；即使发动机转速快速升高或降低，通过观察窗也见不到气泡；制冷不足。</p><p>2）、故障原因：系统中制冷剂过量；冷凝器散热不良。</p><p>3）、故障诊断与排除：若制冷剂过量使制冷能力下降，应适当排放部分制冷剂；若冷凝器表面脏污或与散热器间夹有杂物、风扇电机存在故障导致冷凝器散热不良，应清洁冷凝器，检查风扇电机的运转情况。</p><p><strong>七、系统中有空气</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-699a9e173e151c63d60fefca05ea1442.jpeg"></p><p>1）、故障现象：高压侧和低压侧压力都太高；低压管路发热；在储液器的观察窗内出现气泡；制冷效果不好。</p><p>2）、故障原因：由于抽真空作业时不彻底，使系统中残存部分空气。</p><p>3）、故障诊断与排除：彻底抽真空，重新充注适量新制冷剂；检查压缩机油是否变脏或不足，应更换或添加。</p><p>**八、**<strong>膨胀阀安装不正确或感温包有故障（开度不合适）</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-157c2ac1af368c5c314790dab7f921be.jpeg"></p><p>1）、故障现象：高压侧和低压侧压力都太高；在低压侧管路结霜或有大量露水；制冷不足。</p><p>2）、故障原因：膨胀阀存在故障或感温包安装不正确。</p><p>3）、故障诊断与排除：由于膨胀阀开度过大，导致向蒸发器高低压侧都流入过量制冷剂，应检查膨胀阀的工作情况以及膨胀阀上感温包的安装位置。</p><p>**九、**<strong>压缩机故障</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-c61944426bb4ab0ac4e134c2565e0418.jpeg"></p><p>1）、故障现象：低压侧压力太高；高压侧压力太低；无冷气吹出。</p><p>2）、故障原因：压缩机磨损严重，阀门渗漏或损坏。</p><p>3）、诊断与排除：拆检压缩机，视情修复或更换。</p><p>END</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 制冷技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 控制 </tag>
-            
-            <tag> 制冷技术 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>至过去的2020</title>
       <link href="/2021/01/04/%E8%87%B3%E8%BF%87%E5%8E%BB%E7%9A%842020/"/>
       <url>/2021/01/04/%E8%87%B3%E8%BF%87%E5%8E%BB%E7%9A%842020/</url>
@@ -2621,6 +2629,33 @@
             <tag> 生活 </tag>
             
             <tag> 控制 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>老师傅总结的制冷系统故障排除方法01：压力分析法</title>
+      <link href="/2021/01/04/%E8%80%81%E5%B8%88%E5%82%85%E6%80%BB%E7%BB%93%E7%9A%84%E5%88%B6%E5%86%B7%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%96%B9%E6%B3%9501%EF%BC%9A%E5%8E%8B%E5%8A%9B%E5%88%86%E6%9E%90%E6%B3%95/"/>
+      <url>/2021/01/04/%E8%80%81%E5%B8%88%E5%82%85%E6%80%BB%E7%BB%93%E7%9A%84%E5%88%B6%E5%86%B7%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%96%B9%E6%B3%9501%EF%BC%9A%E5%8E%8B%E5%8A%9B%E5%88%86%E6%9E%90%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>制冷系统发生了故障，一般不可能直接看到故障的部位发生在哪里，也不可能将制冷系统的部件一一分解和解剖，只能从外表检查，找出运行中的反常现象，进行综合分析。</p><p>这样，制冷系统压力和温度检测就非常重要。本期我们主要来说一说制冷系统的压力判断和压力检测。</p><p><strong>一、制冷系统压力的概念</strong></p><p>制冷系统压力我们常见的有3个：吸气压力、排气压力、冷凝压力。</p><p><strong>1、吸气压力和排气压力</strong>    </p><p>制冷系统在运行时可分高、低压两部分。排气压力是指压缩机出口处排气管内制冷剂气体的压力。压缩机的吸气口压力称为吸气压力，吸气压力接近于蒸发压力。两者之差就是管路的流动阻力。压力损失一般限制在0.018Mpa以下。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-c8ea77105b1f26fb7c25c8e3fbe05ea0.jpeg"></p><p>为方便起见，制冷系统的蒸发压力与冷凝压力都在压缩机的吸、排气口检测。即通常称为压缩机的吸、排气压力。检测制冷系统的吸、排气压力的目的，是要得到制冷系统的蒸发温度与冷凝温度，以此获得制冷系统的运行状况。</p><p><strong>2、冷凝压力</strong>    </p><p>冷凝压力就是制冷剂在冷凝器内气体冷凝成液体的压力，由于制冷系统中冷凝器内部的压力无法测量，而实际上，制冷剂在排气管以及冷凝器内的压力降其实很小，所以不管设计调试还是检修当中，一般认为排气压力近似等于冷凝压力。</p><p><strong>（1）冷凝温度与制冷量的关系</strong></p><p>我们简单看看R22制冷剂冷凝压力与冷凝温度的关系曲线：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-17f4bf54c848fa7e3ee7216084b03351.jpeg"></p><p>从图上很简单的就能看出，冷凝温度与冷凝压力是成正比变化的，冷凝压力与冷凝温度两者是对应的；冷凝压力（高压）越低，冷凝温度也就越低；冷凝压力（高压）越高，冷凝温度也就越高。  </p><p>知道冷凝压力，我们就能查表得出冷凝温度的数值。</p><p><strong>（2）热负荷与冷凝压力的关系</strong></p><p>这个简单来说就是冷凝侧的负荷与冷凝压力的关系。</p><p>在一恒定的工况条件下（制冷剂流量），热负荷越大，冷凝压力越高，反之亦然。我们可以想象一下，当你设计的冷凝器小了（热负荷就相对来说大了） ，制冷系统是很容易高压报警的。</p><p><strong>二、制冷系统压力的影响因素</strong></p><p><strong>1、吸气压力</strong>    </p><p><strong>（1）吸气压力低的因素</strong></p><p>吸气压力低于正常值，其因素有制冷量不足、冷负荷量小、膨胀阀开启度小、冷凝压力低（指用毛细管系统），以及过滤器不畅通。 </p><p><strong>（2）吸气压力高的因素</strong></p><p> 吸气压力高于正常值，其因素有制冷剂过多、制冷负荷大、膨胀阀开启度大、冷凝压力高（毛细管系统）以及压缩机效率差等。</p><p><strong>2、排气压力</strong>   </p><p><strong>（1）排气压力高的因素</strong></p><p>当排气压力高于正常值时，一般有冷却介质的流量小或冷却介质温度高、制冷剂充注量过多、冷负荷大及膨胀阀开启度大等。 </p><p>这些引起系统的循环流量增加，冷凝热负荷也相应增加。由于热量不能及时全部散出，引起冷凝温度上升，而所能检测到的是排气（冷凝）压力上升。在冷却介质流量低或冷却介质温度高的情况下，冷凝器的散热效率降低而使冷凝温度上升。</p><p>在冷却介质流量低或冷却介质温度高的情况下，冷凝器的散热效率降低而使冷凝温度上升。对于制冷剂充注量过多的原因，是多余的制冷剂液占据了一部分冷凝管，使冷凝面积减少，引起冷凝温度上升。 </p><p><strong>（2）排气压力低的因素</strong></p><p>排气压力低于正常值，其因素有压缩机效率低、制冷剂量不足、冷负荷小、膨胀阀开度小，过滤器不畅通，包括膨胀阀过滤网以及冷却介质温度低等。 </p><p>以上几种因素都会引起系统的制冷流量下降、冷凝负荷小，使冷凝温度下降。 </p><p>从上述的吸气压力与排气压力与排气压力变化情况看，两者有密切的关系。在一般情况下，吸气压力升高，排气压力也相应上升；吸入压力下降，排气压力也相应下降。也可从吸气压力表的变化估计出排气压力的大致情况。</p><p><strong>三、为什么要用压力来检查系统故障？</strong></p><p><strong>1、排气压力</strong>   </p><p>制冷系统运行时，其排气压力与冷凝温度相对应，而冷凝温度与其冷却介质的流量和温度、制冷剂流入量、冷负荷量等有关。在检查制冷系统时，应在排气管处装一只排气压力表，检测排气压力，作为分析故障资料。</p><p><strong>2、吸气压力</strong>   </p><p>对于用膨胀阀的系统而言，吸气压力与膨胀阀的开启度、制冷剂充注量、压缩机的冷效率、以及负荷大小有关。用毛细管的系统，吸气压力与冷凝压力、制冷量，压缩机制冷效率、以及负荷大小有关。为此在检查制冷系统时，应在吸气管上装按压力表。检测吸气压力对故障分析有重要作用。</p><p><strong>四、制冷系统压力调节阀有哪些？</strong></p><p><strong>压力调节阀主要包括以下3类：</strong></p><p>1）蒸发压力调节阀；  </p><p>2）冷凝压力调节阀；  </p><p>3）吸气压力调节阀；  </p><h2 id="1、蒸发压力调节阀"><a href="#1、蒸发压力调节阀" class="headerlink" title="1、蒸发压力调节阀"></a><strong>1、蒸发压力调节阀</strong></h2><p>蒸发压力调节阀通常安装在蒸发器的出口处，根据蒸发压力的高低自动调节阀门的开度，可以控制从蒸发器流出的制冷剂的流量，以维持蒸发压力的恒定；</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-19cde49a158d385a0bb3a7979ca84bfe.jpeg"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-3ba73af2c0965f17b9364de589253187.jpeg"></p><h2 id="2、冷凝压力调节阀"><a href="#2、冷凝压力调节阀" class="headerlink" title="2、冷凝压力调节阀"></a><strong>2、冷凝压力调节阀</strong></h2><p>冷凝压力调节阀是通过高压调节阀+差压调节阀 来实现对压力的调节。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-7e7968a6c83ac241ee40d9371ebaf02e.jpeg"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-ad81280a6b820f21f8c502f8aa96212b.jpeg"></p><h2 id="3、吸气压力调节阀"><a href="#3、吸气压力调节阀" class="headerlink" title="3、吸气压力调节阀"></a><strong>3、吸气压力调节阀</strong></h2><p>别称：曲轴箱压力调节阀；</p><p>安装位置：压缩机吸气管上面；</p><p>作用：避免因过高的吸气压力损坏电机，保护电机的作用；</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-d1aa190ab3ac36439039358c076c7582.jpeg"></p><p><strong>五、利用压力表判断制冷系统故障</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-0a52d3278d608ec413ea8b575ab3e3fd.jpeg"></p><p><strong>一、制冷系统正常</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-6002fcfbd2e524852ee797fdd8b77b91.jpeg"></p><p>对于空调系统而言，正常的制冷系统参数如下：（R22制冷剂）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-d5c195c9182cc5e69b6676214b192c45.jpeg"></p><p>（R410A制冷剂）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-05514e58960514976b09816f0c44b73c.jpeg"></p><p><strong>二、制冷系统中有湿气</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-97c79998a4cfcbb9f5277013c34913f3.jpeg"></p><p>1）、故障现象：工作期间，在低压侧压力有时正常，有时指示真空；高压侧压力指示正常，有时稍高；间歇性制冷，最后不制冷。</p><p>2）、故障原因：干燥剂吸湿能力达到饱和；制冷循环系统内在膨胀阀（或孔管）处结冰，阻滞了制冷剂的流动，导致不制冷；当冰融化后，系统又恢复到正常状态。</p><p>3）、故障诊断与排除：干燥剂处于饱和状态，更换储液干燥器或干燥剂。反复抽真空，排除系统中的水分，然后注入适当数量的新制冷剂。</p><p><strong>三、缺制冷剂</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-c991c099207a5095413be96597f2d892.jpeg"></p><p>1）、故障现象：高、低压侧的压力都偏低，从玻璃观察窗内看到有连续的气泡出现，高压管温热、低压管微冷。</p><p>2）、故障原因：制冷剂充注不足或系统某些部位发生渗漏。</p><p>3）、修复方法：（1）用测漏器检查是否漏气，根据需要予以修理（2）充人适量的制冷剂（3）连接压力表后，如压力示值接近0，可在漏气部位检修完毕后将制冷系统抽成真空</p><p><strong>四、制冷剂循环不良</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-283ded4178dcd0754a267930bf350bb1.jpeg"></p><p>1）、故障现象：高压和低压侧压力都偏低；从储液干燥器到主机组的管路都结霜；制冷不足。</p><p>2）、故障原因：储液干燥器堵塞，阻滞了制冷剂的流动。</p><p>3）、故障诊断与排除：更换储液干燥器。</p><p><strong>五、制冷剂不循环</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-f6237855705b6d29a404e09a749e8f03.jpeg"></p><p>1）、故障现象：低压侧压力指示真空，高压侧压力指示太低；膨胀阀或储液干燥器前后管路上有露水或结霜；不制冷或间歇制冷。</p><p>2）、故障原因：系统中有水分或污物阻滞了制冷剂的流动；膨胀阀感温包破裂导致阀门关闭，使制冷剂无法流动。</p><p>3）、故障诊断与排除：（1）检查热敏管、膨胀阀和EPR（蒸发器压力调节器）（2）用压缩空气清除膨胀阀内的污垢。如不能清除污垢，则应更换膨胀阀（3）更换储液罐（4）抽出空气，然后充入适量的制冷剂。如热敏管漏气，则更换膨胀阀</p><p><strong>六、制冷剂过多或冷凝器散热不良</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-2c7f1b99f017acd825897f921054bc3d.jpeg"></p><p>1）、故障现象：低压侧和高压厕压力均偏高；即使发动机转速快速升高或降低，通过观察窗也见不到气泡；制冷不足。</p><p>2）、故障原因：系统中制冷剂过量；冷凝器散热不良。</p><p>3）、故障诊断与排除：若制冷剂过量使制冷能力下降，应适当排放部分制冷剂；若冷凝器表面脏污或与散热器间夹有杂物、风扇电机存在故障导致冷凝器散热不良，应清洁冷凝器，检查风扇电机的运转情况。</p><p><strong>七、系统中有空气</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-699a9e173e151c63d60fefca05ea1442.jpeg"></p><p>1）、故障现象：高压侧和低压侧压力都太高；低压管路发热；在储液器的观察窗内出现气泡；制冷效果不好。</p><p>2）、故障原因：由于抽真空作业时不彻底，使系统中残存部分空气。</p><p>3）、故障诊断与排除：彻底抽真空，重新充注适量新制冷剂；检查压缩机油是否变脏或不足，应更换或添加。</p><p>**八、**<strong>膨胀阀安装不正确或感温包有故障（开度不合适）</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-157c2ac1af368c5c314790dab7f921be.jpeg"></p><p>1）、故障现象：高压侧和低压侧压力都太高；在低压侧管路结霜或有大量露水；制冷不足。</p><p>2）、故障原因：膨胀阀存在故障或感温包安装不正确。</p><p>3）、故障诊断与排除：由于膨胀阀开度过大，导致向蒸发器高低压侧都流入过量制冷剂，应检查膨胀阀的工作情况以及膨胀阀上感温包的安装位置。</p><p>**九、**<strong>压缩机故障</strong></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-c61944426bb4ab0ac4e134c2565e0418.jpeg"></p><p>1）、故障现象：低压侧压力太高；高压侧压力太低；无冷气吹出。</p><p>2）、故障原因：压缩机磨损严重，阀门渗漏或损坏。</p><p>3）、诊断与排除：拆检压缩机，视情修复或更换。</p><p>END</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 制冷技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 控制 </tag>
+            
+            <tag> 制冷技术 </tag>
             
         </tags>
       
@@ -4796,31 +4831,6 @@
     
     
     <entry>
-      <title>电池热管理工程实践认知 (1): 风冷式热管理系统</title>
-      <link href="/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
-      <url>/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
-      
-        <content type="html"><![CDATA[<p><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></p><p><strong>1、电池热管理技术基本概念</strong></p><p>电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升，这个时候需要及时的散热，要不然就会中暑。当电池处于低温（例如-30℃）条件下的时候，电池无法正常的工作（温度太低，电池内反应物活性受限），车辆也就无法正常行驶，正如我们在瑟瑟寒风里无任何热防护的时候，人的身体感觉寒冷，人的动作就会变慢，这时候需要我们尽快采取取暖措施，要不然身体也会冻伤。</p><p>因此，我们人体在热了或者冷了且自身无法调节时，我们会开空调去做体外调节；如果人体被病毒细菌感染了，人体的免疫系统会产生作用，并升高体温；如果被发现是感染了厉害的病毒，高烧不退、吃退烧药也无法控制体温，就需要更为强力有效的方式进行综合调理、内外兼治。显然人体可以通过种种不同的途径来调节体温，那么电池的“体温”怎么办呢？</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg"></p><p>图0 电池的冷热管理（<a href="http://dc-ts.com/advanced-battery-thermal-management-system/%EF%BC%89">http://dc-ts.com/advanced-battery-thermal-management-system/）</a></p><p>对电池运行产生的热量进行管控的方法叫做<strong>电池热管理技术</strong>（详细可参见<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a>）。电池热管理就类似于人体对于体温的调节，如果电池运行产生的热量得不到有效的管理和控制，就会产生电池的热失控问题（<em><strong>我们后面会做专题讨论</strong></em>），这就类似于我们人体被感染了很厉害的病毒。在现阶段，由于动力电池材料技术处于发展瓶颈期，我们无法从根本上消除温度对电池性能和寿命的影响，但是不论是对于铅酸电池、锂离子电池或者是燃料电池，温度对于电池性能和寿命都是一个重要的影响因素，所以我们需要开发电池热管理技术对电池产生的热量进行管理，防止电池在高温或者低温下不能正常工作。希望目前的热管理只是一种过渡方式，后期的电芯不需要做任何热管理——这里大家不用担心失业，至少未来10年内，中国的6G、7G和1nm、0.5nm芯片冷却技术可能需要我们大展身手。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg"></p><p>图1 电池热管理的重要工程实践意义（百度图片）</p><p>温度最直观的影响就是对电池容量的影响，这也是为什么在冬季电动车行驶里程要比其他季节短很多的原因，同样每年的4月到9月都会出现电动车自燃的现象（暴晒条件下，车内温度达到60℃），天气燥热，电动车又给炎热的天气添了一把柴。综合各方面因素，电池热管理技术对于目前的动力电池是不可或缺的一部分，在环境温度较高时需要对电池进行降温，同时在温度较低时对电池进行加热，电池热管理技术相当于给电池加上了一个小型的空调系统。当然，在实际中也需要根据整车的实际运行工况来调整电池热管理系统策略。</p><p> </p><p><strong>2、电池热管理部件组成</strong></p><p>今天我们针对电池热管理技术的实际应用现状做个综述，后续我们再共同对其进行细分和学习。在国内目前能够大批量生产的汽车中实际应用的电池热管理技术可以分为四类：风冷式热管理技术、液冷式电池热管理技术、自然冷却式电池热管理技术和直冷式电池热管理技术（相变冷却技术）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg"></p><p>图2 电池热管理技术分类（百度图片）</p><p>另外电池包的保温设计（其实笔者感觉有效的保温最难实现，有时候想法和实际操作相差太远，现实条件中可能不允许你做一些保温的措施）和单纯加热的系统也都隶属于电池热管理系统，当然有人提出热扩散防控也属于热管理范畴，我们这里不做定义及探讨，本文主要针对散热系统进行介绍。</p><p> </p><p><strong>3、风冷式电池热管理系统部件构成</strong></p><p>风冷式热管理系统部件包括格栅、温度探头、滤网、进风管、冷风介质、电池包内部风管、出风管、风机，密封条和固定卡扣。一般来说格栅设计在风管的进口处，其作用是为了防止一些较大尺寸的物体进入电池包内部而堵塞风管。在格栅和风管之间还会设计有滤芯和风道，风道的设计一般会根据整车的内部结构和电池包内部结构设计进行调整，在实际的设计中，风道的设计要尽量的光滑和平顺。在风道和车辆部件接触的地方需要设计密封条。风机一般分为轴流分机和离心风机，根据不同的风冷式热管理系统的需求选择不同的风机类型。在选型的过程中一般会将噪音和送风量作为主要的参考因素。离心风机在电池包内部根据使用场景的不同可以分为吹风式和抽离式，最直接的例子就是丰田卡罗拉的两款HEV电池包，一款采用了吹风形式，另外一款采用了抽风形式。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg"></p><p>图3 丰田普锐斯（Prius）使用的风冷式电池热管理系统（谷歌图片）</p><p>当然，很多人可能会对风冷式热管理系统能否有效冷却电池保持怀疑态度，因为有很多这方面的文章提到风冷式系统的不足之处，这里我们简单探讨一下。在国内，针对不同的电池包我们尝试采用不同的冷却系统，对于EV (ElectricVehicle，纯电动汽车)，国内采用较多的热管理系统是液冷系统了，当然也会有一部分厂家尝试采用风冷系统，2016年奇瑞汽车生产的小蚂蚁电动汽车就尝试采用风冷式热管理系统进行散热。对于传统汽车改新能源车来说，采用风冷式热管理系统可以节省一大笔的开发费用，整车的空调系统可以直接按照原来燃油车的系统部件进行设计。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg"></p><p>图4 奇瑞小蚂蚁电动汽车（百度图片）</p><p>而对于HEV(Hybrid Electric Vehicle，混合动力汽车) 目前很多车厂都在争先进行开发，首选的电池热管理系统就是风冷式，比如前面提到的丰田卡罗拉和本田雅阁都是采用风冷式热管理系统。从大数据上看，日系车企很少采用液冷式热管理系统，大多采用的是风冷式，这点和国内的一些车企有些不同，可能是由于日系车企对液冷式系统还有其他的考量，个人感觉不会是因为成本的原因。对于HEV来说采用的电芯和EV的电芯是不同的，HEV在运行过程中动力电池不是唯一的动力来源，大部分情况下电池持续运行时间较短，风冷式热管理系统完全可以满足系统的要求，但是EV的动力完全来自于动力电池，电池长时间持续运行，这样电池就需要散热能力更强的电池热管理系统来保证电池的正常工作。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg"></p><p>图5 丰田卡罗拉油电混合汽车（百度图片）</p><p>风冷系统一般有三种设计，第一种就是单独采用风冷对电池进行散热或者加热；第二种就是仅用来对电池进行散热，对电池系统加热的话一般会另外设计加热膜；第三种就是风冷系统和加热膜结合，当电池需要散热的时候，仅仅启动冷却，当电池需要加热的时候，加热膜和风冷同时启动，此时风冷系统的进口为温度较高的车内气体。丰田卡罗拉的PHEV在两个模组之间设计的有加热膜，加热膜和模组之间的有效接触面积很小，笔者个人觉得加热膜只是为了加热电芯之间的空气，再通过风冷系统对电池包内的空气进行扰动。丰田卡罗拉的PHEV使用的是18650电芯，同时这款电池包的热失控管理设计也十分精巧，有空我们可以再聊聊。</p><p><strong>下面我们通过几个目前已经实现量产的实例来了解风冷式电池热管理技术。</strong></p><p>本田雅阁混动HEV的电池热管理系统中使用的冷却介质来自车内部的空调风，如果车主不使用空调时，进入电池包风管内的就是是车内没通过冷却的风。图示IPU指的就是电池包，我们简单了解一下冷却风是如何在内部流动的，电池包的冷却风从总进口进入电池包内部风道(模组的一侧)，然后再通过电芯之间的间隙，离心风扇和整个模组的另外一侧并没有设计风道，直接依靠离心风扇排出到外部，这样设计不仅仅对电池进行了散热，对电池包内部的发热器件（铜排、BDU）也有一定的散热作用。有兴趣的话大家可以看一下本田的专利，电芯之间设计有一定形状的塑料隔板，隔板不仅仅起到了流通的作用，在一定程度上也起到缓冲（电芯膨胀）的作用。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png"></p><p>图6 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png"></p><p>图7 电池包三维视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png"></p><p>图8 电池包内模组实物图（百度图片）</p><p> </p><p>奥迪Q5采用的同样也是风冷散热，但是奥迪在电池包的外部单独给整个电池包系统做了一个蒸发器，专门对电池包内部循环风进行降温，使进入到电池包内部的风控制在合理的范围内，同时奥迪的这款设计比较巧妙，它的冷却系统进风可以切换，拥有引入外部自然风和内部循环风两种功能，可以通过感知电池不同的温度阶段来切换这两种功能。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png"></p><p>图9 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png"></p><p>图10 电池包三维视图及其工作原理（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png"></p><p>图11 电池包内部模组视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png"></p><p>图12 电池包内部流体流动轨迹视图（百度图片）</p><p> </p><p>广汽丰田2020年新推出的一款C-HREV采用的也是风冷散热，丰田将2个蒸发器和2个膨胀阀移到了电池包内部，采用这种设计的电池包内部空气、两个离心风机、风道（风道位于电池包2侧）和模组单独形成了一个循环（封闭式风冷系统），这款设计和奥迪Q5设计有类似之处，C-HR电池包的蒸发器位于风机出口的风道内部，电池包内部具有加热功能，在每个大模组（包内有2种模组）的底部都设计的有加热膜（有弹性支撑），这种加热膜材质和国内的差别比较大，这款车的加热速率非常低（可能是出于安全考虑），C-HR这款电池包内部设计有许多值得借鉴的细节（风道比较有特点）。在一定程度上奥迪Q5和C-HR也采用了直冷的散热方式，只是蒸发器没有和电芯直接接触，可以避免过冷的现象出现，它们将风冷和直冷结合在一块，直接给动力电池的冷却介质配置一个蒸发器，这样电池散热效果更佳，但是成本可能会增加不少。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png"></p><p>图13 电池包三维视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png"></p><p>图14 电池包俯视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png"></p><p>图15 电池包热管理原理（百度图片）</p><p> </p><p>可见，风冷式电池热管理技术有很广的应用范围，而且应用在商业电动车上也有很好的效果。目前商用电动车还有其他的电池热管理技术，下一期，我们将着重介绍和讨论<strong>液冷式和直冷式电池热管理技术</strong>。</p><p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出，后续如果有兴趣大家可以留言，我们针对热管理的一些子部件进行详细探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行剖解分析，同时以上论述均为个人见解，如有错误之处请不吝赐教，技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p><p><strong>往期精彩回顾</strong></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 制冷技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 电池热管理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>电池热管理工程实践认知 (2): 液冷及直冷式热管理系统</title>
       <link href="/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/"/>
       <url>/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/</url>
@@ -4840,6 +4850,31 @@
             <tag> 试验台 </tag>
             
             <tag> 制冷技术 </tag>
+            
+            <tag> 电池热管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电池热管理工程实践认知 (1): 风冷式热管理系统</title>
+      <link href="/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<p><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></p><p><strong>1、电池热管理技术基本概念</strong></p><p>电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升，这个时候需要及时的散热，要不然就会中暑。当电池处于低温（例如-30℃）条件下的时候，电池无法正常的工作（温度太低，电池内反应物活性受限），车辆也就无法正常行驶，正如我们在瑟瑟寒风里无任何热防护的时候，人的身体感觉寒冷，人的动作就会变慢，这时候需要我们尽快采取取暖措施，要不然身体也会冻伤。</p><p>因此，我们人体在热了或者冷了且自身无法调节时，我们会开空调去做体外调节；如果人体被病毒细菌感染了，人体的免疫系统会产生作用，并升高体温；如果被发现是感染了厉害的病毒，高烧不退、吃退烧药也无法控制体温，就需要更为强力有效的方式进行综合调理、内外兼治。显然人体可以通过种种不同的途径来调节体温，那么电池的“体温”怎么办呢？</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg"></p><p>图0 电池的冷热管理（<a href="http://dc-ts.com/advanced-battery-thermal-management-system/%EF%BC%89">http://dc-ts.com/advanced-battery-thermal-management-system/）</a></p><p>对电池运行产生的热量进行管控的方法叫做<strong>电池热管理技术</strong>（详细可参见<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a>）。电池热管理就类似于人体对于体温的调节，如果电池运行产生的热量得不到有效的管理和控制，就会产生电池的热失控问题（<em><strong>我们后面会做专题讨论</strong></em>），这就类似于我们人体被感染了很厉害的病毒。在现阶段，由于动力电池材料技术处于发展瓶颈期，我们无法从根本上消除温度对电池性能和寿命的影响，但是不论是对于铅酸电池、锂离子电池或者是燃料电池，温度对于电池性能和寿命都是一个重要的影响因素，所以我们需要开发电池热管理技术对电池产生的热量进行管理，防止电池在高温或者低温下不能正常工作。希望目前的热管理只是一种过渡方式，后期的电芯不需要做任何热管理——这里大家不用担心失业，至少未来10年内，中国的6G、7G和1nm、0.5nm芯片冷却技术可能需要我们大展身手。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg"></p><p>图1 电池热管理的重要工程实践意义（百度图片）</p><p>温度最直观的影响就是对电池容量的影响，这也是为什么在冬季电动车行驶里程要比其他季节短很多的原因，同样每年的4月到9月都会出现电动车自燃的现象（暴晒条件下，车内温度达到60℃），天气燥热，电动车又给炎热的天气添了一把柴。综合各方面因素，电池热管理技术对于目前的动力电池是不可或缺的一部分，在环境温度较高时需要对电池进行降温，同时在温度较低时对电池进行加热，电池热管理技术相当于给电池加上了一个小型的空调系统。当然，在实际中也需要根据整车的实际运行工况来调整电池热管理系统策略。</p><p> </p><p><strong>2、电池热管理部件组成</strong></p><p>今天我们针对电池热管理技术的实际应用现状做个综述，后续我们再共同对其进行细分和学习。在国内目前能够大批量生产的汽车中实际应用的电池热管理技术可以分为四类：风冷式热管理技术、液冷式电池热管理技术、自然冷却式电池热管理技术和直冷式电池热管理技术（相变冷却技术）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg"></p><p>图2 电池热管理技术分类（百度图片）</p><p>另外电池包的保温设计（其实笔者感觉有效的保温最难实现，有时候想法和实际操作相差太远，现实条件中可能不允许你做一些保温的措施）和单纯加热的系统也都隶属于电池热管理系统，当然有人提出热扩散防控也属于热管理范畴，我们这里不做定义及探讨，本文主要针对散热系统进行介绍。</p><p> </p><p><strong>3、风冷式电池热管理系统部件构成</strong></p><p>风冷式热管理系统部件包括格栅、温度探头、滤网、进风管、冷风介质、电池包内部风管、出风管、风机，密封条和固定卡扣。一般来说格栅设计在风管的进口处，其作用是为了防止一些较大尺寸的物体进入电池包内部而堵塞风管。在格栅和风管之间还会设计有滤芯和风道，风道的设计一般会根据整车的内部结构和电池包内部结构设计进行调整，在实际的设计中，风道的设计要尽量的光滑和平顺。在风道和车辆部件接触的地方需要设计密封条。风机一般分为轴流分机和离心风机，根据不同的风冷式热管理系统的需求选择不同的风机类型。在选型的过程中一般会将噪音和送风量作为主要的参考因素。离心风机在电池包内部根据使用场景的不同可以分为吹风式和抽离式，最直接的例子就是丰田卡罗拉的两款HEV电池包，一款采用了吹风形式，另外一款采用了抽风形式。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg"></p><p>图3 丰田普锐斯（Prius）使用的风冷式电池热管理系统（谷歌图片）</p><p>当然，很多人可能会对风冷式热管理系统能否有效冷却电池保持怀疑态度，因为有很多这方面的文章提到风冷式系统的不足之处，这里我们简单探讨一下。在国内，针对不同的电池包我们尝试采用不同的冷却系统，对于EV (ElectricVehicle，纯电动汽车)，国内采用较多的热管理系统是液冷系统了，当然也会有一部分厂家尝试采用风冷系统，2016年奇瑞汽车生产的小蚂蚁电动汽车就尝试采用风冷式热管理系统进行散热。对于传统汽车改新能源车来说，采用风冷式热管理系统可以节省一大笔的开发费用，整车的空调系统可以直接按照原来燃油车的系统部件进行设计。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg"></p><p>图4 奇瑞小蚂蚁电动汽车（百度图片）</p><p>而对于HEV(Hybrid Electric Vehicle，混合动力汽车) 目前很多车厂都在争先进行开发，首选的电池热管理系统就是风冷式，比如前面提到的丰田卡罗拉和本田雅阁都是采用风冷式热管理系统。从大数据上看，日系车企很少采用液冷式热管理系统，大多采用的是风冷式，这点和国内的一些车企有些不同，可能是由于日系车企对液冷式系统还有其他的考量，个人感觉不会是因为成本的原因。对于HEV来说采用的电芯和EV的电芯是不同的，HEV在运行过程中动力电池不是唯一的动力来源，大部分情况下电池持续运行时间较短，风冷式热管理系统完全可以满足系统的要求，但是EV的动力完全来自于动力电池，电池长时间持续运行，这样电池就需要散热能力更强的电池热管理系统来保证电池的正常工作。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg"></p><p>图5 丰田卡罗拉油电混合汽车（百度图片）</p><p>风冷系统一般有三种设计，第一种就是单独采用风冷对电池进行散热或者加热；第二种就是仅用来对电池进行散热，对电池系统加热的话一般会另外设计加热膜；第三种就是风冷系统和加热膜结合，当电池需要散热的时候，仅仅启动冷却，当电池需要加热的时候，加热膜和风冷同时启动，此时风冷系统的进口为温度较高的车内气体。丰田卡罗拉的PHEV在两个模组之间设计的有加热膜，加热膜和模组之间的有效接触面积很小，笔者个人觉得加热膜只是为了加热电芯之间的空气，再通过风冷系统对电池包内的空气进行扰动。丰田卡罗拉的PHEV使用的是18650电芯，同时这款电池包的热失控管理设计也十分精巧，有空我们可以再聊聊。</p><p><strong>下面我们通过几个目前已经实现量产的实例来了解风冷式电池热管理技术。</strong></p><p>本田雅阁混动HEV的电池热管理系统中使用的冷却介质来自车内部的空调风，如果车主不使用空调时，进入电池包风管内的就是是车内没通过冷却的风。图示IPU指的就是电池包，我们简单了解一下冷却风是如何在内部流动的，电池包的冷却风从总进口进入电池包内部风道(模组的一侧)，然后再通过电芯之间的间隙，离心风扇和整个模组的另外一侧并没有设计风道，直接依靠离心风扇排出到外部，这样设计不仅仅对电池进行了散热，对电池包内部的发热器件（铜排、BDU）也有一定的散热作用。有兴趣的话大家可以看一下本田的专利，电芯之间设计有一定形状的塑料隔板，隔板不仅仅起到了流通的作用，在一定程度上也起到缓冲（电芯膨胀）的作用。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png"></p><p>图6 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png"></p><p>图7 电池包三维视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png"></p><p>图8 电池包内模组实物图（百度图片）</p><p> </p><p>奥迪Q5采用的同样也是风冷散热，但是奥迪在电池包的外部单独给整个电池包系统做了一个蒸发器，专门对电池包内部循环风进行降温，使进入到电池包内部的风控制在合理的范围内，同时奥迪的这款设计比较巧妙，它的冷却系统进风可以切换，拥有引入外部自然风和内部循环风两种功能，可以通过感知电池不同的温度阶段来切换这两种功能。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png"></p><p>图9 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png"></p><p>图10 电池包三维视图及其工作原理（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png"></p><p>图11 电池包内部模组视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png"></p><p>图12 电池包内部流体流动轨迹视图（百度图片）</p><p> </p><p>广汽丰田2020年新推出的一款C-HREV采用的也是风冷散热，丰田将2个蒸发器和2个膨胀阀移到了电池包内部，采用这种设计的电池包内部空气、两个离心风机、风道（风道位于电池包2侧）和模组单独形成了一个循环（封闭式风冷系统），这款设计和奥迪Q5设计有类似之处，C-HR电池包的蒸发器位于风机出口的风道内部，电池包内部具有加热功能，在每个大模组（包内有2种模组）的底部都设计的有加热膜（有弹性支撑），这种加热膜材质和国内的差别比较大，这款车的加热速率非常低（可能是出于安全考虑），C-HR这款电池包内部设计有许多值得借鉴的细节（风道比较有特点）。在一定程度上奥迪Q5和C-HR也采用了直冷的散热方式，只是蒸发器没有和电芯直接接触，可以避免过冷的现象出现，它们将风冷和直冷结合在一块，直接给动力电池的冷却介质配置一个蒸发器，这样电池散热效果更佳，但是成本可能会增加不少。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png"></p><p>图13 电池包三维视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png"></p><p>图14 电池包俯视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png"></p><p>图15 电池包热管理原理（百度图片）</p><p> </p><p>可见，风冷式电池热管理技术有很广的应用范围，而且应用在商业电动车上也有很好的效果。目前商用电动车还有其他的电池热管理技术，下一期，我们将着重介绍和讨论<strong>液冷式和直冷式电池热管理技术</strong>。</p><p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出，后续如果有兴趣大家可以留言，我们针对热管理的一些子部件进行详细探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行剖解分析，同时以上论述均为个人见解，如有错误之处请不吝赐教，技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p><p><strong>往期精彩回顾</strong></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 制冷技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> 电池热管理 </tag>
             
@@ -4979,7 +5014,7 @@
       <link href="/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/"/>
       <url>/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/</url>
       
-        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><pre class="line-numbers language-none"><code class="language-none">ifconfig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#x43;&#80;&#x55;&#x40;&#x31;&#x2e;&#x39;&#71;&#x48;&#x7a;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
+        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><pre class="line-numbers language-none"><code class="language-none">ifconfig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#67;&#80;&#x55;&#x40;&#x31;&#46;&#57;&#x47;&#72;&#x7a;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
       
       
       <categories>
@@ -5888,31 +5923,6 @@
     
     
     <entry>
-      <title>树莓派无显示器无网线ssh连接无线网</title>
-      <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/"/>
-      <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/</url>
-      
-        <content type="html"><![CDATA[<p>如果没有显示器等外设，同时又没有网线，只能先在树莓派里添加ssh文件，同时在里面添加wifi连接信息，使得树莓派开机就可以启动ssh同时连接上我们预设的wifi，具体操作如下</p><p>由于树莓派系统开始时默认是不开启ssh连接的，没有开启ssh就无法连接电脑，后续的操作也就无从谈起。所以首先要先开启树莓派的ssh连接，烧录好系统后，内存卡只有一个boot分区可以被识别，在里面添加一个命名为ssh的空白文件即可实现开机开启ssh</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578198512-%E6%A0%91%E8%8E%93%E6%B4%BE7.png"></p><p>之后往系统里添加wifi信息</p><p>首先在内存卡中的boot分区中新建一个<strong>wpa_supplicant.conf</strong>的文件，并在里面写上树莓派的wifi配置命令：</p><pre class="line-numbers language-none"><code class="language-none">country&#x3D;CNctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdevupdate_config&#x3D;1network&#x3D;&#123;    ssid&#x3D;&quot;wifi名称&quot;    psk&#x3D;&quot;wifi密码&quot;    key_mgmt&#x3D;WPA-PSK    priority&#x3D;1&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p> </p><p>其中ssid是wifi名称，psk是自己的wifi密码</p><p>添加上去之后即可开机连接上wifi，从而获取树莓派ID，使用ssh连接上去</p><p>如何查看树莓派ip地址可以使用软件<a href="https://www.advanced-ip-scanner.com/cn/">Advanced IP Scanner</a>查看，或者自己可以登入路由器后台查看，使用软件扫描如下：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578199454-%E6%A0%91%E8%8E%93%E6%B4%BE8-1024x733.png"></p><p>之后使用ssh或者putty软件连接到这个ip上，树莓派默认的登入用户名为pi，登入密码为raspberry</p><p> </p><p>如果树莓派一直在闪绿灯，而且一直连接不上wifi，那么可能是因为电源电流太小了，更换一下电源大小即可</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 树莓派 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 树莓派 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>树莓派更改软件源</title>
       <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/"/>
       <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/</url>
@@ -5930,6 +5940,31 @@
         <tags>
             
             <tag> 软件 </tag>
+            
+            <tag> 树莓派 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>树莓派无显示器无网线ssh连接无线网</title>
+      <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/"/>
+      <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/</url>
+      
+        <content type="html"><![CDATA[<p>如果没有显示器等外设，同时又没有网线，只能先在树莓派里添加ssh文件，同时在里面添加wifi连接信息，使得树莓派开机就可以启动ssh同时连接上我们预设的wifi，具体操作如下</p><p>由于树莓派系统开始时默认是不开启ssh连接的，没有开启ssh就无法连接电脑，后续的操作也就无从谈起。所以首先要先开启树莓派的ssh连接，烧录好系统后，内存卡只有一个boot分区可以被识别，在里面添加一个命名为ssh的空白文件即可实现开机开启ssh</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578198512-%E6%A0%91%E8%8E%93%E6%B4%BE7.png"></p><p>之后往系统里添加wifi信息</p><p>首先在内存卡中的boot分区中新建一个<strong>wpa_supplicant.conf</strong>的文件，并在里面写上树莓派的wifi配置命令：</p><pre class="line-numbers language-none"><code class="language-none">country&#x3D;CNctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdevupdate_config&#x3D;1network&#x3D;&#123;    ssid&#x3D;&quot;wifi名称&quot;    psk&#x3D;&quot;wifi密码&quot;    key_mgmt&#x3D;WPA-PSK    priority&#x3D;1&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p> </p><p>其中ssid是wifi名称，psk是自己的wifi密码</p><p>添加上去之后即可开机连接上wifi，从而获取树莓派ID，使用ssh连接上去</p><p>如何查看树莓派ip地址可以使用软件<a href="https://www.advanced-ip-scanner.com/cn/">Advanced IP Scanner</a>查看，或者自己可以登入路由器后台查看，使用软件扫描如下：</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578199454-%E6%A0%91%E8%8E%93%E6%B4%BE8-1024x733.png"></p><p>之后使用ssh或者putty软件连接到这个ip上，树莓派默认的登入用户名为pi，登入密码为raspberry</p><p> </p><p>如果树莓派一直在闪绿灯，而且一直连接不上wifi，那么可能是因为电源电流太小了，更换一下电源大小即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 树莓派 </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> 树莓派 </tag>
             
