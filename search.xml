@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>威联通安装alist并挂载pikpak</title>
+      <link href="/2026/10/14/%E5%A8%81%E8%81%94%E9%80%9A%E5%AE%89%E8%A3%85alist%E5%B9%B6%E6%8C%82%E8%BD%BDpikpak/"/>
+      <url>/2026/10/14/%E5%A8%81%E8%81%94%E9%80%9A%E5%AE%89%E8%A3%85alist%E5%B9%B6%E6%8C%82%E8%BD%BDpikpak/</url>
+      
+        <content type="html"><![CDATA[<p>威联通自带的 File Station 只能管本地盘。想把 PikPak 这类网盘纳入 NAS 的目录树，需要一座“桥”——AList 把各种网盘聚合成一个统一的虚拟目录，再通过 WebDAV 暴露出来，威联通这边用 File Station 装载远程文件夹，就能像本地目录一样读写。</p><p>本文记录一次完整的落地过程，顺便把踩过的坑一起记下来。AList 官网：<a href="https://alist.nn.ci/zh/">https://alist.nn.ci/zh/</a></p><h2 id="一、在威联通上安装-AList"><a href="#一、在威联通上安装-AList" class="headerlink" title="一、在威联通上安装 AList"></a>一、在威联通上安装 AList</h2><p>有两条路：Container Station 跑 Docker，或者装第三方打包的 QPKG 套件。推荐 Docker——更新方便，数据卷独立，迁移和备份都简单。</p><h3 id="方式-A：Docker-部署（推荐）"><a href="#方式-A：Docker-部署（推荐）" class="headerlink" title="方式 A：Docker 部署（推荐）"></a>方式 A：Docker 部署（推荐）</h3><p><strong>第一步，建目录。</strong> 打开 File Station，在 Container 共享文件夹下新建 <code>alist</code> 目录（也可以放你自己的 Docker 路径）。</p><p><strong>第二步，创建应用。</strong> 打开 Container Station，左侧 <strong>应用程序（Applications）→ 创建（Create）</strong>，应用名称填 <code>alist</code>，在 YAML 框里粘贴：</p><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.3'</span><span class="token key atrule">services</span><span class="token punctuation">:</span>    <span class="token key atrule">alist</span><span class="token punctuation">:</span>        <span class="token key atrule">image</span><span class="token punctuation">:</span> <span class="token string">'xhofe/alist:latest'</span>        <span class="token key atrule">container_name</span><span class="token punctuation">:</span> alist        <span class="token key atrule">volumes</span><span class="token punctuation">:</span>            <span class="token punctuation">-</span> <span class="token string">'/share/Container/alist:/opt/alist/data'</span>        <span class="token key atrule">ports</span><span class="token punctuation">:</span>            <span class="token punctuation">-</span> <span class="token string">'5244:5244'</span>        <span class="token key atrule">environment</span><span class="token punctuation">:</span>            <span class="token punctuation">-</span> PUID=0            <span class="token punctuation">-</span> PGID=0            <span class="token punctuation">-</span> UMASK=022        <span class="token key atrule">restart</span><span class="token punctuation">:</span> always<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>注意把 <code>/share/Container/alist</code> 换成你实际建的目录路径。点击创建，等镜像下载并启动。</p><h3 id="卡在拉镜像：502-Bad-Gateway-与国内加速源"><a href="#卡在拉镜像：502-Bad-Gateway-与国内加速源" class="headerlink" title="卡在拉镜像：502 Bad Gateway 与国内加速源"></a>卡在拉镜像：502 Bad Gateway 与国内加速源</h3><p>第一次创建大概率失败，因为威联通连不上 Docker 官方仓库 <code>registry-1.docker.io</code>。最直接的办法是 SSH 上去手动拉，再回 Container Station 创建。</p><p>先在 控制台 → 网络 &amp; 文件服务 → Telnet &#x2F; SSH 里开启 SSH，然后：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> admin@你的NAS_IP<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>用国内加速地址拉取，哪个通用哪个：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull docker.1ms.run/xhofe/alist:latest<span class="token function">docker</span> pull docker.xuanyuan.me/xhofe/alist:latest<span class="token function">docker</span> pull m.daocloud.io/xhofe/alist:latest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>我这边 DaoCloud 的公共节点直接回了 <code>received unexpected HTTP status: 502 Bad Gateway</code>，换成前两个就通了。</p><p>拉下来后打回原标签，这样前面那段 YAML 一个字都不用改：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> tag docker.1ms.run/xhofe/alist:latest xhofe/alist:latest<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>回到 Container Station 重新创建应用，本地已有镜像，不会再触发超时。</p><h3 id="获取初始密码"><a href="#获取初始密码" class="headerlink" title="获取初始密码"></a>获取初始密码</h3><p>容器启动后有两种方式：</p><ul><li><strong>看日志</strong>：Container Station 里点开 alist 容器，进 日志（Logs），搜 <code>admin password</code>，启动时会打印类似 <code>Initializer admin password: xxxxxxxx</code>。</li><li><strong>直接重置</strong>：进 终端机（Terminal），或者在 SSH 里执行：</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> alist ./alist admin <span class="token builtin class-name">set</span> 你的新密码<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然后浏览器打开 <code>http://NAS的IP:5244</code>，账号 <code>admin</code> 登录。</p><h3 id="方式-B：QPKG-原生套件"><a href="#方式-B：QPKG-原生套件" class="headerlink" title="方式 B：QPKG 原生套件"></a>方式 B：QPKG 原生套件</h3><p>不想碰 Docker 的话：App Center → 右上角齿轮 → 勾选“允许安装非 QNAP 签名的应用程序”，然后去 GitHub 或第三方套件源下载对应 CPU 架构（x86_64 &#x2F; ARM）的 <code>.qpkg</code>，App Center 右上角加号手动安装。装完桌面会出现图标，同样访问 5244 端口。缺点是升级要自己重装。</p><h2 id="二、在-AList-里挂载-PikPak"><a href="#二、在-AList-里挂载-PikPak" class="headerlink" title="二、在 AList 里挂载 PikPak"></a>二、在 AList 里挂载 PikPak</h2><p>登录 AList 后台 → 左侧 <strong>管理 → 存储 → 添加</strong>。</p><h3 id="首选：WebDAV-驱动（会员）"><a href="#首选：WebDAV-驱动（会员）" class="headerlink" title="首选：WebDAV 驱动（会员）"></a>首选：WebDAV 驱动（会员）</h3><p>PikPak 会员自带 WebDAV 功能，地址是 <code>https://dav.mypikpak.com</code>，国内可直连，而且完全绕开了账号密码校验和 Token 续期的所有麻烦。先在 PikPak App 或网页端进入 <strong>设置 → 实验室功能 → WebDAV</strong>，开启后复制 URL、用户名和密码。</p><p>回到 AList：</p><table><thead><tr><th>字段</th><th>值</th></tr></thead><tbody><tr><td>驱动</td><td><strong>WebDAV</strong>（注意不是 PikPak，选错就白折腾了）</td></tr><tr><td>挂载路径</td><td><code>/pikpak</code>（随便起）</td></tr><tr><td>URL</td><td><code>https://dav.mypikpak.com</code></td></tr><tr><td>用户名 &#x2F; 密码</td><td>PikPak 给的那一对</td></tr></tbody></table><p>保存即可。</p><h3 id="备选：PikPak-原生驱动（普通账号）"><a href="#备选：PikPak-原生驱动（普通账号）" class="headerlink" title="备选：PikPak 原生驱动（普通账号）"></a>备选：PikPak 原生驱动（普通账号）</h3><table><thead><tr><th>字段</th><th>值</th></tr></thead><tbody><tr><td>驱动</td><td>PikPak</td></tr><tr><td>用户名</td><td>绑定的邮箱</td></tr><tr><td>密码</td><td>PikPak 登录密码</td></tr><tr><td>根文件夹 ID</td><td>留空即根目录</td></tr><tr><td>WebDAV 策略</td><td><strong>302 重定向</strong></td></tr></tbody></table><p><strong>前提条件</strong>：如果账号是通过 Google &#x2F; Facebook 等第三方授权快捷注册的，必须先去 PikPak 官网绑定一个邮箱并单独设置登录密码，否则 AList 无法用账号密码登录。</p><p>WebDAV 策略选 302 重定向，播放视频或下载时会直接调用直链，不经过威联通中转，速度快很多。</p><h2 id="三、原生驱动的报错排查"><a href="#三、原生驱动的报错排查" class="headerlink" title="三、原生驱动的报错排查"></a>三、原生驱动的报错排查</h2><p>用原生 PikPak 驱动，大概率会在这两个错误上来回碰。记录一下排查顺序。</p><h3 id="ErrorCode-4126-invalid-grant-AccessProhibited"><a href="#ErrorCode-4126-invalid-grant-AccessProhibited" class="headerlink" title="ErrorCode: 4126 &#x2F; invalid_grant &#x2F; AccessProhibited"></a>ErrorCode: 4126 &#x2F; invalid_grant &#x2F; AccessProhibited</h3><p><strong>含义</strong>：存储条目已经在后台建好了，但初始化（登录连接）失败。表现是存储列表里能看到这一项，状态却是禁用或报错，点进去看不到文件。所以不用重新新建，直接编辑那一项就行。</p><p>原因按概率排序：</p><ol><li><strong>IP 地域或风控限制</strong>（最常见）。PikPak 判定登录来源 IP 处于受限地区，或短时间登录太频繁，直接拦截授权。让 NAS 流量走代理，或者换香港 &#x2F; 新加坡 &#x2F; 日本节点再试。</li><li><strong>账号没设独立密码</strong>，第三方快捷登录的账号走不通授权校验。</li><li><strong>Token 自动获取失败</strong>。</li></ol><h3 id="ErrorCode-4002-captcha-invalid-captcha-token-expired"><a href="#ErrorCode-4002-captcha-invalid-captcha-token-expired" class="headerlink" title="ErrorCode: 4002 &#x2F; captcha_invalid &#x2F; captcha_token expired"></a>ErrorCode: 4002 &#x2F; captcha_invalid &#x2F; captcha_token expired</h3><p><strong>含义</strong>：刷新令牌过期了，而且自动续期时撞上了人机验证，AList 在后台续不上。</p><p>排查顺序：</p><ol><li><strong>刷新令牌方法选错了</strong>。这个卡了我最久——把“刷新令牌方法（Refresh token method）”从 Oauth2 改成 <strong>HTTP</strong>，然后重新抓一次 refresh_token 填进去保存。</li><li><strong>同一个 PikPak 账号挂了多个存储项</strong>。PikPak 每次刷新令牌，上一个令牌立刻作废。第一个挂载点一刷新，第二个挂载点的旧 Token 就瞬间失效，抛出 4002。解决办法是删掉多余的存储项，只保留一个根目录挂载，要进子目录直接在 AList 根目录里点进去。</li><li><strong>真的触发风控了</strong>。去电脑浏览器重新登录一次 PikPak 网页端，手动过掉验证码，然后重新提取最新的 refresh_token 填回 AList。</li></ol><h3 id="刷新令牌怎么抓"><a href="#刷新令牌怎么抓" class="headerlink" title="刷新令牌怎么抓"></a>刷新令牌怎么抓</h3><p>新版 AList 有两条路：</p><p><strong>让它自己抓（最省事）</strong>：用户名密码填对，“刷新令牌方法”选 Oauth2，令牌框留空，直接点保存。AList 会在后台登录并把 Token 自动回填。如果这样还报 4126，说明官方风控挡了后台的自动登录，只能走下面手动抓。</p><p><strong>手动抓</strong>：</p><ol><li>浏览器登录 PikPak 网页版</li><li>F12 → <strong>Application</strong>（应用）标签页 → 左侧 <strong>Local Storage</strong> → 点开 <code>https://mypikpak.com</code></li><li>在右侧找以 <code>credentials</code> 或 <code>pp_client_credentials</code> 开头的 Key（或者直接搜 <code>refresh_token</code>）</li><li>点击它，在下方信息栏找到 <code>&quot;refresh_token&quot;: &quot;xxxxxx&quot;</code>，复制引号里那一串</li><li>粘贴到 AList 的“刷新令牌”输入框保存</li></ol><p>说实话，如果你有会员，这一整节都可以跳过——直接用 WebDAV 驱动，稳定性完全不是一个量级。</p><h2 id="四、把-AList-挂载到威联通-File-Station"><a href="#四、把-AList-挂载到威联通-File-Station" class="headerlink" title="四、把 AList 挂载到威联通 File Station"></a>四、把 AList 挂载到威联通 File Station</h2><p>到这一步 AList 里能看到 PikPak 了，但威联通的 File Station 里还什么都没有。这两套系统是独立的：AList 是跑在容器里的独立服务，自己管一套虚拟目录；威联通默认根本不知道它的存在。</p><p>这里有个容易搞混的点：AList 存储里填的那个“挂载路径 <code>/pikpak</code>”，只是 AList <strong>网页里</strong>的展示位置，跟威联通本地目录没有任何关系，不会自动出现在 File Station 里。必须手动装载一次。</p><p><strong>AList 的 WebDAV 连接信息：</strong></p><ul><li>地址：<code>http://NAS的IP:5244/dav</code></li><li>用户名：<code>admin</code></li><li>密码：你的 AList 管理员密码</li></ul><p><strong>在 File Station 里装载：</strong></p><p>使用HybridMount文件型云网关app，可以把alist里面的文件夹挂载到里面去，或者使用下面的方法</p><ol><li>打开 File Station（文件总管）</li><li>点右上角 <strong>“…”</strong> → <strong>装载远程文件夹</strong>（部分版本叫“连接网络文件夹”）</li><li>连接类型选 <strong>WebDAV</strong></li><li>填写：<ul><li>名称：<code>PikPak_AList</code>（随便起个好记的）</li><li>URL：<code>http://NAS的IP:5244/dav</code> —— <strong>注意必须带 <code>/dav</code> 后缀</strong></li><li>用户名 &#x2F; 密码：AList 的</li></ul></li><li>点 <strong>测试</strong>，提示连接成功后再点确定</li></ol><p>装载完成后，File Station 左侧就会多出这个网络文件夹，里面完整显示你在 AList 里挂载的 PikPak 内容。</p><p>有个小细节：地址填 <code>127.0.0.1</code> 或局域网 IP 都行，走本机回环还能省一跳。</p><h2 id="五、把-PikPak-内容搬到-NAS-本地"><a href="#五、把-PikPak-内容搬到-NAS-本地" class="headerlink" title="五、把 PikPak 内容搬到 NAS 本地"></a>五、把 PikPak 内容搬到 NAS 本地</h2><p>挂载好之后，自然会想：能不能自动把 PikPak 里的东西“移动”到 NAS 本地，搬完就释放云端空间？</p><h3 id="使用HBS-3"><a href="#使用HBS-3" class="headerlink" title="使用HBS 3"></a>使用HBS 3</h3><p>在HBS3 这个app里面，创建主动同步作业，选择移动，然后单向从挂载在File Station中的pikpak文件夹中内容移动到NAS里面一个文件夹，就可以实现搬完释放云端空间</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ol><li><strong>能用 WebDAV 就别用原生 PikPak 驱动</strong>。原生驱动要跟 refresh_token、人机验证、IP 风控长期斗争，WebDAV 把这些全绕开了。有会员的话没有任何理由选前者。</li><li><strong>一个 PikPak 账号在 AList 里只挂一个存储项</strong>。多挂载点会互相踢 Token，是 4002 报错的高频来源。</li><li><strong>AList 的“挂载路径”和威联通的挂载点是两回事</strong>。前者只是 AList 网页里的目录位置，后者必须去 File Station 手动装载一次才会出现。</li><li><strong>HBS 3 是备份工具，不是搬运工具</strong>。要把云盘内容搬到本地并释放云端空间，用 <code>rclone move</code> 或自己的脚本，别指望同步任务。</li><li><strong>永远不要对网络虚拟盘做“剪切”</strong>。先复制、再校验、最后手动删源，任何一步出问题都还有退路。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> 云盘 </tag>
+            
+            <tag> nas </tag>
+            
+            <tag> 威联通 </tag>
+            
+            <tag> alist </tag>
+            
+            <tag> pikpak </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Clawd on Desk：一个会显示 Codex 状态的 Windows 桌面宠物</title>
       <link href="/2026/06/07/clawd-on-desk-%E6%A1%8C%E9%9D%A2%E5%AE%A0%E7%89%A9%E4%B8%8ECodex%E7%8A%B6%E6%80%81%E8%81%94%E5%8A%A8/"/>
       <url>/2026/06/07/clawd-on-desk-%E6%A1%8C%E9%9D%A2%E5%AE%A0%E7%89%A9%E4%B8%8ECodex%E7%8A%B6%E6%80%81%E8%81%94%E5%8A%A8/</url>
@@ -494,11 +529,11 @@
             
             <tag> 密码 </tag>
             
+            <tag> 云盘 </tag>
+            
             <tag> nps </tag>
             
             <tag> 树莓派 </tag>
-            
-            <tag> 云盘 </tag>
             
             <tag> 蒲公英 </tag>
             
@@ -972,17 +1007,17 @@
             
             <tag> 密码 </tag>
             
-            <tag> newifi3 </tag>
-            
             <tag> nps </tag>
+            
+            <tag> 树莓派 </tag>
+            
+            <tag> newifi3 </tag>
             
             <tag> openwrt </tag>
             
             <tag> 新路由3 </tag>
             
             <tag> 旁路由 </tag>
-            
-            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -1013,11 +1048,11 @@
             
             <tag> 密码 </tag>
             
+            <tag> 树莓派 </tag>
+            
             <tag> openwrt </tag>
             
             <tag> 旁路由 </tag>
-            
-            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -1050,9 +1085,9 @@
             
             <tag> 密码 </tag>
             
-            <tag> openwrt </tag>
-            
             <tag> 树莓派 </tag>
+            
+            <tag> openwrt </tag>
             
             <tag> 路由器 </tag>
             
@@ -1272,11 +1307,11 @@
             
             <tag> 密码 </tag>
             
+            <tag> 树莓派 </tag>
+            
             <tag> openwrt </tag>
             
             <tag> 新路由3 </tag>
-            
-            <tag> 树莓派 </tag>
             
             <tag> 路由器 </tag>
             
@@ -1943,9 +1978,9 @@
       
         <tags>
             
-            <tag> 树莓派 </tag>
-            
             <tag> 云盘 </tag>
+            
+            <tag> 树莓派 </tag>
             
         </tags>
       
@@ -2049,9 +2084,9 @@
             
             <tag> 离线下载 </tag>
             
-            <tag> newifi3 </tag>
-            
             <tag> nps </tag>
+            
+            <tag> newifi3 </tag>
             
             <tag> 新路由3 </tag>
             
@@ -2080,13 +2115,13 @@
       
         <tags>
             
-            <tag> newifi3 </tag>
-            
             <tag> nps </tag>
             
-            <tag> 新路由3 </tag>
-            
             <tag> 树莓派 </tag>
+            
+            <tag> newifi3 </tag>
+            
+            <tag> 新路由3 </tag>
             
             <tag> 路由器 </tag>
             
@@ -2235,9 +2270,9 @@
             
             <tag> nps </tag>
             
-            <tag> 树莓派 </tag>
-            
             <tag> 搬瓦工 </tag>
+            
+            <tag> 树莓派 </tag>
             
         </tags>
       
@@ -2398,11 +2433,11 @@
     
     
     <entry>
-      <title>kali linux使用apt-get更新全过程</title>
-      <link href="/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/"/>
-      <url>/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/</url>
+      <title>Kali-Linux-2020.1 设置中文，汉化。</title>
+      <link href="/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/"/>
+      <url>/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/</url>
       
-        <content type="html"><![CDATA[<h3 id="0x00-修改更新源"><a href="#0x00-修改更新源" class="headerlink" title="0x00 修改更新源"></a><em>0x00 修改更新源</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#vim &#x2F;etc&#x2F;apt&#x2F;sources.list          &#x2F;&#x2F;使用vim编辑器打开更新源文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>修改之前可以先备份</p><pre class="line-numbers language-none"><code class="language-none">:~#copy &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.bak &#x2F;&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将旧的更新源使用’#’注释掉 在以下更新源中选择一个复制</p><blockquote><p>中科大 deb <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib</p><p>阿里云 deb <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib</p><p>清华大学 deb <a href="http://mirrors.tuna.tsinghua.edu.cn/kali">http://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="https://mirrors.tuna.tsinghua.edu.cn/kali">https://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>浙大 deb <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>官方源 deb <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib deb-src <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib</p></blockquote><p>使用:wq保存退出</p><hr><h3 id="0x01-使用更新源进行软件和系统的升级"><a href="#0x01-使用更新源进行软件和系统的升级" class="headerlink" title="0x01 使用更新源进行软件和系统的升级"></a><em>0x01 使用更新源进行软件和系统的升级</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get update &#x2F;&#x2F;同步 &#x2F;etc&#x2F;apt&#x2F;sources.list 和 &#x2F;etc&#x2F;apt&#x2F;sources.list.d 中列出的源的索引这样才能获取到最新的软件包&#x2F;&#x2F;只是更新apt的资源列表:~#sudo apt-get upgrade :~#sudo apt-get dist-upgrade &#x2F;&#x2F;通常情况下将两个放一起处理<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p><strong>tips</strong>: apt-get upgrade 和 apt-get dist-upgrade 本质上是没有什么不同的。 只不过，dist-upgrade 会识别出当依赖关系改变的情形并作出处理，而upgrade对此情形不处理。 例如软件包 a 原先依赖 b c d，但是在源里面可能已经升级了，现在是 a 依赖 b c e。这种情况下，dist-upgrade 会删除 d 安装 e，并把 a 软件包升级，而 upgrade 会认为依赖关系改变而拒绝升级 a 软件包。 <strong>from</strong> :<a href="https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html">https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html</a></p></blockquote><hr><h3 id="0x02-删除旧文件和缓存文件"><a href="#0x02-删除旧文件和缓存文件" class="headerlink" title="0x02 删除旧文件和缓存文件"></a><em>0x02 删除旧文件和缓存文件</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get autoclean &#x2F;&#x2F;清理旧版本的软件缓存:~#sudo apt-get clean &#x2F;&#x2F;清理所有软件缓存:~#sudo apt-get autoremove &#x2F;&#x2F;删除系统不再使用的孤立软件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<p> </p><h1 id="Kali-Linux-2020-1-设置中文，汉化。"><a href="#Kali-Linux-2020-1-设置中文，汉化。" class="headerlink" title="Kali-Linux-2020.1 设置中文，汉化。"></a>Kali-Linux-2020.1 设置中文，汉化。</h1><pre class="line-numbers language-none"><code class="language-none">Kali Linux团队在Twitter上宣布：“新的一年是进行重大改变的好时机，因此，我们宣布在  即将发布的2020.1版本中，Kali安全模型也将进行重大改革——默认非root用户。”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>所以使用kali之前版本的汉化方法可能会出现权限问题。(注意:汉化前先换源，不然可能会出问题。)</p><ol><li><p>kali 2020.1 汉化</p><p> 打开终端，输入：</p></li></ol><p><code>sudo dpkg-reconfigure locales</code></p><p>这时可能会让你输入root密码 ，默认的密码是：kali</p><p>然后选择字符编码： en_US.UTF-8（要完全汉化的话把这个去掉，如果只是想解决中文乱码就留着）、zh_CN.GBK、zh_CN.UTF-8 （用空格选定）</p><p>接着选择字符： zh_CN.UTF-8</p><ol start="2"><li>解决编码错误显示问题,终端输入：</li></ol><p><code>sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy</code></p><p>设置完之后输入：</p><p><code>sudo reboot</code></p><p>重启就好了。 <img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-28fe4bc43060061996dde07a1a88b53a.png"> 附：<a href="https://blog.csdn.net/weixin_44823747/article/details/107477695?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">Kali-Linux-2020.2 设置中文，汉化及换源方法</a></p><p>文章来源于互联网:<a href="https://blog.csdn.net/weixin_44823747/article/details/104173742">Kali-Linux-2020.1 设置中文，汉化。</a></p>]]></content>
       
       
       <categories>
@@ -2423,11 +2458,11 @@
     
     
     <entry>
-      <title>Kali-Linux-2020.1 设置中文，汉化。</title>
-      <link href="/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/"/>
-      <url>/2021/01/11/kali-linux-2020-1-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%EF%BC%8C%E6%B1%89%E5%8C%96%E3%80%82/</url>
+      <title>kali linux使用apt-get更新全过程</title>
+      <link href="/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/"/>
+      <url>/2021/01/11/kali-linux%E4%BD%BF%E7%94%A8apt-get%E6%9B%B4%E6%96%B0%E5%85%A8%E8%BF%87%E7%A8%8B/</url>
       
-        <content type="html"><![CDATA[<p> </p><h1 id="Kali-Linux-2020-1-设置中文，汉化。"><a href="#Kali-Linux-2020-1-设置中文，汉化。" class="headerlink" title="Kali-Linux-2020.1 设置中文，汉化。"></a>Kali-Linux-2020.1 设置中文，汉化。</h1><pre class="line-numbers language-none"><code class="language-none">Kali Linux团队在Twitter上宣布：“新的一年是进行重大改变的好时机，因此，我们宣布在  即将发布的2020.1版本中，Kali安全模型也将进行重大改革——默认非root用户。”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>所以使用kali之前版本的汉化方法可能会出现权限问题。(注意:汉化前先换源，不然可能会出问题。)</p><ol><li><p>kali 2020.1 汉化</p><p> 打开终端，输入：</p></li></ol><p><code>sudo dpkg-reconfigure locales</code></p><p>这时可能会让你输入root密码 ，默认的密码是：kali</p><p>然后选择字符编码： en_US.UTF-8（要完全汉化的话把这个去掉，如果只是想解决中文乱码就留着）、zh_CN.GBK、zh_CN.UTF-8 （用空格选定）</p><p>接着选择字符： zh_CN.UTF-8</p><ol start="2"><li>解决编码错误显示问题,终端输入：</li></ol><p><code>sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy</code></p><p>设置完之后输入：</p><p><code>sudo reboot</code></p><p>重启就好了。 <img src="http://www.demon1630.cn/wp-content/uploads/2021/01/frc-28fe4bc43060061996dde07a1a88b53a.png"> 附：<a href="https://blog.csdn.net/weixin_44823747/article/details/107477695?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">Kali-Linux-2020.2 设置中文，汉化及换源方法</a></p><p>文章来源于互联网:<a href="https://blog.csdn.net/weixin_44823747/article/details/104173742">Kali-Linux-2020.1 设置中文，汉化。</a></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="0x00-修改更新源"><a href="#0x00-修改更新源" class="headerlink" title="0x00 修改更新源"></a><em>0x00 修改更新源</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#vim &#x2F;etc&#x2F;apt&#x2F;sources.list          &#x2F;&#x2F;使用vim编辑器打开更新源文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>修改之前可以先备份</p><pre class="line-numbers language-none"><code class="language-none">:~#copy &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.bak &#x2F;&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将旧的更新源使用’#’注释掉 在以下更新源中选择一个复制</p><blockquote><p>中科大 deb <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.ustc.edu.cn/kali">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib</p><p>阿里云 deb <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib deb-src <a href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib</p><p>清华大学 deb <a href="http://mirrors.tuna.tsinghua.edu.cn/kali">http://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="https://mirrors.tuna.tsinghua.edu.cn/kali">https://mirrors.tuna.tsinghua.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>浙大 deb <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free deb-src <a href="http://mirrors.zju.edu.cn/kali">http://mirrors.zju.edu.cn/kali</a> kali-rolling main contrib non-free</p><p>官方源 deb <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib deb-src <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main non-free contrib</p></blockquote><p>使用:wq保存退出</p><hr><h3 id="0x01-使用更新源进行软件和系统的升级"><a href="#0x01-使用更新源进行软件和系统的升级" class="headerlink" title="0x01 使用更新源进行软件和系统的升级"></a><em>0x01 使用更新源进行软件和系统的升级</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get update &#x2F;&#x2F;同步 &#x2F;etc&#x2F;apt&#x2F;sources.list 和 &#x2F;etc&#x2F;apt&#x2F;sources.list.d 中列出的源的索引这样才能获取到最新的软件包&#x2F;&#x2F;只是更新apt的资源列表:~#sudo apt-get upgrade :~#sudo apt-get dist-upgrade &#x2F;&#x2F;通常情况下将两个放一起处理<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p><strong>tips</strong>: apt-get upgrade 和 apt-get dist-upgrade 本质上是没有什么不同的。 只不过，dist-upgrade 会识别出当依赖关系改变的情形并作出处理，而upgrade对此情形不处理。 例如软件包 a 原先依赖 b c d，但是在源里面可能已经升级了，现在是 a 依赖 b c e。这种情况下，dist-upgrade 会删除 d 安装 e，并把 a 软件包升级，而 upgrade 会认为依赖关系改变而拒绝升级 a 软件包。 <strong>from</strong> :<a href="https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html">https://www.cnblogs.com/kungfupanda/archive/2013/01/15/2861718.html</a></p></blockquote><hr><h3 id="0x02-删除旧文件和缓存文件"><a href="#0x02-删除旧文件和缓存文件" class="headerlink" title="0x02 删除旧文件和缓存文件"></a><em>0x02 删除旧文件和缓存文件</em></h3><pre class="line-numbers language-none"><code class="language-none">:~#sudo apt-get autoclean &#x2F;&#x2F;清理旧版本的软件缓存:~#sudo apt-get clean &#x2F;&#x2F;清理所有软件缓存:~#sudo apt-get autoremove &#x2F;&#x2F;删除系统不再使用的孤立软件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
@@ -2610,33 +2645,6 @@
     
     
     <entry>
-      <title>至过去的2020</title>
-      <link href="/2021/01/04/%E8%87%B3%E8%BF%87%E5%8E%BB%E7%9A%842020/"/>
-      <url>/2021/01/04/%E8%87%B3%E8%BF%87%E5%8E%BB%E7%9A%842020/</url>
-      
-        <content type="html"><![CDATA[<p>2020终于过去了，这一年真的是被一场疫情全盘打乱，开年就本来打算去xyh家过年，1.22号去的，当时疫情也刚出现，武汉还没封城，各地也还没有交通管制，虽然大家都开始关注了，但还没到人人自危的地步，虽然爸妈也在劝这时候尽量不要外出，但还是毅然决然的去了。还好当时爸爸去村医疗所买了一包口罩（后面才发现马上就一罩难求，这包口罩也一直帮助我们到2月底回家），刚去没两天武汉就封城了，各地也开始交通管制，公交地铁火车什么都停运，基本上全国大停摆。活了二十几年，也是第一次见识这样的阵仗，那时候在xyh家基本上是门也不敢出，一家人天天吃了睡，睡了吃，唯一娱乐就是打打牌玩玩游戏，开始以为很快就能解封，没想到一等就是一个多月。。。</p><p>那时候家里面也封锁了，外面不能进，里面不能出~一个个村都封闭起来，这样的生活也慢慢成为常态。</p><p>那时候天天在家最关心的就是疫情新闻，天天关注哪里检测出多少病人，哪里死了多少人，什么时候可以解封什么的，日子也在这样的焦躁中慢慢度过，终于各地开始慢慢解封，按耐不住回家的冲动，在得知家里可以回去不用被隔离后就准备着回家的事。</p><p>一路的提心吊胆，公交还是停运，一路上也各处安检，口罩也带了一路，最终还是安全回家了，在家的日子总还是开心的，虽然因为疫情，虽然打乱了毕业计划，但是也正因为疫情，让自己有机会在家待上几十天，从2.20号回家开始，在家一直待到了5月七八号，学校也终于可以返校了，算起来在我家还是待了很久了，期间也几个外甥过来玩，总的还是开心的，各种做好吃的，到处走走逛逛，在家的时候开心，吃得好穿的好，回到学校发现自己都胖了十多斤，虽然回校后马上又瘦回去了。。。。。</p><p>不过因为今年是要准备毕业的，但基本上上半年在家荒废了，而且因为要做实验，所以在家也基本上做不了什么，那时候还是有点想着早点回学校搞实验台的，有得有失吧，而且以后也估计没什么机会能和xyh和全家人在家待这么长时间了~</p><p>去到学校，开始各种赶时间了，试验台从零到搭建完成，全都基本上是自己一个人一点点搞，虽然还是没能把毕业要求全部做完，延毕到明年六月，但自己也还是做出很多东西来了，半年多，从对试验台一窍不通到完成试验台搭建，独立进行实验，到一点点摸索试验台数据采集与控制程序等，对自己来说，也突破了很多！虽然可能很多时候走了很多弯路，可能因为自己也是第一次搭建台架，可能还是存在很多隐患，对之后的实验也可能会带来很多问题，但起码自己也知道一点点去解决这些，一点点去努力，不说科研能力提升多少，起码比起一年前的自己，这半年多的努力，总还是让自己成长很多。</p><p>2021，新的一年，希望自己能顺利完成毕业，顺利入职工作，希望xyh能顺利考上博士，希望工作后的自己也能顺顺利利！希望这些在明年都能实现，自己的生活到时候也基本上脱离学校，走上正轨~</p><p>新的一年，加油！！！</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 生活 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 生活 </tag>
-            
-            <tag> 控制 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>老师傅总结的制冷系统故障排除方法01：压力分析法</title>
       <link href="/2021/01/04/%E8%80%81%E5%B8%88%E5%82%85%E6%80%BB%E7%BB%93%E7%9A%84%E5%88%B6%E5%86%B7%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%96%B9%E6%B3%9501%EF%BC%9A%E5%8E%8B%E5%8A%9B%E5%88%86%E6%9E%90%E6%B3%95/"/>
       <url>/2021/01/04/%E8%80%81%E5%B8%88%E5%82%85%E6%80%BB%E7%BB%93%E7%9A%84%E5%88%B6%E5%86%B7%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%96%B9%E6%B3%9501%EF%BC%9A%E5%8E%8B%E5%8A%9B%E5%88%86%E6%9E%90%E6%B3%95/</url>
@@ -2656,6 +2664,33 @@
             <tag> 控制 </tag>
             
             <tag> 制冷技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>至过去的2020</title>
+      <link href="/2021/01/04/%E8%87%B3%E8%BF%87%E5%8E%BB%E7%9A%842020/"/>
+      <url>/2021/01/04/%E8%87%B3%E8%BF%87%E5%8E%BB%E7%9A%842020/</url>
+      
+        <content type="html"><![CDATA[<p>2020终于过去了，这一年真的是被一场疫情全盘打乱，开年就本来打算去xyh家过年，1.22号去的，当时疫情也刚出现，武汉还没封城，各地也还没有交通管制，虽然大家都开始关注了，但还没到人人自危的地步，虽然爸妈也在劝这时候尽量不要外出，但还是毅然决然的去了。还好当时爸爸去村医疗所买了一包口罩（后面才发现马上就一罩难求，这包口罩也一直帮助我们到2月底回家），刚去没两天武汉就封城了，各地也开始交通管制，公交地铁火车什么都停运，基本上全国大停摆。活了二十几年，也是第一次见识这样的阵仗，那时候在xyh家基本上是门也不敢出，一家人天天吃了睡，睡了吃，唯一娱乐就是打打牌玩玩游戏，开始以为很快就能解封，没想到一等就是一个多月。。。</p><p>那时候家里面也封锁了，外面不能进，里面不能出~一个个村都封闭起来，这样的生活也慢慢成为常态。</p><p>那时候天天在家最关心的就是疫情新闻，天天关注哪里检测出多少病人，哪里死了多少人，什么时候可以解封什么的，日子也在这样的焦躁中慢慢度过，终于各地开始慢慢解封，按耐不住回家的冲动，在得知家里可以回去不用被隔离后就准备着回家的事。</p><p>一路的提心吊胆，公交还是停运，一路上也各处安检，口罩也带了一路，最终还是安全回家了，在家的日子总还是开心的，虽然因为疫情，虽然打乱了毕业计划，但是也正因为疫情，让自己有机会在家待上几十天，从2.20号回家开始，在家一直待到了5月七八号，学校也终于可以返校了，算起来在我家还是待了很久了，期间也几个外甥过来玩，总的还是开心的，各种做好吃的，到处走走逛逛，在家的时候开心，吃得好穿的好，回到学校发现自己都胖了十多斤，虽然回校后马上又瘦回去了。。。。。</p><p>不过因为今年是要准备毕业的，但基本上上半年在家荒废了，而且因为要做实验，所以在家也基本上做不了什么，那时候还是有点想着早点回学校搞实验台的，有得有失吧，而且以后也估计没什么机会能和xyh和全家人在家待这么长时间了~</p><p>去到学校，开始各种赶时间了，试验台从零到搭建完成，全都基本上是自己一个人一点点搞，虽然还是没能把毕业要求全部做完，延毕到明年六月，但自己也还是做出很多东西来了，半年多，从对试验台一窍不通到完成试验台搭建，独立进行实验，到一点点摸索试验台数据采集与控制程序等，对自己来说，也突破了很多！虽然可能很多时候走了很多弯路，可能因为自己也是第一次搭建台架，可能还是存在很多隐患，对之后的实验也可能会带来很多问题，但起码自己也知道一点点去解决这些，一点点去努力，不说科研能力提升多少，起码比起一年前的自己，这半年多的努力，总还是让自己成长很多。</p><p>2021，新的一年，希望自己能顺利完成毕业，顺利入职工作，希望xyh能顺利考上博士，希望工作后的自己也能顺顺利利！希望这些在明年都能实现，自己的生活到时候也基本上脱离学校，走上正轨~</p><p>新的一年，加油！！！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+            <tag> 控制 </tag>
             
         </tags>
       
@@ -2803,11 +2838,11 @@
     
     
     <entry>
-      <title>LabVIEW2013软件安装步骤</title>
-      <link href="/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/"/>
-      <url>/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/</url>
+      <title>LabVIEW2018软件安装教程</title>
+      <link href="/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+      <url>/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
       
-        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><p>LabVIEW 2013（32&#x2F;64）位下载地址：</p><p>pan.baidu.com&#x2F;s&#x2F;1GuuX5sSGSvkNrz1ErRcXPw</p><p>密码：8qw5</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1、右击软件压缩包选择解压到LabVIEW2013。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a319fd45c3790213041330c1088a814a.png"></p><p>2、右击选择打开labvIEW 2013.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b4053f60b9460a24bfab8e7c6b424a0d.png"></p><p>3、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2fbea235a14b87608561af26af539a2f.png"></p><p>4、点击Unzip解压文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-830e192956d6e27a6e276d8663fc1b86.png"></p><p>5、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-858d80ad28c44bde8381ef80de32ba9f.png"></p><p>6、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-939747a0bf892252b08b51fa26e5a13e.jpeg"></p><p>7、任意填写信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02b53b5e4029d01cac965ba2c99ab71d.png"></p><p>8、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d0004730b4f500a08da05c73a47eb70b.jpeg"></p><p>9、点击浏览更改安装路径，建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LabVIEW2013文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0f9634835b613697227b691316cd45c0.png"></p><p>10、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-f4e5821a301c8c03249ecf383b8fef3d.jpeg"></p><p>11、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b0153d86145818c2d2cb00cd84a9ef7a.jpeg"></p><p>12、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-998c1c27ce811734fc4bd46dfe7b40cd.png"></p><p>13、选择我接受上述2条许可协议，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cb71dc71b7193595d950370518dcda9b.jpeg"></p><p>14、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d700a74ec10bd9904ab249fcab7a04e7.jpeg"></p><p>15、软件安装中（大约需要10分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-8b640a3fd8d2769e1517e3b5e955d69a.png"></p><p>16、点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1120b7cdd6384d017d9e84568faa9b11.jpeg"></p><p>17、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2abc71ab1a9c0f1e0624decfde08c2ac.png"></p><p>18、点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-86bf52d2153dc6abc9bc14bad68f0b3e.png"></p><p>19、在安装包中找到NI LIcense Activator，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-87c1293fe9fe19f0d82962787b0eaf7b.png"></p><p>20、找到Base Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d2409d5211152e241cd21633f27a7353.png"></p><p>21、找到Debug Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-5e970bdefcb10f90283b1f0e4627a923.png"></p><p>22、找到Full Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e8e35247ace4718dc65763e651049c4b.png"></p><p>23、找到Professional Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-7eb7ff8419dc09b625eac916d5a55103.png"></p><p>24、找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-73efa7e2f54580067252db40fc465e1a.png"></p><p>25、找到Application Builder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-403a516e62f9e79bc78ed99d79df27a5.png"></p><p>26、在开始菜单找到软件打开，取消勾选启动时显示，使其处于未选中状态，点击关闭。<img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0dc244091e71c8ccc0abbe09fd88574f.jpeg"></p><p>27、安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c90ecc4aa09a9c4f24b72269717fd990.jpeg"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-771930041ff4da44c73c6343232983ab.png"></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><h1 id="LabVIEW-2018（32-64）位下载地址："><a href="#LabVIEW-2018（32-64）位下载地址：" class="headerlink" title="LabVIEW 2018（32&#x2F;64）位下载地址："></a>LabVIEW 2018（32&#x2F;64）位下载地址：</h1><p><a href="https://pan.baidu.com/s/1vOoYTrN36Mumr87zleAuPQ">https://pan.baidu.com/s/1vOoYTrN36Mumr87zleAuPQ</a></p><p>密码: m035</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1.右击软件压缩包选择解压到LabVIEW2018。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02aa4f4248d4969605a8fe47049d24ab.jpeg"></p><p>2.选中文件，鼠标右击选择以管理员身份打开2018LV-WinChn.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1bb32c3fd83ba195c4ab509f7ab27cf1.jpeg"></p><p>3.点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-55c0ebbb8e9ffe50bfa5faa7440930ae.jpeg"></p><p>4.点击Unzip解压。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2c1edfad3c1d905d0e56b564f2a687ab.jpeg"></p><p>5.点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-23e08e9b8a3b4c49a182414d33c1b464.jpeg"></p><p>6.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-be96e23cebca79c47a475c38dac45204.jpeg"></p><p>7.填写任意信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d57fabe4fab17dcd7ba07b9bb5baa1a3.jpeg"></p><p>8.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d379adcac5b51eba662ebb97999a632d.jpeg"></p><p>9.点击浏览更改安装路径建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LABVIEW2018文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a803e9d536b532d076497d32550f05b7.jpeg"></p><p>10.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-664ea2ec7a958c603a0964b961c4dce8.jpeg"></p><p>11.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cc088ef7c1aa820c244a233d0e371a9c.jpeg"></p><p>12.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c2e88085c5db563b104550e0d12b35b0.jpeg"></p><p>13.勾选我接受上述2条许可协议，然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-616bfc5e6ae1c7987a07f6415f0cd6d5.jpeg"></p><p>14.勾选我接受上述2条许可协议。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c628963fc426b498d8cc21c61ed34f73.jpeg"></p><p>15.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-544aa094ab026cd1b383c529a4750854.jpeg"></p><p>16.软件安装中（大约需要15分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-41fda548836645bd3ecbdb4223d15d27.jpeg"></p><p>17.点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ebc0a31ef253b3538f26cfef2644b89f.jpeg"></p><p>18.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-06fe7866642c9dda64c6649121cedc6a.jpeg"></p><p>19.勾选否，点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-fe731ed849551baea03695d3113d348f.jpeg"></p><p>20.点击否。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-913c782ed32f619381a8c132e184ec99.jpeg"></p><p>21.点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2dd82cc7c984474d783aab03fbccde09.jpeg"></p><p>22.返回安装包中找到NI LIcense Activator1.2，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02f2284ef829e615f2a4511431547dd0.jpeg"></p><p>23.找到BaseDevelopment System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0eedd9f2f5535ce89f624996ff9c9fde.jpeg"></p><p>24.找到Debug DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ac1ede958a0ee2c0d30aa57a0be5c2f8.jpeg"></p><p>25.找到Full DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-35af28c430fabca7bafb15c9eec19cd5.jpeg"></p><p>26.找到Professional DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-da8133590005d50b5faa3f23b9a6c722.jpeg"></p><p>27.找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-3e97b3a25b7c8b93b44ac767c037728f.jpeg"></p><p>28.找到ApplicationBuilder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1f21e8f9cacec577b7b84bfbfe273fcd.jpeg"></p><p>29.在开始菜单栏中找到LabVIEW2018软件打开。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e9493be15175c4ec484dc5079a6f1e35.jpeg"></p><p>30.安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0fd3e06b7f7b109f286557fed68f49e8.jpeg"></p>]]></content>
       
       
       <categories>
@@ -2830,11 +2865,11 @@
     
     
     <entry>
-      <title>LabVIEW2018软件安装教程</title>
-      <link href="/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
-      <url>/2020/12/14/labview2018%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+      <title>LabVIEW2013软件安装步骤</title>
+      <link href="/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/"/>
+      <url>/2020/12/14/labview2013%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/</url>
       
-        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><h1 id="LabVIEW-2018（32-64）位下载地址："><a href="#LabVIEW-2018（32-64）位下载地址：" class="headerlink" title="LabVIEW 2018（32&#x2F;64）位下载地址："></a>LabVIEW 2018（32&#x2F;64）位下载地址：</h1><p><a href="https://pan.baidu.com/s/1vOoYTrN36Mumr87zleAuPQ">https://pan.baidu.com/s/1vOoYTrN36Mumr87zleAuPQ</a></p><p>密码: m035</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1.右击软件压缩包选择解压到LabVIEW2018。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02aa4f4248d4969605a8fe47049d24ab.jpeg"></p><p>2.选中文件，鼠标右击选择以管理员身份打开2018LV-WinChn.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1bb32c3fd83ba195c4ab509f7ab27cf1.jpeg"></p><p>3.点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-55c0ebbb8e9ffe50bfa5faa7440930ae.jpeg"></p><p>4.点击Unzip解压。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2c1edfad3c1d905d0e56b564f2a687ab.jpeg"></p><p>5.点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-23e08e9b8a3b4c49a182414d33c1b464.jpeg"></p><p>6.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-be96e23cebca79c47a475c38dac45204.jpeg"></p><p>7.填写任意信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d57fabe4fab17dcd7ba07b9bb5baa1a3.jpeg"></p><p>8.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d379adcac5b51eba662ebb97999a632d.jpeg"></p><p>9.点击浏览更改安装路径建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LABVIEW2018文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a803e9d536b532d076497d32550f05b7.jpeg"></p><p>10.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-664ea2ec7a958c603a0964b961c4dce8.jpeg"></p><p>11.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cc088ef7c1aa820c244a233d0e371a9c.jpeg"></p><p>12.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c2e88085c5db563b104550e0d12b35b0.jpeg"></p><p>13.勾选我接受上述2条许可协议，然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-616bfc5e6ae1c7987a07f6415f0cd6d5.jpeg"></p><p>14.勾选我接受上述2条许可协议。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c628963fc426b498d8cc21c61ed34f73.jpeg"></p><p>15.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-544aa094ab026cd1b383c529a4750854.jpeg"></p><p>16.软件安装中（大约需要15分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-41fda548836645bd3ecbdb4223d15d27.jpeg"></p><p>17.点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ebc0a31ef253b3538f26cfef2644b89f.jpeg"></p><p>18.点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-06fe7866642c9dda64c6649121cedc6a.jpeg"></p><p>19.勾选否，点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-fe731ed849551baea03695d3113d348f.jpeg"></p><p>20.点击否。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-913c782ed32f619381a8c132e184ec99.jpeg"></p><p>21.点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2dd82cc7c984474d783aab03fbccde09.jpeg"></p><p>22.返回安装包中找到NI LIcense Activator1.2，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02f2284ef829e615f2a4511431547dd0.jpeg"></p><p>23.找到BaseDevelopment System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0eedd9f2f5535ce89f624996ff9c9fde.jpeg"></p><p>24.找到Debug DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-ac1ede958a0ee2c0d30aa57a0be5c2f8.jpeg"></p><p>25.找到Full DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-35af28c430fabca7bafb15c9eec19cd5.jpeg"></p><p>26.找到Professional DevelopmentSystem右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-da8133590005d50b5faa3f23b9a6c722.jpeg"></p><p>27.找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-3e97b3a25b7c8b93b44ac767c037728f.jpeg"></p><p>28.找到ApplicationBuilder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1f21e8f9cacec577b7b84bfbfe273fcd.jpeg"></p><p>29.在开始菜单栏中找到LabVIEW2018软件打开。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e9493be15175c4ec484dc5079a6f1e35.jpeg"></p><p>30.安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0fd3e06b7f7b109f286557fed68f49e8.jpeg"></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-03a9ecd9c303e25eb6163c14251d8d3c.gif"></p><p>软件</p><p>下载</p><blockquote><p>LabVIEW 2013（32&#x2F;64）位下载地址：</p><p>pan.baidu.com&#x2F;s&#x2F;1GuuX5sSGSvkNrz1ErRcXPw</p><p>密码：8qw5</p><h1 id="下载方法-：点击查看如何下载软件？"><a href="#下载方法-：点击查看如何下载软件？" class="headerlink" title="[下载方法]：点击查看如何下载软件？"></a>[下载方法]：<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=1&sn=b757dffc48b24766a074de92f07d3074&chksm=fa2d9be6cd5a12f05c3e9b9bd49c5646886efd804fcae1940d8274579d1a83ce6643113ca14d&scene=21#wechat_redirect">点击查看如何下载软件？</a></h1><h1 id="备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW"><a href="#备用链接-：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复-LabVIEW" class="headerlink" title="[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW"></a>[备用链接]：若下载链接失效，获取最新下载链接请到公众号『软件小屋』后台回复:LabVIEW</h1><p>有任何问题请咨询小屋微信客服?<a href="http://mp.weixin.qq.com/s?__biz=MzUyNDMxMzM5OQ==&mid=2247495102&idx=2&sn=7a6ed2e7ce706ec4388f88648dd4797c&chksm=fa2d9be6cd5a12f0fac450b97b4cf4eee57f615bb2be73d84429cd7219a6801369cb5dd8135d&scene=21#wechat_redirect"><strong>点击咨询</strong></a></p></blockquote><p>软件</p><p>介绍</p><h1 id="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"><a href="#LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。" class="headerlink" title="LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。"></a>LabVIEW是一种图形化的编程语言的开发环境，它广泛地被工业界、学术界和研究实验室所接受，视为一个标准的数据采集和仪器控制软件，在LabVIEW编程环境程序员可以很容易地创建小型应用程序，可以用它来编写复杂的算法或大规模的代码，先进的LabVIEW开发系统提供了创建独立应用程序的可能性。</h1><p>安装</p><p>步骤</p><p>1、右击软件压缩包选择解压到LabVIEW2013。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-a319fd45c3790213041330c1088a814a.png"></p><p>2、右击选择打开labvIEW 2013.exe文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b4053f60b9460a24bfab8e7c6b424a0d.png"></p><p>3、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2fbea235a14b87608561af26af539a2f.png"></p><p>4、点击Unzip解压文件。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-830e192956d6e27a6e276d8663fc1b86.png"></p><p>5、点击确定。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-858d80ad28c44bde8381ef80de32ba9f.png"></p><p>6、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-939747a0bf892252b08b51fa26e5a13e.jpeg"></p><p>7、任意填写信息后，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-02b53b5e4029d01cac965ba2c99ab71d.png"></p><p>8、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d0004730b4f500a08da05c73a47eb70b.jpeg"></p><p>9、点击浏览更改安装路径，建议安装到除C盘以外的磁盘，可在D盘或者其他盘创建一个LabVIEW2013文件夹。然后点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0f9634835b613697227b691316cd45c0.png"></p><p>10、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-f4e5821a301c8c03249ecf383b8fef3d.jpeg"></p><p>11、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-b0153d86145818c2d2cb00cd84a9ef7a.jpeg"></p><p>12、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-998c1c27ce811734fc4bd46dfe7b40cd.png"></p><p>13、选择我接受上述2条许可协议，点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-cb71dc71b7193595d950370518dcda9b.jpeg"></p><p>14、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d700a74ec10bd9904ab249fcab7a04e7.jpeg"></p><p>15、软件安装中（大约需要10分钟）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-8b640a3fd8d2769e1517e3b5e955d69a.png"></p><p>16、点击不需要支持。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-1120b7cdd6384d017d9e84568faa9b11.jpeg"></p><p>17、点击下一步。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-2abc71ab1a9c0f1e0624decfde08c2ac.png"></p><p>18、点击稍后重启。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-86bf52d2153dc6abc9bc14bad68f0b3e.png"></p><p>19、在安装包中找到NI LIcense Activator，鼠标右击选择以管理员身份运行。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-87c1293fe9fe19f0d82962787b0eaf7b.png"></p><p>20、找到Base Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-d2409d5211152e241cd21633f27a7353.png"></p><p>21、找到Debug Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-5e970bdefcb10f90283b1f0e4627a923.png"></p><p>22、找到Full Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-e8e35247ace4718dc65763e651049c4b.png"></p><p>23、找到Professional Development System右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-7eb7ff8419dc09b625eac916d5a55103.png"></p><p>24、找到Student Edution右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-73efa7e2f54580067252db40fc465e1a.png"></p><p>25、找到Application Builder右击找到Activate点击。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-403a516e62f9e79bc78ed99d79df27a5.png"></p><p>26、在开始菜单找到软件打开，取消勾选启动时显示，使其处于未选中状态，点击关闭。<img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-0dc244091e71c8ccc0abbe09fd88574f.jpeg"></p><p>27、安装完成。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-c90ecc4aa09a9c4f24b72269717fd990.jpeg"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/12/frc-771930041ff4da44c73c6343232983ab.png"></p>]]></content>
       
       
       <categories>
@@ -4831,6 +4866,31 @@
     
     
     <entry>
+      <title>电池热管理工程实践认知 (1): 风冷式热管理系统</title>
+      <link href="/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<p><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></p><p><strong>1、电池热管理技术基本概念</strong></p><p>电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升，这个时候需要及时的散热，要不然就会中暑。当电池处于低温（例如-30℃）条件下的时候，电池无法正常的工作（温度太低，电池内反应物活性受限），车辆也就无法正常行驶，正如我们在瑟瑟寒风里无任何热防护的时候，人的身体感觉寒冷，人的动作就会变慢，这时候需要我们尽快采取取暖措施，要不然身体也会冻伤。</p><p>因此，我们人体在热了或者冷了且自身无法调节时，我们会开空调去做体外调节；如果人体被病毒细菌感染了，人体的免疫系统会产生作用，并升高体温；如果被发现是感染了厉害的病毒，高烧不退、吃退烧药也无法控制体温，就需要更为强力有效的方式进行综合调理、内外兼治。显然人体可以通过种种不同的途径来调节体温，那么电池的“体温”怎么办呢？</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg"></p><p>图0 电池的冷热管理（<a href="http://dc-ts.com/advanced-battery-thermal-management-system/%EF%BC%89">http://dc-ts.com/advanced-battery-thermal-management-system/）</a></p><p>对电池运行产生的热量进行管控的方法叫做<strong>电池热管理技术</strong>（详细可参见<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a>）。电池热管理就类似于人体对于体温的调节，如果电池运行产生的热量得不到有效的管理和控制，就会产生电池的热失控问题（<em><strong>我们后面会做专题讨论</strong></em>），这就类似于我们人体被感染了很厉害的病毒。在现阶段，由于动力电池材料技术处于发展瓶颈期，我们无法从根本上消除温度对电池性能和寿命的影响，但是不论是对于铅酸电池、锂离子电池或者是燃料电池，温度对于电池性能和寿命都是一个重要的影响因素，所以我们需要开发电池热管理技术对电池产生的热量进行管理，防止电池在高温或者低温下不能正常工作。希望目前的热管理只是一种过渡方式，后期的电芯不需要做任何热管理——这里大家不用担心失业，至少未来10年内，中国的6G、7G和1nm、0.5nm芯片冷却技术可能需要我们大展身手。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg"></p><p>图1 电池热管理的重要工程实践意义（百度图片）</p><p>温度最直观的影响就是对电池容量的影响，这也是为什么在冬季电动车行驶里程要比其他季节短很多的原因，同样每年的4月到9月都会出现电动车自燃的现象（暴晒条件下，车内温度达到60℃），天气燥热，电动车又给炎热的天气添了一把柴。综合各方面因素，电池热管理技术对于目前的动力电池是不可或缺的一部分，在环境温度较高时需要对电池进行降温，同时在温度较低时对电池进行加热，电池热管理技术相当于给电池加上了一个小型的空调系统。当然，在实际中也需要根据整车的实际运行工况来调整电池热管理系统策略。</p><p> </p><p><strong>2、电池热管理部件组成</strong></p><p>今天我们针对电池热管理技术的实际应用现状做个综述，后续我们再共同对其进行细分和学习。在国内目前能够大批量生产的汽车中实际应用的电池热管理技术可以分为四类：风冷式热管理技术、液冷式电池热管理技术、自然冷却式电池热管理技术和直冷式电池热管理技术（相变冷却技术）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg"></p><p>图2 电池热管理技术分类（百度图片）</p><p>另外电池包的保温设计（其实笔者感觉有效的保温最难实现，有时候想法和实际操作相差太远，现实条件中可能不允许你做一些保温的措施）和单纯加热的系统也都隶属于电池热管理系统，当然有人提出热扩散防控也属于热管理范畴，我们这里不做定义及探讨，本文主要针对散热系统进行介绍。</p><p> </p><p><strong>3、风冷式电池热管理系统部件构成</strong></p><p>风冷式热管理系统部件包括格栅、温度探头、滤网、进风管、冷风介质、电池包内部风管、出风管、风机，密封条和固定卡扣。一般来说格栅设计在风管的进口处，其作用是为了防止一些较大尺寸的物体进入电池包内部而堵塞风管。在格栅和风管之间还会设计有滤芯和风道，风道的设计一般会根据整车的内部结构和电池包内部结构设计进行调整，在实际的设计中，风道的设计要尽量的光滑和平顺。在风道和车辆部件接触的地方需要设计密封条。风机一般分为轴流分机和离心风机，根据不同的风冷式热管理系统的需求选择不同的风机类型。在选型的过程中一般会将噪音和送风量作为主要的参考因素。离心风机在电池包内部根据使用场景的不同可以分为吹风式和抽离式，最直接的例子就是丰田卡罗拉的两款HEV电池包，一款采用了吹风形式，另外一款采用了抽风形式。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg"></p><p>图3 丰田普锐斯（Prius）使用的风冷式电池热管理系统（谷歌图片）</p><p>当然，很多人可能会对风冷式热管理系统能否有效冷却电池保持怀疑态度，因为有很多这方面的文章提到风冷式系统的不足之处，这里我们简单探讨一下。在国内，针对不同的电池包我们尝试采用不同的冷却系统，对于EV (ElectricVehicle，纯电动汽车)，国内采用较多的热管理系统是液冷系统了，当然也会有一部分厂家尝试采用风冷系统，2016年奇瑞汽车生产的小蚂蚁电动汽车就尝试采用风冷式热管理系统进行散热。对于传统汽车改新能源车来说，采用风冷式热管理系统可以节省一大笔的开发费用，整车的空调系统可以直接按照原来燃油车的系统部件进行设计。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg"></p><p>图4 奇瑞小蚂蚁电动汽车（百度图片）</p><p>而对于HEV(Hybrid Electric Vehicle，混合动力汽车) 目前很多车厂都在争先进行开发，首选的电池热管理系统就是风冷式，比如前面提到的丰田卡罗拉和本田雅阁都是采用风冷式热管理系统。从大数据上看，日系车企很少采用液冷式热管理系统，大多采用的是风冷式，这点和国内的一些车企有些不同，可能是由于日系车企对液冷式系统还有其他的考量，个人感觉不会是因为成本的原因。对于HEV来说采用的电芯和EV的电芯是不同的，HEV在运行过程中动力电池不是唯一的动力来源，大部分情况下电池持续运行时间较短，风冷式热管理系统完全可以满足系统的要求，但是EV的动力完全来自于动力电池，电池长时间持续运行，这样电池就需要散热能力更强的电池热管理系统来保证电池的正常工作。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg"></p><p>图5 丰田卡罗拉油电混合汽车（百度图片）</p><p>风冷系统一般有三种设计，第一种就是单独采用风冷对电池进行散热或者加热；第二种就是仅用来对电池进行散热，对电池系统加热的话一般会另外设计加热膜；第三种就是风冷系统和加热膜结合，当电池需要散热的时候，仅仅启动冷却，当电池需要加热的时候，加热膜和风冷同时启动，此时风冷系统的进口为温度较高的车内气体。丰田卡罗拉的PHEV在两个模组之间设计的有加热膜，加热膜和模组之间的有效接触面积很小，笔者个人觉得加热膜只是为了加热电芯之间的空气，再通过风冷系统对电池包内的空气进行扰动。丰田卡罗拉的PHEV使用的是18650电芯，同时这款电池包的热失控管理设计也十分精巧，有空我们可以再聊聊。</p><p><strong>下面我们通过几个目前已经实现量产的实例来了解风冷式电池热管理技术。</strong></p><p>本田雅阁混动HEV的电池热管理系统中使用的冷却介质来自车内部的空调风，如果车主不使用空调时，进入电池包风管内的就是是车内没通过冷却的风。图示IPU指的就是电池包，我们简单了解一下冷却风是如何在内部流动的，电池包的冷却风从总进口进入电池包内部风道(模组的一侧)，然后再通过电芯之间的间隙，离心风扇和整个模组的另外一侧并没有设计风道，直接依靠离心风扇排出到外部，这样设计不仅仅对电池进行了散热，对电池包内部的发热器件（铜排、BDU）也有一定的散热作用。有兴趣的话大家可以看一下本田的专利，电芯之间设计有一定形状的塑料隔板，隔板不仅仅起到了流通的作用，在一定程度上也起到缓冲（电芯膨胀）的作用。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png"></p><p>图6 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png"></p><p>图7 电池包三维视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png"></p><p>图8 电池包内模组实物图（百度图片）</p><p> </p><p>奥迪Q5采用的同样也是风冷散热，但是奥迪在电池包的外部单独给整个电池包系统做了一个蒸发器，专门对电池包内部循环风进行降温，使进入到电池包内部的风控制在合理的范围内，同时奥迪的这款设计比较巧妙，它的冷却系统进风可以切换，拥有引入外部自然风和内部循环风两种功能，可以通过感知电池不同的温度阶段来切换这两种功能。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png"></p><p>图9 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png"></p><p>图10 电池包三维视图及其工作原理（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png"></p><p>图11 电池包内部模组视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png"></p><p>图12 电池包内部流体流动轨迹视图（百度图片）</p><p> </p><p>广汽丰田2020年新推出的一款C-HREV采用的也是风冷散热，丰田将2个蒸发器和2个膨胀阀移到了电池包内部，采用这种设计的电池包内部空气、两个离心风机、风道（风道位于电池包2侧）和模组单独形成了一个循环（封闭式风冷系统），这款设计和奥迪Q5设计有类似之处，C-HR电池包的蒸发器位于风机出口的风道内部，电池包内部具有加热功能，在每个大模组（包内有2种模组）的底部都设计的有加热膜（有弹性支撑），这种加热膜材质和国内的差别比较大，这款车的加热速率非常低（可能是出于安全考虑），C-HR这款电池包内部设计有许多值得借鉴的细节（风道比较有特点）。在一定程度上奥迪Q5和C-HR也采用了直冷的散热方式，只是蒸发器没有和电芯直接接触，可以避免过冷的现象出现，它们将风冷和直冷结合在一块，直接给动力电池的冷却介质配置一个蒸发器，这样电池散热效果更佳，但是成本可能会增加不少。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png"></p><p>图13 电池包三维视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png"></p><p>图14 电池包俯视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png"></p><p>图15 电池包热管理原理（百度图片）</p><p> </p><p>可见，风冷式电池热管理技术有很广的应用范围，而且应用在商业电动车上也有很好的效果。目前商用电动车还有其他的电池热管理技术，下一期，我们将着重介绍和讨论<strong>液冷式和直冷式电池热管理技术</strong>。</p><p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出，后续如果有兴趣大家可以留言，我们针对热管理的一些子部件进行详细探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行剖解分析，同时以上论述均为个人见解，如有错误之处请不吝赐教，技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p><p><strong>往期精彩回顾</strong></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 制冷技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电池热管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>电池热管理工程实践认知 (2): 液冷及直冷式热管理系统</title>
       <link href="/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/"/>
       <url>/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-2-%E6%B6%B2%E5%86%B7%E5%8F%8A%E7%9B%B4%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB/</url>
@@ -4850,31 +4910,6 @@
             <tag> 试验台 </tag>
             
             <tag> 制冷技术 </tag>
-            
-            <tag> 电池热管理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>电池热管理工程实践认知 (1): 风冷式热管理系统</title>
-      <link href="/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
-      <url>/2020/05/30/%E7%94%B5%E6%B1%A0%E7%83%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AE%A4%E7%9F%A5-1-%E9%A3%8E%E5%86%B7%E5%BC%8F%E7%83%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
-      
-        <content type="html"><![CDATA[<p><em>本文来自一线老学长的实践分享，希望能为对热管理感兴趣的朋友们提供一点启发。</em></p><p><strong>1、电池热管理技术基本概念</strong></p><p>电池的温度主要取决于电池本身的电化学反应和外界环境温度，电池在小电流放电情况下，电池的升温速率较慢，当在快速充放电条件下电池的温度会快速上升，这个时候就需要对电池的热量进行管控，正如我们平时正常的新陈代谢会使身体保持在一定的温度范围，当我们在烈日炎夏剧烈运动的时候就会产生大量的热量，身体温度骤升，这个时候需要及时的散热，要不然就会中暑。当电池处于低温（例如-30℃）条件下的时候，电池无法正常的工作（温度太低，电池内反应物活性受限），车辆也就无法正常行驶，正如我们在瑟瑟寒风里无任何热防护的时候，人的身体感觉寒冷，人的动作就会变慢，这时候需要我们尽快采取取暖措施，要不然身体也会冻伤。</p><p>因此，我们人体在热了或者冷了且自身无法调节时，我们会开空调去做体外调节；如果人体被病毒细菌感染了，人体的免疫系统会产生作用，并升高体温；如果被发现是感染了厉害的病毒，高烧不退、吃退烧药也无法控制体温，就需要更为强力有效的方式进行综合调理、内外兼治。显然人体可以通过种种不同的途径来调节体温，那么电池的“体温”怎么办呢？</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-4d8cfeb0105d9bfcf73257de0302c090-1024x731.jpeg"></p><p>图0 电池的冷热管理（<a href="http://dc-ts.com/advanced-battery-thermal-management-system/%EF%BC%89">http://dc-ts.com/advanced-battery-thermal-management-system/）</a></p><p>对电池运行产生的热量进行管控的方法叫做<strong>电池热管理技术</strong>（详细可参见<a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a>）。电池热管理就类似于人体对于体温的调节，如果电池运行产生的热量得不到有效的管理和控制，就会产生电池的热失控问题（<em><strong>我们后面会做专题讨论</strong></em>），这就类似于我们人体被感染了很厉害的病毒。在现阶段，由于动力电池材料技术处于发展瓶颈期，我们无法从根本上消除温度对电池性能和寿命的影响，但是不论是对于铅酸电池、锂离子电池或者是燃料电池，温度对于电池性能和寿命都是一个重要的影响因素，所以我们需要开发电池热管理技术对电池产生的热量进行管理，防止电池在高温或者低温下不能正常工作。希望目前的热管理只是一种过渡方式，后期的电芯不需要做任何热管理——这里大家不用担心失业，至少未来10年内，中国的6G、7G和1nm、0.5nm芯片冷却技术可能需要我们大展身手。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-5b28664fff771a31a51c9ca161b01021.jpeg"></p><p>图1 电池热管理的重要工程实践意义（百度图片）</p><p>温度最直观的影响就是对电池容量的影响，这也是为什么在冬季电动车行驶里程要比其他季节短很多的原因，同样每年的4月到9月都会出现电动车自燃的现象（暴晒条件下，车内温度达到60℃），天气燥热，电动车又给炎热的天气添了一把柴。综合各方面因素，电池热管理技术对于目前的动力电池是不可或缺的一部分，在环境温度较高时需要对电池进行降温，同时在温度较低时对电池进行加热，电池热管理技术相当于给电池加上了一个小型的空调系统。当然，在实际中也需要根据整车的实际运行工况来调整电池热管理系统策略。</p><p> </p><p><strong>2、电池热管理部件组成</strong></p><p>今天我们针对电池热管理技术的实际应用现状做个综述，后续我们再共同对其进行细分和学习。在国内目前能够大批量生产的汽车中实际应用的电池热管理技术可以分为四类：风冷式热管理技术、液冷式电池热管理技术、自然冷却式电池热管理技术和直冷式电池热管理技术（相变冷却技术）。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f55ccf8c36a84b611adb72cdd1ad0b04.jpeg"></p><p>图2 电池热管理技术分类（百度图片）</p><p>另外电池包的保温设计（其实笔者感觉有效的保温最难实现，有时候想法和实际操作相差太远，现实条件中可能不允许你做一些保温的措施）和单纯加热的系统也都隶属于电池热管理系统，当然有人提出热扩散防控也属于热管理范畴，我们这里不做定义及探讨，本文主要针对散热系统进行介绍。</p><p> </p><p><strong>3、风冷式电池热管理系统部件构成</strong></p><p>风冷式热管理系统部件包括格栅、温度探头、滤网、进风管、冷风介质、电池包内部风管、出风管、风机，密封条和固定卡扣。一般来说格栅设计在风管的进口处，其作用是为了防止一些较大尺寸的物体进入电池包内部而堵塞风管。在格栅和风管之间还会设计有滤芯和风道，风道的设计一般会根据整车的内部结构和电池包内部结构设计进行调整，在实际的设计中，风道的设计要尽量的光滑和平顺。在风道和车辆部件接触的地方需要设计密封条。风机一般分为轴流分机和离心风机，根据不同的风冷式热管理系统的需求选择不同的风机类型。在选型的过程中一般会将噪音和送风量作为主要的参考因素。离心风机在电池包内部根据使用场景的不同可以分为吹风式和抽离式，最直接的例子就是丰田卡罗拉的两款HEV电池包，一款采用了吹风形式，另外一款采用了抽风形式。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-2e26b5d91e8583fceba5b742ab491ca0.jpeg"></p><p>图3 丰田普锐斯（Prius）使用的风冷式电池热管理系统（谷歌图片）</p><p>当然，很多人可能会对风冷式热管理系统能否有效冷却电池保持怀疑态度，因为有很多这方面的文章提到风冷式系统的不足之处，这里我们简单探讨一下。在国内，针对不同的电池包我们尝试采用不同的冷却系统，对于EV (ElectricVehicle，纯电动汽车)，国内采用较多的热管理系统是液冷系统了，当然也会有一部分厂家尝试采用风冷系统，2016年奇瑞汽车生产的小蚂蚁电动汽车就尝试采用风冷式热管理系统进行散热。对于传统汽车改新能源车来说，采用风冷式热管理系统可以节省一大笔的开发费用，整车的空调系统可以直接按照原来燃油车的系统部件进行设计。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-bedc48e3cc0b900e3e82367006202cbf.jpeg"></p><p>图4 奇瑞小蚂蚁电动汽车（百度图片）</p><p>而对于HEV(Hybrid Electric Vehicle，混合动力汽车) 目前很多车厂都在争先进行开发，首选的电池热管理系统就是风冷式，比如前面提到的丰田卡罗拉和本田雅阁都是采用风冷式热管理系统。从大数据上看，日系车企很少采用液冷式热管理系统，大多采用的是风冷式，这点和国内的一些车企有些不同，可能是由于日系车企对液冷式系统还有其他的考量，个人感觉不会是因为成本的原因。对于HEV来说采用的电芯和EV的电芯是不同的，HEV在运行过程中动力电池不是唯一的动力来源，大部分情况下电池持续运行时间较短，风冷式热管理系统完全可以满足系统的要求，但是EV的动力完全来自于动力电池，电池长时间持续运行，这样电池就需要散热能力更强的电池热管理系统来保证电池的正常工作。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-59023e7808ada0a9a1b0f699db201d5b.jpeg"></p><p>图5 丰田卡罗拉油电混合汽车（百度图片）</p><p>风冷系统一般有三种设计，第一种就是单独采用风冷对电池进行散热或者加热；第二种就是仅用来对电池进行散热，对电池系统加热的话一般会另外设计加热膜；第三种就是风冷系统和加热膜结合，当电池需要散热的时候，仅仅启动冷却，当电池需要加热的时候，加热膜和风冷同时启动，此时风冷系统的进口为温度较高的车内气体。丰田卡罗拉的PHEV在两个模组之间设计的有加热膜，加热膜和模组之间的有效接触面积很小，笔者个人觉得加热膜只是为了加热电芯之间的空气，再通过风冷系统对电池包内的空气进行扰动。丰田卡罗拉的PHEV使用的是18650电芯，同时这款电池包的热失控管理设计也十分精巧，有空我们可以再聊聊。</p><p><strong>下面我们通过几个目前已经实现量产的实例来了解风冷式电池热管理技术。</strong></p><p>本田雅阁混动HEV的电池热管理系统中使用的冷却介质来自车内部的空调风，如果车主不使用空调时，进入电池包风管内的就是是车内没通过冷却的风。图示IPU指的就是电池包，我们简单了解一下冷却风是如何在内部流动的，电池包的冷却风从总进口进入电池包内部风道(模组的一侧)，然后再通过电芯之间的间隙，离心风扇和整个模组的另外一侧并没有设计风道，直接依靠离心风扇排出到外部，这样设计不仅仅对电池进行了散热，对电池包内部的发热器件（铜排、BDU）也有一定的散热作用。有兴趣的话大家可以看一下本田的专利，电芯之间设计有一定形状的塑料隔板，隔板不仅仅起到了流通的作用，在一定程度上也起到缓冲（电芯膨胀）的作用。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b23fff56400323e7f4096a759e9b5786.png"></p><p>图6 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-e8fc0a709516873c60a9bba82a2284e2.png"></p><p>图7 电池包三维视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-a1efe971c3c4ff2f31e6614222bd9f1b.png"></p><p>图8 电池包内模组实物图（百度图片）</p><p> </p><p>奥迪Q5采用的同样也是风冷散热，但是奥迪在电池包的外部单独给整个电池包系统做了一个蒸发器，专门对电池包内部循环风进行降温，使进入到电池包内部的风控制在合理的范围内，同时奥迪的这款设计比较巧妙，它的冷却系统进风可以切换，拥有引入外部自然风和内部循环风两种功能，可以通过感知电池不同的温度阶段来切换这两种功能。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba5f80b41e5e94e4d9ce7fa67bb6839a.png"></p><p>图9 电池包位置视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-050cc4489ac7bb528f2c4fa45a7af9bd.png"></p><p>图10 电池包三维视图及其工作原理（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b9ae494d93166ba7f0656c3b08314f59.png"></p><p>图11 电池包内部模组视图（百度图片）</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-eead6696074c4b2936a33ec19dc8f8ad.png"></p><p>图12 电池包内部流体流动轨迹视图（百度图片）</p><p> </p><p>广汽丰田2020年新推出的一款C-HREV采用的也是风冷散热，丰田将2个蒸发器和2个膨胀阀移到了电池包内部，采用这种设计的电池包内部空气、两个离心风机、风道（风道位于电池包2侧）和模组单独形成了一个循环（封闭式风冷系统），这款设计和奥迪Q5设计有类似之处，C-HR电池包的蒸发器位于风机出口的风道内部，电池包内部具有加热功能，在每个大模组（包内有2种模组）的底部都设计的有加热膜（有弹性支撑），这种加热膜材质和国内的差别比较大，这款车的加热速率非常低（可能是出于安全考虑），C-HR这款电池包内部设计有许多值得借鉴的细节（风道比较有特点）。在一定程度上奥迪Q5和C-HR也采用了直冷的散热方式，只是蒸发器没有和电芯直接接触，可以避免过冷的现象出现，它们将风冷和直冷结合在一块，直接给动力电池的冷却介质配置一个蒸发器，这样电池散热效果更佳，但是成本可能会增加不少。</p><p> </p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-f9bea42553bf8034290c88d11e345182.png"></p><p>图13 电池包三维视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-deb7df3263015181a2b55787643b4243.png"></p><p>图14 电池包俯视图（百度图片）</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-02e8a96bf494e88e968c4e8d4c17854c.png"></p><p>图15 电池包热管理原理（百度图片）</p><p> </p><p>可见，风冷式电池热管理技术有很广的应用范围，而且应用在商业电动车上也有很好的效果。目前商用电动车还有其他的电池热管理技术，下一期，我们将着重介绍和讨论<strong>液冷式和直冷式电池热管理技术</strong>。</p><p><em>（本文由王工、庞晓文、饶中浩编辑，徐犇、程泽东协助修改。文章中所有的图片均来自网络，作为技术资料汇总，若有采用不当的地方可以随时提出，后续如果有兴趣大家可以留言，我们针对热管理的一些子部件进行详细探讨，通过它的选型、强度或流体仿真分析、制作工艺、DV测试性能要求等进行剖解分析，同时以上论述均为个人见解，如有错误之处请不吝赐教，技术需要慢慢沉淀，踏实前行、虚心交流，技术才能进步。）</em></p><p><strong>往期精彩回顾</strong></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483671&idx=1&sn=2ffe4a73e179e89dc3304077487beaab&chksm=9bee694eac99e058207d48756d89bee849145d1ad7ede2fcd782bdf6189768b6eca8330283dd&scene=21#wechat_redirect">电池热管理趣谈（1）: 火焰山</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483688&idx=1&sn=4a2055db175c6d07a7ab60b5abecb12a&chksm=9bee6971ac99e067628c696327504095fbc9530815daa34333cb6a8281f6ce5fe4df04357a47&scene=21#wechat_redirect">漫谈聚光式太阳能光热发电 (1)：系统简介</a></p><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxNjgxMDI5NA==&mid=2247483706&idx=1&sn=d93083bdce6a6c7d1af64a7d833ed3d5&chksm=9bee6963ac99e075935c667fbbdf2ce6b66b6dd2c75f8228773351f4456633ce855ee93dd4bb&scene=21#wechat_redirect">漫谈空气取水 (1): 干燥地区的不二选择</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 制冷技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
             
             <tag> 电池热管理 </tag>
             
@@ -5014,7 +5049,7 @@
       <link href="/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/"/>
       <url>/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/</url>
       
-        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><pre class="line-numbers language-none"><code class="language-none">ifconfig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#67;&#80;&#x55;&#x40;&#x31;&#46;&#57;&#x47;&#72;&#x7a;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
+        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><pre class="line-numbers language-none"><code class="language-none">ifconfig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#x43;&#x50;&#85;&#64;&#x31;&#x2e;&#x39;&#71;&#72;&#122;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
       
       
       <categories>
@@ -5923,33 +5958,6 @@
     
     
     <entry>
-      <title>树莓派更改软件源</title>
-      <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/"/>
-      <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/</url>
-      
-        <content type="html"><![CDATA[<p>树莓派自带的软件源由于在国内访问速度实在是太慢了，所以一般都会更换掉软件源，这里推荐清华大学的软件源:</p><p><a href="https://mirror.tuna.tsinghua.edu.cn/help/raspbian/">https://mirror.tuna.tsinghua.edu.cn/help/raspbian/</a></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578203582-%E6%A0%91%E8%8E%93%E6%B4%BE12-1024x482.png">使用命令：</p><pre class="line-numbers language-none"><code class="language-none">cat &#x2F;etc&#x2F;os-release<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>找到自己对应的版本，然后按照对应操作进行，建议先安装vim，使用vim进行编辑，树莓派自带的vi编辑器容易出问题</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 树莓派 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 软件 </tag>
-            
-            <tag> 树莓派 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>树莓派无显示器无网线ssh连接无线网</title>
       <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/"/>
       <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E6%97%A0%E7%BD%91%E7%BA%BFssh%E8%BF%9E%E6%8E%A5%E6%97%A0%E7%BA%BF%E7%BD%91/</url>
@@ -5990,6 +5998,33 @@
       
       
         <tags>
+            
+            <tag> 树莓派 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>树莓派更改软件源</title>
+      <link href="/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/"/>
+      <url>/2020/01/05/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/</url>
+      
+        <content type="html"><![CDATA[<p>树莓派自带的软件源由于在国内访问速度实在是太慢了，所以一般都会更换掉软件源，这里推荐清华大学的软件源:</p><p><a href="https://mirror.tuna.tsinghua.edu.cn/help/raspbian/">https://mirror.tuna.tsinghua.edu.cn/help/raspbian/</a></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/01/1578203582-%E6%A0%91%E8%8E%93%E6%B4%BE12-1024x482.png">使用命令：</p><pre class="line-numbers language-none"><code class="language-none">cat &#x2F;etc&#x2F;os-release<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>找到自己对应的版本，然后按照对应操作进行，建议先安装vim，使用vim进行编辑，树莓派自带的vi编辑器容易出问题</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 树莓派 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 软件 </tag>
             
             <tag> 树莓派 </tag>
             
