@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>旁路由国内网站卡顿：没有公网 IPv6，却在广播自己是 IPv6 路由</title>
+      <link href="/2026/11/02/soft-router-ipv6-troubleshooting/"/>
+      <url>/2026/11/02/soft-router-ipv6-troubleshooting/</url>
+      
+        <content type="html"><![CDATA[<h2 id="现象是什么"><a href="#现象是什么" class="headerlink" title="现象是什么"></a>现象是什么</h2><p>家里网络最近是这样：国外网站都正常，国内 App 却卡。手机在家里 WiFi 下刷抖音，视频要等半天才出来，评论区头像和图片更慢；电脑浏览器打开国内站也转圈。同一台手机切到流量就正常，切回主路由也正常——问题只出在旁路由这条路上，而且不是断网，是“能打开、但慢”。</p><h2 id="整体网络配置"><a href="#整体网络配置" class="headerlink" title="整体网络配置"></a>整体网络配置</h2><p>先把家里的配置说清楚，后面的问题就出在这里。</p><p><strong>主路由</strong>：Padavan，负责拨号和 DHCP，局域网网关。</p><p><strong>旁路由</strong>：一台跑在 NAS 虚拟机上的 OpenWrt（ImmortalWrt），1 核 1GB，单臂、只有一个网口。主路由的 DHCP 把网关和 DNS 都指向旁路由，所以设备上网先经过旁路由，再出去。</p><ul><li>旁路由本身不开 DHCP，IPv4 的地址分配还留在主路由；</li><li>流量分流用 PassWall，模式是“中国列表以外”走代理，国内直连，代理是 Xray，多个节点自动切换；</li><li>DNS 走旁路由上的 AdGuard，上游是本地的 chinadns 分流，国内域名走国内解析，国外走可信解析；</li><li>AdGuard 的过滤是开着的，AdGuard DNS 过滤列表在用。</li></ul><p>关键的一点是：<strong>这套配置里，旁路由实际能走通的只有 IPv4</strong>。它自己没有公网 IPv6 地址，也没有到公网的 IPv6 默认路由，家里设备能用的 IPv6 通路，本来就不应该经过它。</p><h2 id="为什么会导致这个问题"><a href="#为什么会导致这个问题" class="headerlink" title="为什么会导致这个问题"></a>为什么会导致这个问题</h2><p>问题就出在旁路由明明没有公网 IPv6，却还在 IPv6 上插了两脚。</p><p><strong>第一脚：广播自己是 IPv6 路由。</strong></p><p>旁路由上的 odhcpd 默认开着 IPv6 路由广播。注意一个坑：旁路由的 DHCP 是关着的，但这只关了 IPv4 的地址分配，IPv6 的路由广播并没有跟着关。于是局域网里同时有两份 IPv6 路由广播，设备一旦把旁路由当成 IPv6 网关，IPv6 数据发过去，旁路由根本不知道往哪送，只能丢掉，App 等超时再退回 IPv4——表现出来就是卡顿、转圈。</p><p>国内 App 现在很多都优先 IPv6，全撞上了；国外流量走的是代理的 IPv4，根本不经过这条 IPv6 的坑，所以国外正常、国内卡。</p><p><strong>第二脚：DNS 返回 IPv6 地址。</strong></p><p>旁路由的 DNS 会同时返回 IPv4 和 IPv6 地址，手机优先用 IPv6。图片域名的 IPv6 节点是移动那边的，视频域名的 IPv6 节点是电信那边的，图片跑到跨运营商的节点上就慢，视频跑到同运营商的节点上就快。再加上图片是几十张小文件，每张都要单独解析、握手、排队，视频是一条长连接摊薄了这些代价，所以“图片比视频慢”并不是网速问题。</p><h2 id="怎么处理的"><a href="#怎么处理的" class="headerlink" title="怎么处理的"></a>怎么处理的</h2><p>只动了旁路由上的两处，别的全没动，主路由也不用改。</p><p><strong>第一处：关掉 IPv6 路由广播。</strong></p><p>把 odhcpd 的 IPv6 路由广播关掉，重启生效。IPv4 网关、代理、去广告都不动。改完手机切回旁路由、开关一次 WiFi 清掉旧路由再测，视频就恢复正常了。回滚也简单，把广播再改回开着就行。</p><p><strong>第二处：让 DNS 不再返回 IPv6 地址。</strong></p><p>打开 AdGuard 里的 <code>aaaa_disabled</code>，重启生效。这样旁路由的 DNS 只给 IPv4 地址，所有设备都只走 IPv4，手机也不用再手动设 DNS。改完验证过：问图片域名要 IPv6 地址返回是空的，要 IPv4 地址正常返回。</p><h2 id="现在的状态"><a href="#现在的状态" class="headerlink" title="现在的状态"></a>现在的状态</h2><p>视频正常，图片普遍快了很多。个别图片还稍微慢一点，那已经不是黑洞式的故障了，主要是图片节点本身有远近冷热之分，加上评论区几十张图同时抢、排队，以及旁路由这一跳每张小图都要多付一次转发和握手的代价——这是旁路由方案本身的一点正常代价，再往下抠收益不大。</p><h2 id="一句话总结"><a href="#一句话总结" class="headerlink" title="一句话总结"></a>一句话总结</h2><p>单臂旁路由如果没有公网 IPv6，就要把 IPv6 关干净：路由广播、DNS 的 IPv6 地址都要一起处理，只关 DHCP 是不够的，留任何一处，设备都会在 IPv6 上摔一跤。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 旁路由 </tag>
+            
+            <tag> 软路由 </tag>
+            
+            <tag> OpenWrt </tag>
+            
+            <tag> IPv6 </tag>
+            
+            <tag> PassWall </tag>
+            
+            <tag> AdGuard </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>旁路由这样搭才稳：QNAP 虚拟机 + OpenWrt + PassWall + AdGuard 全记录</title>
       <link href="/2026/10/28/%E6%97%81%E8%B7%AF%E7%94%B1QNAP%E8%99%9A%E6%8B%9F%E6%9C%BAOpenWrtPassWallAdGuard%E5%85%A8%E8%AE%B0%E5%BD%95/"/>
       <url>/2026/10/28/%E6%97%81%E8%B7%AF%E7%94%B1QNAP%E8%99%9A%E6%8B%9F%E6%9C%BAOpenWrtPassWallAdGuard%E5%85%A8%E8%AE%B0%E5%BD%95/</url>
@@ -4741,6 +4776,8 @@
             
             <tag> 搬瓦工 </tag>
             
+            <tag> 网站建设 </tag>
+            
             <tag> cloudflare </tag>
             
             <tag> wordpress </tag>
@@ -4748,8 +4785,6 @@
             <tag> 免费域名 </tag>
             
             <tag> 域名 </tag>
-            
-            <tag> 网站建设 </tag>
             
         </tags>
       
@@ -5097,7 +5132,7 @@
       <link href="/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/"/>
       <url>/2020/05/21/%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%8D%E8%B4%B9%E6%AD%A3%E7%89%88labview-community-edition/</url>
       
-        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><pre class="line-numbers language-none"><code class="language-none">ifconfig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#67;&#x50;&#x55;&#64;&#49;&#x2e;&#57;&#71;&#x48;&#122;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
+        <content type="html"><![CDATA[<p>上个月底，针对个人项目使用的LabVIEW Community Edition（LabVIEW大众版和LabVIEW NXG大众版）正式发布。LabVIEW大众版将<strong>免费</strong>提供给非商业用户使用，该版本提供了与LabVIEW专业版相同的功能。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-b6d50f14311f8528cd806182742a648c-1024x283.png"></p><p>其中包含LINX工具包的更新版本，以帮助工程爱好者将LabVIEW应用程序连接或部署到主流的计算硬件上，例如Arduino、Raspberry Pi和BeagleBoard等。</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-53d99b79dd550e695e6006f2ca02d6f5-1024x414.png"></p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-806bfe4ed034cfd73335106d1e6faf5f-1024x413.png"></p><p><strong>不要钱的正版软件</strong>配套才**几百块钱的“树莓派”！**<strong>零基础</strong>入门！</p><p>265元的最新一代树莓派+0元LabVIEW大众版上手demo视频：</p><p>Step by Step一步一步跟我做：</p><p><strong><strong><strong><strong>硬件准备</strong></strong></strong></strong></p><ol><li><p>安装了LabVIEW 2020 Community Edition的电脑（<strong>注意：<strong>下载软件安装包时的账号与安装完成后在NI许可证管理器中激活软件时的账号需</strong>一致</strong>，才能<strong>正常免费激活</strong>）</p></li><li><p>树莓派4b【小编测试用的是最新一代的树莓派4b（单价265元起），如果用树莓派3代（单价238元）或2代（单价小于200元）亦可】+microSD卡</p></li><li><p>树莓派4b USB type-C电源线</p></li><li><p>树莓派4b micro HDMI视频线+显示器</p></li><li><p>键盘鼠标</p></li><li><p>面包板+杜邦线+LED</p></li></ol><p><strong><strong><strong><strong>软件准备</strong></strong></strong></strong></p><ol><li><p>免费的LabVIEW大众版软件（小编这里以LabVIEW 2020 Community Edition为例）  传送门：</p><p> <a href="https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html">https://www.ni.com/zh-cn/shop/labview/select-edition/labview-community-edition.html</a></p></li><li><p>正确下载并烧录到microSD卡的Raspbian镜像（小编demo中烧录的是Raspbian Buster with desktop and recommended software）</p><p> 传送门：</p><p> <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p></li></ol><p><strong><strong><strong><strong>树莓派上的操作步骤</strong></strong></strong></strong></p><p>1. Raspbian正常启动后，确保树莓派与电脑处于同一个wifi局域网，在command line中输入</p><pre class="line-numbers language-none"><code class="language-none">ifconfig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>获得树莓派的IP地址，小编的树莓派4b的IP地址为：</p><p>192.168.50.121</p><p>2. 在树莓派中开启SSH</p><p><img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-3b17a9139e66e56d206876f53add4731-1024x884.png"></p><p><strong><strong><strong><strong>电脑上开始第一个LabVIEW树莓派项目</strong></strong></strong></strong></p><ol><li><p> 打开LabVIEW</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-0522b55950b3360fefe7afbb8c876ab7-1024x669.png"></p></li><li><p>选择</p><p> Tools&#x2F;MakerHub&#x2F;LINX&#x2F;LINX Target Configuration…</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d5f7a0019e1b5d82cb2079a21778962c-1024x668.png"></p></li><li><p>在LINX对话框中输入我们树莓派的IP地址，User name以及Password</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-17a1791d4f54d7e23408e5898b87a2ab-1024x615.png"></p></li><li><p>点击connect后，如果连接正确，则可以在最底下的状态栏中看到Successfully connected to the target，点击左边的Connection，可以看到树莓派的图标出现了</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-ba0afe92486cba829a67b11f623ede9b-1024x614.png"></p></li><li><p>点击左侧的Installation，可以看到尚未配置的树莓派上Installed Version为空</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-739538a68b2a0c149b24a504eed8606d-1024x613.png"></p></li><li><p>点击Upgrade来对树莓派上的软件进行升级，这里根据网速和系统不同可能需要等待几分钟时间，升级成功后状态如下</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-39d8eb3b467e091f406fe3ed820a2ef7-1024x615.png"></p></li><li><p>于是我们可以点击Launch Example来开启第一个LabVIEW+树莓派项目了。右键点击LabVIEW项目树中的树莓派图标，点击connect（注意需要再次确认下，这里看到树莓派IP地址和上面配置的IP地址一致，小编这里是192.168.50.121）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-390e66a4ac2fd33cf3ae6c70a044199b-1024x544.png"></p></li><li><p>成功连接到树莓派后可以发现项目树中Raspberry Pi树莓图标右下角的指示灯被“点亮”了，表示连接成功。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-d53a304709bcc4de547ce91a03900c46-1024x544.png"></p></li><li><p>在运行上图右侧的VI之前，我们先根据树莓派的GPIO引脚定义，将一个LED的正极连接到pin7，将LED的负极连接到pin9（GND）</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-7c046ab2486b5376ccb5a689f4a29230-720x1024.png"></p></li><li><p>点击LabVIEW的运行按钮，等待程序部署成功</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/2020/05/frc-15e740390b7bb3cb76193e27ee365542-1024x544.png"></p></li><li><p>此时点击VI前面板上的布尔输入控件，就能控制LED的亮和灭了。</p><p> <img src="http://www.demon1630.cn/wp-content/uploads/https://pic2.zhimg.com/v2-644cd7d75fc7854b0773b4912e6c8271_b.jpg"></p></li></ol><p>小编的安装环境是Windows 10 pro 64bit， Intel x64 Core-i7-8665 <a href="mailto:&#67;&#x50;&#85;&#x40;&#49;&#x2e;&#x39;&#71;&#72;&#122;">CPU@1.9GHz</a>， 16GB RAM， Raspberry Pi 4B-4GB version，Raspbian Buster with desktop and recommended software（February 2020）. 在不同的软硬件组合中可能会出现一些不兼容的情况。欢迎扫码和我们联系交流， 开动你的脑筋来动手玩转LabVIEW+树莓派等高性价比开源硬件吧！</p><p>或者访问：<a href="https://www.wjx.top/jq/77852210.aspx">https://www.wjx.top/jq/77852210.aspx</a></p><p><strong>主讲教师</strong></p>]]></content>
       
       
       <categories>
@@ -7098,9 +7133,9 @@
             
             <tag> 网站 </tag>
             
-            <tag> wordpress </tag>
-            
             <tag> 网站建设 </tag>
+            
+            <tag> wordpress </tag>
             
         </tags>
       
