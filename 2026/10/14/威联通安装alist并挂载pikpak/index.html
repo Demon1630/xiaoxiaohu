@@ -525,6 +525,10 @@
 <li><strong>同一个 PikPak 账号挂了多个存储项</strong>。PikPak 每次刷新令牌，上一个令牌立刻作废。第一个挂载点一刷新，第二个挂载点的旧 Token 就瞬间失效，抛出 4002。解决办法是删掉多余的存储项，只保留一个根目录挂载，要进子目录直接在 AList 根目录里点进去。</li>
 <li><strong>真的触发风控了</strong>。去电脑浏览器重新登录一次 PikPak 网页端，手动过掉验证码，然后重新提取最新的 refresh_token 填回 AList。</li>
 </ol>
+<h3 id="能列目录、下载报-500：Get-“”-unsupported-protocol-scheme-“”"><a href="#能列目录、下载报-500：Get-“”-unsupported-protocol-scheme-“”" class="headerlink" title="能列目录、下载报 500：Get “”: unsupported protocol scheme “”"></a>能列目录、下载报 500：Get “”: unsupported protocol scheme “”</h3><p><strong>现象（2026-11-03 实测，AList v3.64.0，原生 PikPak 驱动）</strong>：AList 网页里能正常列出 PikPak 的文件，点下载却报 <code>{&quot;code&quot;:500,&quot;message&quot;:&quot;Get \&quot;\&quot;: unsupported protocol scheme \&quot;\&quot;&quot;,&quot;data&quot;:null}</code>。视频和非视频文件都一样，HBS 3 走 WebDAV 同步同一个文件时则报 405，传了 0 字节。</p>
+<p><strong>含义</strong>：这句话翻译过来就是 AList 去抓文件时，拿到的下载地址是空的。列表接口和下载链接接口是两条路：列表通只说明 Token 还能查目录，不代表下载链接接口也通。先排除账号和文件本身——去 PikPak 官方网页&#x2F;App 下载同一个文件，如果官方能下，问题就锁定在 AList 驱动这一侧。</p>
+<p><strong>解决办法</strong>：在 AList 后台 PikPak 存储的编辑页，把 <strong>“禁用媒体链接”勾上</strong>，保存后再下载。勾上后驱动换一种方式请求文件详情（FETCH，直接拿原始下载地址），不再走原来那条拿不到地址的路。实测勾上后网页下载立刻恢复，HBS 3 的同步任务也开始正常完成。</p>
+<p><strong>注意</strong>：这个开关要一直留着开。如果以后升级 AList 或者重新挂载 PikPak，记得检查它还在不在，否则同一个 500 会再出现。</p>
 <h3 id="刷新令牌怎么抓"><a href="#刷新令牌怎么抓" class="headerlink" title="刷新令牌怎么抓"></a>刷新令牌怎么抓</h3><p>新版 AList 有两条路：</p>
 <p><strong>让它自己抓（最省事）</strong>：用户名密码填对，“刷新令牌方法”选 Oauth2，令牌框留空，直接点保存。AList 会在后台登录并把 Token 自动回填。如果这样还报 4126，说明官方风控挡了后台的自动登录，只能走下面手动抓。</p>
 <p><strong>手动抓</strong>：</p>
@@ -568,6 +572,7 @@
 <li><strong>AList 的“挂载路径”和威联通的挂载点是两回事</strong>。前者只是 AList 网页里的目录位置，后者必须去 File Station 手动装载一次才会出现。</li>
 <li><strong>HBS 3 是备份工具，不是搬运工具</strong>。要把云盘内容搬到本地并释放云端空间，用 <code>rclone move</code> 或自己的脚本，别指望同步任务。</li>
 <li><strong>永远不要对网络虚拟盘做“剪切”</strong>。先复制、再校验、最后手动删源，任何一步出问题都还有退路。</li>
+<li><strong>PikPak 原生驱动下载报空地址时，先开“禁用媒体链接”</strong>。能列目录不等于能下载，勾上这个开关、换 FETCH 拿原始下载地址，是 2026-11-03 实测有效的办法。</li>
 </ol>
 
                 
