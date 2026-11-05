@@ -572,6 +572,12 @@
 <li><input disabled="" type="checkbox"> 回滚步骤自己能复述一遍：主路由 DHCP 一页就能回直连</li>
 </ul>
 <p>有问题先看进程列表和 AdGuard 查询日志，别只信 LuCI 和仪表盘的状态页，它们都可能滞后。</p>
+<h2 id="十五、后续：2026-11-05-国内网又卡，问题不在-IPv6"><a href="#十五、后续：2026-11-05-国内网又卡，问题不在-IPv6" class="headerlink" title="十五、后续：2026-11-05 国内网又卡，问题不在 IPv6"></a>十五、后续：2026-11-05 国内网又卡，问题不在 IPv6</h2><p><strong>现象</strong>：11 月 4 日晚到 11 月 5 日，手机和电脑都慢，切流量就正常。微信文章里的图片一直转圈，点开放大能看；抖音精选页文字、点赞都出来了，视频缩略图全是空白，点进视频却能播；电脑浏览器打开微信文章，十几个 JS 全是 <code>ERR_CONNECTION_CLOSED</code>，每个都拖 19 秒才断，文章本身 16–31 秒才下完。</p>
+<p><strong>问题在哪</strong>：单臂旁路由不对称路由。出去经旁路由，回包主路由直发设备，不经过旁路由，主路由要对同一条连接处理两次，大流量 TCP 只剩约 80KB&#x2F;s。旁路由上 masq 是开着的，但 WAN 区一个接口都没有，srcnat 链是空的，根本没生效。</p>
+<p><strong>怎么修复</strong>：旁路由加一条 SNAT，让经它转发的流量源地址改成旁路由自己（192.168.123.3），回包原路回来：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nft <span class="token function">add</span> rule inet fw4 srcnat <span class="token function">ip</span> saddr <span class="token number">192.168</span>.123.0/24 <span class="token function">ip</span> daddr <span class="token operator">!=</span> <span class="token number">192.168</span>.123.0/24 masquerade<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>规则写进 <code>/etc/firewall.snat-fix</code>，用 firewall include 固化（reload&#x3D;1），防火墙重启后还在。改完微信文章、抖音、手机微信图片都恢复了，AdGuard 过滤重新打开也没问题。</p>
 
                 
             </div>
